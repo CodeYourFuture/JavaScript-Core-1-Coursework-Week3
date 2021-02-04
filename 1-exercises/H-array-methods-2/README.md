@@ -44,3 +44,18 @@ $ node
 ```
 
 There is a string method `.split()`. In an interactive console try using the string `.split()` method and the array `.join()`. How could they work together?
+
+var testArray = "How are you doing today";
+
+var splitAlone = testArray.split();
+
+console.log(splitAlone);
+//logs.... [ 'How are you doing today' ]
+
+xxxxx
+var testArray = "How are you doing today";
+
+var joinAndSplit = testArray.split().join();
+
+console.log(joinAndSplit);
+//logs .... How are you doing today

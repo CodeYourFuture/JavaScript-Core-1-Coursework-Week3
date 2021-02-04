@@ -8,7 +8,11 @@
 
 var pairsByIndexRaw = [[0, 3], [1, 2], [2, 1], null, [1], false, "whoops"];
 
-var pairsByIndex; // Complete this statement
+// function isPairedItems (pairs){
+//   return pairs >= [[0,1]] && pairs.length === 2;
+// }
+
+var pairsByIndex = pairsByIndexRaw.filter((pairs) => pairs >= [[0,1]] && pairs.length === 2); // Complete this statement
 
 var students = ["Islam", "Lesley", "Harun", "Rukmini"];
 var mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
