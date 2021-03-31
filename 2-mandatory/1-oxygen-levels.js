@@ -8,7 +8,7 @@
     Some string methods that might help you here are .replace() and .substring(). 
 */
 
-function safeLevels(oxygen) {
+function findSafeOxygenLevel(oxygen) {
    let numberToConvert=oxygen.map(function(numberFoundInArray){
      return parseFloat(numberFoundInArray);
    })
@@ -39,8 +39,8 @@ function test(test_name, actual, expected) {
   console.log(`${test_name}: ${status}`);
 }
 
-test("safeLevels function works - case 1", safeLevels(oxygenLevels1), "19.9%");
+test("findSafeOxygenLevel function works - case 1", findSafeOxygenLevel(oxygenLevels1), "19.9%");
 
-test("safeLevels function works - case 2", safeLevels(oxygenLevels2), "20.2%");
+test("findSafeOxygenLevel function works - case 2", findSafeOxygenLevel(oxygenLevels2), "20.2%");
 
-test("safeLevels function works - case 3", safeLevels(oxygenLevels3), "21.1%");
+test("findSafeOxygenLevel function works - case 3", findSafeOxygenLevel(oxygenLevels3), "21.1%");
