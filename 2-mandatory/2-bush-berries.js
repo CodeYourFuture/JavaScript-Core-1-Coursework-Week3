@@ -1,12 +1,8 @@
 /*
   The space travellers have safely landed and are foraging for food in the natural wildlife.
-
   There are bushes with many different colour berries.
-
   The pink berries are the ONLY safe ones to eat.
-
   If any other berries are present, it's best not to eat from the bush at all!
-
   Create a function which checks if the bush has ALL PINK berries and is safe for the astronauts to eat from the bush.
   Use the tests to confirm which message to return
   
@@ -21,7 +17,15 @@
   Let's first look at an example that will teach you how to use these methods.
 */
 
-function isBushSafe() {}
+function bushChecker(check,output) {
+  return check.some(berry => berry !='pink') ? "Toxic! Leave bush alone!" :"Bush is safe to eat from";
+  //another way of writing it
+  // if(check.some(berry => berry =='pink')){
+  //   return "Toxic! Leave bush alone!";
+  // }else{
+  //   return "Bush is safe to eat from";
+  // }
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
@@ -44,13 +48,13 @@ function test(test_name, actual, expected) {
 }
 
 test(
-  "isBushSafe funtion works - case 1",
-  isBushSafe(bushBerryColours1),
+  "bushChecker funtion works - case 1",
+  bushChecker(bushBerryColours1),
   "Toxic! Leave bush alone!"
 );
 
 test(
-  "isBushSafe funtion works - case 1",
-  isBushSafe(bushBerryColours2),
+  "bushChecker funtion works - case 1",
+  bushChecker(bushBerryColours2),
   "Bush is safe to eat from"
 );

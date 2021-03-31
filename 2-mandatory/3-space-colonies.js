@@ -15,7 +15,13 @@
   
 */
 
-function getSettlers() {}
+function getSettlers() {
+  let letterThatStartWithA="A"; 
+  let letterThatEndWithFamily="family";
+
+  let result=voyagers.filter(el => el[0]== letterThatStartWithA && el.includes( letterThatEndWithFamily));
+  return result;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

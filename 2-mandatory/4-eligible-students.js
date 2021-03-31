@@ -8,7 +8,14 @@
 */
 
 function getEligibleStudents() {
-
+  let emptyArrayToStoreTheValue=[];
+  attendances.forEach(function(el){
+    while(el[1] >=8){
+      emptyArrayToStoreTheValue.push(el[0])
+      el++;
+    }
+  })
+  return  emptyArrayToStoreTheValue;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

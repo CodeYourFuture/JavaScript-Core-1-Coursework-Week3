@@ -3,15 +3,20 @@
     somewhere safe while they call home for help.
   
     Their computer detects a list of nearby planets that have Oxygen in their atmosphere.
-
     To be safe, they need to land on the first unnamed planet that has Oxygen levels between 19.5% and 23.5%.
-
     Write a function that finds the oxygen level of the first safe planet - Oxygen between 19.5% and 23.5%
-
     Some string methods that might help you here are .replace() and .substring(). 
 */
 
-function findSafeOxygenLevel() {}
+function safeLevels(oxygen) {
+   let numberToConvert=oxygen.map(function(numberFoundInArray){
+     return parseFloat(numberFoundInArray);
+   })
+  
+   let filterEachNumber= numberToConvert.filter(numberInArray => numberInArray > 19.5 && numberInArray < 23.5);
+   return `${filterEachNumber[0]}%`;
+
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
@@ -34,8 +39,8 @@ function test(test_name, actual, expected) {
   console.log(`${test_name}: ${status}`);
 }
 
-test("findSafeOxygenLevel function works - case 1", findSafeOxygenLevel(oxygenLevels1), "19.9%");
+test("safeLevels function works - case 1", safeLevels(oxygenLevels1), "19.9%");
 
-test("findSafeOxygenLevel function works - case 2", findSafeOxygenLevel(oxygenLevels2), "20.2%");
+test("safeLevels function works - case 2", safeLevels(oxygenLevels2), "20.2%");
 
-test("findSafeOxygenLevel function works - case 3", findSafeOxygenLevel(oxygenLevels3), "21.1%");
+test("safeLevels function works - case 3", safeLevels(oxygenLevels3), "21.1%");

@@ -25,6 +25,8 @@ PasswordValidationResult=  [false, false, false, false, true]
 */
 
 function validatePasswords(passwords) {
+    let correctValidation = passwords.map((eachPassword, index) => eachPassword.length >= 5 && containsUppercaseLetter(eachPassword) && containsLowercaseLetter(eachPassword) && containsNumber(eachPassword) && containsSymbol(eachPassword) && passwords.indexOf(eachPassword) === index);
+    return correctValidation;
 }
 
 // Returns true if string contains at least one uppercase letter.
