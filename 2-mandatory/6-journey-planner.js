@@ -127,6 +127,8 @@ function journeyPlanner(locations, transportMode) {
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
+const {describe, expect, test} = require("@jest/globals");
+
 const string1 = "I Love coding and perfect code makes me happy";
 const string2 = "I don't like to do coding";
 const string3 = "Can you scan the barcode for me";
@@ -138,101 +140,58 @@ const londonLocations = [
   ["Greenwich", "bus", "river boat"],
 ];
 
-function arraysEqual(a, b) {
-  if (a === b) return true;
-  if (a == null || b == null) return false;
-  if (a.length != b.length) return false;
+describe("checkCodeIsThere", () => {
+    test("finds code", () => {
+        expect(checkCodeIsThere(string1)).toEqual(26);
+    });
 
-  for (let i = 0; i < a.length; ++i) {
-    if (a[i] !== b[i]) return false;
-  }
+    test("returns `Not found` if no code", () => {
+        expect(checkCodeIsThere(string2)).toEqual("Not found");
+    });
 
-  return true;
-}
+    test("finds code as part of a word", () => {
+        expect(checkCodeIsThere(string3)).toEqual(20);
+    });
+});
 
-function test(test_name, expr) {
-  let status;
-  if (expr) {
-    status = "PASSED";
-  } else {
-    status = "FAILED";
-  }
+test("getTransportModes function works", () => {
+    expect(getTransportModes(["Angel", "tube", "bus"])).toEqual(["tube", "bus"]);
+});
 
-  console.log(`${test_name}: ${status}`);
-}
+describe("isAccessibleByTransportMode", () => {
+    test("positive case", () => {
+        expect(isAccessibleByTransportMode(["tube", "bus"], "tube")).toEqual(true);
+    });
 
-test(
-  "checkCodeIsThere function works - case 1",
-  checkCodeIsThere(string1) === 26
-);
+    test("negative case", () => {
+        expect(isAccessibleByTransportMode(["tube", "bus"], "river boat")).toEqual(false);
+    });
 
-test(
-  "checkCodeIsThere function works - case 2",
-  checkCodeIsThere(string2) === "Not found"
-);
-test(
-  "checkCodeIsThere function works - case 3",
-  checkCodeIsThere(string3) === 20
-);
+    test("ignores substring matches", () => {
+        expect(isAccessibleByTransportMode(["tube", "bus", "river boat"], "boat")).toEqual(false);
+    });
+});
 
-test(
-  "getTransportModes function works",
-  arraysEqual(getTransportModes(["Angel", "tube", "bus"]), ["tube", "bus"])
-);
+describe("getLocationName", () => {
+    test("example 1", () => {
+        expect(getLocationName(["London Bridge", "tube", "river boat"])).toEqual("London Bridge");
+    });
 
-test(
-  "isAccessibleByTransportMode function works - positive case 1",
-  arraysEqual(isAccessibleByTransportMode(["tube", "bus"], "tube"), true)
-);
+    test("example 1", () => {
+        expect(getLocationName(["Angel", "tube", "bus"])).toEqual("Angel");
+    });
+});
 
-test(
-  "isAccessibleByTransportMode function works - negative case 1",
-  arraysEqual(isAccessibleByTransportMode(["tube", "bus"], "river boat"), false)
-);
+describe("journeyPlanner", () => {
+    test("river boat", () => {
+        expect(journeyPlanner(londonLocations, "river boat")).toEqual(["London Bridge", "Greenwich"]);
+    });
 
-test(
-  "isAccessibleByTransportMode function works - negative case 2",
-  arraysEqual(
-    isAccessibleByTransportMode(["tube", "bus", "river boat"], "boat"),
-    false
-  )
-);
+    test("bus", () => {
+        expect(journeyPlanner(londonLocations, "bus")).toEqual(["Angel", "Tower Bridge", "Greenwich"]);
+    });
 
-test(
-  "getLocationName function works - case 1",
-  arraysEqual(
-    getLocationName(["London Bridge", "tube", "river boat"]),
-    "London Bridge"
-  )
-);
-
-test(
-  "getLocationName function works - case 2",
-  arraysEqual(getLocationName(["Angel", "tube", "bus"]), "Angel")
-);
-
-test(
-  "journeyPlanner function works - case 1",
-  arraysEqual(journeyPlanner(londonLocations, "river boat"), [
-    "London Bridge",
-    "Greenwich",
-  ])
-);
-
-test(
-  "journeyPlanner function works - case 2",
-  arraysEqual(journeyPlanner(londonLocations, "bus"), [
-    "Angel",
-    "Tower Bridge",
-    "Greenwich",
-  ])
-);
-
-test(
-  "journeyPlanner function works - case 3",
-  arraysEqual(journeyPlanner(londonLocations, "tube"), [
-    "Angel",
-    "London Bridge",
-    "Tower Bridge",
-  ])
-);
+    test("tube", () => {
+        expect(journeyPlanner(londonLocations, "tube")).toEqual(["Angel", "London Bridge", "Tower Bridge"]);
+    });
+});

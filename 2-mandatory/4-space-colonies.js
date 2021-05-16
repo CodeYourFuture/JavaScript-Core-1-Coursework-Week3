@@ -19,38 +19,28 @@ function getSettlers() {}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-const voyagers = [
-  "Adam family",
-  "Potter family",
-  "Eric",
-  "Aldous",
-  "Button family",
-  "Jude",
-  "Carmichael",
-  "Bunny",
-  "Asimov",
-  "Oscar family",
-  "Avery family",
-  "Archer family",
-];
+const {expect, test} = require("@jest/globals");
 
-const util = require("util");
+test("getSettlers function works", () => {
+    const voyagers = [
+        "Adam family",
+        "Potter family",
+        "Eric",
+        "Aldous",
+        "Button family",
+        "Jude",
+        "Carmichael",
+        "Bunny",
+        "Asimov",
+        "Oscar family",
+        "Avery family",
+        "Archer family",
+        "Just A. family",
+    ];
 
-function test(test_name, actual, expected) {
-  let status;
-  if (util.isDeepStrictEqual(actual, expected)) {
-    status = "PASSED";
-  } else {
-    status = `FAILED: expected: ${util.inspect(
-      expected
-    )} but your function returned: ${util.inspect(actual)}`;
-  }
-
-  console.log(`${test_name}: ${status}`);
-}
-
-test("getSettlers function works", getSettlers(voyagers), [
-  "Adam family",
-  "Avery family",
-  "Archer family",
-]);
+    expect(getSettlers(voyagers)).toEqual([
+        "Adam family",
+        "Avery family",
+        "Archer family",
+    ]);
+});

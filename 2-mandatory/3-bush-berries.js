@@ -27,32 +27,14 @@ function isBushSafe(berryArray) {
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-let bushBerryColours1 = ["pink", "pink", "pink", "neon", "pink", "transparent"];
-let bushBerryColours2 = ["pink", "pink", "pink", "pink"];
+const {expect, test} = require("@jest/globals");
 
-const util = require("util");
+test("isBushSafe finds toxic busy", () => {
+    expect(isBushSafe(["pink", "pink", "pink", "neon", "pink", "transparent"]))
+        .toEqual("Toxic! Leave bush alone!");
+});
 
-function test(test_name, actual, expected) {
-  let status;
-  if (actual === expected) {
-    status = "PASSED";
-  } else {
-    status = `FAILED: expected: ${util.inspect(
-      expected
-    )} but your function returned: ${util.inspect(actual)}`;
-  }
-
-  console.log(`${test_name}: ${status}`);
-}
-
-test(
-  "isBushSafe function works - case 1",
-  isBushSafe(bushBerryColours1),
-  "Toxic! Leave bush alone!"
-);
-
-test(
-  "isBushSafe function works - case 1",
-  isBushSafe(bushBerryColours2),
-  "Bush is safe to eat from"
-);
+test("isBushSafe function finds safe bush", () => {
+    expect(isBushSafe(["pink", "pink", "pink", "pink"]))
+        .toEqual("Bush is safe to eat from");
+});
