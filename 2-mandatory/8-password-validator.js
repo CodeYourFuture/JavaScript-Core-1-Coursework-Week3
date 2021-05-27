@@ -48,14 +48,28 @@ function containsSymbol(string) {
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-const {expect, test} = require("@jest/globals");
+const { expect, test } = require("@jest/globals");
 
 test("Example 1", () => {
-    expect(validatePasswords(["Se%5", "TktE.TJTU", "384#HsHF", "dvyyeyy!5", "tryT3729"]))
-        .toEqual([false, false, true, false, false]);
+  expect(
+    validatePasswords([
+      "Se%5",
+      "TktE.TJTU",
+      "384#HsHF",
+      "dvyyeyy!5",
+      "tryT3729",
+    ])
+  ).toEqual([false, false, true, false, false]);
 });
 
 test("Example 2", () => {
-    expect(validatePasswords(["StUFf27%", "Pl3nty!", "Jai33", "shajsaUA**&&", "Pl3nty!"]))
-        .toEqual([true, true, false, false, false]);
+  expect(
+    validatePasswords([
+      "StUFf27%",
+      "Pl3nty!",
+      "Jai33",
+      "shajsaUA**&&",
+      "Pl3nty!",
+    ])
+  ).toEqual([true, true, false, false, false]);
 });

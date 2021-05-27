@@ -27,14 +27,16 @@ function isBushSafe(berryArray) {
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-const {expect, test} = require("@jest/globals");
+const { expect, test } = require("@jest/globals");
 
 test("isBushSafe finds toxic busy", () => {
-    expect(isBushSafe(["pink", "pink", "pink", "neon", "pink", "transparent"]))
-        .toEqual("Toxic! Leave bush alone!");
+  expect(
+    isBushSafe(["pink", "pink", "pink", "neon", "pink", "transparent"])
+  ).toEqual("Toxic! Leave bush alone!");
 });
 
 test("isBushSafe function finds safe bush", () => {
-    expect(isBushSafe(["pink", "pink", "pink", "pink"]))
-        .toEqual("Bush is safe to eat from");
+  expect(isBushSafe(["pink", "pink", "pink", "pink"])).toEqual(
+    "Bush is safe to eat from"
+  );
 });

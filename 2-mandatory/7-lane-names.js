@@ -10,19 +10,16 @@ function getLanes() {}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-const {expect, test} = require("@jest/globals");
+const { expect, test } = require("@jest/globals");
 
 test("getLanes function works", () => {
-    const streetNames = [
-        "Abchurch Lane",
-        "Adam's Court",
-        "Addle Hill",
-        "Addle Lane",
-        "Alban Highwalk",
-    ];
+  const streetNames = [
+    "Abchurch Lane",
+    "Adam's Court",
+    "Addle Hill",
+    "Addle Lane",
+    "Alban Highwalk",
+  ];
 
-    expect(getLanes(streetNames)).toEqual([
-        "Abchurch Lane",
-        "Addle Lane",
-    ]);
+  expect(getLanes(streetNames)).toEqual(["Abchurch Lane", "Addle Lane"]);
 });

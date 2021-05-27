@@ -11,26 +11,26 @@ function getEligibleStudents() {}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-const {expect, test} = require("@jest/globals");
+const { expect, test } = require("@jest/globals");
 
 test("getEligibleStudents function works", () => {
-    const attendance = [
-        ["Ahmed", 8],
-        ["Clement", 10],
-        ["Elamin", 6],
-        ["Adam", 7],
-        ["Tayoa", 11],
-        ["Nina", 10],
-    ];
-    expect(getEligibleStudents(attendance)).toEqual([
-        "Ahmed",
-        "Clement",
-        "Tayoa",
-        "Nina",
-    ]);
+  const attendance = [
+    ["Ahmed", 8],
+    ["Clement", 10],
+    ["Elamin", 6],
+    ["Adam", 7],
+    ["Tayoa", 11],
+    ["Nina", 10],
+  ];
+  expect(getEligibleStudents(attendance)).toEqual([
+    "Ahmed",
+    "Clement",
+    "Tayoa",
+    "Nina",
+  ]);
 });
 
 test("getEligibleStudents function can return empty array", () => {
-    const attendance = [["Jacob", 7]];
-    expect(getEligibleStudents(attendance)).toEqual([]);
+  const attendance = [["Jacob", 7]];
+  expect(getEligibleStudents(attendance)).toEqual([]);
 });

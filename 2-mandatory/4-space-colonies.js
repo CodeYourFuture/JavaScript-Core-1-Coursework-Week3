@@ -19,28 +19,28 @@ function getSettlers() {}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-const {expect, test} = require("@jest/globals");
+const { expect, test } = require("@jest/globals");
 
 test("getSettlers function works", () => {
-    const voyagers = [
-        "Adam family",
-        "Potter family",
-        "Eric",
-        "Aldous",
-        "Button family",
-        "Jude",
-        "Carmichael",
-        "Bunny",
-        "Asimov",
-        "Oscar family",
-        "Avery family",
-        "Archer family",
-        "Just A. family",
-    ];
+  const voyagers = [
+    "Adam family",
+    "Potter family",
+    "Eric",
+    "Aldous",
+    "Button family",
+    "Jude",
+    "Carmichael",
+    "Bunny",
+    "Asimov",
+    "Oscar family",
+    "Avery family",
+    "Archer family",
+    "Just A. family",
+  ];
 
-    expect(getSettlers(voyagers)).toEqual([
-        "Adam family",
-        "Avery family",
-        "Archer family",
-    ]);
+  expect(getSettlers(voyagers)).toEqual([
+    "Adam family",
+    "Avery family",
+    "Archer family",
+  ]);
 });

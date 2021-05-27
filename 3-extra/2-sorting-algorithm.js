@@ -18,7 +18,7 @@ function sortAges(arr) {}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-const {expect, test} = require("@jest/globals");
+const { expect, test } = require("@jest/globals");
 
 const agesCase1 = [
   "🎹",
@@ -39,9 +39,9 @@ const agesCase1 = [
 const agesCase2 = ["28", 100, 60, 55, "75", "🍕", "Elamin"];
 
 test("sortAges function works - case 1", () => {
-    expect(sortAges(agesCase1)).toEqual([23, 45, 55, 66, 100]);
+  expect(sortAges(agesCase1)).toEqual([23, 45, 55, 66, 100]);
 });
 
 test("sortAges function works - case 2", () => {
-    expect(sortAges(agesCase2)).toEqual([55, 60, 100]);
+  expect(sortAges(agesCase2)).toEqual([55, 60, 100]);
 });
