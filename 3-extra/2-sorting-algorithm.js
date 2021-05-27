@@ -18,8 +18,6 @@ function sortAges(arr) {}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-const { expect, test } = require("@jest/globals");
-
 const agesCase1 = [
   "🎹",
   100,

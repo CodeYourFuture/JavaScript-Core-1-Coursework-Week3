@@ -46,8 +46,6 @@ function formatPercentage() {
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-const { describe, expect, test } = require("@jest/globals");
-
 test("first5 function works for more than five elements", () => {
   const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
   const copyOfOriginal = numbers.slice();

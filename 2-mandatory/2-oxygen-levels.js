@@ -15,8 +15,6 @@ function findSafeOxygenLevel() {}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-const { expect, test } = require("@jest/globals");
-
 test("findSafeOxygenLevel function works - case 1", () => {
   expect(
     findSafeOxygenLevel(["24.2%", "11.3%", "19.9%", "23.1%", "29.3%", "20.2%"])

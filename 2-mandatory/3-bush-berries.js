@@ -27,8 +27,6 @@ function isBushSafe(berryArray) {
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-const { expect, test } = require("@jest/globals");
-
 test("isBushSafe finds toxic busy", () => {
   expect(
     isBushSafe(["pink", "pink", "pink", "neon", "pink", "transparent"])

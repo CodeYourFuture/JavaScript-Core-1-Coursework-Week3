@@ -11,8 +11,6 @@ function getEligibleStudents() {}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-const { expect, test } = require("@jest/globals");
-
 test("getEligibleStudents function works", () => {
   const attendance = [
     ["Ahmed", 8],

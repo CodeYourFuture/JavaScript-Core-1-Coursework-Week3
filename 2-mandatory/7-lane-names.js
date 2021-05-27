@@ -10,8 +10,6 @@ function getLanes() {}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-const { expect, test } = require("@jest/globals");
-
 test("getLanes function works", () => {
   const streetNames = [
     "Abchurch Lane",

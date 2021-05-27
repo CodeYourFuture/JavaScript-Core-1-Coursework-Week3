@@ -48,8 +48,6 @@ function containsSymbol(string) {
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-const { expect, test } = require("@jest/globals");
-
 test("Example 1", () => {
   expect(
     validatePasswords([

@@ -19,8 +19,6 @@ function getSettlers() {}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-const { expect, test } = require("@jest/globals");
-
 test("getSettlers function works", () => {
   const voyagers = [
     "Adam family",
