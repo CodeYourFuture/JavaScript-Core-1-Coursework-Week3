@@ -127,8 +127,6 @@ function journeyPlanner(locations, transportMode) {
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-const { describe, expect, test } = require("@jest/globals");
-
 const string1 = "I Love coding and perfect code makes me happy";
 const string2 = "I don't like to do coding";
 const string3 = "Can you scan the barcode for me";
