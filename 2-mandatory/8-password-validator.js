@@ -24,7 +24,17 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 */
 
-function validatePasswords(passwords) {}
+function validatePasswords(passwords) {
+  return passwords.map((e) => {
+    return (
+      e.length >= 5 &&
+      containsUppercaseLetter(e) &&
+      containsLowercaseLetter(e) &&
+      containsNumber(e) &&
+      containsSymbol(e)
+    );
+  });
+}
 
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {
@@ -69,5 +79,5 @@ test("Example 2", () => {
       "shajsaUA**&&",
       "Pl3nty!",
     ])
-  ).toEqual([true, true, false, false, false]);
+  ).toEqual([true, true, false, false, true]);
 });

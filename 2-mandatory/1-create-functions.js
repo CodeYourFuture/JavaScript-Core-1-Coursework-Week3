@@ -3,7 +3,10 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+function first5(arr) {
+  let arr_5 = [...arr].filter((e, index) => index < 5);
+
+  return arr_5;
 }
 
 /*
@@ -11,7 +14,9 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+function sortArray(arr) {
+  let sorted_arr = [...arr].sort();
+  return sorted_arr;
 }
 
 /*
@@ -24,7 +29,11 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+function tidyUpString(arr) {
+  let tidy_arr = [...arr].map((str) =>
+    str.trim().replace("/", "").toLowerCase()
+  );
+  return tidy_arr;
 }
 
 /*
@@ -33,7 +42,11 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
+function remove(arr, passed_index) {
+  let arr_removed_element = [...arr].filter(
+    (e, index) => index !== passed_index
+  );
+  return arr_removed_element;
 }
 
 /*
@@ -44,9 +57,14 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
+function formatPercentage(arr) {
+  let for_per_arr = [...arr].map((e) =>
+    e < 100 ? parseFloat(e.toFixed(2)) + "%" : "100%"
+  );
+  return for_per_arr;
 }
 
+console.log(formatPercentage([23, 18.103, 187.2, 0.372]));
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("first5 function works for more than five elements", () => {
