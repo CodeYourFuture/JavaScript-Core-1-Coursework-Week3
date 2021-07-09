@@ -24,7 +24,31 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 */
 
-function validatePasswords(passwords) {}
+function validatePasswords(passwords) {
+  const notUsedBefore = getPasswordsNotUsedBefore(passwords);  // create an array with getPasswordsNotUsedBefore. To see what this function does, check the code under validatePasswords function
+  return notUsedBefore.map((element) => {
+    return (
+      containsLowercaseLetter(element) &&
+      containsUppercaseLetter(element) &&
+      containsNumber(element) &&
+      containsSymbol(element) &&
+      element.length >= 5
+    );
+  }); 
+}
+
+// Check if the previous passwords in the array are already used; if they aren't used before then push them into the elements array, otherwise push false instead of the element itself
+function getPasswordsNotUsedBefore (array) {
+  let elements = [];
+  for(let i = 0; i < array.length; i++) {
+    if(array.slice(0, i).includes(array[i])) {
+      elements.push(false);
+    } else {
+      elements.push(array[i]);
+    }
+  }
+  return elements;
+}
 
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {

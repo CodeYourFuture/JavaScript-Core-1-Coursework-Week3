@@ -9,6 +9,18 @@
 
 var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
+const multipliesOfThreeAndFive = arr.map(num => {
+  return num % 15 === 0 ? 'FizzBuzz' : num % 5 === 0 ? 'Buzz' : num % 3 === 0 ? 'Fizz' : num;
+})
+
+console.log(multipliesOfThreeAndFive,);
+
+multipliesOfThreeAndFive.forEach(num => { 
+  console.log(num);
+})
+
+console.log(arr);
+
 /* EXPECTED OUTPUT */
 
 /*

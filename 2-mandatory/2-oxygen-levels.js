@@ -11,7 +11,16 @@
     Some string methods that might help you here are .replace() and .substring(). 
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(oxygenLevelArray) {
+ 
+  const oxygenNumber = oxygenLevelArray.map(element => {
+    return element.includes('%') ? parseFloat(element) / 100.0 : parseFloat(element);
+  });  
+  const firstPlanet = oxygenNumber.find(element => element > 0.1950 && element < 0.2350); 
+  const index = oxygenNumber.indexOf(firstPlanet);  
+  return oxygenLevelArray[index];
+}
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

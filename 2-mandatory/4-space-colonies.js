@@ -14,9 +14,11 @@
         Logic: Only strings that start with A, and finish with family
   
 */
-
-function getSettlers() {}
-
+function getSettlers(passengersArray) {
+  return [passengersArray].filter(element => {
+    return element.startsWith("A") && element.includes("family");
+  })
+}
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("getSettlers function works", () => {

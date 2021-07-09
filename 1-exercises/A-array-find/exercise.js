@@ -4,8 +4,14 @@
 */
 
 // write your code here
+function findLongNameThatStartsWithA(arr){
+  const defineName = arr.find(element => {
+    return (element.charAt(0) === "A") && (element.length > 7);
 
-var names = [
+  });
+  return defineName;
+}
+const names = [
   "Rakesh",
   "Antonio",
   "Alexandra",
@@ -17,7 +23,7 @@ var names = [
   "Ahmed",
 ];
 
-var longNameThatStartsWithA = findLongNameThatStartsWithA(names);
+const longNameThatStartsWithA = findLongNameThatStartsWithA(names);
 
 console.log(longNameThatStartsWithA);
 
