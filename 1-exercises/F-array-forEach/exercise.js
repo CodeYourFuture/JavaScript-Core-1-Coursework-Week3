@@ -7,10 +7,22 @@
   An array with numbers 1-15 has been provided.
 */
 
-var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+
+array.forEach(function (element) {
+  //console.log(element);       //! for debug
+  if (element % 3 == 0 && element % 5 == 0) {
+    console.log("Fizz Buzz");
+  } else if (element % 3 == 0) {
+    console.log("Fizz");
+  } else if (element % 5 == 0) {
+    console.log("Buzz");
+  } else {
+    console.log(element);
+  }
+});
 
 /* EXPECTED OUTPUT */
-
 /*
 1
 2

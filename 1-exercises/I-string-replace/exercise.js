@@ -13,8 +13,19 @@
 let story =
   "I like dogs. One day I went to the park and I saw 10 dogs. It was a great day.";
 
-let result = story.replace("", "");
+let result = story.replace(
+  "I like dogs. One day I went to the park and I saw 10 dogs. It was a great day.",
+  "I like cats. One night I went to the park and I saw 100000 cats. It was a brilliant night."
+);
 
+//! another solution with replace-once npm package `npm install --save replace-once`
+let result1 = require("replace-once");
+var str =
+  "I like dogs. One day I went to the park and I saw 10 dogs. It was a great day.";
+var find = ["dogs", "day", "10", "dogs", "great", "day"];
+var replace = ["cats", "night", "100000", "cats", "brilliant", "night"];
+result1(str, find, replace, "gi");
+console.log(result1(str, find, replace, "gi"));
 /* EXPECTED OUTPUT */
 
 const util = require("util");

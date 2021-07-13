@@ -7,11 +7,13 @@
 */
 
 let statement = "I do not like programming";
-
-let result = "";
+let firstStat = statement.substring(0, 4);
+let secondStat = statement.substring(8, statement.length);
+console.log(firstStat); //! for debug
+console.log(secondStat); //! for debug
+let result = firstStat + secondStat;
 
 console.log(result);
-
 /* EXPECTED OUTPUT 
 
   "I do like programming"

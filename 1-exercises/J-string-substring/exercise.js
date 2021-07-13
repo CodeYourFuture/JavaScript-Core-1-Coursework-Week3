@@ -6,8 +6,15 @@
 
 let statement = "I like programming and dogs";
 
-statement = statement.substring();
+//! for determind position for words 
+console.log(statement.length);
+console.log(statement.indexOf("ing"));
+console.log(statement.charAt(17));
 
+// main statement
+statement = statement.substring(0, 18);
+
+// log result
 console.log(statement);
 
 /* EXPECTED OUTPUT 

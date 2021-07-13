@@ -5,9 +5,15 @@
 var students = ["Omar", "Austine", "Dany", "Swathi", "Lesley", "Rukmini"];
 var group = ["Austine", "Dany", "Swathi", "Daniel"];
 
-var groupIsOnlyStudents; // complete this statement
+//! for test purpose
+let students1 = ["Austine", "Dany", "Swathi", "Daniel"];
+let group1 = ["Austine", "Dany", "Swathi", "Daniel"];
 
-if (groupIsOnlyStudents) {
+function isEqual(group) {
+  return students.indexOf(group) >= 0;
+}
+
+if (group.every(isEqual)) {
   console.log("The group contains only students");
 } else {
   console.log("The group does not contain only students");

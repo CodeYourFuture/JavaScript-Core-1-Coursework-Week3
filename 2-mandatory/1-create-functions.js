@@ -3,16 +3,24 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+function first5(array) {
+  let size = 5;
+  return (items = array.slice(0, size));
 }
-
+console.log(first5([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])); //! Debug
 /*
 Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+
+function sortArray(arr) {
+  valueResult = arr.sort();
+  return valueResult;
 }
+
+var animals = ["cat", "dog", "elephant", "bee", "ant"]; //! Debug
+console.log(sortArray(animals)); //! Debug
 
 /*
 NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
@@ -24,17 +32,41 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+
+let nameRaw = [
+  "  /Daniel",
+  " /Sanyia",
+  "AnTHonY",
+  "irina",
+  " Gordon",
+  "ashleigh   ",
+  "   Alastair  ",
+  " anne marie  ",
+];
+
+function tidyUpString(arr) {
+  for (i = 0; i < arr.length; i++) {
+    let fNameRaw = nameRaw[i].trim().replace("/", "").toLowerCase();
+    console.log(fNameRaw);
+  }
 }
+
+tidyUpString(nameRaw); //! Debug
 
 /*
 Write a function that:
 - Takes an array and an index as input.
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
+var testArray1 = [0, 1, 2, 3, 4, 5];
 
-function remove() {
+function remove(origArray, arrIndex) {
+  let i = arrIndex;
+  let cloneArray = origArray.slice();
+  cloneArray.splice(i, 1);
+  console.log(cloneArray.join(", "));
 }
+remove(testArray1, 3); //! Debug
 
 /*
 Write a function that:
@@ -43,9 +75,21 @@ Write a function that:
 - The numbers must be rounded to 2 decimal places.
 - Numbers greater 100 must be replaced with 100.
 */
+let testArray5 = [23.58447, 18.103, 187.2, 0.372];
+//console.log(testArray5[0].toFixed(2));
 
-function formatPercentage() {
+function formatPercentage(newArr) {
+  for (let i = 0; i < newArr.length; i++) {
+    if (newArr[i] > 100) {
+      let maxValue = 100;
+      newArr[i] = maxValue;
+      console.log(newArr[i]);
+    } else if (newArr[i] < 100) {
+      console.log(newArr[i].toFixed(2));
+    }
+  }
 }
+formatPercentage(testArray5); //! DEBUG
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
