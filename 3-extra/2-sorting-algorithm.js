@@ -14,8 +14,47 @@ You don't have to worry about making this algorithm work fast! The idea is to ge
 "think" like a computer and practice your knowledge of basic JavaScript.
 */
 
-function sortAges(arr) {}
 
+
+//take all numbers from array
+function filteredArrayWithNumber (array){
+  const arrayWithNumber = array.filter(element =>{ return Number(element) === element; });
+  return arrayWithNumber;
+}
+//sorted array
+function sortAges(arr) {
+  const sortedArr = filteredArrayWithNumber(arr);
+  return musasSortFunction(sortedArr);
+//  return sortedArr.sort((a,b)=>a-b);
+}
+///***********SORTED ARRAY WITHOUT SORT() */
+function musasSortFunction(array){
+  const sortedArray =[];
+//take all array 
+  array.forEach(element => {
+// for every element check new array
+    for (let i = 0; i < array.length; i++) {
+// if array empty, push your element and stop loop
+      if(sortedArray.length === 0){ 
+        sortedArray.push(element);
+         break;
+        }
+//if element smaller or equal than sortedArray element, put before than it and stop loop
+      if(element <=sortedArray[i]){
+// console.log(`${element} smaller than ${sortedArray[i]} ----pushed array`);
+        sortedArray.splice(i,0,element);
+        break;
+// if you can not find until end of the array, its biggest element. push end of the sortedArray
+      }else if(i === sortedArray.length-1){//arayin sonuna gelindi sona ekle
+        sortedArray.push(element);
+        break;
+      }
+    }
+  });
+  // console.log(`SORTED SOLUTION: ${sortedArray} k<<<<<<<<<<<<<`);
+  return sortedArray;
+}
+////npm run extra-tests
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 const agesCase1 = [

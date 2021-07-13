@@ -14,9 +14,20 @@
         Logic: Only strings that start with A, and finish with family
   
 */
+//check is it includes 'family'
 
-function getSettlers() {}
-
+//if it is check first letter
+function getSettlers(array) {
+  const colonies = array.filter(names => {
+    if(names.includes('family')){
+      return names.charAt(0)==='A';
+    }else {
+      return false;
+    }
+  });
+  return colonies;
+}
+//npm test -- --testPathPattern 4-space-colonies.js
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("getSettlers function works", () => {

@@ -11,8 +11,16 @@
     Some string methods that might help you here are .replace() and .substring(). 
 */
 
-function findSafeOxygenLevel() {}
-
+function findSafeOxygenLevel(array) {
+  return array.find(str =>{
+        let numberVersion =str.substring(0, str.length-1);
+        numberVersion = parseFloat(numberVersion);
+        return (numberVersion > 19.5 && numberVersion < 23.5);
+  });
+  
+  
+}
+///// npm test -- --testPathPattern 2-oxygen-levels.js
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("findSafeOxygenLevel function works - case 1", () => {

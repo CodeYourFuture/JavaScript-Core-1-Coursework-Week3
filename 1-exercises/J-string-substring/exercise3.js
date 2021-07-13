@@ -6,9 +6,13 @@
   HINT: You will need to use .substring() twice
 */
 
-let statement = "I do not like programming";
+const statement = "I do not like programming";
 
-let result = "";
+const indexOfNot = statement.indexOf('not');
+const firsPart = statement.substring(0,indexOfNot);
+const secondPart = statement.substring(indexOfNot+4);
+
+const result = firsPart.concat(secondPart);
 
 console.log(result);
 

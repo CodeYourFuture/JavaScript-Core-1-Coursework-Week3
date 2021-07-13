@@ -13,12 +13,10 @@ let names = [
   "Shae Patton",
   "Arron Graham",
 ];
-
-names[0] = names[0].substring();
-names[1] = names[1].substring();
-names[2] = names[2].substring();
-names[3] = names[3].substring();
-names[4] = names[4].substring();
+names = names.map(fullName => {
+  const spaceIndex = fullName.indexOf(' ');
+  return fullName.substring(0,spaceIndex);
+});
 
 names.forEach((name) => {
   console.log(name);

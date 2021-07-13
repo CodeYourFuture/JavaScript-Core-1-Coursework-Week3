@@ -20,11 +20,18 @@
   
   Let's first look at an example that will teach you how to use these methods.
 */
-
+let isSafe =false;
 function isBushSafe(berryArray) {
-  //Write your code here
-}
-
+    isSafe = berryArray.every(fruit => {
+    return fruit === "pink";
+  });
+  if(isSafe){
+    return 'Bush is safe to eat from';
+  } else {
+    return "Toxic! Leave bush alone!";
+  }
+}  
+////npm test -- --testPathPattern 3-bush-berries.js  
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("isBushSafe finds toxic busy", () => {

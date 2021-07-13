@@ -3,7 +3,8 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+function first5(arr) {
+  return arr.slice(0,5);
 }
 
 /*
@@ -11,7 +12,12 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+function sortArray(arr) {
+  const sortedArr = arr.slice();
+   sortedArr.sort();
+  // console.log(arr,'<-----ORIGINAL ARRAY');
+  // console.log(sortedArr.sort(),'<-----SORTED ARRAY');
+  return sortedArr;
 }
 
 /*
@@ -24,7 +30,11 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+function tidyUpString(arr) {
+  const newArr = arr.map(element => {
+    return element.trim().replace("/","").toLowerCase();
+  });
+  return newArr;
 }
 
 /*
@@ -33,7 +43,10 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
+function remove(arr, index) {
+ const firstPart = arr.slice(0, index);
+ const secondPart = arr.slice(index+1);
+ return firstPart.concat(secondPart);
 }
 
 /*
@@ -44,9 +57,17 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
+function formatPercentage(arr) {
+  return arr.map(num => {
+    if(num >=100){
+      return `100%`;
+  
+    } else {
+      return `${Math.trunc(num*100)/100}%`;
+    }
+  });
 }
-
+/////npm test -- --testPathPattern 1-create-functions.js 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("first5 function works for more than five elements", () => {
