@@ -5,8 +5,8 @@
 */
 
 let statement = "I like programming and dogs";
-
-statement = statement.substring();
+const removeWords = "and dogs"
+statement = statement.substring(0,(statement.length - removeWords.length));
 
 console.log(statement);
 

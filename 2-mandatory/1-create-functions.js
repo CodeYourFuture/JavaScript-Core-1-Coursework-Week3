@@ -3,16 +3,21 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+function first5(newArray) {
+  return newArray.slice(0, 5);
 }
-
+console.log(first5([10, 20, 30, 40, 50, 60, 70, 80]));
 /*
 Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+
+function sortArray(sortedArray) {
+  const newSortedArr = sortedArray.slice(0, sortedArray.length);
+  return newSortedArr.sort();
 }
+console.log(sortArray([10, 20, 40, 30, 50, 60, 70, 80]));
 
 /*
 NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
@@ -24,8 +29,13 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+function tidyUpString(stringOfArrays) {
+  const newStrArr = stringOfArrays.map((element) => {
+    return element.trim().replace("/", "").toLowerCase();
+  });
+  return newStrArr;
 }
+console.log(tidyUpString([" RAT ", "cAt", "haT"]));
 
 /*
 Write a function that:
@@ -33,8 +43,12 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
+function remove(removedIndexArr, index) {
+  let IndxRemovedArr = removedIndexArr.slice(0, removedIndexArr.length);
+  IndxRemovedArr.splice(index, 1);
+  return IndxRemovedArr;
 }
+console.log(remove(["a", "b", "c", "d"]));
 
 /*
 Write a function that:
@@ -43,10 +57,19 @@ Write a function that:
 - The numbers must be rounded to 2 decimal places.
 - Numbers greater 100 must be replaced with 100.
 */
+//////////////////////////////////////////////
 
-function formatPercentage() {
+function formatPercentage(numberArr) {
+  const newStr = numberArr.map(function (number) {
+    if (number > 100) {
+      return `${100}%`;
+    } else {
+      return `${parseFloat(number.toFixed(2))}%`;
+    }
+  });
+  return newStr;
 }
-
+console.log(formatPercentage([15, 18.103, 177.2, 0.162]));
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("first5 function works for more than five elements", () => {

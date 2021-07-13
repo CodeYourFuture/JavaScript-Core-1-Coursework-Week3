@@ -11,7 +11,21 @@
     Some string methods that might help you here are .replace() and .substring(). 
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(oxygenArr) {
+  let firstSafePlanet;
+  oxygenArr.forEach(function (element) {
+    const oxygenNum = parseFloat(element);
+    if (
+      oxygenNum > 19.5 &&
+      oxygenNum < 23.5 &&
+      firstSafePlanet === undefined &&
+      element.includes("%")
+    ) {
+      firstSafePlanet = element;
+    }
+  });
+  return firstSafePlanet;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
