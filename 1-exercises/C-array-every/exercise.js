@@ -3,9 +3,12 @@
 */
 
 var students = ["Omar", "Austine", "Dany", "Swathi", "Lesley", "Rukmini"];
-var group = ["Austine", "Dany", "Swathi", "Daniel"];
+var group = ["Austine", "Dany", "Swathi","Daniel"];
 
-var groupIsOnlyStudents; // complete this statement
+function isStudent(name){
+  return students.includes(name) ;
+}
+ var groupIsOnlyStudents = group.every(isStudent) ; // complete this statement
 
 if (groupIsOnlyStudents) {
   console.log("The group contains only students");

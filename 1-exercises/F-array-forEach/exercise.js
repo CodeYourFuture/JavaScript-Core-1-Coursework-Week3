@@ -9,6 +9,33 @@
 
 var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
+function isMultiple3 (number){
+  return  number %3===0  ;
+}
+function isMultiple5 (number){
+  return  number%5===0 ;
+}
+function isMultiple3And5 (number){
+  return  number%3===0&& number%5===0 ;
+}
+function fizzBuzz (number){
+  if (isMultiple3(number)) {
+    "Fizz"
+  } else if (isMultiple5(number)){
+"Buzz"
+  
+
+} else if  (isMultiple3And5 (number)){
+"FizzBuzz"
+
+}
+
+}
+
+
+
+let Multiples = arr.forEach(fizzBuzz) ;
+console.log(Multiples);
 /* EXPECTED OUTPUT */
 
 /*
