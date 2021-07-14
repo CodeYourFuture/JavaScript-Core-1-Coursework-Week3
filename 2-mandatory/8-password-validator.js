@@ -23,7 +23,39 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 */
 
-function validatePasswords(passwords) {}
+function validatePasswords(passwords){
+
+const noneWordCharacter =  (/[/!#$%.*&]/);
+ const number = passwords.match(/0-9]/);
+ const lowerCase = passwords(/a-z]/); 
+const upperCase = passwords(/A-Z]/);
+        if(passwords.length < 5){
+           return true;
+        }else if (passwords.test(noneWordCharacter)){
+            return  false;
+      }else if ( password.test(number)) {
+         return false;
+       }else if ( password.test(lowerCase)) {
+          return false;
+        }else if ( password.test(upperCase)) {
+        }
+      }
+
+//       return true;function upperCasePasswords(passwords) {
+// ret
+//   function lowerCasePasswords(passwords) {
+
+
+  // const character = passwords.length < 5;
+  // const number = passwords.match(/0-9]/);
+  // const lowerCase = passwords(/a-z]/);
+  
+  // const upperCase = passwords(/A-Z]/);
+  // const symbol = passwords /[/!#$%.*&]/
+  // const matchPassword = passwords.map((character, number,lowerCase,upperCase,symbol))=>{
+  // return character &&number && lowerCase && upperCase && symbol ?true : false;
+
+  
 
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {

@@ -3,17 +3,22 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+function first5(arr) {
+  const newArr = arr.slice(0,5)
+ return  newArr;
 }
+
 
 /*
 Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+function sortArray(array) {
+  const copyArray= [...array]
+  const newArraySort = copyArray.sort();
+  return newArraySort;
 }
-
 /*
 NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
 Think about what is better about this solution than your one last week, and what is worse.
@@ -24,16 +29,48 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+function tidyUpString(str) {
+
+   const newStr = str.map(function tidyUpStr(s){
+     const removeSpace=s.trim();
+     const removeSlash= removeSpace.replace("/", "");
+     const addLowerCase = removeSlash.toLowerCase();
+     return addLowerCase;
+      
+
+  });
+return newStr;
+
 }
 
+
+
+
+
+// if (str.length <=2) {
+//    return str
+// }else{
+//    return str.substring(1, str,length-1);
+// }
+
+// const removeSlash =[];
+//   const arrLowerCase =[];
+//   for  (let i = 0; < eleArray.length; i++ ){
+//     if (eleArray.indexOf)
+//   removeArray = eleArray[i].trim();
+//  }
+// }
 /*
 Write a function that:
 - Takes an array and an index as input.
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
+function remove(arr, index) {
+   const removeIndexStart= arr.slice (0, index);
+   const removeIndexEnd = arr.slice (index +1, arr.length);
+      return removeIndexStart.concat(removeIndexEnd);
+
 }
 
 /*
@@ -44,8 +81,27 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
-}
+function formatPercentage(array) {
+  const formatted = array.map(function tidyPercentage(p){
+
+       // The numbers must be rounded to 2 decimal places.
+       const rounded = p.toFixed(2)
+       // Numbers greater than 100 must be replaced with 100
+       const to100 = p > 100 ? 100 : p;
+       return `${rounded}%`;
+    });
+  return formatted;
+
+  }
+
+
+// for (let i = 0; i <array.length; i++ ){
+//   if (array[i] > 100){
+
+//   }else {
+//    return arr;
+//   }
+// }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

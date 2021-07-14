@@ -7,8 +7,12 @@
   An array with numbers 1-15 has been provided.
 */
 
-var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
-
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+const FizzBuzz = arr.forEach(function(arr);
+// for (let i = 0; i < arr.length; i++) {
+  for (let i = 0; i < FizzBuzz.length; i++ {
+    console.log(FizzBuzz[i]); 
+  }
 /* EXPECTED OUTPUT */
 
 /*

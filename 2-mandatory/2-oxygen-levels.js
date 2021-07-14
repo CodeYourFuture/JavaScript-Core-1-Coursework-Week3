@@ -10,8 +10,36 @@
 
     Some string methods that might help you here are .replace() and .substring(). 
 */
+// const findSafeOxygenLevel = ["24.2%", "11.3%", "19.9%", "23.1%", "29.3%", "20.2%"];
 
-function findSafeOxygenLevel() {}
+// input is  string array
+//  output is returning string 
+
+ function safeLevels(arr){
+   const convert = arr.map(function(element){
+      return parseFloat(element);
+   });
+     const safeLevels = convert.filter(function(element){
+       return element > 19.5 && element < 23.5;
+     });
+      return `${safeLevels[0]}%`;
+    }
+//    return arr[2];
+//  }
+//  const oxygenLevel = "29.3%";
+//  const number = oxygenLevel.split("%")
+//  // console.log(Number(number[0]));//"24.2"
+ 
+//  const num = Number(number[0])// 24.2
+ 
+//    if((num > 19.5) && (num < 23.5 )){
+//        console.log ("yes it is ")
+  //  }
+// const  safeLevel= findSafeOxygenLevel.substring(0,15);
+ 
+
+
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
