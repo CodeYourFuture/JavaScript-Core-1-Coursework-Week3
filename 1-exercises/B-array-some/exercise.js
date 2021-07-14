@@ -1,3 +1,4 @@
+
 /*
   You are given a program that logs pairings between mentors and students
   It fails because the array `pairsById` can contain null values
@@ -15,10 +16,22 @@ var pairsByIndex = [[0, 3], [1, 2], [2, 1], null, [3, 0]];
 var students = ["Islam", "Lesley", "Harun", "Rukmini"];
 var mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
 
-var pairs = pairsByIndex.map(function (indexes) {
-  var student = students[indexes[0]];
-  var mentor = mentors[indexes[1]];
-  return [student, mentor];
-});
+var isAnElementNull = function(element){
+  return element === null;
+}
+
+var isPairsByIndexContainNull = pairsByIndex.some(isAnElementNull);
+
+function pairing(indexes) {
+  if(isPairsByIndexContainNull){ 
+    process.exit(1);                 
+  } else {                               
+   var student = students[indexes[0]];
+   var mentor = mentors[indexes[1]];
+   return [student, mentor];
+  }
+}
+
+var pairs = pairsByIndex.map(pairing);
 
 console.log(pairs);

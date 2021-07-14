@@ -11,7 +11,21 @@
     Some string methods that might help you here are .replace() and .substring(). 
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(arrayOfOxygenLevels) {
+  var newArrayOfOxygenLevels = [];
+  var safePlanets = [];
+  arrayOfOxygenLevels.map(element => {
+    if(element.includes("%")){
+      newArrayOfOxygenLevels.push(Number(element.replace("%", "")));
+    }
+  })
+  newArrayOfOxygenLevels.map(element => {
+    if(element > 19.5 && element < 23.5){
+      safePlanets.push(element + "%");
+    }
+  });
+  return safePlanets[0];
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

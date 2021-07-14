@@ -6,7 +6,15 @@
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
 
-function getLanes() {}
+function getLanes(streetsInLondon) {
+  var streetsWithLane = [];
+  streetsInLondon.filter(element => {
+    if(element.includes("Lane")){
+      streetsWithLane.push(element);
+    }
+  })
+  return streetsWithLane;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

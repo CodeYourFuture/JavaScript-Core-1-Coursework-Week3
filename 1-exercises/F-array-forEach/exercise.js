@@ -9,6 +9,22 @@
 
 var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
+
+function fizzBuzz (array){
+  array.forEach(element => {
+    if(element % 3 === 0 && element % 5 === 0){
+      console.log("'FizzBuzz'");
+    } else if( element % 3 === 0){
+      console.log("'Fizz'");
+    } else if( element % 5 === 0){
+      console.log("'Buzz'");
+    } else {
+      console.log(`${element}`);
+    }
+  })
+}
+
+console.log(fizzBuzz(arr));
 /* EXPECTED OUTPUT */
 
 /*
@@ -28,3 +44,5 @@ var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 14
 'FizzBuzz'
 */
+
+//Why do I keep getting an undefined at the end of my result in the console?

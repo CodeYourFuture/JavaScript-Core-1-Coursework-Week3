@@ -5,6 +5,16 @@
 
 // write your code here
 
+//Properties to filter by
+var filterProperties = (element) => {
+  return element.startsWith("A") && element.length > 7;
+}
+
+//filtering
+function findLongNameThatStartsWithA(array){ 
+  var toFind = array.find(filterProperties);
+  return toFind;
+}
 var names = [
   "Rakesh",
   "Antonio",
@@ -19,7 +29,9 @@ var names = [
 
 var longNameThatStartsWithA = findLongNameThatStartsWithA(names);
 
+
 console.log(longNameThatStartsWithA);
+
 
 /* EXPECTED OUTPUT */
 // "Alexandra"

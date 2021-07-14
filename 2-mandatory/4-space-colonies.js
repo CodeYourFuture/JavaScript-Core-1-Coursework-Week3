@@ -15,7 +15,15 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(array) {
+  var toSearchForPlanet = [];
+  array.map(element => {
+    if(element.includes("family") && element.startsWith("A")){
+      toSearchForPlanet.push(element);
+    }
+  })
+  return toSearchForPlanet;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

@@ -1,5 +1,5 @@
 /* 
-  You are given an statement
+  You are given a statement
 
   You should remove the word "not" by using .substring() and log the result.
 
@@ -8,7 +8,7 @@
 
 let statement = "I do not like programming";
 
-let result = "";
+let result = statement.substring(0,5) + statement.substring(9, statement.length);
 
 console.log(result);
 
