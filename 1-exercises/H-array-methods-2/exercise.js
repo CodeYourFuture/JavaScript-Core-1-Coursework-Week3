@@ -1,22 +1,25 @@
-/*
-  Array methods - .slice()
-  ------------------------
-  The variable `firstFive` should contain the first five items of `everyone`
-  The variable `lastFive` should contain the last five items of `everyone`
-*/
+/**
+ * /*
+ *   Array methods - .slice()
+ *   ------------------------
+ *   The variable `firstFive` should contain the first five items of `everyone`
+ *   The variable `lastFive` should contain the last five items of `everyone`
+ *
+ * @format
+ */
 
-var everyone = [
-  "Daniel",
-  "Irina",
-  "Rares",
-  "Rukmini",
-  "Abdul",
-  "Austine",
-  "Swathi",
+const everyone = [
+	"Daniel",
+	"Irina",
+	"Rares",
+	"Rukmini",
+	"Abdul",
+	"Austine",
+	"Swathi",
 ];
 
-var firstFive; // complete this statement
-var lastFive; // complete this statement
+const firstFive = everyone.slice(0, 5); // complete this statement
+const lastFive = everyone.slice(-5); // complete this statement
 
 /* 
   DO NOT EDIT BELOW THIS LINE

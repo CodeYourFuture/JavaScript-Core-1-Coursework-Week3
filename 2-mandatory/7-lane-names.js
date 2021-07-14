@@ -6,7 +6,12 @@
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
 
-function getLanes() {}
+function getLanes(streetNames) {
+  const result = streetNames.filter(word => word.includes('Lane'));
+  return result;
+}
+
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

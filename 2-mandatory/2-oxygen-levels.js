@@ -11,7 +11,15 @@
     Some string methods that might help you here are .replace() and .substring(). 
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(levels) {
+  const minSafeLevel=19.5; const maxSafeLevel=23.5;
+   const filteredArray= levels.filter(element=>element.includes("%"));
+   const result = filteredArray.map(element=>element.replace("%",'')).map(Number);  
+   const safePlanet= result.find(element=>element>minSafeLevel && element<maxSafeLevel);
+    if (safePlanet)   
+    return `${safePlanet}%`;
+    }
+  
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
