@@ -9,6 +9,14 @@
 
 var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
+// var multiplesOf3 = arr.forEach(number => number);
+let multiplesOf3 = [3, 6, 9, 12, 15];
+let multiplesOf5 = [5, 10, 15];
+
+var Fizz = multiplesOf3.forEach(function isFizz(number){
+  return multiplesOf3.replace(number , "Fizz");
+});
+
 /* EXPECTED OUTPUT */
 
 /*

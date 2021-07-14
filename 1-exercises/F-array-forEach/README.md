@@ -20,7 +20,7 @@ Say we want to log to the console a list of names.
 
 ```js
 var names = ["Daniel", "mozafar", "irina"];
-```
+``` 
 
 We can use `.forEach()` to go through the array, item by item, and call a function we provide.
 
