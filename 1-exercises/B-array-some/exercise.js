@@ -12,12 +12,17 @@ var pairsByIndex = [[0, 3], [1, 2], [2, 1], null, [3, 0]];
 // https://nodejs.org/api/process.html#process_process_exit_code
 // process.exit(1);
 
-var students = ["Islam", "Lesley", "Harun", "Rukmini"];
-var mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
+const students = ["Islam", "Lesley", "Harun", "Rukmini"];
+const mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
 
-var pairs = pairsByIndex.map(function (indexes) {
-  var student = students[indexes[0]];
-  var mentor = mentors[indexes[1]];
+const pairs = pairsByIndex.map(function (indexes) {
+  const student = students[indexes[0]];
+  const mentor = mentors[indexes[1]];
+  const isNull = pairsByIndex.some(element => element === null);
+  if (isNull){
+    console.log("Error!");
+    process.exit(1);
+  }  
   return [student, mentor];
 });
 
