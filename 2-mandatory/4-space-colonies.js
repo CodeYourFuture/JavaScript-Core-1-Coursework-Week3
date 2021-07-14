@@ -15,7 +15,12 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(settelersArray) {
+  let setteledFamilies = settelersArray.filter((element) => {
+    return element.startsWith("A") && element.endsWith("family");
+  });
+  return setteledFamilies;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

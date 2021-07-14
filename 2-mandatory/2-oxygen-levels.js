@@ -10,8 +10,15 @@
 
     Some string methods that might help you here are .replace() and .substring(). 
 */
-
-function findSafeOxygenLevel() {}
+//
+function creatingArrayOfFloats(array) {
+  let arr2 = array.map((element) => parseFloat(element));
+  return arr2;
+}
+function findSafeOxygenLevel(oxegenArr) {
+  const foundSafeOxygen = oxegenArr.find((element) => element > 19.5);
+}
+//test code npm test -- --testPathPattern 6-journey-planner
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
