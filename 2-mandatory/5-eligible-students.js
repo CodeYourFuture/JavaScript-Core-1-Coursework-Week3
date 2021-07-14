@@ -7,7 +7,13 @@
   - Returns an array containing only the names of the who have attended AT LEAST 8 classes
 */
 
-function getEligibleStudents() {}
+function getEligibleStudents(arr) {
+   let checkAttendance = arr.filter((elem) => {
+     if (elem[1] > 7) return elem.splice(1, 1);
+   });
+   let eligibleStudents = [].concat.apply([], checkAttendance);
+   return eligibleStudents;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

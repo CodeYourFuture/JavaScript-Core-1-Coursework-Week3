@@ -23,7 +23,19 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 */
 
-function validatePasswords(passwords) {}
+function validatePasswords(passwords) {
+  let checkLength = passwords.map(
+    (elem, index) =>
+      passwords.indexOf(elem) == index && //checking duplicate element. !== will return true if array contains duplicate elements
+      elem.length > 5 && // element length greater then 5
+      containsUppercaseLetter(elem) && //callback function check uppercase
+      containsLowercaseLetter(elem) && //callback function check lowercase
+      containsNumber(elem) && // callback function contains numbers
+      containsSymbol(elem) // callback function contains symbol
+  );
+
+  return checkLength;
+}
 
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {

@@ -8,6 +8,23 @@
 */
 
 var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+// forEach() 
+// Number % 3 == "Fizz"
+// Number % 5 == "Buzz"
+// Number % 3 && arr.length % 5 == "FizzBuzz"
+
+let checkNumber = number =>  number % 3 == 0 && number % 5 == 0
+    ? "FizzBuzz"
+    : number % 5 == 0
+    ? "Buzz"
+    : number % 3 == 0
+    ? "Fizz"
+    : number;
+
+
+let printMessage = arr.map(checkNumber).forEach(function (name) {
+  console.log(name);
+  });
 
 /* EXPECTED OUTPUT */
 
