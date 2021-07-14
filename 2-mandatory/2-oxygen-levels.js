@@ -11,7 +11,13 @@
     Some string methods that might help you here are .replace() and .substring(). 
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel() {
+  const bushIsSafe = berryArray.every((element) => element === "pink");
+  if (bushIsSafe) {
+    return "Bush is safe to eat from";
+  } else return "Toxic! Leave bush alone!";
+
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

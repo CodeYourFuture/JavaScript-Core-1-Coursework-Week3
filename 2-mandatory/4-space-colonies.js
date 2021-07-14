@@ -15,7 +15,12 @@
   
 */
 
-function getSettlers() {}
+function getSettlers() {
+  return Voyager.filter((ele) =>
+   ele.includes("family") &&
+   ele.startsWith("A")
+  );
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

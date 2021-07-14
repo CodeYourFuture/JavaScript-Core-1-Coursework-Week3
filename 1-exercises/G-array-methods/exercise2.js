@@ -4,11 +4,14 @@
   The variable everyone should be an array containing both mentors and students.
 */
 
-var mentors = ["Daniel", "Irina", "Rares"];
-var students = ["Rukmini", "Abdul", "Austine", "Swathi"];
+//var mentors = ["Daniel", "Irina", "Rares"];
+//var students = ["Rukmini", "Abdul", "Austine", "Swathi"];
 
-var everyone; // complete this statement
+const mentors = ["Daniel", "Irina", "Rares"];
+const students = ["Rukmini", "Abdul", "Austine", "Swathi"];
 
+//var everyone; // complete this statement
+const everyone = mentors.concat(students);
 /* 
   DO NOT EDIT BELOW THIS LINE
   --------------------------- */

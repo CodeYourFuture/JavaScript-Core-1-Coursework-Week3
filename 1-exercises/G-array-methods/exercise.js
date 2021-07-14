@@ -3,8 +3,10 @@
   --------------------
 */
 
-var numbers = [3, 2, 1];
-var sortedNumbers; // complete this statement
+//var numbers = [3, 2, 1];
+//var sortedNumbers; // complete this statement
+const numbers = [3, 2, 1];
+const sortedNumbers = numbers.sort()
 
 /* 
   DO NOT EDIT BELOW THIS LINE

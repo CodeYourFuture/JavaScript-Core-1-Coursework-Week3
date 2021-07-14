@@ -15,10 +15,23 @@ var pairsByIndex = [[0, 3], [1, 2], [2, 1], null, [3, 0]];
 var students = ["Islam", "Lesley", "Harun", "Rukmini"];
 var mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
 
-var pairs = pairsByIndex.map(function (indexes) {
-  var student = students[indexes[0]];
-  var mentor = mentors[indexes[1]];
-  return [student, mentor];
+const nullValue = pairsByIndex.some((ele) =>{
+  if (ele === null){
+    console.log("null value found")
+    ProcessingInstruction.exit(1);
+  }
 });
 
-console.log(pairs);
+
+
+// var pairs = pairsByIndex.map(function (indexes) {
+//   var student = students[indexes[0]];
+//   var mentor = mentors[indexes[1]];
+  
+
+const pairs = pairsByIndex.map(function (indexes) {
+  const student = students[indexes[0]];
+  const mentor = mentors[indexes[1]];
+
+  return [student, mentor];
+});
