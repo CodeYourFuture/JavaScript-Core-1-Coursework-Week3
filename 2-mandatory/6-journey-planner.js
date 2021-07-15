@@ -20,8 +20,9 @@
 function checkCodeIsThere(stringText) {
   let magicWord = "code";
   //edit code below
-  if (stringText) {
-    return stringText;
+
+  if (stringText.includes(magicWord)) {
+    return stringText.indexOf(magicWord);
   } else {
     return "Not found";
   }
@@ -64,7 +65,9 @@ function checkCodeIsThere(stringText) {
   
   Hint: Use the corresponding array method to split the array.
 */
-function getTransportModes() {}
+function getTransportModes(arrTransportModes) {
+  return arrTransportModes.slice(1);
+}
 
 /*
   Implement the function isAccessibleByTransportMode that
@@ -81,7 +84,9 @@ function getTransportModes() {}
     
   Hint: Use the corresponding array method to decide if an element is member of an array.
 */
-function isAccessibleByTransportMode() {}
+function isAccessibleByTransportMode(arrTransportModes, strTransportMode) {
+  return arrTransportModes.includes(strTransportMode);
+}
 
 /*
   Implement the function getLocationName that
@@ -92,7 +97,9 @@ function isAccessibleByTransportMode() {}
    - Returns the name of the location
       e.g: "Tower Bridge"
 */
-function getLocationName() {}
+function getLocationName(arrTransportModes) {
+  return arrTransportModes[0];
+}
 
 /*
  We arrived at the final method. it won't take long if you use the previously implemented functions wisely.
@@ -119,9 +126,33 @@ function getLocationName() {}
    - Use array method to remove locations that is not accessible by the given transportMode.
    - Use array method to manipulate its elements.
    
-  Advanced challange: try to use arrow function when invoking an array method.
+  Advanced challenge: try to use arrow function when invoking an array method.
 */
-function journeyPlanner(locations, transportMode) {
+function journeyPlanner(arrTransportModes, strTransportMode) {
+  const locations = arrTransportModes.map(element => {
+  const transports = getTransportModes(element);
+  if (isAccessibleByTransportMode(transports, strTransportMode)){
+    return getLocationName(element);  
+  }
+
+  });
+  
+  return locations.filter(element => {
+    return element !== undefined;
+    
+    // if (element === undefined){
+    //   return false;
+    // } else {
+    //   return true;
+    // }
+
+  //   if (element !== undefined) {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+
+   });
   // Implement the function body
 }
 

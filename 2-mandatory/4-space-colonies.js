@@ -15,7 +15,10 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(allVoyagers) {
+  return allVoyagers.filter(people => people.startsWith("A") && people.includes("family"));
+
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

@@ -11,7 +11,31 @@
     Some string methods that might help you here are .replace() and .substring(). 
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(oxygenLevels) {
+  const firstPlanet = oxygenLevels.find(element =>
+    element.substring(0, 4) > 19.5 &&
+    element.substring(0, 4) < 23.5 &&
+    element.substring(0, 5).includes("%")
+    );
+    return firstPlanet;
+  // const levelInNum = oxygenLevels.map(num =>
+  //   num.replace("%", ""));
+  // const firstPlanet = levelInNum.find(oxygenLevel => oxygenLevel.substring(0, 5) > 19.5 && oxygenLevel.substring(0, 5) < 23.5);
+  // return (`${firstPlanet}%`)
+}
+
+
+
+// const arrayWithoutPercentage = [];
+//   oxygenLevels.forEach((element) =>
+//     arrayWithoutPercentage.push(element.substring(0, element.length - 1))
+//   );
+
+//   for (percent of arrayWithoutPercentage) {
+//     if (percent > 19.5 && percent < 23.5) {
+//       return `${percent}%`;
+//     }
+//   }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

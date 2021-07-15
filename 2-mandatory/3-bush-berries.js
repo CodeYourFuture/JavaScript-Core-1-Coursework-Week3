@@ -22,6 +22,12 @@
 */
 
 function isBushSafe(berryArray) {
+  // result will be boolean
+  // return safe if every elements in array is pink, return unsafe if at least one of them in in another color
+  // array of colors
+
+  const safeBush = berryArray.every(bush => bush === "pink")
+  return safeBush ? "Bush is safe to eat from" : "Toxic! Leave bush alone!";
   //Write your code here
 }
 
