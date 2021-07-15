@@ -6,8 +6,14 @@
     (see tests to confirm how this data will be structured)
   - Returns an array containing only the names of the who have attended AT LEAST 8 classes
 */
+// npm test -- --testPathPattern 5-eligible-students
 
-function getEligibleStudents() {}
+function getEligibleStudents(array) {
+  const studentsWhoAttended = array.filter((element) => element[1] >= 8);
+  if (studentsWhoAttended) {
+    return studentsWhoAttended.map((student) => student.slice(0, 1)).flat();
+  } else return array;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

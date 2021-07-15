@@ -7,12 +7,17 @@
   Tip: use the string method .split() and the array method .join()
 */
 
-function capitalise(str) {}
+function capitalise(str) {
+  let capitalstr = str.split("");
+  capitalstr[0] = capitalstr[0].toUpperCase();
+  capitalstr = capitalstr.join("");
+  return capitalstr;
+}
 
 /* 
   DO NOT EDIT BELOW THIS LINE
   --------------------------- */
-var name = "daniel";
+const name = "daniel";
 
 console.log(capitalise(name));
 console.log(capitalise("hello"));

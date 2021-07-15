@@ -8,10 +8,38 @@
 
     Write a function that finds the oxygen level of the first safe planet - Oxygen between 19.5% and 23.5%
 
-    Some string methods that might help you here are .replace() and .substring(). 
+    Some string methods that might help you here are .replace() and .substring().
 */
 
-function findSafeOxygenLevel() {}
+// npm test -- --testPathPattern 2-oxygen-levels
+
+function findSafeOxygenLevel(array) {
+  return array.find((element) => {
+    let numWithoutPercentage = element.substring(0, element.length - 1); //Removing '%' symbol from the string
+    numWithoutPercentage = parseFloat(numWithoutPercentage); // Changing the string  into a floating number
+    return numWithoutPercentage > 19.5 && numWithoutPercentage < 23.5;
+  });
+}
+
+/*
+Left this in here so I could review it later
+First solution but needs refactoring:
+
+function findSafeOxygenLevel(array) {
+  const numWithoutPercentage = array.map((element) => {
+    if (element.includes("%")) {
+      let number = element.substring(0, element.length - 1);
+      newNumber = parseFloat(number);
+      return newNumber;
+    } else return Array.isArray(array) && array.length;
+  });
+  const firstSafePlanet = numWithoutPercentage.find(
+    (element) => element > 19.5 && element < 23.5
+  );
+  const safePlanetFound = numWithoutPercentage.indexOf(firstSafePlanet);
+  return array[safePlanetFound];
+}
+*/
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

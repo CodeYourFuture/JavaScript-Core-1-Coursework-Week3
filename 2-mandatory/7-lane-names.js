@@ -5,8 +5,11 @@
 
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
+// npm test -- --testPathPattern 7-lane-names
 
-function getLanes() {}
+function getLanes(streetNames) {
+  return streetNames.filter((street) => street.includes("Lane"));
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

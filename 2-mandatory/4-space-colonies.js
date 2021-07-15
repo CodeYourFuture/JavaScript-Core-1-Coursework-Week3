@@ -14,8 +14,13 @@
         Logic: Only strings that start with A, and finish with family
   
 */
+// npm test -- --testPathPattern 4-space-colonies
 
-function getSettlers() {}
+function getSettlers(voyagers) {
+  return voyagers.filter(
+    (element) => element.includes("family") && element.startsWith("A")
+  );
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

@@ -20,9 +20,13 @@
   
   Let's first look at an example that will teach you how to use these methods.
 */
+// npm test -- --testPathPattern 3-bush-berries
 
 function isBushSafe(berryArray) {
-  //Write your code here
+  const bushIsSafe = berryArray.every((element) => element === "pink");
+  if (bushIsSafe) {
+    return "Bush is safe to eat from";
+  } else return "Toxic! Leave bush alone!";
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
