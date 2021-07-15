@@ -23,6 +23,10 @@
 
 function isBushSafe(berryArray) {
   //Write your code here
+  // the input will be strings of array that express the color of the berries in the bush
+  // check if all the berries are pink color, if all of them are pink return "Bush is safe to eat from"; otherwise return "Toxic! Leave bush alone!"
+  const isSafe = berryArray.every(element => element === 'pink');
+  return isSafe ? "Bush is safe to eat from" : "Toxic! Leave bush alone!";
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

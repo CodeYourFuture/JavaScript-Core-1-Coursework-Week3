@@ -20,8 +20,8 @@
 function checkCodeIsThere(stringText) {
   let magicWord = "code";
   //edit code below
-  if (stringText) {
-    return stringText;
+  if (stringText.includes(magicWord)) {
+    return stringText.indexOf(magicWord);
   } else {
     return "Not found";
   }
@@ -64,7 +64,9 @@ function checkCodeIsThere(stringText) {
   
   Hint: Use the corresponding array method to split the array.
 */
-function getTransportModes() {}
+function getTransportModes(array) {
+  return array.slice(1);
+}
 
 /*
   Implement the function isAccessibleByTransportMode that
@@ -81,7 +83,9 @@ function getTransportModes() {}
     
   Hint: Use the corresponding array method to decide if an element is member of an array.
 */
-function isAccessibleByTransportMode() {}
+function isAccessibleByTransportMode(transportModeArr, transportMode) {
+  return transportModeArr.includes(transportMode);
+}
 
 /*
   Implement the function getLocationName that
@@ -92,7 +96,9 @@ function isAccessibleByTransportMode() {}
    - Returns the name of the location
       e.g: "Tower Bridge"
 */
-function getLocationName() {}
+function getLocationName(array) {
+  return array[0];
+}
 
 /*
  We arrived at the final method. it won't take long if you use the previously implemented functions wisely.
@@ -120,10 +126,44 @@ function getLocationName() {}
    - Use array method to manipulate its elements.
    
   Advanced challange: try to use arrow function when invoking an array method.
+
+  
 */
+
 function journeyPlanner(locations, transportMode) {
-  // Implement the function body
+  const accessibleLocations = []; // create an empty for locations that are accessible by transportMode
+  locations.forEach((el) => {
+    // iterate over each element of locations
+    const transportModes = getTransportModes(el); // get transport modes from each element (nested array)
+    const location = getLocationName(el); // get location from each element
+    if (isAccessibleByTransportMode(transportModes, transportMode)) {
+      accessibleLocations.push(location); // if transportModes includes transportMode, push the location into accessibleLocations array
+    }
+  });
+  return accessibleLocations;
 }
+
+// NOTE: The commented code below is the first solution I came up with. It is not easy to read or clean. You may find the updated code above. 
+
+// function journeyPlanner(locations, transportMode) {
+//   // Implement the function body
+//   const transportModes = locations.map(getTransportModes);   // create transportModes array by excluding places' name in locations array. Note that transportModes is a nested array
+//   const filteredIndexes = transportModes.map((element, index) => {
+//     if(isAccessibleByTransportMode(element, transportMode)) {
+//       return index;  // iterate the transportModes nested array checking if its each element includes transportMode (parameter); if it does return the index of the element. Note that filteredIndexes is also a nested array
+//     }
+//   });
+//   filteredIndexes.flat(); // turn the filteredIndexes into an array (from a nested array)
+//   const filteredLocations = locations.filter((element, index) => {
+//     if(filteredIndexes.includes(index)) {
+//       return element;  // filter locations array by checking if their indexes are in filteredIndexes array
+//     } 
+//   })
+//   const accessibleLocations = filteredLocations.map(getLocationName);  // create a new array with only location names that are accessible by transportMode. Note that accessibleLocations is a nested array
+//   return accessibleLocations.flat();
+// }
+
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

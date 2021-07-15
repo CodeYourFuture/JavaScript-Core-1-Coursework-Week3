@@ -11,7 +11,20 @@
     Some string methods that might help you here are .replace() and .substring(). 
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(oxygenLevelsArray) {
+  // array will contain string elements, I should check their numerical value: it should be between 0.195 (19.50%) and 0.235 (23.50%)
+  // create a new array of numbers, compare their value and find the first one matches the criteria 
+  // Find the indexOf the matched value and return the same index of oxygenLevelsArray
+  const toNumber = oxygenLevelsArray.map(element => {
+    return element.includes('%') ? parseFloat(element) / 100.0 : parseFloat(element);
+  });  // turn the array of strings into array of numbers, check if there is %, if there is divide it by 100 
+  const filteredOxygenLevels = toNumber.filter((x) => x !== NaN);
+  const firstPlanet = filteredOxygenLevels.find(
+    (element) => element > 0.195 && element < 0.235
+  ); // find first oxygen level in the array matches the criteria
+  const index = toNumber.indexOf(firstPlanet);  // find the index of the first planet
+  return oxygenLevelsArray[index];
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
