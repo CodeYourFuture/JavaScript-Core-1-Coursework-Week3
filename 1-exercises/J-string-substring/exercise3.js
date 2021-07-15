@@ -8,7 +8,13 @@
 
 let statement = "I do not like programming";
 
-let result = "";
+//Concatenates 'I do' with 'like programming'
+let result = statement.substring(0, 5) + statement.substring(9,statement.length);
+
+//Can also be written this way:
+//let result = statement
+  // .substring(0, 5)
+  // .concat(statement.substring(9, statement.length));
 
 console.log(result);
 

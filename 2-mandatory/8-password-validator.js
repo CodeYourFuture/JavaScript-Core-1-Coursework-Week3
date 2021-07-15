@@ -22,8 +22,20 @@ Expected Result:
 PasswordValidationResult=  [false, false, false, false, true]
 
 */
+//main function doesn't work, didn't manage to solve
+  function validatePasswords(string) {
 
-function validatePasswords(passwords) {}
+      containsLowercaseLetter() &&
+      containsUppercaseLetter() &&
+      containsNumber() && is5orMore() &&
+      containsSymbol();   
+  }
+
+
+//Function created to check if string is 5 or more characters.
+function is5orMore (string) {
+  return string.length >= 5
+}
 
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {

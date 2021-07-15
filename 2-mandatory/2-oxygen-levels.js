@@ -11,7 +11,20 @@
     Some string methods that might help you here are .replace() and .substring(). 
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(levels) {
+
+  //Predicate function checks if number in range, returns boolean
+  function isSafeLevel(level) {  
+    //1st condition: checks if string values are between 19.6 and 23.5, using string comparison
+    //2nd checks if string item has % symbol, only including items with '%'
+    //3rd checks if item has two 0s together, filters out '200%'
+  return level > "19.6" && level < "23.5" && level.includes("%") && !level.includes('00');
+}
+
+//checks for conditions in levels array, returns 1st item value that is true 
+let safeLevel = levels.find(isSafeLevel);
+return safeLevel;
+ }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

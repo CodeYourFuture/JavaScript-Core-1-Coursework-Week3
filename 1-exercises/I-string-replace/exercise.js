@@ -13,7 +13,17 @@
 let story =
   "I like dogs. One day I went to the park and I saw 10 dogs. It was a great day.";
 
-let result = story.replace("", "");
+let result = story.replace(/dogs/g, 'cats'); //globally replaces word
+result = result.replace('10', "100000"); // 10 string changes to 100000
+result = result.replace(/day/g, 'night'); // global change
+result = result.replace('great', "brilliant"); //single word replaced
+
+
+
+// let chars = { "dogs": "cats", 10: 100000, "day": "night" };
+//  result = story.replace(/[dogs][10][day]/g, (m) => chars[m]);
+// //s = s.replace(/[abc]/g, (m) => chars[m]);
+// console.log(result);
 
 /* EXPECTED OUTPUT */
 

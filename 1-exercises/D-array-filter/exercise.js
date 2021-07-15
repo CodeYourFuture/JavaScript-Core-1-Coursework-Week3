@@ -8,7 +8,25 @@
 
 var pairsByIndexRaw = [[0, 3], [1, 2], [2, 1], null, [1], false, "whoops"];
 
-var pairsByIndex; // Complete this statement
+//Psuedo-code
+  //Check element is an array with Array.isArray(element)
+  //Check element.length === 2
+  //Return result of expression
+//     return element.length === 2 && element
+
+var pairsByIndex =  pairsByIndexRaw.filter(function(element) {
+        if (Array.isArray(element) && element.length === 2) {
+          return pairsByIndexRaw;
+        }
+})    // Complete this statement
+
+//Can also be solved this way:
+//  function isArrayAndPair(element) { 
+//       if (Array.isArray(element) && element.length === 2) {
+//           return pairsByIndexRaw;
+//      } }
+
+// var pairsByIndex =  pairsByIndexRaw.filter(isArrayAndPair)          // Complete this statement
 
 var students = ["Islam", "Lesley", "Harun", "Rukmini"];
 var mentors = ["Daniel", "Irina", "Mozafar", "Luke"];

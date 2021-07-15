@@ -4,6 +4,9 @@
 */
 
 // write your code here
+function findLongNameThatStartsWithA (name) { //Predicate function checks if name > 7 letters, and name's 1st letter (0 index) is 'A'
+    return name.length > 7 && name[0] === 'A'  
+}
 
 var names = [
   "Rakesh",
@@ -17,7 +20,8 @@ var names = [
   "Ahmed",
 ];
 
-var longNameThatStartsWithA = findLongNameThatStartsWithA(names);
+// variable stores result of iterations on names array
+var longNameThatStartsWithA = names.find(findLongNameThatStartsWithA);
 
 console.log(longNameThatStartsWithA);
 

@@ -21,9 +21,24 @@
   Let's first look at an example that will teach you how to use these methods.
 */
 
+// Returns true/false
+// function isBushSafe(berryArray) {
+//   //Write your code here
+//      return berryArray.every(berry => berry === 'pink'); //returns boolean
+//     }
+//   berryArray.every(isBushSafe)?  "Bush is safe to eat from": "Toxic! Leave bush alone!";
+//-------------------------------------
+
 function isBushSafe(berryArray) {
   //Write your code here
+  //checks if every item of berryArray is strict equal to 'pink', if true returns 1st statement, false returns 2nd one.
+  return berryArray.every(berry => berry === "pink")? "Bush is safe to eat from"
+  : "Toxic! Leave bush alone!"
 }
+ 
+
+  
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

@@ -20,8 +20,8 @@
 function checkCodeIsThere(stringText) {
   let magicWord = "code";
   //edit code below
-  if (stringText) {
-    return stringText;
+  if (stringText.includes(magicWord)) {   //checks if stringText includes magicWord ie 'code'
+    return stringText.indexOf(magicWord);  //if true, uses .indexOf to return 'code' index
   } else {
     return "Not found";
   }
@@ -64,7 +64,10 @@ function checkCodeIsThere(stringText) {
   
   Hint: Use the corresponding array method to split the array.
 */
-function getTransportModes() {}
+function getTransportModes(placesAndModes) {
+  const modesOnly = placesAndModes.slice(1);  //copy of placesAndModes using .slice(), only has items 1 index onwards
+  return modesOnly; //returns only modes
+}
 
 /*
   Implement the function isAccessibleByTransportMode that
@@ -81,7 +84,12 @@ function getTransportModes() {}
     
   Hint: Use the corresponding array method to decide if an element is member of an array.
 */
-function isAccessibleByTransportMode() {}
+
+//gives same value if placesAndModes is used in place of modesOnly
+function isAccessibleByTransportMode(modesOnly, string) {
+   return modesOnly.includes(string) //checks if modesOnly array contains relevant mode's string
+   
+}
 
 /*
   Implement the function getLocationName that
@@ -92,7 +100,10 @@ function isAccessibleByTransportMode() {}
    - Returns the name of the location
       e.g: "Tower Bridge"
 */
-function getLocationName() {}
+function getLocationName(placesAndModes) {
+    const placesOnly = placesAndModes[0]; //create new array, stores 1st item (location)
+  return placesOnly; // returns 0 index item as string
+}
 
 /*
  We arrived at the final method. it won't take long if you use the previously implemented functions wisely.
@@ -121,9 +132,19 @@ function getLocationName() {}
    
   Advanced challange: try to use arrow function when invoking an array method.
 */
+
+//main function doesn't work, didn't manage to solve
 function journeyPlanner(locations, transportMode) {
   // Implement the function body
+      if (locations.map(isAccessibleByTransportMode())) {
+       return getLocationName();
+      }
 }
+
+// function journeyPlanner(locations, transportMode) {
+//   // Implement the function body
+//   locations.map(getLocationName)  
+//}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

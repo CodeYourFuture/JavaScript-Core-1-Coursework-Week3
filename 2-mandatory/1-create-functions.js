@@ -3,7 +3,9 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+function first5(arr) {
+  const newArr = arr.slice(0,5);  //extracts 1st five elements from arr and stores in newArr
+  return newArr;
 }
 
 /*
@@ -11,7 +13,10 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+function sortArray(arr) {
+  const newArr = [...arr];  //creates copy of arr using spread operator [...arr]
+  return newArr.sort();    //sorts and returns updated newArr
+ 
 }
 
 /*
@@ -24,8 +29,15 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
-}
+function tidyUpString(firstNames) {   //Looks very similar to last week's solution. Not sure how to improve/refactor this
+    const noSpace = firstNames.map(firstName => firstName.trim());
+   // return noSpace;
+    const noSlash = noSpace.map(firstName => firstName.replace('/', ''));
+   // return noSlash;
+   const smlCap = noSlash.map(firstName => firstName.toLowerCase());
+   return smlCap;
+
+  }
 
 /*
 Write a function that:
@@ -33,7 +45,15 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
+function remove(arr, index) {
+  //Psuedo
+  // take array and index as parameter
+  //create new array
+  //new array has same elements, minus indexed element
+
+  const arrayCopy = [...arr];   //Creates copy of original array
+  arrayCopy.splice(index, 1);   //Removes element from arrayCopy provided in index parameter, 1 tells splice to only remove needed element.
+  return arrayCopy;            //returns updated value of array with selected index removed
 }
 
 /*
@@ -44,8 +64,17 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
+function formatPercentage(numArr) {
+      const stay100 = numArr.map(function (number) {  //keeps all numbers elements > 100 to 100.
+       return number > 100? 100 : number;
+      } )
+
+  const twoDecimal = stay100.map((number) => Math.round(number * 100) / 100);  //converts all numbers to upto 2 decimals
+
+  const formattedArr = twoDecimal.map((number) => number + "%");   // formats numbers to strings and adds '%'. (Order of variables mapped important, as they're connected)
+  return formattedArr; 
 }
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

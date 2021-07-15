@@ -5,7 +5,13 @@
 var students = ["Omar", "Austine", "Dany", "Swathi", "Lesley", "Rukmini"];
 var group = ["Austine", "Dany", "Swathi", "Daniel"];
 
-var groupIsOnlyStudents; // complete this statement
+//New predicate declared
+function isStudent (name) {
+   return students.includes(name); //check if students array contains element, returns boolean
+}
+
+//iterates group array to check if every string element is included in students array, returns boolean
+var groupIsOnlyStudents = group.every(isStudent); // complete this statement
 
 if (groupIsOnlyStudents) {
   console.log("The group contains only students");

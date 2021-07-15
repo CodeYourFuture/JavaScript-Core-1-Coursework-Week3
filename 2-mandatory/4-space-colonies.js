@@ -15,7 +15,11 @@
   
 */
 
-function getSettlers() {}
+//Checks in names array for each name that fits the two criteria(name begins with A, and includes 'family' string)
+function getSettlers(names) {
+    const onlyFamily = names.filter(name => name[0] === 'A' && name.includes('family'));
+    return onlyFamily;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
