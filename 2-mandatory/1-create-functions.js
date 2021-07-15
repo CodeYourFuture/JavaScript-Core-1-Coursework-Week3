@@ -3,7 +3,8 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+function first5(arr) {
+  return arr.slice(0,5);
 }
 
 /*
@@ -11,8 +12,12 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+function sortArray(arr) {
+  const slicedArr = arr.slice();
+  const sortedArr = slicedArr.sort();
+  return sortedArr;
 }
+
 
 /*
 NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
@@ -24,7 +29,11 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+function tidyUpString(arr) {
+  const tidyArr = arr.map((element) => {
+    return element.trim().replace("/", "").toLowerCase();
+  });
+  return tidyArr;
 }
 
 /*
@@ -33,7 +42,8 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
+function remove(arr, index) {
+  return arr.slice(0, index).concat(arr.slice(index + 1));
 }
 
 /*
@@ -44,8 +54,17 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
+function formatPercentage(arr) {
+  return arr.map((number) => {
+    if (number >= 100) {
+      return "100%";
+    } else {
+      return Math.round(number * 100) / 100 + "%";
+    }
+  });
 }
+
+/* npm test -- --testPathPattern 1-create-functions */
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

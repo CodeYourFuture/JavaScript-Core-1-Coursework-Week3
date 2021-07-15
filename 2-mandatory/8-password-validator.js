@@ -23,7 +23,13 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 */
 
-function validatePasswords(passwords) {}
+function validatePasswords(passwords) {
+  const passwordValidation = passwords.map((element, index) => {
+    return (containsUppercaseLetter(element) && containsLowercaseLetter(element) &&
+      containsNumber(element) && containsSymbol(element) && passwords.indexOf(element) == index && element.length >= 5 );
+  });
+  return passwordValidation;
+}
 
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {
@@ -44,6 +50,8 @@ function containsNumber(string) {
 function containsSymbol(string) {
   return /[!#$%.*&]/.test(string);
 }
+
+/* npm test -- --testPathPattern 8-password-validator */
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

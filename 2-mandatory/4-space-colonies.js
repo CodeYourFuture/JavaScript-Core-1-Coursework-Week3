@@ -15,7 +15,13 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(arr) {
+  return arr.filter(
+    (element) => (element.includes("family")) && (element.startsWith("A")));
+}
+
+
+/* npm test -- --testPathPattern 4-space-colonies */
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

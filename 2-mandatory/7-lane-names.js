@@ -6,7 +6,12 @@
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
 
-function getLanes() {}
+function getLanes(laneNames) {
+  return laneNames.filter((street) => street.includes("Lane"));
+}
+
+
+/* npm test -- --testPathPattern 7-lane-names */
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
