@@ -18,6 +18,11 @@ var mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
 var pairs = pairsByIndex.map(function (indexes) {
   var student = students[indexes[0]];
   var mentor = mentors[indexes[1]];
+  const isNull = pairsByIndex.some((element) => element === null);
+  if (isNull) {
+    console.log("EXIT is processed");
+    process.exit(1);
+  }
   return [student, mentor];
 });
 
