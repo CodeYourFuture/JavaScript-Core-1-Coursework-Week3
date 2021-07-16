@@ -8,9 +8,9 @@ When functions meet this criteria they can be called _pure functions_.
 
 A pure function does not:
 
-* access any data unless it was passed in as a parameter
-* change data declared outside the function
-* interacts with anything outside of the function (e.g. logs a message to the console, shows a message on a website, saves data to disk)
+- access any data unless it was passed in as a parameter
+- change data declared outside the function
+- interacts with anything outside of the function (e.g. logs a message to the console, shows a message on a website, saves data to disk)
 
 These are all example of _side effects_. Of course, from time to time, we will need to perform side effects, but we should try to avoid side effects inside of functions and only have them when absolutely necessary.
 
@@ -19,13 +19,13 @@ These are all example of _side effects_. Of course, from time to time, we will n
 Say we want to log to the console a list of names.
 
 ```js
-var names = ["Daniel", "mozafar", "irina"];
+const names = ["Daniel", "mozafar", "irina"];
 ```
 
 We can use `.forEach()` to go through the array, item by item, and call a function we provide.
 
 ```js
-names.forEach(function(name, index) {
+names.forEach(function (name, index) {
   console.log(index + ": " + name);
 });
 ```
@@ -39,7 +39,7 @@ function formatName(name) {
   return name.split("")[0].toUpperCase() + name.slice(1);
 }
 
-names.map(formatName).forEach(function(name, index) {
+names.map(formatName).forEach(function (name, index) {
   console.log(index + ": " + name);
 });
 ```
@@ -53,7 +53,7 @@ You can call `.forEach()` after `.map()` because `.map()` returns a new array.
 Consider this code:
 
 ```js
-var namesFormatted = names.map(format);
+const namesFormatted = names.map(format);
 namesFormatted.forEach(log);
 ```
 

@@ -15,7 +15,15 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(familyArray) {
+  let firstIndex = 0;
+  const familyToStay = familyArray.filter(
+    (element) =>
+      element.charAt(firstIndex) === "A" && element.includes("family")
+  );
+
+  return familyToStay;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

@@ -21,7 +21,7 @@ undefined
 _Returns true if a value is in the array._
 
 ```js
-var mentors = ["Daniel", "Irini", "Ashleigh", "Rob", "Etzali"];
+const mentors = ["Daniel", "Irini", "Ashleigh", "Rob", "Etzali"];
 
 function isAMentor(name) {
   return mentors.includes(name);
@@ -44,3 +44,5 @@ $ node
 ```
 
 There is a string method `.split()`. In an interactive console try using the string `.split()` method and the array `.join()`. How could they work together?
+
+Answer: if we choose an index from an array to split, it would log that string inside a separate array. If we join it back to the main array, it would join that string to the last index inside the main array where we join it.
