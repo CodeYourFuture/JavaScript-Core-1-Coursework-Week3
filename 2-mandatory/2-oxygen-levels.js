@@ -11,7 +11,22 @@
     Some string methods that might help you here are .replace() and .substring(). 
 */
 
-function findSafeOxygenLevel() {}
+// **** STEVE - I found this incredibly difficult to come up with a solution it took me over 2.5hrs
+
+function findSafeOxygenLevel(oxygenLevels) {
+  const arrayWithoutPercentage = [];
+  oxygenLevels.forEach((element) =>
+    arrayWithoutPercentage.push(element.slice(0, element.length - 1))
+  );
+  arrayWithoutPercentage.sort();
+  for (percent of arrayWithoutPercentage) {
+    if (percent > 19.5 && percent < 23.5) {
+      return `${percent}%`;
+    }
+  }
+}
+
+// test passed
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

@@ -20,8 +20,8 @@
 function checkCodeIsThere(stringText) {
   let magicWord = "code";
   //edit code below
-  if (stringText) {
-    return stringText;
+  if (stringText.includes(magicWord)) {
+    return stringText.indexOf(magicWord);
   } else {
     return "Not found";
   }
@@ -32,8 +32,8 @@ function checkCodeIsThere(stringText) {
   The input provided contains a list of locations in London. Each of locations is followed by a list
   of transport modes that can be used to get there.
   Let's see an example:
-  
-  To take to Tower Bridge, you can use tube or river boat. This information will represented as 
+
+  To take to Tower Bridge, you can use tube or river boat. This information will represented as
     ["Tower Bridge", "tube", "river boat"]
 
   Where
@@ -51,7 +51,7 @@ function checkCodeIsThere(stringText) {
   want to use a specific mode of transport. But before jumping straight to the main function, we will
   break down the whole task into smaller steps that make our job easier.
 
-  This technic is also referred as "problem decomposition". It helps you to reduce scope of the problem 
+  This technic is also referred as "problem decomposition". It helps you to reduce scope of the problem
   by only focusing on a small chunk of the whole problem at a time.)
 */
 
@@ -61,10 +61,12 @@ function checkCodeIsThere(stringText) {
      e.g: ["Tower Bridge", "tube", "river boat"]
    - Returns an array including the available transport modes to the given location
      e.g: ["tube", "river boat"]
-  
+
   Hint: Use the corresponding array method to split the array.
 */
-function getTransportModes() {}
+function getTransportModes(arrayOfTransportModes) {
+  return arrayOfTransportModes.slice(1);
+}
 
 /*
   Implement the function isAccessibleByTransportMode that
@@ -74,15 +76,16 @@ function getTransportModes() {}
         e.g: ["tube", "river boat"]
      2) Second parameter is a string containing a transport mode
         e.g: "river boat"
-     
-   - Returns 
+
+   - Returns
      * True if the location in the first parameter is accessible by the transport mode given in second parameter
      * Otherwise, returns false
-    
+
   Hint: Use the corresponding array method to decide if an element is member of an array.
 */
-function isAccessibleByTransportMode() {}
-
+function isAccessibleByTransportMode(arrOfModes, modeOfTransport) {
+  return arrOfModes.includes(modeOfTransport);
+}
 /*
   Implement the function getLocationName that
 
@@ -92,7 +95,9 @@ function isAccessibleByTransportMode() {}
    - Returns the name of the location
       e.g: "Tower Bridge"
 */
-function getLocationName() {}
+function getLocationName(locationName) {
+  return locationName[0];
+}
 
 /*
  We arrived at the final method. it won't take long if you use the previously implemented functions wisely.
@@ -113,17 +118,30 @@ function getLocationName() {}
   - Returns an array of where I can go if I only want to use a specific mode of transport.
 
   NOTE: only the location names should be returned, not the name of transports.
-  
+
   HINTS:
    - Use the function you implemented above.
    - Use array method to remove locations that is not accessible by the given transportMode.
    - Use array method to manipulate its elements.
-   
+
   Advanced challange: try to use arrow function when invoking an array method.
 */
+// function journeyPlanner(locations, transportMode) {
+//   // Implement the function body
+//   locations
+//     .filter((location) => {
+//       return isAccessibleByTransportMode(location, transportMode);
+//     })
+//     .map((location) => getLocationName(location));
+// }
+
 function journeyPlanner(locations, transportMode) {
-  // Implement the function body
+  return locations
+    .filter((location) => isAccessibleByTransportMode(location, transportMode))
+    .map((possibleLocations) => getLocationName(possibleLocations));
 }
+
+// Test passed
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

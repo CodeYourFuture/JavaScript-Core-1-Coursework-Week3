@@ -16,9 +16,14 @@ var students = ["Islam", "Lesley", "Harun", "Rukmini"];
 var mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
 
 var pairs = pairsByIndex.map(function (indexes) {
+  if (indexes === null) {
+    console.log("Programme will exit");
+    process.exit(1);
+  }
   var student = students[indexes[0]];
   var mentor = mentors[indexes[1]];
   return [student, mentor];
 });
 
 console.log(pairs);
+// test passed

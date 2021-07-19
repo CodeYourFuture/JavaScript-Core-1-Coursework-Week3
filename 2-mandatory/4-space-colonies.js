@@ -15,7 +15,11 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(familyArray) {
+  return familyArray.filter(
+    (family) => family.startsWith("A") && family.endsWith("family")
+  );
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
@@ -44,3 +48,5 @@ test("getSettlers function works", () => {
     "A Great family",
   ]);
 });
+
+// test passed

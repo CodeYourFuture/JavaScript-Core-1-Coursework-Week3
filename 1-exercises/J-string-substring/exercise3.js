@@ -8,12 +8,15 @@
 
 let statement = "I do not like programming";
 
-let result = "";
+let part1 = statement.substring(0, 4);
+let part2 = statement.substring(8, statement.length);
 
-console.log(result);
+console.log(part1 + part2);
 
 /* EXPECTED OUTPUT 
 
   "I do like programming"
   
 */
+
+// test passed

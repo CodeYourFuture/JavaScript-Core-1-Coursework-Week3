@@ -20,10 +20,13 @@
   
   Let's first look at an example that will teach you how to use these methods.
 */
-
 function isBushSafe(berryArray) {
-  //Write your code here
+  return berryArray.every((berry) => berry === "pink")
+    ? "Bush is safe to eat from"
+    : "Toxic! Leave bush alone!"; //Write your code here
 }
+
+// test passed
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

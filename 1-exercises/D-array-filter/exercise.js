@@ -8,7 +8,10 @@
 
 var pairsByIndexRaw = [[0, 3], [1, 2], [2, 1], null, [1], false, "whoops"];
 
-var pairsByIndex; // Complete this statement
+var pairsByIndex = pairsByIndexRaw.filter((element) => {
+  // if element is === array && has 2 numbers return true
+  return Array.isArray(element) && element.length === 2;
+});
 
 var students = ["Islam", "Lesley", "Harun", "Rukmini"];
 var mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
@@ -20,3 +23,5 @@ var pairs = pairsByIndex.map(function (indexes) {
 });
 
 console.log(pairs);
+
+// test passed
