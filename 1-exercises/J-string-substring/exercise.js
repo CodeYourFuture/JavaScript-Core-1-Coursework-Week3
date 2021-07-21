@@ -5,8 +5,9 @@
 */
 
 let statement = "I like programming and dogs";
-
-statement = statement.substring();
+console.log(statement.length);
+var keyword = " and dogs";
+statement = statement.substring(0,(statement.length - keyword.length));
 
 console.log(statement);
 

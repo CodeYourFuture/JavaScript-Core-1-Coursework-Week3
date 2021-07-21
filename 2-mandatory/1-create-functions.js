@@ -3,16 +3,25 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+function first5(arr) {
+  return arr.slice(0,5);
 }
+
+//console.log(first5([1,2,3,4,5,6,7,8,10]))
+
 
 /*
 Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+function sortArray(arr) {
+  return arr.sort();
+
 }
+//console.log(sortArray([1,2,3,4,5,6,7,8,10]))
+
+
 
 /*
 NOTE: This exercise is the same as one you did last week - try to do it again using things you learnt this week.
@@ -24,8 +33,23 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+function tidyUpString(arr) {
+  var newArr = arr.map(function(element){
+    return element.trim().replace("/","").toLowerCase();
+  })
+  return newArr
 }
+
+/*console.log(tidyUpString([
+      "/Daniel",
+      " /Sanyia",
+      "AnTHonY",
+      "irina",
+      " Gordon",
+      "ashleigh   ",
+      "   Alastair  ",
+      " anne marie  ",
+    ]))*/
 
 /*
 Write a function that:
@@ -33,8 +57,11 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
+function remove(arr, index) {
+  arr.splice(index);
+  return arr;
 }
+//console.log(remove([1, 2, 3, 4, 5], 4));
 
 /*
 Write a function that:
@@ -44,8 +71,36 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
+function toFixedIfNecessary( value, dp ){
+  return +parseFloat(value).toFixed( dp );
 }
+
+//console.log( toFixedIfNecessary( 1.999, 2 )); 
+
+function formatPercentage(arr) {
+
+  var newArr = arr.map(function(element){
+    
+      // console.log(element);
+      newElement = toFixedIfNecessary(element, 2);
+
+      if (newElement > 100){
+        return '100%';
+      } else {
+        return newElement + "%";
+      }
+  });
+  return newArr
+}
+
+console.log(formatPercentage([23, 18.103, 187.2, 0.372]))
+/*
+    "23%",
+    "18.1%",
+    "100%",
+    "0.37%",
+    */
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

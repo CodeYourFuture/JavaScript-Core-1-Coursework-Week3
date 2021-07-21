@@ -6,8 +6,21 @@
     (see tests to confirm how this data will be structured)
   - Returns an array containing only the names of the who have attended AT LEAST 8 classes
 */
+var CL = console.log;
+var pushArr = [];
 
-function getEligibleStudents() {}
+function getEligibleStudents(arr) {
+
+  var newArr = arr.forEach(element => {
+    if (element[1] >= 8){
+      pushArr.push(element[0]);
+    }
+  });
+  return pushArr;
+}
+
+CL(getEligibleStudents([["Jacob", 7]]));
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

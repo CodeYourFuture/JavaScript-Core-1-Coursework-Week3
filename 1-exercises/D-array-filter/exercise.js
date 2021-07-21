@@ -5,10 +5,23 @@
   - Finish the statement on line 11 to produce an array with valid content
   - Do not edit any of the existing code
 */
+var cl = console.log;
 
 var pairsByIndexRaw = [[0, 3], [1, 2], [2, 1], null, [1], false, "whoops"];
 
-var pairsByIndex; // Complete this statement
+
+
+
+var pairsByIndex = pairsByIndexRaw.filter(function (element){
+  cl(element);
+  //cl(typeof(element))
+  
+  if ((typeof(element) === 'object') && (element != null) && (element.length === 2)) {
+    return true
+  }
+}); // Complete this statement
+
+
 
 var students = ["Islam", "Lesley", "Harun", "Rukmini"];
 var mentors = ["Daniel", "Irina", "Mozafar", "Luke"];

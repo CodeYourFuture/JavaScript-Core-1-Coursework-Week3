@@ -22,8 +22,22 @@
 */
 
 function isBushSafe(berryArray) {
-  //Write your code here
+  let newArr = berryArray.every(function(element, index){
+    //console.log(element);
+    if (element === "pink") {
+      return true;
+    }; 
+    
+  })
+  console.log(newArr); 
+  if (newArr === true){
+    return "Bush is safe to eat from";
+  } else {
+    return "Toxic! Leave bush alone!";
+  }
 }
+console.log(isBushSafe(["pink", "pink", "pink", "pink", "pink", "pink"]));
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

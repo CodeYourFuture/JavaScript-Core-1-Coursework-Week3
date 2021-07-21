@@ -14,8 +14,37 @@
         Logic: Only strings that start with A, and finish with family
   
 */
+var CL = console.log;
+var pushArr = [];
+function getSettlers(arr) {
 
-function getSettlers() {}
+   var newArr = arr.forEach(element => {
+     CL(element);
+     if ((element.includes("family") === true) && ((element[0] === "A") || (element[0] === "a"))){
+       pushArr.push(element);
+     }
+   });
+   return pushArr;  
+
+}
+
+CL(getSettlers([
+    "Adam family",
+    "Potter family",
+    "Eric",
+    "Aldous",
+    "Button family",
+    "Jude",
+    "Carmichael",
+    "Bunny",
+    "Asimov", 
+    "Oscar family",
+    "Avery family",
+    "Archer family",
+    "Just A. family",
+    "A Great family",
+  ]));
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
@@ -29,7 +58,7 @@ test("getSettlers function works", () => {
     "Jude",
     "Carmichael",
     "Bunny",
-    "Asimov",
+    "Asimov", 
     "Oscar family",
     "Avery family",
     "Archer family",

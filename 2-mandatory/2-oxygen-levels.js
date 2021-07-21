@@ -10,8 +10,21 @@
 
     Some string methods that might help you here are .replace() and .substring(). 
 */
+var externalArr = [];
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(arr) {
+  
+  newArr = arr.map(function(element,index){
+    replaceArr = element.replace("%", "")
+    //console.log(replaceArr);
+    if ((replaceArr >= 19.5) && (replaceArr <= 23.5)){
+      externalArr.push(element);
+    }
+  })
+  return externalArr[0];
+}
+
+console.log(findSafeOxygenLevel(["50"]));
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

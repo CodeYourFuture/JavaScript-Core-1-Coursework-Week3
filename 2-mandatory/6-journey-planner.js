@@ -1,5 +1,5 @@
 /*
- Before we go the big story; we will introduce more string methods.
+ Before we go onto the big story; we will introduce more string methods.
  Some of the methods you're using in Array have similar ones with strings.
  Methods like : IndexOf, Include, Search, Slice , Spilt and more.
  
@@ -17,15 +17,20 @@
  Hint: search for string methods like Includes and IndexOf.
 */
 
+var CL = console.log;
+
 function checkCodeIsThere(stringText) {
   let magicWord = "code";
   //edit code below
-  if (stringText) {
-    return stringText;
+  if (stringText.includes(magicWord)) {
+    return stringText.indexOf(magicWord);
   } else {
     return "Not found";
   }
 }
+
+//CL(checkCodeIsThere("I Love coding and perfect code makes me happy"));
+
 
 /*
   I am new to London and would like to know what transport I can take to different famous locations.
@@ -64,7 +69,21 @@ function checkCodeIsThere(stringText) {
   
   Hint: Use the corresponding array method to split the array.
 */
-function getTransportModes() {}
+
+//(getTransportModes(["Angel", "tube", "bus"])).toEqual(["tube", "bus"]
+var arrTransportModes =[];
+
+function getTransportModes(arr) {
+  var newArr = arr.forEach(function(element, index){
+    if (index > 0){
+      arrTransportModes.push(element);
+    }
+  });
+  return arrTransportModes;
+}
+
+
+//CL(getTransportModes(["Angel", "tube", "bus"]));
 
 /*
   Implement the function isAccessibleByTransportMode that
@@ -81,7 +100,26 @@ function getTransportModes() {}
     
   Hint: Use the corresponding array method to decide if an element is member of an array.
 */
-function isAccessibleByTransportMode() {}
+
+//expect(isAccessibleByTransportMode(["tube", "bus"], "tube")).toEqual(true);
+
+var accessibleArr =[];
+
+function isAccessibleByTransportMode(arr) {
+  CL(arr);
+  // don't understand whats happening here. It seems like this function is not seeing the "tube" (i.e. last element)
+  // This only has
+
+  var newArr = arr.forEach(element => {
+   //CL(element);
+  });
+}
+
+CL(isAccessibleByTransportMode(["tube", "bus"], "tube")); // I don't know what datatype this is 
+CL(typeof(["tube", "bus"], "tube"));
+
+
+
 
 /*
   Implement the function getLocationName that
@@ -92,7 +130,20 @@ function isAccessibleByTransportMode() {}
    - Returns the name of the location
       e.g: "Tower Bridge"
 */
-function getLocationName() {}
+//getLocationName(["London Bridge", "tube", "river boat"])).toEqual("London Bridge");
+
+var locationArr = []
+
+function getLocationName(arr) {
+  var newArr = arr.forEach(function(element, index){
+    if (index === 0){
+      locationArr.push(element);
+    }
+  })
+  return locationArr;
+}
+
+//CL(getLocationName(["London Bridge", "tube", "river boat"]));
 
 /*
  We arrived at the final method. it won't take long if you use the previously implemented functions wisely.
@@ -120,23 +171,55 @@ function getLocationName() {}
    - Use array method to manipulate its elements.
    
   Advanced challange: try to use arrow function when invoking an array method.
+
+  const londonLocations = [
+  ["Angel", "tube", "bus"],
+  ["London Bridge", "tube", "river boat"],
+  ["Tower Bridge", "tube", "bus"],
+  ["Greenwich", "bus", "river boat"],
+];
+
+  expect(journeyPlanner(londonLocations, "bus")).toEqual([
+      "Angel",
+      "Tower Bridge",
+      "Greenwich",
+
 */
+let londonLocations = [
+  ["Angel", "tube", "bus"],
+  ["London Bridge", "tube", "river boat"],
+  ["Tower Bridge", "tube", "bus"],
+  ["Greenwich", "bus", "river boat"],
+];
+
+var journeyArr = [];
+
 function journeyPlanner(locations, transportMode) {
+  var newArr = locations.forEach(function(element, index){
+    //console.log(element[0]);
+    if (element.includes(transportMode)) {
+      journeyArr.push(element[0]);
+    }
+  })
+  return journeyArr;
   // Implement the function body
 }
+
+CL(journeyPlanner(londonLocations, "river boat"));
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 const string1 = "I Love coding and perfect code makes me happy";
 const string2 = "I don't like to do coding";
 const string3 = "Can you scan the barcode for me";
-
+/*
 const londonLocations = [
   ["Angel", "tube", "bus"],
   ["London Bridge", "tube", "river boat"],
   ["Tower Bridge", "tube", "bus"],
   ["Greenwich", "bus", "river boat"],
-];
+];*/
 
 describe("checkCodeIsThere", () => {
   test("finds code", () => {
