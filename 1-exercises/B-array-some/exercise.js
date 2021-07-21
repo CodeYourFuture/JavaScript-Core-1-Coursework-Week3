@@ -8,17 +8,30 @@
 
 var pairsByIndex = [[0, 3], [1, 2], [2, 1], null, [3, 0]];
 
-// If there is a null value in the array exit the program with the error code
+//If there is a null value in the array exit the program with the error code
 // https://nodejs.org/api/process.html#process_process_exit_code
-// process.exit(1);
+//process.exit(1);
 
 var students = ["Islam", "Lesley", "Harun", "Rukmini"];
 var mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
 
+//PSUEDO CODE
+//*find a way to search for a null value
+//*use the some method to check if null value exists in chosen array
+//*create a variable to store this in
+//*add it to the code with exit process
+
+const searchNull = arrayValue => arrayValue === null;
+const isNull = pairsByIndex.some(searchNull);
+
 var pairs = pairsByIndex.map(function (indexes) {
+  if(isNull) {
+    return process.exit(1);
+  }
   var student = students[indexes[0]];
   var mentor = mentors[indexes[1]];
   return [student, mentor];
+  
 });
 
 console.log(pairs);

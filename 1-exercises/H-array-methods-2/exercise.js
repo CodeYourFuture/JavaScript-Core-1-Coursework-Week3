@@ -14,9 +14,9 @@ var everyone = [
   "Austine",
   "Swathi",
 ];
-
-var firstFive; // complete this statement
-var lastFive; // complete this statement
+//slice is up to but doesn't include the end index number
+var firstFive = everyone.slice(0, 5); // complete this statement
+var lastFive = everyone.slice(2, 7); // complete this statement
 
 /* 
   DO NOT EDIT BELOW THIS LINE

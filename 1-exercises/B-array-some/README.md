@@ -18,7 +18,7 @@ To check your array of numbers, you'd have to run this function against every nu
 
 ## `.some()`
 
-_Searches through an array and returns true if at least one array item satisifies the predicate function you provided._
+_Searches through an array and returns true if at least one array item satisfies the predicate function you provided._
 
 ```js
 var containsNegative = ages.some(isNegative);

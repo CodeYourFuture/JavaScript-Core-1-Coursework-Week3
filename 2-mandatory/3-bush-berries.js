@@ -21,8 +21,12 @@
   Let's first look at an example that will teach you how to use these methods.
 */
 
+//PSEUDO CODE
+//only one safe result
+//can use a ternary as it evals to t/f
 function isBushSafe(berryArray) {
-  //Write your code here
+  const isSafe = berryArray.every(berry => berry === "pink");
+  return isSafe ? "Bush is safe to eat from" : "Toxic! Leave bush alone!";
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

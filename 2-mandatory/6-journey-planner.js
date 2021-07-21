@@ -20,8 +20,8 @@
 function checkCodeIsThere(stringText) {
   let magicWord = "code";
   //edit code below
-  if (stringText) {
-    return stringText;
+  if (stringText.includes(magicWord)) {
+    return stringText.indexOf(magicWord);
   } else {
     return "Not found";
   }
@@ -64,7 +64,9 @@ function checkCodeIsThere(stringText) {
   
   Hint: Use the corresponding array method to split the array.
 */
-function getTransportModes() {}
+function getTransportModes(transport) {
+  return transport.slice(1);
+}
 
 /*
   Implement the function isAccessibleByTransportMode that
@@ -81,7 +83,9 @@ function getTransportModes() {}
     
   Hint: Use the corresponding array method to decide if an element is member of an array.
 */
-function isAccessibleByTransportMode() {}
+function isAccessibleByTransportMode(transportArray, transportMode) {
+  return transportArray.includes(transportMode);
+}
 
 /*
   Implement the function getLocationName that
@@ -92,7 +96,9 @@ function isAccessibleByTransportMode() {}
    - Returns the name of the location
       e.g: "Tower Bridge"
 */
-function getLocationName() {}
+function getLocationName(location) {
+  return location[0];
+}
 
 /*
  We arrived at the final method. it won't take long if you use the previously implemented functions wisely.
@@ -119,10 +125,31 @@ function getLocationName() {}
    - Use array method to remove locations that is not accessible by the given transportMode.
    - Use array method to manipulate its elements.
    
-  Advanced challange: try to use arrow function when invoking an array method.
+  Advanced challenge: try to use arrow function when invoking an array method.
 */
 function journeyPlanner(locations, transportMode) {
-  // Implement the function body
+  //create array by excluding "place names" from locations array //*transportModes is nested array
+  const transportModes = locations.map(getTransportModes);
+  //iterate through nested transportModes array checking if each element includes transportMode
+  const filteredIndices = transportModes.map((element, index) => {
+  //if so returns index //*also nested array
+    if(isAccessibleByTransportMode(element, transportMode)) {
+      return index;
+    }
+  });
+  //flattens from nested array
+  filteredIndices.flat();
+
+  const locationsFiltered = locations.filter((element, index) => {
+    //filter locations array. Check to see if indices are in the filteredIndices array
+    if(filteredIndices.includes(index)) {
+      return element;
+    }
+  })
+  //new array that contains only locations accessible by transportMode 
+   const accessibleLocations = locationsFiltered.map(getLocationName);
+   //*Nested array so must be flattened
+   return accessibleLocations.flat();
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

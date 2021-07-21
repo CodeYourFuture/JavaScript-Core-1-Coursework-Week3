@@ -9,6 +9,25 @@
 
 var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
+//PSEUDO CODE
+//*use forEach to go over array
+//*print numbers that aren't part of the two conditionals
+
+arr.forEach(num => {
+  //due to control flow, this check has to be performed first to get value that meets both 
+  if(num % 3 === 0 && num % 5 === 0) {
+    console.log("FizzBuzz");
+    //if num doesn't match multiple of 3 AND 5, we run this next part of the block (multiple of 3)
+  } else if(num % 3 === 0) {
+    console.log("Fizz");
+    //multiple of 5
+  } else if(num % 5 === 0) {
+    console.log("Buzz");
+    //no conditions met print num
+  } else {
+    console.log(num);
+  }
+})
 /* EXPECTED OUTPUT */
 
 /*

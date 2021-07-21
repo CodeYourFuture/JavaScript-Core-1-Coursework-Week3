@@ -15,7 +15,11 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(family) {
+  return family.filter(voyagers => {
+    return voyagers.startsWith("A") && voyagers.includes("family");
+  })
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

@@ -11,7 +11,18 @@
     Some string methods that might help you here are .replace() and .substring(). 
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(safeLevels) {
+  //check to see if array value is a percentage 
+  const arrayFiltered = safeLevels.filter(level => level.includes("%"));
+  //using the return of the variable above, remove the "%" and turn string into a number
+  const filterResult = arrayFiltered.map(oxygenLevel => oxygenLevel.replace("%", "")).map(Number);
+  //check to see if returned value is between the two margins set
+  const safePlanets = filterResult.find(levels => levels > 19.5 && levels < 23.5);
+  //check to see if result meets criteria, else will return undefined
+    if(safePlanets)
+  //add the percentage symbol back to the result
+      return `${safePlanets}%`;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

@@ -7,7 +7,12 @@
   - Returns an array containing only the names of the who have attended AT LEAST 8 classes
 */
 
-function getEligibleStudents() {}
+function getEligibleStudents(attendanceCount) {
+  //find the students who attended enough classes. Second index gives numerical result for attendance count
+  const minAttendance = attendanceCount.filter(number => number[1] >= 8); 
+  //return nested array with student names that meet min attendance, flat() to flatten the result to desired output
+  return minAttendance.map(studentNames => studentNames.slice(0, 1)).flat();
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

@@ -8,7 +8,11 @@
 
 var pairsByIndexRaw = [[0, 3], [1, 2], [2, 1], null, [1], false, "whoops"];
 
-var pairsByIndex; // Complete this statement
+//PSEUDO CODE
+//*find out if it's an array
+//*if array is a pair (length 2)
+//*filter out results that don't match the two above conditions
+var pairsByIndex = pairsByIndexRaw.filter(values => Array.isArray(values) && values.length === 2); // Complete this statement
 
 var students = ["Islam", "Lesley", "Harun", "Rukmini"];
 var mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
