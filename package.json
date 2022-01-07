@@ -1,0 +1,27 @@
+{
+  "name": "javascript-core-1-coursework-week3",
+  "version": "1.0.0",
+  "description": "Exercises for JS1 Week 3",
+  "license": "CC-BY-SA-4.0",
+  "scripts": {
+    "test": "jest --testRegex='mandatory[/\\\\].*\\.js$'",
+    "extra-tests": "jest --testRegex='extra[/\\\\].*\\.js$'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodeYourFuture/JavaScript-Core-1-Coursework-Week3.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CodeYourFuture/JavaScript-Core-1-Coursework-Week3/issues"
+  },
+  "jest": {
+    "reporters": [
+      "default",
+      "<rootDir>/util/github-action-reporter.js"
+    ]
+  },
+  "homepage": "https://github.com/CodeYourFuture/JavaScript-Core-1-Coursework-Week3#readme",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
