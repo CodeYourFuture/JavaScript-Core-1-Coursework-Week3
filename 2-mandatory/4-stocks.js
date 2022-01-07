@@ -1,5 +1,5 @@
 /*
-    THESE EXERCISES ARE QUITE HARD. DON'T WORRY IF YOU CAN'T COMPLETE THEM ALL - JUST DO YOUR BEST, AND COME WITH QUESTIONS :)
+    THESE EXERCISES ARE QUITE HARD. JUST DO YOUR BEST, AND COME WITH QUESTIONS IF YOU GET STUCK :)
 
     Imagine we a working for a finance company. Below we have:
         - an array of stock tickers
