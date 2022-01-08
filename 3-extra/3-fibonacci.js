@@ -13,8 +13,12 @@
         - the input n will be passed in to the function as an argument, and will be a number greater than 2
 */
 
-function generateFibonacciSequence(n) {
-    // TODO
+const generateFibonacciSequence = (n) => {
+    let answer = [0, 1];
+    for (let i = 2; i < n; i++) {
+        answer.push(answer[i-1] + answer[i - 2]); 
+    }
+    return answer;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
