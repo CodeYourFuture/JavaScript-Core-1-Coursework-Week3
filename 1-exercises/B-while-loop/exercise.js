@@ -5,8 +5,14 @@
     The list of numbers should start with 0. n is being passed in as a parameter.
 */
 
-function evenNumbers(n) {
-    // TODO
+const evenNumbers = (n) => {
+    let i = 0;
+    let evens = [];
+    while (evens.length < n) {
+        evens.push(i); 
+        i+=2;
+    }
+    return evens;
 }
 
 evenNumbers(3); // should output 0,2,4

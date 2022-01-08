@@ -11,9 +11,7 @@
         - Hint: you can call the temperatureService function from your function
 */
 
-function getTemperatureReport(cities) {
-    // TODO
-}
+const getTemperatureReport = (cities) => cities.map(e=> `The temperature in ${e} is ${temperatureService(e)} degrees`);
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */

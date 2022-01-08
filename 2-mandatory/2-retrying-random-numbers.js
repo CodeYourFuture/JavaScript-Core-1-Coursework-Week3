@@ -9,8 +9,12 @@ function generateRandomNumber() {
     return Math.round(Math.random() * 100);
 }
 
-function getRandomNumberGreaterThan50() {
-    // TODO - implement using a do-while loop
+const getRandomNumberGreaterThan50 = () => {
+    let number = 0;
+    do {
+        number = generateRandomNumber();
+    } while (number <= 50)
+    return number;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
