@@ -5,24 +5,24 @@
 
 // This function shouldn't be changed
 function generateRandomNumber() {
-    console.log("Generating number...");
-    return Math.round(Math.random() * 100);
+  console.log('Generating number...');
+  return Math.round(Math.random() * 100);
 }
 
 const getRandomNumberGreaterThan50 = () => {
-    let number = 0;
-    do {
-        number = generateRandomNumber();
-    } while (number <= 50)
-    return number;
-}
+  let number = 0;
+  do {
+    number = generateRandomNumber();
+  } while (number <= 50);
+  return number;
+};
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-test("Returned value should always be greater than 50", () => {
-    expect(getRandomNumberGreaterThan50()).toBeGreaterThan(50);
-    expect(getRandomNumberGreaterThan50()).toBeGreaterThan(50);
-    expect(getRandomNumberGreaterThan50()).toBeGreaterThan(50);
-    expect(getRandomNumberGreaterThan50()).toBeGreaterThan(50);
-    expect(getRandomNumberGreaterThan50()).toBeGreaterThan(50);
+test('Returned value should always be greater than 50', () => {
+  expect(getRandomNumberGreaterThan50()).toBeGreaterThan(50);
+  expect(getRandomNumberGreaterThan50()).toBeGreaterThan(50);
+  expect(getRandomNumberGreaterThan50()).toBeGreaterThan(50);
+  expect(getRandomNumberGreaterThan50()).toBeGreaterThan(50);
+  expect(getRandomNumberGreaterThan50()).toBeGreaterThan(50);
 });

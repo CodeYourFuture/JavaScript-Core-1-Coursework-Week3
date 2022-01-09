@@ -32,5 +32,5 @@ sayHelloToUser();
 
 
 // Example 4 - arr doesn't have a value at index 3 (it only has 0,1,2 indexes)
-let arr = [1,2,3];
+let arr = [1, 2, 3];
 console.log(arr[3]);
