@@ -11,13 +11,14 @@ function evenNumbersSum(n) {
   let total = 0;
   let i = 0;
   do {
-    total += i;
+    if (i % 2 === 0) {
+      total += i;
+    }
     i++;
-    console.log(`${total} and ${i}`);
-  } while (i < n);
+  } while (i < n * 2);
   return total;
 }
 
 console.log(evenNumbersSum(3)); // should output 6
-//console.log(evenNumbersSum(0)); // should output 0
-//console.log(evenNumbersSum(10)); // should output 90
+console.log(evenNumbersSum(0)); // should output 0
+console.log(evenNumbersSum(10)); // should output 90
