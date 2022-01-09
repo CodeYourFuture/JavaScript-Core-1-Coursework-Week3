@@ -12,25 +12,26 @@
 // Example 1
 let a;
 console.log(a);
-
+//a does not have a value
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+  let message = "Hello";
 }
 
 let hello = sayHello();
 console.log(hello);
-
+//sayHello function does not have an output. It only assigns "Hello" to a variable called message
 
 // Example 3
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+  console.log(`Hello ${user}`);
 }
 
 sayHelloToUser();
-
+//sayHelloToUser function is called without an argument so when the function console logs Hello user, there is no user value to console log
 
 // Example 4
-let arr = [1,2,3];
+let arr = [1, 2, 3];
 console.log(arr[3]);
+//There is no element at index 3 in the array
