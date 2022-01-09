@@ -7,11 +7,11 @@
 
 function evenNumbers(n) {
   // TODO
-  let i = 0;
-  let string = "";
-  while (i < n + 1) {
+  let i = 1;
+  let string = "0";
+  while (i < n * 2) {
     if (i % 2 === 0) {
-      string += `${i},`;
+      string += `,${i}`;
     }
     i++;
   }
@@ -19,5 +19,5 @@ function evenNumbers(n) {
 }
 
 evenNumbers(3); // should output 0,2,4
-//evenNumbers(0); // should output nothing
-//evenNumbers(10); // should output 0,2,4,6,8,10,12,14,16,18
+evenNumbers(0); // should output nothing
+evenNumbers(10); // should output 0,2,4,6,8,10,12,14,16,18
