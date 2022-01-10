@@ -6,7 +6,23 @@
 */
 
 function evenNumbers(n) {
-    // TODO
+    let i = 0;
+    let evenNumCounter = 0;
+    let output = '';
+    let totalCommaCount = n-1;
+
+    while (evenNumCounter < n) {
+        if (i % 2 === 0) {
+            output += i;
+            if (evenNumCounter < totalCommaCount) {
+              output += ",";
+            }
+            evenNumCounter++;
+        }
+        i++;  
+    }
+    
+    console.log(output);
 }
 
 evenNumbers(3); // should output 0,2,4
