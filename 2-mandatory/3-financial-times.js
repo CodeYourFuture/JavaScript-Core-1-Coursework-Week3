@@ -6,8 +6,8 @@
 */
 function potentialHeadlines(allArticleTitles) {
   return allArticleTitles.filter((article) => article.length <= 65);
-  // TODO
 }
+// Filter return only the article with les than 65 characters
 
 /*
     The editor of the FT likes short headlines with only a few words!
@@ -16,8 +16,8 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
   return allArticleTitles.sort((a, b) => a.length - b.length)[0];
-  // TODO
 }
+// sort return the array sorted by the length of the string and return the first
 
 /*
     The editor of the FT has realised that headlines which have numbers in them get more clicks!
@@ -26,8 +26,8 @@ function titleWithFewestWords(allArticleTitles) {
 */
 function headlinesWithNumbers(allArticleTitles) {
   return allArticleTitles.filter((article) => article.match(/[0-9]/));
-  // TODO
 }
+// Filter return only the article that match the number inside the string
 
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
@@ -35,9 +35,8 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
   return Math.round(allArticleTitles.join("").length / allArticleTitles.length);
-
-  // TODO
 }
+//Join is Joining all the string, checking the length and divide by the number of the string
 
 /* ======= List of Articles - DO NOT MODIFY ===== */
 const ARTICLE_TITLES = [

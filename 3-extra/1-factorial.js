@@ -9,11 +9,11 @@
 */
 
 function factorial(input) {
-  let total = 1;
+  let product = 1;
   for (let i = 1; i <= input; i++) {
-    total *= i;
+    product *= i;
   }
-  return total;
+  return product;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

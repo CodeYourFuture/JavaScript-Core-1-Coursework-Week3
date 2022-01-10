@@ -11,11 +11,13 @@
 */
 
 function getHighestRatedInEachGenre(books) {
-  let genres = {};
-  books.forEach((book) => {
-    if (!genres[book.genre] || genres[book.genre].rating < book.rating)
-      genres[book.genre] = book;
-  });
+  let genres =  books.reduce((acc,book) => {
+    //If the genre isn't in the initial value inital value is = to book or if the genre is in the 
+    // initaial value but is less than current value change the value to the current book
+    if (!acc[book.genre] || acc[book.genre].rating < book.rating)acc[book.genre] = book;
+      return acc
+  },{});
+  // Object.keys return all the keys of the object in the array and map return the title of each key.
   return Object.keys(genres).map((x) => genres[x].title);
 }
 /* ======= Book data - DO NOT MODIFY ===== */

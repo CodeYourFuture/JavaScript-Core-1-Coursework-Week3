@@ -18,16 +18,16 @@ function generateFibonacciSequence(num) {
     n2 = 1,
     count = 0,
     nextTerm = n1 + n2;
-  let resoult = [];
+  let result = [];
 
   while (count < num) {
-    resoult.push(n1);
+    result.push(n1);
     n1 = n2;
     n2 = nextTerm;
     nextTerm = n1 + n2;
     count += 1;
   }
-  return resoult;
+  return result;
 }
 /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the first 10 numbers in the Fibonacci Sequence", () => {

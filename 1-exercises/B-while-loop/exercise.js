@@ -1,18 +1,20 @@
-/*
-    while loops can be useful when you want to execute some code as long as some condition is true.    
+// /*
+//     while loops can be useful when you want to execute some code as long as some condition is true.    
 
-    Using a while loop, complete the function below so it logs (using console.log) the first n even numbers as a comma-seperated string.
-    The list of numbers should start with 0. n is being passed in as a parameter.
-*/
+//     Using a while loop, complete the function below so it logs (using console.log) the first n even numbers as a comma-seperated string.
+//     The list of numbers should start with 0. n is being passed in as a parameter.
+// */
 
 function evenNumbers(n) {
-  let count = 0;
-  let result = [];
-  while (count < n * 2) {
-    if (count % 2 === 0) result.push(count);
+  let count = 1;
+  let number = 0;
+  let result = "0";
+  while (count < n) {
     count++;
+    number += 2;
+    result += "," + number;
   }
-  console.log(result.toString());
+  console.log(result);
 }
 
 evenNumbers(3); // should output 0,2,4

@@ -9,12 +9,13 @@
 function evenNumbersSum(n) {
   let current = 0;
   let total = 0;
+  let number = 0;
   do {
-    if (current % 2 === 0) total += current * 3;
+    total += number;
+    number += 2;
     current++;
-  } while (current <= n);
+  } while (current < n);
   return total;
-  TODO;
 }
 
 console.log(evenNumbersSum(3)); // should output 6
