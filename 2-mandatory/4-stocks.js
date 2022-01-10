@@ -61,6 +61,16 @@ getAveragePrices(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS);
 */
 function getPriceChanges(closingPricesForAllStocks) {
   // TODO
+  let priceChange = [];
+  for (i = 0; i < closingPricesForAllStocks.length; i++) {
+    priceChange.push(
+      Math.round(
+        (closingPricesForAllStocks[i][4] - closingPricesForAllStocks[i][0]) *
+          100
+      ) / 100
+    );
+  }
+  return priceChange;
 }
 
 /*
@@ -77,6 +87,24 @@ function getPriceChanges(closingPricesForAllStocks) {
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
   // TODO
+  let highestPrices = [];
+  let highPrice = 0;
+
+  for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+    highPrice = closingPricesForAllStocks[i][0];
+    for (let x = 0; x < closingPricesForAllStocks[i].length; x++) {
+      if (closingPricesForAllStocks[i][x] > highPrice) {
+        highPrice = closingPricesForAllStocks[i][x];
+      }
+    }
+    //"The highest price of AAPL in the last 5 days was 180.33"
+    highestPrices.push(
+      `The highest price of ${stocks[
+        i
+      ].toUpperCase()} in the last 5 days was ${highPrice.toFixed(2)}`
+    );
+  }
+  return highestPrices;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
