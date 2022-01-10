@@ -10,17 +10,18 @@
 */
 
 // Example 1
+// We didn't give a value to a variable a
 let a;
 console.log(a);
 
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+    let message = "Hello"; // we have to return something
 }
 
 let hello = sayHello();
-console.log(hello);
+console.log(hello); // we need quotation marks 
 
 
 // Example 3
@@ -28,9 +29,9 @@ function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
 
-sayHelloToUser();
+sayHelloToUser(); // there is not argument  
 
 
 // Example 4
 let arr = [1,2,3];
-console.log(arr[3]);
+console.log(arr[3]); // there are only 3 elements in the array. The last index should be 2
