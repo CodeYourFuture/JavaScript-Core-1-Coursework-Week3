@@ -14,9 +14,49 @@
 */
 
 function generateFibonacciSequence(n) {
-    // TODO
+    /*
+      Strictly speaking F0=0 F1=1 F2=1 F3=2 F4=3 F5=5 F6=8 etc
+      So my program will produce a sequence based on these numbers
+
+      see https://en.wikipedia.org/wiki/Fibonacci_number
+      see also 
+      The first 300 Fibonacci numbers, factored
+      http://www.maths.surrey.ac.uk/hosted-sites/R.Knott/Fibonacci/fibtable.html
+    */
+
+    let previous = 1, addend = 1, total = 1, result = [0,1,1]
+
+    if (n <= 1) 
+        return [0];
+    if (n === 2)
+        return [0,1]; 
+    if (n === 3)
+        return [0,1,1]; 
+
+    // n is >= 4 
+    // so will be generating from F(3)=2
+    // So for example, to generate F(7)=13 which is the 8th Fibonacci number
+    // for the purpose of my program, n will be decremented by 3 = 4
+    // to run the following loop, 4 times:
+    for (let i = 0; i < n - 3; i++)
+    {
+        previous = total;
+        total += addend;
+        addend = previous
+        result.push(total);
+
+    }
+
+    return result;
 }
 
+console.log(generateFibonacciSequence(0))
+console.log(generateFibonacciSequence(1))
+console.log(generateFibonacciSequence(2))
+console.log(generateFibonacciSequence(3))
+console.log(generateFibonacciSequence(4))
+console.log(generateFibonacciSequence(7))
+console.log(generateFibonacciSequence(10))
 /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the first 10 numbers in the Fibonacci Sequence", () => {
     expect(generateFibonacciSequence(10)).toEqual(

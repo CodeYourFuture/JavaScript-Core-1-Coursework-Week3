@@ -11,7 +11,30 @@
 */
 
 function getHighestRatedInEachGenre(books) {
-    // TODO
+    const theHighest = [], theGenres = [], theTitles = [];
+    let theIndex;
+    for (const eachBook of books) { // go through each book
+        // has this 'genre' been seen before - search for it in 'theGenres'
+        theIndex = theGenres.indexOf(eachBook.genre)
+        if (theIndex < 0) // -1 if not found
+        {   // this is the first time that this genre has been encountered
+            theGenres.push(eachBook.genre); // add it to 'theGenres'
+
+            // e.g. 1st entry will be [0], second will be [1], etc
+            // so tne position within theGenres would correspond with theHighest & theTitles 
+            theIndex=theGenres.length - 1;  
+
+            theHighest[theIndex] = eachBook.rating; // the highest rating so far 
+            theTitles[theIndex] = eachBook.title;    // with the corresponding title
+        }
+        else
+        if (eachBook.rating > theHighest[theIndex])
+        { // Found an higher rating, update the previous entry
+            theHighest[theIndex] = eachBook.rating;
+            theTitles[theIndex] = eachBook.title;
+        }
+    }
+    return theTitles; // Return the result!
 }
 
 

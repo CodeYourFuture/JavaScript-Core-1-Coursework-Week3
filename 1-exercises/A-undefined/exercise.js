@@ -13,6 +13,8 @@
 let a;
 console.log(a);
 
+// Answer: a has not been initialised with a value
+
 
 // Example 2
 function sayHello() {
@@ -23,6 +25,8 @@ let hello = sayHello();
 console.log(hello);
 
 
+// Answer: the function sayHello() does not return a value. So hello is 'undefined'
+
 // Example 3
 function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
@@ -30,7 +34,10 @@ function sayHelloToUser(user) {
 
 sayHelloToUser();
 
+// Answer: the parameter 'user' has not been initialised with a value
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+
+// Answer: the array arr only has 3 values. arr[3] is not defined with a value
