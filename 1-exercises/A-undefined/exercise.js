@@ -12,25 +12,28 @@
 // Example 1
 let a;
 console.log(a);
-
+// variable a does not have any value
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+  let message = "Hello";
 }
+//function does not return anything
 
 let hello = sayHello();
 console.log(hello);
-
+//hello is not a string in console.log, so computer reads it as variable. But variable hello doesn't exist.
 
 // Example 3
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+  console.log(`Hello ${user}`);
 }
 
 sayHelloToUser();
-
+//when calling function we don't pass any value for parameter user
 
 // Example 4
-let arr = [1,2,3];
+let arr = [1, 2, 3];
 console.log(arr[3]);
+
+//element in arr with index 3 doesn't exist. There only 0, 1, 2.
