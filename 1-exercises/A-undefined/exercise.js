@@ -12,25 +12,26 @@
 // Example 1
 let a;
 console.log(a);
-
+// It is undefined because it doesn't have value.
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+  let message = "Hello";
 }
 
 let hello = sayHello();
 console.log(hello);
-
+// It is undefined because it doesn't return value
 
 // Example 3
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+  console.log(`Hello ${user}`);
 }
 
 sayHelloToUser();
-
+// It is undefined because it hasn't value for user parameter
 
 // Example 4
-let arr = [1,2,3];
+let arr = [1, 2, 3];
 console.log(arr[3]);
+// It is undefined because the array hasn't this value, have only 0, 1 and 2.
