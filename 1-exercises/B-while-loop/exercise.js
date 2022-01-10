@@ -7,11 +7,15 @@
 
 function evenNumbers(n) {
   let i = 0;
+  let m = "";
   let sum = 0;
-  do {
-    console.log(sum + ",");
+  while (i < n) {
+    m = m + sum + ","; //string
     sum = sum + 2;
-  } while (i < n);
+    i++;
+  }
+  console.log(m);
+  return sum;
 }
 
 evenNumbers(3); // should output 0,2,4
