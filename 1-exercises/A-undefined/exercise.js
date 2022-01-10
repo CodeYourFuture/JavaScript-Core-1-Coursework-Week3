@@ -13,6 +13,8 @@
 let a;
 console.log(a);
 
+// variable 'a' has not not been assigned to anything
+
 
 // Example 2
 function sayHello() {
