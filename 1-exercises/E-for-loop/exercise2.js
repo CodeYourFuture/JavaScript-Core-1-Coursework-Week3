@@ -26,9 +26,9 @@ const AGES = [
     49
 ];
 
-for (let i = 0; i < WRITERS.length; i++) {    
-    for (let j = 0; j < AGES.length; j++) {
-   console.log(WRITERS[i] + ' is ' + AGES[j]); 
+for (let i = 0; i < WRITERS.length; i++) {       
+    for (let j = 0; j < AGES.length; j++) {    
+   console.log(WRITERS[i] + ' is ' + AGES[j] + ' years old');   
    i++;  
 }
 } 

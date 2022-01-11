@@ -12,24 +12,28 @@
 */
 
 function getTemperatureReport(cities) {
-    // TODO
-}
+let arr = [];
+for (let i = 0; i < cities.length; i++){
+arr.push("The temperature in " + cities[i] + " is " + temperatureService(cities[i]) + " degrees");
 
+}
+return arr; 
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 function temperatureService(city) {
-    let temperatureMap  = new Map();
+    let temparatureMap  = new Map();
 
-    temperatureMap.set('London', 10);
-    temperatureMap.set('Paris', 12);
-    temperatureMap.set('Barcelona', 17);
-    temperatureMap.set('Dubai', 27);
-    temperatureMap.set('Mumbai', 29);
-    temperatureMap.set('São Paulo', 23);
-    temperatureMap.set('Lagos', 33);
+    temparatureMap.set('London', 10);
+    temparatureMap.set('Paris', 12);
+    temparatureMap.set('Barcelona', 17);
+    temparatureMap.set('Dubai', 27);
+    temparatureMap.set('Mumbai', 29);
+    temparatureMap.set('São Paulo', 23);
+    temparatureMap.set('Lagos', 33);
     
-    return temperatureMap.get(city);
+    return temparatureMap.get(city);
 }
 
 test("should return a temperature report for the user's cities", () => {
