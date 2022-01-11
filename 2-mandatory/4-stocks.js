@@ -33,8 +33,16 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Solve the smaller problems, and then build those solutions back up to solve the larger problem.
         Functions can help with this!
 */
+
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+    return closingPricesForAllStocks.map((value, index) => {
+        let sum = 0, counter = 0;
+        for (let item of value) {
+            sum += item;
+            counter++;
+        }
+        return parseFloat((sum/counter).toFixed(2));
+    })
 }
 
 /*
@@ -47,8 +55,9 @@ function getAveragePrices(closingPricesForAllStocks) {
                 (Apple's price on the 5th day) - (Apple's price on the 1st day) = 172.99 - 179.19 = -6.2
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
+
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+    return closingPricesForAllStocks.map(value => parseFloat((value[4] - value[0]).toFixed(2))); 
 }
 
 /*
@@ -63,8 +72,12 @@ function getPriceChanges(closingPricesForAllStocks) {
     The stock ticker should be capitalised.
     The price should be shown with exactly 2 decimal places.
 */
+
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+    return closingPricesForAllStocks.map((value, index) => {
+        value.sort((a, b) => b-a);
+        return `The highest price of ${stocks[index].toUpperCase()} in the last 5 days was ${value[0].toFixed(2)}`;
+    })
 }
 
 
