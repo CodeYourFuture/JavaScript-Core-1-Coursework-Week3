@@ -13,24 +13,29 @@
 let a;
 console.log(a);
 
+//Because we did not assign any value to variable a
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+  let message = "Hello";
 }
 
 let hello = sayHello();
 console.log(hello);
 
+//Because we did not return anything in our Function
 
 // Example 3
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+  console.log(`Hello ${user}`);
 }
 
 sayHelloToUser();
 
+//Because we did not pass any value to our function parameter when calling the function
 
 // Example 4
-let arr = [1,2,3];
+let arr = [1, 2, 3];
 console.log(arr[3]);
+
+//Because arr[3] points to 4th value on a array while our array just have 3 values.

@@ -5,8 +5,18 @@
     The list of numbers should start with 0. n is being passed in as a parameter.
 */
 
-function evenNumbers(n) {
-    // TODO
+function evenNumbers(num) {
+  let i = 0;
+  let evenNum = [];
+  if (num === 0) {
+    return;
+  } else {
+    while (evenNum.length < num) {
+      evenNum.push(i);
+      i += 2;
+    }
+    console.log(evenNum);
+  }
 }
 
 evenNumbers(3); // should output 0,2,4
