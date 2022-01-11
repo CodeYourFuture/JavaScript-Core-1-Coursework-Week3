@@ -7,9 +7,18 @@
 */
 
 function evenNumbersSum(n) {
-    // TODO
+  if (n == 0) return 0
+  let i = 0,
+    j = 1,
+    sum = 0
+  do {
+    i += 2
+    sum += i
+    j++
+  } while (j < n)
+  return sum
 }
 
-console.log(evenNumbersSum(3)); // should output 6
-console.log(evenNumbersSum(0)); // should output 0
-console.log(evenNumbersSum(10)); // should output 90
+console.log(evenNumbersSum(3)) // should output 6
+console.log(evenNumbersSum(0)) // should output 0
+console.log(evenNumbersSum(10)) // should output 90
