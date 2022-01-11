@@ -12,15 +12,15 @@ function potentialHeadlines(allArticleTitles) {
 /*
     The editor of the FT likes short headlines with only a few words!
     Implement the function below, which returns the title with the fewest words.
-    (you can assume words will always be seperated by a space)
+    (you can assume words will always be separated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-  return allArticleTitles.sort((a, b) => a.length - b.length)[0];
+  return allArticleTitles.sort((a, b) => a.split(" ").length - b.split(" ").length)[0];
 }
 // sort return the array sorted by the length of the string and return the first
 
 /*
-    The editor of the FT has realised that headlines which have numbers in them get more clicks!
+    The editor of the FT has realized that headlines which have numbers in them get more clicks!
     Implement the function below to return a new array containing all the headlines which contain a number.
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */

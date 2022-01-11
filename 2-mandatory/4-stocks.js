@@ -68,7 +68,7 @@ function getPriceChanges(closingPricesForAllStocks) {
         - Returns an array of strings describing what the highest price was for each stock.
             For example, the first element of the array should be: "The highest price of AAPL in the last 5 days was 180.33"
             The test will check for this exact string.
-    The stock ticker should be capitalised.
+    The stock ticker should be capitalized.
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
@@ -80,7 +80,6 @@ function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
         .sort((a, b) => b - a)[0]
         .toFixed(2)}`
   );
-  // TODO
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

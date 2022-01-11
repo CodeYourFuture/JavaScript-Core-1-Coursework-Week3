@@ -14,7 +14,7 @@ function getRandomNumberGreaterThan50() {
   do {
     res = generateRandomNumber();
   } while (res <= 50);
-  if (res > 50) return res;
+  return res;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

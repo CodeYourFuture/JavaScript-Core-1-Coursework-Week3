@@ -12,8 +12,8 @@
 
 function getHighestRatedInEachGenre(books) {
   let genres =  books.reduce((acc,book) => {
-    //If the genre isn't in the initial value inital value is = to book or if the genre is in the 
-    // initaial value but is less than current value change the value to the current book
+    //If the genre isn't in the initial value initial value is = to book or if the genre is in the 
+    // initial value but is less than current value change the value to the current book
     if (!acc[book.genre] || acc[book.genre].rating < book.rating)acc[book.genre] = book;
       return acc
   },{});
