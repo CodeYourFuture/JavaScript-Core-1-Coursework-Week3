@@ -11,72 +11,103 @@
 */
 
 function getHighestRatedInEachGenre(books) {
-    // TODO
-}
+  // TODO
+  let highRatedBooks = [];
+  let highestBooks = [];
 
+  let childrenBooks = books.filter((book) => book.genre == "children");
+  let nonFictionBooks = books.filter((book) => book.genre == "non-fiction");
+  let cookingBooks = books.filter((book) => book.genre == "cooking");
+
+  highRatedBooks.push(nonFictionBooks[0]);
+  for (let i = 0; i < nonFictionBooks.length; i++) {
+    if (highRatedBooks[0].rating < nonFictionBooks[i].rating) {
+      highRatedBooks[0] = nonFictionBooks[i];
+    }
+  }
+
+  highRatedBooks.push(childrenBooks[1]);
+  for (let i = 0; i < childrenBooks.length; i++) {
+    if (highRatedBooks[1].rating < childrenBooks[i].rating) {
+      highRatedBooks[1] = childrenBooks[i];
+    }
+  }
+
+  highRatedBooks.push(cookingBooks[2]);
+  for (let i = 0; i < cookingBooks.length; i++) {
+    if (highRatedBooks[2].rating < cookingBooks[i].rating) {
+      highRatedBooks[2] = cookingBooks[i];
+    }
+  }
+
+  for (let i = 0; i < highRatedBooks.length; i++) {
+    highestBooks.push(highRatedBooks[i].title);
+  }
+  return highestBooks;
+}
 
 /* ======= Book data - DO NOT MODIFY ===== */
 const BOOKS = [
-    {
-        title: "The Lion, the Witch and the Wardrobe",
-        genre: "children",
-        rating: 4.7
-    },
-    {
-        title: "Sapiens: A Brief History of Humankind",
-        genre: "non-fiction",
-        rating: 4.7
-    },
-    {
-        title: "Nadiya's Fast Flavours",
-        genre: "cooking",
-        rating: 4.7
-    },
-    {
-        title: "Harry Potter and the Philosopher's Stone",
-        genre: "children",
-        rating: 4.8
-    },
-    {
-        title: "A Life on Our Planet",
-        genre: "non-fiction",
-        rating: 4.8
-    },
-    {
-        title: "Dishoom: The first ever cookbook from the much-loved Indian restaurant",
-        genre: "cooking",
-        rating: 4.85
-    },
-    {
-        title: "Gangsta Granny Strikes Again!",
-        genre: "children",
-        rating: 4.9
-    },
-    {
-        title: "Diary of a Wimpy Kid",
-        genre: "children",
-        rating: 4.6
-    },
-    {
-        title: "BOSH!: Simple recipes. Unbelievable results. All plants.",
-        genre: "cooking",
-        rating: 4.6
-    },
-    {
-        title: "The Book Your Dog Wishes You Would Read",
-        genre: "non-fiction",
-        rating: 4.85
-    },
-]
-
+  {
+    title: "The Lion, the Witch and the Wardrobe",
+    genre: "children",
+    rating: 4.7,
+  },
+  {
+    title: "Sapiens: A Brief History of Humankind",
+    genre: "non-fiction",
+    rating: 4.7,
+  },
+  {
+    title: "Nadiya's Fast Flavours",
+    genre: "cooking",
+    rating: 4.7,
+  },
+  {
+    title: "Harry Potter and the Philosopher's Stone",
+    genre: "children",
+    rating: 4.8,
+  },
+  {
+    title: "A Life on Our Planet",
+    genre: "non-fiction",
+    rating: 4.8,
+  },
+  {
+    title:
+      "Dishoom: The first ever cookbook from the much-loved Indian restaurant",
+    genre: "cooking",
+    rating: 4.85,
+  },
+  {
+    title: "Gangsta Granny Strikes Again!",
+    genre: "children",
+    rating: 4.9,
+  },
+  {
+    title: "Diary of a Wimpy Kid",
+    genre: "children",
+    rating: 4.6,
+  },
+  {
+    title: "BOSH!: Simple recipes. Unbelievable results. All plants.",
+    genre: "cooking",
+    rating: 4.6,
+  },
+  {
+    title: "The Book Your Dog Wishes You Would Read",
+    genre: "non-fiction",
+    rating: 4.85,
+  },
+];
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the highest rated book in each genre", () => {
-    expect(new Set(getHighestRatedInEachGenre(BOOKS))).toEqual(new Set(
-        [
-            "The Book Your Dog Wishes You Would Read",
-            "Gangsta Granny Strikes Again!",
-            "Dishoom: The first ever cookbook from the much-loved Indian restaurant"
-        ]
-    ));
+  expect(new Set(getHighestRatedInEachGenre(BOOKS))).toEqual(
+    new Set([
+      "The Book Your Dog Wishes You Would Read",
+      "Gangsta Granny Strikes Again!",
+      "Dishoom: The first ever cookbook from the much-loved Indian restaurant",
+    ])
+  );
 });
