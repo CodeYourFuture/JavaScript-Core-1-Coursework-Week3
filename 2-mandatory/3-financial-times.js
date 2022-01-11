@@ -6,7 +6,7 @@
 */
 function potentialHeadlines(allArticleTitles) {
   let selectedArticleTitles = [];
-  for (article of allArticleTitles) {
+  for (const article of allArticleTitles) {
     if (article.length <= 65) {
       selectedArticleTitles.push(article);
     }
@@ -20,8 +20,8 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-  return allArticleTitles.reduce(function (a, b) {
-    return a.length <= b.length ? a : b;
+  return allArticleTitles.reduce(function (shortestTitle, word) {
+    return shortestTitle.length <= word.length ? shortestTitle : word;
   });
 }
 
@@ -35,7 +35,7 @@ function headlinesWithNumbers(allArticleTitles) {
   var r = /\d+/;
   articleTitleWithNum = [];
 
-  for (articleTitle of allArticleTitles) {
+  for (const articleTitle of allArticleTitles) {
     if (articleTitle.match(r)) {
       articleTitleWithNum.push(articleTitle);
     }
@@ -50,7 +50,7 @@ function headlinesWithNumbers(allArticleTitles) {
 function averageNumberOfCharacters(allArticleTitles) {
   let sum = 0;
   let average;
-  for (articleTitle of allArticleTitles) {
+  for (const articleTitle of allArticleTitles) {
     sum += articleTitle.length;
   }
   average = sum / allArticleTitles.length;

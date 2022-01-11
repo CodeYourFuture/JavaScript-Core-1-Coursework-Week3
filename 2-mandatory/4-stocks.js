@@ -61,7 +61,7 @@ function getAveragePrices(closingPricesForAllStocks) {
 */
 function getPriceChanges(closingPricesForAllStocks) {
   priceChangeArray = [];
-  for (price of closingPricesForAllStocks) {
+  for (const price of closingPricesForAllStocks) {
     let priceChange = Number((price[price.length - 1] - price[0]).toFixed(2));
     priceChangeArray.push(priceChange);
   }
