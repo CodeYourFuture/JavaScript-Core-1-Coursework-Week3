@@ -12,25 +12,27 @@
 // Example 1
 let a;
 console.log(a);
-
+// because a is declared but not defined
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+  let message = "Hello";
 }
 
 let hello = sayHello();
 console.log(hello);
-
+// because sayHello is not returning notting
 
 // Example 3
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+  console.log(`Hello ${user}`);
 }
 
 sayHelloToUser();
-
+// because we are not passing any argument to the function
 
 // Example 4
-let arr = [1,2,3];
+let arr = [1, 2, 3];
 console.log(arr[3]);
+
+// because the index 3 is not defined

@@ -4,13 +4,18 @@
 
 // TODO Use a for-of loop to output each of the tube stations below.
 let tubeStations = [
-    "Aldgate",
-    "Baker Street",
-    "Picadilly Circus",
-    "Oxford Street",
-    "Tottenham Court Road"
+  "Aldgate",
+  "Baker Street",
+  "Picadilly Circus",
+  "Oxford Street",
+  "Tottenham Court Road",
 ];
-
+for (let name of tubeStations) {
+  console.log(name);
+}
 
 // TODO Use a for-of loop to capitalise and output each letter in the string seperately.
 let str = "codeyourfuture";
+for (let letter of str) {
+  console.log(letter.toUpperCase());
+}

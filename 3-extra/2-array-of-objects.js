@@ -11,72 +11,77 @@
 */
 
 function getHighestRatedInEachGenre(books) {
-    // TODO
+  let genres =  books.reduce((acc,book) => {
+    //If the genre isn't in the initial value initial value is = to book or if the genre is in the 
+    // initial value but is less than current value change the value to the current book
+    if (!acc[book.genre] || acc[book.genre].rating < book.rating)acc[book.genre] = book;
+      return acc
+  },{});
+  // Object.keys return all the keys of the object in the array and map return the title of each key.
+  return Object.keys(genres).map((x) => genres[x].title);
 }
-
-
 /* ======= Book data - DO NOT MODIFY ===== */
 const BOOKS = [
-    {
-        title: "The Lion, the Witch and the Wardrobe",
-        genre: "children",
-        rating: 4.7
-    },
-    {
-        title: "Sapiens: A Brief History of Humankind",
-        genre: "non-fiction",
-        rating: 4.7
-    },
-    {
-        title: "Nadiya's Fast Flavours",
-        genre: "cooking",
-        rating: 4.7
-    },
-    {
-        title: "Harry Potter and the Philosopher's Stone",
-        genre: "children",
-        rating: 4.8
-    },
-    {
-        title: "A Life on Our Planet",
-        genre: "non-fiction",
-        rating: 4.8
-    },
-    {
-        title: "Dishoom: The first ever cookbook from the much-loved Indian restaurant",
-        genre: "cooking",
-        rating: 4.85
-    },
-    {
-        title: "Gangsta Granny Strikes Again!",
-        genre: "children",
-        rating: 4.9
-    },
-    {
-        title: "Diary of a Wimpy Kid",
-        genre: "children",
-        rating: 4.6
-    },
-    {
-        title: "BOSH!: Simple recipes. Unbelievable results. All plants.",
-        genre: "cooking",
-        rating: 4.6
-    },
-    {
-        title: "The Book Your Dog Wishes You Would Read",
-        genre: "non-fiction",
-        rating: 4.85
-    },
-]
-
+  {
+    title: "The Lion, the Witch and the Wardrobe",
+    genre: "children",
+    rating: 4.7,
+  },
+  {
+    title: "Sapiens: A Brief History of Humankind",
+    genre: "non-fiction",
+    rating: 4.7,
+  },
+  {
+    title: "Nadiya's Fast Flavours",
+    genre: "cooking",
+    rating: 4.7,
+  },
+  {
+    title: "Harry Potter and the Philosopher's Stone",
+    genre: "children",
+    rating: 4.8,
+  },
+  {
+    title: "A Life on Our Planet",
+    genre: "non-fiction",
+    rating: 4.8,
+  },
+  {
+    title:
+      "Dishoom: The first ever cookbook from the much-loved Indian restaurant",
+    genre: "cooking",
+    rating: 4.85,
+  },
+  {
+    title: "Gangsta Granny Strikes Again!",
+    genre: "children",
+    rating: 4.9,
+  },
+  {
+    title: "Diary of a Wimpy Kid",
+    genre: "children",
+    rating: 4.6,
+  },
+  {
+    title: "BOSH!: Simple recipes. Unbelievable results. All plants.",
+    genre: "cooking",
+    rating: 4.6,
+  },
+  {
+    title: "The Book Your Dog Wishes You Would Read",
+    genre: "non-fiction",
+    rating: 4.85,
+  },
+];
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the highest rated book in each genre", () => {
-    expect(new Set(getHighestRatedInEachGenre(BOOKS))).toEqual(new Set(
-        [
-            "The Book Your Dog Wishes You Would Read",
-            "Gangsta Granny Strikes Again!",
-            "Dishoom: The first ever cookbook from the much-loved Indian restaurant"
-        ]
-    ));
+  expect(new Set(getHighestRatedInEachGenre(BOOKS))).toEqual(
+    new Set([
+      "The Book Your Dog Wishes You Would Read",
+      "Gangsta Granny Strikes Again!",
+      "Dishoom: The first ever cookbook from the much-loved Indian restaurant",
+    ])
+  );
 });
