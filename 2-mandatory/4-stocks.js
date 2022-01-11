@@ -34,8 +34,16 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Functions can help with this!
 */
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
-}
+        let averageArr = [];
+        for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+            let sumAverage = 0;
+            for (let j = 0; j < closingPricesForAllStocks[i].length; j++) {
+                sumAverage = sumAverage + closingPricesForAllStocks[i][j];
+            } 
+            averageArr.push(Math.round(sumAverage/closingPricesForAllStocks[i].length * 100) / 100);      
+        }
+        return averageArr; 
+    }
 
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
@@ -48,7 +56,11 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+    let priceChange = [];
+      for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+        priceChange.push(Math.round((closingPricesForAllStocks[i][closingPricesForAllStocks[i].length-1] - closingPricesForAllStocks[i][0]) * 100) / 100);
+    }
+    return priceChange;
 }
 
 /*
@@ -64,7 +76,18 @@ function getPriceChanges(closingPricesForAllStocks) {
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+    let maxPrice = [];
+    for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+        let highestPrice = closingPricesForAllStocks[i][0];
+        for (let j = 0; j < closingPricesForAllStocks[i].length; j++) {
+            if (closingPricesForAllStocks[i][j] > highestPrice) {
+                highestPrice = closingPricesForAllStocks[i][j];
+            }             
+        }
+        let str = "The highest price of " + stocks[i].toUpperCase() + " in the last 5 days was " + highestPrice.toFixed(2);
+        maxPrice.push(str);
+    } 
+    return maxPrice;
 }
 
 
