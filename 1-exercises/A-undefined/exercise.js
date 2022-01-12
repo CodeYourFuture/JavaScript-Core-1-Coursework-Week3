@@ -12,25 +12,27 @@
 // Example 1
 let a;
 console.log(a);
-
+// we are getting undefined because we have not defined it it with anything.
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+  let message = "Hello";
 }
+// the fuction doesnt have a specific purpose so therefore we need to let the fuction know what we want it to return.
 
 let hello = sayHello();
 console.log(hello);
 
-
 // Example 3
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+  console.log(`Hello ${user}`);
 }
 
 sayHelloToUser();
-
+// this is because we are not passing a value to our parameter.
 
 // Example 4
-let arr = [1,2,3];
+let arr = [1, 2, 3];
 console.log(arr[3]);
+
+// we dont have the third index.

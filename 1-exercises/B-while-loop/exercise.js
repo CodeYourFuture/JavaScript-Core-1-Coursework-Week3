@@ -6,7 +6,15 @@
 */
 
 function evenNumbers(n) {
-    // TODO
+  let start = 0;
+  let toxicList = [];
+  while (toxicList.length < n) {
+    toxicList.push(start);
+    start += 2;
+  }
+  console.log(toxicList);
+
+  // TODO
 }
 
 evenNumbers(3); // should output 0,2,4
