@@ -15,7 +15,7 @@ const getRandomNumberGreaterThan50 = () => {
 
     do {
         result = generateRandomNumber();
-    } while ( result < 50);
+    } while ( result < 51);
 
     return result;
 }

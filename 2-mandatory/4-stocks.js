@@ -73,20 +73,13 @@ const getPriceChanges = (closingPricesForAllStocks) => {
 */
 const highestPriceDescriptions = (closingPricesForAllStocks, stocks) => {
   // TODO
-  let highestPrice = closingPricesForAllStocks.map((ele) => {
-    return ele
-      .sort((firstVal, secondVal) => {
-        return secondVal - firstVal;
-      })[0]
-      .toFixed(2);
-  });
-
-  return highestPrice.map((ele, ind) => {
+  return closingPricesForAllStocks.map((ele, ind) => {
+    ele.sort((firstVal, secondVal) => secondVal - firstVal);
     return `The highest price of ${stocks[
       ind
-    ].toUpperCase()} in the last 5 days was ${ele}`;
+    ].toUpperCase()} in the last 5 days was ${ele[0].toFixed(2)}`;
   });
-}
+};
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the average price for each stock", () => {
