@@ -12,25 +12,26 @@
 // Example 1
 let a;
 console.log(a);
-
+// The variable "a" is declared but it's not assigned a value
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+  let message = "Hello";
 }
 
 let hello = sayHello();
 console.log(hello);
-
+// The variable "message" is not returned in the function
 
 // Example 3
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+  console.log(`Hello ${user}`);
 }
 
 sayHelloToUser();
-
+// No value is passed to this function
 
 // Example 4
-let arr = [1,2,3];
+let arr = [1, 2, 3];
 console.log(arr[3]);
+// The array ends with the index 2 and the index 3 is not defined
