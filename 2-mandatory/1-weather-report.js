@@ -12,7 +12,11 @@
 */
 
 function getTemperatureReport(cities) {
-    // TODO
+    let weather = [];
+    for (var i = 0; i < cities.length; i++) {
+        weather.push(`The temperature in ${cities[i]} is ${temperatureService(cities[i])} degrees`);
+    }
+    return weather;
 }
 
 
