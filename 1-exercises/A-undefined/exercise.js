@@ -11,16 +11,17 @@
 
 // Example 1
 let a;
-console.log(a);
+console.log(a); // a has been declared but not initialized, as it does not have a value, it returns undefined.
 
 
 // Example 2
 function sayHello() {
     let message = "Hello";
-}
+} 
 
 let hello = sayHello();
 console.log(hello);
+// the function does not return anything
 
 
 // Example 3
@@ -29,8 +30,10 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
+//when the function is called, there is no value given for the user argument, this results in the user variable being undefined
 
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+//arrays are zero indexed so the highest given index in this is 2 so there is no value in arr[3]
