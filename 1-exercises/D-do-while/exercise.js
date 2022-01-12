@@ -6,10 +6,20 @@
     Using a do-while loop, write a function which returns the sum of the first n even numbers (starting from 0)
 */
 
+
 function evenNumbersSum(n) {
-    // TODO
+let i = 0;
+let result = 0;
+    do {
+        i++;
+        if (i % 2 === 0){
+            result = result + i;  
+        }   
+      } while (i < (n-1)*2);
+return result;
 }
 
 console.log(evenNumbersSum(3)); // should output 6
 console.log(evenNumbersSum(0)); // should output 0
 console.log(evenNumbersSum(10)); // should output 90
+

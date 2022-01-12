@@ -13,6 +13,8 @@
 let a;
 console.log(a);
 
+// Answer1 have not given "a" a value, not assigned the variable a value
+
 
 // Example 2
 function sayHello() {
@@ -21,7 +23,7 @@ function sayHello() {
 
 let hello = sayHello();
 console.log(hello);
-
+//Answer2 sayHello function does not return anything
 
 // Example 3
 function sayHelloToUser(user) {
@@ -29,8 +31,9 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
-
+//Answer3 not fed the function sayHelloToUser an input
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+//Answer4 array index starts from 0, there is no 4th element in the arr array.
