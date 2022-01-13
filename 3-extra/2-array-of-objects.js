@@ -11,9 +11,15 @@
 */
 
 function getHighestRatedInEachGenre(books) {
-    // TODO
-}
+  let highestRating = [];
 
+  for (let i = 0; i < books.length; i++) {
+    if (books[i].rating >= books[5].rating) {
+      highestRating.push(books[i].title);
+    }
+  }
+  return highestRating;
+}
 
 /* ======= Book data - DO NOT MODIFY ===== */
 const BOOKS = [
