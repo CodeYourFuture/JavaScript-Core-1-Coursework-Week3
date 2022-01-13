@@ -6,9 +6,17 @@
 */
 
 function evenNumbers(n) {
-    // TODO
+    let i = 0;
+    let arr = [];
+    while (arr.length < n) {
+        arr.push(i);
+        i += 2;
+    }
+    return arr
 }
 
-evenNumbers(3); // should output 0,2,4
-evenNumbers(0); // should output nothing
-evenNumbers(10); // should output 0,2,4,6,8,10,12,14,16,18
+console.log(evenNumbers(10));
+
+// evenNumbers(3); // should output 0,2,4
+// evenNumbers(0); // should output nothing
+// evenNumbers(10); // should output 0,2,4,6,8,10,12,14,16,18

@@ -13,13 +13,22 @@
 
 function getTemperatureReport(cities) {
     // TODO
+    let final = [];
+    for (let i = 0; i < cities.length; i++) {
+        let city = cities[i];
+        let result = `The temperature in ${city} is ${temperatureService(city)} degrees`;
+        final.push(result);
+    }
+    return final;
 }
+
+
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 function temperatureService(city) {
-    let temparatureMap  = new Map();
+    let temparatureMap = new Map();
 
     temparatureMap.set('London', 10);
     temparatureMap.set('Paris', 12);
@@ -28,9 +37,9 @@ function temperatureService(city) {
     temparatureMap.set('Mumbai', 29);
     temparatureMap.set('São Paulo', 23);
     temparatureMap.set('Lagos', 33);
-    
     return temparatureMap.get(city);
 }
+
 
 test("should return a temperature report for the user's cities", () => {
     let usersCities = [
