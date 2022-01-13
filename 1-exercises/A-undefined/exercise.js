@@ -11,7 +11,8 @@
 
 // Example 1
 let a;
-console.log(a);
+console.log(a); 
+// We declare the variable 'a' but we haven't assigned a value to it yet.
 
 
 // Example 2
@@ -22,6 +23,8 @@ function sayHello() {
 let hello = sayHello();
 console.log(hello);
 
+// We are not returning anything from the function body and so the default return is undefined.
+
 
 // Example 3
 function sayHelloToUser(user) {
@@ -30,7 +33,11 @@ function sayHelloToUser(user) {
 
 sayHelloToUser();
 
+// We are not providing any arguments for the function call and so the user is undefined.
+
 
 // Example 4
 let arr = [1,2,3];
-console.log(arr[3]);
+console.log(arr[3]); 
+
+// arr[3] is the 4th item of the array which has not been assigned a value and so it's undefined.
