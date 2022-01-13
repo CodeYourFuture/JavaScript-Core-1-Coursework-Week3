@@ -11,23 +11,19 @@
 */
 
 const WRITERS = [
-    "Virginia Woolf",
-    "Zadie Smith",
-    "Jane Austen",
-    "Bell Hooks",
-    "Yukiko Motoya"
-]
-
-const AGES = [
-    59,
-    40,
-    41,
-    63,
-    49
+  "Virginia Woolf",
+  "Zadie Smith",
+  "Jane Austen",
+  "Bell Hooks",
+  "Yukiko Motoya",
 ];
 
-// TODO - Write for loop code here
+const AGES = [59, 40, 41, 63, 49];
 
+// TODO - Write for loop code here
+for (let i = 0; i < 5; i++) {
+  console.log(WRITERS[i], "is ", AGES[i], "years old.");
+}
 /*
 The output should look something like this:
 
