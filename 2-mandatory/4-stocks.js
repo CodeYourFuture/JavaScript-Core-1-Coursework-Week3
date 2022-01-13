@@ -35,19 +35,19 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Solve the smaller problems, and then build those solutions back up to solve the larger problem.
         Functions can help with this!
 */
-function getAveragePrices(closingPricesForAllStocks) {
-     let newArray = [];
+function getAveragePrices(thePricesForAllStocks) {
+     let resultsArray = [];
            
-     for (const array of closingPricesForAllStocks) // Outer Array
+     for (let array of thePricesForAllStocks) // Outer Array
      {
         let sum = 0; 
-        for (const eachNumber of array) { // Inner Array - Calculate the total
+        for (let eachNumber of array) { // Inner Array - Calculate the total
                 sum += eachNumber;
         }
         let average = sum/array.length; // Divide by how many numbers in the array
-        newArray.push(parseFloat(average.toFixed(2))); // Format to 2 decimal places then append to newArray      
+        resultsArray.push(parseFloat(average.toFixed(2))); // Format to 2 decimal places then append to resultsArray      
      }         
-     return newArray;
+     return resultsArray;
 }
 
 /*
@@ -60,15 +60,15 @@ function getAveragePrices(closingPricesForAllStocks) {
                 (Apple's price on the 5th day) - (Apple's price on the 1st day) = 172.99 - 179.19 = -6.2
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
-function getPriceChanges(closingPricesForAllStocks) {
-     let newArray = [];
+function getPriceChanges(thePricesForAllStocks) {
+     let resultsArray = [];
            
-     for (let item of closingPricesForAllStocks)
+     for (let item of thePricesForAllStocks)
      {
         let diff = item[item.length - 1] - item[0] // Calculate the difference in prices
-        newArray.push(parseFloat(diff.toFixed(2))); // Format to 2 decimal places then append to newArray                     
+        resultsArray.push(parseFloat(diff.toFixed(2))); // Format to 2 decimal places then append to resultsArray                     
      }         
-     return newArray;
+     return resultsArray;
 }
 
 /*
@@ -83,21 +83,21 @@ function getPriceChanges(closingPricesForAllStocks) {
     The stock ticker should be capitalised.
     The price should be shown with exactly 2 decimal places.
 */
-function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-     let newArray = [], result;
+function highestPriceDescriptions(thePricesForAllStocks, stocks) {
+     let resultsArray = [], result;
            
-     for (let i=0; i < closingPricesForAllStocks.length; i++)
+     for (let i=0; i < thePricesForAllStocks.length; i++)
      {
-        const array = closingPricesForAllStocks[i];
+        let array = thePricesForAllStocks[i];
         let theHighest = array[0];
         for (let j = 1;j < array.length; j++)
                 theHighest = Math.max(theHighest,array[j]); // Calculate the higher number
                 
         result = "The highest price of " + stocks[i].toUpperCase() + " in the last 5 days was " +
                                            theHighest.toFixed(2) // Create the output message
-        newArray.push(result); // Append to newArray       
+        resultsArray.push(result); // Append to resultsArray       
      }         
-     return newArray;
+     return resultsArray;
 }
 
 

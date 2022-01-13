@@ -14,13 +14,13 @@
 // See https://www.w3schools.com/js/js_object_maps.asp for an understanding of 'Map'
 
 function getTemperatureReport(cities) {
-    const newArray = [];
+    const resultsArray = [];
     for (let city of cities) {
         // Call temperatureService() to determine the temperature of each city
-        // Create the message and append to newArray
-        newArray.push("The temperature in " + city + " is " + temperatureService(city) + " degrees");
+        // Create the message and append to resultsArray
+        resultsArray.push("The temperature in " + city + " is " + temperatureService(city) + " degrees");
     }
-    return newArray;
+    return resultsArray;
 }
 
 

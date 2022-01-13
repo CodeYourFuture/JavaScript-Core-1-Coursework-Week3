@@ -16,7 +16,7 @@ function getHighestRatedInEachGenre(books) {
     for (const eachBook of books) { // go through each book
         // has this 'genre' been seen before - search for it in 'theGenres'
         theIndex = theGenres.indexOf(eachBook.genre)
-        if (theIndex < 0) // -1 if not found
+        if (theIndex < 0) // -1 if not foundcd.
         {   // this is the first time that this genre has been encountered
             theGenres.push(eachBook.genre); // add it to 'theGenres'
 

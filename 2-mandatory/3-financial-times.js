@@ -6,12 +6,12 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    let newArr=[];
-    for (const article of allArticleTitles) {
+    let resultsArray=[];
+    for (let article of allArticleTitles) {
             if (article.length <= 65)
-                    newArr.push(article);
+                    resultsArray.push(article);
     }
-    return newArr;
+    return resultsArray;
 }
 
 /*
@@ -21,16 +21,17 @@ function potentialHeadlines(allArticleTitles) {
 */
 
 function titleWithFewestWords(allArticleTitles) {
-    let count = Infinity, howmany, result = ''; // Nothing can be greater than 'Infinity' so I start of with count=Infinity
-    for (const article of allArticleTitles) {
-            howmany = article.split(" ").length; // Determine the number of words
-            if (howmany < count) // Is it lower than the previous value?
+    // Nothing can be greater than 'Infinity' so I start of with count=Infinity
+    let count = Infinity, howmanyWords, shorterArticle = ''; 
+    for (let article of allArticleTitles) {
+            howmanyWords = article.split(" ").length; // Determine the number of words
+            if (howmanyWords < count) // Is it lower than the previous value?
             {
-                    count = howmany // Yes! Then update
-                    result = article;
+                    count = howmanyWords // Yes! Then update
+                    shorterArticle = article;
             }
      }
-    return result;
+    return shorterArticle;
 }
 
 /*
@@ -40,21 +41,21 @@ function titleWithFewestWords(allArticleTitles) {
 */
 
 function headlinesWithNumbers(allArticleTitles) {
-    let newArr=[];
-    for (const article of allArticleTitles) {
+    let resultsArray=[];
+    for (let article of allArticleTitles) {
             let numFound = false; // flag used to check if a digit was found
             for (let aCharacter of article) { // go through each character in the article
                  if (aCharacter >= '0' && aCharacter <= '9') // Is it a digit?
                  {
-                     numFound = true; // set flag to TRUE
+                     // a digit has been found, so add article to the results array and leave the loop
+                     resultsArray.push(article);
                      break; // no point in continuing the loop - leave the loop
                  }   
             }
 
-            if (numFound)
-                newArr.push(article); // if a digit was found add article to newArr
+           
     }
-    return newArr;
+    return resultsArray;
 }
 
 /*
@@ -64,7 +65,7 @@ function headlinesWithNumbers(allArticleTitles) {
 
 function averageNumberOfCharacters(allArticleTitles) {
     let sum=0;
-    for (const article of allArticleTitles)
+    for (let article of allArticleTitles)
             sum += article.length; // count up all the entire number of characters in 'allArticleTitles'
     return Math.round(sum / allArticleTitles.length); // divide by the number of articles, rounding to nearest integer
 }
