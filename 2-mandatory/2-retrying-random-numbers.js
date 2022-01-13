@@ -5,7 +5,7 @@
 
 // This function shouldn't be changed
 function generateRandomNumber() {
-    console.log("Generating number...");
+    // console.log("Generating number...");
     return Math.round(Math.random() * 100);
 }
 

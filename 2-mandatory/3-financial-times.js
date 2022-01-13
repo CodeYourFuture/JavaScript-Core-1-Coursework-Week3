@@ -71,9 +71,15 @@ function headlinesWithNumbers(allArticleTitles) {
     The Financial Times wants to understand what the average number of characters in an article title is.
     Implement the function below to return this number - rounded to the nearest integer.
 */
-function averageNumberOfCharacters(allArticleTitles) {
+
+function averageNumberOfCharacters(allArticleTitles){
+    let sum = 0;
+    for (let i = 0; i < allArticleTitles.length; i++) {
+    sum += allArticleTitles[i];
     
+} return Math.round(sum.trim().length / allArticleTitles.length);
 }
+
 
 /* ======= List of Articles - DO NOT MODIFY ===== */
 const ARTICLE_TITLES = [
