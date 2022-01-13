@@ -14,7 +14,13 @@
 */
 
 function generateFibonacciSequence(n) {
-    // TODO
+    let sequence = [0, 1];
+    let i = 1;
+    while (sequence.length < n) {
+        sequence.push(sequence[i] + sequence[i - 1]);
+        i++;
+    }
+    return sequence;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
