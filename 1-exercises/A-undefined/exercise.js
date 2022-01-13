@@ -12,7 +12,8 @@
 // Example 1
 let a;
 console.log(a);
-
+// Answer 1
+// Variable a has not been assigned a value, therefore it returns undefined.
 
 // Example 2
 function sayHello() {
@@ -21,6 +22,8 @@ function sayHello() {
 
 let hello = sayHello();
 console.log(hello);
+// Answer 2
+// The sayHello function doesn't include the return keyword, therefore it returns undefined not an actual value.
 
 
 // Example 3
@@ -29,8 +32,11 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
-
+// Answer 3
+// The sayHelloToUser function doesn't include the return keyword, therefore it returns undefined not an actual value.
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+// Answer 4
+// We are trying to grab and console.log a value that does not exist in the arr array, therefore we get undefined.

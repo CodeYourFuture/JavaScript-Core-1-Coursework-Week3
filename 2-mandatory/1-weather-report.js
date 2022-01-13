@@ -11,8 +11,13 @@
         - Hint: you can call the temperatureService function from your function
 */
 
-function getTemperatureReport(cities) {
+const getTemperatureReport = (cities) => {
     // TODO
+    const cityTemp = [];
+    for (city of cities) {
+      cityTemp.push(`The temperature in ${city} is ${temperatureService(city)} degrees`);  
+    }
+    return cityTemp;
 }
 
 

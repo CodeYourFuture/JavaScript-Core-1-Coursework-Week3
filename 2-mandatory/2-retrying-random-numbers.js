@@ -4,13 +4,20 @@
 */
 
 // This function shouldn't be changed
-function generateRandomNumber() {
+const generateRandomNumber = () => {
     console.log("Generating number...");
     return Math.round(Math.random() * 100);
 }
 
-function getRandomNumberGreaterThan50() {
+const getRandomNumberGreaterThan50 = () => {
     // TODO - implement using a do-while loop
+    result = 0;
+
+    do {
+        result = generateRandomNumber();
+    } while ( result < 51);
+
+    return result;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

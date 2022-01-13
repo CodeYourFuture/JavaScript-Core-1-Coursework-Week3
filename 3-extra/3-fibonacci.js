@@ -13,8 +13,10 @@
         - the input n will be passed in to the function as an argument, and will be a number greater than 2
 */
 
-function generateFibonacciSequence(n) {
-    // TODO
+const generateFibonacciSequence = (number) => {
+    return Array.from({ length: number }).reduce((acc, val, ind) => {
+        return acc.concat(ind > 1 ? acc[ind - 1] + acc[ind - 2] : ind)
+    },[])
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
