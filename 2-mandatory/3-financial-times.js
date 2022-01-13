@@ -16,7 +16,7 @@ function potentialHeadlines(allArticleTitles) {
 function titleWithFewestWords(allArticleTitles) {
   let result = allArticleTitles[0]
   for (let i = 0; i < allArticleTitles.length; i++) {
-    if (allArticleTitles[i].length < result.length) result = allArticleTitles[i]
+    if (allArticleTitles[i].split(' ').length < result.split(' ').length) result = allArticleTitles[i]
   }
   return result
 }
