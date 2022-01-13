@@ -11,23 +11,22 @@
 */
 
 const WRITERS = [
-    "Virginia Woolf",
-    "Zadie Smith",
-    "Jane Austen",
-    "Bell Hooks",
-    "Yukiko Motoya"
-]
-
-const AGES = [
-    59,
-    40,
-    41,
-    63,
-    49
+  "Virginia Woolf",
+  "Zadie Smith",
+  "Jane Austen",
+  "Bell Hooks",
+  "Yukiko Motoya",
 ];
 
-// TODO - Write for loop code here
+const AGES = [59, 40, 41, 63, 49];
 
+function getWritersWithAge(writerName, WriterAge) {
+  for (i = 0; i < writerName.length; i++) {
+    console.log(`${writerName[i]} is ${WriterAge[i]} years old`);
+    //console.log(writerName[i] + " is " + WriterAge[i] + " years old");
+  }
+}
+getWritersWithAge(WRITERS, AGES);
 /*
 The output should look something like this:
 
