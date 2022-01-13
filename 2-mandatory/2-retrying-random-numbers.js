@@ -8,10 +8,13 @@ function generateRandomNumber() {
     console.log("Generating number...");
     return Math.round(Math.random() * 100);
 }
-
-function getRandomNumberGreaterThan50() {
-    // TODO - implement using a do-while loop
-}
+  function getRandomNumberGreaterThan50() {
+    let randomNum;
+    do {
+      randomNum = generateRandomNumber();
+    } while (randomNum <= 50);
+    return randomNum;
+  }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

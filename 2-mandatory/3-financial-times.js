@@ -6,6 +6,8 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+   return allArticleTitles.filter((element) => element.length <= 65);
+      
 }
 
 /*
@@ -15,7 +17,31 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
     // TODO
-}
+    let shortestTitleLength = Infinity;
+        return allArticleTitles.reduce((acc, title) => {
+          const titleLengthInWords = title.split(" ").length;
+          if (titleLengthInWords < shortestTitleLength) {
+            shortestTitleLength = titleLengthInWords;
+            return title;
+          } else {
+            return acc;
+          }
+        }, "");
+      }
+    //   function headlinesWithNumbers(allArticleTitles) {
+        //input is an array
+        //only return array entries that have numbers in
+        //return an array
+        //   return allArticleTitles.filter((title) => {
+        //     const matches = title.match(/\d/);
+        //     if (matches !== null) {
+        //       return true;
+        //     } else {
+        //       return false;
+        //     }
+        //   });
+        
+// }
 
 /*
     The editor of the FT has realised that headlines which have numbers in them get more clicks!
@@ -24,7 +50,18 @@ function titleWithFewestWords(allArticleTitles) {
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
-}
+    const titlesToReturn = [];
+        const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+        allArticleTitles.forEach((title) => {
+          title.split("").forEach((character) => {
+            if (numbers.includes(character)) {
+              titlesToReturn.push(title);
+            }
+          });
+        });
+        return titlesToReturn;
+      }
+    
 
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
@@ -32,6 +69,12 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+    let totalCharacterNumber = 0;
+  for (let i = 0; i < allArticleTitles.length; i++) {
+    totalCharacterNumber =
+      totalCharacterNumber + allArticleTitles[i].split("").length;
+  }
+  return Math.round(totalCharacterNumber / allArticleTitles.length);
 }
 
 

@@ -10,11 +10,15 @@
 */
 
 // Example 1
+// declare the variable a but we haven’t assign yet
+
+let a;
 let a;
 console.log(a);
 
 
 // Example 2
+// undefined is the return value of functions which don’t return a value 
 function sayHello() {
     let message = "Hello";
 }
@@ -24,6 +28,7 @@ console.log(hello);
 
 
 // Example 3
+// parameters for which no value is passed to the function it is undefined to.
 function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
@@ -32,5 +37,6 @@ sayHelloToUser();
 
 
 // Example 4
+// Array elements that do not have a value to undefined
 let arr = [1,2,3];
 console.log(arr[3]);
