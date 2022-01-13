@@ -6,6 +6,14 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+    // return allArticleTitles.filter( (element) =>element.length <= 65); from Aluns session 
+    let newOnlyArticle = [];
+    for (let i=0; i < allArticleTitles.length; i++) {
+        if (allArticleTitles[i].length <=65) {
+            newOnlyArticle.push(allArticleTitles[i] );
+        } 
+    } 
+    return newOnlyArticle;
 }
 
 /*
@@ -15,8 +23,30 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
     // TODO
+    let fewestWordsSentence;
+    let numberOfWords;
+    for (let i=0; i < allArticleTitles.length; i++) {
+          
+        const sentence = allArticleTitles[i];
+        
+        const sentenceLengthInWords = title.split(" ").length;//breaks them to words
+        if (!numberOfWords ) {
+            numberOfWords = sentenceLengthInWords;
+            fewestWordsSentence = sentence; //goes throught first book
+        }
+        else if (sentenceLengthInWords < numberOfWords) {
+            numberOfWords = sentenceLengthInWords;
+            fewestWordsSentence = sentence;
+        }
+       
+    }
+    return fewestWordsSentence;
 }
 
+let a = "the girl";
+console.log(a.length); //return a string 8 
+let b = ["abc","ddd"];
+console.log(b.length)// 2
 /*
     The editor of the FT has realised that headlines which have numbers in them get more clicks!
     Implement the function below to return a new array containing all the headlines which contain a number.

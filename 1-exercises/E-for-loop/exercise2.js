@@ -31,6 +31,7 @@ function combineTwo () {
        console.log (WRITERS[i] + " is " + AGES[i] + " years old ") ;
     }
 }
+combineTwo();
 // TODO - Write for loop code here
 
 /*
