@@ -12,7 +12,7 @@
 // Example 1
 let a;
 console.log(a);
-
+//Because we didn't assign a value for a variable a when we first declaring it.
 
 // Example 2
 function sayHello() {
@@ -21,16 +21,19 @@ function sayHello() {
 
 let hello = sayHello();
 console.log(hello);
+//Because the function is not returning anything.
 
 
 // Example 3
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+   console.log(`Hello ${user}`); 
 }
 
 sayHelloToUser();
+//we didn't pass argument to the function when we are calling it.
 
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+//Because we don't have index 3.

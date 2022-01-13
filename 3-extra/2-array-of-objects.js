@@ -12,6 +12,14 @@
 
 function getHighestRatedInEachGenre(books) {
     // TODO
+    let bookTitles=[];
+    for(let i=0; i<books.length; i++){
+        if(books[i].rating > 4.8){
+         bookTitles.push(books[i].title)   
+        }
+        
+    }
+return bookTitles;
 }
 
 
