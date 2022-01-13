@@ -9,7 +9,16 @@
 */
 
 function factorial(input) {
-    // TODO
+    let num = [];
+    let i = 1;
+    while (i <= input) {
+        num.push(i);
+        i++;
+    }
+    let result = num.reduce((a, b) => {
+        return a * b;
+    })
+    return result;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
