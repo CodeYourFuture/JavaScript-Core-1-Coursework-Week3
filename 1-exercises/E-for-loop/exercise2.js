@@ -28,6 +28,14 @@ const AGES = [
 
 // TODO - Write for loop code here
 
+function addArray(nameOfWriter, ageOfWriter) {
+  
+  for (let i = 0; i < nameOfWriter.length; i++) {
+     console.log(nameOfWriter[i] + " is " + ageOfWriter[i] + " years old");
+  }
+}
+
+addArray(WRITERS, AGES);
 /*
 The output should look something like this:
 
