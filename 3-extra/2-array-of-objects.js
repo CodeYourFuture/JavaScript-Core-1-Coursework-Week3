@@ -11,15 +11,7 @@
 */
 
 function getHighestRatedInEachGenre(books) {
-  let highRating = 0;
-  let genre = "";
-  for (let i = 0; i < books.length; i++) {
-    let genre = "";
-    if (books[i].rating > highRating && books[i].genre === genre) {
-      highRating = books[i].rating;
-      genre = books[i].genre;
-    }
-  }
+  // TODO
 }
 
 /* ======= Book data - DO NOT MODIFY ===== */
