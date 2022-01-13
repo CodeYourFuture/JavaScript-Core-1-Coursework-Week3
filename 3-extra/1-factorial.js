@@ -10,7 +10,7 @@
 
 const factorial = (input) => {
   let answer = 1;
-  for (let i = 1; i <= input; i++) {
+  for (let i = 2; i <= input; i++) {
     answer *= i;
   }
   return answer;

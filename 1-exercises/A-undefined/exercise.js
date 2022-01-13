@@ -9,7 +9,7 @@
     For each example, can you explain why we are seeing undefined?
 */
 
-// Example 1 - declaration of variable 'a' doesn't assingn a vlaue
+// Example 1 - declaration of variable 'a' doesn't assign a value
 let a;
 console.log(a);
 
@@ -23,7 +23,7 @@ let hello = sayHello();
 console.log(hello);
 
 
-// Example 3 - user argument is not passet to the function
+// Example 3 - user argument is not passed to the function
 function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }

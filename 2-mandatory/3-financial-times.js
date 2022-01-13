@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 /*
     Imagine you are working on the Financial Times web site! They have a list of article titles stored in an array.
 
@@ -51,7 +52,7 @@ const headlinesWithNumbers = (allArticleTitles) => {
     Implement the function below to return this number - rounded to the nearest integer.
 */
 const averageNumberOfCharacters = (allArticleTitles) => {
-  totalChars = 0;
+  let totalChars = 0;
   for (const articleTitle of allArticleTitles) {
     totalChars += articleTitle.length;
   }

@@ -8,15 +8,15 @@
 */
 
 const evenNumbersSum = (n) => {
-  let i = 0;
-  let j = 0;
-  let sum = 0;
+  let evenNumber = 0;
+  let count = 0;
+  let sumEvenNumbers = 0;
   do {
-    sum += i;
-    i += 2;
-    j++;
-  } while (j < n);
-  return sum;
+    sumEvenNumbers += evenNumber;
+    evenNumber += 2;
+    count++;
+  } while (count < n);
+  return sumEvenNumbers;
 };
 
 console.log(evenNumbersSum(3)); // should output 6

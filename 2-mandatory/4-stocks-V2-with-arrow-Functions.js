@@ -34,7 +34,7 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Functions can help with this!
 */
 
-const getAveragePrices = (arr) => arr.map((e) => Math.round((e.reduce((a, i) => a + i, 0) / 5) * 100) / 100);
+const getAveragePrices = (arr) => arr.map((e) => Math.round((e.reduce((a, i) => a + i, 0) / e.length) * 100) / 100);
 
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
@@ -47,7 +47,7 @@ const getAveragePrices = (arr) => arr.map((e) => Math.round((e.reduce((a, i) => 
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 
-const getPriceChanges = (arr) => arr.map((e) => Math.round((e[4] - e[0]) * 100) / 100);
+const getPriceChanges = (arr) => arr.map((e) => Math.round((e[e.length - 1] - e[0]) * 100) / 100);
 
 /*
     As part of a financial report, we want to see what the highest price was for each stock in the last 5 days.
