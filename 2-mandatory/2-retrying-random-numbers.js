@@ -20,22 +20,9 @@ function getRandomNumberGreaterThan50() {
 // console.log(generateRandomNumber());
 
 
-
-// function getRandomNumberGreaterThan50() {
-//   let res;
-//   do {
-//     res = generateRandomNumber();
-//   } while (res <= 50);
-//   if (res > 50) return res;
-// }
-
 console.log(getRandomNumberGreaterThan50()); 
 
-// do {
-//   ourArray.push(i);
-//   i++;
-// } while (i < 5);
-/* ======= TESTS - DO NOT MODIFY ===== */
+
 
 test("Returned value should always be greater than 50", () => {
     expect(getRandomNumberGreaterThan50()).toBeGreaterThan(50);
