@@ -10,13 +10,16 @@
 */
 
 // Example 1
-let a;
+//a is declared however not given a value to the variable. Therefore becomes undefined. 
+let a = 2; //now a has a value of 2
 console.log(a);
 
 
 // Example 2
+// The function is not missing the return.
 function sayHello() {
     let message = "Hello";
+    return message //added the return keyword now the fuction works as it should.
 }
 
 let hello = sayHello();
@@ -24,13 +27,15 @@ console.log(hello);
 
 
 // Example 3
+//we need to pass argument when calling a function
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+    return(`Hello ${user}`);
+     
 }
+sayHelloToUser(); 
 
-sayHelloToUser();
 
-
-// Example 4
-let arr = [1,2,3];
+// Example 4 
+// not given a value.
+let arr = [1,2,3,4]; // now index 3 has a value of 4
 console.log(arr[3]);
