@@ -35,7 +35,19 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 */
 function getAveragePrices(closingPricesForAllStocks) {
     // TODO
+    let newAverage =[]
+    let sum = 0;
+    for(let i = 0; i < STOCKS.length; i++){
+        for( let j=0; j < CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[i].length; j++){
+          sum += CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[i][j]; 
+        }
+        newAverage.push(
+          ((sum /CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[i].length).toFixed(2)) * 1);
+        sum = 0;
+    }
+   return newAverage;
 }
+
 
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
@@ -48,7 +60,12 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+    getPriceChange = [];
+    for (price of closingPricesForAllStocks) {
+        let priceChange = Number((price[price.length -1] - price[0]).toFixed(2));
+        getPriceChange.push(priceChange);
+    }
+    return getPriceChange;
 }
 
 /*
@@ -60,11 +77,15 @@ function getPriceChanges(closingPricesForAllStocks) {
         - Returns an array of strings describing what the highest price was for each stock.
             For example, the first element of the array should be: "The highest price of AAPL in the last 5 days was 180.33"
             The test will check for this exact string.
-    The stock ticker should be capitalised.
+    The stock ticker should be capitalized.
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+    highestPriceLast5Days = [];
+    for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+        highestPriceLast5Days.push(`The highest price of ${stocks[i].toUpperCase()} in the last 5 days was ${Math.max(...closingPricesForAllStocks[i]).toFixed(2)}`);
+    }
+    return highestPriceLast5Days;
 }
 
 
