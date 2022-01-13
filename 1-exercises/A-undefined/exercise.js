@@ -22,7 +22,7 @@ function sayHello() {
 
 let hello = sayHello();
 console.log(hello);
-//hello is not a string in console.log, so computer reads it as variable. But variable hello doesn't exist.
+//hello is not a string in console.log, so computer reads it as variable.
 
 // Example 3
 function sayHelloToUser(user) {

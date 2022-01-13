@@ -21,16 +21,14 @@ function potentialHeadlines(allArticleTitles) {
 */
 
 function titleWithFewestWords(allArticleTitles) {
-  const myArray = [];
-  for (let article of allArticleTitles) {
-    myArray.push(article.split(" "));
-  } //newArray takes individual words are elements
-  let result = myArray.reduce(function (a, b) {
-    return a.length <= b.length ? a : b; //compares length of arrays in newArray -> how many words in each array & assigns shortest array to the variable result
-  });
-  return allArticleTitles[myArray.indexOf(result)]; //myArray.indexOf(result) -> returns index of result in newArray, which is the same index in allArticleTitles -> returns the title.
+  let result = allArticleTitles[0];
+  for (let i = 0; i < allArticleTitles.length; i++) {
+    if (allArticleTitles[i].split(" ").length < result.split(" ").length) {
+      result = allArticleTitles[i];
+    }
+  }
+  return result;
 }
-
 /*
     The editor of the FT has realised that headlines which have numbers in them get more clicks!
     Implement the function below to return a new array containing all the headlines which contain a number.
