@@ -10,13 +10,14 @@
 */
 
 // Example 1
-let a;
+let a; // a has no value
 console.log(a);
 
 
 // Example 2
 function sayHello() {
     let message = "Hello";
+    // no return statement
 }
 
 let hello = sayHello();
@@ -28,9 +29,9 @@ function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
 
-sayHelloToUser();
+sayHelloToUser();// no value for user parameter
 
 
 // Example 4
 let arr = [1,2,3];
-console.log(arr[3]);
+console.log(arr[3]); // no third index value
