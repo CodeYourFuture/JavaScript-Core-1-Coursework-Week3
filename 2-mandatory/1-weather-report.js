@@ -12,7 +12,11 @@
 */
 
 function getTemperatureReport(cities) {
-    // TODO
+    function citistring (el){
+        return "The temperature " + "in " + el + " is " + temperatureService(el) + " degrees"
+    }
+    const arr = cities.map(citistring)
+    return arr;
 }
 
 
