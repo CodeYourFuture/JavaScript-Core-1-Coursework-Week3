@@ -83,14 +83,26 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
-}
+    let totalCharacters = 0;
+    for (let i=0; i <allArticleTitles.length; i++){
+        totalCharacters = allArticleTitles[i].length + totalCharacters;
+        
+    }
+    console.log(Math.round(totalCharacters/ allArticleTitles.length))
+    return Math.round(totalCharacters / allArticleTitles.length);
+} 
+// let i = 0;
+// while (i < allArticleTitles.length) {
+//     totalCharacters = allArticleTitles[i].length + totalCharacters;
+//     i++ 
+// }
 
 
 
 /* ======= List of Articles - DO NOT MODIFY ===== */
 const ARTICLE_TITLES = [
-    "Streaming wars drive media groups to spend more than $100bn on new content",
-    "Amazon Prime Video India country head: streaming is driving a TV revolution",
+    "Streaming wars drive media groups to spend more than $100bn on new content",//0
+    "Amazon Prime Video India country head: streaming is driving a TV revolution",//1
     "Aerospace chiefs prepare for bumpy ride in recovery of long-haul flights",
     "British companies look to muscle in on US retail investing boom",
     "Libor to take firm step towards oblivion on New Year's Day",
