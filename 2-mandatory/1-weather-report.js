@@ -10,12 +10,13 @@
             For example, "The temperature in London is 10 degrees"
         - Hint: you can call the temperatureService function from your function
 */
-
 function getTemperatureReport(cities) {
-    // TODO
+    const tmpForEachCity = [];
+    for (let city of cities) {
+        tmpForEachCity.push(`The temperature in ${city} is ${temperatureService(city)} degrees`);
+    }
+    return tmpForEachCity;
 }
-
-
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 function temperatureService(city) {
