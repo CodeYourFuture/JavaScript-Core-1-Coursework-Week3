@@ -43,17 +43,38 @@ function titleWithFewestWords(allArticleTitles) {
     return fewestWordsSentence;
 }
 
-let a = "the girl";
-console.log(a.length); //return a string 8 
-let b = ["abc","ddd"];
-console.log(b.length)// 2
+// let a = "the girl";
+// console.log(a.length); //return a string 8 
+// let b = ["abc","ddd"];
+// console.log(b.length)// 2
 /*
     The editor of the FT has realised that headlines which have numbers in them get more clicks!
     Implement the function below to return a new array containing all the headlines which contain a number.
     (Hint: remember that you can also loop through the characters of a string if you need to)
+
+    used this as example
+    // String with some numbers
+const str = "Hello12345World!";
+
+// Regular expression
+const regex = /\d/;
+
+// Check if string contians numbers
+const doesItHaveNumber = regex.test(str);
+
+console.log(doesItHaveNumber); // true
+    https://dev.to/melvin2016/how-to-check-if-a-string-contains-at-least-one-number-using-regular-expression-regex-in-javascript-3n5h
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+    const regex = /\d/;
+    let newArrWithNumber = [];
+    for (let i=0; i < allArticleTitles.length; i++) {
+         if (regex.test(allArticleTitles[i]) ) {
+             newArrWithNumber.push(allArticleTitles[i])
+         }
+    }
+    return newArrWithNumber;
 }
 
 /*
