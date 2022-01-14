@@ -10,27 +10,24 @@
 */
 
 // Example 1
-let a;
+let a; // variable a is defined but there is no assigned value to it.
 console.log(a);
-
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
-}
+  let message = "Hello";
+} // function doesn't return anything therefore function value is undefined.
 
 let hello = sayHello();
 console.log(hello);
 
-
 // Example 3
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+  console.log(`Hello ${user}`);
 }
 
-sayHelloToUser();
-
+sayHelloToUser(); // parameter is not passed therefore parameter value is undefined now
 
 // Example 4
-let arr = [1,2,3];
-console.log(arr[3]);
+let arr = [1, 2, 3];
+console.log(arr[3]); // there is no 3. index element in the array thats why arr[3] is undefined.
