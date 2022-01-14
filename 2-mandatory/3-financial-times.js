@@ -5,7 +5,13 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    // TODO
+    let articleTitles = [];
+    for(let i = 0; i < allArticleTitles.length; i++) {
+        if(allArticleTitles[i].length <= 65) {
+            articleTitles.push(allArticleTitles[i]);
+        }
+    }
+    return articleTitles;
 }
 
 /*
@@ -14,7 +20,15 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+    let articleTitleWithFewestWord = allArticleTitles[0];
+    let i = 0;
+    while(i < allArticleTitles.length) {
+        if (articleTitleWithFewestWord.length > allArticleTitles[i].length) {
+          articleTitleWithFewestWord = allArticleTitles[i];
+        }
+        i++;
+    }
+    return articleTitleWithFewestWord;
 }
 
 /*
@@ -24,6 +38,13 @@ function titleWithFewestWords(allArticleTitles) {
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+    let articleTitles = [];
+    for (let i = 0; i < allArticleTitles.length; i++) {
+      if (/\d/.test(allArticleTitles[i])) {
+        articleTitles.push(allArticleTitles[i]);
+      }
+    }
+    return articleTitles;
 }
 
 /*
@@ -32,6 +53,14 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+    let avg = 0;
+    let sum = 0;
+
+    for (let i = 0; i < allArticleTitles.length; i++) {
+      sum += allArticleTitles[i].length;
+    }
+    avg = Math.round(sum / allArticleTitles.length);
+    return avg;
 }
 
 

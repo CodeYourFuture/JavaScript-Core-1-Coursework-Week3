@@ -33,8 +33,38 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Solve the smaller problems, and then build those solutions back up to solve the larger problem.
         Functions can help with this!
 */
+function roundUpCalculation(rawNum) {
+    return Math.round((rawNum + Number.EPSILON) * 100) / 100;
+}
+
+function calculateAverage(sum, lengthOfList) {
+    return roundUpCalculation(sum / lengthOfList);
+}
+
+function sumOfPricesOverFiveDays(prices) {
+    let sum = 0;
+
+    for(let i = 0; i < prices.length; i++) {
+        sum += prices[i];
+    }
+
+    return sum;
+}
+
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+    let averagePrices = [];
+
+    for(let i = 0; i < closingPricesForAllStocks.length; i++) {
+        let prices = closingPricesForAllStocks[i];
+
+        let sum = sumOfPricesOverFiveDays(prices);
+
+        let avg = calculateAverage(sum, prices.length);
+
+        averagePrices.push(avg);
+    }
+
+    return averagePrices;
 }
 
 /*
@@ -47,8 +77,22 @@ function getAveragePrices(closingPricesForAllStocks) {
                 (Apple's price on the 5th day) - (Apple's price on the 1st day) = 172.99 - 179.19 = -6.2
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
+function calculatePriceChange(firstPrice, lastPrice) {
+    return roundUpCalculation(lastPrice - firstPrice);
+}
+
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+    let priceChanges = [];
+
+    for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+      let prices = closingPricesForAllStocks[i];
+
+      let priceChange = calculatePriceChange(prices[0], prices[4])  
+
+      priceChanges.push(priceChange);
+    }
+
+    return priceChanges;
 }
 
 /*
@@ -63,8 +107,32 @@ function getPriceChanges(closingPricesForAllStocks) {
     The stock ticker should be capitalised.
     The price should be shown with exactly 2 decimal places.
 */
+function calculateHighestPrice(prices) {
+    let currentPrice = prices[0];
+
+    for(let i = 0; i < prices.length; i++) {
+        if(currentPrice < prices[i]) {
+            currentPrice = prices[i];
+        }
+    }
+
+    return currentPrice.toFixed(2);
+}
+
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+    let priceDescription = [];
+
+    for(let i = 0; i < closingPricesForAllStocks.length; i++) {
+        let prices = closingPricesForAllStocks[i];
+        
+        let ticker = stocks[i].toUpperCase();
+        
+        let highestStockPrice = calculateHighestPrice(prices);
+        
+        priceDescription.push(`The highest price of ${ticker} in the last 5 days was ${highestStockPrice}`);
+    }
+
+    return priceDescription;
 }
 
 

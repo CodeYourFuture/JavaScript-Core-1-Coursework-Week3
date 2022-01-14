@@ -12,6 +12,7 @@
 // Example 1
 let a;
 console.log(a);
+//nothing is being assigned to the variable a
 
 
 // Example 2
@@ -21,7 +22,7 @@ function sayHello() {
 
 let hello = sayHello();
 console.log(hello);
-
+//function doesn't return a value
 
 // Example 3
 function sayHelloToUser(user) {
@@ -29,8 +30,9 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
-
+// The user parameter is not passed when sayHelloToUser function is called. So the user parameter is undefined.
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+//the third index has not been defined in the array
