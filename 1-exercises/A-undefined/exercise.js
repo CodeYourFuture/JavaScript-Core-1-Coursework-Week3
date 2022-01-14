@@ -13,14 +13,17 @@
 let a;
 console.log(a);
 
+//Answer: Because a has not been assigned any value
 
 // Example 2
 function sayHello() {
     let message = "Hello";
 }
 
+
 let hello = sayHello();
 console.log(hello);
+//Answer: Because the function is not returning anything
 
 
 // Example 3
@@ -29,8 +32,10 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
+//Answer: Because no arguement has been passed inside the function when calling it
 
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+//Answer: Because the arr has 3 elements in it. So arr[3] means 4th element which is not present in the arr
