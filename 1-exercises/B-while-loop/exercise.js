@@ -6,7 +6,19 @@
 */
 
 function evenNumbers(n) {
-    // TODO
+  i = [];
+  x = 0;
+  while (x < n) {
+    // console.log(x, n);
+    let newEven = x * 2;
+    i.push(newEven); //add element to the array
+    x++;
+
+    //console.log(newEven);
+  }
+  // console.log(i);
+
+  console.log(i.join()); //convert to string  comma-seperated
 }
 
 evenNumbers(3); // should output 0,2,4

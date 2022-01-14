@@ -13,6 +13,7 @@
 
 function getTemperatureReport(cities) {
     // TODO
+    return `The temperature in ${cities} is ${temparatureMap.get(city)} degrees`;
 }
 
 
