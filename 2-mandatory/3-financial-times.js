@@ -4,14 +4,19 @@
     The home page of the web site has a headline section, which only has space for article titles which are 65 characters or less.
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
+
+
 function potentialHeadlines(allArticleTitles) {
     let newArr =[];
     for (let i=0; i<allArticleTitles.length; i++){
         if (allArticleTitles[i].length <= 65 ){
             newArr.push(allArticleTitles[i])
         }
-        return newArr;
+        else {
+            return newArr;
+        }
     }
+    return newArr;
 }
 
 /*
@@ -21,7 +26,19 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
     
-}
+    let countLength = allArticleTitles[0].split(" ").length;
+    let shortTitle;
+
+    for (let i=0; i<allArticleTitles.length; i++){
+        if (countLength > allArticleTitles[i].split(" ").length) {
+            countLength = allArticleTitles[i].split(" ").length
+            console.log(allArticleTitles[i])
+            shortTitle = allArticleTitles[i]
+        }
+        }
+        return shortTitle
+    }
+
 
 /*
     The editor of the FT has realised that headlines which have numbers in them get more clicks!
@@ -29,34 +46,48 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+    let newArr=[]
+    for (let i=0; i<allArticleTitles.length; i++){  
+        if (allArticleTitles[i].match(/[0-9]/g)){
+            newArr.push(allArticleTitles[i])
+        }
+    }
+    return newArr
 }
+
 
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
+    let averageChar;
+    let sum= 0;
+    for (let i=0; i<allArticleTitles.length; i++){
+        sum = sum + allArticleTitles[i].length;
+        averageChar=  sum / allArticleTitles[i].length
+    }
+    return averageChar.toFixed(2)
 }
+// console.log(averageNumberOfCharacters(ARTICLE_TITLES))
 
 
 
 /* ======= List of Articles - DO NOT MODIFY ===== */
-const ARTICLE_TITLES = [
-    "Streaming wars drive media groups to spend more than $100bn on new content",
-    "Amazon Prime Video India country head: streaming is driving a TV revolution",
-    "Aerospace chiefs prepare for bumpy ride in recovery of long-haul flights",
-    "British companies look to muscle in on US retail investing boom",
-    "Libor to take firm step towards oblivion on New Year's Day",
-    "Audit profession unattractive to new recruits, says PwC boss",
-    "Chinese social media users blast Elon Musk over near miss in space",
-    "Companies raise over $12tn in 'blockbuster' year for global capital markets",
-    "The three questions that dominate investment",
-    "Brussels urges Chile's incoming president to endorse EU trade deal",
-];
+// const ARTICLE_TITLES = [
+//     "Streaming wars drive media groups to spend more than $100bn on new content",
+//     "Amazon Prime Video India country head: streaming is driving a TV revolution",
+//     "Aerospace chiefs prepare for bumpy ride in recovery of long-haul flights",
+//     "British companies look to muscle in on US retail investing boom",
+//     "Libor to take firm step towards oblivion on New Year's Day",
+//     "Audit profession unattractive to new recruits, says PwC boss",
+//     "Chinese social media users blast Elon Musk over near miss in space",
+//     "Companies raise over $12tn in 'blockbuster' year for global capital markets",
+//     "The three questions that dominate investment",
+//     "Brussels urges Chile's incoming president to endorse EU trade deal",
+// ];
 
-/* ======= TESTS - DO NOT MODIFY ===== */
+// /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("should only return potential headlines", () => {
     expect(new Set(potentialHeadlines(ARTICLE_TITLES))).toEqual(new Set([
