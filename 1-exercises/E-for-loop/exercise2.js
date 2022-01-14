@@ -26,7 +26,16 @@ const AGES = [
     49
 ];
 
-// TODO - Write for loop code here
+for(let i = 0; i < WRITERS.length;) {
+    for(let j = 0; j < AGES.length;) {
+        WRITERS[i] === AGES[j]
+        console.log(WRITERS[i] + " is " + AGES[j] + " years old")
+        i++
+        j++
+        }
+    } 
+
+
 
 /*
 The output should look something like this:

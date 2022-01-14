@@ -4,9 +4,9 @@
     The home page of the web site has a headline section, which only has space for article titles which are 65 characters or less.
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
-function potentialHeadlines(allArticleTitles) {
-    // TODO
-}
+ function potentialHeadlines(allArticleTitles) {
+    return allArticleTitles.filter((element) => element.length <= 65);
+  }
 
 /*
     The editor of the FT likes short headlines with only a few words!
@@ -14,8 +14,26 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
-}
+      let shortestTitle;
+      let shortestTitleLengthInWords;
+    
+      for (let i = 0; i < allArticleTitles.length; i++) {
+        const title = allArticleTitles[i];
+        const titleLengthInWords = title.split(" ").length;
+
+
+         if (
+          shortestTitle === undefined ||
+          shortestTitleLengthInWords > titleLengthInWords
+        ) {
+          shortestTitle = title;
+          shortestTitleLengthInWords = titleLengthInWords;
+        }
+      }
+     
+       return shortestTitle;
+  
+  }
 
 /*
     The editor of the FT has realised that headlines which have numbers in them get more clicks!
@@ -23,16 +41,35 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
-}
+        const titlesToReturn = [];
+        const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+        allArticleTitles.forEach((title) => {
+          title.split("").forEach((character) => {
+            if (numbers.includes(character)) {
+              titlesToReturn.push(title);
+            }
+          });
+        });
+        return titlesToReturn;
+      }
+
 
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
     Implement the function below to return this number - rounded to the nearest integer.
 */
+
+
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
+    let total = 0;
+    for(let i = 0; i < allArticleTitles.length; i++) {
+        total += allArticleTitles[i].length;
+         
+    }
+    return (Math.round(total / allArticleTitles.length));
+
 }
+
 
 
 
