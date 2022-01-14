@@ -12,6 +12,7 @@
 // Example 1
 let a;
 console.log(a);
+// variable a hasn`t been defined.
 
 
 // Example 2
@@ -19,8 +20,10 @@ function sayHello() {
     let message = "Hello";
 }
 
+
 let hello = sayHello();
 console.log(hello);
+// The function doesn`t return anything
 
 
 // Example 3
@@ -29,8 +32,9 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
-
+// When calling the function, "user`s name" should be added in paranthesis 
 
 // Example 4
-let arr = [1,2,3];
+let arr = [1, 2, 3];
 console.log(arr[3]);
+// We don`t have index 3 in the array. It should be ammended to 2.

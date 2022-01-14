@@ -34,8 +34,24 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Functions can help with this!
 */
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+    let totalAvg = [];
+    // let closingPriceForEachStock = closingPricesForAllStocks[i];
+    for (let eachStock of closingPricesForAllStocks) {
+        let avg = 0;
+        let total = 0;
+        for (let price of eachStock) {
+            total += price;
+            avg = total / eachStock.length;
+            avg = Math.round(avg * 100) / 100;
+        }
+        totalAvg.push(avg);
+
+    }
+
+    return totalAvg;
 }
+
+//CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS
 
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
@@ -48,8 +64,19 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+    let changeInPrice = [];
+    let changeForEachStock = 0;
+    let rounded;
+    for (let prices of closingPricesForAllStocks) {
+        changeForEachStock = prices[prices.length - 1] - prices[0];
+        rounded = Math.round(changeForEachStock * 100) / 100;
+        changeInPrice.push(rounded)
+
+    }
+    return changeInPrice;
 }
+
+// TODO
 
 /*
     As part of a financial report, we want to see what the highest price was for each stock in the last 5 days.
@@ -65,7 +92,23 @@ function getPriceChanges(closingPricesForAllStocks) {
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
     // TODO
+
+    let newStocks = [];
+    let sorted = [];
+    let message = "";
+    for (let stock of closingPricesForAllStocks) {
+        stock.sort((a, b) => b - a);
+        sorted.push(stock);
+    }
+    for (let i = 0; i < stocks.length; i++) {
+        let roundedHighest = sorted[i][0].toFixed(2);
+        message = `The highest price of ${stocks[i].toUpperCase()} in the last 5 days was ${roundedHighest}`;
+        newStocks.push(message);
+    }
+    return newStocks;
 }
+
+
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */

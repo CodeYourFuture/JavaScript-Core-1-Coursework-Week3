@@ -5,6 +5,16 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
+
+    let fitArticles = [];
+    for (let articleTitle of allArticleTitles) {
+        if (articleTitle.length <= 65) {
+
+            fitArticles.push(articleTitle);
+        }
+    }
+    return fitArticles;
+
     // TODO
 }
 
@@ -15,6 +25,11 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
     // TODO
+
+    let ascesndingTitles = allArticleTitles.sort((a, b) => a.length - b.length);
+
+
+    return ascesndingTitles[0];
 }
 
 /*
@@ -22,9 +37,37 @@ function titleWithFewestWords(allArticleTitles) {
     Implement the function below to return a new array containing all the headlines which contain a number.
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
+// const ARTICLE_TITLES = [
+//     "Streaming wars drive media groups to spend more than $100bn on new content",
+//     "Amazon Prime Video India country head: streaming is driving a TV revolution",
+//     "Aerospace chiefs prepare for bumpy ride in recovery of long-haul flights",
+//     "British companies look to muscle in on US retail investing boom",
+//     "Libor to take firm step towards oblivion on New Year's Day",
+//     "Audit profession unattractive to new recruits, says PwC boss",
+//     "Chinese social media users blast Elon Musk over near miss in space",
+//     "Companies raise over $12tn in 'blockbuster' year for global capital markets",
+//     "The three questions that dominate investment",
+//     "Brussels urges Chile's incoming president to endorse EU trade deal",
+// ];
+
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+    let result = [];
+
+    for (let title of allArticleTitles) {
+        for (let characters of title) {
+            if (!isNaN(characters) && characters !== " ") {
+                result.push(title);
+            }
+        }
+    }
+    //remove duplicates:
+    let final = result.filter((item, index) => result.indexOf(item) === index);
+
+    return final;
+
 }
+// headlinesWithNumbers(ARTICLE_TITLES);
 
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
@@ -32,7 +75,15 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+    let total = 0;
+    let average;
+    for (let title of allArticleTitles) {
+        total += title.length;
+        average = Math.round(total / allArticleTitles.length);
+    }
+    return average;
 }
+
 
 
 
