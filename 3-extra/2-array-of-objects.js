@@ -11,30 +11,23 @@
 */
 
 function getHighestRatedInEachGenre(books) {
-    const theHighest = [], theGenres = [], theTitles = [];
-    let theIndex;
-    for (const eachBook of books) { // go through each book
-        // has this 'genre' been seen before - search for it in 'theGenres'
-        theIndex = theGenres.indexOf(eachBook.genre)
-        if (theIndex < 0) // -1 if not foundcd.
-        {   // this is the first time that this genre has been encountered
-            theGenres.push(eachBook.genre); // add it to 'theGenres'
+    let theHighest = [], theTitles = [], highestRatedTitles = [];
+    let eachGenre;
 
-            // e.g. 1st entry will be [0], second will be [1], etc
-            // so tne position within theGenres would correspond with theHighest & theTitles 
-            theIndex=theGenres.length - 1;  
-
-            theHighest[theIndex] = eachBook.rating; // the highest rating so far 
-            theTitles[theIndex] = eachBook.title;    // with the corresponding title
-        }
-        else
-        if (eachBook.rating > theHighest[theIndex])
-        { // Found an higher rating, update the previous entry
-            theHighest[theIndex] = eachBook.rating;
-            theTitles[theIndex] = eachBook.title;
+    for (let eachBook of books) { // go through each book
+        //  if no previous entry        or an higher rating found
+        if (!theHighest[eachBook.genre] || eachBook.rating > theHighest[eachBook.genre])
+        { // update with the higher rating
+            theHighest[eachBook.genre] = eachBook.rating; // the highest rating so far
+            theTitles[eachBook.genre] = eachBook.title;   // with the corresponding title
         }
     }
-    return theTitles; // Return the result!
+
+    // Gather the results
+    for (eachGenre in theTitles)
+                highestRatedTitles.push(theTitles[eachGenre]);
+
+    return highestRatedTitles; // Return the resultant array
 }
 
 
