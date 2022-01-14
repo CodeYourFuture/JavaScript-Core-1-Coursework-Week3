@@ -6,6 +6,13 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+    let preferredTitle = [];
+    for (let title of allArticleTitles) {
+        if (title.length <= 65) {
+            preferredTitle.push(title);
+        }
+    }
+    return preferredTitle;
 }
 
 /*
@@ -15,6 +22,17 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
     // TODO
+    let allTitles = potentialHeadlines(allArticleTitles);
+    let wordsLength = Infinity;
+    let titleWords = "";
+    for (let title of allTitles) {
+        let words = title.split(" ");
+        if (words.length < wordsLength) {
+            wordsLength = words.length;
+            titleWords = title;
+        }
+    }
+    return titleWords;
 }
 
 /*
@@ -24,6 +42,16 @@ function titleWithFewestWords(allArticleTitles) {
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+    const result = [];
+  for (let i = 0; i < allArticleTitles.length; i++) {
+    for (let j = 0; j < allArticleTitles[i].length; j++) {
+      if (allArticleTitles[i][j] >= "0" && allArticleTitles[i][j] <= "9") {
+        result.push(allArticleTitles[i]);
+        break;
+      }
+    }
+  }
+  return result;
 }
 
 /*
@@ -31,7 +59,12 @@ function headlinesWithNumbers(allArticleTitles) {
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
+    //TODO
+      total = 0;
+  for (let i = 0; i < allArticleTitles.length; i++) {
+    total += allArticleTitles[i].length;
+  }
+  return Math.floor(total / allArticleTitles.length);
 }
 
 
