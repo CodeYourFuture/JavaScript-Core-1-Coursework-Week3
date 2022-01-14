@@ -9,12 +9,12 @@
     For each example, can you explain why we are seeing undefined?
 */
 
-// Example 1
+// Example 1--> we haven't assigned a value to the variable a.
 let a;
 console.log(a);
 
 
-// Example 2
+// Example 2 --> The sayHello() function doesn't return a value.
 function sayHello() {
     let message = "Hello";
 }
@@ -23,7 +23,7 @@ let hello = sayHello();
 console.log(hello);
 
 
-// Example 3
+// Example 3 --> We haven't assign a value to the user argument.
 function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
@@ -31,6 +31,6 @@ function sayHelloToUser(user) {
 sayHelloToUser();
 
 
-// Example 4
+// Example 4--> This array has 3 elements,when wy try to conole.logo arr[3] we are looking for the 4-th element in the array witch doesn't exist.
 let arr = [1,2,3];
 console.log(arr[3]);
