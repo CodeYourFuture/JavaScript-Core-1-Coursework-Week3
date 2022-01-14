@@ -9,10 +9,13 @@ function evenNumbers(n) {
   let start = 0;
   let toxicList = [];
   while (toxicList.length < n) {
-    toxicList.push(start);
-    start += 2;
+    if (start % 2 === 0) {
+      toxicList.push(start);
+    }
+
+    start++;
   }
-  console.log(toxicList);
+  return result.toString();
 
   // TODO
 }

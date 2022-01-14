@@ -39,6 +39,7 @@ function headlinesWithNumbers(allArticleTitles) {
     for (let letter of moreClick) {
       if (!isNaN(letter) && letter !== " ") {
         choosen = moreClick;
+        break;
       }
     }
     if (choosen.length !== 0) {
