@@ -15,7 +15,7 @@ function evenNumbers(n) {
     }
     return evenNum;
 }
-console.log(evenNumbers(0))
+console.log(evenNumbers(3))
 
 // evenNumbers(3); // should output 0,2,4
 // evenNumbers(0); // should output nothing
