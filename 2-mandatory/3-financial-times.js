@@ -59,14 +59,12 @@ function headlinesWithNumbers(allArticleTitles) {
             if (!isNaN(characters) && characters !== " ") {
                 result.push(title);
             }
-            // console.log(characters);
         }
-
     }
-    //remove duplicates
+    //remove duplicates:
     let final = result.filter((item, index) => result.indexOf(item) === index);
-    // console.log(final);
-    return result;
+
+    return final;
 
 }
 // headlinesWithNumbers(ARTICLE_TITLES);

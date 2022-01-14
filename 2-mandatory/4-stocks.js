@@ -101,7 +101,8 @@ function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
         sorted.push(stock);
     }
     for (let i = 0; i < stocks.length; i++) {
-        message = `The highest price of ${stocks[i].toUpperCase()} in the last 5 days was ${sorted[i][0]}`;
+        let roundedHighest = sorted[i][0].toFixed(2);
+        message = `The highest price of ${stocks[i].toUpperCase()} in the last 5 days was ${roundedHighest}`;
         newStocks.push(message);
     }
     return newStocks;
