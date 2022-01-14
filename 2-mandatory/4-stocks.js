@@ -33,8 +33,55 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Solve the smaller problems, and then build those solutions back up to solve the larger problem.
         Functions can help with this!
 */
+
+function roundUpCalculation(n) {
+    return Math.round((n + Number.EPSILON) * 100) / 100;
+}
+
+function calculateAverage(sumIt, lengthOfList) {
+    return roundUpCalculation(sumIt / lengthOfList);
+}
+
+function calculatePriceChange(firstPrice, lastPrice) {
+    return roundUpCalculation(lastPrice - firstPrice);
+}
+
+function sumOfPricesOverFiveDays(prices) {
+    let sum = 0;
+
+    for(let i = 0; i < prices.length; i++) {
+        sum += prices[i];
+    }
+
+    return sum;
+}
+
+function calculateHighestPrice(prices) {
+    let currentPrice = prices[0];
+
+    for(let i = 0; i < prices.length; i++) {
+        if(currentPrice < prices[i]) {
+            currentPrice = prices[i];
+        }
+    }
+
+    return currentPrice.toFixed(2);
+}
+
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+    let averagePrices = [];
+
+    for(let i = 0; i < closingPricesForAllStocks.length; i++) {
+        let prices = closingPricesForAllStocks[i];
+
+        let sum = sumOfPricesOverFiveDays(prices);
+
+        let avg = calculateAverage(sum, prices.length);
+
+        averagePrices.push(avg);
+    }
+
+    return averagePrices;
 }
 
 /*
@@ -49,6 +96,17 @@ function getAveragePrices(closingPricesForAllStocks) {
 */
 function getPriceChanges(closingPricesForAllStocks) {
     // TODO
+    let priceChanges = [];
+
+    for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+      let prices = closingPricesForAllStocks[i];
+
+      let priceChange = calculatePriceChange(prices[0], prices[4])  
+
+      priceChanges.push(priceChange);
+    }
+
+    return priceChanges;
 }
 
 /*
@@ -65,6 +123,19 @@ function getPriceChanges(closingPricesForAllStocks) {
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
     // TODO
+    let priceDescription = [];
+
+    for(let i = 0; i < closingPricesForAllStocks.length; i++) {
+        let prices = closingPricesForAllStocks[i];
+
+        let ticker = stocks[i].toUpperCase();
+
+        let highestStockPrice = calculateHighestPrice(prices);
+
+        priceDescription.push(`The highest price of ${ticker} in the last 5 days was ${highestStockPrice}`);
+    }
+
+    return priceDescription;
 }
 
 
