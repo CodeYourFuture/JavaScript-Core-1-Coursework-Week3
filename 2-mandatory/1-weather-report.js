@@ -13,6 +13,9 @@
 
 function getTemperatureReport(cities) {
     // TODO
+    do {
+        return "The temperature of" + cities[]
+    }
 }
 
 
