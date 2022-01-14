@@ -6,6 +6,14 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+    let choosenArticles = [];
+    for (const item of allArticleTitles) {
+        if (item.length <= 65) {
+            choosenArticles = [...choosenArticles, item]
+        }
+    }
+    console.log(choosenArticles)
+    return choosenArticles
 }
 
 /*
@@ -14,6 +22,8 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
+    const sorted = allArticleTitles.sort((a, b) => a.length - b.length);
+    return sorted[0]
     // TODO
 }
 
@@ -24,7 +34,25 @@ function titleWithFewestWords(allArticleTitles) {
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+    const arr = allArticleTitles;
+    let newArt = [];
+
+    const numbers = "1234567890";
+    for (const sentence of arr) {
+        let target = "";
+        for (const num of numbers) {
+            if (sentence.includes(num)) {
+                target = sentence;
+            }
+
+        }
+        if (target.length !== 0) {
+            newArt = [...newArt, target]
+        }
+    }
+    return newArt
 }
+
 
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
@@ -32,6 +60,15 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+    const newArray = allArticleTitles;
+    let totalCharecter = 0;
+    let avg = 0
+    for (const art of newArray) {
+
+        totalCharecter += art.length;
+    }
+    avg = totalCharecter / newArray.length;
+    return Math.round(avg);
 }
 
 
@@ -49,8 +86,7 @@ const ARTICLE_TITLES = [
     "The three questions that dominate investment",
     "Brussels urges Chile's incoming president to endorse EU trade deal",
 ];
-
-/* ======= TESTS - DO NOT MODIFY ===== */
+console.log(potentialHeadlines(ARTICLE_TITLES)) /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("should only return potential headlines", () => {
     expect(new Set(potentialHeadlines(ARTICLE_TITLES))).toEqual(new Set([

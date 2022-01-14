@@ -7,7 +7,18 @@
 
 function evenNumbers(n) {
     // TODO
+    let start = 0;
+    let myArray = [];
+    while (myArray.length < n) {
+        myArray = [...myArray, start]
+
+        start += 2;
+    }
+    console.log(myArray) 
 }
+// console.log(evenNumbers(3))
+// console.log(evenNumbers(0))
+// console.log(evenNumbers(10))
 
 evenNumbers(3); // should output 0,2,4
 evenNumbers(0); // should output nothing
