@@ -6,11 +6,6 @@
 */
 function potentialHeadlines(allArticleTitles) {
   return allArticleTitles.filter((element) => element.length <= 65);
-  //    const arrayOfShortHeadlines = [];
-  //    for(let i = 0; i < allArticleTitles.length; i++)
-  //    if(allArticleTitles.length <= 65) {
-  //        arrayOfShortHeadlines.push(allArticleTitles[i]);
-  //    }
 }
 
 /*
@@ -19,16 +14,18 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
- //input is an array
- //check each item in array
- for(let i = 0; i < allArticleTitles.length; i++) {
-     const title = allArticleTitles[i];
-     const titleLengthInWords = title.split(" ").length;
+  let shortestTitle = Infinity;
+  let fewestWordTitle = "";
+  for (let i = 0; i < allArticleTitles.length; i++) {
+    const title = allArticleTitles[i];
+    const titleLengthInWords = title.split(" ").length;
 
-     if(shortestTitle === undefined || 
-        shortestTitleLengthInWords 
-        )
- }
+    if (titleLengthInWords < shortestTitle) {
+      shortestTitle = titleLengthInWords;
+      fewestWordTitle = title;
+    }
+  }
+  return fewestWordTitle;
 }
 
 /*
@@ -37,37 +34,31 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-  //input is an array
- 
-  //only return array entires that have number is
-
-  //return an array
-  return allArticleTitles.filter((title, index, array) =>{
-      const matches = title.match(/[0123456789]/) // will be an array (if have matches) or null (if we have no matches)
-      if (matches !== null) {
-          return true;
-      }else {
-          return false;
-      }
-  } );
+  return allArticleTitles.filter((title, index, array) => {
+    const matches = title.match(/[0123456789]/); // will be an array (if have matches) or null (if we have no matches)
+    if (matches !== null) {
+      return true;
+    } else {
+      return false;
+    }
+  });
 }
 
-const titlesToReturn = [];
-const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'] ; 
-allArticleTitles.forEach((title) => {
-    title.
-})
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-  
+  let total = 0;
+  allArticleTitles.forEach((title) => {
+    total += title.length;
+  });
+  return Math.round(total / allArticleTitles.length);
 }
 
 /* ======= List of Articles - DO NOT MODIFY ===== */
 const ARTICLE_TITLES = [
-  "Streaming wars drive media groups to spend more than $100bn on new content",
+  "Streaming wars drive media groups to spend more than $100bn on new content", //['Streaming', 'wars']
   "Amazon Prime Video India country head: streaming is driving a TV revolution",
   "Aerospace chiefs prepare for bumpy ride in recovery of long-haul flights",
   "British companies look to muscle in on US retail investing boom",
