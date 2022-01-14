@@ -10,27 +10,28 @@
 */
 
 // Example 1
-let a;
-console.log(a);
-
+let a
+console.log(a)
+//There is no value for variable a
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+  let message = 'Hello'
 }
 
-let hello = sayHello();
-console.log(hello);
-
+let hello = sayHello()
+console.log(hello)
+//There is no return in function sayHello()
 
 // Example 3
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+  console.log(`Hello ${user}`)
 }
 
-sayHelloToUser();
-
+sayHelloToUser()
+//Function sayHelloToUser needs a input parameter called user
 
 // Example 4
-let arr = [1,2,3];
-console.log(arr[3]);
+let arr = [1, 2, 3]
+console.log(arr[3])
+//Array arr doesn't have index 3
