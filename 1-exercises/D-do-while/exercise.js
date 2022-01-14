@@ -7,7 +7,17 @@
 */
 
 function evenNumbersSum(n) {
-    // TODO
+    let i = 0;
+    let total = 0;
+    let times = 0;
+    do {
+        total += i;
+        i += 2;
+
+        times++;
+
+    } while (times < n);
+    return total
 }
 
 console.log(evenNumbersSum(3)); // should output 6

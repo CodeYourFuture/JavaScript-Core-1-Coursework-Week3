@@ -12,15 +12,17 @@
 // Example 1
 let a;
 console.log(a);
-
+// a doesn't have any value.
 
 // Example 2
 function sayHello() {
     let message = "Hello";
+    // This function is not returning anything
 }
 
 let hello = sayHello();
 console.log(hello);
+// Again this function is not returning anything
 
 
 // Example 3
@@ -29,8 +31,10 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
+// We are not passing any Arg when we call this function
 
 
 // Example 4
-let arr = [1,2,3];
+let arr = [1, 2, 3];
 console.log(arr[3]);
+// The last index will be[2] not 3!

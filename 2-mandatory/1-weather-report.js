@@ -9,17 +9,25 @@
         - return an array of strings, which is a statement about the temperature of each city.
             For example, "The temperature in London is 10 degrees"
         - Hint: you can call the temperatureService function from your function
+        npm test -- --testPathPattern 2-logic-error
 */
 
 function getTemperatureReport(cities) {
     // TODO
-}
+    let myArray = [];
+    let message = "";
+    for (const city of cities) {
+        message = `The temperature in ${city} is ${temperatureService(city)} degrees`;
+        myArray = [...myArray, message]
+    }
+    return myArray
 
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 function temperatureService(city) {
-    let temparatureMap  = new Map();
+    let temparatureMap = new Map();
 
     temparatureMap.set('London', 10);
     temparatureMap.set('Paris', 12);
@@ -28,7 +36,7 @@ function temperatureService(city) {
     temparatureMap.set('Mumbai', 29);
     temparatureMap.set('São Paulo', 23);
     temparatureMap.set('Lagos', 33);
-    
+
     return temparatureMap.get(city);
 }
 
