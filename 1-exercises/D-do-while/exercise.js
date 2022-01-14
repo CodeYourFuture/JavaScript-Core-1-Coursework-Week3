@@ -7,9 +7,23 @@
 */
 
 function evenNumbersSum(n) {
-    // TODO
+  // TODO
+
+  let i = [];
+  let x = 0;
+
+  do {
+    //console.log(x);
+   
+     let even = x * 2;
+  i.push(even);
+    console.log(i);
+  return even; x++;
+  } while (x < n);
+ 
+
 }
 
 console.log(evenNumbersSum(3)); // should output 6
-console.log(evenNumbersSum(0)); // should output 0
-console.log(evenNumbersSum(10)); // should output 90
+//console.log(evenNumbersSum(0)); // should output 0
+//console.log(evenNumbersSum(10)); // should output 90
