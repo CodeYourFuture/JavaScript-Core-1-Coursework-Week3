@@ -9,8 +9,19 @@
 */
 
 function factorial(input) {
-    // TODO
+    let total = 1;
+      if (input === 0 || input === 1)
+    return 1;
+
+    for (let i = 1; i <= input; i++){
+    total = total * i
+    }
+  return total;
 }
+    
+
+  
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

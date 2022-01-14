@@ -6,8 +6,16 @@
 */
 
 function evenNumbers(n) {
-    // TODO
-}
+    let i = 0; 
+    let count = 0;
+    while (count < n) {
+        if (i % 2 === 0){
+            console.log(i);
+            count++;   
+        }
+        i++;
+    }
+};
 
 evenNumbers(3); // should output 0,2,4
 evenNumbers(0); // should output nothing

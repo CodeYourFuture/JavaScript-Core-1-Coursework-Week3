@@ -12,7 +12,7 @@
 // Example 1
 let a;
 console.log(a);
-
+// a should have a value for not to be undefined.a doesn't have a value.
 
 // Example 2
 function sayHello() {
@@ -21,6 +21,7 @@ function sayHello() {
 
 let hello = sayHello();
 console.log(hello);
+// sayHello function is not returning a value therefore variable hello has no value.This is why console.log returns undefined.
 
 
 // Example 3
@@ -29,8 +30,10 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
+// In line 32 function call doesn't have any parameter.Therefore it returns undefined.
 
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+// Array doesn't have an item in index 3 so console.log returns undefined.
