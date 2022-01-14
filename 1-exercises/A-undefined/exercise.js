@@ -1,8 +1,10 @@
 /*
-    By now, you would have already seen "undefined", either in an error message or being output from your program.
+    By now, you would have already seen "undefined", either in an error message or 
+    being output from your program.
     But what does it mean? undefined represents the absence of a value.
     
-    In some cases, undefined will be used by a programmer intentionally, and they will write code to handle it.
+    In some cases, undefined will be used by a programmer intentionally, and 
+    they will write code to handle it.
     But usually, when you see undefined - it means something has gone wrong!
 
     Below are 4 typical examples of when you would see undefined.
@@ -10,13 +12,13 @@
 */
 
 // Example 1
-let a;
+let a;     // variable a is not assigned any value.
 console.log(a);
 
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+    let message = "Hello";     // We did not return anything in function sayHello()
 }
 
 let hello = sayHello();
@@ -24,7 +26,7 @@ console.log(hello);
 
 
 // Example 3
-function sayHelloToUser(user) {
+function sayHelloToUser(user) {  // function parameter is not assigned any value.
     console.log(`Hello ${user}`);
 }
 
@@ -33,4 +35,4 @@ sayHelloToUser();
 
 // Example 4
 let arr = [1,2,3];
-console.log(arr[3]);
+console.log(arr[3]); // arr[3] points/calls 4th index value in arr=[1,2,3] which only has three values.We always start from 0 index

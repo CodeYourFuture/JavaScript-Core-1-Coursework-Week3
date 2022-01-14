@@ -4,7 +4,8 @@
     Imagine we a working for a finance company. Below we have:
         - an array of stock tickers
         - an array of arrays containing the closing price for each stock in each of the last 5 days.
-            For example, CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[2] contains the prices for the last 5 days for STOCKS[2] (which is amzn)
+            For example, CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[2] contains the prices for the 
+            last 5 days for STOCKS[2] (which is amzn)
 */
 
 /* ======= Stock data - DO NOT MODIFY ===== */
@@ -21,13 +22,16 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 /*
     We want to understand what the average price over the last 5 days for each stock is.
     Implement the below function, which
-        - Takes this CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS array as input (remember, it's an array of arrays)
+        - Takes this CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS array as input
+         (remember, it's an array of arrays)
         - Returns an array containing the average price over the last 5 days for each stock. 
-            For example, the first element of the resulting array should contain Apple’s (aapl) average stock price for the last 5 days.
+            For example, the first element of the resulting array should contain 
+            Apple’s (aapl) average stock price for the last 5 days.
             The second element should be Microsoft's (msft) average price, and so on.
     The average value should be rounded to 2 decimal places, and should be a number (not a string)
 
-    Hint 1: To calculate the average of a set of values, you can add them together and divide by the number of values.
+    Hint 1: To calculate the average of a set of values, you can add them together and
+     divide by the number of values.
         So the average of 5, 10 and 20 is (5 + 10 + 20) / 3 = 11.67
     Hint 2: If the problem seems complex, try breaking it down into smaller problems.
         Solve the smaller problems, and then build those solutions back up to solve the larger problem.
@@ -35,37 +39,65 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 */
 function getAveragePrices(closingPricesForAllStocks) {
     // TODO
+    let stockPriceTotal = 0;
+    let stockPriceAverage = [];
+    for(let i=0 ; i < closingPricesForAllStocks.length; i++){
+        let stockPrice = closingPricesForAllStocks[i];
+            for (let j = 0; j < stockPrice.length; j++){
+                stockPriceTotal+= stockPrice[j];
+        }
+        stockPriceAverage.push(number((stockPriceTotal / stockPrice.length).toFixed(2)));
+    }
+return stockPriceAverage;
 }
 
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
     Implement the below function, which
-        - Takes this CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS array as input (remember, it's an array of arrays)
+        - Takes this CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS array as input (remember, 
+            it's an array of arrays)
         - Returns an array containing the price change over the last 5 days for each stock.
-            For example, the first element of the resulting array should contain Apple’s (aapl) price change for the last 5 days.
+            For example, the first element of the resulting array should contain 
+            Apple’s (aapl) price change for the last 5 days.
             In this example it would be:
                 (Apple's price on the 5th day) - (Apple's price on the 1st day) = 172.99 - 179.19 = -6.2
-    The price change value should be rounded to 2 decimal places, and should be a number (not a string)
+    The price change value should be rounded to 2 decimal places, 
+    and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
     // TODO
+    let priceChange = [];
+    let change;
+for(price of closingPricesForAllStocks){
+    change = number((price[price.length - 1]- price[0]).toFixed(2));
+    priceChange.push(change);
+}
+return priceChange;
 }
 
 /*
-    As part of a financial report, we want to see what the highest price was for each stock in the last 5 days.
+    As part of a financial report, we want to see what the highest price was for each stock in the 
+    last 5 days.
     Implement the below function, which
         - Takes 2 parameters:
-            - the CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS array as input (remember, it's an array of arrays)
+            - the CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS array as input 
+            (remember, it's an array of arrays)
             - the STOCKS array
         - Returns an array of strings describing what the highest price was for each stock.
-            For example, the first element of the array should be: "The highest price of AAPL in the last 5 days was 180.33"
+            For example, the first element of the array should be: "The highest price of AAPL in the
+             last 5 days was 180.33"
             The test will check for this exact string.
     The stock ticker should be capitalised.
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
     // TODO
+    let highestPrice=[];
+for(let i=0; i<closingPricesForAllStocks.length;i++){
+    highestPrice.push('The highest price of ${stocks[i].toUpperCase()} in the last 5 days was ${Math.max(. closingPricesForAllStocks[i]).toFixed(2)}');
+    return highestPrice;
 }
+
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */

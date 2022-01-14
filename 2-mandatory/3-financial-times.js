@@ -1,13 +1,23 @@
 /*
-    Imagine you are working on the Financial Times web site! They have a list of article titles stored in an array.
+    Imagine you are working on the Financial Times web site! 
+    They have a list of article titles stored in an array.
 
-    The home page of the web site has a headline section, which only has space for article titles which are 65 characters or less.
-    Implement the function below, which will return a new array containing only article titles which will fit.
+    The home page of the web site has a headline section, 
+    which only has space for article titles which 
+    are 65 characters or less.
+    Implement the function below, which will return a new array containing only article titles 
+    which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+    let articleTitles = [];
+    for (articles of allArticleTitles) {
+        if (articles.length <= 65){
+            articleTitles.push(articles);
+        }
+    }
+    return articleTitles;
 }
-
 /*
     The editor of the FT likes short headlines with only a few words!
     Implement the function below, which returns the title with the fewest words.
@@ -15,6 +25,14 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
     // TODO
+let stringWithFewestWords=''
+for (let i = 0; i < allArticleTitles.length; i++) {
+if (stringWithFewestWords.length < 1 ||
+    stringWithFewestWords.split(" ").length > allArticleTitles[i].split(" ").length) {
+        stringWithFewestWords = allArticleTitles[i];
+}
+}
+return stringWithFewestWords;
 }
 
 /*
@@ -24,6 +42,14 @@ function titleWithFewestWords(allArticleTitles) {
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+    { let newClicksArray = []; for (let i = 0; i < allArticleTitles.length; i++) { 
+        for (let letter of allArticleTitles[i]) { 
+            if (letter === "0"|| letter === "1"|| letter === "2"|| letter === "3"|| letter === "4"|| letter === "5"|| letter === "6"|| letter === "7"|| letter === "8"|| letter === "9") 
+            { newClicksArray.push(allArticleTitles[i]) 
+        } 
+      }
+    } 
+    return newClicksArray; }
 }
 
 /*
@@ -32,7 +58,13 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
-}
+let numberOfCharacters = 0; 
+for (let i = 0; i < allArticleTitles.length; i++) 
+{ 
+    numberOfCharacters += allArticleTitles[i].length
+} 
+return (Math.round( numberOfCharacters / allArticleTitles.length))
+ }
 
 
 
