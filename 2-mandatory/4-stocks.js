@@ -4,7 +4,8 @@
     Imagine we a working for a finance company. Below we have:
         - an array of stock tickers
         - an array of arrays containing the closing price for each stock in each of the last 5 days.
-            For example, CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[2] contains the prices for the last 5 days for STOCKS[2] (which is amzn)
+            For example, CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[2] contains the prices for the last 5 days 
+                         for STOCKS[2] (which is amzn)
 */
 
 /* ======= Stock data - DO NOT MODIFY ===== */
@@ -23,7 +24,8 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
     Implement the below function, which
         - Takes this CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS array as input (remember, it's an array of arrays)
         - Returns an array containing the average price over the last 5 days for each stock. 
-            For example, the first element of the resulting array should contain Apple’s (aapl) average stock price for the last 5 days.
+            For example, the first element of the resulting array should contain Apple’s (aapl) average stock price 
+                         for the last 5 days.
             The second element should be Microsoft's (msft) average price, and so on.
     The average value should be rounded to 2 decimal places, and should be a number (not a string)
 
@@ -33,8 +35,19 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Solve the smaller problems, and then build those solutions back up to solve the larger problem.
         Functions can help with this!
 */
-function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+function getAveragePrices(thePricesForAllStocks) {
+     let resultsArray = [];
+           
+     for (let array of thePricesForAllStocks) // Outer Array
+     {
+        let sum = 0; 
+        for (let eachNumber of array) { // Inner Array - Calculate the total
+                sum += eachNumber;
+        }
+        let average = sum/array.length; // Divide by how many numbers in the array
+        resultsArray.push(parseFloat(average.toFixed(2))); // Format to 2 decimal places then append to resultsArray      
+     }         
+     return resultsArray;
 }
 
 /*
@@ -47,8 +60,15 @@ function getAveragePrices(closingPricesForAllStocks) {
                 (Apple's price on the 5th day) - (Apple's price on the 1st day) = 172.99 - 179.19 = -6.2
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
-function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+function getPriceChanges(thePricesForAllStocks) {
+     let resultsArray = [];
+           
+     for (let item of thePricesForAllStocks)
+     {
+        let diff = item[item.length - 1] - item[0] // Calculate the difference in prices
+        resultsArray.push(parseFloat(diff.toFixed(2))); // Format to 2 decimal places then append to resultsArray                     
+     }         
+     return resultsArray;
 }
 
 /*
@@ -63,8 +83,21 @@ function getPriceChanges(closingPricesForAllStocks) {
     The stock ticker should be capitalised.
     The price should be shown with exactly 2 decimal places.
 */
-function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+function highestPriceDescriptions(thePricesForAllStocks, stocks) {
+     let resultsArray = [], result;
+           
+     for (let i=0; i < thePricesForAllStocks.length; i++)
+     {
+        let array = thePricesForAllStocks[i];
+        let theHighest = array[0];
+        for (let j = 1;j < array.length; j++)
+                theHighest = Math.max(theHighest,array[j]); // Calculate the higher number
+                
+        result = "The highest price of " + stocks[i].toUpperCase() + " in the last 5 days was " +
+                                           theHighest.toFixed(2) // Create the output message
+        resultsArray.push(result); // Append to resultsArray       
+     }         
+     return resultsArray;
 }
 
 

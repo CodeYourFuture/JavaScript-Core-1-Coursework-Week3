@@ -11,8 +11,16 @@
         - Hint: you can call the temperatureService function from your function
 */
 
+// See https://www.w3schools.com/js/js_object_maps.asp for an understanding of 'Map'
+
 function getTemperatureReport(cities) {
-    // TODO
+    const resultsArray = [];
+    for (let city of cities) {
+        // Call temperatureService() to determine the temperature of each city
+        // Create the message and append to resultsArray
+        resultsArray.push("The temperature in " + city + " is " + temperatureService(city) + " degrees");
+    }
+    return resultsArray;
 }
 
 

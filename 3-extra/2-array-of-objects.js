@@ -11,7 +11,23 @@
 */
 
 function getHighestRatedInEachGenre(books) {
-    // TODO
+    let theHighest = [], theTitles = [], highestRatedTitles = [];
+    let eachGenre;
+
+    for (let eachBook of books) { // go through each book
+        //  if no previous entry        or an higher rating found
+        if (!theHighest[eachBook.genre] || eachBook.rating > theHighest[eachBook.genre])
+        { // update with the higher rating
+            theHighest[eachBook.genre] = eachBook.rating; // the highest rating so far
+            theTitles[eachBook.genre] = eachBook.title;   // with the corresponding title
+        }
+    }
+
+    // Gather the results
+    for (eachGenre in theTitles)
+                highestRatedTitles.push(theTitles[eachGenre]);
+
+    return highestRatedTitles; // Return the resultant array
 }
 
 

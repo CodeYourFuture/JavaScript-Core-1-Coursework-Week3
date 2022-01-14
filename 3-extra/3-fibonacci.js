@@ -1,5 +1,6 @@
 /*
-    The Fibonacci Sequence is a famous sequence of numbers. Read more here: https://www.mathsisfun.com/numbers/fibonacci-sequence.html
+    The Fibonacci Sequence is a famous sequence of numbers. 
+    Read more here: https://www.mathsisfun.com/numbers/fibonacci-sequence.html
     
     The sequence starts with 0 and 1. Each number after that, is the sum of the previous 2 numbers in the sequence.
     So the third number in the sequence is 1, because 0 + 1 = 1. 
@@ -14,7 +15,27 @@
 */
 
 function generateFibonacciSequence(n) {
-    // TODO
+    /*
+      Strictly speaking F0=0 F1=1 F2=1 F3=2 F4=3 F5=5 F6=8 etc
+
+      see https://en.wikipedia.org/wiki/Fibonacci_number
+      see also 
+      The first 300 Fibonacci numbers, factored
+      http://www.maths.surrey.ac.uk/hosted-sites/R.Knott/Fibonacci/fibtable.html
+    */
+
+    let fibonacciTable = [0,1]
+
+    if (n <= 1) 
+        return [0];
+  
+    for (let i = 2; i < n; i++)
+    {
+        fibonacciTable.push(fibonacciTable[i-2] + fibonacciTable[i-1]);
+
+    }
+
+    return fibonacciTable;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
