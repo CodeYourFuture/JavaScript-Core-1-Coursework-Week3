@@ -1,4 +1,3 @@
-/* eslint-disable no-restricted-syntax */
 /*
     THESE EXERCISES ARE QUITE HARD. JUST DO YOUR BEST, AND COME WITH QUESTIONS IF YOU GET STUCK :)
 
@@ -34,19 +33,8 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Solve the smaller problems, and then build those solutions back up to solve the larger problem.
         Functions can help with this!
 */
-const getAveragePrices = (closingPricesForAllStocks) => {
-  const averages = [];
-  for (const stock of closingPricesForAllStocks) {
-    let average = 0;
-    for (const stockPrice of stock) {
-      average += stockPrice;
-    }
-    averages.push(Math.round((average / 5) * 100) / 100);
-  }
-  return averages;
-};
 
-const getAveragePricesV2 = (arr) => arr.map((e) => Math.round((e.reduce((a, i) => a + i, 0) / 5) * 100) / 100);
+const getAveragePrices = (arr) => arr.map((e) => Math.round((e.reduce((a, i) => a + i, 0) / e.length) * 100) / 100);
 
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
@@ -58,14 +46,8 @@ const getAveragePricesV2 = (arr) => arr.map((e) => Math.round((e.reduce((a, i) =
                 (Apple's price on the 5th day) - (Apple's price on the 1st day) = 172.99 - 179.19 = -6.2
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
-const getPriceChanges = (closingPricesForAllStocks) => {
-  const differences = [];
-  for (const stock of closingPricesForAllStocks) {
-    const difference = stock[4] - stock[0];
-    differences.push(Math.round(difference * 100) / 100);
-  }
-  return differences;
-};
+
+const getPriceChanges = (arr) => arr.map((e) => Math.round((e[e.length - 1] - e[0]) * 100) / 100);
 
 /*
     As part of a financial report, we want to see what the highest price was for each stock in the last 5 days.
@@ -79,13 +61,7 @@ const getPriceChanges = (closingPricesForAllStocks) => {
     The stock ticker should be capitalised.
     The price should be shown with exactly 2 decimal places.
 */
-const highestPriceDescriptions = (closingPricesForAllStocks, stocks) => {
-  const answer = [];
-  for (let i = 0; i < closingPricesForAllStocks.length; i++) {
-    answer.push(`The highest price of ${stocks[i].toUpperCase()} in the last 5 days was ${Math.max(...closingPricesForAllStocks[i]).toFixed(2)}`);
-  }
-  return answer;
-};
+const highestPriceDescriptions = (closingPricesForAllStocks, stocks) => closingPricesForAllStocks.map((e, i) => `The highest price of ${stocks[i].toUpperCase()} in the last 5 days was ${Math.max(...e).toFixed(2)}`);
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 test('should return the average price for each stock', () => {
