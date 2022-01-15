@@ -12,7 +12,7 @@ const evenNumbers = (n) => {
     evens.push(i);
     i += 2;
   }
-  return evens;
+  console.log(evens.join(','));
 };
 
 evenNumbers(3); // should output 0,2,4
