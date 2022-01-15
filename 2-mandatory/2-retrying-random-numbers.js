@@ -11,8 +11,16 @@ function generateRandomNumber() {
 
 function getRandomNumberGreaterThan50() {
     // TODO - implement using a do-while loop
-}
+    let i = 0;
+    let greaterTan50 = 0;
+    do{
+        greaterTan50= generateRandomNumber(i);
+        i++;
+    }while (greaterTan50 <= 50) 
+        return greaterTan50 ;
+    }
 
+        
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("Returned value should always be greater than 50", () => {

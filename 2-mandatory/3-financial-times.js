@@ -6,8 +6,23 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+    let newTitles = [];
+    for (let title of allArticleTitles) {
+        if (title.length <= 65) {
+            newTitles.push(title)
+        }
+    }
+    return newTitles;
 }
-
+//     let newTitles = [];
+//     for (let i = 0; i < allArticleTitles.length; i++) {
+//         if (allArticleTitles[i].length <= 65) {
+//            newTitles.push(allArticleTitles[i]);
+//         }
+//     }
+//     return newTitles;
+//     }
+// // 
 /*
     The editor of the FT likes short headlines with only a few words!
     Implement the function below, which returns the title with the fewest words.
@@ -15,13 +30,16 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
     // TODO
+    let fewWords = allArticleTitles[0];
+    for(let i = 0; i < allArticleTitles.length; i++){
+        if(fewWords.length> allArticleTitles[i].length){
+            fewWords=allArticleTitles[i];
+        }
+        // }
+    }return fewWords;
 }
 
-/*
-    The editor of the FT has realised that headlines which have numbers in them get more clicks!
-    Implement the function below to return a new array containing all the headlines which contain a number.
-    (Hint: remember that you can also loop through the characters of a string if you need to)
-*/
+
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
 }
