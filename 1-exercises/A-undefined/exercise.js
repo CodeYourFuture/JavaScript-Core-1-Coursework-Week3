@@ -11,7 +11,7 @@
 
 // Example 1
 let a;
-console.log(a);
+console.log(a); // there is no value assigned to a
 
 
 // Example 2
@@ -20,7 +20,7 @@ function sayHello() {
 }
 
 let hello = sayHello();
-console.log(hello);
+console.log(hello); // function is not called & hello variable is not declared with the string
 
 
 // Example 3
@@ -28,9 +28,9 @@ function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
 
-sayHelloToUser();
+sayHelloToUser(); // parameter(user) is not declared
 
 
 // Example 4
 let arr = [1,2,3];
-console.log(arr[3]);
+console.log(arr[3]); // arr[3] indicates 4th element and there is only 3 in this array. 
