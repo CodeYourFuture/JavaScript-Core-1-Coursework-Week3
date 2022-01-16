@@ -4,8 +4,14 @@
     The home page of the web site has a headline section, which only has space for article titles which are 65 characters or less.
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
-function potentialHeadlines(allArticleTitles) {
+function potentialHeadlines(ARTICLE_TITLES) {
     // TODO
+    let arr = [];
+    for (i = 0; i < ARTICLE_TITLES.length; i++) {
+        if (ARTICLE_TITLES[i].length <= 65) {
+            arr.push(ARTICLE_TITLES[i]);
+        } 
+    } return arr;
 }
 
 /*
@@ -13,8 +19,17 @@ function potentialHeadlines(allArticleTitles) {
     Implement the function below, which returns the title with the fewest words.
     (you can assume words will always be seperated by a space)
 */
-function titleWithFewestWords(allArticleTitles) {
+function titleWithFewestWords(articleTitles) {
     // TODO
+        let shortest = "";
+    let fewestWordsSoFar = Number.MAX_VALUE;
+    for (i = 0; i < articleTitles.length; i++) {
+        let wordCount = articleTitles[i].match(/(\w+)/g).length;
+        if (wordCount < fewestWordsSoFar) {
+            fewestWordsSoFar = wordCount;
+            shortest = articleTitles[i];
+        }
+    } return shortest;
 }
 
 /*
@@ -22,16 +37,29 @@ function titleWithFewestWords(allArticleTitles) {
     Implement the function below to return a new array containing all the headlines which contain a number.
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
-function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+function headlinesWithNumbers(ARTICLE_TITLES) {
+    let arr = [];
+    for (let i = 0; i < ARTICLE_TITLES.length; i++) {
+        let Number = /[0-9]+/;
+        if (ARTICLE_TITLES[i].match(Number)) {
+            arr.push(ARTICLE_TITLES[i]);
+        }
+    }
+    return arr;
 }
 
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
     Implement the function below to return this number - rounded to the nearest integer.
 */
-function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
+function averageNumberOfCharacters(ARTICLE_TITLES) {
+    let ccTotal = 0;
+    let StringCount = 0;
+    for (i = 0; i < ARTICLE_TITLES.length; i++) {
+        StringCount = ARTICLE_TITLES.length;
+        let characterCount = ARTICLE_TITLES[i].length;
+        ccTotal += characterCount;
+    } return Math.round(ccTotal / StringCount);
 }
 
 
