@@ -27,6 +27,14 @@ const AGES = [
 ];
 
 // TODO - Write for loop code here
+function nameAndAge(WRITERS, AGES) {
+    for (let i = 0; i < WRITERS.length; i++) {
+        for (let j = 0; j < AGES.length; j++) {        
+        }
+    }
+    return (`${WRITERS[i]} is${AGES[j]} years old`);
+}
+console.log(nameAndAge(WRITERS, AGES));
 
 /*
 The output should look something like this:

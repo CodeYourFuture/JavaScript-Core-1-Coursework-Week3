@@ -12,7 +12,7 @@
 // Example 1
 let a;
 console.log(a);
-
+// a variable has nothing to initialise
 
 // Example 2
 function sayHello() {
@@ -21,7 +21,7 @@ function sayHello() {
 
 let hello = sayHello();
 console.log(hello);
-
+// not parameter for the function to execute - message should be placed inside the parentheses
 
 // Example 3
 function sayHelloToUser(user) {
@@ -29,8 +29,9 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
-
+// user has not been defined as a variable
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+// Arrays use zero-indexing - as such, arr[3] would be the 4th index, and there are only 3

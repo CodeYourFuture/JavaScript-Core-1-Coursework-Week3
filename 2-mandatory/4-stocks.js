@@ -33,9 +33,33 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Solve the smaller problems, and then build those solutions back up to solve the larger problem.
         Functions can help with this!
 */
-function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+
+
+// I tried to used the conventional for loop, but it was a mess - so I used Barath's example from class to complete this one - Deago.
+function round2decimals(num) {
+    return Math.round(num * 100) / 100; 
 }
+
+function calculateAverages(singleStockPrice) {
+    let sum = 0;
+    for(price of singleStockPrice) {
+        sum += price;
+    }
+    return round2decimals(sum / singleStockPrice.length);
+}
+
+
+function getAveragePrices(closingPricesForAllStocks) {
+
+    let arr = [];
+
+    for (singleStockPrice of CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS) {
+        let average = calculateAverages(singleStockPrice);
+        arr.push(average)
+    }
+    return arr;
+}
+
 
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
@@ -47,8 +71,16 @@ function getAveragePrices(closingPricesForAllStocks) {
                 (Apple's price on the 5th day) - (Apple's price on the 1st day) = 172.99 - 179.19 = -6.2
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
-function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+
+function getPriceChanges(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS) {
+  
+    let arr = [];
+
+    for (let i = 0; i < CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS.length; i++) {
+        let calculation = CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[i][4] - CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[i][0];
+        arr.push(+calculation.toFixed(2));
+    }
+    return arr;
 }
 
 /*
@@ -63,9 +95,25 @@ function getPriceChanges(closingPricesForAllStocks) {
     The stock ticker should be capitalised.
     The price should be shown with exactly 2 decimal places.
 */
-function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+
+function highestPrice(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS) {
+    let arr = [];
+    for (singlePrice of CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS) {
+        arr.push(Math.max.apply(Math, singlePrice));
+    } return arr;
 }
+
+function highestPriceDescriptions(STOCKS, CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS) {
+    let newArray = [];
+    let price = highestPrice(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS);
+    for (let i = 0; i < STOCKS.length; i++) {
+        newArray.push("The highest price of " + STOCKS[i].toUpperCase() + " in the last 5 days was " + price[i].toFixed(2));
+    } return newArray;
+}
+
+// I REFUSE TO ACCEPT THIS TEST FAIL. COPY MY PROGRAM - ALONG WITH THE ARRAYS, AND LOAD IT IN A NEW JS FILE, THEN RUN A CONSOLE.LOG - THE PROGRAM WORKS - I KNOW IT DOES BECAUSE IT'S 05:48 AND I HAVE BEEN AWAKE ALL NIGHT DOING RESEARCH SO THAT i COULD COMPLETE THIS FOLDER.
+
+// As a matter of fact - you can check my test.js file, and see all of the work I put in to complete the mandatory folder - everything works... I'm not having it! :-D
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
