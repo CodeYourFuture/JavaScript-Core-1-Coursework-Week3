@@ -5,28 +5,18 @@
     In the below example, imagine we've defined an array holding the birthdays of your closest friends.
     Use a while loop to search through the array until you find the first birthday in July, then return that birthday from the function.
 */
-var BIRTHDAYS = [
-  "January 7th",
-  "February 12th",
-  "April 3rd",
-  "April 5th",
-  "May 3rd",
-  "July 11th",
-  "July 17th",
-  "September 28th",
-  "November 15th",
-];
+var BIRTHDAYS = ["January 7th", "February 12th", "April 3rd", "April 5th", "May 3rd", "July 11th", "July 17th", "September 28th", "November 15th"];
 
 function findFirstJulyBDay(birthdays) {
   var index = 0;
-  var includesJuly = "";
 
   while (index < birthdays.length) {
-    birthdays[index].includes("July") ? (includesJuly = birthdays[index]) : "";
+    if (birthdays[index].includes("July")) {
+      return birthdays[index];
+    }
+
     index++;
   }
-
-  return includesJuly;
 }
 
 console.log(findFirstJulyBDay(BIRTHDAYS)); // should output "July 11th"

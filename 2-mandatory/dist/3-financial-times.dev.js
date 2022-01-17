@@ -7,13 +7,13 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-  var newArticleTitle = [];
+  var newTitleArr = [];
 
   for (var i = 0; i < allArticleTitles.length; i++) {
-    allArticleTitles[i].length <= 65 ? newArticleTitle.push(allArticleTitles[i]) : "";
+    allArticleTitles[i].length <= 65 ? newTitleArr.push(allArticleTitles[i]) : "";
   }
 
-  return newArticleTitle;
+  return newTitleArr;
 }
 /*
     The editor of the FT likes short headlines with only a few words!
@@ -23,13 +23,12 @@ function potentialHeadlines(allArticleTitles) {
 
 
 function titleWithFewestWords(allArticleTitles) {
-  var spaceNum = allArticleTitles[0].split(" ").length;
+  var wordNum = allArticleTitles[0].split(" ").length;
   var withLessWords;
 
   for (var i = 1; i < allArticleTitles.length; i++) {
-    if (allArticleTitles[i].split(" ").length < spaceNum) {
-      // console.log(spaceNum);
-      spaceNum = allArticleTitles[i].split(" ").length;
+    if (allArticleTitles[i].split(" ").length < wordNum) {
+      wordNum = allArticleTitles[i].split(" ").length;
       withLessWords = allArticleTitles[i];
     }
   }
@@ -60,17 +59,13 @@ function headlinesWithNumbers(allArticleTitles) {
 
 
 function averageNumberOfCharacters(allArticleTitles) {
-  var sentenceLengthArr = [];
+  var total = 0;
 
   for (var i = 0; i < allArticleTitles.length; i++) {
-    sentenceLengthArr.push(allArticleTitles[i].length);
+    total += allArticleTitles[i].length;
   }
 
-  var total = sentenceLengthArr.reduce(function (acc, value) {
-    return acc + value;
-  }, 0);
-  var average = total / sentenceLengthArr.length; // console.log(Math.round(average));
-
+  var average = total / allArticleTitles.length;
   return Math.round(average);
 }
 /* ======= List of Articles - DO NOT MODIFY ===== */
