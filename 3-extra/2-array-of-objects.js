@@ -35,6 +35,28 @@ function getHighestRatedInEachGenre(books) {
   return arrOfBooks;
 }
 
+// Solution
+
+// function getHighestRatedInEachGenre(books) {
+//   // this will be an object where the property will be a genre, and the value will be an object representing the book
+//   let highestRated = {};
+
+//   for (let book of books) {
+//     // if this is the first time we're seeing this genre OR the rating we've seen is not as high as the current book
+//     if (
+//       highestRated[book.genre] === undefined ||
+//       highestRated[book.genre].rating < book.rating
+//     ) {
+//       // then this book is now the highest rated in the genre so far
+//       highestRated[book.genre] = book;
+//     }
+//   }
+
+//   // Here we just want to get the highest rated books (the values of the object)
+//   // and then get the title for each one
+//   return Object.values(highestRated).map((book) => book.title);
+// }
+
 /* ======= Book data - DO NOT MODIFY ===== */
 const BOOKS = [
   {

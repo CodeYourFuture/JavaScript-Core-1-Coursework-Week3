@@ -8,6 +8,19 @@ function potentialHeadlines(allArticleTitles) {
   return allArticleTitles.filter((element) => element.length <= 65);
 }
 
+// Solution
+// function potentialHeadlines(allArticleTitles) {
+//   let headlines = [];
+
+//   for (let title of allArticleTitles) {
+//     if (title.length <= 65) {
+//       headlines.push(title);
+//     }
+//   }
+
+//   return headlines;
+// }
+
 /*
     The editor of the FT likes short headlines with only a few words!
     Implement the function below, which returns the title with the fewest words.
@@ -19,6 +32,8 @@ function titleWithFewestWords(allArticleTitles) {
   for (let i = 0; i < allArticleTitles.length; i++) {
     const title = allArticleTitles[i];
 
+    // working out the number of words in the title by splitting on the space character
+    // this will generate an array. Read more: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
     const titleLengthInWords = title.split(" ").length;
 
     if (
@@ -50,6 +65,18 @@ function headlinesWithNumbers(allArticleTitles) {
   return result;
 }
 
+// Solution
+
+// function doesTitleContainANumber(title) {
+//   for (let character of title) {
+//     if (character >= "0" && character <= "9") {
+//       return true;
+//     }
+//   }
+
+//   return false;
+// }
+
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
     Implement the function below to return this number - rounded to the nearest integer.
@@ -61,6 +88,18 @@ function averageNumberOfCharacters(allArticleTitles) {
   }
   return Math.floor(total / allArticleTitles.length);
 }
+
+// Solution
+
+// function averageNumberOfCharacters(allArticleTitles) {
+//   let totalCharacters = 0;
+
+//   for (let title of allArticleTitles) {
+//     totalCharacters += title.length;
+//   }
+
+//   return Math.round(totalCharacters / allArticleTitles.length);
+// }
 
 /* ======= List of Articles - DO NOT MODIFY ===== */
 const ARTICLE_TITLES = [

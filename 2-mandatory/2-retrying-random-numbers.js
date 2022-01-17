@@ -18,6 +18,18 @@ function getRandomNumberGreaterThan50() {
   return num;
 }
 
+// Solution
+
+// function getRandomNumberGreaterThan50() {
+//   let generatedNumber;
+
+//   do {
+//     generatedNumber = generateRandomNumber();
+//   } while (generatedNumber <= 50); // keep trying until we get a number that is > 50
+
+//   return generatedNumber;
+// }
+
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("Returned value should always be greater than 50", () => {

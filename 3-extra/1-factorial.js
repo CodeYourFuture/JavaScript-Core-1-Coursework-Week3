@@ -16,6 +16,20 @@ function factorial(input) {
   return input;
 }
 
+//  Solution
+
+// function factorial(input) {
+//   let result = 1;
+
+//   let i = input;
+//   do {
+//     result *= i;
+//     i--;
+//   } while (i > 0);
+
+//   return result;
+// }
+
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("3! should be 6", () => {

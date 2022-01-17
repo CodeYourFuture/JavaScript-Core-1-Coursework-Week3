@@ -52,6 +52,32 @@ function arrAveragePrice(closingPricesForAllStocks) {
   return averageOfOneArray;
 }
 
+// Solution
+
+// function getAveragePrices(closingPricesForAllStocks) {
+//   let averages = [];
+
+//   for (let pricesForStock of closingPricesForAllStocks) {
+//     averages.push(getAveragePricesForStock(pricesForStock));
+//   }
+
+//   return averages;
+// }
+
+// function getAveragePricesForStock(pricesForStock) {
+//   let total = 0;
+
+//   for (let price of pricesForStock) {
+//     total += price;
+//   }
+
+//   return roundTo2Decimals(total / pricesForStock.length);
+// }
+
+// function roundTo2Decimals(num) {
+//   return Math.round(num * 100) / 100;
+// }
+
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
     Implement the below function, which
@@ -76,6 +102,24 @@ function getPriceChanges(closingPricesForAllStocks) {
   }
   return newArray;
 }
+
+// Solution
+
+// function getPriceChanges(closingPricesForAllStocks) {
+//   let changes = [];
+
+//   for (let pricesForStock of closingPricesForAllStocks) {
+//     changes.push(getPriceChangeForStock(pricesForStock));
+//   }
+
+//   return changes;
+// }
+
+// function getPriceChangeForStock(pricesForStock) {
+//   let priceChange =
+//     pricesForStock[pricesForStock.length - 1] - pricesForStock[0];
+//   return roundTo2Decimals(priceChange);
+// }
 
 /*
     As part of a financial report, we want to see what the highest price was for each stock in the last 5 days.
@@ -103,6 +147,52 @@ function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
   }
   return highestStockPrice;
 }
+
+// solution
+
+// function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
+//   let descriptions = [];
+
+//   for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+//     let highestPrice = getHighestPrice(closingPricesForAllStocks[i]);
+//     descriptions.push(
+//       `The highest price of ${stocks[
+//         i
+//       ].toUpperCase()} in the last 5 days was ${highestPrice.toFixed(2)}`
+//     );
+//   }
+
+//   return descriptions;
+// }
+
+// function getHighestPrice(pricesForStock) {
+//   // initialising to 0, as we're expecting this value to be overriden by the first price in the array
+//   let highestPriceSoFar = 0;
+
+//   for (let price of pricesForStock) {
+//     // if this price is higher than the highest price we've seen so far, it becomes the new highest price
+//     if (price > highestPriceSoFar) {
+//       highestPriceSoFar = price;
+//     }
+//   }
+
+//   return highestPriceSoFar;
+// }
+
+// function highestPriceDescriptionsAlternate(closingPricesForAllStocks, stocks) {
+//   let descriptions = [];
+
+//   for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+//     let highestPrice = Math.max(...closingPricesForAllStocks[i]);
+//     descriptions.push(
+//       `The highest price of ${stocks[
+//         i
+//       ].toUpperCase()} in the last 5 days was ${highestPrice.toFixed(2)}`
+//     );
+//   }
+
+//   return descriptions;
+// }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the average price for each stock", () => {
