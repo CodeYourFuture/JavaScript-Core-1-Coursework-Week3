@@ -6,6 +6,14 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+    // return allArticleTitles.filter( (element) =>element.length <= 65); from Aluns session 
+    let newOnlyArticle = [];
+    for (let i=0; i < allArticleTitles.length; i++) {
+        if (allArticleTitles[i].length <=65) {
+            newOnlyArticle.push(allArticleTitles[i] );
+        } 
+    } 
+    return newOnlyArticle;
 }
 
 /*
@@ -15,15 +23,58 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
     // TODO
+    let fewestWordsSentence;
+    let numberOfWords;
+    for (let i=0; i < allArticleTitles.length; i++) {
+          
+        const sentence = allArticleTitles[i];
+        
+        const sentenceLengthInWords = title.split(" ").length;//breaks them to words
+        if (!numberOfWords ) {
+            numberOfWords = sentenceLengthInWords;
+            fewestWordsSentence = sentence; //goes throught first book
+        }
+        else if (sentenceLengthInWords < numberOfWords) {
+            numberOfWords = sentenceLengthInWords;
+            fewestWordsSentence = sentence;
+        }
+       
+    }
+    return fewestWordsSentence;
 }
 
+// let a = "the girl";
+// console.log(a.length); //return a string 8 
+// let b = ["abc","ddd"];
+// console.log(b.length)// 2
 /*
     The editor of the FT has realised that headlines which have numbers in them get more clicks!
     Implement the function below to return a new array containing all the headlines which contain a number.
     (Hint: remember that you can also loop through the characters of a string if you need to)
+
+    used this as example
+    // String with some numbers
+const str = "Hello12345World!";
+
+// Regular expression
+const regex = /\d/;
+
+// Check if string contians numbers
+const doesItHaveNumber = regex.test(str);
+
+console.log(doesItHaveNumber); // true
+    https://dev.to/melvin2016/how-to-check-if-a-string-contains-at-least-one-number-using-regular-expression-regex-in-javascript-3n5h
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+    const regex = /\d/;
+    let newArrWithNumber = [];
+    for (let i=0; i < allArticleTitles.length; i++) {
+         if (regex.test(allArticleTitles[i]) ) {
+             newArrWithNumber.push(allArticleTitles[i])
+         }
+    }
+    return newArrWithNumber;
 }
 
 /*
@@ -32,14 +83,26 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
-}
+    let totalCharacters = 0;
+    for (let i=0; i <allArticleTitles.length; i++){
+        totalCharacters = allArticleTitles[i].length + totalCharacters;
+        
+    }
+    console.log(Math.round(totalCharacters/ allArticleTitles.length))
+    return Math.round(totalCharacters / allArticleTitles.length);
+} 
+// let i = 0;
+// while (i < allArticleTitles.length) {
+//     totalCharacters = allArticleTitles[i].length + totalCharacters;
+//     i++ 
+// }
 
 
 
 /* ======= List of Articles - DO NOT MODIFY ===== */
 const ARTICLE_TITLES = [
-    "Streaming wars drive media groups to spend more than $100bn on new content",
-    "Amazon Prime Video India country head: streaming is driving a TV revolution",
+    "Streaming wars drive media groups to spend more than $100bn on new content",//0
+    "Amazon Prime Video India country head: streaming is driving a TV revolution",//1
     "Aerospace chiefs prepare for bumpy ride in recovery of long-haul flights",
     "British companies look to muscle in on US retail investing boom",
     "Libor to take firm step towards oblivion on New Year's Day",

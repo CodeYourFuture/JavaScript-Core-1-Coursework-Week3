@@ -35,6 +35,18 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 */
 function getAveragePrices(closingPricesForAllStocks) {
     // TODO
+    let averagePricesForAllStocks;
+    for(let i = 0; i< closingPricesForAllStocks.length; i++){
+        let clothingPricesStock = clothingPricesStocks[i];
+        let totalValue = 0;
+        
+       for (let clothingPriceOfDay of clothingPricesStock) {
+          totalValue += closingPriceOfDay;
+       }
+       let averagePriceToDecimal = Number(averagePrice.toFixed(2) );
+        averagePriceForAllStocks.push(totalValue / closingPricesForAllStocks.length)
+    }
+    return averagePricesForAllStocks;
 }
 
 /*

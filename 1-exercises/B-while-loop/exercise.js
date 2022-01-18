@@ -5,8 +5,39 @@
     The list of numbers should start with 0. n is being passed in as a parameter.
 */
 
+// function evenNumbers(n) {
+//     // TODO
+//     let start = 0;
+//     let result = []; 
+//     if (n < 10) {
+//         while (start < n) {
+//             result.push(start);
+//             start+=2;
+//         } 
+//     } else if (n >= 10){
+       
+//             while (start < n * 2) {
+//                 result.push(start);
+//                 start+=2;
+//             } 
+       
+//     }
+    
+//     console.log(result);
+//     return result;
+//}
+
 function evenNumbers(n) {
     // TODO
+    let start = 0;
+    let result = [];
+
+    while (result.length < n) {
+        result.push(start);
+        start+=2;
+    }
+
+    return console.log(result);
 }
 
 evenNumbers(3); // should output 0,2,4

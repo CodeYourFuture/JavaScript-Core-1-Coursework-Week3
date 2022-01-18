@@ -25,7 +25,13 @@ const AGES = [
     63,
     49
 ];
-
+function combineTwo () {
+    for (let i = 0; i < WRITERS.length; i ++) {
+        
+       console.log (WRITERS[i] + " is " + AGES[i] + " years old ") ;
+    }
+}
+combineTwo();
 // TODO - Write for loop code here
 
 /*
