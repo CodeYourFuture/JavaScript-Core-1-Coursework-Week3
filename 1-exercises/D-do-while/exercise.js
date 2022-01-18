@@ -11,7 +11,7 @@ function evenNumbersSum(n) {
     let i = 0;
     let number = 0;
 do {
-    console.log(total,i,number);
+
   total+=number;  
   number+=2;  
   i++;

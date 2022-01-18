@@ -33,6 +33,10 @@ for (let i = 0; i < WRITERS.length; i++) {
 }
 } 
 
+// for (var i = 0; i < WRITERS.length; i++) {
+//     console.log(`${WRITERS[i]} is ${AGES[i]} years old.`)
+// }
+
 // TODO - Write for loop code here
 
 /*

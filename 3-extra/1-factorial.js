@@ -8,9 +8,23 @@
     Using a loop, complete the function below so it returns the factorial of the number being passed in. 
 */
 
+const arr = [];
+
+
 function factorial(input) {
-    // TODO
+    let result = 1;
+    
+    let i = input;
+    
+    do {
+        result *= i;
+        i--;
+    } while(i > 0);
+
+    return result;
 }
+
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

@@ -33,7 +33,7 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
-// no parameter has been passed to the function
+// no argument has been passed to the function
 
 
 // Example 4

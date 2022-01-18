@@ -13,8 +13,25 @@
         - the input n will be passed in to the function as an argument, and will be a number greater than 2
 */
 
+// function generateFibonacciSequence(n) {
+//     // TODO
+// }
+
+
 function generateFibonacciSequence(n) {
-    // TODO
+    let fibonacciSequence = [];
+
+    // just initialise the first 2 values in the sequence
+    fibonacciSequence[0] = 0;
+    fibonacciSequence[1] = 1;
+
+    // the remaining numbers can be calculated
+    for (i = 2; i < n; i++) {
+        // each number is equal to the sum of the previous 2 numbers
+        fibonacciSequence[i] = fibonacciSequence[i - 2] + fibonacciSequence[i - 1];
+    }
+
+    return fibonacciSequence;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

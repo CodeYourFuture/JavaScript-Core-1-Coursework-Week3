@@ -8,15 +8,14 @@
     function evenNumbers(n) {  
     let arr = [];
     let i = 0;
-    while(i%2===0 && n > 0 && n > arr.length){                
+        while(n > arr.length){                
         arr.push(i);   
         i+=2;       
+        }
+        return arr.toString();       
     }
-    return arr.toString();       
-}
 
-
-console.log(evenNumbers(3));
+console.log(evenNumbers(10));
 
 
 

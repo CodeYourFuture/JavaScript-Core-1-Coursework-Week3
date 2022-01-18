@@ -38,11 +38,11 @@ function getAveragePrices(closingPricesForAllStocks) {
     let sum;
     let newArr = [];
     for (let i = 0; i < closingPricesForAllStocks.length; i++){
-        // console.log(closingPricesForAllStocks[i]);
+        
         sum = 0;
         for (let j =0; j < closingPricesForAllStocks[i].length; j++) {            
              sum += closingPricesForAllStocks[i][j];             
-            //  console.log(sum);
+           
         }        
         let average = sum / closingPricesForAllStocks.length;
         newArr.push(parseFloat(average.toFixed(2)));
@@ -74,10 +74,6 @@ function getPriceChanges(closingPricesForAllStocks) {
         }
         return priceChange;
     }
-
-console.log(getPriceChanges(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS))
-
-
 
 /*
     As part of a financial report, we want to see what the highest price was for each stock in the last 5 days.
