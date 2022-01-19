@@ -22,11 +22,10 @@ function findFirstJulyBDay(birthdays) {
   let date = "";
   while (i < birthdays.length) {
     if (birthdays[i].includes("July")) {
-      date = birthdays[i];
+      return birthdays[i];
     }
     i++;
   }
-  return date;
 }
 
 console.log(findFirstJulyBDay(BIRTHDAYS)); // should output "July 11th"
