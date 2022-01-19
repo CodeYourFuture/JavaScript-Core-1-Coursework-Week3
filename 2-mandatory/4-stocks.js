@@ -34,8 +34,18 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Functions can help with this!
 */
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+    let average =[]
+    let stockSum =0;
+    for (let i=0; i<closingPricesForAllStocks.length; i++){
+        stockSum=0
+       for (let j=0; j<closingPricesForAllStocks[i].length; j++){
+            stockSum = stockSum + closingPricesForAllStocks[i][j];
+       }
+       average.push(Number((stockSum/closingPricesForAllStocks[i].length).toFixed(2)))
+    }
+    return average
 }
+ //console.log(getAveragePrices(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS))
 
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
@@ -48,8 +58,16 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+    let priceChangeArr=[]
+      
+    for (price of closingPricesForAllStocks) {
+        let priceChange = Number((price[price.length -1] - price[0]).toFixed(2));
+        priceChangeArr.push(priceChange);
+    }
+    return priceChangeArr;
 }
+    
+// console.log(getPriceChanges(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS))
 
 /*
     As part of a financial report, we want to see what the highest price was for each stock in the last 5 days.
@@ -64,11 +82,16 @@ function getPriceChanges(closingPricesForAllStocks) {
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+      highestPriceLast5Days = [];
+    for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+        highestPriceLast5Days.push(`The highest price of ${stocks[i].toUpperCase()} in the last 5 days was ${Math.max(...closingPricesForAllStocks[i]).toFixed(2)}`);
+    }
+    return highestPriceLast5Days;
 }
+ //console.log(highestPriceDescriptions(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS,STOCKS))
 
 
-/* ======= TESTS - DO NOT MODIFY ===== */
+// /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the average price for each stock", () => {
     expect(getAveragePrices(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS)).toEqual(
         [176.89, 335.66, 3405.66, 2929.22, 1041.93]

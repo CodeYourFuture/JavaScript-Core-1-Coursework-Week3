@@ -10,27 +10,27 @@
 */
 
 // Example 1
-let a;
+let a;           // a is not assigned any value
 console.log(a);
 
 
 // Example 2
-function sayHello() {
-    let message = "Hello";
+function sayHello() {        // there is no return statement, and the message variable is defined inside the function so it is not read, 
+    let message = "Hello";    // there are no parameters for the function
 }
 
-let hello = sayHello();
+let hello = sayHello();    
 console.log(hello);
 
 
 // Example 3
-function sayHelloToUser(user) {
+function sayHelloToUser(user) {       // we don't pass any parameters into the function
     console.log(`Hello ${user}`);
 }
 
 sayHelloToUser();
 
 
-// Example 4
+// Example 4            // there is nothing in the array at index 3
 let arr = [1,2,3];
 console.log(arr[3]);

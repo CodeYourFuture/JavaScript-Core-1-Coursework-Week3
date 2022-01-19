@@ -4,8 +4,16 @@
     The home page of the web site has a headline section, which only has space for article titles which are 65 characters or less.
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
+
+
 function potentialHeadlines(allArticleTitles) {
-    // TODO
+    let newArr =[];
+    for (let i=0; i<allArticleTitles.length; i++){
+        if (allArticleTitles[i].length <= 65 ){
+            newArr.push(allArticleTitles[i])
+        }
+    }
+    return newArr;
 }
 
 /*
@@ -14,8 +22,20 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
-}
+    
+    let countLength = allArticleTitles[0].split(" ").length;
+    let shortTitle;
+
+    for (let i=0; i<allArticleTitles.length; i++){
+        if (countLength > allArticleTitles[i].split(" ").length) {
+            countLength = allArticleTitles[i].split(" ").length
+            console.log(allArticleTitles[i])
+            shortTitle = allArticleTitles[i]
+        }
+        }
+        return shortTitle
+    }
+
 
 /*
     The editor of the FT has realised that headlines which have numbers in them get more clicks!
@@ -23,16 +43,30 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+    let newArr=[]
+    for (let i=0; i<allArticleTitles.length; i++){  
+        if (allArticleTitles[i].match(/[0-9]/g)){
+            newArr.push(allArticleTitles[i])
+        }
+    }
+    return newArr
 }
+
 
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
+    let averageChar;
+    let sum= 0;
+    for (let i=0; i<allArticleTitles.length; i++){
+        sum = sum + allArticleTitles[i].length;
+        averageChar=  sum / allArticleTitles.length
+    }
+    return Math.round(averageChar)
 }
+// console.log(averageNumberOfCharacters(ARTICLE_TITLES))
 
 
 
@@ -50,7 +84,7 @@ const ARTICLE_TITLES = [
     "Brussels urges Chile's incoming president to endorse EU trade deal",
 ];
 
-/* ======= TESTS - DO NOT MODIFY ===== */
+// /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("should only return potential headlines", () => {
     expect(new Set(potentialHeadlines(ARTICLE_TITLES))).toEqual(new Set([
