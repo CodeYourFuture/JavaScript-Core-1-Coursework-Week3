@@ -37,17 +37,11 @@ function getAveragePrices(closingPricesForAllStocks) {
   // TODO
   let newAverage = [];
   let sum = 0;
-  for (let i = 0; i < CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS.length; i++) {
-    for (
-      let a = 0;
-      a < CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[i].length;
-      a++
-    ) {
-      sum += CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[i][a];
+  for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+    for (let a = 0; a < closingPricesForAllStocks[i].length; a++) {
+      sum += closingPricesForAllStocks[i][a];
     }
-    newAverage.push(
-      (sum / CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[i].length).toFixed(2) * 1
-    );
+    newAverage.push((sum / closingPricesForAllStocks[i].length).toFixed(2) * 1);
     sum = 0;
   }
   return newAverage;
