@@ -5,12 +5,10 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-  let result = allArticleTitles[0];
-  for (let i = 0; i < allArticleTitles.length; i++) {
-    if (allArticleTitles[i].split(" ").length < result.split(" ").length)
-      result = allArticleTitles[i];
+  arr = [];
+  for (article of allArticleTitles) {
+    if (article.length() <= 65) arr.push(article);
   }
-  return result;
 }
 
 /*
@@ -18,8 +16,18 @@ function potentialHeadlines(allArticleTitles) {
     Implement the function below, which returns the title with the fewest words.
     (you can assume words will always be seperated by a space)
 */
+
 function titleWithFewestWords(allArticleTitles) {
-  // TODO
+  let least = allArticleTitles[0];
+
+  for (i = 1; i < allArticleTitles.length; i++) {
+    let testArticle = allArticleTitles[i];
+
+    let articleWords = testArticle.split(" ").length;
+    let currentLeastWords = least.split(" ").length;
+
+    if (articleWords < currentLeastWords) least = testArticle;
+  }
 }
 
 /*
@@ -27,17 +35,24 @@ function titleWithFewestWords(allArticleTitles) {
     Implement the function below to return a new array containing all the headlines which contain a number.
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
+function hasNumber(myString) {
+  return /\d/.test(myString);
+}
 function headlinesWithNumbers(allArticleTitles) {
-  // TODO
+  let articlesWithANumber = [];
+
+  for (checkArticle in allArticleTitles) {
+    if (hasNumber(checkArticle)) articlesWithANumber.push(checkArticle);
+  }
+
+  return articlesWithANumber;
 }
 
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
     Implement the function below to return this number - rounded to the nearest integer.
 */
-function averageNumberOfCharacters(allArticleTitles) {
-  // TODO
-}
+function averageNumberOfCharacters(allArticleTitles) {}
 
 /* ======= List of Articles - DO NOT MODIFY ===== */
 const ARTICLE_TITLES = [
