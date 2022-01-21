@@ -9,14 +9,14 @@
 function evenNumbers(n) {
   // TODO
   let i = 0;
-  let j = [];
+  let evens = [];
   while (i < n && n !== 0) {
     {
-      j.push(i * 2);
+      evens.push(i * 2);
     }
     i++;
   }
-  console.log(j.join());
+  console.log(evens.join());
 }
 
 evenNumbers(3); // should output 0,2,4
