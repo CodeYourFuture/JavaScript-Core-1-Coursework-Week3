@@ -94,7 +94,7 @@ function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
     // TODO
     let highestPrice=[];
 for(let i=0; i<closingPricesForAllStocks.length;i++){
-    highestPrice.push('The highest price of ${stocks[i].toUpperCase()} in the last 5 days was ${Math.max(. closingPricesForAllStocks[i]).toFixed(2)}');
+    highestPrice.push('The highest price of ${stocks[i].toUpperCase()} in the last 5 days was ${Math.max(. closingPricesForAllStocks[i]).toFixed(2)});
     return highestPrice;
 }
 
@@ -124,3 +124,4 @@ test("should return a description of the highest price for each stock", () => {
         ]
     );
 });
+}
