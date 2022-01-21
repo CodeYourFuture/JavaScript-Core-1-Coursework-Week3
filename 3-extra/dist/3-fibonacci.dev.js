@@ -1,3 +1,5 @@
+"use strict";
+
 /*
     The Fibonacci Sequence is a famous sequence of numbers. Read more here: https://www.mathsisfun.com/numbers/fibonacci-sequence.html
     
@@ -12,33 +14,29 @@
     Can you implement a function that will generate the first n numbers in this sequence (starting with 0 and 1)?
         - the input n will be passed in to the function as an argument, and will be a number greater than 2
 */
-
 function generateFibonacciSequence(n) {
-  let output = [0, 1];
+  var output = [0, 1];
+
   if (n === 1) {
     output = [0];
   } else {
-    for (let i = 2; i < n; i++) {
+    for (var i = 2; i < n; i++) {
       output.push(output[output.length - 2] + output[output.length - 1]);
     }
-  }
-  //   console.log(output);
+  } //   console.log(output);
+
+
   return output;
 }
-
 /* ======= TESTS - DO NOT MODIFY ===== */
-test("should return the first 10 numbers in the Fibonacci Sequence", () => {
-  expect(generateFibonacciSequence(10)).toEqual([
-    0, 1, 1, 2, 3, 5, 8, 13, 21, 34,
-  ]);
-});
 
-test("should return the first 5 numbers in the Fibonacci Sequence", () => {
+
+test("should return the first 10 numbers in the Fibonacci Sequence", function () {
+  expect(generateFibonacciSequence(10)).toEqual([0, 1, 1, 2, 3, 5, 8, 13, 21, 34]);
+});
+test("should return the first 5 numbers in the Fibonacci Sequence", function () {
   expect(generateFibonacciSequence(5)).toEqual([0, 1, 1, 2, 3]);
 });
-
-test("should return the first 15 numbers in the Fibonacci Sequence", () => {
-  expect(generateFibonacciSequence(15)).toEqual([
-    0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377,
-  ]);
+test("should return the first 15 numbers in the Fibonacci Sequence", function () {
+  expect(generateFibonacciSequence(15)).toEqual([0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377]);
 });

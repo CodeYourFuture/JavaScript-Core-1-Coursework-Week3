@@ -12,25 +12,28 @@
 // Example 1
 let a;
 console.log(a);
-
+//answer: in line 13 we create variable by name a but haven't assign it for anything;
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+  let message = "Hello";
 }
 
 let hello = sayHello();
 console.log(hello);
 
+//answer: we did not return anything in sayHello() function;
 
 // Example 3
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+  console.log(`Hello ${user}`);
 }
 
 sayHelloToUser();
-
+//answer: we haven't gave an argument when we call sayHelloToUser() function;
 
 // Example 4
-let arr = [1,2,3];
+let arr = [1, 2, 3];
 console.log(arr[3]);
+
+//answer: we don't have arr[3], array starts from 0 index and in our arr we have 0,1,2 index's only
