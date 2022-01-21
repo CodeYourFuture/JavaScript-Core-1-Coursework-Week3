@@ -10,7 +10,9 @@ function potentialHeadlines(allArticleTitles) {
   var newTitleArr = [];
 
   for (var i = 0; i < allArticleTitles.length; i++) {
-    allArticleTitles[i].length <= 65 ? newTitleArr.push(allArticleTitles[i]) : "";
+    if (allArticleTitles[i].length <= 65) {
+      newTitleArr.push(allArticleTitles[i]);
+    }
   }
 
   return newTitleArr;

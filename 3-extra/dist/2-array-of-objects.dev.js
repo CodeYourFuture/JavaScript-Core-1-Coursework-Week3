@@ -7,6 +7,24 @@
 // We want to find the title of the highest rated book in each genre to showcase on our home page.
 // Implement a function which takes the array of books as a parameter, and returns an array of book titles.
 // Each title in the resulting array should be the highest rated book in its genre.
+
+/*function getHighestRatedInEachGenre(books) {
+    // this will be an object where the property will be a genre, and the value will be an object representing the book
+    let highestRated = {};
+
+    for(let book of books) {
+        // if this is the first time we're seeing this genre OR the rating we've seen is not as high as the current book
+        if(highestRated[book.genre] === undefined || highestRated[book.genre].rating < book.rating) {
+            // then this book is now the highest rated in the genre so far
+            highestRated[book.genre] = book;
+        }
+    }
+
+    // Here we just want to get the highest rated books (the values of the object)
+    // and then get the title for each one
+    return Object.values(highestRated)
+            .map(book => book.title);
+}*/
 function getHighestRatedInEachGenre(books) {
   books.sort(function (a, b) {
     return b.rating - a.rating;
