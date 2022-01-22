@@ -16,7 +16,7 @@ function potentialHeadlines(allArticleTitles) {
 function titleWithFewestWords(allArticleTitles) {
     let shortestTitle = allArticleTitles[0];
     allArticleTitles
-    .forEach((element, index) => {shortestTitle.length > element.length ? shortestTitle = element : 0;
+    .forEach((element) => {shortestTitle.length > element.length ? shortestTitle = element : 0;
     });
     return shortestTitle;
 }
