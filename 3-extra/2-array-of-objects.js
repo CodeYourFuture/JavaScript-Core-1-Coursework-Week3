@@ -14,7 +14,7 @@ function getHighestRatedInEachGenre(books) {  // This problem is not solved yet 
     let x = books.sort(function(a,b){
         return b.rating - a.rating
     })
-    let d = books.filter(function(e){
+    let d = books.filter(function(e){ // This problem is not solved yet as I have only output only the highest rated books object
        if (e.rating >= x[0].rating){
          return e
        }
