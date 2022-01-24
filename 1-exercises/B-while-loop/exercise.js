@@ -21,3 +21,25 @@ function evenNumbers(n) {
 evenNumbers(3); // should output 0,2,4
 evenNumbers(0); // should output nothing
 evenNumbers(10); // should output 0,2,4,6,8,10,12,14,16,18
+
+// SOLUTION
+
+// function evenNumbers(n) {
+//     // initialising an array to hold our even numbers
+//     let result = [];
+
+//     let i = 0;
+//     while(i < n) {
+//         // adding the number to the array
+//         result.push(i * 2);
+//         i++;
+//     }
+
+//     // joining the elements of the array together as a string
+//     // Read more here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join
+//     console.log(result.join());
+// }
+
+// evenNumbers(3); // should output 0,2,4
+// evenNumbers(0); // should output nothing
+// evenNumbers(10); // should output 0,2,4,6,8,10,12,14,16,18

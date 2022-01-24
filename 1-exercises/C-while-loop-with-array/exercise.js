@@ -27,3 +27,15 @@ function findFirstJulyBDay(birthdays) {
 }
 
 console.log(findFirstJulyBDay(BIRTHDAYS)); // should output "July 11th"
+
+// SOLUTION
+
+// function findFirstJulyBDay(birthdays) {
+//   let i = 0;
+//   while (i < BIRTHDAYS.length) {
+//     if (BIRTHDAYS[i].startsWith("July")) {
+//       return BIRTHDAYS[i];
+//     }
+//     i++;
+//   }
+// }
