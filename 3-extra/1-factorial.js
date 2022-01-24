@@ -9,9 +9,13 @@
 */
 
 function factorial(input) {
-    // TODO
+   let num = 1
+   for(let i =2 ; i <=input; i++){
+       num *= i
+   }
+   return num
 }
-
+console.log(factorial(3))
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("3! should be 6", () => {

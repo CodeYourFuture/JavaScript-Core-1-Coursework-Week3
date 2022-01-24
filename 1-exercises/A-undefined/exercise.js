@@ -12,7 +12,7 @@
 // Example 1
 let a;
 console.log(a);
-
+// Answer: a variable is declared but no value assigned on it.
 
 // Example 2
 function sayHello() {
@@ -21,7 +21,7 @@ function sayHello() {
 
 let hello = sayHello();
 console.log(hello);
-
+//Answer: nothing is returned in the function
 
 // Example 3
 function sayHelloToUser(user) {
@@ -29,8 +29,9 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
-
+//Answer : no argument is passed in to the function
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+// Answer : arr element 3 is empty , only 0, 1 and 2 postion element is declared
