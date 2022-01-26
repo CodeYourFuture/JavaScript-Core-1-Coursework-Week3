@@ -9,10 +9,8 @@ function potentialHeadlines(allArticleTitles) {
 
   for (titles of allArticleTitles) {
     if (titles.length <= 65) {
-      rightTitles.push(titles);
+      return rightTitles.push(titles);
     }
-    return rightTitles;
-  }
 }
 
 /*
@@ -22,7 +20,7 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
     
-  return allArticleTitles.reduce((shortest, sentence) {
+  return allArticleTitles.reduce((shortest, sentence) => {
       
     return shortest.length < sentence.length ? shortest : sentence;
   });
