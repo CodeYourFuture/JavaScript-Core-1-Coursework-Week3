@@ -20,7 +20,7 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
     
-  return allArticleTitles.reduce((shortest, sentence) => {
+  return allArticleTitles.split(" ").reduce((shortest, sentence) => {
       
     return shortest.length < sentence.length ? shortest : sentence;
   });
