@@ -8,14 +8,11 @@
 
 function evenNumbersSum(n) {
         let i = 0;
-        let j = 0;
         let sum = 0;
-
         do {
-            sum += i;
-            i += 2;
-            j++;
-        } while (j < n);
+            sum += j*2;
+            i++;
+        } while (i < n);
 
         return sum;
     }
