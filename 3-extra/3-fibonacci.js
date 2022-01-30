@@ -14,9 +14,17 @@
 */
 
 function generateFibonacciSequence(n) {
-    // TODO
-}
 
+    
+        if (n == 0)  return 0;
+        if (n == 1)  return 1;
+        if(n<0) return -1;
+            
+        for(var i = 2; i <= n; i++) {
+            
+            return F(n - 1) + F(n - 2);
+        }
+};
 /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the first 10 numbers in the Fibonacci Sequence", () => {
     expect(generateFibonacciSequence(10)).toEqual(

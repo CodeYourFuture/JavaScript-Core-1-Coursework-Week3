@@ -10,13 +10,16 @@
 */
 
 // Example 1
+// Example 1
 let a;
 console.log(a);
+// Because variable a  doesn't have value
 
 
 // Example 2
 function sayHello() {
     let message = "Hello";
+    //  no return statement
 }
 
 let hello = sayHello();
@@ -29,8 +32,4 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
-
-
-// Example 4
-let arr = [1,2,3];
-console.log(arr[3]);
+// no value for user

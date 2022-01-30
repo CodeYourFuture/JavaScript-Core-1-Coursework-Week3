@@ -6,24 +6,43 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+    let newTitles = [];
+    for (let title of allArticleTitles) {
+        if (title.length <= 65) {
+            newTitles.push(title)
+        }
+    }
+    return newTitles;
 }
-
+//     
 /*
     The editor of the FT likes short headlines with only a few words!
     Implement the function below, which returns the title with the fewest words.
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+
+    for (let title of allArticleTitles) {
+        let titleWordsArr = title.split(' ');
+        if (titleWordsArr.length <= 6) {
+            return title
+        }
+    }
+
+
 }
 
-/*
-    The editor of the FT has realised that headlines which have numbers in them get more clicks!
-    Implement the function below to return a new array containing all the headlines which contain a number.
-    (Hint: remember that you can also loop through the characters of a string if you need to)
-*/
+
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+    let titleWithNumArr = []
+    for (let title of allArticleTitles) {
+        let reg = /\d/;
+        if (reg.test(title)) {
+            titleWithNumArr.push(title)
+        }
+    }
+    return titleWithNumArr;
 }
 
 /*
@@ -31,8 +50,14 @@ function headlinesWithNumbers(allArticleTitles) {
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
+    let totalLength = 0;
+
+    for (let i = 0; i < allArticleTitles.length; i++) {
+        totalLength += allArticleTitles[i].length
+    }
+    return (Math.round(totalLength / allArticleTitles.length))
 }
+
 
 
 
