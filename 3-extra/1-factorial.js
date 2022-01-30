@@ -9,19 +9,37 @@
 */
 
 function factorial(input) {
-    // TODO
+  if (input === 0 || input === 1) return 1;
+  for (let i = input - 1; i >= 1; i--) {
+    input *= i;
+  }
+  return input;
 }
+
+//  Solution
+
+// function factorial(input) {
+//   let result = 1;
+
+//   let i = input;
+//   do {
+//     result *= i;
+//     i--;
+//   } while (i > 0);
+
+//   return result;
+// }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("3! should be 6", () => {
-    expect(factorial(3)).toEqual(6);
+  expect(factorial(3)).toEqual(6);
 });
 
 test("5! should be 120", () => {
-    expect(factorial(5)).toEqual(120);
+  expect(factorial(5)).toEqual(120);
 });
 
 test("10! should be 3628800", () => {
-    expect(factorial(10)).toEqual(3628800);
+  expect(factorial(10)).toEqual(3628800);
 });
