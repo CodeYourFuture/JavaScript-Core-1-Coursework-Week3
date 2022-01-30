@@ -9,6 +9,7 @@
 function evenNumbersSum(n) {
         let i = 0;
         let sum = 0;
+
         do {
             sum += j*2;
             i++;
