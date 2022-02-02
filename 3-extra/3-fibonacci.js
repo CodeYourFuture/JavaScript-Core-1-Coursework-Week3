@@ -14,7 +14,15 @@
 */
 
 function generateFibonacciSequence(n) {
-    // TODO
+    let fibonacciNumArr = [0, 1];
+  
+    for (let i=2; i<n; i++) {
+      fibonacciNumArr[i] = fibonacciNumArr[i-2] + fibonacciNumArr[i-1]
+      
+      
+        
+    }
+    return fibonacciNumArr
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

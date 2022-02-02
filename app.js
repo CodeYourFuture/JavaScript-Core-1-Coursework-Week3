@@ -1,31 +1,101 @@
-const STOCKS = ["aapl", "msft", "amzn", "googl", "tsla"];
+const BOOKS = [
+    {
+        title: "The Lion, the Witch and the Wardrobe",
+        genre: "children",
+        rating: 4.7
+    },
+    {
+        title: "Sapiens: A Brief History of Humankind",
+        genre: "non-fiction",
+        rating: 4.7
+    },
+    {
+        title: "Nadiya's Fast Flavours",
+        genre: "cooking",
+        rating: 4.7
+    },
+    {
+        title: "Harry Potter and the Philosopher's Stone",
+        genre: "children",
+        rating: 4.8
+    },
+    {
+        title: "A Life on Our Planet",
+        genre: "non-fiction",
+        rating: 4.8
+    },
+    {
+        title: "Dishoom: The first ever cookbook from the much-loved Indian restaurant",
+        genre: "cooking",
+        rating: 4.85
+    },
+    {
+        title: "Gangsta Granny Strikes Again!",
+        genre: "children",
+        rating: 4.9
+    },
+    {
+        title: "Diary of a Wimpy Kid",
+        genre: "children",
+        rating: 4.6
+    },
+    {
+        title: "BOSH!: Simple recipes. Unbelievable results. All plants.",
+        genre: "cooking",
+        rating: 4.6
+    },
+    {
+        title: "The Book Your Dog Wishes You Would Read",
+        genre: "non-fiction",
+        rating: 5
+    },
+]
 
-const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
-    [179.19, 180.33, 176.28, 175.64, 172.99], // AAPL
-    [340.69, 342.45, 334.69, 333.20, 327.29], // MSFT
-    [3384.44, 3393.39, 3421.37, 3420.74, 3408.34], // AMZN
-    [2951.88, 2958.13, 2938.33, 2928.30, 2869.45], // GOOGL
-    [1101.30, 1093.94, 1067.00, 1008.87, 938.53] // TSLA
-];
+let higherRatedBook = []
+let higherRate = 0;
+let genreArray = []
 
-function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    let highestPriceDescriptionArr = [];
-
-  
+// function to collect all the unique genres in the object and add it to the genreArray
+function createGenreArray(availableBooks) {
     
-    function compareFunction(a, b) {
-        return b-a
+    for (let everyBook of availableBooks) {
+        if (!genreArray.includes(everyBook.genre)) {
+            genreArray.push(everyBook.genre)
+        }
     }
-    
-    
-    for (let currStock = 0; currStock < closingPricesForAllStocks.length; currStock++) {
-        const sortedPrice = closingPricesForAllStocks[currStock].sort(compareFunction)
-        const highestPrice = (Number(sortedPrice[0]).toFixed(2))
-        const highestPriceDescription = `The highest price of ${stocks[currStock].toUpperCase()} in the last 5 days was ${highestPrice}`
-        highestPriceDescriptionArr.push(highestPriceDescription)
-
-    }
-    return highestPriceDescriptionArr
+    return genreArray
 }
 
-console.log(highestPriceDescriptions(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS, STOCKS))
+function getHighestRatedInEachGenre(books) {
+    const allAvailableGenres = createGenreArray(books)
+    
+    
+    
+    // let highestRating;
+    let highestRatedBooksArr = [];
+    
+    for (let i = 0; i<allAvailableGenres.length; i++) {
+        let higherRating = 0 //to catch the highest rated book in a genre
+        let highestRatedTitle = "" //to catch the title of the highest rated book in a genre
+        for (let book of books) {
+            
+            if (allAvailableGenres[i] === book.genre) {
+                
+                if (higherRating < book.rating) {
+                    higherRating = book.rating; // higher rating changes every time it finds the higher rating in a genre
+                    highestRatedTitle = book.title // similarly, title changes for the higher rated book in a genre
+                    
+                    
+                }
+            
+                
+            }
+            
+        }
+        highestRatedBooksArr.push(highestRatedTitle)
+        
+    }
+    return highestRatedBooksArr
+}
+
+console.log(getHighestRatedInEachGenre(BOOKS))
