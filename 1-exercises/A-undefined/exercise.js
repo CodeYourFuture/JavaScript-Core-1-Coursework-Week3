@@ -12,7 +12,7 @@
 // Example 1
 let a;
 console.log(a);
-
+// The variable should express a value, e.g let a = 10
 
 // Example 2
 function sayHello() {
@@ -21,7 +21,7 @@ function sayHello() {
 
 let hello = sayHello();
 console.log(hello);
-
+// The function should have a parameter, e.g sayHello(message)
 
 // Example 3
 function sayHelloToUser(user) {
@@ -29,8 +29,9 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
-
+// The function should call a user, e.g sayHelloToUser("Simon")
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+// There is no third array to console log because the count starts at 0, e.g 0,1,2
