@@ -6,6 +6,14 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+     let potentialTitles = [];
+     for (let i = 0; i < allArticleTitles.length; i++) {
+       if (allArticleTitles[i].length <= 65) {
+         potentialTitles.push(allArticleTitles[i]);
+       }
+     }
+     return potentialTitles;
+
 }
 
 /*
@@ -15,6 +23,15 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
     // TODO
+     let articleFewestWord = allArticleTitles[0];
+     let i = 1;
+     while (i < allArticleTitles.length) {
+       if (articleFewestWord.length > allArticleTitles[i].length) {
+         articleFewestWord = allArticleTitles[i];
+       }
+       i++;
+     }
+     return articleFewestWord;
 }
 
 /*
@@ -24,6 +41,17 @@ function titleWithFewestWords(allArticleTitles) {
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+    let articleTitles = [];
+    for (let i = 0; i < allArticleTitles.length; i++) {
+      for (let j=0; j<allArticleTitles[i].length;j++) {
+          if (allArticleTitles[i]>0 && allArticleTitles[i]<9)
+          {articleTitles.push(allArticleTitles[i]);
+        }
+      }
+        
+      }
+    
+    return articleTitles;
 }
 
 /*
@@ -32,6 +60,14 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+        let average;
+        let sum = 0;
+
+        for (let i = 0; i < allArticleTitles.length; i++) {
+          sum += allArticleTitles[i].length;
+        }
+        average = Math.round(sum / allArticleTitles.length);
+        return average
 }
 
 
