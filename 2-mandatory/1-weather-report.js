@@ -12,7 +12,20 @@
 */
 
 function getTemperatureReport(cities) {
-    // TODO
+    // // TODO
+    // let weatherReport = [];
+    // for (let thisCity of cities) {
+    //     let cityTemp = temperatureService(city);
+    //     weatherReport.push("The temperature in " + thisCity + " is " + cityTemp + " degrees");
+    // }
+    // return weatherReport;
+
+    // let report = [];
+    // for (let city of cities) {
+    //   let temperature = temperatureService(city);
+    //   report.push(`The temperature in ${city} is ${temperature} degrees`);
+    // }
+    // return report;
 }
 
 
