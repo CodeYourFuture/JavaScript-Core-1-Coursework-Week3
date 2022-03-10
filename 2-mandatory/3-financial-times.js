@@ -6,6 +6,15 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+    let headlines = [];
+
+    for (let eachTitle of allArticleTitles) {
+        if (eachTitle.length <= 65) {
+            headlines.push(eachTitle);
+        }
+    }
+    
+    return headlines;
 }
 
 /*
@@ -15,6 +24,19 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
     // TODO
+    let leastWordsTillNow;
+    let headlineWithLeastWords;
+
+    for (let eachHeadline of allArticleTitles) {
+        let numberOfSpaces = eachHeadline.split(" ").length;
+
+        if(leastWordsTillNow === undefined || numberOfSpaces < leastWordsTillNow) {
+            leastWordsTillNow = numberOfSpaces;
+            headlineWithLeastWords = eachHeadline;
+        }
+    }
+
+    return headlineWithLeastWords;
 }
 
 /*
@@ -24,16 +46,40 @@ function titleWithFewestWords(allArticleTitles) {
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+    let headlineTitlesWithNumbers = [];
+
+    for(let eachHeadline of allArticleTitles) {
+        if (headlineTitleHasNumbers(eachHeadline)) {
+            headlineTitlesWithNumbers.push(eachHeadline);
+        }
+    }
+
+    return headlineTitlesWithNumbers;
 }
+
+    function headlineTitleHasNumbers(headlineTitle) {
+        for (let eachCharacter of headlineTitle) {
+            if (eachCharacter >= "0" && eachCharacter <= "9") {
+                return true;
+            }
+        }
+
+        return false;
+    }
 
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
-}
+    let characterTotal = 0;
 
+    for (let eachTitle of allArticleTitles) {
+        characterTotal += eachTitle.length;
+    }
+
+    return Math.round(characterTotal / allArticleTitles.length);
+}
 
 
 /* ======= List of Articles - DO NOT MODIFY ===== */
