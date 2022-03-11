@@ -34,7 +34,27 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Functions can help with this!
 */
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+    let stockAverages = [];
+
+    for (let theStockPrices of closingPricesForAllStocks) {
+      stockAverages.push(getTheAverageStockPrice(theStockPrices));
+    }
+
+    return stockAverages;
+}
+
+function getTheAverageStockPrice(theStockPrices) {
+    let stockTotal = 0;
+
+    for (let stockPrice of theStockPrices) {
+    stockTotal += stockPrice;
+    }
+
+    return roundTo2DecimalPlaces(stockTotal / theStockPrices.length);
+}
+
+function roundTo2DecimalPlaces(number) {
+    return Math.round(number * 100) / 100;
 }
 
 /*
@@ -48,7 +68,18 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+    let changesInPrice = [];
+
+    for (let theStockPrices of closingPricesForAllStocks) {
+      changesInPrice.push(getPriceChangeForStock(theStockPrices));
+    }
+
+    return changesInPrice;
+}
+
+function getPriceChangeForStock(theStockPrices) {
+    let priceChange = theStockPrices[theStockPrices.length - 1] - theStockPrices[0];
+    return roundTo2DecimalPlaces(priceChange);
 }
 
 /*
@@ -64,7 +95,45 @@ function getPriceChanges(closingPricesForAllStocks) {
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+    let stockDescriptions = [];
+
+    for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+      let highestPrice = getTheHighestPrice(closingPricesForAllStocks[i]);
+      stockDescriptions.push(
+        `The highest price of ${stocks[
+          i
+        ].toUpperCase()} in the last 5 days was ${highestPrice.toFixed(2)}`
+      );
+    }
+
+    return stockDescriptions;
+}
+
+function getTheHighestPrice(theStockPrices) {
+    let highestPriceTillNow = 0;
+
+    for (let price of theStockPrices) {
+    if (price > highestPriceTillNow) {
+        highestPriceTillNow = price;
+    }
+  }
+
+    return highestPriceTillNow;
+}
+
+function highestPriceDescriptionsAlternate(closingPricesForAllStocks, stocks) {
+    let stockDescriptions = [];
+
+    for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+    let highestPrice = Math.max(...closingPricesForAllStocks[i]);
+    stockDescriptions.push(
+        `The highest price of ${stocks[
+        i
+        ].toUpperCase()} in the last 5 days was ${highestPrice.toFixed(2)}`
+    );
+  }
+
+    return stockDescriptions;
 }
 
 
