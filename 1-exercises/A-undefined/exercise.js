@@ -13,6 +13,7 @@
 let a;
 console.log(a);
 
+//the variable has not been given any value, variable needs to be initialize
 
 // Example 2
 function sayHello() {
@@ -21,7 +22,7 @@ function sayHello() {
 
 let hello = sayHello();
 console.log(hello);
-
+// Hello is a string but missing the quotation marks in the console log.
 
 // Example 3
 function sayHelloToUser(user) {
@@ -30,7 +31,10 @@ function sayHelloToUser(user) {
 
 sayHelloToUser();
 
+// user parameter has not been given any value, so the console is returning undefined
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+
+// There is not value that equate to 3, if we had another element to the array, the console.log will give the value of the element
