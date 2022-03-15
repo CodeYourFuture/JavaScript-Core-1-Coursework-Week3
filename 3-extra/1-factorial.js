@@ -9,7 +9,14 @@
 */
 
 function factorial(input) {
-    // TODO
+    let numReducedByOneArr = []
+    while (input !== 1) {
+        let newNum = input
+        numReducedByOneArr.push(newNum)
+        input--
+    }
+    const multipleOfAll = numReducedByOneArr.reduce((prev, curr) => {return prev * curr })
+    return multipleOfAll
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

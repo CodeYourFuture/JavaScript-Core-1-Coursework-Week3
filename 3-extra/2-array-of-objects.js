@@ -10,8 +10,51 @@
     Each title in the resulting array should be the highest rated book in its genre.
 */
 
+let higherRatedBook = []
+let higherRate = 0;
+let genreArray = []
+
+// function to collect all the unique genres in the object and add it to the genreArray
+function createGenreArray(availableBooks) {
+    
+    for (let everyBook of availableBooks) {
+        if (!genreArray.includes(everyBook.genre)) {
+            genreArray.push(everyBook.genre)
+        }
+    }
+    return genreArray
+}
+
 function getHighestRatedInEachGenre(books) {
-    // TODO
+    const allAvailableGenres = createGenreArray(books)
+    
+    
+    
+    // let highestRating;
+    let highestRatedBooksArr = [];
+    
+    for (let i = 0; i<allAvailableGenres.length; i++) {
+        let higherRating = 0 //to catch the highest rated book in a genre
+        let highestRatedTitle = "" //to catch the title of the highest rated book in a genre
+        for (let book of books) {
+            
+            if (allAvailableGenres[i] === book.genre) {
+                
+                if (higherRating < book.rating) {
+                    higherRating = book.rating; // higher rating changes every time it finds the higher rating in a genre
+                    highestRatedTitle = book.title // similarly, title changes for the higher rated book in a genre
+                    
+                    
+                }
+            
+                
+            }
+            
+        }
+        highestRatedBooksArr.push(highestRatedTitle)
+        
+    }
+    return highestRatedBooksArr
 }
 
 
