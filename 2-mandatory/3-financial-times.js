@@ -28,10 +28,10 @@ function titleWithFewestWords(allArticleTitles) {
     let headlineWithLeastWords;
 
     for (let eachHeadline of allArticleTitles) {
-        let numberOfSpaces = eachHeadline.split(" ").length;
+        let numberOfWords = eachHeadline.split(" ").length;
 
-        if(leastWordsTillNow === undefined || numberOfSpaces < leastWordsTillNow) {
-            leastWordsTillNow = numberOfSpaces;
+        if(leastWordsTillNow === undefined || numberOfWords < leastWordsTillNow) {
+            leastWordsTillNow = numberOfWords;
             headlineWithLeastWords = eachHeadline;
         }
     }
@@ -44,6 +44,16 @@ function titleWithFewestWords(allArticleTitles) {
     Implement the function below to return a new array containing all the headlines which contain a number.
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
+function headlineTitleHasNumbers(eachHeadline) {
+  for (let eachCharacter of eachHeadline) {
+    if (eachCharacter >= "0" && eachCharacter <= "9") {
+      return true;
+    }
+  }
+
+  return false;
+}
+
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
     let headlineTitlesWithNumbers = [];
@@ -56,16 +66,6 @@ function headlinesWithNumbers(allArticleTitles) {
 
     return headlineTitlesWithNumbers;
 }
-
-    function headlineTitleHasNumbers(headlineTitle) {
-        for (let eachCharacter of headlineTitle) {
-            if (eachCharacter >= "0" && eachCharacter <= "9") {
-                return true;
-            }
-        }
-
-        return false;
-    }
 
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
