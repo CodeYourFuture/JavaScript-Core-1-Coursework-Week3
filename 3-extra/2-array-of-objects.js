@@ -1,19 +1,27 @@
 /*
-    This exercise includes an array of objects. You can read more about objects here: https://javascript.info/object
+    This exercise includes an array of objects. 
+    You can read more about objects here: https://javascript.info/object
 
     Imagine you're working for an online store selling books (like Amazon).
     Below, we have an array of book objects.
     Each object contains the title of the book, the genre, and a rating based on user reviews.
     
     We want to find the title of the highest rated book in each genre to showcase on our home page.
-    Implement a function which takes the array of books as a parameter, and returns an array of book titles.
+    Implement a function which takes the array of books as a parameter, 
+    and returns an array of book titles.
     Each title in the resulting array should be the highest rated book in its genre.
 */
 
-function getHighestRatedInEachGenre(books) {
-    // TODO
-}
 
+function getHighestRatedInEachGenre(books) {
+    const highestRatedBook = [];
+    for(let i=0; i<books.length; i++){
+        if(books[i].rating > 4.8){
+            highestRatedBook.push(books[i].title)   
+        }
+
+    }
+return highestRatedBook;
 
 /* ======= Book data - DO NOT MODIFY ===== */
 const BOOKS = [

@@ -9,7 +9,12 @@
 */
 
 function factorial(input) {
-    // TODO
+     let totalProduct = input;
+  while (input > 1) {
+    input--;
+    totalProduct *= input;
+  }
+  return totalProduct;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
