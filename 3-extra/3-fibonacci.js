@@ -12,10 +12,27 @@
     Can you implement a function that will generate the first n numbers in this sequence (starting with 0 and 1)?
         - the input n will be passed in to the function as an argument, and will be a number greater than 2
 */
-
 function generateFibonacciSequence(n) {
     // TODO
+    const fibonacciSequence = [0, 1];
+    let i = 1;
+    while (fibonacciSequence.length < n) {
+        fibonacciSequence.push(fibonacciSequence[i] + fibonacciSequence[i - 1]);
+        i++;
+    }
+    return fibonacciSequence;
 }
+/*
+function generateFibonacciSequence(n) {
+    const fibonacciSequence;
+  let sum;
+  fibonacciSequence = [0, 1];
+  for (let i = 0; i < n - 2; i++) {
+    fibonacciSequence.push(fibonacciSequence[i] + fibonacciSequence[i + 1]);
+  }
+  return fibonacciSequence;
+}
+*/
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the first 10 numbers in the Fibonacci Sequence", () => {
