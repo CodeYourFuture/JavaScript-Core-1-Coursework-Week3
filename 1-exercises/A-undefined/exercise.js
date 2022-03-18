@@ -10,20 +10,23 @@
 */
 
 // Example 1
+    // Variable a has no value
 let a;
 console.log(a);
 
 
 // Example 2
+    // Function return anything.
 function sayHello() {
     let message = "Hello";
 }
-
+    // It's trying to re assign the function sayHeloo to the variable hello but I didn't catch what is wrong.
 let hello = sayHello();
 console.log(hello);
 
 
 // Example 3
+    // Function is being called but with no arguments
 function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
@@ -32,5 +35,6 @@ sayHelloToUser();
 
 
 // Example 4
+    // The index on console is wrong.
 let arr = [1,2,3];
 console.log(arr[3]);
