@@ -1,3 +1,5 @@
+const { title } = require("process");
+
 /*
     Imagine you are working on the Financial Times web site! They have a list of article titles stored in an array.
 
@@ -5,16 +7,23 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    // TODO
+    let fittingArticles  = [];
+    for(let i = 0; i < allArticleTitles.length;  i++){
+        if(allArticleTitles[i].length <= 65){
+            fittingArticles.push(allArticleTitles[i]);
+    }
+}return fittingArticles;
 }
-
 /*
     The editor of the FT likes short headlines with only a few words!
     Implement the function below, which returns the title with the fewest words.
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+    const arr = allArticleTitles.sort(function(a, b){
+        return a.split(" ").length - b.split(" ").length;
+     });  
+    return arr[0];
 }
 
 /*
@@ -23,23 +32,36 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+    let arrFinal = [];
+    for (let i = 0 ; i < allArticleTitles.length ; i++){
+       for (let j = 0 ; j < allArticleTitles[i].length ; j++){
+            if (allArticleTitles[i][j] >= "0" && allArticleTitles[i][j] <= "9") {
+                arrFinal.push(allArticleTitles[i]);
+            }
+        }
+    }
+    return arrFinal;
 }
+
 
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
+    let totalChar = 0;
+    for(let i = 0; i < allArticleTitles.length; i++){
+        totalChar += allArticleTitles[i].length;
+    }
+    let averageChar = totalChar / allArticleTitles.length;
+    return Math.round(averageChar);
 }
-
 
 
 /* ======= List of Articles - DO NOT MODIFY ===== */
 const ARTICLE_TITLES = [
-    "Streaming wars drive media groups to spend more than $100bn on new content",
-    "Amazon Prime Video India country head: streaming is driving a TV revolution",
+    "Streaming wars drive media groups to spend more than $100bn on new content",//0
+    "Amazon Prime Video India country head: streaming is driving a TV revolution",//1
     "Aerospace chiefs prepare for bumpy ride in recovery of long-haul flights",
     "British companies look to muscle in on US retail investing boom",
     "Libor to take firm step towards oblivion on New Year's Day",
