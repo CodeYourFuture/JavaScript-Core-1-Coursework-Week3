@@ -11,11 +11,11 @@
 const STOCKS = ["aapl", "msft", "amzn", "googl", "tsla"];
 
 const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
-    [179.19, 180.33, 176.28, 175.64, 172.99], // AAPL
-    [340.69, 342.45, 334.69, 333.20, 327.29], // MSFT
-    [3384.44, 3393.39, 3421.37, 3420.74, 3408.34], // AMZN
-    [2951.88, 2958.13, 2938.33, 2928.30, 2869.45], // GOOGL
-    [1101.30, 1093.94, 1067.00, 1008.87, 938.53] // TSLA
+  [179.19, 180.33, 176.28, 175.64, 172.99], // AAPL
+  [340.69, 342.45, 334.69, 333.2, 327.29], // MSFT
+  [3384.44, 3393.39, 3421.37, 3420.74, 3408.34], // AMZN
+  [2951.88, 2958.13, 2938.33, 2928.3, 2869.45], // GOOGL
+  [1101.3, 1093.94, 1067.0, 1008.87, 938.53], // TSLA
 ];
 
 /*
@@ -34,27 +34,27 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Functions can help with this!
 */
 function getAveragePrices(closingPricesForAllStocks) {
-    let stockAverages = [];
+  let stockAverages = [];
 
-    for (let theStockPrices of closingPricesForAllStocks) {
-      stockAverages.push(getTheAverageStockPrice(theStockPrices));
-    }
+  for (let theStockPrices of closingPricesForAllStocks) {
+    stockAverages.push(getTheAverageStockPrice(theStockPrices));
+  }
 
-    return stockAverages;
+  return stockAverages;
 }
 
 function getTheAverageStockPrice(theStockPrices) {
-    let stockTotal = 0;
+  let stockTotal = 0;
 
-    for (let stockPrice of theStockPrices) {
+  for (let stockPrice of theStockPrices) {
     stockTotal += stockPrice;
-    }
+  }
 
-    return roundTo2DecimalPlaces(stockTotal / theStockPrices.length);
+  return roundTo2DecimalPlaces(stockTotal / theStockPrices.length);
 }
 
 function roundTo2DecimalPlaces(number) {
-    return Math.round(number * 100) / 100;
+  return Math.round(number * 100) / 100;
 }
 
 /*
@@ -68,18 +68,19 @@ function roundTo2DecimalPlaces(number) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-    let changesInPrice = [];
+  let changesInPrice = [];
 
-    for (let theStockPrices of closingPricesForAllStocks) {
-      changesInPrice.push(getPriceChangeForStock(theStockPrices));
-    }
+  for (let theStockPrices of closingPricesForAllStocks) {
+    changesInPrice.push(getPriceChangeForStock(theStockPrices));
+  }
 
-    return changesInPrice;
+  return changesInPrice;
 }
 
 function getPriceChangeForStock(theStockPrices) {
-    let priceChange = theStockPrices[theStockPrices.length - 1] - theStockPrices[0];
-    return roundTo2DecimalPlaces(priceChange);
+  let priceChange =
+    theStockPrices[theStockPrices.length - 1] - theStockPrices[0];
+  return roundTo2DecimalPlaces(priceChange);
 }
 
 /*
@@ -95,69 +96,69 @@ function getPriceChangeForStock(theStockPrices) {
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    let stockDescriptions = [];
+  let stockDescriptions = [];
 
-    for (let i = 0; i < closingPricesForAllStocks.length; i++) {
-      let highestPrice = getTheHighestPrice(closingPricesForAllStocks[i]);
-      stockDescriptions.push(
-        `The highest price of ${stocks[
-          i
-        ].toUpperCase()} in the last 5 days was ${highestPrice.toFixed(2)}`
-      );
-    }
+  for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+    let highestPrice = getTheHighestPrice(closingPricesForAllStocks[i]); // Gets the highest price from the function below.
+    stockDescriptions.push(
+      `The highest price of ${stocks[
+        i
+      ].toUpperCase()} in the last 5 days was ${highestPrice.toFixed(2)}`
+    ); // Dynamically changes the name and the highest price of each company, creates 5 sentences and then pushes them into the stockDescriptions array.
+  }
 
-    return stockDescriptions;
+  return stockDescriptions;
 }
 
 function getTheHighestPrice(theStockPrices) {
-    let highestPriceTillNow = 0;
+  let highestPriceTillNow = 0;
 
-    for (let price of theStockPrices) {
+  for (let price of theStockPrices) {
     if (price > highestPriceTillNow) {
-        highestPriceTillNow = price;
+      highestPriceTillNow = price;
     }
   }
 
-    return highestPriceTillNow;
+  return highestPriceTillNow;
 }
 
+// ===== Alternative Solution =====
 function highestPriceDescriptionsAlternate(closingPricesForAllStocks, stocks) {
-    let stockDescriptions = [];
+  let stockDescriptions = [];
 
-    for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+  for (let i = 0; i < closingPricesForAllStocks.length; i++) {
     let highestPrice = Math.max(...closingPricesForAllStocks[i]);
     stockDescriptions.push(
-        `The highest price of ${stocks[
+      `The highest price of ${stocks[
         i
-        ].toUpperCase()} in the last 5 days was ${highestPrice.toFixed(2)}`
+      ].toUpperCase()} in the last 5 days was ${highestPrice.toFixed(2)}`
     );
   }
 
-    return stockDescriptions;
+  return stockDescriptions;
 }
-
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the average price for each stock", () => {
-    expect(getAveragePrices(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS)).toEqual(
-        [176.89, 335.66, 3405.66, 2929.22, 1041.93]
-    );
+  expect(getAveragePrices(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS)).toEqual([
+    176.89, 335.66, 3405.66, 2929.22, 1041.93,
+  ]);
 });
 
 test("should return the price change for each stock", () => {
-    expect(getPriceChanges(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS)).toEqual(
-        [-6.2, -13.4, 23.9, -82.43, -162.77]
-    );
+  expect(getPriceChanges(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS)).toEqual([
+    -6.2, -13.4, 23.9, -82.43, -162.77,
+  ]);
 });
 
 test("should return a description of the highest price for each stock", () => {
-    expect(highestPriceDescriptions(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS, STOCKS)).toEqual(
-        [
-            "The highest price of AAPL in the last 5 days was 180.33",
-            "The highest price of MSFT in the last 5 days was 342.45",
-            "The highest price of AMZN in the last 5 days was 3421.37",
-            "The highest price of GOOGL in the last 5 days was 2958.13",
-            "The highest price of TSLA in the last 5 days was 1101.30"
-        ]
-    );
+  expect(
+    highestPriceDescriptions(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS, STOCKS)
+  ).toEqual([
+    "The highest price of AAPL in the last 5 days was 180.33",
+    "The highest price of MSFT in the last 5 days was 342.45",
+    "The highest price of AMZN in the last 5 days was 3421.37",
+    "The highest price of GOOGL in the last 5 days was 2958.13",
+    "The highest price of TSLA in the last 5 days was 1101.30",
+  ]);
 });

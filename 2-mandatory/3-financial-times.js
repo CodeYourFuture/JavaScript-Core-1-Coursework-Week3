@@ -30,7 +30,7 @@ function titleWithFewestWords(allArticleTitles) {
     for (let eachHeadline of allArticleTitles) {
         let numberOfWords = eachHeadline.split(" ").length;
 
-        if(leastWordsTillNow === undefined || numberOfWords < leastWordsTillNow) {
+        if(leastWordsTillNow === undefined || leastWordsTillNow > numberOfWords) {
             leastWordsTillNow = numberOfWords;
             headlineWithLeastWords = eachHeadline;
         }
