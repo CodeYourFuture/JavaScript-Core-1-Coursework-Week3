@@ -16,8 +16,28 @@ const BIRTHDAYS = [
     "November 15th"
 ];
 
+const HOLLIDAYS = ["March 1st", "July30th"];
+
+// function findFirstJulyBDay(birthdays) {
+//     let result = "";
+//     for (let i = 0; i < BIRTHDAYS.length; i++) {
+//         if(BIRTHDAYS.length === "July"){
+//             let result = BIRTHDAYS.push[i];
+//         }
+//     }
+//     return result;
+// }
+
 function findFirstJulyBDay(birthdays) {
-    // TODO
+    let result = "";
+    let i = 0;
+    while(result === ""){
+        if(birthdays[i].includes("July") === true){
+            result = birthdays[i];
+        }
+        i++;
+    }
+    return result;
 }
 
-console.log(findFirstJulyBDay(BIRTHDAYS)); // should output "July 11th"
+console.log(findFirstJulyBDay(HOLLIDAYS)); // should output "July 11th"
