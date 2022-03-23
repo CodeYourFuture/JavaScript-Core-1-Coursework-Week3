@@ -11,12 +11,12 @@
 
 // Example 1
 let a;
-console.log(a);
+console.log(a); //a is not defined 
 
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+    let message = "Hello"; //the function doesn`t assigned to a value 
 }
 
 let hello = sayHello();
@@ -26,11 +26,11 @@ console.log(hello);
 // Example 3
 function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
-}
+} //the functin doesn`t have return value 
 
 sayHelloToUser();
 
 
 // Example 4
 let arr = [1,2,3];
-console.log(arr[3]);
+console.log(arr[3]); //there is no [3]index just 0,1,2

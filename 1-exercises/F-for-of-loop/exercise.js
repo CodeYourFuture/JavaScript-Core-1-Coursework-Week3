@@ -8,9 +8,19 @@ let tubeStations = [
     "Baker Street",
     "Picadilly Circus",
     "Oxford Street",
-    "Tottenham Court Road"
+    "Tottenham Court Road",
 ];
+function outputStations(array) {
+    for (let i = 0; i < array.length; i++) {
+      console.log(`${array[i]}`);
+    }
+  }
 
 
 // TODO Use a for-of loop to capitalise and output each letter in the string seperately.
 let str = "codeyourfuture";
+function outputStations(array) {
+    for (let i = 0; i < array.length; i++) {
+      console.log(`${array[i]}`);
+    }
+  }
