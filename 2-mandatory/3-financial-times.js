@@ -6,6 +6,7 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+    return allArticleTitles.filter((article) => article.length <= 65)
 }
 
 /*
@@ -15,6 +16,12 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
     // TODO
+    let result = allArticleTitles[0]
+  for (let i = 0; i < allArticleTitles.length; i++) {
+    if (allArticleTitles[i].split(' ').length < result.split(' ').length)
+      result = allArticleTitles[i]
+  }
+  return result
 }
 
 /*
@@ -24,14 +31,21 @@ function titleWithFewestWords(allArticleTitles) {
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+    return allArticleTitles.filter((article) => article.match(/(\d+)/))
 }
 
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
     Implement the function below to return this number - rounded to the nearest integer.
 */
+const reducer = (previousValue, currentValue) => previousValue + currentValue
+
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+    return Math.round(
+        allArticleTitles.map((article) => article.length).reduce(reducer) /
+          allArticleTitles.length,
+      )
 }
 
 

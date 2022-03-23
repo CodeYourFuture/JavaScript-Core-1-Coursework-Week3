@@ -33,8 +33,15 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Solve the smaller problems, and then build those solutions back up to solve the larger problem.
         Functions can help with this!
 */
+const reducer = (previousValue, currentValue) => previousValue + currentValue
+
 function getAveragePrices(closingPricesForAllStocks) {
     // TODO
+    return closingPricesForAllStocks.map((priceList) =>
+    parseFloat(
+      (priceList.slice(priceList.length - 5).reduce(reducer) / 5).toFixed(2),
+    ),
+  )
 }
 
 /*
@@ -49,6 +56,10 @@ function getAveragePrices(closingPricesForAllStocks) {
 */
 function getPriceChanges(closingPricesForAllStocks) {
     // TODO
+    const result = closingPricesForAllStocks.map((priceList) =>
+    priceList.slice(priceList.length - 5),
+  )
+  return result.map((res) => parseFloat((res[4] - res[0]).toFixed(2)))
 }
 
 /*
@@ -65,6 +76,16 @@ function getPriceChanges(closingPricesForAllStocks) {
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
     // TODO
+    const result = closingPricesForAllStocks.map((priceList) =>
+    priceList.slice(priceList.length - 5),
+  )
+  return result.map(
+    (res, index) =>
+      'The highest price of ' +
+      stocks[index].toUpperCase() +
+      ' in the last 5 days was ' +
+      Math.max(...res).toFixed(2),
+  )
 }
 
 
