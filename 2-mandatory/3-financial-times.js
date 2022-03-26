@@ -6,6 +6,15 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+    let headlines = [];
+
+    for (let eachTitle of allArticleTitles) {
+        if (eachTitle.length <= 65) {
+            headlines.push(eachTitle);
+        }
+    }
+    
+    return headlines;
 }
 
 /*
@@ -15,6 +24,19 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
     // TODO
+    let leastWordsTillNow;
+    let headlineWithLeastWords;
+
+    for (let eachHeadline of allArticleTitles) {
+        let numberOfWords = eachHeadline.split(" ").length;
+
+        if(leastWordsTillNow === undefined || leastWordsTillNow > numberOfWords) {
+            leastWordsTillNow = numberOfWords;
+            headlineWithLeastWords = eachHeadline;
+        }
+    }
+
+    return headlineWithLeastWords;
 }
 
 /*
@@ -22,8 +44,27 @@ function titleWithFewestWords(allArticleTitles) {
     Implement the function below to return a new array containing all the headlines which contain a number.
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
+function headlineTitleHasNumbers(eachHeadline) {
+  for (let eachCharacter of eachHeadline) {
+    if (eachCharacter >= "0" && eachCharacter <= "9") {
+      return true;
+    }
+  }
+
+  return false;
+}
+
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+    let headlineTitlesWithNumbers = [];
+
+    for(let eachHeadline of allArticleTitles) {
+        if (headlineTitleHasNumbers(eachHeadline)) {
+            headlineTitlesWithNumbers.push(eachHeadline);
+        }
+    }
+
+    return headlineTitlesWithNumbers;
 }
 
 /*
@@ -31,9 +72,14 @@ function headlinesWithNumbers(allArticleTitles) {
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
-}
+    let characterTotal = 0;
 
+    for (let eachTitle of allArticleTitles) {
+        characterTotal += eachTitle.length;
+    }
+
+    return Math.round(characterTotal / allArticleTitles.length);
+}
 
 
 /* ======= List of Articles - DO NOT MODIFY ===== */
