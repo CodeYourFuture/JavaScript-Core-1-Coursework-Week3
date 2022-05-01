@@ -15,6 +15,7 @@ function getHighestRatedInEachGenre(books) {
 }
 
 
+
 /* ======= Book data - DO NOT MODIFY ===== */
 const BOOKS = [
     {
