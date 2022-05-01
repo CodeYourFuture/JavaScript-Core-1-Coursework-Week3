@@ -13,9 +13,14 @@
         - the input n will be passed in to the function as an argument, and will be a number greater than 2
 */
 
-function generateFibonacciSequence(n) {
-    // TODO
-}
+const generateFibonacciSequence = (n) => {
+  
+     if (n < 10) {
+       return n;
+     }
+     return fibonacci(n - 1) + fibonacci(n - 2);
+   };
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the first 10 numbers in the Fibonacci Sequence", () => {

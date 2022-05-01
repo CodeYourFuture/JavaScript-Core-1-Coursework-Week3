@@ -8,9 +8,9 @@
     Using a loop, complete the function below so it returns the factorial of the number being passed in. 
 */
 
-function factorial(input) {
-    // TODO
-}
+
+    const factorial = (input) => (n > 0 ? n * factorial(--n) : 1);
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
