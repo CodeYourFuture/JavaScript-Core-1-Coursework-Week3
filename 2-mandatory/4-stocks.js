@@ -34,9 +34,17 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Functions can help with this!
 */
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+    let averagePrice = []
+    for(let stocks of closingPricesForAllStocks){
+        let price = stocks.reduce(function(a, b){
+            return a + b
+        })
+       let average = price/stocks.length
+       averagePrice.push(Number(average.toFixed(2)))
+    }
+    return averagePrice
 }
-
+console.log(getAveragePrices(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS))
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
     Implement the below function, which
@@ -48,9 +56,15 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+ let averagePrice = []
+ let change = 0
+    for(let stocks of closingPricesForAllStocks){
+       change = stocks.slice(-1) - stocks[0];
+       averagePrice.push(Number(change.toFixed(2)))
+    }
+    return averagePrice
 }
-
+console.log(getPriceChanges(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS))
 /*
     As part of a financial report, we want to see what the highest price was for each stock in the last 5 days.
     Implement the below function, which
@@ -64,9 +78,21 @@ function getPriceChanges(closingPricesForAllStocks) {
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+    let highestPriceInString = [] // for loop
+    let highestPrice = [] // for in loop
+    for(let stock of closingPricesForAllStocks){
+        let price = stock.reduce(function(a, b){
+            return Math.max(a,b)
+        })
+        highestPrice.push(price.toFixed(2))
+    }
+    for(let i =0 ;i < stocks.length; i++){
+         let texts = `The highest price of ${stocks[i].toUpperCase()} in the last 5 days was ${highestPrice[i]}`
+         highestPriceInString.push(texts)
+    }
+    return highestPriceInString
 }
-
+console.log(highestPriceDescriptions(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS,STOCKS))
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the average price for each stock", () => {

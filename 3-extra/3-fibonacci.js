@@ -14,9 +14,14 @@
 */
 
 function generateFibonacciSequence(n) {
-    // TODO
+   let arr = [0,1];
+   
+    for(let i = 1; i<=n ; i++){
+        arr.push(arr[i] + arr[i -1] )
+    }
+    return arr.slice(0, n )
 }
-
+console.log(generateFibonacciSequence(5))
 /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the first 10 numbers in the Fibonacci Sequence", () => {
     expect(generateFibonacciSequence(10)).toEqual(
@@ -34,4 +39,4 @@ test("should return the first 15 numbers in the Fibonacci Sequence", () => {
     expect(generateFibonacciSequence(15)).toEqual(
         [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377]
     );
-});
+}); 

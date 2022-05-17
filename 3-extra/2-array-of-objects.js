@@ -10,10 +10,21 @@
     Each title in the resulting array should be the highest rated book in its genre.
 */
 
-function getHighestRatedInEachGenre(books) {
-    // TODO
-}
+function getHighestRatedInEachGenre(books) {  // This problem is not solved yet as I have only output only the highest rated books object
+   let sort = books.sort((a,b) => {
+     if(a.rating> b.rating){
+       return -1
+     } else if (b.rating > a.rating){
+       return 1
+     } else { return 0} 
 
+   })
+   let list = []
+   for(let i = 0 ; i < sort.length; i++){
+     list.push(sort[i].title)
+   }
+   return list.slice(0, 3)
+} 
 
 /* ======= Book data - DO NOT MODIFY ===== */
 const BOOKS = [
