@@ -5,6 +5,7 @@
     The list of numbers should start with 0. n is being passed in as a parameter.
 */
 
+/* This was my solution - needed to replace with the following solution from CYF
 function evenNumbers(n) {
     let i = 0
     while(i<n *2){
@@ -13,6 +14,17 @@ function evenNumbers(n) {
     console.log(`${x}`);
     i+=2 
     } //  I need to pring out like following example 
+} */
+
+// CYF solution
+function evenNumbers(n){
+    let arr = []
+    let i =0;
+    while(i<n){
+        arr.push(i * 2)
+        i++
+    }
+    console.log(arr.join())
 }
 evenNumbers(3); // should output 0,2,4
 evenNumbers(0); // should output nothing

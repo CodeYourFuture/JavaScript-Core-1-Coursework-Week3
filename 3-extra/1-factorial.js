@@ -15,7 +15,7 @@ function factorial(input) {
    }
    return num
 }
-console.log(factorial(3))
+console.log(factorial(6))
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("3! should be 6", () => {
