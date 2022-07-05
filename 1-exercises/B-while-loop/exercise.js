@@ -7,6 +7,8 @@
 
 function evenNumbers(n) {
     // TODO
+if(n % 2 === 0){
+console.log(n);
 }
 
 evenNumbers(3); // should output 0,2,4
