@@ -6,11 +6,19 @@
 */
 
 function evenNumbers(n) {
-    // TODO
-if(n % 2 === 0){
-console.log(n);
+  let i = 0;
+  let numList = [];
+  while (numList.length < n) {
+    if (n > 0) {
+      if (i % 2 === 0) {
+        numList.push(i);
+      }
+    }
+    i++;
+  }
+  return numList.toString();
 }
 
 evenNumbers(3); // should output 0,2,4
 evenNumbers(0); // should output nothing
-evenNumbers(10); // should output 0,2,4,6,8,10,12,14,16,18
+evenNumbers(-10); // should output 0,2,4,6,8,10,12,14,16,18
