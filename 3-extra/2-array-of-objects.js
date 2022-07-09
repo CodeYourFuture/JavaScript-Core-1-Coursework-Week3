@@ -12,6 +12,22 @@
 
 function getHighestRatedInEachGenre(books) {
     // TODO
+
+    const genre = [];
+  books.forEach((book) => {
+    if (!genre.includes(book.genre)) {
+      genre.push(book.genre);
+    }
+  });
+  const bestBooksOfGenres = [];
+  genre.forEach((genre) =>
+    bestBooksOfGenres.push(
+      books
+        .filter((book) => book.genre === genre)
+        .sort((bookA, bookB) => bookB.rating - bookA.rating)[0].title
+    )
+  );
+  return bestBooksOfGenres;
 }
 
 
