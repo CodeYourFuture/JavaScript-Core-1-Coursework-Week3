@@ -5,7 +5,9 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    // TODO
+    return allArticleTitles.filter(title => {
+        if(title.length <= 65) return title;
+    })
 }
 
 /*
@@ -14,24 +16,26 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+    let num = Math.min(...allArticleTitles.map(title => title.split(" ").length));
+    return allArticleTitles.filter(title => (title.split(" ").length === num) ? title : "").join("");
 }
 
 /*
-    The editor of the FT has realised that headlines which have numbers in them get more clicks!
-    Implement the function below to return a new array containing all the headlines which contain a number.
-    (Hint: remember that you can also loop through the characters of a string if you need to)
+The editor of the FT has realised that headlines which have numbers in them get more clicks!
+Implement the function below to return a new array containing all the headlines which contain a number.
+(Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+    return allArticleTitles.filter(titleWithNum => (/\d/.test(titleWithNum)) ? titleWithNum : "");
 }
 
 /*
-    The Financial Times wants to understand what the average number of characters in an article title is.
-    Implement the function below to return this number - rounded to the nearest integer.
+The Financial Times wants to understand what the average number of characters in an article title is.
+Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
+    let arr = allArticleTitles.map(title => title.split("").length);
+    return Math.round(arr.reduce((tot, num) => tot + num)/arr.length);
 }
 
 
