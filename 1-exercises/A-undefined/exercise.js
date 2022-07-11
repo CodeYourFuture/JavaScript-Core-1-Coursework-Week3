@@ -11,12 +11,17 @@
 
 // Example 1
 let a;
+// the variable a has not given a value()
+// a = "Thank you for checking my work"
 console.log(a);
 
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+  let message = "Hello";
+  /*the variable message is not called on the second line
+  example */
+  //   return message;
 }
 
 let hello = sayHello();
@@ -27,10 +32,13 @@ console.log(hello);
 function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
-
+// user doesn't have values in it
 sayHelloToUser();
+// sayHelloToUser("my friend");
 
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+// console.log(arr[2])
+//On the console have selected a number in the array which doesn't exit. javascript counts starting from 0  
