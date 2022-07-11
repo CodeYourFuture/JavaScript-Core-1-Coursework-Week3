@@ -39,13 +39,15 @@ function headlinesWithNumbers(allArticleTitles) {
     Implement the function below to return this number - rounded to the nearest integer.
 */
 
+
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
-const reducer = (previousValue, currentValue) => previousValue + currentValue;
-return Math.round(
-    allArticleTitles.map((article) => article.length).reduce(reduce) / 
-    allArticleTitles.length,
-)
+    let total = 0;
+    for (let title of allArticleTitles) {
+      total += title.length;
+    }
+    let average = total / allArticleTitles.length;
+    return Math.round(average);
 }
 
 
