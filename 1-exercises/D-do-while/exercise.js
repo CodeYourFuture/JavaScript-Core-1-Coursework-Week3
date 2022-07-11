@@ -8,6 +8,14 @@
 
 function evenNumbersSum(n) {
     // TODO
+    let i = 0;
+    let message = "Total";
+    let capture = "";
+    do {
+      let sum = message + capture[i];
+      console.log(sum);
+      i * 2;
+    } while (i < n);
 }
 
 console.log(evenNumbersSum(3)); // should output 6
