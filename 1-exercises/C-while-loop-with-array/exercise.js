@@ -18,6 +18,8 @@ const BIRTHDAYS = [
 
 function findFirstJulyBDay(birthdays) {
     // TODO
+    const findFirstJulyBDay = birthdays.filter((bDay) => bDay.startWith("July"))
+    return findFirstJulyBDay[0]
 }
 
 console.log(findFirstJulyBDay(BIRTHDAYS)); // should output "July 11th"

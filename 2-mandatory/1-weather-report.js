@@ -13,6 +13,14 @@
 
 function getTemperatureReport(cities) {
     // TODO
+    return cities(
+        (city) =>
+        'The temperature in ' +
+        city + 
+        ' is ' + 
+        temperatureService(city) + 
+        ' degree '
+    )
 }
 
 
