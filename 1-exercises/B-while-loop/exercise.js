@@ -7,16 +7,7 @@
 
 function evenNumbers(n) {
     // TODO
-    const doing = [];
-    let i = 0;
 
-    while(i < n){
-    
-        let num = n[i];
-        if(num !== 0 && num % 2 === 0) return doing.push(num);
-    
-        i++
-    }
 
 }
 
