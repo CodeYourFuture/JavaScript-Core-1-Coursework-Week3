@@ -35,9 +35,9 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 */
 function getAveragePrices(closingPricesForAllStocks) {
     // TODO
-    const reducer = (previousValue, currentValue) => previousValue + currentValue;
+
     return closingPricesForAllStocks.map((priceList) => 
-    parcelFloat(
+     parcelFloat(
     (priceList.slice(priceList.length - 5).reduce(reducer) / 5).toFixed(2),),)
 }
 
@@ -75,7 +75,11 @@ function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
     const result = closingPricesForAllStocks.map((priceList) => 
     priceList.slice(priceList.length -5))
     return result.map(
-        (res, index)
+        (res, index) =>
+        'The highest price of ' + 
+        stocks[index].toUpperCase() + 
+        ' in the last 5 days was ' + 
+        Math.max(...res).toFixed(2),
     )
 }
 
