@@ -10,9 +10,6 @@
     Each title in the resulting array should be the highest rated book in its genre.
 */
 
-function getHighestRatedInEachGenre(books) {
-    return 
-}
 
 
 /* ======= Book data - DO NOT MODIFY ===== */
@@ -69,6 +66,23 @@ const BOOKS = [
     },
 ]
 
+function getHighestRatedInEachGenre(books) {
+    let bookTitles = [];
+    let cookingRate = [];
+    let nonFictionRate = [];
+    let childrenRate = [];
+    for(let book of books) {
+        if(book.genre === "cooking") cookingRate.push(book.rating);
+        if(book.genre === "non-fiction") nonFictionRate.push(book.rating);
+        if(book.genre === "children") childrenRate.push(book.rating);
+    }
+    for(let book of books) {
+        if(book.genre === "cooking" && book.rating === Math.max(...cookingRate)) bookTitles.push(book.title);
+        if(book.genre === "non-fiction" && book.rating ===  Math.max(...nonFictionRate)) bookTitles.push(book.title);
+        if(book.genre === "children" && book.rating === Math.max(...childrenRate)) bookTitles.push(book.title);
+    }
+    return bookTitles;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the highest rated book in each genre", () => {
