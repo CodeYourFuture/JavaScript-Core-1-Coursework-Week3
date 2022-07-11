@@ -14,10 +14,10 @@ function getRandomNumberGreaterThan50() {
     let rand = generateRandomNumber();
     do {
         if(rand > 50) {
-            return generateRandomNumber();
+            return rand;
         }
-        return generateRandomNumber();
     } while(rand <= 50)
+    return rand;
 }
 console.log(getRandomNumberGreaterThan50());
 
