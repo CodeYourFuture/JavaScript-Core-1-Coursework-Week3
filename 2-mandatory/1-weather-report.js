@@ -2,7 +2,7 @@
     Imagine we're making a weather app!
     
     We have a list of cities that the user wants to track.
-    We also already have a temperatureService function which will take a city as a parameter and return a temparature.
+    We also already have a temperatureService function which will take a city as a parameter and return a temperature.
 
     Implement the function below:
         - take the array of cities as a parameter
@@ -13,23 +13,25 @@
 
 function getTemperatureReport(cities) {
     // TODO
+    return cities.map((value, index) => `The temperature in ${value} is ${temperatureService(value)} degrees`);
 }
+
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 function temperatureService(city) {
-    let temparatureMap  = new Map();
+    let temperatureMap  = new Map();
 
-    temparatureMap.set('London', 10);
-    temparatureMap.set('Paris', 12);
-    temparatureMap.set('Barcelona', 17);
-    temparatureMap.set('Dubai', 27);
-    temparatureMap.set('Mumbai', 29);
-    temparatureMap.set('São Paulo', 23);
-    temparatureMap.set('Lagos', 33);
+    temperatureMap.set('London', 10);
+    temperatureMap.set('Paris', 12);
+    temperatureMap.set('Barcelona', 17);
+    temperatureMap.set('Dubai', 27);
+    temperatureMap.set('Mumbai', 29);
+    temperatureMap.set('São Paulo', 23);
+    temperatureMap.set('Lagos', 33);
     
-    return temparatureMap.get(city);
+    return temperatureMap.get(city);
 }
 
 test("should return a temperature report for the user's cities", () => {

@@ -28,6 +28,15 @@ const AGES = [
 
 // TODO - Write for loop code here
 
+function showWritersAge(name, age) {
+    for (let i = 0; i < name.length; i++) {
+        console.log(`${name[i]} is ${age[i]} years old.`);
+    }
+    return;
+}
+
+showWritersAge(WRITERS, AGES);
+
 /*
 The output should look something like this:
 

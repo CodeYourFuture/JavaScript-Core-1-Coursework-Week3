@@ -16,8 +16,31 @@ const BIRTHDAYS = [
     "November 15th"
 ];
 
+// COUNTER VARIABLE
+let i = 0;
+
+// HELPER FUNCTION
+function notInJuly (date) {
+
+    return date.search("July") === -1;
+
+}
+
 function findFirstJulyBDay(birthdays) {
     // TODO
+
+    while (i < birthdays.length) {
+
+        if (notInJuly(birthdays[i])) {
+
+            i++;
+            continue;
+
+        }
+
+        return birthdays[i];
+    }
 }
+
 
 console.log(findFirstJulyBDay(BIRTHDAYS)); // should output "July 11th"

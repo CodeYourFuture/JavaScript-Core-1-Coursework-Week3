@@ -6,15 +6,23 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+
+    return allArticleTitles.filter( value => value.length <= 65);
 }
 
 /*
     The editor of the FT likes short headlines with only a few words!
     Implement the function below, which returns the title with the fewest words.
-    (you can assume words will always be seperated by a space)
+    (you can assume words will always be separated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
     // TODO
+
+    let shortestTitle = allArticleTitles[0];
+    allArticleTitles
+    .forEach((element, index) => {shortestTitle.length > element.length ? shortestTitle = element : 0;
+    });
+    return shortestTitle;
 }
 
 /*
@@ -22,8 +30,14 @@ function titleWithFewestWords(allArticleTitles) {
     Implement the function below to return a new array containing all the headlines which contain a number.
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
+
+function isTitleWithNumber (element) {
+    return (element.match(/\d/gi) != null);
+}
+
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+    return allArticleTitles.filter(isTitleWithNumber);
 }
 
 /*
@@ -32,6 +46,13 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+
+    let amountOfTitles = 0, sumOfChar = 0;
+    for (let title of allArticleTitles) {
+        amountOfTitles++;
+        sumOfChar += title.length;
+    }
+    return Math.round(sumOfChar / amountOfTitles);
 }
 
 
