@@ -19,6 +19,7 @@ function getRandomNumberGreaterThan50() {
     return num;
 }
 
+
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("Returned value should always be greater than 50", () => {
