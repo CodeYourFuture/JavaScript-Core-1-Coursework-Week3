@@ -34,4 +34,4 @@ sayHelloToUser();
 
 // Example 4
 let arr = [1,2,3];
-console.log(arr[3]); //  A: arr[3] is the 4th item of the array which hasn't been assigned a value and thus it's undefined.
+console.log(arr[3]); //  A: arr[3] is the 4th item of the array which hasn't been assigned a value or the index 3 and thus it's undefined.
