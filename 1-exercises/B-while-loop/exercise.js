@@ -7,14 +7,13 @@
 
 function evenNumbers(n) {
     // TODO
+const nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 
 }
 
-const j =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+console.log(evenNumbers(5));
 
-evenNumbers(j);
-console.log(evenNumbers(j));
 
 evenNumbers(3); // should output 0,2,4
 evenNumbers(0); // should output nothing
