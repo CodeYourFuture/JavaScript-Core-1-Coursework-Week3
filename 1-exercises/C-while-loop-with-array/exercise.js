@@ -18,10 +18,10 @@ const BIRTHDAYS = [
 
 function findFirstJulyBDay(birthdays) {
 let i = 0
-while (i< BIRTHDAYS.length) {
+while (i<= BIRTHDAYS.length) {
     let a = birthdays[5]
-    i++
     console.log(a)
+    i++  
 }
 }
 

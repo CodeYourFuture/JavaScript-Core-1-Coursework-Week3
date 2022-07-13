@@ -6,12 +6,11 @@
 */
 
 function evenNumbers(n) {
-   return n
-}
-let i = 0
+i = 0
 while (i <= 5) {
     console.log(i)
     i++;
+}
 }
 let a = evenNumbers(i++)
 console.log(a)
