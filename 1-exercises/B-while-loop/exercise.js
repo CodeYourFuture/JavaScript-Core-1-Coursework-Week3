@@ -6,8 +6,15 @@
 */
 
 function evenNumbers(n) {
-    // TODO
+   return n
 }
+let i = 0
+while (i <= 5) {
+    console.log(i)
+    i++;
+}
+let a = evenNumbers(i++)
+console.log(a)
 
 evenNumbers(3); // should output 0,2,4
 evenNumbers(0); // should output nothing
