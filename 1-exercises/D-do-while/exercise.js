@@ -7,7 +7,9 @@
 */
 
 function evenNumbersSum(n) {
+    let sum = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     // TODO
+ return sum.slice(0,n);
 }
 
 console.log(evenNumbersSum(3)); // should output 6
