@@ -6,6 +6,17 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+    let char = allArticleTitles.slice(0, 65);
+    let title = [];
+    for(let i = 0; i < char.length; i++){
+
+        if(char[i] === 65){
+
+            title.push(char[i]);
+        }
+    }
+    return title;
+
 }
 
 /*
