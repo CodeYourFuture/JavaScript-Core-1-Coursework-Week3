@@ -11,8 +11,7 @@ function evenNumbersSum(n) {
  do {
     console.log(i)
     i++
- } while (i<=10);
- let b = evenNumbersSum(i)
+ } while (i<=5);
 }
 
 console.log(evenNumbersSum(3)); // should output 6
