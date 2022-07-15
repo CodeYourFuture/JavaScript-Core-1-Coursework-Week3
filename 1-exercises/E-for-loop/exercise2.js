@@ -26,7 +26,16 @@ const AGES = [
     49
 ];
 
-// TODO - Write for loop code here
+for (let i = 0; i < WRITERS.length; i++) {
+        const element1 = WRITERS[i];
+}
+for (let j = 0; j < AGES.length; j++) {
+    const element2 = AGES[j]
+    
+}
+
+const 1+2 = `${WRITERS[i]} + "is" + ${AGES[i]} + " years old."`;
+
 
 /*
 The output should look something like this:

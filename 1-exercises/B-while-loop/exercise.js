@@ -5,10 +5,21 @@
     The list of numbers should start with 0. n is being passed in as a parameter.
 */
 
+let i = 0;
 function evenNumbers(n) {
-    // TODO
-}
-
+    while (n >= 18) {
+        if (i >= 18, i % 2 == 0) {           
+            return true;
+        }
+        i += 2.(n);
+    }
+    console.log(i += n);
+    }
 evenNumbers(3); // should output 0,2,4
 evenNumbers(0); // should output nothing
 evenNumbers(10); // should output 0,2,4,6,8,10,12,14,16,18
+
+// console.log(evenNumbers(3));
+// console.log(evenNumbers(0));
+// console.log(evenNumbers(10));
+
