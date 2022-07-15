@@ -11,7 +11,7 @@
 
 // Example 1
 let a;
-console.log(a);
+console.log(a); //It is undefined because a is not assigned to any value.
 
 
 // Example 2
@@ -20,7 +20,7 @@ function sayHello() {
 }
 
 let hello = sayHello();
-console.log(hello);
+console.log(hello); //It is undefined because the function isn't returning anything.
 
 
 // Example 3
@@ -28,9 +28,9 @@ function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
 
-sayHelloToUser();
+sayHelloToUser(); //It is undefined because there is no argument passed for the placeholder/parameter user.
 
 
 // Example 4
-let arr = [1,2,3];
-console.log(arr[3]);
+let arr = [1, 2, 3];
+console.log(arr[3]); //It is undefined because we only have index 0 to 2, index 3 does not exist.
