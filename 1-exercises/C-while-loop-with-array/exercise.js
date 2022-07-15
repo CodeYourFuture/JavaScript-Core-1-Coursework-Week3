@@ -20,7 +20,7 @@ function findFirstJulyBDay(birthdays) {
 let i = 0
 while (i<= BIRTHDAYS.length) {
     let a = birthdays[5]
-    console.log(a)
+    console.log(a[i])
     i++  
 }
 }
