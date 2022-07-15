@@ -6,8 +6,8 @@
 
 
 // Change the below code to use a for loop instead of a while loop.
-let i = 0;
-while(i < 26) {
+//FOR LOOP
+ for let i = 0; (i < 26) {
     console.log(String.fromCharCode(97 + i));
     i++;
 }

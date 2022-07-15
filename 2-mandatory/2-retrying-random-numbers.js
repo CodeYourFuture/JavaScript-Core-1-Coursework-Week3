@@ -11,6 +11,12 @@ function generateRandomNumber() {
 
 function getRandomNumberGreaterThan50() {
     // TODO - implement using a do-while loop
+    var number > 50;
+    var x = 0;
+    while(x ==) {
+        x = Math.floor ((Math.random() *50) + 10);
+        console.log(x);
+    }
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

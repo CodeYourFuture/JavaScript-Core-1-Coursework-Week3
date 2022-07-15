@@ -12,15 +12,16 @@
 // Example 1
 let a;
 console.log(a);
-
+//variable a does not have value assigned to it;
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+    let message = "sayHello";
 }
 
 let hello = sayHello();
 console.log(hello);
+//let hello has no return value;
 
 
 // Example 3
@@ -29,8 +30,10 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
+//sayHelloToUser does not contain an argument for the user;
 
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+//let array has 3 index elements, and console.log is asking for another

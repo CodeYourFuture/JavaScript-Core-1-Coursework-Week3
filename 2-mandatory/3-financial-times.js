@@ -6,6 +6,11 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+    var max_chars <= 65;
+    if (element.value.length > max_chars) {
+        element.value = element.value.substr(0, max_chars);
+        console.log(potentialHeadlines);
+    }
 }
 
 /*
@@ -15,6 +20,11 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
     // TODO
+    var min_chars === 2;
+    if (element.value.length > min_chars) {
+        element.value = element.value.substr(0, min_chars);
+        console.log(titleWithFewestWords);
+    }
 }
 
 /*
