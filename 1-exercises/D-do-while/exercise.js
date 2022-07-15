@@ -7,7 +7,20 @@
 */
 
 function evenNumbersSum(n) {
+ 
     // TODO
+
+    let sums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+    let sliced = sums.slice(0, n);
+    let sum = 0;
+
+    for(let slice of sliced){
+
+      sum += slice * 2;
+    }
+    
+   return sum;
 }
 
 console.log(evenNumbersSum(3)); // should output 6

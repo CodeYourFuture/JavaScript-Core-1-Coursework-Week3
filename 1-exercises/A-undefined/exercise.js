@@ -12,15 +12,17 @@
 // Example 1
 let a;
 console.log(a);
-
+// Because there is no value is assigned to the variable a, 
 
 // Example 2
 function sayHello() {
     let message = "Hello";
 }
 
+
 let hello = sayHello();
 console.log(hello);
+// Since the function sayHello is missing the return statement invoking will it result in undefined
 
 
 // Example 3
@@ -30,7 +32,10 @@ function sayHelloToUser(user) {
 
 sayHelloToUser();
 
+// Since the function sayHelloToUser was defined with a parameter, however, invoking it will require an argument, and invoking it without an argument will result in undefined
+
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+// This operation will result in undefined because there is no index[3] in the array

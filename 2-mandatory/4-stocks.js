@@ -33,8 +33,20 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Solve the smaller problems, and then build those solutions back up to solve the larger problem.
         Functions can help with this!
 */
+const stocking = STOCKS.forEach((el) =>{
+    return el;
+})
+
 function getAveragePrices(closingPricesForAllStocks) {
     // TODO
+   let dblArray = [];
+   for(let i = 0; i < closingPricesForAllStocks.length; i++){
+    for(let j = 0; j < closingPricesForAllStocks[i]; j++){
+        dblArray.push(closingPricesForAllStocks[i][j]);
+        dblArray.concat(stocking[i]);
+    }
+   }
+   return dblArray;
 }
 
 /*
@@ -49,8 +61,16 @@ function getAveragePrices(closingPricesForAllStocks) {
 */
 function getPriceChanges(closingPricesForAllStocks) {
     // TODO
+    let result = 0;
+    closingPricesForAllStocks.forEach((stock) =>{
+        stock.forEach((item) =>{
+    
+             result = item[0] - item[item.length - 1];
+             result.toFixed(2);
+        })
+    })
+    return result;
 }
-
 /*
     As part of a financial report, we want to see what the highest price was for each stock in the last 5 days.
     Implement the below function, which
@@ -65,6 +85,16 @@ function getPriceChanges(closingPricesForAllStocks) {
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
     // TODO
+    const highestPrices = closingPricesForAllStocks.forEach((price) =>{
+        price.forEach((element) => {
+            
+            if(element.Math.max()){
+                
+                return `The highest price of ${stocks} in the last 5 days was ${element.Math.max().toFixed(2)}`
+            }
+        })
+    })
+    return highestPrices.toUpperCase();
 }
 
 
