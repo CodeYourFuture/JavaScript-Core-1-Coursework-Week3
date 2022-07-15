@@ -5,10 +5,25 @@
     The list of numbers should start with 0. n is being passed in as a parameter.
 */
 
-function evenNumbers(n) {
-    // TODO
-}
+let n = 0;
+let number = 0;
 
+function evenNumbers(n) {
+    const list = [];
+    while (number < n && n> 0) {
+        list.push(number * 2);          
+            number++;
+        }
+        return list.join(",");
+    }
+    console.log(evenNumbers(3));
+    console.log(evenNumbers(0));
+    console.log(evenNumbers(10));
+    
+    
 evenNumbers(3); // should output 0,2,4
 evenNumbers(0); // should output nothing
 evenNumbers(10); // should output 0,2,4,6,8,10,12,14,16,18
+
+
+

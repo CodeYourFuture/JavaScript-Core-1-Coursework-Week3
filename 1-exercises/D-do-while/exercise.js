@@ -6,9 +6,33 @@
     Using a do-while loop, write a function which returns the sum of the first n even numbers (starting from 0)
 */
 
+let n = 0;
+let number = 0;
+let i = 0;
+let x = i;
+let y = i;
+
 function evenNumbersSum(n) {
-    // TODO
+    const list = []; 
+    do {
+        number += 2;
+        list.push(number * 2);
+        n++;
+        
+           
+    } while (number >= 18);
+return list.reduce((x, y) => x + y, 0);
 }
+
+
+// function evenNumbers(n) {
+//   const list = [];
+//   while (number < n && n > 0) {
+//     list.push(number * 2);
+//     number++;
+//   }
+//   return list.join(",");
+// }
 
 console.log(evenNumbersSum(3)); // should output 6
 console.log(evenNumbersSum(0)); // should output 0
