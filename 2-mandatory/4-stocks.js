@@ -34,7 +34,26 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Functions can help with this!
 */
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+    let avgArray = [], sum = 0, avgStr = "", avgNum = 0;
+    for (let i = 0; i < 5; i++)
+    {
+        for (element of closingPricesForAllStocks[i])
+        {
+            sum = 0;
+
+            for (let j = 0; j < 5; j++)
+            {
+                sum += closingPricesForAllStocks[i][j];
+            }
+
+            avgStr = (sum / 5).toFixed(2);
+            avgNum = parseFloat(avgStr);
+        }
+
+        avgArray[i] = avgNum;
+    }
+
+    return avgArray;
 }
 
 /*
@@ -48,7 +67,20 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+    let priceChange = [];
+
+    for (let i = 0; i < 5; i++)
+    {
+        diff = closingPricesForAllStocks[i][4] - closingPricesForAllStocks[i][0];
+
+        diff = diff.toFixed(2);
+
+        diff = parseFloat(diff);
+
+        priceChange[i] = diff;
+    }
+
+    return priceChange;
 }
 
 /*
@@ -64,7 +96,30 @@ function getPriceChanges(closingPricesForAllStocks) {
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+    let highestPrices = [], highest = 0;
+
+    for (let i = 0; i < 5; i++)
+    {
+        for (let j = 0; j < 5; j++)
+        {
+            if (j === 0)
+            {
+                highest = closingPricesForAllStocks[i][j];
+            }
+
+            if (closingPricesForAllStocks[i][j] > highest)
+            {
+                highest = closingPricesForAllStocks[i][j];
+            }
+        }
+
+        highest = highest.toFixed(2);
+
+        highestPrices[i] = `The highest price of ${STOCKS[i].toUpperCase()} in the last 5 days was ${highest}`;
+
+    }
+
+    return highestPrices;
 }
 
 
