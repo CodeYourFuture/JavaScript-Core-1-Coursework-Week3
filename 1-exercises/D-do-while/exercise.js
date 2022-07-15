@@ -6,10 +6,26 @@
     Using a do-while loop, write a function which returns the sum of the first n even numbers (starting from 0)
 */
 
-function evenNumbersSum(n) {
-    // TODO
+// function evenNumbersSum(n) {
+// TODO
+//   i = 0;
+//   const numbers = [];
+//   let multiply = function (number) {
+//     return (number *= number);
+//   };
+//   do {
+//     numbers.push(n);
+
+//     let total = numbers.map(multiply);
+//     i += 2;
+//     return total.toString();
+//   } while (numbers.length < i);
+// }
+
+function sumOfArray(n) {
+  return n;
 }
 
-console.log(evenNumbersSum(3)); // should output 6
-console.log(evenNumbersSum(0)); // should output 0
-console.log(evenNumbersSum(10)); // should output 90
+// console.log(evenNumbersSum(3)); // should output 6
+// console.log(evenNumbersSum(0)); // should output 0
+// console.log(evenNumbersSum(10)); // should output 90
