@@ -12,11 +12,12 @@
 // Example 1
 let a;
 console.log(a);
-
+//  The variable a has not been declared.
 
 // Example 2
 function sayHello() {
     let message = "Hello";
+//    no 'return message' in this function.
 }
 
 let hello = sayHello();
@@ -26,6 +27,7 @@ console.log(hello);
 // Example 3
 function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
+    // user has no value/ not defined.
 }
 
 sayHelloToUser();
@@ -34,3 +36,4 @@ sayHelloToUser();
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+// arr[3] calls for the 4th number in the array, there are only 3 numbers in this array.
