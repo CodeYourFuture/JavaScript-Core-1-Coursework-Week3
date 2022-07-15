@@ -85,6 +85,16 @@ function getPriceChanges(closingPricesForAllStocks) {
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
     // TODO
+    const highestPrices = closingPricesForAllStocks.forEach((price) =>{
+        price.forEach((element) => {
+            
+            if(element.Math.max()){
+                
+                return `The highest price of ${stocks} in the last 5 days was ${element.Math.max().toFixed(2)}`
+            }
+        })
+    })
+    return highestPrices.toUpperCase();
 }
 
 
