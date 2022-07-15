@@ -12,6 +12,15 @@
 */
 
 function getTemperatureReport(cities) {
+
+   let temp = temperatureService(city);
+    const towns = cities.forEach((city) =>{
+
+        city = `The temperature in ${city} is ${temp} degrees`;
+    })
+
+    return city;
+
     // TODO
 }
 
