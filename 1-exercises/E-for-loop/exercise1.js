@@ -7,8 +7,8 @@
 
 // Change the below code to use a for loop instead of a while loop.
 let i = 0;
-for (let i = 0; i < 97; i++) {
-    console.log(fromCharCode[i]);
+for (let i = 65; i <= 90; i++) {
+    console.log(String.fromCharCode(i));
 }
 // while(i < 26) {
 //     console.log(String.fromCharCode(97 + i));
