@@ -19,9 +19,6 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be separated by a space)
 */ 
 function titleWithFewestWords(allArticleTitles) {
-    // return allArticleTitles.reduce( function(shortest, e) {
-    //     return (typeof e == 'string') && (shortest=='' || e.length < shortest.length) ? e : shortest;
-    //   }, '');
      var fewestWords = allArticleTitles[0];
     for (let i = 0; i < allArticleTitles.length; i++) {
         var element = allArticleTitles[i];
