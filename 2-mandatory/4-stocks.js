@@ -34,7 +34,9 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Functions can help with this!
 */
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+    return closingPricesForAllStocks.map(priceArr => {
+        return Number((priceArr.reduce((tot, num) => tot + num) / priceArr.length).toFixed(2));
+    })
 }
 
 /*
@@ -48,7 +50,9 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+    return closingPricesForAllStocks.map(priceArr => {
+        return Number((priceArr[priceArr.length - 1] - priceArr[0]).toFixed(2));
+    })
 }
 
 /*
