@@ -12,11 +12,13 @@
 // Example 1
 let a;
 console.log(a);
+// variable is declared but has no assigned value
 
 
 // Example 2
 function sayHello() {
     let message = "Hello";
+    //return "hello"; instead of assigning a variable
 }
 
 let hello = sayHello();
@@ -26,6 +28,7 @@ console.log(hello);
 // Example 3
 function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
+    //console.log(`Hello ${'walter'}`); nothing was passed in the function
 }
 
 sayHelloToUser();
@@ -34,3 +37,5 @@ sayHelloToUser();
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+// console.log(arr[2])
+// the array runs from index 0 -2
