@@ -12,6 +12,7 @@
 // Example 1
 let a;
 console.log(a);
+// a is declared but has no value given to it 
 
 
 // Example 2
@@ -22,6 +23,8 @@ function sayHello() {
 let hello = sayHello();
 console.log(hello);
 
+// the function sayHello() is not returning anything 
+
 
 // Example 3
 function sayHelloToUser(user) {
@@ -29,8 +32,10 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
+// the sayHelloUser() function is expecting 1 argument to be passed and none is passed. 
 
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+// the array index passed on the console log is non existent because the array has indexes of 0,1 and 2 not 3
