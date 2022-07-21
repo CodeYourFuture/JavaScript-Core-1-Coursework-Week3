@@ -12,6 +12,7 @@
 // Example 1
 let a;
 console.log(a);
+No value is assigned to the variable
 
 
 // Example 2
@@ -22,6 +23,8 @@ function sayHello() {
 let hello = sayHello();
 console.log(hello);
 
+The function does not contain any parameters
+
 
 // Example 3
 function sayHelloToUser(user) {
@@ -29,8 +32,10 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
+There is no variable 
 
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+There is no value for index 3

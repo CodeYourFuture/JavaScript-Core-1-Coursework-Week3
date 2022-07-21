@@ -17,7 +17,21 @@ const BIRTHDAYS = [
 ];
 
 function findFirstJulyBDay(birthdays) {
+    // console.log(BIRTHDAYS.length);
     // TODO
+     let i = 0;
+      while (i <  BIRTHDAYS.length){
+        //   console.log('line 24;',BIRTHDAYS[i])
+          
+        //   console.log('line 26;',BIRTHDAYS[i].includes('July'))
+
+          if (BIRTHDAYS[i].includes('July') ) {
+              return BIRTHDAYS[i]
+              
+          }
+             i++;
+        
+     }
 }
 
-console.log(findFirstJulyBDay(BIRTHDAYS)); // should output "July 11th"
+console.log('this is the last line;',findFirstJulyBDay(BIRTHDAYS)); // should output "July 11th"

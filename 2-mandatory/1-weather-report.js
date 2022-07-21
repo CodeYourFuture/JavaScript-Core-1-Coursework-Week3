@@ -11,8 +11,18 @@
         - Hint: you can call the temperatureService function from your function
 */
 
+let temperature = [London, Paris, Barcelona, Dubai, Mumbai, Sao Paulo, Lagos];
+let degree = [10, 12, 17, 27, 29, 23, 33];
+
 function getTemperatureReport(cities) {
     // TODO
+    for (let i = 0; i < temperature.length; i++) {
+        let temp = temperature[i];
+        let deg = degree[i];
+
+        console.log(temp, deg);
+        
+    }
 }
 
 

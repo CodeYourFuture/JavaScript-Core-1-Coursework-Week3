@@ -27,7 +27,13 @@ const AGES = [
 ];
 
 // TODO - Write for loop code here
+for (let i = 0; i < WRITERS.length; i++) {
+     let writersName = WRITERS[i];
+     let ageNumber = AGES[i];
+     
+    console.log(writersName,ageNumber);
 
+}
 /*
 The output should look something like this:
 
