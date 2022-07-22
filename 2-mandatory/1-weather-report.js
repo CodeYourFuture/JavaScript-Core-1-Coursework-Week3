@@ -7,13 +7,21 @@
     Implement the function below:
         - take the array of cities as a parameter
         - return an array of strings, which is a statement about the temperature of each city.
-            For example, "The temperature in London is 10 degrees"
+            For example, ""
         - Hint: you can call the temperatureService function from your function
 */
 
 function getTemperatureReport(cities) {
     // TODO
+
+let tempArray = [];
+for (let city of cities) {
+    tempArray.push(`The temperature in ${city} is ${temperatureService(city)} degrees`);
 }
+return tempArray;
+
+}
+
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
