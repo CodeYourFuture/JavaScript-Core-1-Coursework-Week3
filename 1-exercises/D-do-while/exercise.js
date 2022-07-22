@@ -4,10 +4,21 @@
         - But in a do-while loop, because the condition is checked after the body, we know that it will always execute at least once
     
     Using a do-while loop, write a function which returns the sum of the first n even numbers (starting from 0)
+    //0,2,4,6,8 - even numbers
 */
 
 function evenNumbersSum(n) {
-    // TODO
+  // TODO
+
+  let i = 0;
+  //initialise sum to 0 so that the variable is a number
+  let sum = 0;
+
+  do {
+    sum = sum + i * 2;
+    i++;
+  } while (i < n);
+  return sum;
 }
 
 console.log(evenNumbersSum(3)); // should output 6
