@@ -11,7 +11,7 @@
 
 // Example 1
 let a;
-console.log(a);
+console.log(a);// Answer: The variable a is not defined. 
 
 
 // Example 2
@@ -20,7 +20,7 @@ function sayHello() {
 }
 
 let hello = sayHello();
-console.log(hello);
+console.log(hello);//  //Answer: Nothing is returned in this function
 
 
 // Example 3
@@ -28,9 +28,9 @@ function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
 
-sayHelloToUser();
+sayHelloToUser();// Hello is not defined.
 
 
 // Example 4
 let arr = [1,2,3];
-console.log(arr[3]);
+console.log(arr[3]);// Ansewer: Console.log(arr[3]) is undefined because arr element doest not have index 3.
