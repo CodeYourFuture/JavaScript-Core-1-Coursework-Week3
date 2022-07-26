@@ -55,16 +55,24 @@ function headlinesWithNumbers(allArticleTitles) {
     // TODO
     let numberHeadlines = [];
 
-        for(let i = 0; i < allArticleTitles; i++) {
+        for(let i = 0; i < allArticleTitles.length; i++) {
             let titleChecker = allArticleTitles[i];
-            let foundTitle = allArticleTitles[i];
+            
+            for( let j = 0; j < titleChecker.length; j++) {
 
-            if(titleChecker[j].isInteger()) {
-                foundTitle = allArticleTitles[i];
+                let charChecker = Number(titleChecker[j])
+
+                if(Number.isInteger(charChecker) && charChecker > 0 ){
+                    numberHeadlines.push(titleChecker);
+                    break;
+                }
             }
         }
-    return numberHeadlines;
-}
+        return numberHeadlines;
+    } 
+
+    
+
 
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
@@ -72,6 +80,17 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+
+    // let averageNum = 0;
+    let titleSum = 0;
+
+    for (let i = 0; i < allArticleTitles.length; i++){
+        titleSum += allArticleTitles[i].length; 
+    }
+
+    let averageNum = titleSum / allArticleTitles.length;
+
+    return Math.round(averageNum);
 }
 
 
