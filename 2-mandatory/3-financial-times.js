@@ -49,24 +49,18 @@ function titleWithFewestWords(allArticleTitles) {
 function headlinesWithNumbers(allArticleTitles) {
   // TODO
   let numberHeadlines = [];
-  let foundTitle = "";
 
-  for (let theTitle of allArticleTitles) {
-    let checkedTitle = theTitle;
-    let checkedLength = theTitle.length;
-    let checkedChar;
+  for (let i = 0; i < allArticleTitles.length; i++) {
+    let checkedTitle = allArticleTitles[i];
 
-    for (let i = 0; i < checkedLength; i++) {
-      checkedChar = checkedTitle[i];
+    for (let j = 0; j < checkedTitle.length; j++) {
+      let checkNo = Number(checkedTitle[j]);
 
-      if (Number.isInteger(checkedChar)) {
-        foundTitle = checkedChar;
-        numberHeadlines.push(foundTitle);
+      if (Number.isInteger(checkNo) && checkNo > 0) {
+        numberHeadlines.push(checkedTitle);
         break;
       }
     }
-    numberHeadlines.push(foundTitle);
-    console.log(numberHeadlines);
   }
 
   return numberHeadlines;
@@ -78,6 +72,15 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
   // TODO
+  let sumChars = 0;
+
+  for (let i = 0; i < allArticleTitles.length; i++) {
+    sumChars += allArticleTitles[i].length;
+  }
+
+  let averageChars = sumChars / allArticleTitles.length;
+
+  return Math.round(averageChars);
 }
 
 /* ======= List of Articles - DO NOT MODIFY ===== */
