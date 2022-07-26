@@ -58,9 +58,10 @@ function headlinesWithNumbers(allArticleTitles) {
 
     for (let i = 0; i < checkedLength; i++) {
       checkedChar = checkedTitle[i];
+
       if (Number.isInteger(checkedChar)) {
-        foundTitle = checkedTitle;
-        console.log("foundTitle     her I am *****", foundTitle);
+        foundTitle = checkedChar;
+        numberHeadlines.push(foundTitle);
         break;
       }
     }

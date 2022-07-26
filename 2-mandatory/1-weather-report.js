@@ -6,7 +6,7 @@
 
     Implement the function below:
         - take the array of cities as a parameter
-        - return an array of strings, which is a statement about the temperature of each city.
+        - return an array of strings, which is a statement about the temperature of each city.  return
             For example, "The temperature in London is 10 degrees"
         - Hint: you can call the temperatureService function from your function
 */
