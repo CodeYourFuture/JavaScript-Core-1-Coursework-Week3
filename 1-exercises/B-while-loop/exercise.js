@@ -7,6 +7,18 @@
 
 function evenNumbers(n) {
     // TODO
+    i = 0;
+    y = n;
+    let x = "";
+    if (n > 0) {
+      while (i < y) {
+        x += i + ",";
+        i += 2;
+      }
+      console.log(x);
+    } else {
+      //   console.log("nothing");
+    }
 }
 
 evenNumbers(3); // should output 0,2,4

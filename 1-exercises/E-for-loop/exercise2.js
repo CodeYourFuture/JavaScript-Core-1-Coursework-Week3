@@ -27,6 +27,18 @@ const AGES = [
 ];
 
 // TODO - Write for loop code here
+let capture = "";
+for (let i = 0; i < WRITERS.length; i++) {
+    const name = WRITERS[i]
+    const age = AGES[i]
+    console.log(name, age, "years old")
+}
+// for (var i in WRITERS) {
+//   for (var a in AGES) {
+//     capture += WRITERS[i] + AGES[a];
+//     console.log(capture);
+//   }
+// }
 
 /*
 The output should look something like this:
