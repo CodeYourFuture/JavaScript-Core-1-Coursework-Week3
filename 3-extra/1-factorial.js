@@ -9,6 +9,13 @@
 */
 
 function factorial(input) {
+
+    let myTest = 1;
+    for (let index = input; index < 0; index -= 1) {
+        myTest *= index;
+    }
+
+    return myTest
     // TODO
 }
 

@@ -26,6 +26,19 @@ const AGES = [
     49
 ];
 
+let test = []
+
+// for (let index = 0; index < WRITERS.length; index++) {
+
+//     for (let i = 0; i < AGES.length; i++) {
+//         test.push(WRITERS[index] + AGES[i]);
+//         console.log(test);
+//     }
+// }
+
+for (let index = 0; index < WRITERS.length; index++) {
+  console.log(WRITERS[index] + " is " + AGES[index] + " years old ");
+}
 // TODO - Write for loop code here
 
 /*
