@@ -5,7 +5,19 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    // TODO
+    let newArray = []
+    let i;
+
+    for (let i = 0, j = 0; allArticleTitles[i] != undefined; i++)
+    {
+        if (allArticleTitles[i].length <= 65)
+        {
+            newArray[j] = allArticleTitles[i];
+            j++;
+        }
+    }
+
+    return newArray;
 }
 
 /*
@@ -14,7 +26,34 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+    let countLowest = 0, lowestTitle = 0, count;
+
+    for (let i = 0; i < allArticleTitles.length; i++)
+    {
+        str = allArticleTitles[i].toString();
+        count = 0;     
+
+        for(j of str)
+        {
+            if (j === ' ')
+            {
+                count++;
+            }
+        }
+
+        if(i === 0)
+        {
+            countLowest = count;
+        }
+
+        if (count < countLowest)
+        {
+            countLowest = count;
+            lowestTitle = i;
+        }
+    }
+
+    return allArticleTitles[lowestTitle];
 }
 
 /*
@@ -23,7 +62,23 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+    let arrayWithNum = [], j = 0, k = 0;
+    let num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+    for (let i = 0; i < allArticleTitles.length; i++)
+    {
+        for (k = 0; k <= 10; k++)
+        {
+            if (allArticleTitles[i].search(`${num[k]}`) != -1)
+            {
+                arrayWithNum[j] = allArticleTitles[i];
+                j++;
+                break;
+            }
+        }
+    }
+
+    return arrayWithNum;
 }
 
 /*
@@ -31,7 +86,16 @@ function headlinesWithNumbers(allArticleTitles) {
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
+    let count = 0;
+
+    for (let i = 0; i < allArticleTitles.length; i++)
+    {
+        count += allArticleTitles[i].length;
+    }
+
+    let average = Math.round(count / allArticleTitles.length);
+
+    return (average);
 }
 
 

@@ -14,7 +14,29 @@
 */
 
 function generateFibonacciSequence(n) {
-    // TODO
+    fibArr = [];
+
+    num1 = 0;
+    num2 = 1;
+    for(let i = 0; i < n; i++)
+    {
+        if (i == 0)
+        {
+            fibArr[0] = num1;
+        }
+        else if (i == 1)
+        {
+            fibArr[1] = num2;
+        }
+        else{
+            fibArr[i] = num1 + num2;
+            temp = num1;
+            num1 = num2;
+            num2 = num1 + temp;
+        }
+
+    }
+    return fibArr;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
