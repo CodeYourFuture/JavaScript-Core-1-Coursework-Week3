@@ -12,12 +12,14 @@
 // Example 1
 let a;
 console.log(a);
+Answer: No variable has been declared (a cannot be initialised).
 
 
 // Example 2
 function sayHello() {
     let message = "Hello";
 }
+Answer: 
 
 let hello = sayHello();
 console.log(hello);
