@@ -12,12 +12,12 @@
 
 function getHighestRatedInEachGenre(books) {
     // TODO
+    return books.filter(book => book.rating > 4.8).map(book => book.title);
 }
 
 
 /* ======= Book data - DO NOT MODIFY ===== */
-const BOOKS = [
-    {
+const BOOKS = [{
         title: "The Lion, the Witch and the Wardrobe",
         genre: "children",
         rating: 4.7
