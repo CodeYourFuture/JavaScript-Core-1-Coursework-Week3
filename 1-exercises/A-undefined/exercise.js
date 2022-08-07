@@ -9,12 +9,12 @@
     For each example, can you explain why we are seeing undefined?
 */
 
-// Example 1
+/the letter a was not assigned to anything/ Example 1
 let a;
 console.log(a);
 
 
-// Example 2
+/there is no parameter set inside the sayHello brackets/ Example 2
 function sayHello() {
     let message = "Hello";
 }
@@ -23,7 +23,7 @@ let hello = sayHello();
 console.log(hello);
 
 
-// Example 3
+/the full fuction name is not stated in the console log/ Example 3
 function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
@@ -31,6 +31,6 @@ function sayHelloToUser(user) {
 sayHelloToUser();
 
 
-// Example 4
+/the maxiimum number in the array is 2/ Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
