@@ -12,6 +12,8 @@
 // Example 1
 let a;
 console.log(a);
+//a was not assigned any value
+
 
 
 // Example 2
@@ -21,6 +23,7 @@ function sayHello() {
 
 let hello = sayHello();
 console.log(hello);
+//The variable "sayHello" were not passed any value
 
 
 // Example 3
@@ -29,8 +32,12 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
+//Again the function "sayHelloToUser", has not been passed any arguments
 
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+// In this example above, there are no index value 3 in the array.
+// Arrays work with zero indexing and therefore a index of 3 would indicate a fourth value in the array
+// and this array only has three values and result to an undefined error. 

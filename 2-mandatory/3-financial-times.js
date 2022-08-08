@@ -6,6 +6,16 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+    let fitTitles = [];
+    for (let articleTitle of allArticleTitles) {
+       
+        if (articleTitle.length <= 65) {
+            fitTitles.push(articleTitle);
+        }
+        
+    }
+
+    return fitTitles;
 }
 
 /*
@@ -15,7 +25,26 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
     // TODO
-}
+       let fewest = allArticleTitles[0];
+       let prevCount = allArticleTitles[0].split(" ").length;
+
+        for(let i = 1; i < allArticleTitles.length; i++) {
+       
+            let currentCount = allArticleTitles[i].split(" ").length;
+
+            if(currentCount < prevCount) {
+                fewest = allArticleTitles[i];
+            }
+
+            prevCount = currentCount;            
+        }   
+       
+    return fewest;
+           
+    }
+
+    
+
 
 /*
     The editor of the FT has realised that headlines which have numbers in them get more clicks!
@@ -24,7 +53,26 @@ function titleWithFewestWords(allArticleTitles) {
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
-}
+    let numberHeadlines = [];
+
+        for(let i = 0; i < allArticleTitles.length; i++) {
+            let titleChecker = allArticleTitles[i];
+            
+            for( let j = 0; j < titleChecker.length; j++) {
+
+                let charChecker = Number(titleChecker[j])
+
+                if(Number.isInteger(charChecker) && charChecker > 0 ){
+                    numberHeadlines.push(titleChecker);
+                    break;
+                }
+            }
+        }
+        return numberHeadlines;
+    } 
+
+    
+
 
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
@@ -32,6 +80,17 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+
+    // let averageNum = 0;
+    let titleSum = 0;
+
+    for (let i = 0; i < allArticleTitles.length; i++){
+        titleSum += allArticleTitles[i].length; 
+    }
+
+    let averageNum = titleSum / allArticleTitles.length;
+
+    return Math.round(averageNum);
 }
 
 
