@@ -16,4 +16,6 @@ consolelog(tubeStations.toUpperCase());
 // TODO Use a for-of loop to capitalise and output each letter in the string seperately.
 let str = "codeyourfuture";
 for (let i = 0; i < str.length; i ++) {
-    console.log(str[i].toUpperCase());
+    console.log(str[i].toUpperCase())
+}
+}
