@@ -57,7 +57,16 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-  // TODO
+  let pricesChanged = closingPricesForAllStocks.map((e) => {
+    return e.at(-1) - e[0]; // answer found at this link helped with this part(.at) https://stackoverflow.com/questions/71851312/how-can-i-get-the-last-items-from-a-nested-array
+  });
+  let numbersRounded = []; // empty array to push numbers rounded to.
+  let result = []; // empty array to convert string created by .toFIxed to a number.
+  pricesChanged.forEach((element) => {
+    numbersRounded.push(element.toFixed(2) * 1);
+  }); // rounded elements to 2 decimal places and pushed to empty array.
+  numbersRounded.forEach((elem) => result.push(Number(elem))); // convert strings to numbers and push to empty array created.
+  return result;
 }
 
 /*
@@ -72,8 +81,29 @@ function getPriceChanges(closingPricesForAllStocks) {
     The stock ticker should be capitalised.
     The price should be shown with exactly 2 decimal places.
 */
+
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-  // TODO
+  let finalClosingPrice = closingPricesForAllStocks.map(function (subArray) {
+    return subArray.reduce(function (
+      previousLargestNumber,
+      currentLargestNumber
+    ) {
+      return currentLargestNumber > previousLargestNumber
+        ? currentLargestNumber
+        : previousLargestNumber;
+    },
+    0);
+  }); // SOURCES: FCC - https://tinyurl.com/yytu8cb5 & Stack Overflow - https://tinyurl.com/2p8erd2m
+
+  let result = finalClosingPrice.map(function (e1, index) {
+    return (
+      "The highest price of " +
+      STOCKS[index].toUpperCase() +
+      " in the last 5 days was " +
+      Number(e1).toFixed(2) // converted element to a number in order to use the .toFixed method.
+    );
+  });
+  return result;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
