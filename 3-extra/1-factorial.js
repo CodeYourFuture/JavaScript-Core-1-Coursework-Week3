@@ -8,8 +8,10 @@
     Using a loop, complete the function below so it returns the factorial of the number being passed in. 
 */
 
+// Solved it using recursion instead of a loop
 function factorial(input) {
-    // TODO
+    if(input === 1) return 1;
+    return input * factorial(input - 1);
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

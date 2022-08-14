@@ -12,7 +12,7 @@
 */
 
 function getTemperatureReport(cities) {
-    // TODO
+    return cities.map(town => `The temperature in ${town} is ${temperatureService(town)} degrees`)
 }
 
 
