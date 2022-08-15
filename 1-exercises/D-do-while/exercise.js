@@ -10,13 +10,13 @@ function evenNumbersSum(n) {
   let i = 0;
   let sum = 0;
   let numbers = [];
-  while (numbers.length < n) {
+  do {
     if (i % 2 === 0) {
       numbers.push(i);
       sum = sum + i;
     }
     i++;
-  }
+  } while (numbers.length < n);
   return sum;
 }
 
