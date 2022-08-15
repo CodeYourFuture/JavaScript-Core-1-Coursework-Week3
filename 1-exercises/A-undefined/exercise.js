@@ -10,27 +10,28 @@
 */
 
 // Example 1
+// a is undefined because we didn't assign any value to it
 let a;
 console.log(a);
 
-
 // Example 2
+// The function does not return any output
 function sayHello() {
-    let message = "Hello";
+  let message = "Hello";
 }
 
 let hello = sayHello();
 console.log(hello);
 
-
 // Example 3
+// We call the function without the input
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+  console.log(`Hello ${user}`);
 }
 
 sayHelloToUser();
 
-
 // Example 4
-let arr = [1,2,3];
+// There is no value on index 3
+let arr = [1, 2, 3];
 console.log(arr[3]);
