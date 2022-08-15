@@ -11,13 +11,16 @@
 
 // Example 1
 let a;
-console.log(a);
+console.log(a);  
+// No value is assigned to the variable 
+
 
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+    let message = "Hello"; 
 }
+// the function returns anything so it will be undefined
 
 let hello = sayHello();
 console.log(hello);
@@ -29,8 +32,10 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
+// The function is not taking  no argument thus the outcome is undefined.
 
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+// The array has got only 2 index , therefore the console.log will be undefined
