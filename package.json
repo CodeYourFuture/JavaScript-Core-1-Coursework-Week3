@@ -4,8 +4,8 @@
   "description": "Exercises for JS1 Week 3",
   "license": "CC-BY-SA-4.0",
   "scripts": {
-    "test": "jest --testRegex='mandatory[/\\\\].*\\.js$'",
-    "extra-tests": "jest --testRegex='extra[/\\\\].*\\.js$'"
+    "test": "jest --testRegex='2-mandatory[/\\\\].*\\.js$'",
+    "extra-tests": "jest --testRegex='3-extra[/\\\\].*\\.js$'"
   },
   "repository": {
     "type": "git",
