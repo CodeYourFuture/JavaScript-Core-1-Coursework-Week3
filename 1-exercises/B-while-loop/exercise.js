@@ -5,8 +5,24 @@
     The list of numbers should start with 0. n is being passed in as a parameter.
 */
 
-function evenNumbers(n) {
-    // TODO
+function evenNumbers(n)
+{
+    let total = "0";
+    let calc = 0;
+    
+    if (n === 0)
+    {
+        return console.log("");
+    }
+
+    for(let i = 1; i < n; i++)
+    {
+        calc = calc + 2;
+
+        total = total + ", " + calc;
+    }
+
+    return console.log(total);
 }
 
 evenNumbers(3); // should output 0,2,4
