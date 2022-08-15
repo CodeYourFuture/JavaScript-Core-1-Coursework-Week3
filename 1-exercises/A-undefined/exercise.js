@@ -12,13 +12,13 @@
 // Example 1
 let a;
 console.log(a);
-
+//Reason: There is not any value assigned to a variable.
 
 // Example 2
 function sayHello() {
     let message = "Hello";
 }
-
+//Reason: There is not return statement.
 let hello = sayHello();
 console.log(hello);
 
@@ -27,10 +27,11 @@ console.log(hello);
 function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
-
+//Reason: no 'user' argument was passed on as a parameter .
 sayHelloToUser();
 
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+//Reason: There is not index value 3, its only have index values 0, 1, 2.
