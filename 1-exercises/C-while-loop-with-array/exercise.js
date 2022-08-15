@@ -20,6 +20,7 @@ function findFirstJulyBDay(birthdays)
 {
     let Arrlength = birthdays.length;
     i = 0;
+    
     while(i < Arrlength)
     {
         if(birthdays[i].includes("July"))
