@@ -11,12 +11,12 @@
 
 // Example 1
 let a;
-console.log(a);
+console.log(a); //Variable a didnt get a value assigned
 
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+    let message = "Hello"; //The function doesnt return anything
 }
 
 let hello = sayHello();
@@ -28,9 +28,9 @@ function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
 
-sayHelloToUser();
+sayHelloToUser(); //There is no string the function could take to fill the "user"
 
 
 // Example 4
 let arr = [1,2,3];
-console.log(arr[3]);
+console.log(arr[3]); //The last array position is 2 not 3

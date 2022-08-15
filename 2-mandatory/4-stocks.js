@@ -33,8 +33,14 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Solve the smaller problems, and then build those solutions back up to solve the larger problem.
         Functions can help with this!
 */
-function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+//https://jrsinclair.com/articles/2019/five-ways-to-average-with-js-reduce/
+function getAveragePrices(closingPricesForAllStocks)
+{
+    //const reduce  = r => i => a => a.reduce(r, i);
+    //conatiner   =     getting items                      => got items.reduce          =>      add    /    length         .map previous  =>       round to 2 dec
+    const average = (closingPricesForAllStocks.map((array) => array.reduce((r, current) => r + current / array.length, 0))).map((element) => parseFloat(element.toFixed(2)));
+
+    return average;
 }
 
 /*
@@ -47,8 +53,12 @@ function getAveragePrices(closingPricesForAllStocks) {
                 (Apple's price on the 5th day) - (Apple's price on the 1st day) = 172.99 - 179.19 = -6.2
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
-function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+
+function getPriceChanges(closingPricesForAllStocks)
+{
+    const PriceChange = (closingPricesForAllStocks.map((array) => array[array.length - 1] - array[0])).map((element) => parseFloat(element.toFixed(2)));
+
+    return PriceChange;
 }
 
 /*
@@ -63,11 +73,26 @@ function getPriceChanges(closingPricesForAllStocks) {
     The stock ticker should be capitalised.
     The price should be shown with exactly 2 decimal places.
 */
-function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+
+function highestPriceDescriptions(closingPricesForAllStocks, stocks)
+{
+    let HighestPriceText = [];
+
+    for(let i = 0; i < closingPricesForAllStocks.length; i++)
+    {
+        let AllHighestPrices = 0;
+        for(let i2 = 0; i2 < closingPricesForAllStocks[i].length; i2++)
+        {
+            if(closingPricesForAllStocks[i][i2] > AllHighestPrices)
+            {
+                AllHighestPrices = closingPricesForAllStocks[i][i2];
+            }
+        }
+        HighestPriceText.push("The highest price of " + STOCKS[i].toUpperCase() + " in the last 5 days was " + AllHighestPrices.toFixed(2));
+    }
+
+    return HighestPriceText;
 }
-
-
 /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the average price for each stock", () => {
     expect(getAveragePrices(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS)).toEqual(
