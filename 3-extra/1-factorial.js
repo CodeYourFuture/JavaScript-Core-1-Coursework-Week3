@@ -8,8 +8,19 @@
     Using a loop, complete the function below so it returns the factorial of the number being passed in. 
 */
 
-function factorial(input) {
-    // TODO
+function factorial(input)
+{
+    let OriginalInput = input;
+    let Total = 1;
+    for (let i = 0; i < input; i++)
+    {
+        if(input > 0)
+        {
+            Total *= OriginalInput;
+            OriginalInput--;
+        }
+    }
+    return Total;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
