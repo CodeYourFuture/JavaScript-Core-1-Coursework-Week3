@@ -10,13 +10,14 @@
 */
 
 // Example 1
-let a;
+let a=1;
 console.log(a);
 
 
 // Example 2
 function sayHello() {
     let message = "Hello";
+    return message;
 }
 
 let hello = sayHello();
@@ -28,9 +29,9 @@ function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
 
-sayHelloToUser();
+sayHelloToUser("Fatemeh");
 
 
 // Example 4
 let arr = [1,2,3];
-console.log(arr[3]);
+console.log(arr[2]);
