@@ -5,9 +5,23 @@
     The list of numbers should start with 0. n is being passed in as a parameter.
 */
 
+
 function evenNumbers(n) {
-    // TODO
-}
+const arr = [];
+let i = 0; 
+let count = 0;
+  
+while (count < n) {
+      arr.push(i);
+       i = i + 2;
+       count++;
+      
+       
+    }   
+ console.log(arr);
+  
+   } 
+
 
 evenNumbers(3); // should output 0,2,4
 evenNumbers(0); // should output nothing
