@@ -12,25 +12,28 @@
 // Example 1
 let a;
 console.log(a);
-
+// We have declared a but We didn't assign any value to a.
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+  let message = "Hello";
 }
 
 let hello = sayHello();
 console.log(hello);
-
+// function don't return any value. So when we assign the function to variable , hello , the value for
+// variable is undefined
 
 // Example 3
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+  console.log(`Hello ${user}`);
 }
 
 sayHelloToUser();
-
+// function needs a parameter called user, but when calling the function we didn't give a parameter to function,
+// so the console.log returns undefined
 
 // Example 4
-let arr = [1,2,3];
+let arr = [1, 2, 3];
 console.log(arr[3]);
+// There's no item in the index 3, so it's undefined
