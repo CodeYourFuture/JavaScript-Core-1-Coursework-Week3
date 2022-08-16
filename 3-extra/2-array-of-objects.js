@@ -10,9 +10,35 @@
     Each title in the resulting array should be the highest rated book in its genre.
 */
 
+
+
+
 function getHighestRatedInEachGenre(books) {
-    // TODO
+    return BOOKS;
 }
+
+// const FILMS = [
+// {
+// name: "Scream",
+// genre: "Horror",
+// rating: 3.65
+// },
+// {
+// name: "Harry Potter",
+// genre: "Fantasy",
+// rating: 1.22
+// },
+// {
+// name: "The Nutty Professor",
+// genre: "Comedy",
+// rating: 3.00
+// }
+// ]
+
+
+// const filmsByGenre = FILMS.filter((film) => {
+// console.log(film.genre == "Comedy")
+// })
 
 
 /* ======= Book data - DO NOT MODIFY ===== */

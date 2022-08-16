@@ -12,7 +12,7 @@
 // Example 1
 let a;
 console.log(a);
-
+// This is because console. log() does not return a value (i.e. returns undefined). The result of whatever you entered to the console is first printed to the console, then a bit later the message from console. log reaches the console and is printed as well.
 
 // Example 2
 function sayHello() {
@@ -21,7 +21,7 @@ function sayHello() {
 
 let hello = sayHello();
 console.log(hello);
-
+// The sayHello() function that you have defined doesn't explicitly return a value (instead it just makes a call to write out to the console).
 
 // Example 3
 function sayHelloToUser(user) {
@@ -29,8 +29,9 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
-
+// There is no identifier. 'user' parameter doesn't match 'sayHelloToUser'! 
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+// There is no third item. Arrays always count 0 and I can see this array has just 2 items. 
