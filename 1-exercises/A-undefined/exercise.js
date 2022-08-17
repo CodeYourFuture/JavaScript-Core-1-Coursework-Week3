@@ -19,8 +19,12 @@ function sayHello() {
     let message = "Hello";
 }
 
+// In the above example we wish to use the name that the user provides to greet them
+
 let hello = sayHello();
 console.log(hello);
+
+// in the above example we need the users name to to log the function
 
 
 // Example 3
@@ -29,8 +33,10 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
-
+//  the user needs to input username for the greeting Hello user to be printed
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+
+// arr 3 is undefined as the array only currently goes to 2. Once the array another value is added to the array it will be printed in the terminal
