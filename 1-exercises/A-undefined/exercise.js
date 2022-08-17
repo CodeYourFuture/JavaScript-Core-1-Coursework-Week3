@@ -11,12 +11,13 @@
 
 // Example 1
 let a;
-console.log(a);
+console.log(a); //  a  does not = anything
 
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+    let message = "Hello"; // message not called ot returned
+    //return message;
 }
 
 let hello = sayHello();
@@ -28,9 +29,9 @@ function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
 
-sayHelloToUser();
-
+sayHelloToUser(); // no user data added to function
+//sayHelloToUser("dave");
 
 // Example 4
-let arr = [1,2,3];
-console.log(arr[3]);
+let arr = [1,2,3];  //  index  0,1,2 no 3rd one
+console.log(arr[3]); 
