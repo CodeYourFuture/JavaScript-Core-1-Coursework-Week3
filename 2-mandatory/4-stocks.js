@@ -33,9 +33,20 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Solve the smaller problems, and then build those solutions back up to solve the larger problem.
         Functions can help with this!
 */
-function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+   function getAveragePrices(closingPricesForAllStocks) {
+     let arr = [];
+    let average = 0;
+    for (const stockPrices of closingPricesForAllStocks) {
+        let stockSum = 0;
+        for (const price of stockPrices){
+stockSum += price;
+        }
+        average = parseFloat((stockSum / stockPrices.length).toFixed(2));
+        arr.push(average);
+    }
+    return arr;
 }
+
 
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
@@ -48,8 +59,17 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+     let changeArray = [];
+    for (const stockPrices of closingPricesForAllStocks) {
+        let priceChange = parseFloat((stockPrices[stockPrices.length - 1]
+- stockPrices [0]).toFixed(2));
+        changeArray.push(priceChange);
+    }
+    return changeArray;    
 }
+
+  
+
 
 /*
     As part of a financial report, we want to see what the highest price was for each stock in the last 5 days.
@@ -64,8 +84,22 @@ function getPriceChanges(closingPricesForAllStocks) {
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+    let result = []
+    for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+        let companyStock = closingPricesForAllStocks[i];
+        let highestValue = companyStock[0];
+for (let j = 0; j < companyStock.length; j++) {
+        if (companyStock[j] > highestValue) {
+                highestValue = companyStock[j]
+            }          
+        }
+        result[i] = "The highest price of " + stocks[i].toUpperCase() + " in the last 5 days was " + highestValue.toFixed(2)
+    }
+    return result;
 }
+
+  
+
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
