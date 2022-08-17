@@ -1,15 +1,12 @@
 /*
     THESE EXERCISES ARE QUITE HARD. JUST DO YOUR BEST, AND COME WITH QUESTIONS IF YOU GET STUCK :)
-
     Imagine we a working for a finance company. Below we have:
         - an array of stock tickers
         - an array of arrays containing the closing price for each stock in each of the last 5 days.
             For example, CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[2] contains the prices for the last 5 days for STOCKS[2] (which is amzn)
 */
-
 /* ======= Stock data - DO NOT MODIFY ===== */
 const STOCKS = ["aapl", "msft", "amzn", "googl", "tsla"];
-
 const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
     [179.19, 180.33, 176.28, 175.64, 172.99], // AAPL
     [340.69, 342.45, 334.69, 333.20, 327.29], // MSFT
@@ -17,7 +14,6 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
     [2951.88, 2958.13, 2938.33, 2928.30, 2869.45], // GOOGL
     [1101.30, 1093.94, 1067.00, 1008.87, 938.53] // TSLA
 ];
-
 /*
     We want to understand what the average price over the last 5 days for each stock is.
     Implement the below function, which
@@ -26,15 +22,20 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
             For example, the first element of the resulting array should contain Apple’s (aapl) average stock price for the last 5 days.
             The second element should be Microsoft's (msft) average price, and so on.
     The average value should be rounded to 2 decimal places, and should be a number (not a string)
-
     Hint 1: To calculate the average of a set of values, you can add them together and divide by the number of values.
         So the average of 5, 10 and 20 is (5 + 10 + 20) / 3 = 11.67
     Hint 2: If the problem seems complex, try breaking it down into smaller problems.
         Solve the smaller problems, and then build those solutions back up to solve the larger problem.
         Functions can help with this!
 */
-function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+//https://jrsinclair.com/articles/2019/five-ways-to-average-with-js-reduce/
+function getAveragePrices(closingPricesForAllStocks)
+{
+    //const reduce  = r => i => a => a.reduce(r, i);
+    //conatiner   =     getting items                      => got items.reduce          =>      add    /    length         .map previous  =>       round to 2 dec
+    const average = (closingPricesForAllStocks.map((array) => array.reduce((r, current) => r + current / array.length, 0))).map((element) => parseFloat(element.toFixed(2)));
+
+    return average;
 }
 
 /*
@@ -47,8 +48,12 @@ function getAveragePrices(closingPricesForAllStocks) {
                 (Apple's price on the 5th day) - (Apple's price on the 1st day) = 172.99 - 179.19 = -6.2
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
-function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+
+function getPriceChanges(closingPricesForAllStocks)
+{
+    const PriceChange = (closingPricesForAllStocks.map((array) => array[array.length - 1] - array[0])).map((element) => parseFloat(element.toFixed(2)));
+
+    return PriceChange;
 }
 
 /*
@@ -63,24 +68,38 @@ function getPriceChanges(closingPricesForAllStocks) {
     The stock ticker should be capitalised.
     The price should be shown with exactly 2 decimal places.
 */
-function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+
+function highestPriceDescriptions(closingPricesForAllStocks, stocks)
+{
+    let HighestPriceText = [];
+
+    for(let i = 0; i < closingPricesForAllStocks.length; i++)
+    {
+        let AllHighestPrices = 0;
+        for(let i2 = 0; i2 < closingPricesForAllStocks[i].length; i2++)
+        {
+            if(closingPricesForAllStocks[i][i2] > AllHighestPrices)
+            {
+                AllHighestPrices = closingPricesForAllStocks[i][i2];
+            }
+        }
+        
+        HighestPriceText.push("The highest price of " + STOCKS[i].toUpperCase() + " in the last 5 days was " + AllHighestPrices.toFixed(2));
+    }
+
+    return HighestPriceText;
 }
-
-
 /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the average price for each stock", () => {
     expect(getAveragePrices(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS)).toEqual(
         [176.89, 335.66, 3405.66, 2929.22, 1041.93]
     );
 });
-
 test("should return the price change for each stock", () => {
     expect(getPriceChanges(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS)).toEqual(
         [-6.2, -13.4, 23.9, -82.43, -162.77]
     );
 });
-
 test("should return a description of the highest price for each stock", () => {
     expect(highestPriceDescriptions(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS, STOCKS)).toEqual(
         [
