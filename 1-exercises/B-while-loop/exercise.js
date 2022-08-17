@@ -6,7 +6,10 @@
 */
 
 function evenNumbers(n) {
-    // TODO
+    while (n % 2 === 0) {
+       console.log(n + " , ");
+       n++;
+    }
 }
 
 evenNumbers(3); // should output 0,2,4
