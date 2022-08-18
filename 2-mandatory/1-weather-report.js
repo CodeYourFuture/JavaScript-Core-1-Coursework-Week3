@@ -12,7 +12,12 @@
 */
 
 function getTemperatureReport(cities) {
-    
+  
+//const 
+   // function newFunction() {
+        let temperateOfCity = cities.map(city => "The temperature in " + city + " is " + temperatureService(city) + " degrees");
+        return temperateOfCity;
+  //  }
     // TODO
 }
 
