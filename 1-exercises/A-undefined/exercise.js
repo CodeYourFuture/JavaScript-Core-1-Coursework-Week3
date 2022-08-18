@@ -11,12 +11,12 @@
 
 // Example 1
 let a;
-console.log(a);
+console.log(a); // Variable a is declared but no value is assigned to it
 
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+    let message = "Hello";  // there is no return statemnet in the function sayHello(), the variable message only exists inside of the function,but nothing is returned
 }
 
 let hello = sayHello();
@@ -28,9 +28,8 @@ function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
 
-sayHelloToUser();
-
+sayHelloToUser(); // the parameter is not defined in the parenthesis so it returns undefined
 
 // Example 4
 let arr = [1,2,3];
-console.log(arr[3]);
+console.log(arr[3]); // the index 3 in the array call points to the 4th placed element inside the array, as we count the elements from index 0, index 3 is undefined

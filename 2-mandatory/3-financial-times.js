@@ -5,7 +5,13 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    // TODO
+    let arr = [];
+    for (const element of allArticleTitles) {
+        if (element.length <= 65) {
+            arr.push(element);
+        }
+    }return arr;
+    
 }
 
 /*
@@ -14,7 +20,15 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+     let arrLength = [];
+     let smallestNumValue;
+     let index;
+    for (const element of allArticleTitles) {      //my first step was to itirate through the array and create an other array with indexes of lenght of each string
+         arrLength.push(element.split(" ").length);        
+    }
+    smallestNumValue = Math.min(...arrLength); //once i had the array of indexes of lenght I went on to find the position of the smallest index in the array in 2 steps, first finding the value of the smallest number 
+    index = arrLength.indexOf(smallestNumValue)//this is the second step of finding the position of the smallest index in an array, this steps finds the position of the smallest number that we identified in the previous step
+    return allArticleTitles[index]; //finally i return the position of the smallest number of the original array
 }
 
 /*
@@ -23,7 +37,12 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+    let array = []
+    for (const element of allArticleTitles){
+        if ( /\d/.test(element)) {
+            array.push(element);
+        }
+    } return array;
 }
 
 /*
@@ -31,8 +50,19 @@ function headlinesWithNumbers(allArticleTitles) {
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
+    let arrNumOfCharacters = [];
+    let total = 0;
+    let average = 0;
+    for (const element of allArticleTitles) {
+        arrNumOfCharacters.push(element.trim().length);
+    }
+    for (const element of arrNumOfCharacters) {
+         total = total + element;
+    }
+     average = total / arrNumOfCharacters.length;
+     return Math.round(average);
 }
+
 
 
 
