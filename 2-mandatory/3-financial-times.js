@@ -5,6 +5,8 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
+    return allArticleTitles.filter((element) => element.length <= 65);
+
     // TODO
 }
 
@@ -14,8 +16,18 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
-}
+  let shortestTitle = Infinity;
+  let fewestWordTitle = "";
+  for (let i = 0; i < allArticleTitles.length; i++) {
+     const title = allArticleTitles[i];
+    const titleLengthInWords = title.split(" ").length;
+
+    if (titleLengthInWords < shortestTitle) {
+      shortestTitle = titleLengthInWords;
+      fewestWordTitle = title;
+    }
+  }
+  return fewestWordTitle;
 
 /*
     The editor of the FT has realised that headlines which have numbers in them get more clicks!
@@ -23,7 +35,15 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+  // TODO
+  return allArticleTitles.filter((title) => {
+    const matches = title.match(/[0-9]/);
+    if (matches !== null) {
+      return true;
+    } else {
+      return false;
+    }
+  })
 }
 
 /*
@@ -32,6 +52,11 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+ let totalCharacterNumber = 0;
+  for (let i = 0; i < allArticleTitles.length; i++) {
+    totalCharacterNumber =
+      totalCharacterNumber + allArticleTitles[i].split("").length;
+      
 }
 
 
@@ -78,4 +103,4 @@ test("should only return headlines containing numbers", () => {
 
 test("should return the average number of characters in a headline", () => {
     expect(averageNumberOfCharacters(ARTICLE_TITLES)).toEqual(65);
-});
+})
