@@ -25,7 +25,6 @@ function findFirstJulyBDay(birthdays) {
     }
     i++;
   }
-
   return julyBirthdays[0];
 }
 
