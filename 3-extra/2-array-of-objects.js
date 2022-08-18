@@ -11,8 +11,27 @@
 */
 
 function getHighestRatedInEachGenre(books) {
-    // TODO
+    let allArray = [];
+
+    let children = books.filter((obj) => obj.genre === "children");
+    children = children.reduce((result, curr) =>
+        result.rating > curr.rating ? result : curr
+    );
+
+    let nonFiction = books.filter((obj) => obj.genre === "non-fiction");
+    nonFiction = nonFiction.reduce((result, curr) =>
+        result.rating > curr.rating ? result : curr
+    );
+let cooking = books.filter((obj) => obj.genre === "cooking");
+    cooking = cooking.reduce((result, curr) =>
+        result.rating > curr.rating ? result : curr
+    );
+
+    allArray.push(children.title, nonFiction.title, cooking.title);
+    return allArray;
 }
+    
+
 
 
 /* ======= Book data - DO NOT MODIFY ===== */
