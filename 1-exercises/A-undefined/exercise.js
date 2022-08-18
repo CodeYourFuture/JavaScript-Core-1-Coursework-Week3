@@ -9,12 +9,12 @@
     For each example, can you explain why we are seeing undefined?
 */
 
-// Example 1
+// Example 1 - A variable a doesn't have value assigned 
 let a;
 console.log(a);
 
 
-// Example 2
+// Example 2 - This function doesn't have return
 function sayHello() {
     let message = "Hello";
 }
@@ -25,12 +25,12 @@ console.log(hello);
 
 // Example 3
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+  console.log(`Hello ${user}`); // The parameters needs to have arguments. If a function is called with missing arguments, the missing values are set to undefined.
 }
 
 sayHelloToUser();
 
 
 // Example 4
-let arr = [1,2,3];
-console.log(arr[3]);
+let arr = [1,2,3]; // In this array there are only 3 numbers with index started 0. So the last number has index 2
+console.log(arr[3]); //  Index 3 requires fourth number of the array, but there are only 3 numbers
