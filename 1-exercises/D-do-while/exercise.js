@@ -7,6 +7,13 @@
 */
 
 function evenNumbersSum(n) {
+    let i = 0;
+    let total = 0;
+    do {
+      total = total + i * 2;
+      i++;
+    } while(i < n);
+      return total;
     // TODO
 }
 
