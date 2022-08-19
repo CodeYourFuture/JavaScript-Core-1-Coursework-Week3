@@ -35,6 +35,12 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 */
 function getAveragePrices(closingPricesForAllStocks) {
     // TODO
+      let total= [];
+    let tot= 0;
+    let sum = 0;
+    for(let element of closingPricesForAllStocks){
+      sum = element.reduce((a, b) => a + b);
+      tot = sum / 5;
 }
 
 /*
@@ -49,6 +55,11 @@ function getAveragePrices(closingPricesForAllStocks) {
 */
 function getPriceChanges(closingPricesForAllStocks) {
     // TODO
+    for (let array of closingPricesForAllStocks) {
+      let calculation = array[array.length - 1] - array[0];
+      priceChange.push(Number(calculation.toFixed(2)));
+    }
+    return priceChange;
 }
 
 /*
@@ -65,6 +76,18 @@ function getPriceChanges(closingPricesForAllStocks) {
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
     // TODO
+  let averagePrice = [];
+  let stockPrice = [];
+  for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+    let totalPrice = 0;
+    stockPrice = closingPricesForAllStocks[i];
+    for (let j = 0; j < stockPrice.length; j++) {
+      totalPrice += stockPrice[j];
+    }
+    averagePrice.push(parseFloat((totalPrice / stockPrice.length).toFixed(2)));
+  }
+  return averagePrice;
+ 
 }
 
 
@@ -91,4 +114,4 @@ test("should return a description of the highest price for each stock", () => {
             "The highest price of TSLA in the last 5 days was 1101.30"
         ]
     );
-});
+});}

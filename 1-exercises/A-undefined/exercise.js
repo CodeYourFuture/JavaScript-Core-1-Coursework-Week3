@@ -10,27 +10,29 @@
 */
 
 // Example 1
-let a;
+let a;  
 console.log(a);
-
+// no value has been assigned to a
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+  let message = "Hello";
 }
 
 let hello = sayHello();
 console.log(hello);
-
+// the function has no parameter
 
 // Example 3
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+  console.log(`Hello ${user}`);
 }
 
 sayHelloToUser();
 
-
 // Example 4
-let arr = [1,2,3];
+let arr = [1, 2, 3];
 console.log(arr[3]);
+// the array has 3 elements and the console log is asking for an index that its not inside, the index start from 0,
+// we do not have the 4th element.
+
