@@ -10,16 +10,21 @@
             For example, "The temperature in London is 10 degrees"
         - Hint: you can call the temperatureService function from your function
 */
-
+ct = ['London', 'Paris', 'Barcelona', 'Dubai', 'Mumbai', 'São Paulo', 'Lagos'];
 function getTemperatureReport(cities) {
-    // TODO
+    
+    let statement = [];
+    for (let i = 0; i < cities.length; i++) {
+        let sentance = `The temperature in ${cities[i]} is ${temperatureService(cities[i])} degrees`
+        statement.push(sentance)
+    }
+    return statement;
 }
-
-
+console.log(getTemperatureReport(ct));
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 function temperatureService(city) {
-    let temparatureMap  = new Map();
+    let temparatureMap = new Map();
 
     temparatureMap.set('London', 10);
     temparatureMap.set('Paris', 12);
@@ -28,7 +33,7 @@ function temperatureService(city) {
     temparatureMap.set('Mumbai', 29);
     temparatureMap.set('São Paulo', 23);
     temparatureMap.set('Lagos', 33);
-    
+
     return temparatureMap.get(city);
 }
 
