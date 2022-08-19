@@ -5,6 +5,8 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
+    return allArticleTitles.filter((element) => element.length <= 65);
+
     // TODO
 }
 
@@ -14,16 +16,30 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+  let shortArticleTitles = allArticleTitles.map((title) => {
+    return title.trim().split(" ").length;
+  });
+  let min = Math.min(...shortArticleTitles);
+  let index = shortArticleTitles.indexOf(min);
+  return allArticleTitles[index];
 }
 
-/*
+
+/*}
     The editor of the FT has realised that headlines which have numbers in them get more clicks!
     Implement the function below to return a new array containing all the headlines which contain a number.
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+  // TODO
+  return allArticleTitles.filter((title) => {
+    const matches = title.match(/[0-9]/);
+    if (matches !== null) {
+      return true;
+    } else {
+      return false;
+    }
+  })
 }
 
 /*
@@ -32,8 +48,14 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+ let sum = 0;
+ let average;
+ for (const title of allArticleTitles) {
+   sum = sum + title.length;
+ }
+ average = Math.round(sum / allArticleTitles.length);
+ return average;
 }
-
 
 
 /* ======= List of Articles - DO NOT MODIFY ===== */
@@ -50,7 +72,9 @@ const ARTICLE_TITLES = [
     "Brussels urges Chile's incoming president to endorse EU trade deal",
 ];
 
+
 /* ======= TESTS - DO NOT MODIFY ===== */
+
 
 test("should only return potential headlines", () => {
     expect(new Set(potentialHeadlines(ARTICLE_TITLES))).toEqual(new Set([
@@ -59,6 +83,14 @@ test("should only return potential headlines", () => {
         "Audit profession unattractive to new recruits, says PwC boss",
         "The three questions that dominate investment"
     ]));
+     expect(new Set(potentialHeadlines(ARTICLE_TITLES))).toEqual(
+       new Set([
+         "British companies look to muscle in on US retail investing boom",
+         "Libor to take firm step towards oblivion on New Year's Day",
+         "Audit profession unattractive to new recruits, says PwC boss",
+         "The three questions that dominate investment",
+       ])
+     );
 });
 
 test("should return an empty array for empty input", () => {
@@ -66,16 +98,20 @@ test("should return an empty array for empty input", () => {
 });
 
 test("should return the title with the fewest words", () => {
-    expect(titleWithFewestWords(ARTICLE_TITLES)).toEqual("The three questions that dominate investment");
+     expect(titleWithFewestWords(ARTICLE_TITLES)).toEqual(
+       "The three questions that dominate investment"
+     );
 });
 
 test("should only return headlines containing numbers", () => {
-    expect(new Set(headlinesWithNumbers(ARTICLE_TITLES))).toEqual(new Set([
+    expect(new Set(headlinesWithNumbers(ARTICLE_TITLES))).toEqual(
+      new Set([
         "Streaming wars drive media groups to spend more than $100bn on new content",
-        "Companies raise over $12tn in 'blockbuster' year for global capital markets"
-    ]));
+        "Companies raise over $12tn in 'blockbuster' year for global capital markets",
+      ])
+    );
 });
 
 test("should return the average number of characters in a headline", () => {
     expect(averageNumberOfCharacters(ARTICLE_TITLES)).toEqual(65);
-});
+})

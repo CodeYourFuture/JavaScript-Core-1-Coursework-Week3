@@ -9,6 +9,12 @@
 */
 
 function factorial(input) {
+     for (let i = input - 1; i >= 1; i--) {
+       input = input * i;
+       console.log(input);
+     }
+     return input;
+
     // TODO
 }
 

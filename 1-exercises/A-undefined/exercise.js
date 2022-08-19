@@ -11,13 +11,13 @@
 
 // Example 1
 let a;
-console.log(a);
+console.log(a); // There is not initialised with a value 
 
 
 // Example 2
 function sayHello() {
     let message = "Hello";
-}
+}    // there is not return and so default return is undefined
 
 let hello = sayHello();
 console.log(hello);
@@ -28,9 +28,10 @@ function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
 
-sayHelloToUser();
+sayHelloToUser();   // there isnt any arguments for the function call and this user is undefined
 
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+// there is not index 3 
