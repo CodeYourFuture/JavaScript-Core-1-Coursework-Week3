@@ -5,9 +5,18 @@
     
     Using a do-while loop, write a function which returns the sum of the first n even numbers (starting from 0)
 */
-
+let i = 0;
+let total = 0;
+let evenSum = []
 function evenNumbersSum(n) {
-    // TODO
+    do{
+        if(i % 2 === 0){
+            evenSum.push(i);
+            total = total + i;
+        }
+        i ++;
+    } while (evenSum.length < n)
+    return total;
 }
 
 console.log(evenNumbersSum(3)); // should output 6
