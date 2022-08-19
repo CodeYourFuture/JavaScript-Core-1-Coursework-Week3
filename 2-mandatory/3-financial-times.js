@@ -6,24 +6,62 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+    let acceptedTitles=[]
+    let lengthCheck=0
+    for ( i=0 ; i < allArticleTitles.length ; i++){
+         lengthCheck= allArticleTitles[i].length
+     if (lengthCheck <= 65){
+        acceptedTitles.push(allArticleTitles[i])
+     }
+    }
+    return acceptedTitles
 }
+
+// function potentialHeadlines(allArticleTitles){
+//     let acceptedTitles=[]
+//     for (element of allArticleTitles){
+//        ( element.length <= 65 )? acceptedTitles.push(element):next
+//     }
+//     return acceptedTitles
+// }
 
 /*
     The editor of the FT likes short headlines with only a few words!
-    Implement the function below, which returns the title with the fewest words.
-    (you can assume words will always be seperated by a space)
+    Implement the function below, which returns the title with the fewest words.e
+    (you can assume words will always be separated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
     // TODO
-}
+    let minValue
+    let indexOfShortestTitle
+    let wordCountOFTitles=[]
+    let i=0
+    do {
+        let wordCount= allArticleTitles[i].trim().split(" ").length
+        wordCountOFTitles.push(wordCount)
+        i++
+   }
+   while(i < allArticleTitles.length)
 
+    minValue= Math.min(...wordCountOFTitles)
+    indexOfShortestTitle=wordCountOFTitles.indexOf(minValue)
+   
+    return allArticleTitles[indexOfShortestTitle]
+}
 /*
-    The editor of the FT has realised that headlines which have numbers in them get more clicks!
+    The editor of the FT has realized that headlines which have numbers in them get more clicks!
     Implement the function below to return a new array containing all the headlines which contain a number.
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+    let titleWithNum=[]
+   for (const title of allArticleTitles){
+        if (/\d/.test(title)){
+        titleWithNum.push(title)
+        }
+    }
+    return titleWithNum
 }
 
 /*
@@ -32,6 +70,11 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+    let sum=0
+     for (i=0 ; i <allArticleTitles.length;i++){
+        sum += allArticleTitles[i].length
+     }
+     return Math.round(sum/allArticleTitles.length)
 }
 
 
