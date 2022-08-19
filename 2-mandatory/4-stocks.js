@@ -47,15 +47,8 @@ function getAveragePrices(closingPricesForAllStocks) {
     let average = 0
     let result = [];
     for (let i = 0; i < closingPricesForAllStocks.length; i++) {
-        //console.log(closingPricesForAllStocks[i])
         sum = getSum(closingPricesForAllStocks[i])
-        //closingPricesForAllStocks[i].forEach(element => console.log(element))
-        // for (let j = 0; j < closingPricesForAllStocks[i].length; j++) {
-        //     //console.log(closingPricesForAllStocks[i][j])
-        //     sum += closingPricesForAllStocks[i][j];
-        //     //console.log(sum);
         average = sum / 5;
-        // }
         result.push(Math.round(average * 100) / 100);
     }
     return result;
@@ -102,7 +95,7 @@ function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
     }
     return result;
 }
-console.log(highestPriceDescriptions(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS, STOCKS));
+highestPriceDescriptions(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS, STOCKS);
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the average price for each stock", () => {
