@@ -35,6 +35,21 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 */
 function getAveragePrices(closingPricesForAllStocks) {
     // TODO
+    let average = [];
+    for(array=0;array<closingPricesForAllStocks.length;array++){
+        let initialValue = 0;
+        let currentArray = closingPricesForAllStocks[array];
+        let currentArrayLength = currentArray.length;
+        let sumWithInitialValue = currentArray.reduce(
+          (previousValue, currentValue) => previousValue + currentValue,
+          initialValue
+        );
+        let currentAverage = sumWithInitialValue/currentArrayLength;
+        let currentAverageRounded = currentAverage.toFixed(2);
+        average.push(currentAverageRounded);
+    }
+    let averageToNumber = average.map(string =>{return Number(string)});
+    return averageToNumber;
 }
 
 /*
@@ -49,6 +64,13 @@ function getAveragePrices(closingPricesForAllStocks) {
 */
 function getPriceChanges(closingPricesForAllStocks) {
     // TODO
+        let different = [];
+        for (const array of closingPricesForAllStocks) {
+         let currentDiffrence = (array.at(0) - array.at(-1))*-1;
+         different.push(currentDiffrence.toFixed(2));
+        }
+        let differentToNumber = different.map(string =>{return Number(string)});
+        return differentToNumber;
 }
 
 /*
@@ -65,6 +87,13 @@ function getPriceChanges(closingPricesForAllStocks) {
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
     // TODO
+    let highestPrices = [];
+    for (i=0;i<stocks.length;i++){
+        let currentHighest = Math.max(...closingPricesForAllStocks[i]);
+        let message = `The highest price of ${stocks[i].toUpperCase()} in the last 5 days was ${currentHighest.toFixed(2)}`;
+        highestPrices.push(message);
+    }
+    return highestPrices
 }
 
 
