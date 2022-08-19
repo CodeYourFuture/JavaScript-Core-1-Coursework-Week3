@@ -11,6 +11,7 @@
 */
 
 function getHighestRatedInEachGenre(books) {
+    
     // TODO
 }
 
