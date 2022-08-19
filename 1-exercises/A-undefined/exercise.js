@@ -12,6 +12,7 @@
 // Example 1
 let a;
 console.log(a);
+//We did not assign any value to the variable a
 
 
 // Example 2
@@ -22,15 +23,22 @@ function sayHello() {
 let hello = sayHello();
 console.log(hello);
 
+// The function does not have any return value.
+
 
 // Example 3
 function sayHelloToUser(user) {
+    
+
+    
     console.log(`Hello ${user}`);
 }
 
 sayHelloToUser();
+//The function is not given an input
 
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+//There is no index 3 in the Array.
