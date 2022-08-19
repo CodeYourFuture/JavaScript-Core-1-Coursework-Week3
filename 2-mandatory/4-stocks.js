@@ -11,11 +11,11 @@
 const STOCKS = ["aapl", "msft", "amzn", "googl", "tsla"];
 
 const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
-    [179.19, 180.33, 176.28, 175.64, 172.99], // AAPL
-    [340.69, 342.45, 334.69, 333.20, 327.29], // MSFT
-    [3384.44, 3393.39, 3421.37, 3420.74, 3408.34], // AMZN
-    [2951.88, 2958.13, 2938.33, 2928.30, 2869.45], // GOOGL
-    [1101.30, 1093.94, 1067.00, 1008.87, 938.53] // TSLA
+  [179.19, 180.33, 176.28, 175.64, 172.99], // AAPL
+  [340.69, 342.45, 334.69, 333.2, 327.29], // MSFT
+  [3384.44, 3393.39, 3421.37, 3420.74, 3408.34], // AMZN
+  [2951.88, 2958.13, 2938.33, 2928.3, 2869.45], // GOOGL
+  [1101.3, 1093.94, 1067.0, 1008.87, 938.53], // TSLA
 ];
 
 /*
@@ -33,8 +33,27 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Solve the smaller problems, and then build those solutions back up to solve the larger problem.
         Functions can help with this!
 */
-function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+function getAveragePrices(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS) {
+  /*1. loop through the outer array 
+    2. loop through an inner array
+    3.create an empty array to store the average values
+    4. then push the average values in to the empty array and return it.*/
+  let averageValues = [];
+  for (
+    let index = 0;
+    index < CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS.length;
+    index++
+  ) {
+    let element = CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[index];
+    let sum = 0;
+    for (let j = 0; j < element.length; j++) {
+      sum = sum + element[j];
+    }
+
+    let average = (sum / element.length).toFixed(2);
+    averageValues.push(Number(average));
+  }
+  return averageValues;
 }
 
 /*
@@ -48,7 +67,9 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+  return closingPricesForAllStocks.map((prices) =>
+    Number((prices[prices.length - 1] - prices[0]).toFixed(2))
+  );
 }
 
 /*
@@ -64,31 +85,38 @@ function getPriceChanges(closingPricesForAllStocks) {
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+  const sortedArray = closingPricesForAllStocks.map((prices) =>
+    prices.sort((a, b) => b - a)
+  );
+  const highestPrices = sortedArray.map((value, index) => {
+    return `The highest price of ${STOCKS[
+      index
+    ].toUpperCase()} in the last 5 days was ${value[0].toFixed(2)}`;
+  });
+  return highestPrices;
 }
-
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the average price for each stock", () => {
-    expect(getAveragePrices(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS)).toEqual(
-        [176.89, 335.66, 3405.66, 2929.22, 1041.93]
-    );
+  expect(getAveragePrices(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS)).toEqual([
+    176.89, 335.66, 3405.66, 2929.22, 1041.93,
+  ]);
 });
 
 test("should return the price change for each stock", () => {
-    expect(getPriceChanges(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS)).toEqual(
-        [-6.2, -13.4, 23.9, -82.43, -162.77]
-    );
+  expect(getPriceChanges(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS)).toEqual([
+    -6.2, -13.4, 23.9, -82.43, -162.77,
+  ]);
 });
 
 test("should return a description of the highest price for each stock", () => {
-    expect(highestPriceDescriptions(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS, STOCKS)).toEqual(
-        [
-            "The highest price of AAPL in the last 5 days was 180.33",
-            "The highest price of MSFT in the last 5 days was 342.45",
-            "The highest price of AMZN in the last 5 days was 3421.37",
-            "The highest price of GOOGL in the last 5 days was 2958.13",
-            "The highest price of TSLA in the last 5 days was 1101.30"
-        ]
-    );
+  expect(
+    highestPriceDescriptions(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS, STOCKS)
+  ).toEqual([
+    "The highest price of AAPL in the last 5 days was 180.33",
+    "The highest price of MSFT in the last 5 days was 342.45",
+    "The highest price of AMZN in the last 5 days was 3421.37",
+    "The highest price of GOOGL in the last 5 days was 2958.13",
+    "The highest price of TSLA in the last 5 days was 1101.30",
+  ]);
 });
