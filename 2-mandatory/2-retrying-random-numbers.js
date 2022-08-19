@@ -11,7 +11,24 @@ function generateRandomNumber() {
 
 function getRandomNumberGreaterThan50() {
     // TODO - implement using a do-while loop
+    let i = 0;
+    do {
+    i++;
+    return generateRandomNumber();
+} while (i<50);
 }
+
+
+// function evenNumbersSum(n) {
+//   i = 0;
+//   sum = 0;
+//   do {
+//     sum = sum + i * 2;
+//     i++;
+//   } while (i < n);
+//   return sum;
+// }
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

@@ -13,7 +13,7 @@ let arrayOfEvenNumbers=[];
 let i=0;
 while (n>arrayOfEvenNumbers.length) {
 if(i%2===0){
-arrayOfEvenNumbers.push(i);
+arrayOfEvenNumbers.push[i];
 }
 i++;
 }
