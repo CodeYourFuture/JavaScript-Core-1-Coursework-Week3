@@ -5,7 +5,13 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    // TODO
+    lessThan65 = []
+    for (let i = 0; i < allArticleTitles.length; i++) {
+        if (allArticleTitles[i].length <= 65) {
+            lessThan65.push(allArticleTitles[i]);
+        }
+    }
+    return lessThan65;
 }
 
 /*
@@ -14,7 +20,11 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+    for (let i = 0; i < allArticleTitles.length; i++) {
+        if (allArticleTitles[i].length <= 50) {
+            return allArticleTitles[i];
+        }
+    }
 }
 
 /*
@@ -23,15 +33,27 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+    withNums = []
+    for (let i = 0; i < allArticleTitles.length; i++) {
+        if (/\d/.test(allArticleTitles[i])) {
+            withNums.push(allArticleTitles[i]);
+        }
+    }
+    return withNums;
 }
+
 
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
+    let sum = 0;
+    let numOfArticles = allArticleTitles.length;
+    for (let i = 0; i < allArticleTitles.length; i++) {
+        sum += allArticleTitles[i].length;
+    }
+    return Math.round(sum / numOfArticles);
 }
 
 
@@ -49,7 +71,10 @@ const ARTICLE_TITLES = [
     "The three questions that dominate investment",
     "Brussels urges Chile's incoming president to endorse EU trade deal",
 ];
-
+// console.log(potentialHeadlines(ARTICLE_TITLES))
+// console.log(titleWithFewestWords(ARTICLE_TITLES))
+// console.log(headlinesWithNumbers(ARTICLE_TITLES))
+//console.log(averageNumberOfCharacters(ARTICLE_TITLES))
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("should only return potential headlines", () => {

@@ -11,16 +11,16 @@
 
 // Example 1
 let a;
-console.log(a);
+console.log(a); //a has not been defined, just declared
 
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+    let message = "Hello"; //nothing is being returned
 }
 
 let hello = sayHello();
-console.log(hello);
+console.log(hello); //it calls a function which doesn't return anything
 
 
 // Example 3
@@ -28,9 +28,9 @@ function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
 
-sayHelloToUser();
+sayHelloToUser(); //no parameter entered
 
 
 // Example 4
-let arr = [1,2,3];
-console.log(arr[3]);
+let arr = [1, 2, 3];
+console.log(arr[3]); //indexes start at 0, there is no 3rd index set
