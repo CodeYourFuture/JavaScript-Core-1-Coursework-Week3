@@ -28,7 +28,6 @@ function generateFibonacciSequence(n) {
     return sequence;
 }
 console.log(generateFibonacciSequence(10))
-}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the first 10 numbers in the Fibonacci Sequence", () => {
