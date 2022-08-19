@@ -1,11 +1,20 @@
 /*
-    Imagine you are working on the Financial Times web site! They have a list of article titles stored in an array.
+    Imagine you are working on the Financial Times web site! 
+    They have a list of article titles stored in an array.
 
-    The home page of the web site has a headline section, which only has space for article titles which are 65 characters or less.
-    Implement the function below, which will return a new array containing only article titles which will fit.
+    The home page of the web site has a headline section,
+     which only has space for article titles which are 65 characters or less.
+    Implement the function below, 
+    which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    // TODO
+    let result = [];        
+    for (let i = 0; i < allArticleTitles.length; i++) {
+        if (allArticleTitles[i] <= 65) {
+            result.push(allArticleTitles[i])
+        }   
+    }
+    return result;
 }
 
 /*
@@ -14,24 +23,61 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+    let result = "";
+    let spaceCount = 1000;
+    for (let i = 0; i < allArticleTitles.length; i++) {       
+        var wordSpaceCount = (allArticleTitles[i].split(" ").length - 1);
+        console.log( allArticleTitles[i] + " has a space " + wordSpaceCount)
+        if (wordSpaceCount < spaceCount) {
+            spaceCount = wordSpaceCount;
+            result = allArticleTitles[i];           
+        }
+    }
+    return result;
 }
 
 /*
-    The editor of the FT has realised that headlines which have numbers in them get more clicks!
-    Implement the function below to return a new array containing all the headlines which contain a number.
-    (Hint: remember that you can also loop through the characters of a string if you need to)
+    The editor of the FT has realised that headlines which have numbers 
+    in them get more clicks!
+    Implement the function below to return a new array containing 
+    all the headlines which contain a number.
+    (Hint: remember that you can also loop through the characters 
+        of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+    let result = [];
+    for (let i = 0; i < allArticleTitles.length; i++) {
+        let innersentece = allArticleTitles[i]
+        for (let j = 0; j < innersentece.length; j++){
+            let value = innersentece[j]
+            if (!isNaN(value) && value != " ") 
+            {
+                 result.push(innersentece)
+                 break;
+             }            
+        }
+    }
+    return result;
 }
 
 /*
-    The Financial Times wants to understand what the average number of characters in an article title is.
-    Implement the function below to return this number - rounded to the nearest integer.
+    The Financial Times wants to understand what the average number of characters 
+    in an article title is.
+    Implement the function below to return this number - rounded to the 
+    nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
+    let sum = 0
+    if (allArticleTitles.length == 0) {
+        return 0
+    }
+    for (let i = 0; i < allArticleTitles.length; i++) {
+        sum = sum + allArticleTitles[i].length;
+    }
+    let average = 0
+    average = sum / allArticleTitles.length
+    return average.toFixed(0)
 }
 
 

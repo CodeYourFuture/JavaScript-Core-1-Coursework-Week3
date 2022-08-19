@@ -1,5 +1,6 @@
 /*
-    In the below example, we want to keep calling generateRandomNumber until we get a value that is > 50.
+    In the below example, we want to keep calling generateRandomNumber until we get
+     a value that is > 50.
     Implement this using a do-while loop.
 */
 
@@ -11,6 +12,11 @@ function generateRandomNumber() {
 
 function getRandomNumberGreaterThan50() {
     // TODO - implement using a do-while loop
+    let i = 0;
+    do { 
+        i = generateRandomNumber();
+    }while(i < 50)
+    return i;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
