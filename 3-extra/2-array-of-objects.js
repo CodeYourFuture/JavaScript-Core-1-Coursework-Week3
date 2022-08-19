@@ -12,33 +12,30 @@
 
 
 
-
 function getHighestRatedInEachGenre(books) {
-    return BOOKS;
+    // TODO
+    let genreList = ["non-fiction", "children", "cooking"];
+    let maxRatingTitles = [];
+    for (const genre of genreList) {
+        let maxRating = 0;
+        let maxIndex = 0;
+        for (let i = 0; i < books.length; i++) {
+            if (books[i].genre === genre) {
+                if (books[i].rating > maxRating) {
+                    maxRating = books[i].rating;
+                    maxIndex = i;
+                }
+            }
+        }
+        maxRatingTitles.push(books[maxIndex].title);
+    }
+    return maxRatingTitles;
 }
 
-// const FILMS = [
-// {
-// name: "Scream",
-// genre: "Horror",
-// rating: 3.65
-// },
-// {
-// name: "Harry Potter",
-// genre: "Fantasy",
-// rating: 1.22
-// },
-// {
-// name: "The Nutty Professor",
-// genre: "Comedy",
-// rating: 3.00
-// }
-// ]
 
 
-// const filmsByGenre = FILMS.filter((film) => {
-// console.log(film.genre == "Comedy")
-// })
+
+
 
 
 /* ======= Book data - DO NOT MODIFY ===== */
