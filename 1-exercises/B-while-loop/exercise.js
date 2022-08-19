@@ -4,10 +4,17 @@
     Using a while loop, complete the function below so it logs (using console.log) the first n even numbers as a comma-seperated string.
     The list of numbers should start with 0. n is being passed in as a parameter.
 */
-
 function evenNumbers(n) {
-    // TODO
-}
+    let arrayOfEvenNumbers = [];
+    let i = 0;
+    while (n > arrayOfEvenNumbers.length) {
+      if (i % 2 === 0) {
+        arrayOfEvenNumbers.push(i);
+      }
+      i++;
+    }
+    console.log(arrayOfEvenNumbers);
+  }
 
 evenNumbers(3); // should output 0,2,4
 evenNumbers(0); // should output nothing

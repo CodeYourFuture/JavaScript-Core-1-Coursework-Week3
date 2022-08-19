@@ -34,7 +34,12 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Functions can help with this!
 */
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+    const average = closingPricesForAllStocks.map((arr) =>
+        arr.reduce((acc, curr) => acc + curr / arr.length, 0)
+    );
+    const roundedStockPrices = average.map((element) => parseFloat(element.toFixed(2)));
+    return roundedStockPrices;
+
 }
 
 /*
@@ -49,6 +54,13 @@ function getAveragePrices(closingPricesForAllStocks) {
 */
 function getPriceChanges(closingPricesForAllStocks) {
     // TODO
+    let changeInStocks = closingPricesForAllStocks.map(
+        (arr) => arr[arr.length - 1] - arr[0]
+    );
+
+    changeInStocks = changeInStocks.map((element) => parseFloat(element.toFixed(2)));
+
+    return changeInStocks;
 }
 
 /*
@@ -66,6 +78,19 @@ function getPriceChanges(closingPricesForAllStocks) {
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
     // TODO
 }
+let arrayOfHighestPrices = closingPricesForAllStocks.map((arr) =>
+arr.reduce((acc, curr) => {
+    return acc > curr ? acc : curr;
+})
+);
+let stocksDescription = [];
+for (let i = 0; i< arrayOfHighestPrices.length; i++){
+stocksDescription.push(
+    `The highest price of ${(stocks[i]).toUpperCase()} in the last 5 days was ${(arrayOfHighestPrices[i]).toFixed(2)}`
+);
+} 
+return stocksDescription
+
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
