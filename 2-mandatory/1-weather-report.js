@@ -10,11 +10,28 @@
             For example, "The temperature in London is 10 degrees"
         - Hint: you can call the temperatureService function from your function
 */
+let usersCities = ["London", "Paris", "São Paulo"];
+let emptyArray = [];
 
 function getTemperatureReport(cities) {
     // TODO
+    let output =[];
+    if(cities.length!==0)
+    {
+        for(let i = 0; i<cities.length; i++)
+        {
+            output[i] = `The temperature in ${cities[i]} is ${temperatureService(cities[i])} degrees`;
+            
+        }
+        return output;
+    }
+    else
+    return cities;
+    
 }
+console.log(temperatureService("London"));
 
+console.log(getTemperatureReport(usersCities));
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
