@@ -12,12 +12,16 @@
 // Example 1
 let a;
 console.log(a);
+//the value is missing 
+
 
 
 // Example 2
 function sayHello() {
     let message = "Hello";
 }
+//the function is returning nothing
+
 
 let hello = sayHello();
 console.log(hello);
