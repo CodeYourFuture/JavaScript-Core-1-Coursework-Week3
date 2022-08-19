@@ -18,6 +18,7 @@ function evenNumbers(n) {
     }
     console.log(output.slice(0,-1));
   } else console.log("");
+ 
 }
 
 evenNumbers(3); // should output 0,2,4

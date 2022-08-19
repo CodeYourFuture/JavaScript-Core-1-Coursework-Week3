@@ -23,7 +23,7 @@ function generateFibonacciSequence(n) {
   }
   return output;
 }
-console.log(generateFibonacciSequence(25));
+console.log(generateFibonacciSequence(0));
 /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the first 10 numbers in the Fibonacci Sequence", () => {
   expect(generateFibonacciSequence(10)).toEqual([
