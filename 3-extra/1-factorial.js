@@ -9,8 +9,17 @@
 */
 
 function factorial(input) {
-    // TODO
+    let result = 1;
+    if (input === 0 || input === 1) {
+        return input;
+    } else {
+        for (let i = input; i >= 1; i--) {
+            result = result * i;
+        }
+    }
+    return result;
 }
+console.log(factorial(3))
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

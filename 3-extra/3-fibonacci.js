@@ -14,8 +14,17 @@
 */
 
 function generateFibonacciSequence(n) {
-    // TODO
-}
+    if (n === 1) {
+        return [0, 1];
+    }
+    else {
+        let result = generateFibonacciSequence(n - 1);
+        result.push(result[result.length - 1] + result[result.length - 2]);
+        return result;
+    }
+};
+console.log(generateFibonacciSequence(10));
+//I used google
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the first 10 numbers in the Fibonacci Sequence", () => {
