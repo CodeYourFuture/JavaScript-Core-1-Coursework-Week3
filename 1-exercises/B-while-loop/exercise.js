@@ -13,7 +13,7 @@ function evenNumbers(n) {
         i += 2;
         evens.push(i);
     }
-    return evens;
+    console.log(`${evens}`);
 }
 
 evenNumbers(3); // should output 0,2,4

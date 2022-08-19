@@ -9,7 +9,12 @@
     Implement a function which takes the array of books as a parameter, and returns an array of book titles.
     Each title in the resulting array should be the highest rated book in its genre.
 */
+//get books by genre
+//search highest rated using ge
+//return highest rated
+function getGenre(books){
 
+}
 function getHighestRatedInEachGenre(books) {
 
 }
