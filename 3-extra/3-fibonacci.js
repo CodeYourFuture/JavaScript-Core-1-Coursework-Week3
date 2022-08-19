@@ -14,7 +14,16 @@
 */
 
 function generateFibonacciSequence(n) {
-    // TODO
+    let i = 0;
+    let arrOfSequence = [0, 1]
+    while (n > arrOfSequence.length){
+        arrOfSequence.push( (arrOfSequence[arrOfSequence.length - 1]) + arrOfSequence[arrOfSequence.length - 2]) 
+        i++
+    }
+
+    return arrOfSequence
+
+
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

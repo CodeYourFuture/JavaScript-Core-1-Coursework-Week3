@@ -1,11 +1,21 @@
 /*
     Imagine you are working on the Financial Times web site! They have a list of article titles stored in an array.
-
     The home page of the web site has a headline section, which only has space for article titles which are 65 characters or less.
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
-function potentialHeadlines(allArticleTitles) {
-    // TODO
+
+function potentialHeadlines(allArticleTitles)
+{
+    let AcceptedArticles = []
+
+    for (let i = 0; i < allArticleTitles.length; i++)
+    {
+        if (allArticleTitles[i].length <= 65)
+        {
+            AcceptedArticles.push(allArticleTitles[i]);
+        }
+    }
+    return AcceptedArticles;
 }
 
 /*
@@ -13,8 +23,12 @@ function potentialHeadlines(allArticleTitles) {
     Implement the function below, which returns the title with the fewest words.
     (you can assume words will always be seperated by a space)
 */
-function titleWithFewestWords(allArticleTitles) {
-    // TODO
+
+function titleWithFewestWords(allArticleTitles)
+{
+    const shorter = (left, right) => left.length <= right.length ? left : right;
+
+    return allArticleTitles.reduce(shorter);
 }
 
 /*
@@ -22,19 +36,37 @@ function titleWithFewestWords(allArticleTitles) {
     Implement the function below to return a new array containing all the headlines which contain a number.
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
-function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+
+function headlinesWithNumbers(allArticleTitles)
+{
+    let AcceptedArticles = [];
+
+    for (let i = 0; i < allArticleTitles.length; i++)
+    {
+        if (/\d/.test(allArticleTitles[i]))
+        {
+            AcceptedArticles.push(allArticleTitles[i]);
+        }
+    }
+    return AcceptedArticles;
 }
 
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
     Implement the function below to return this number - rounded to the nearest integer.
 */
-function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
+
+function averageNumberOfCharacters(allArticleTitles)
+{
+    let AllChar = 0;
+    let Average = 0;
+    for (let i = 0; i < allArticleTitles.length; i++)
+    {
+        AllChar += (allArticleTitles[i].length);
+    }
+
+    return Math.round(Average = AllChar / allArticleTitles.length);
 }
-
-
 
 /* ======= List of Articles - DO NOT MODIFY ===== */
 const ARTICLE_TITLES = [
@@ -49,9 +81,7 @@ const ARTICLE_TITLES = [
     "The three questions that dominate investment",
     "Brussels urges Chile's incoming president to endorse EU trade deal",
 ];
-
 /* ======= TESTS - DO NOT MODIFY ===== */
-
 test("should only return potential headlines", () => {
     expect(new Set(potentialHeadlines(ARTICLE_TITLES))).toEqual(new Set([
         "British companies look to muscle in on US retail investing boom",
@@ -60,22 +90,18 @@ test("should only return potential headlines", () => {
         "The three questions that dominate investment"
     ]));
 });
-
 test("should return an empty array for empty input", () => {
     expect(potentialHeadlines([])).toEqual([]);
 });
-
 test("should return the title with the fewest words", () => {
     expect(titleWithFewestWords(ARTICLE_TITLES)).toEqual("The three questions that dominate investment");
 });
-
 test("should only return headlines containing numbers", () => {
     expect(new Set(headlinesWithNumbers(ARTICLE_TITLES))).toEqual(new Set([
         "Streaming wars drive media groups to spend more than $100bn on new content",
         "Companies raise over $12tn in 'blockbuster' year for global capital markets"
     ]));
 });
-
 test("should return the average number of characters in a headline", () => {
     expect(averageNumberOfCharacters(ARTICLE_TITLES)).toEqual(65);
 });
