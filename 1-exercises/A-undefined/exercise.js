@@ -12,6 +12,7 @@
 // Example 1
 let a;
 console.log(a);
+// Because a has not been defined (e.g. let a = 1;).
 
 
 // Example 2
@@ -21,7 +22,7 @@ function sayHello() {
 
 let hello = sayHello();
 console.log(hello);
-
+// Because hello has been defined as the function sayHello() which has no return value (e.g. return "Hello";).
 
 // Example 3
 function sayHelloToUser(user) {
@@ -29,8 +30,9 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
-
+// Because user has not been defined (e.g. let user = "Adam";)
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+// Because array indexing starts at 0, therefore in the array arr there is no item at index [3] (it would be the 4th item).
