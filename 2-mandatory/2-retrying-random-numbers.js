@@ -5,17 +5,17 @@
 
 // This function shouldn't be changed
 function generateRandomNumber() {
-    console.log("Generating number...");
-    return Math.round(Math.random() * 100);
+  console.log("Generating number...");
+  return Math.round(Math.random() * 100);
 }
 
 function getRandomNumberGreaterThan50() {
-    // TODO - implement using a do-while loop
-    let i = 0;
-    do {
+  // TODO - implement using a do-while loop
+  let i = 0;
+  do {
     i++;
     return generateRandomNumber();
-} while (i<50);
+  } while (i < 50);
 }
 
 
