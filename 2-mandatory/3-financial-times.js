@@ -6,13 +6,15 @@
 */
 
 function potentialHeadlines(allArticleTitles) {
-     let newArray = [];
-    for (let i = 0; i < allArticleTitles.length; i++){
-        if (allArticleTitles[i].length <= 65) {
-            newArray.push(allArticleTitles[i])
-        }
-    }
-    return newArray;
+    return allArticleTitles.filter(title => title.length <= 65)
+
+    //  let newArray = [];
+    // for (let i = 0; i < allArticleTitles.length; i++){
+    //     if (allArticleTitles[i].length <= 65) {
+    //         newArray.push(allArticleTitles[i])
+    //     }
+    // }
+    // return newArray;
 }
  
 
@@ -42,19 +44,21 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-     let result = [];
-    for (let i = 0; i < allArticleTitles.length; i++) {
-        let innersentece = allArticleTitles[i]
-        for (let j = 0; j < innersentece.length; j++){
-            let value = innersentece[j]
-            if (!isNaN(value) && value != " ") 
-            {
-                 result.push(innersentece)
-                 break;
-             }            
-        }
-    }
-    return result;
+    return allArticleTitles.filter(headline => /[0-9]/.test(headline));
+
+    //  let result = [];
+    // for (let i = 0; i < allHeadLineTitles.length; i++) {
+    //     let innersentece = allArticleTitles[i]
+    //     for (let j = 0; j < innersentece.length; j++){
+    //         let value = innersentece[j]
+    //         if (!isNaN(value) && value != " ") 
+    //         {
+    //              result.push(innersentece)
+    //              break;
+    //          }            
+    //     }
+    // }
+    // return result;
 }
 
 /*
