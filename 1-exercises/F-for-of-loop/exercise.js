@@ -18,6 +18,6 @@ for (let element of tubeStations) {
 
 // TODO Use a for-of loop to capitalise and output each letter in the string seperately.
 let str = "codeyourfuture";
-for (let i of "codeyourfuture") {
+for (let i of str) {
     console.log(i.toUpperCase());
 }
