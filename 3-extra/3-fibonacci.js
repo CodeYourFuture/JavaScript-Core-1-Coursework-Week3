@@ -15,6 +15,14 @@
 
 function generateFibonacciSequence(n) {
     // TODO
+    let i = 0;
+    let fibonacciArray = [0, 1];
+    while (n > fibonacciArray.length) {
+        fibonacciArray.push(fibonacciArray[fibonacciArray.length-1] + fibonacciArray[fibonacciArray.length-2]);
+        i ++;
+    }
+
+    return fibonacciArray;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
