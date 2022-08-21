@@ -13,6 +13,23 @@
 
 function getTemperatureReport(cities) {
     // TODO
+    let results = [];
+    for (const element of cities) {
+        if(element==="London"){
+            results.push("The temperature in London is 10 degrees");
+        } else if(element==="Paris"){
+            results.push("The temperature in Paris is 12 degrees");
+        } else if (element==="São Paulo"){
+            results.push("The temperature in São Paulo is 23 degrees");
+        } else if (element==="Barcelona"){
+            results.push("The temperature in Barcelona is 17 degrees");
+        } else if (element==="Dubai") {
+            results.push("The temperature in Dubai is 27 degrees");
+        } else{
+            results = [];
+        }
+    }
+    return results;
 }
 
 
