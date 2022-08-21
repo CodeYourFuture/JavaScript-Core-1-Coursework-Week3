@@ -10,6 +10,11 @@
 
 function factorial(input) {
     // TODO
+    let product = 1;
+    for(i=1;i<=input;i++){
+      product = product * i;
+    }
+    return product;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
