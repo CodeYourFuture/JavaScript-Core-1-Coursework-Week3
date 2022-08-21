@@ -21,22 +21,10 @@ const WRITERS = [
 const AGES = [59, 40, 41, 63, 49];
 
 // TODO - Write for loop code here
-function writers(name) {
-  return name + "is";
-}
 
-function years(old) {
-  return old + "years old";
+for (const i in WRITERS) {
+  console.log(`${WRITERS[i]} is ${AGES[i]}`);
 }
-
-for (let i = 0; i < WRITERS.length; i++) {
-  let name = writers(WRITERS);
-}
-for (let i = 0; i < AGES.length; i++) {
-  let old = years(AGES);
-}
-
-// return WRITERS + " is" + AGES + " years old";
 
 /*
 The output should look something like this:
