@@ -6,13 +6,7 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
-    let potentialHeadlines = [];
-  for (const element of allArticleTitles) {
-    if(element.length<=65){
-      potentialHeadlines.push(element);
-    }
-  }
-  return potentialHeadlines;
+    
 }
 
 /*
@@ -22,13 +16,7 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
     // TODO
-    let indexOfTitles = [];
-  for (i=0;i<allArticleTitles.length;i++){
-    indexOfTitles.push(allArticleTitles[i].length);
-  }
-  let min = Math.min(...indexOfTitles);
-  let shortestTitleIndex = indexOfTitles.indexOf(min);
-  return allArticleTitles[shortestTitleIndex];
+    
 }
 
 /*
@@ -38,13 +26,7 @@ function titleWithFewestWords(allArticleTitles) {
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
-    var results = [];
-  for (i=0;i<allArticleTitles.length;i++){
-    if(/\d/.test(allArticleTitles[i])){
-      results.push(allArticleTitles[i]);
-    }
-  }
-  return results;
+   
 }
 
 /*
@@ -53,12 +35,7 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
-    let titlesLength = 0;
-  for(i=0;i<allArticleTitles.length;i++){
-    titlesLength= titlesLength + allArticleTitles[i].length;
-  }
-  return Math.trunc(titlesLength/allArticleTitles.length);
-
+   
 }
 
 
