@@ -13,6 +13,7 @@
 
 function getTemperatureReport(cities) {
     // TODO
+  
 }
 
 

@@ -6,6 +6,7 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+    
 }
 
 /*
@@ -15,6 +16,7 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
     // TODO
+    
 }
 
 /*
@@ -24,6 +26,7 @@ function titleWithFewestWords(allArticleTitles) {
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+   
 }
 
 /*
@@ -32,6 +35,7 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+   
 }
 
 

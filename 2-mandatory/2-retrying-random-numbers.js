@@ -11,6 +11,7 @@ function generateRandomNumber() {
 
 function getRandomNumberGreaterThan50() {
     // TODO - implement using a do-while loop
+ 
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
