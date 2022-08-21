@@ -9,8 +9,14 @@
 */
 
 function factorial(input) {
-    // TODO
-}
+    
+      let product = 1;
+      for (let i = input; i > 0; i--) {
+        product = product * i;
+      }
+      return product;
+    }
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
