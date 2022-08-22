@@ -10,7 +10,17 @@ function generateRandomNumber() {
 }
 
 function getRandomNumberGreaterThan50() {
-    // TODO - implement using a do-while loop
+    let index = 0;
+    let arr = [];
+    do {
+        arr.push(generateRandomNumber());        
+        if (arr[index] > 50) {
+            arr = arr[index];
+        }
+        index ++;
+    }
+    while (index <= arr.length);
+    return arr
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
