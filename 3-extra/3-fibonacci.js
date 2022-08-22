@@ -12,26 +12,38 @@
     Can you implement a function that will generate the first n numbers in this sequence (starting with 0 and 1)?
         - the input n will be passed in to the function as an argument, and will be a number greater than 2
 */
+function firstNumbers(n, array) {
+  return array.push(n);
+}
 
 function generateFibonacciSequence(n) {
-    // TODO
+  let fibonacciArray = [0];
+  let sum = 0;
+
+  if (n > 0) {
+    firstNumbers(1, fibonacciArray);
+    for (let i = 2; i < n; i++) {
+      sum = fibonacciArray[i-1] + fibonacciArray[i-2];
+      fibonacciArray.push(sum);
+    }
+  }
+  
+  return fibonacciArray;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the first 10 numbers in the Fibonacci Sequence", () => {
-    expect(generateFibonacciSequence(10)).toEqual(
-        [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
-    );
+  expect(generateFibonacciSequence(10)).toEqual([
+    0, 1, 1, 2, 3, 5, 8, 13, 21, 34,
+  ]);
 });
 
 test("should return the first 5 numbers in the Fibonacci Sequence", () => {
-    expect(generateFibonacciSequence(5)).toEqual(
-        [0, 1, 1, 2, 3]
-    );
+  expect(generateFibonacciSequence(5)).toEqual([0, 1, 1, 2, 3]);
 });
 
 test("should return the first 15 numbers in the Fibonacci Sequence", () => {
-    expect(generateFibonacciSequence(15)).toEqual(
-        [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377]
-    );
+  expect(generateFibonacciSequence(15)).toEqual([
+    0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377,
+  ]);
 });
