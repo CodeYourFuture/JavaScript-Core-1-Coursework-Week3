@@ -21,8 +21,9 @@ function potentialHeadlines(allArticleTitles)
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
- let min = Math.min(...allArticleTitles.map(o => o.length));
- console.log(min);
+console.log(
+  allArticleTitles.reduce((a, b) => a.length <= b.length ? a : b)
+)
 }
 
 /*
