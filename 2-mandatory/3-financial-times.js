@@ -21,7 +21,11 @@ function potentialHeadlines(allArticleTitles)
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+    let allArticleTitlesNew = []
+    for (const element of allArticleTitles) {
+        if(element.);
+        allArticleTitlesNew.push(element);
+    }return allArticleTitlesNew
 }
 
 /*
