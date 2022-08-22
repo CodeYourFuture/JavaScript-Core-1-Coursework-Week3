@@ -34,8 +34,12 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Functions can help with this!
 */
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+    const average = CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS.map(prices => prices.reduce((a, b) => a + b) / prices.length);
+    // console.log(average)
+    return average.map(value => Number(value.toFixed(2)))
 }
+// console.log(getAveragePrices(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS))
+
 
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
@@ -48,8 +52,11 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+   const priceChange = closingPricesForAllStocks.map(prices => prices[prices.length - 1] - prices[0]);
+    return priceChange.map((value) => Number(value.toFixed(2)));
 }
+// console.log(getPriceChanges(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS))
+
 
 /*
     As part of a financial report, we want to see what the highest price was for each stock in the last 5 days.
@@ -64,8 +71,13 @@ function getPriceChanges(closingPricesForAllStocks) {
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+  const sortedArr = closingPricesForAllStocks.map(prices => prices.sort((a, b) => b - a));
+    return sortedArr.map((prices, index) => {
+        return `The highest price of ${STOCKS[index].toUpperCase()} in the last 5 days was ${prices[0].toFixed(2)}`;
+    })
 }
+// console.log(highestPriceDescriptions(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS, STOCKS))
+
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */

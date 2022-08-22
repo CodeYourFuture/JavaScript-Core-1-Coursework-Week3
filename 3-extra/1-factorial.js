@@ -8,8 +8,12 @@
     Using a loop, complete the function below so it returns the factorial of the number being passed in. 
 */
 
-function factorial(input) {
-    // TODO
+function factorial(sum) {
+  let count = 1;
+    for (let index = sum; index >= 1; index --) {
+        count *= index;
+    }
+    return count  
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
