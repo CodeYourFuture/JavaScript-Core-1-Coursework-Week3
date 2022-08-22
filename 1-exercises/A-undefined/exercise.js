@@ -12,15 +12,17 @@
 // Example 1
 let a;
 console.log(a);
-
+// here a hasn't assigned to any value. 
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+    let message = "Hello"; 
+    // this function doesn't return any value.
 }
 
+
 let hello = sayHello();
-console.log(hello);
+console.log(hello); 
 
 
 // Example 3
@@ -29,8 +31,10 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
-
+// user hasn't been defined here when we called the function
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+
+// There are only 3 parameters in this array so there isn't any index number of 3, indexes start from 0 to one less than the array length which is two here

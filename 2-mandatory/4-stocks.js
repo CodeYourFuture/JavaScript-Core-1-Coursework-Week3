@@ -33,8 +33,35 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Solve the smaller problems, and then build those solutions back up to solve the larger problem.
         Functions can help with this!
 */
+// function getAveragePrices(closingPricesForAllStocks) {
+//     // TODO
+//     let averageArray=[]
+//     for (const array of closingPricesForAllStocks){
+//         let sum=0
+//         let average=0
+//         for (const value of array){
+//             sum+=value
+//         }
+//         average= parseFloat((sum / closingPricesForAllStocks[i].length).toFixed(2))
+//         averageArray.push(average)
+//     }
+//      return   averageArray
+// }
+
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+let aveArray=[]
+    for (i=0 ; i< closingPricesForAllStocks.length;i++){
+        let sum=0
+        let average=0
+        let j=0
+        do{
+            sum+= closingPricesForAllStocks[i][j]
+            j++
+        }while(j< closingPricesForAllStocks[i].length)
+         average= parseFloat((sum / closingPricesForAllStocks[i].length).toFixed(2))
+        aveArray.push(average)
+    }
+    return aveArray
 }
 
 /*
@@ -49,6 +76,13 @@ function getAveragePrices(closingPricesForAllStocks) {
 */
 function getPriceChanges(closingPricesForAllStocks) {
     // TODO
+    let priceChangeArray=[]
+    for(i=0 ; i< closingPricesForAllStocks.length ; i++){
+         let priceChange=0
+       priceChange =parseFloat((closingPricesForAllStocks[i][(closingPricesForAllStocks[i].length -1)]-closingPricesForAllStocks[i][0]).toFixed(2))
+       priceChangeArray.push(priceChange)
+    }
+   return priceChangeArray 
 }
 
 /*
@@ -60,11 +94,20 @@ function getPriceChanges(closingPricesForAllStocks) {
         - Returns an array of strings describing what the highest price was for each stock.
             For example, the first element of the array should be: "The highest price of AAPL in the last 5 days was 180.33"
             The test will check for this exact string.
-    The stock ticker should be capitalised.
+    The stock ticker should be capitalized.
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
     // TODO
+    let describingArray=[]
+    let max
+    let description
+    for (i=0 ; i< stocks.length ; i++){
+        max= Math.max(...closingPricesForAllStocks[i])
+        description= `The highest price of ${stocks[i].toUpperCase()} in the last 5 days was ${max.toFixed(2)}`
+        describingArray.push(description)
+    }
+    return describingArray
 }
 
 
