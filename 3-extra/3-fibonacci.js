@@ -15,7 +15,24 @@
 
 function generateFibonacciSequence(n) {
     // TODO
+    let sum=0
+    let fibonacciArray=[0]
+
+if(n===1){
+      return fibonacciArray  
+}   else if (n>=2){
+        fibonacciArray.push(1)
+        for (i=2 ; i < n ; i++){
+        sum=fibonacciArray[fibonacciArray.length-1] +fibonacciArray[fibonacciArray.length-2] 
+        fibonacciArray.push(sum)
+        }
+        return fibonacciArray
+    }else {
+    return `you should insert a positive integer number`
+   }
 }
+
+console.log(generateFibonacciSequence(4))
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the first 10 numbers in the Fibonacci Sequence", () => {
