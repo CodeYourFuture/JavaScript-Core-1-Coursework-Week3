@@ -15,9 +15,11 @@
 function firstNumbers(n, array) {
   return array.push(n);
 }
+
 function generateFibonacciSequence(n) {
   let fibonacciArray = [0];
   let sum = 0;
+
   if (n > 0) {
     firstNumbers(1, fibonacciArray);
     for (let i = 2; i < n; i++) {
@@ -25,6 +27,7 @@ function generateFibonacciSequence(n) {
       fibonacciArray.push(sum);
     }
   }
+  
   return fibonacciArray;
 }
 

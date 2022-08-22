@@ -23,7 +23,9 @@ function getBooksByGenre(books, genre) {
 
 function getHighestRated(books, genre) {
   let arrayOfBooks = getBooksByGenre(books, genre);
+
   arrayOfBooks.sort((a, b) => b.rating - a.rating);
+
   return arrayOfBooks;
 }
 
@@ -36,6 +38,7 @@ function getHighestRatedInEachGenre(books) {
   arrayOfTitles.push(nonFictionBooks[0].title);
   arrayOfTitles.push(childrenBooks[0].title);
   arrayOfTitles.push(cookingBooks[0].title);
+  
   return arrayOfTitles;
 }
 

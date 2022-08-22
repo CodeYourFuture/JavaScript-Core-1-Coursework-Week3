@@ -10,6 +10,7 @@
 
 function factorial(input) {
   let product = 1;
+  
   for (let i = 1; i <= input; i++) {
     product = product * i;
   }

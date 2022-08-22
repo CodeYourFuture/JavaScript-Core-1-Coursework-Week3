@@ -15,7 +15,7 @@ function evenNumbers(n) {
     }
     i++;
   }
-  return console.log(numbers.toString());
+  return numbers.toString();
 }
 
 evenNumbers(3); // should output 0,2,4

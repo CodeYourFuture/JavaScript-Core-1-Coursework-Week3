@@ -17,12 +17,17 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
+
+  //Array of numbers referring to the length of titles
   let shortArticleTitles = allArticleTitles.map((title) => {
     return title.trim().split(" ").length;
   });
-  let min = Math.min(...shortArticleTitles);
-  let index = shortArticleTitles.indexOf(min);
-  return allArticleTitles[index];
+
+  // Smaller length in the array of lengths
+  let minLength = Math.min(...shortArticleTitles);
+  let indexOfMin = shortArticleTitles.indexOf(minLength);
+  
+  return allArticleTitles[indexOfMin];
 }
 
 /*
@@ -33,6 +38,7 @@ function titleWithFewestWords(allArticleTitles) {
 function headlinesWithNumbers(allArticleTitles) {
   let headlinesWithNumbers = [];
   let numbers = "0123456789";
+
   for (const title of allArticleTitles) {
     for (const character of title) {
       if (numbers.includes(character)) {
@@ -51,10 +57,13 @@ function headlinesWithNumbers(allArticleTitles) {
 function averageNumberOfCharacters(allArticleTitles) {
   let sum = 0;
   let average;
+
   for (const title of allArticleTitles) {
     sum = sum + title.length;
   }
+  
   average = Math.round(sum / allArticleTitles.length);
+
   return average;
 }
 

@@ -10,6 +10,7 @@ function evenNumbersSum(n) {
   let i = 0;
   let sum = 0;
   let numbers = [];
+
   do {
     if (i % 2 === 0) {
       numbers.push(i);
@@ -17,6 +18,7 @@ function evenNumbersSum(n) {
     }
     i++;
   } while (numbers.length < n);
+  
   return sum;
 }
 
