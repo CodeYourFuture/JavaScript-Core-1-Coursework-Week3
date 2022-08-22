@@ -4,8 +4,7 @@
     The home page of the web site has a headline section, which only has space for article titles which are 65 characters or less.
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
-function potentialHeadlines(allArticleTitles) {
-    // TODO
+function potentialHeadlines(allArticleTitles) 
 }
 
 /*
