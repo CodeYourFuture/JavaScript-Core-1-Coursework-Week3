@@ -13,14 +13,18 @@
 let a;
 console.log(a);
 
+//A variable was declared but no value was assigned to it.
 
 // Example 2
 function sayHello() {
     let message = "Hello";
 }
+//when a function does not return anything
 
 let hello = sayHello();
 console.log(hello);
+ 
+// executing a function that produces no output
 
 
 // Example 3
@@ -30,7 +34,10 @@ function sayHelloToUser(user) {
 
 sayHelloToUser();
 
+// A function that is declared with a parameter but receives no arguments
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+
+// The index does not exist in the array.

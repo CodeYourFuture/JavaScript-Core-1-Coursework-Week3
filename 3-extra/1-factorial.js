@@ -9,8 +9,21 @@
 */
 
 function factorial(input) {
-    // TODO
+  let product = 1;
+  for (let i = input; i > 0; i--){
+    product = product * i;
+  }
+  return product;
+
+  // Alternate Solution
+  //  var f = [];
+  // if (input == 0 || input == 1)
+  //   return 1;
+  // if (f[input] > 0)
+  //   return f[input];
+  // return f[input] = factorial(input-1) * input;
 }
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
