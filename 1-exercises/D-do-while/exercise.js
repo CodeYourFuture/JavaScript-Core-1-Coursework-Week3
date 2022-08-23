@@ -16,8 +16,7 @@ function evenNumbersSum(n) {
             i++;
         }
     j++;
-    }
-    while (i < n);
+    } while (i < n);
 return sum;
 }
 

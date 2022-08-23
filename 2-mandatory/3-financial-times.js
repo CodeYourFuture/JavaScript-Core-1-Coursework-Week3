@@ -5,11 +5,7 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-  let shortArticles = [];
-  for (let i = 0; i < allArticleTitles.length; i++) {
-    if (allArticleTitles[i].length < 66)
-      shortArticles.push(allArticleTitles[i]);
-  }
+  let shortArticles = allArticleTitles.filter((title) => {return title.length < 66}); 
   return shortArticles;
 }
 
@@ -28,23 +24,6 @@ function titleWithFewestWords(allArticleTitles) {
     const index = arrOfLength.indexOf(min);
   return allArticleTitles[index];
 }
-
-// One more solution:
-
-// function titleWithFewestWords(allArticleTitles) {
-//   let shortestArticle = allArticleTitles[0].split(" ").length - 1;
-//   let currentArticle = 0;
-//   let res = "";
-
-//   for (let i = 1; i < allArticleTitles.length; i++) {
-//     currentArticle = allArticleTitles[i].split(" ").length - 1;
-//     if (currentArticle < shortestArticle) {
-//       shortestArticle = currentArticle;
-//       res = allArticleTitles[i];
-//     }
-//   }
-//   return res;
-// }
 
 /*
     The editor of the FT has realised that headlines which have numbers in them get more clicks!
