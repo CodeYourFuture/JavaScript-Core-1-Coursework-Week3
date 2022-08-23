@@ -1,19 +1,101 @@
 /*
-    In maths, the factorial of an integer (written as n!) is the product of an integer, and all the integers below it (not including zero).
-    See: https://en.wikipedia.org/wiki/Factorial
-    For example,
-        3! is 6 (because 3 * 2 * 1 = 6)
-        5! is 120 (because 5 * 4 * 3 * 2 * 1 = 120)
+    This exercise includes an array of objects. You can read more about objects here: https://javascript.info/object
+
+    Imagine you're working for an online store selling books (like Amazon).
+    Below, we have an array of book objects.
+    Each object contains the title of the book, the genre, and a rating based on user reviews.
     
-    Using a loop, complete the function below so it returns the factorial of the number being passed in. 
+    We want to find the title of the highest rated book in each genre to showcase on our home page.
+    Implement a function which takes the array of books as a parameter, and returns an array of book titles.
+    Each title in the resulting array should be the highest rated book in its genre.
 */
 
-function factorial(input) {
-  let sum = 1;
-  for (let i = input; i >= 1; i--) {
-    sum *= i;
-  }
-  return sum;
-}
+function getHighestRatedInEachGenre(books) {
+  let sortedBooks = books.sort((b1, b2) => b1.rating < b2.rating ? 1 : b1.rating > b2.rating ? -1 : 0);
+  let highestRatedBook = [];
+  let arrOfGenres = [];
 
-console.log(factorial(5));
+  for (let i = 0; i < sortedBooks.length; i++) {
+    if (!arrOfGenres.includes(sortedBooks[i].genre)) {
+      arrOfGenres.push(sortedBooks[i].genre);
+      highestRatedBook.push(sortedBooks[i].title);
+    }
+  }
+//   console.log(highestRatedBook);
+  return highestRatedBook;
+}
+  //   genreOfBook = books[0].genre;
+  //   for (let i = 1; i < books.length; i++) {
+  //     if (genreOfBook )
+  //   }
+  //   let childrenBook = BOOKS.filter((book) => book.genre === "children");
+  //   let sortedBooks = childrenBook.sort((b1, b2) => b1.rating < b2.rating ? 1 : b1.rating > b2.rating ? -1 : 0);
+  //   console.log(sortedBooks[0].title);
+
+  //-----------------------------------------
+
+  //   let childrenBook = BOOKS.filter((book) => book.genre === "children");
+  //   console.log(childrenBook);
+
+  // let sortedBooks = BOOKS.sort((b1, b2) => (b1.rating < b2.rating) ? 1 : (b1.rating > b2.rating) ? -1 : 0);
+  // console.log(sortedBooks);
+
+
+
+/* ======= Book data - DO NOT MODIFY ===== */
+const BOOKS = [
+  {
+    title: "The Lion, the Witch and the Wardrobe",
+    genre: "children",
+    rating: 4.7,
+  },
+  {
+    title: "Sapiens: A Brief History of Humankind",
+    genre: "non-fiction",
+    rating: 4.7,
+  },
+  {
+    title: "Nadiya's Fast Flavours",
+    genre: "cooking",
+    rating: 4.7,
+  },
+  {
+    title: "Harry Potter and the Philosopher's Stone",
+    genre: "children",
+    rating: 4.8,
+  },
+  {
+    title: "A Life on Our Planet",
+    genre: "non-fiction",
+    rating: 4.8,
+  },
+  {
+    title:
+      "Dishoom: The first ever cookbook from the much-loved Indian restaurant",
+    genre: "cooking",
+    rating: 4.85,
+  },
+  {
+    title: "Gangsta Granny Strikes Again!",
+    genre: "children",
+    rating: 4.9,
+  },
+  {
+    title: "Diary of a Wimpy Kid",
+    genre: "children",
+    rating: 4.6,
+  },
+  {
+    title: "BOSH!: Simple recipes. Unbelievable results. All plants.",
+    genre: "cooking",
+    rating: 4.6,
+  },
+  {
+    title: "The Book Your Dog Wishes You Would Read",
+    genre: "non-fiction",
+    rating: 4.85,
+  },
+];
+
+
+getHighestRatedInEachGenre(BOOKS);
