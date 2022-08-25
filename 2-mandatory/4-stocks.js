@@ -44,7 +44,7 @@ function getAveragePrices(closingPricesForAllStocks) {
         }
 
         averagePrice = num / 5;
-        averageArray.push(averagePrice.toFixed(2));
+        averageArray.push(parseFloat(averagePrice.toFixed(2)))
     }
     return averageArray;
 
