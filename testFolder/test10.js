@@ -11,10 +11,13 @@
 
 // console.log(generateFibonacciSequence(15))
 
-// function getHighestRatedInEachGenre(books) {
-//          arr = [];
-
-// }
+function getHighestRatedInEachGenre(books) {
+    let maxRate = ""     
+    if (books.genre === "children") {
+            maxRate = books.reduce((max, book) => max.votes > book.votes ? max : book )
+         }
+         return maxRate   
+}
 
 const BOOKS = [
     {
@@ -69,4 +72,6 @@ const BOOKS = [
     },
 ]
 
-console.log(BOOKS[1].genre)
+
+getHighestRatedInEachGenre(BOOKS);
+// console.log(BOOKS.length)

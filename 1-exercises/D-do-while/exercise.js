@@ -10,7 +10,7 @@ function evenNumbersSum(n) {
     let result = 0;
     let i = 0;
     do { if (i % 2 === 0)
-        result = result + i;
+        result += i;
         i++;
     }
     while (i < n * 2)
