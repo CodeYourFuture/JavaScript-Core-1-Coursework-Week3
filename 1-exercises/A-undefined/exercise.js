@@ -11,26 +11,23 @@
 
 // Example 1
 let a;
-console.log(a);
-
+console.log(a); // a is not assigned any value. The RHS is empty
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+  let message = "Hello";
 }
 
-let hello = sayHello();
+let hello = sayHello(); // hello is assigned the function sayHello() which does not return any value
 console.log(hello);
-
 
 // Example 3
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+  console.log(`Hello ${user}`);
 }
 
-sayHelloToUser();
-
+sayHelloToUser(); //the parameter user is not assigned a value
 
 // Example 4
-let arr = [1,2,3];
-console.log(arr[3]);
+let arr = [1, 2, 3];
+console.log(arr[3]); //the array stops at index2/[2]
