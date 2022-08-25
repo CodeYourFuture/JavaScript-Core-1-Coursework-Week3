@@ -12,8 +12,16 @@
 */
 
 function getTemperatureReport(cities) {
-    // TODO
+ // i need to create a new array to push the items to 
+   let reportArray =[];
+   for (const element of cities) {
+    if(temperatureService(element)){
+        reportArray.push(`The temperature in ${element} is ${temperatureService(element)} degrees`)
+    }
+   }return reportArray
 }
+
+  
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
