@@ -44,7 +44,7 @@ function getAveragePrices(closingPricesForAllStocks) {
         }
 
         averagePrice = num / 5;
-        averageArray.push(parseFloat(averagePrice.toFixed(2)))
+        averageArray.push(parseFloat(averagePrice.toFixed(2)));
     }
     return averageArray;
 
@@ -64,8 +64,10 @@ function getPriceChanges(closingPricesForAllStocks) {
     // TODO
     let priceChanges = [];
     for (const array of closingPricesForAllStocks) {
-        let comparePrices =(array.at(0) - array.at(-1) * -1 );
+        let comparePrices = (array.at(0) - array.at(-1)) * -1 ;
+        priceChanges.push(parseFloat(comparePrices.toFixed(2)))
     }
+    return priceChanges;
 }
 
 /*
