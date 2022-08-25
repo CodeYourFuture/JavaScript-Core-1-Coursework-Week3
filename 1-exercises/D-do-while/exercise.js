@@ -7,7 +7,6 @@
 */
 
 function evenNumbersSum(n) {
-  // TODO
   let sum = 0;
   let i = 0;
 

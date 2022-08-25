@@ -71,7 +71,7 @@ function getPriceChanges(closingPricesForAllStocks) {
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
     const sortedArr = closingPricesForAllStocks.map(prices => prices.sort((a, b) => b - a));
     return sortedArr.map((prices, index) => {
-        return `The highest price of ${STOCKS[index].toUpperCase()} in the last 5 days was ${prices[0].toFixed(2)}`;
+        return `The highest price of ${stocks[index].toUpperCase()} in the last 5 days was ${prices[0].toFixed(2)}`;
     })
 }
 // console.log(highestPriceDescriptions(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS, STOCKS))

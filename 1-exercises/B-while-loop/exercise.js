@@ -16,7 +16,7 @@ function evenNumbers(n) {
     i++;
     //console.log(evenArr);
   }
-  console.log(evenArr);
+  console.log(evenArr.toString());
 }
 
 evenNumbers(3); // should output 0,2,4
