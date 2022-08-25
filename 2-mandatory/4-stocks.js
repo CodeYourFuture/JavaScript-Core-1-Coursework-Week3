@@ -62,6 +62,10 @@ function getAveragePrices(closingPricesForAllStocks) {
 */
 function getPriceChanges(closingPricesForAllStocks) {
     // TODO
+    let priceChanges = [];
+    for (const array of closingPricesForAllStocks) {
+        let comparePrices =(array.at(0) - array.at(-1) * -1 );
+    }
 }
 
 /*
@@ -78,6 +82,14 @@ function getPriceChanges(closingPricesForAllStocks) {
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
     // TODO
+    let closingPrice = [];
+    for( i = 0; i < stocks.length; i++){
+        let highestClosingPrice = Math.max(...closingPricesForAllStocks[i]);
+        let theHighPrice = highestClosingPrice.toFixed(2);
+        let theClosingPrice = `The highest price of ${stocks[i].toUpperCase()} in the last 5 days was ${theHighPrice}`;
+        closingPrice.push(theClosingPrice);
+    }
+    return closingPrice;
 }
 
 
