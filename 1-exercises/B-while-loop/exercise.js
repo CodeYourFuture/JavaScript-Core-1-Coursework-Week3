@@ -13,9 +13,13 @@ function evenNumbers(n) {
         result += `${2*i},`;
         i++;
     }
-    return result.slice(0, -1);
+    console.log(result.slice(0, -1));
 
 }
+
+// console.log(evenNumbers(3)); // should output 0,2,4
+// console.log(evenNumbers(0)); // should output nothing
+// console.log(evenNumbers(10));
 
 evenNumbers(3); // should output 0,2,4
 evenNumbers(0); // should output nothing

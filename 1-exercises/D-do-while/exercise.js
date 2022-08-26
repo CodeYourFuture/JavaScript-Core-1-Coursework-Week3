@@ -6,22 +6,32 @@
     Using a do-while loop, write a function which returns the sum of the first n even numbers (starting from 0)
 */
 
-function evenNumbersSum(n) {
-    // TODO
+// function evenNumbersSum(n) {
+//     // TODO
+//     let i = 0;
+//     let evenArray = [];
+//     let result = 0;
+//     do {
+//         evenArray.push(result);
+//         result += 2;
+//         i += 1;
+//     } while (i < n);
+//     let val = 0;
+//     // console.log(evenArray);
+//     for (let j=0; j<evenArray.length; j++){
+//         val += evenArray[j];
+//     }
+//     return val;
+// }
+
+function evenNumbersSum(n){
+    let sum = 0;
     let i = 0;
-    let evenArray = [];
-    let result = 0;
     do {
-        evenArray.push(result);
-        result += 2;
-        i += 1;
-    } while (i < n);
-    let val = 0;
-    // console.log(evenArray);
-    for (let j=0; j<evenArray.length; j++){
-        val += evenArray[j];
-    }
-    return val;
+        sum += (i * 2);
+        i++;
+    } while (i < n)
+    return sum;
 }
 
 console.log(evenNumbersSum(3)); // should output 6
