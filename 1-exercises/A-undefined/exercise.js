@@ -13,14 +13,29 @@
 let a;
 console.log(a);
 
+/*
+a is defined by declaring a variable to "a"
+*/
+
 
 // Example 2
 function sayHello() {
     let message = "Hello";
 }
 
+/*
+type varable "message" into commas
+*/
+
+
 let hello = sayHello();
 console.log(hello);
+
+/*
+let message = hello;
+console.log(sayHello(message));
+*/
+
 
 
 // Example 3
@@ -34,3 +49,4 @@ sayHelloToUser();
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+/* array ends at 2 */
