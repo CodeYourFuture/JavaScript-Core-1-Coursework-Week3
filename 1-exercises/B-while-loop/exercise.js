@@ -5,9 +5,13 @@
     The list of numbers should start with 0. n is being passed in as a parameter.
 */
 
-function evenNumbers(n) {
-    // TODO
+let evenNumbers = 0;
+while (evenNumbers < 18) {
+console.log(evenNumbers);
+evenNumbers = evenNumbers + 2;
 }
+
+//GR - it's both telling me I've got part of it right and that evenNumbers is not a function - how can both be true?//
 
 evenNumbers(3); // should output 0,2,4
 evenNumbers(0); // should output nothing

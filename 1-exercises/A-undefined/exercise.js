@@ -12,25 +12,26 @@
 // Example 1
 let a;
 console.log(a);
-
+// a has not been assigned a value by the variable//
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+  let message = "Hello";
 }
+// 'message' is not the value assigned by the variable - sayHello is//
 
 let hello = sayHello();
 console.log(hello);
-
+// superfluous brackets at the end of the variable//
 
 // Example 3
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+  console.log(`Hello ${user}`);
 }
-
 sayHelloToUser();
-
+//no need to console log and call the function at the same time - strange use of brackets - as if they are calling a function inside the console log//
 
 // Example 4
-let arr = [1,2,3];
+let arr = [1, 2, 3];
 console.log(arr[3]);
+// a return function would be more appropriate to call the array//

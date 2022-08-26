@@ -11,6 +11,12 @@ let tubeStations = [
     "Tottenham Court Road"
 ];
 
+const tubeStations = [Aldgate", "Baker Street", "Picadilly Circus", "Oxford Street", "Tottenham Court Road"];
+let text = " ";
+for (let x of tubeStations) {
+text += x;
+}
+//this seemed to work on the WS3 emulator - not working in VSCode// 
 
 // TODO Use a for-of loop to capitalise and output each letter in the string seperately.
 let str = "codeyourfuture";
