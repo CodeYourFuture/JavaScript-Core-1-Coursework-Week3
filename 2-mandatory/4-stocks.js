@@ -35,8 +35,14 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 */
 function getAveragePrices(closingPricesForAllStocks) {
     // TODO
+    function getSum(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    return sum;
 }
-
+}
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
     Implement the below function, which
@@ -49,7 +55,17 @@ function getAveragePrices(closingPricesForAllStocks) {
 */
 function getPriceChanges(closingPricesForAllStocks) {
     // TODO
+     let sum = 0;
+    let average = 0
+    let result = [];
+    for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+        sum = getSum(closingPricesForAllStocks[i])
+        average = sum / 5;
+        result.push(Math.round(average * 100) / 100);
+    }
+    return result;
 }
+
 
 /*
     As part of a financial report, we want to see what the highest price was for each stock in the last 5 days.
@@ -63,10 +79,26 @@ function getPriceChanges(closingPricesForAllStocks) {
     The stock ticker should be capitalised.
     The price should be shown with exactly 2 decimal places.
 */
-function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+function findDifference(arr) {
+    return arr[4] - arr[0];
 }
 
+function getPriceChanges(closingPricesForAllStocks) {
+    let result = [];
+    for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+        result.push(Number(findDifference(closingPricesForAllStocks[i]).toFixed(2)));
+    }
+    return result;
+}
+getPriceChanges(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS)
+
+ let result = []
+    for (let i = 0; i < closingPricesForAllStocks.length && i < stocks.length; i++) {
+        result.push(`The highest price of ${stocks[i].toUpperCase()} in the last 5 days was ${(Math.max(...closingPricesForAllStocks[i])).toFixed(2)}`)
+    }
+    return result;
+
+highestPriceDescriptions(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS, STOCKS);
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the average price for each stock", () => {

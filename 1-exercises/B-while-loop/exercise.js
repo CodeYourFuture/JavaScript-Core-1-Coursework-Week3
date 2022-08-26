@@ -6,8 +6,14 @@
 */
 
 function evenNumbers(n) {
-    // TODO
+    var n = 0;
+while (n !== 19) {
+  if (n % 2 == 0)
+    console.log(n);
+  n++;
 }
+}
+
 
 evenNumbers(3); // should output 0,2,4
 evenNumbers(0); // should output nothing
