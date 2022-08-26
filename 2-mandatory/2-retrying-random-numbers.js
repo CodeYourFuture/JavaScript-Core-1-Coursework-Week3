@@ -9,8 +9,22 @@ function generateRandomNumber() {
     return Math.round(Math.random() * 100);
 }
 
+// function getRandomNumberGreaterThan50() {
+//     return generateRandomNumber() + 50;
+// }
+
 function getRandomNumberGreaterThan50() {
-    // TODO - implement using a do-while loop
+    let i = 0;
+    let arr = [];
+    do {
+        arr.push(generateRandomNumber());        
+        if (arr[i] > 50) {
+            arr = arr[i];
+        }
+        i++;
+    }
+    while (i <= arr.length);
+    return arr
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
