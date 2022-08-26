@@ -5,7 +5,7 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-  let shortArticles = allArticleTitles.filter((title) => {return title.length < 66}); 
+  let shortArticles = allArticleTitles.filter(title => title.length < 66); 
   return shortArticles;
 }
 
