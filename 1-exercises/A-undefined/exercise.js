@@ -10,12 +10,11 @@
 */
 
 // Example 1
-let a;
+let a;     // a is not assigned to any value
 console.log(a);
 
-
 // Example 2
-function sayHello() {
+function sayHello() { //  function sayHello() is not returning anything  
     let message = "Hello";
 }
 
@@ -28,9 +27,11 @@ function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
 
-sayHelloToUser();
+sayHelloToUser(); // function sayHelloToUser() is expecting a parameter but was never passed
 
 
 // Example 4
-let arr = [1,2,3];
+let arr = [1,2,3]; // Index 3 is not defined in the array.
 console.log(arr[3]);
+
+    
