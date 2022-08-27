@@ -11,7 +11,22 @@
 */
 
 function getHighestRatedInEachGenre(books) {
-    // TODO
+     let listOfGenre = ["non-fiction", "children", "cooking"];
+     let bookTitles = [];
+     for (const genre of listOfGenre) {
+       let maxRating = 0;
+       let index = 0;
+       for (let i = 0; i < books.length; i++) {
+         if (books[i].genre === genre) {
+           if (books[i].rating > maxRating) {
+             maxRating = books[i].rating;
+             index = i;
+           }
+         }
+       }
+       bookTitles.push(books[index].title);
+     }
+     return bookTitles;
 }
 
 
