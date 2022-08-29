@@ -25,9 +25,9 @@ const AGES = [
     63,
     49
 ];
-
-// TODO - Write for loop code here
-
+for (let i = 0; i < WRITERS.length; i++) {
+    console.log(`${WRITERS[i]} is ${AGES[i]} years old`);
+}
 /*
 The output should look something like this:
 
