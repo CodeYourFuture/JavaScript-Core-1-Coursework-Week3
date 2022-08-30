@@ -21,7 +21,14 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+    let shortestTitle = allArticleTitles[0];
+    for (let i = 0; i < allArticleTitles.length; i++) {
+        if (allArticleTitles[i].match(/\s+/g).length <
+        shortestTitle.match(/\s+/g).length) {
+            shortestTitle = allArticleTitles[i];
+        }        
+    }
+    return shortestTitle;
 }
 
 /*
@@ -30,7 +37,13 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+    let titlesWithNum = [];
+    for (let i = 0; i < allArticleTitles.length; i++) {
+        if (/[0-9]/.test(allArticleTitles[i])) { // this reg exp checks numbers from 0 - 9
+         titlesWithNum.push(allArticleTitles[i]);
+        }
+    }
+    return titlesWithNum;
 }
 
 /*
