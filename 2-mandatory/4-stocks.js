@@ -35,14 +35,16 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 */
 function getAveragePrices(closingPricesForAllStocks) {
   let allAveragePrices = [];
-  for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+
+  for (const closingPricesForStock of closingPricesForAllStocks) {
     let sum = 0;
     let average = 0;
-    for (let j = 0; j < closingPricesForAllStocks[i].length; j++) {
-      sum += closingPricesForAllStocks[i][j];
+    
+    for (const price of closingPricesForStock) {
+      sum += price;
     }
-    average = sum / closingPricesForAllStocks[i].length;
-    allAveragePrices[i] = parseFloat(average.toFixed(2));
+    average = sum / closingPricesForStock.length;
+    allAveragePrices.push(parseFloat(average.toFixed(2)));
   }
   return allAveragePrices;
 }
@@ -61,12 +63,13 @@ function getPriceChanges(closingPricesForAllStocks) {
   let changeInPrice = [];
   let firstPrice = 0;
   let lastPrice = 0;
-  let res = 0;
-  for (let i = 0; i < closingPricesForAllStocks.length; i++) {
-    firstPrice = closingPricesForAllStocks[i][0];
-    lastPrice = closingPricesForAllStocks[i][closingPricesForAllStocks[i].length - 1];
-    res = lastPrice - firstPrice;
-    changeInPrice[i] = parseFloat(res.toFixed(2));
+  let difference = 0;
+
+  for (const closingPricesForStock of closingPricesForAllStocks) {
+    firstPrice = closingPricesForStock[0];
+    lastPrice = closingPricesForStock[closingPricesForAllStocks.length - 1];
+    difference = lastPrice - firstPrice;
+    changeInPrice.push(parseFloat(difference.toFixed(2)));
   }
   return changeInPrice;
 }
