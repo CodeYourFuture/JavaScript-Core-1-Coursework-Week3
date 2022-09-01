@@ -21,6 +21,7 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be separated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
+   
 }
 
 /*
