@@ -7,7 +7,13 @@
 */
 
 function evenNumbersSum(n) {
-    // TODO
+let sum = 0; 
+let i = 0;           //starting from zero
+do {
+ sum = i * (i + 1);  //formula for the sum of consecutive even numbers: n(n+1) or JSshort: sum+= i * 2
+i++;
+} while (i < n);
+return sum;
 }
 
 console.log(evenNumbersSum(3)); // should output 6
