@@ -1,7 +1,7 @@
 /*
     In the below example, we want to keep calling generateRandomNumber until we get a value that is > 50.
     Implement this using a do-while loop.
-*/
+// */
 
 // This function shouldn't be changed
 function generateRandomNumber() {
@@ -10,15 +10,15 @@ function generateRandomNumber() {
 }
 
 function getRandomNumberGreaterThan50() {
-  {
-    do {
-      generateRandomNumber(i);
-      i++;
-    } while (i > 50);
-  }
+  let i = 0;
+  do {
+    i = generateRandomNumber();
+    i++;
+  } while (i < 50);
+  return i;
 }
 
-/* ======= TESTS - DO NOT MODIFY ===== */
+// /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("Returned value should always be greater than 50", () => {
   expect(getRandomNumberGreaterThan50()).toBeGreaterThan(50);

@@ -2,7 +2,7 @@
     Imagine we're making a weather app!
     
     We have a list of cities that the user wants to track.
-    We also already have a temperatureService function which will take a city as a parameter and return a temparature.
+    We also already have a temperatureService function which will take a city as a parameter and return a temperature.
 
     Implement the function below:
         - take the array of cities as a parameter
@@ -12,16 +12,18 @@
 */
 
 function getTemperatureReport(cities) {
+  newArr = [];
   for (let i = 0; i < cities.length; i++) {
-    const cities = usersCities;
-    console.log(
+    let city = cities[i];
+    let x =
       "The temperature in " +
-        usersCities(i) +
-        " is " +
-        temperatureService(cities) +
-        " degrees"
-    );
+      city +
+      " is " +
+      temperatureService(city) +
+      " degrees";
+    newArr.push(x);
   }
+  return newArr;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
