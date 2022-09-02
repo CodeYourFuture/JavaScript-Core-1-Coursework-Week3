@@ -25,7 +25,7 @@ return math.min (titleWithFewestWords.length)
 */
 function headlinesWithNumbers(allArticleTitles) {
 let array.includes(number)  
-} 
+} return headlinesWithNumbers
 
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
