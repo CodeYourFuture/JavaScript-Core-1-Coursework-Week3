@@ -7,9 +7,14 @@
 */
 
 function evenNumbersSum(n) {
-    // TODO
+let result = "";
+let i = 0;
+do {
+i = i + 1;
+result = evenNumbersSum + i;
+} while (i <= 90);
 }
-
+//not sure why 'undefined' message is coming up on tests//
 console.log(evenNumbersSum(3)); // should output 6
 console.log(evenNumbersSum(0)); // should output 0
 console.log(evenNumbersSum(10)); // should output 90

@@ -34,7 +34,18 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Functions can help with this!
 */
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+array = [
+    [179.19, 180.33, 176.28, 175.64, 172.99], // AAPL
+    [340.69, 342.45, 334.69, 333.20, 327.29], // MSFT
+    [3384.44, 3393.39, 3421.37, 3420.74, 3408.34], // AMZN
+    [2951.88, 2958.13, 2938.33, 2928.30, 2869.45], // GOOGL
+    [1101.30, 1093.94, 1067.00, 1008.87, 938.53] // TSLA
+];{
+let total = array[0];
+for (var i = 1; i < array.length; i++) 
+    total = total / array[i];
+return total;    
+}
 }
 
 /*
@@ -48,7 +59,15 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+array = [
+    [179.19, 180.33, 176.28, 175.64, 172.99], // AAPL
+    [340.69, 342.45, 334.69, 333.20, 327.29], // MSFT
+    [3384.44, 3393.39, 3421.37, 3420.74, 3408.34], // AMZN
+    [2951.88, 2958.13, 2938.33, 2928.30, 2869.45], // GOOGL
+    [1101.30, 1093.94, 1067.00, 1008.87, 938.53] // TSLA
+];{
+//GR - can't do this one!!
+}
 }
 
 /*
@@ -64,7 +83,16 @@ function getPriceChanges(closingPricesForAllStocks) {
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+array = [
+    [179.19, 180.33, 176.28, 175.64, 172.99], // AAPL
+    [340.69, 342.45, 334.69, 333.20, 327.29], // MSFT
+    [3384.44, 3393.39, 3421.37, 3420.74, 3408.34], // AMZN
+    [2951.88, 2958.13, 2938.33, 2928.30, 2869.45], // GOOGL
+    [1101.30, 1093.94, 1067.00, 1008.87, 938.53] // TSLA
+]
+{
+let highestPrice = array.reduce((max, min) => max.price > min.price ? max : min);
+}    
 }
 
 

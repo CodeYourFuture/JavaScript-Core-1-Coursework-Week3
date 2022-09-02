@@ -16,8 +16,14 @@ const BIRTHDAYS = [
     "November 15th"
 ];
 
-function findFirstJulyBDay(birthdays) {
-    // TODO
+function findFirstJulyBDay(BIRTHDAYS) 
+let i = 0;
+{ 
+while(i = findFirstJulyBDay.length) {
+if (BIRTHDAYS === "july 11th") {
+break;    
+} 
 }
-
+}
 console.log(findFirstJulyBDay(BIRTHDAYS)); // should output "July 11th"
+//GR - not sure what 'unexpected identifier' means - there is no red marking in node//

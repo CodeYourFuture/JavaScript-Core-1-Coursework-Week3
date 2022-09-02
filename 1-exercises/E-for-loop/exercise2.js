@@ -26,7 +26,11 @@ const AGES = [
     49
 ];
 
-// TODO - Write for loop code here
+WRITERS.forEach(WRITERS); {
+let sentence = "(WRITERS.name)is (AGES.num) years old"    
+console.log(sentence)
+};
+//GR - again, not sure about the error message I'm getting here - will come back to it//
 
 /*
 The output should look something like this:
