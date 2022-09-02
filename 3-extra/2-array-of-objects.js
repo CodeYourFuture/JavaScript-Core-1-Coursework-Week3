@@ -11,7 +11,17 @@
 */
 
 function getHighestRatedInEachGenre(books) {
-    // TODO
+  let sortedBooks = books.sort((b1, b2) => b1.rating < b2.rating ? 1 : b1.rating > b2.rating ? -1 : 0);
+  let highestRatedBook = [];
+  let arrOfGenres = [];
+
+  for (const book of sortedBooks) {
+    if (!arrOfGenres.includes(book.genre)) {
+      arrOfGenres.push(book.genre);
+      highestRatedBook.push(book.title);
+    }
+  }
+  return highestRatedBook;
 }
 
 

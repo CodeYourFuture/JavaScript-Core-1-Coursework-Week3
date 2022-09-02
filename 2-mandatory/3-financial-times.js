@@ -5,7 +5,8 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    // TODO
+  let shortArticles = allArticleTitles.filter(title => title.length < 66); 
+  return shortArticles;
 }
 
 /*
@@ -13,8 +14,15 @@ function potentialHeadlines(allArticleTitles) {
     Implement the function below, which returns the title with the fewest words.
     (you can assume words will always be seperated by a space)
 */
+
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+  let lengthOfTitles = [];
+  for (const articleTitle of allArticleTitles) {
+    lengthOfTitles.push(articleTitle.split(" ").length - 1);
+  }
+    const min = Math.min(...lengthOfTitles);
+    const index = lengthOfTitles.indexOf(min);
+  return allArticleTitles[index];
 }
 
 /*
@@ -23,15 +31,23 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+  let digits = /\d+/;
+  let articlesWithNumbers = allArticleTitles.filter(articles => articles.match(digits));
+  return articlesWithNumbers;
 }
+
 
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
     Implement the function below to return this number - rounded to the nearest integer.
 */
+let sumOfTitlesLength = 0;
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
+  for (const articleTitle of allArticleTitles) {
+    sumOfTitlesLength += articleTitle.length;
+  }
+  let averageChar = sumOfTitlesLength / allArticleTitles.length;
+  return Math.round(averageChar);
 }
 
 
