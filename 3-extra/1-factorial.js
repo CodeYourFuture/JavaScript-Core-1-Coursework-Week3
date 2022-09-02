@@ -9,19 +9,29 @@
 */
 
 function factorial(input) {
-    // TODO
+  var text = [];
+  var res = 1;
+
+  let i = 1;
+  do {
+    x = res *= i;
+    text.push(x);
+    i = i - 1;
+  } while (i < input);
+
+  return res;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("3! should be 6", () => {
-    expect(factorial(3)).toEqual(6);
+  expect(factorial(3)).toEqual(6);
 });
 
 test("5! should be 120", () => {
-    expect(factorial(5)).toEqual(120);
+  expect(factorial(5)).toEqual(120);
 });
 
 test("10! should be 3628800", () => {
-    expect(factorial(10)).toEqual(3628800);
+  expect(factorial(10)).toEqual(3628800);
 });
