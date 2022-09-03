@@ -5,7 +5,12 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    // TODO
+    let arr = [];
+    for (const element of allArticleTitles) {
+        if (element.length <= 65) {
+            arr.push(element);
+        }
+    }return arr;
 }
 
 /*

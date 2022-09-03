@@ -6,9 +6,16 @@
     Using a do-while loop, write a function which returns the sum of the first n even numbers (starting from 0)
 */
 
-function evenNumbersSum(n) {
-    // TODO
+function evenNumbersSum(number) {
+    let sum = 0;
+let i = 0;           
+do {
+    sum = i * (i + 1);  
+i++;
+} while (i < number);
+return sum;
 }
+
 
 console.log(evenNumbersSum(3)); // should output 6
 console.log(evenNumbersSum(0)); // should output 0
