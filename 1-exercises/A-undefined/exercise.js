@@ -12,16 +12,15 @@
 // Example 1
 let a;
 console.log(a);
-
+//a has not been assigned any value.
 
 // Example 2
 function sayHello() {
     let message = "Hello";
-}
-
+} 
 let hello = sayHello();
 console.log(hello);
-
+// function has not return value.
 
 // Example 3
 function sayHelloToUser(user) {
@@ -29,8 +28,9 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
-
+// function does not pass the parameter value.
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+// index 3 does not exist.

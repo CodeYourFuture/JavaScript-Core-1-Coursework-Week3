@@ -26,7 +26,12 @@ const AGES = [
     49
 ];
 
-// TODO - Write for loop code here
+const combined=[]
+
+for (let i=0; i < WRITERS.length; i++)
+{
+   console.log(`${WRITERS[i]} is ${AGES[i]} years old.`)
+}
 
 /*
 The output should look something like this:
