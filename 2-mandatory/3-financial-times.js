@@ -5,15 +5,18 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
+    if (allArticleTitles.length > 65);
+    return array = allArticleTitles;
     // TODO
 }
-
 /*
     The editor of the FT likes short headlines with only a few words!
     Implement the function below, which returns the title with the fewest words.
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
+    return allArticleTitles.reduce((a, b) => a.length <= b.length ? a : b);
+    // return Math.ARTICLE_TITLES.apply(Math, allArticleTitles);
     // TODO
 }
 
@@ -23,6 +26,42 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
+    return allArticleTitles.filter((titleWithFewestWords) => titleWithFewestWords.indexOf(allArticleTitles) == number);
+    // let headNum = []
+    // allArticleTitles.map(titleWithFewestWords);
+    // return headNum = allArticleTitles.includes("number");
+    // allArticleTitles.forEach((item,index)=>{
+    //     if (item == "number" || index == number) {
+    //         return index || item;
+    //     }
+    // })
+    // let arr = [];
+    // for (let index = 0; index < allArticleTitles.length; index++) {
+    //     if (allArticleTitles[index].match(number)){
+    //         arr.push(index);
+    //         return arr;
+    //     }
+    //     return allArticleTitles -1;
+    // }
+    // var incl = $(allArticleTitles).incl();
+    // var numIncl = parseInt(incl, 10);
+    // return numIncl:
+
+    // let number = [0, 1000000];
+    // for (let index = 0; index < allArticleTitles.length; index++) {
+    //     if (allArticleTitles.includes(number) === true){
+    //     return allArticleTitles;
+    // }
+// }
+
+    // if (allArticleTitles.includes("number") === true){
+    //     return allArticleTitles;
+    // }
+    // var regex = /\d+/g;
+    // var numInclu = allArticleTitles.match(regex);
+    // if(numInclu = 'number') {
+    //     return numInclu;
+    // } 
     // TODO
 }
 
@@ -31,6 +70,8 @@ function headlinesWithNumbers(allArticleTitles) {
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
+    const total =  allArticleTitles.forEach((a, b) => a + b ? a : b);
+    return total / allArticleTitles.length;
     // TODO
 }
 

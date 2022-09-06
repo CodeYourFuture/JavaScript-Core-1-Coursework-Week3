@@ -34,6 +34,15 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Functions can help with this!
 */
 function getAveragePrices(closingPricesForAllStocks) {
+    let total = 0;
+    closingPricesForAllStocks.forEach((parent)=>{
+        total += parent;
+     }); 
+    // let sum = [0];
+    // for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+    // sum += closingPricesForAllStocks[i];
+    // } return sum / 5;
+    // let newArray =  closingPricesForAllStocks.map(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS)
     // TODO
 }
 
@@ -48,6 +57,12 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
+    for (let index = 0; index < closingPricesForAllStocks.length; index++) {
+        const priceChanges = closingPricesForAllStocks[[5-0]];
+        console.log(priceChanges);
+    }
+    // let newArray = closingPricesForAllStocks.reduce((a, b) => a - b);
+    // console.log(newArray);
     // TODO
 }
 
@@ -64,6 +79,7 @@ function getPriceChanges(closingPricesForAllStocks) {
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
+
     // TODO
 }
 

@@ -15,12 +15,10 @@ let y = i;
 function evenNumbersSum(n) {
     const list = []; 
     do {
-        number += 2;
-        list.push(number * 2);
+        n += 2;
+        list.push(n + n);
         n++;
-        
-           
-    } while (number >= 18);
+    } while (n % 2);
 return list.reduce((x, y) => x + y, 0);
 }
 

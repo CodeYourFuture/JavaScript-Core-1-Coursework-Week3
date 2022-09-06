@@ -12,8 +12,16 @@
 */
 
 function getTemperatureReport(cities) {
-    // TODO
-}
+        return cities.map(`The temperature in ${item.tostring} is ${index.tostring} degrees`);
+    }
+
+// function getTemperatureReport(cities) {
+//     cities.map(temperatureService);
+//     }
+
+    // return cities = `The temperature in ${temperatureService.map[0]} is ${temperatureService[1]} degrees`;
+    // // TODO
+// }
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
