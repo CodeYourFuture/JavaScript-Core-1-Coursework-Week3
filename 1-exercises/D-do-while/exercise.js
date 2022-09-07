@@ -5,11 +5,24 @@
     
     Using a do-while loop, write a function which returns the sum of the first n even numbers (starting from 0)
 */
-
+let i = 0;
+let total = 0; 
+const evenArray = [];
+// let sum = 0;
 function evenNumbersSum(n) {
-    // TODO
+ 
+  do {
+    if (i%2 === 0){
+      evenArray.push(i);
+      total = total + i; 
+    }
+   i++; 
+    
+  } while (evenArray.length < n);
+
+  return total; 
 }
 
-console.log(evenNumbersSum(3)); // should output 6
-console.log(evenNumbersSum(0)); // should output 0
-console.log(evenNumbersSum(10)); // should output 90
+// console.log(evenNumbersSum(3)); // should output 6
+console.log(evenNumbersSum(10)); // should output 0
+// console.log(evenNumbersSum(10)); // should output 90

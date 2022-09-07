@@ -10,12 +10,12 @@
 */
 
 // Example 1
-let a;
+let a; // there is no value has been added to a therefore a is undefined. 
 console.log(a);
 
 
 // Example 2
-function sayHello() {
+function sayHello() { // there is no parameter passed to the function's argument. 
     let message = "Hello";
 }
 
@@ -28,9 +28,9 @@ function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
 
-sayHelloToUser();
+sayHelloToUser(); // again there is no value been passed when calling the function. it should look like sayHelloToUser(value);
 
 
 // Example 4
-let arr = [1,2,3];
-console.log(arr[3]);
+let arr = [1,2,3]; 
+console.log(arr[3]); // there are only 2 elements in this array (starting from 0), so the output will be undefined. 

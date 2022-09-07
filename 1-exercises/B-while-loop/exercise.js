@@ -5,10 +5,18 @@
     The list of numbers should start with 0. n is being passed in as a parameter.
 */
 
+const evenArray = [];
+
 function evenNumbers(n) {
-    // TODO
+  let i = 0;
+  while (evenArray.length < n) {
+    evenArray.push(i);
+    i += 2;
+  }
+
+  console.log(evenArray.toString());
 }
 
-evenNumbers(3); // should output 0,2,4
-evenNumbers(0); // should output nothing
-evenNumbers(10); // should output 0,2,4,6,8,10,12,14,16,18
+// evenNumbers(3); // should output 0,2,4
+// evenNumbers(0); // should output nothing
+evenNumbers(20); // should output 0,2,4,6,8,10,12,14,16,18
