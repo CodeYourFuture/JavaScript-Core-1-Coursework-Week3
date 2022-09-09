@@ -12,8 +12,17 @@
 */
 
 function getTemperatureReport(cities) {
-    // TODO
+    // let result = [];
+    // for (let i = 0; i < cities.length; i++) {
+    //     result.push(`The temperature in ${cities[i]} is ${temperatureService(cities[i])} degrees`);
+    // }
+    // return result;
+
+    return cities.map(element => `The temperature in ${element} is ${temperatureService(element)} degrees`);
 }
+
+// console.log(getTemperatureReport(["London","Paris","São Paulo"]))
+// ["The temperature in London is 10 degrees", "The temperature in Paris is 12 degrees", "The temperature in São Paulo is 23 degrees"]
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
