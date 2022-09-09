@@ -4,8 +4,20 @@
     The home page of the web site has a headline section, which only has space for article titles which are 65 characters or less.
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
+
+
 function potentialHeadlines(allArticleTitles) {
-    // TODO
+    const newArr = [];
+
+    for (let i = 0; i < allArticleTitles.length; i++)
+    {
+        if (allArticleTitles[i].length <= 65)
+        {
+            newArr.push(allArticleTitles[i]);
+        }
+    }
+    return newArr;
+       
 }
 
 /*
@@ -14,16 +26,41 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+    
+const shorter = (left, right) => left.length <= right.length ? left : right;
+
+    return allArticleTitles.reduce(shorter);
 }
+  
+
 
 /*
     The editor of the FT has realised that headlines which have numbers in them get more clicks!
     Implement the function below to return a new array containing all the headlines which contain a number.
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
+function isNumber(char) {
+  if (typeof char !== 'string') {
+    return true;
+  }
+  if (char.trim() === '') {
+    return false;
+  }
+  return !isNaN(char);
+}
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+    const arr = [];
+   for (let i = 0; i < allArticleTitles.length; i++) {
+        let article = allArticleTitles[i];
+       for (let j = 0; j < article.length; j++) {
+            let articleChar = article[j];
+          if (isNumber(articleChar)) {
+            arr.push(article);
+            break;
+          }
+       }
+   }
+   return arr;
 }
 
 /*
@@ -31,8 +68,16 @@ function headlinesWithNumbers(allArticleTitles) {
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
+    let totalChar = 0;
+    let average = 0;
+    for (let i = 0; i < allArticleTitles.length; i++)
+    {
+        totalChar += (allArticleTitles[i].length);
+    }
+
+    return Math.round(average = totalChar / allArticleTitles.length);
 }
+
 
 
 

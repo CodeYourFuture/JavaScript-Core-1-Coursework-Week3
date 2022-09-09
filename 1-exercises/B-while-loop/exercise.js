@@ -5,9 +5,25 @@
     The list of numbers should start with 0. n is being passed in as a parameter.
 */
 
+
 function evenNumbers(n) {
-    // TODO
-}
+ // initialising an array to hold our even numbers
+    let result = [];
+    
+    let i = 0;
+    while(i < n) {
+        // adding the number to the array
+        result.push(i * 2);
+        i++;
+    }
+
+    // joining the elements of the array together as a string
+    // Read more here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join
+    console.log(result.join());
+      
+  
+   } 
+
 
 evenNumbers(3); // should output 0,2,4
 evenNumbers(0); // should output nothing

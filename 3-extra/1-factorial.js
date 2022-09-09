@@ -9,8 +9,13 @@
 */
 
 function factorial(input) {
-    // TODO
+   
+  return (input === 1) ? 1 : input * factorial(input-1);
 }
+console.log(factorial(3));
+console.log(factorial(5));
+console.log(factorial(10));
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
