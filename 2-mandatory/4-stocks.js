@@ -35,6 +35,19 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 */
 function getAveragePrices(closingPricesForAllStocks) {
     // TODO
+    let averagePrices = [];
+    let i = 0;
+    while(i < closingPricesForAllStocks.length){
+        let j = 0;
+        let total = 0;
+        while(j < closingPricesForAllStocks[i].length){
+            total += closingPricesForAllStocks[i][j]
+            j++
+        }
+        averagePrices.push(parseFloat(Number(total / closingPricesForAllStocks[i].length).toFixed(2)))
+        i++
+    }
+    return averagePrices
 }
 
 /*
@@ -49,6 +62,18 @@ function getAveragePrices(closingPricesForAllStocks) {
 */
 function getPriceChanges(closingPricesForAllStocks) {
     // TODO
+    let priceChanges = []
+    let i = 0
+    while(i < closingPricesForAllStocks.length){
+
+        let startPrice = closingPricesForAllStocks[i][0]
+        let endPrice = closingPricesForAllStocks[i][closingPricesForAllStocks[i].length -1]
+        let priceChange = endPrice - startPrice
+        priceChanges.push(parseFloat(Number(priceChange).toFixed(2)))
+
+        i++
+    }
+    return priceChanges
 }
 
 /*
@@ -65,6 +90,22 @@ function getPriceChanges(closingPricesForAllStocks) {
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
     // TODO
+    let highestPricePerweek = []
+    let i = 0
+    while(i < closingPricesForAllStocks.length){
+        let j = 0
+        let highestPerWeek = 0;
+        while(j < closingPricesForAllStocks[i].length){
+            let currentPrice = closingPricesForAllStocks[i][j]
+            if(currentPrice > highestPerWeek){
+                highestPerWeek = currentPrice
+            }
+            j++
+        }
+        highestPricePerweek.push("The highest price of " + stocks[i].toUpperCase() + " in the last 5 days was " + parseFloat(Number(highestPerWeek)).toFixed(2))
+        i++
+    }
+    return highestPricePerweek
 }
 
 

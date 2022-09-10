@@ -12,7 +12,15 @@
 */
 
 function getTemperatureReport(cities) {
-    // TODO
+    let temperaturePerCity = []
+    let count = 0;
+    while(count < cities.length){
+        let currentCity = cities[count]
+        let temperature = temperatureService(currentCity)
+        temperaturePerCity.push("The temperature in " + currentCity + " is " + temperature + " degrees")
+        count += 1
+    }
+    return temperaturePerCity
 }
 
 

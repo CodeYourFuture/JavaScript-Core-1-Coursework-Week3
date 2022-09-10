@@ -10,6 +10,13 @@
 
 function factorial(input) {
     // TODO
+    let i = 1
+    let product = 1
+    while(i <= input){
+        product = product * i
+        i++
+    }
+    return product
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
