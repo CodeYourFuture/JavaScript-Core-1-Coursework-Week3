@@ -12,6 +12,30 @@
 
 function getHighestRatedInEachGenre(books) {
     // TODO
+    let childrenRating = 0
+    let nonFictionRating = 0
+    let cookingRating = 0;
+    
+    let bookeTitles = []
+    
+    let i = 0;
+    while(i < books.length){
+        if(books[i].genre == 'non-fiction' && books[i].rating > nonFictionRating){
+            nonFictionRating = books[i].rating
+            bookeTitles[0] = books[i].title
+        }
+        if(books[i].genre == 'children' && books[i].rating > childrenRating){
+            childrenRating = books[i].rating
+            bookeTitles[1] = books[i].title
+        }
+        if(books[i].genre == 'cooking' && books[i].rating > cookingRating){
+            cookingRating = books[i].rating
+            bookeTitles[2] = books[i].title
+        }
+        i++
+    }
+    console.log(bookeTitles)
+    return bookeTitles
 }
 
 
