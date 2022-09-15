@@ -5,19 +5,17 @@
     The list of numbers should start with 0. n is being passed in as a parameter.
 */
 
-    function evenNumbers(n) {  
-    let arr = [];
-    let i = 0;
-        while(n > arr.length){                
-        arr.push(i);   
-        i+=2;       
-        }
-        return arr.toString();       
-    }
+function evenNumbers(n) {
+  let arr = [];
+  let i = 0;
+  while (n > arr.length) {
+    arr.push(i);
+    i += 2;
+  }
+  return arr.toString();
+}
 
 console.log(evenNumbers(10));
-
-
 
 evenNumbers(3); // should output 0,2,4
 evenNumbers(0); // should output nothing
