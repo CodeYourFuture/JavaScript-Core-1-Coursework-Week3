@@ -13,6 +13,8 @@
 let a;
 console.log(a);
 
+// variable 'a' has not not been assigned to anything
+
 
 // Example 2
 function sayHello() {
@@ -22,6 +24,8 @@ function sayHello() {
 let hello = sayHello();
 console.log(hello);
 
+// the function is not returning anything
+
 
 // Example 3
 function sayHelloToUser(user) {
@@ -29,8 +33,11 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
+// no argument has been passed to the function
 
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+// the array doesn't contain an element with index 3
+

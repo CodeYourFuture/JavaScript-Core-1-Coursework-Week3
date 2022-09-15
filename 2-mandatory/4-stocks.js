@@ -33,9 +33,24 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Solve the smaller problems, and then build those solutions back up to solve the larger problem.
         Functions can help with this!
 */
+
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+    let sum;
+    let newArr = [];
+    for (let i = 0; i < closingPricesForAllStocks.length; i++){
+        
+        sum = 0;
+        for (let j =0; j < closingPricesForAllStocks[i].length; j++) {            
+             sum += closingPricesForAllStocks[i][j];             
+           
+        }        
+        let average = sum / closingPricesForAllStocks.length;
+        newArr.push(parseFloat(average.toFixed(2)));
+    }
+    return newArr;
 }
+
+console.log(getAveragePrices(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS));
 
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
@@ -48,8 +63,17 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
-}
+        let priceChange = [];      
+        for (let i =0; i < closingPricesForAllStocks.length; i++){
+            let lastElement = closingPricesForAllStocks[i][closingPricesForAllStocks[i].length - 1];
+            let firstElement = closingPricesForAllStocks[i][0];
+            let difference = lastElement - firstElement;
+            difference = parseFloat(difference.toFixed(2));
+            priceChange.push(difference);
+
+        }
+        return priceChange;
+    }
 
 /*
     As part of a financial report, we want to see what the highest price was for each stock in the last 5 days.
@@ -63,10 +87,22 @@ function getPriceChanges(closingPricesForAllStocks) {
     The stock ticker should be capitalised.
     The price should be shown with exactly 2 decimal places.
 */
-function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
-}
 
+
+function highestPriceDescriptions(thePricesForAllStocks, stocks) {
+     let newArr = [], result;
+           
+     for (let i=0; i < thePricesForAllStocks.length; i++){
+        let array = thePricesForAllStocks[i];
+        let highestPrice = array[0];
+        for (let j = 1;j < array.length; j++)
+                highestPrice = Math.max(highestPrice,array[j]); 
+                
+        result = "The highest price of " + stocks[i].toUpperCase() + " in the last 5 days was " + highestPrice.toFixed(2);
+        newArr.push(result);        
+     }         
+     return newArr;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the average price for each stock", () => {
