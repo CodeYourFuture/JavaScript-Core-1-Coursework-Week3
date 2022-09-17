@@ -9,8 +9,13 @@
 */
 
 function factorial(input) {
+    for(let i=3;i!==6;i++){
+        if(i!==3)
+        return false;
+    }
+    }
     // TODO
-}
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
