@@ -6,7 +6,12 @@
 */
 
 function evenNumbers(n) {
-    // TODO
+  let x = 0;
+  let y = n * 2;
+  while (x < y) {
+    x += 2;
+    console.log(x + ",");
+  }
 }
 
 evenNumbers(3); // should output 0,2,4
