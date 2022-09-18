@@ -11,8 +11,7 @@
 
 // Example 1
 let a;
-console.log(a);
-
+console.log(a); // return undefined because a variable that has not been assigned a value
 
 // Example 2
 function sayHello() {
@@ -20,17 +19,15 @@ function sayHello() {
 }
 
 let hello = sayHello();
-console.log(hello);
-
+console.log(hello); // return undefined because value (message variable) was not returned.
 
 // Example 3
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+    console.log(`Hello ${user}`); // return undefined because when call the function it is not have a argument
 }
 
 sayHelloToUser();
 
-
 // Example 4
-let arr = [1,2,3];
-console.log(arr[3]);
+let arr = [1, 2, 3];
+console.log(arr[3]); // return undefined because the value has not been assigned in index 3
