@@ -15,9 +15,19 @@ const BIRTHDAYS = [
     "September 28th",
     "November 15th"
 ];
+let text = "";
+let input = "";
+function findFirstJulyBDay(birthdays,input) 
+{
+    for (let b of BIRTHDAYS)
+    {
+       if(b.includes(input))
+       {
+         return b;
+       }
+    }
+    return "Item was not found!"    
+} // TODO
 
-function findFirstJulyBDay(birthdays) {
-    // TODO
-}
 
-console.log(findFirstJulyBDay(BIRTHDAYS)); // should output "July 11th"
+console.log(findFirstJulyBDay(BIRTHDAYS,"July")); // should output "July 11th"

@@ -10,27 +10,31 @@
 */
 
 // Example 1
-let a;
+let a=1;    //becase we dont have value for a
 console.log(a);
 
 
 // Example 2
-function sayHello() {
+function sayHello() { 
     let message = "Hello";
-}
+    return message;
+}              //for this we should return message.          
 
 let hello = sayHello();
 console.log(hello);
 
 
 // Example 3
+let user="mamad";
 function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
+ 
 }
-
-sayHelloToUser();
+        // here is we can give user value.
+sayHelloToUser(user);
 
 
 // Example 4
-let arr = [1,2,3];
+let arr = [1,2,3,4];
 console.log(arr[3]);
+ //in this example we dont have arr[3],becouse we just have [0],[1].[2]and we dont have it.
