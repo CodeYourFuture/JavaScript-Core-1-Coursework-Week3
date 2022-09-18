@@ -10,27 +10,28 @@
 */
 
 // Example 1
+// a hasn't been initialized
 let a;
 console.log(a);
 
-
 // Example 2
+// function doesn't return a value
 function sayHello() {
-    let message = "Hello";
+	let message = "Hello";
 }
 
 let hello = sayHello();
 console.log(hello);
 
-
 // Example 3
+// function call has no argument
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+	console.log(`Hello ${user}`);
 }
 
 sayHelloToUser();
 
-
 // Example 4
-let arr = [1,2,3];
+// there is no element at index 3
+let arr = [1, 2, 3];
 console.log(arr[3]);
