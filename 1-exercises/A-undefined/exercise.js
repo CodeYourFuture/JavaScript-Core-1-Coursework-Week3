@@ -10,13 +10,13 @@
 */
 
 // Example 1
-let a;
+let a; // variable a hasn't assigned the value
 console.log(a);
 
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+    let message = "Hello"; // there is no return value inside the function
 }
 
 let hello = sayHello();
@@ -28,9 +28,9 @@ function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
 
-sayHelloToUser();
+sayHelloToUser(); //there is no argument
 
 
 // Example 4
 let arr = [1,2,3];
-console.log(arr[3]);
+console.log(arr[3]); //index 3 is not assigned the value in array
