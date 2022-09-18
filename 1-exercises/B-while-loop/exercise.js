@@ -6,13 +6,17 @@
 */
 
 function evenNumbers(n) {
+  let str = "";
   let x = 0;
-  let y = n * 2;
-  while (x < y) {
+  while (x < n * 2) {
+    str += x + ",";
     x += 2;
-    console.log(x + ",");
   }
+  newStr = str.slice(0, -1);
+  console.log(newStr);
 }
+//Note for reviewers: I can have written the code shorter but I wanted to write all of the numbers for each output on the same line.
+// And I wanted to delete the last comma.
 
 evenNumbers(3); // should output 0,2,4
 evenNumbers(0); // should output nothing
