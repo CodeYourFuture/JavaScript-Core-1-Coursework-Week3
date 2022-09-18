@@ -7,7 +7,17 @@
 */
 
 function evenNumbersSum(n) {
-    // TODO
+	const even = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18];
+
+	let string = "";
+	let count = 0;
+
+	do {
+		string += `${even[count]},`;
+		count++;
+	} while (count < n);
+
+	return string;
 }
 
 console.log(evenNumbersSum(3)); // should output 6
