@@ -12,25 +12,26 @@
 // Example 1
 let a;
 console.log(a);
-
+//because there is no value for a variable.
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+  let message = "Hello";
 }
 
 let hello = sayHello();
 console.log(hello);
-
+//because there is no return for sayHello function
 
 // Example 3
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+  console.log(`Hello ${user}`);
 }
 
 sayHelloToUser();
-
+// there is no any value in the parenthesis of the function
 
 // Example 4
-let arr = [1,2,3];
+let arr = [1, 2, 3];
 console.log(arr[3]);
+// arr array doesn't have third value.
