@@ -9,28 +9,25 @@
     For each example, can you explain why we are seeing undefined?
 */
 
-// Example 1
+// Example 1// because we want to log an empty variable
 let a;
 console.log(a);
 
-
-// Example 2
+// Example 2// because this function isn't returning anything
 function sayHello() {
-    let message = "Hello";
+  let message = "Hello";
 }
 
 let hello = sayHello();
 console.log(hello);
 
-
-// Example 3
+// Example 3  // because no arguemnt pass through function call
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+  console.log(`Hello ${user}`);
 }
 
 sayHelloToUser();
 
-
-// Example 4
-let arr = [1,2,3];
+// Example 4 // arrays are 0-based and in this example there isn't four item
+let arr = [1, 2, 3];
 console.log(arr[3]);
