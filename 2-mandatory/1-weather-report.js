@@ -20,8 +20,6 @@
 //     "Lagos",
 // ];
 
-// let usersCities = ["London", "Paris", "São Paulo"];
-
 function getTemperatureReport(cities) {
     let city = temperatureService;
     let statementTempCity = cities.map(
