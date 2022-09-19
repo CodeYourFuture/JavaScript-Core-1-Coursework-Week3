@@ -8,6 +8,13 @@
 
 function evenNumbersSum(n) {
     // TODO
+  const even = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18];
+    let i= 0
+    let sum =0
+    do {sum += even[i];
+    i++; }
+    while ( i < n)
+    return sum 
 }
 
 console.log(evenNumbersSum(3)); // should output 6
