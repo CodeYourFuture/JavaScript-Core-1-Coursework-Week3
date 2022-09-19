@@ -10,13 +10,14 @@
 */
 
 // Example 1
-let a;
+let a = "ahmed"; // in this example we shuold add value to the variable.
 console.log(a);
 
 
 // Example 2
 function sayHello() {
     let message = "Hello";
+    return message;           //in the examplewe need to write return to avoide the undefined.
 }
 
 let hello = sayHello();
@@ -28,9 +29,9 @@ function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
 
-sayHelloToUser();
+sayHelloToUser("Omer"); // for this example we miss to add value when we call the function.
 
 
 // Example 4
 let arr = [1,2,3];
-console.log(arr[3]);
+console.log(arr[3]);// because the arr has 3 item and the firest item start with 0 and 1 and 2 but there is no for item.
