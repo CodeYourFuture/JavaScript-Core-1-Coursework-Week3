@@ -10,51 +10,67 @@
             For example, "The temperature in London is 10 degrees"
         - Hint: you can call the temperatureService function from your function
 */
+// let usersCities = [
+//     "London",
+//     "Paris",
+//     "Barcelona",
+//     "Dubai",
+//     "Mumbai",
+//     "São Paulo",
+//     "Lagos",
+// ];
+
+// let usersCities = ["London", "Paris", "São Paulo"];
 
 function getTemperatureReport(cities) {
-    // TODO
+    let city = temperatureService;
+    let statementTempCity = cities.map(
+        (element) => `The temperature in ${element} is ${city(element)} degrees`
+    );
+    return statementTempCity;
 }
 
+/////////////////////////////////////////////////////////////
+// function getTemperatureReport(cities) {
+//     let city = temperatureService;
+//     return cities.forEach((element) =>
+//         console.log(`The temperature in ${element} is ${city(element)} degrees`)
+//     );
+// }
+// getTemperatureReport(usersCities);
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 function temperatureService(city) {
-    let temparatureMap  = new Map();
+    let temparatureMap = new Map();
 
-    temparatureMap.set('London', 10);
-    temparatureMap.set('Paris', 12);
-    temparatureMap.set('Barcelona', 17);
-    temparatureMap.set('Dubai', 27);
-    temparatureMap.set('Mumbai', 29);
-    temparatureMap.set('São Paulo', 23);
-    temparatureMap.set('Lagos', 33);
-    
+    temparatureMap.set("London", 10);
+    temparatureMap.set("Paris", 12);
+    temparatureMap.set("Barcelona", 17);
+    temparatureMap.set("Dubai", 27);
+    temparatureMap.set("Mumbai", 29);
+    temparatureMap.set("São Paulo", 23);
+    temparatureMap.set("Lagos", 33);
+
     return temparatureMap.get(city);
 }
 
 test("should return a temperature report for the user's cities", () => {
-    let usersCities = [
-        "London",
-        "Paris",
-        "São Paulo"
-    ]
+    let usersCities = ["London", "Paris", "São Paulo"];
 
     expect(getTemperatureReport(usersCities)).toEqual([
         "The temperature in London is 10 degrees",
         "The temperature in Paris is 12 degrees",
-        "The temperature in São Paulo is 23 degrees"
+        "The temperature in São Paulo is 23 degrees",
     ]);
 });
 
 test("should return a temperature report for the user's cities (alternate input)", () => {
-    let usersCities = [
-        "Barcelona",
-        "Dubai"
-    ]
+    let usersCities = ["Barcelona", "Dubai"];
 
     expect(getTemperatureReport(usersCities)).toEqual([
         "The temperature in Barcelona is 17 degrees",
-        "The temperature in Dubai is 27 degrees"
+        "The temperature in Dubai is 27 degrees",
     ]);
 });
 
