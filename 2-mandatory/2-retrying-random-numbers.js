@@ -22,13 +22,6 @@ function getRandomNumberGreaterThan50() {
 
         i--;
     } while (i > 50);
-
-    // for (let i = 100; i > 50; i--) {
-    //     if (randomNum > 50) {
-    //         break;
-    //     }
-    //     console.log(randomNum());
-    // }
 }
 // console.log(getRandomNumberGreaterThan50());
 // getRandomNumberGreaterThan50();
