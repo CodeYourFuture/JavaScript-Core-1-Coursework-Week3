@@ -5,7 +5,13 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
+
     // TODO
+//  all elements of article titles array
+  
+    allArticleTitles.filter((article) => {
+        return article.length<= 56
+    })
 }
 
 /*
