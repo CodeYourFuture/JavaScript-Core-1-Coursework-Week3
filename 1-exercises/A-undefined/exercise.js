@@ -13,6 +13,8 @@
 let a;
 console.log(a);
 
+// We are seeing "undefined" for a here because even though we declared an "a" variable before but no value has been assigned to "a". 
+
 
 // Example 2
 function sayHello() {
@@ -22,6 +24,8 @@ function sayHello() {
 let hello = sayHello();
 console.log(hello);
 
+// We are seeing "undefined" here because there is no return value from hello which is a function.
+
 
 // Example 3
 function sayHelloToUser(user) {
@@ -30,7 +34,11 @@ function sayHelloToUser(user) {
 
 sayHelloToUser();
 
+// We are seeing "undefined" here because no argument is being passed into the function sayHelloToUser(user). 
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+
+// We are seeing "undefined" here because there is no arr[3] in the array, the last item in the array is arr[2].
+

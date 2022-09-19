@@ -11,9 +11,19 @@
         - Hint: you can call the temperatureService function from your function
 */
 
+cities1 = ['London', 'Paris','Barcelona','Dubai','Mumbai', 'São Paulo','Lagos'];
+
 function getTemperatureReport(cities) {
     // TODO
+    let arr = [];
+    for (let item of cities) {
+        let temp = temperatureService(item);
+        arr.push (`The temperature in ${item} is ${temp} degrees`); 
+    }
+    return arr;
 }
+
+getTemperatureReport(cities1);
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */

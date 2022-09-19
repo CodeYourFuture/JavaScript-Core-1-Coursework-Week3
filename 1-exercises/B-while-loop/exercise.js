@@ -7,6 +7,16 @@
 
 function evenNumbers(n) {
     // TODO
+let counter = 0;
+let arr = [];
+let num = 0;
+while (n>counter) {
+   arr[counter] = num;
+   num = num+2;
+   counter++; 
+}
+
+console.log (arr);
 }
 
 evenNumbers(3); // should output 0,2,4
