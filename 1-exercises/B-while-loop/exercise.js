@@ -6,9 +6,25 @@
 */
 
 function evenNumbers(n) {
-    // TODO
-}
+    let output  =''; // '' === false
+    let counter = 0;
 
+    while( counter < n ){ 
+        if ( counter == 0 ){
+           output = "0"
+        }else{ ''
+           output = `${output},${(counter * 2)}` //output + "," + (counter * 2)
+        } 
+        counter++;
+    }
+
+    if( output ){ 
+      console.log( output );
+    }else{
+      console.log("should output nothing");
+    } 
+}
+ 
 evenNumbers(3); // should output 0,2,4
 evenNumbers(0); // should output nothing
 evenNumbers(10); // should output 0,2,4,6,8,10,12,14,16,18

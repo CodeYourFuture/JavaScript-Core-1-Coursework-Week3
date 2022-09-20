@@ -11,26 +11,27 @@
 
 // Example 1
 let a;
-console.log(a);
-
+console.log 
+// Answer 1:Becuase no value was given to console.log
 
 // Example 2
 function sayHello() {
     let message = "Hello";
 }
-
 let hello = sayHello();
 console.log(hello);
-
+// Answer: for the reason the functin sayHello does not return any value.
+//  and when call it , we recieve undifined.
 
 // Example 3
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+   console.log(`Hello ${user}`); 
 }
-
 sayHelloToUser();
+//Answer: becuase the first argumant does not assign a value.( in line 30)
 
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+//Answer: there is no index 3 in the array (in line 35)
