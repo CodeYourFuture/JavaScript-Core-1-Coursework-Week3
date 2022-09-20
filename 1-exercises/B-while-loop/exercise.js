@@ -7,6 +7,14 @@
 
 function evenNumbers(n) {
     // TODO
+let i = 0;
+let st = "";
+while (i < n * 2 && i % 2 === 0){
+  st+=i
+  
+  i+=2
+}
+console.log(st)
 }
 
 evenNumbers(3); // should output 0,2,4
