@@ -8,6 +8,11 @@
 
 function evenNumbersSum(n) {
     // TODO
+    let i = 0;
+    do{
+        return n * (n+1);
+        i--;
+    }while(i < 20);
 }
 
 console.log(evenNumbersSum(3)); // should output 6
