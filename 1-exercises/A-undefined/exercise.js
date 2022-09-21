@@ -12,16 +12,18 @@
 // Example 1
 let a;
 console.log(a);
-
+// a has not a value that's why undefined.
 
 // Example 2
 function sayHello() {
     let message = "Hello";
 }
 
+// function has not a return part.
+
 let hello = sayHello();
 console.log(hello);
-
+// There is nothing in the paranthesis of sayHello.
 
 // Example 3
 function sayHelloToUser(user) {
@@ -29,8 +31,9 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
-
+// function call has no argument
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+// There is not any element at the index(3). Array index ends at 2. 

@@ -6,7 +6,16 @@
 */
 
 function evenNumbers(n) {
-    // TODO
+  const even = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18];
+
+  let string = "";
+  let count = 0;
+  while (count < n) {
+    string += `${even[count]},`;
+    count++;
+  }
+
+  console.log(string);
 }
 
 evenNumbers(3); // should output 0,2,4
