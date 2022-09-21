@@ -12,25 +12,37 @@
 // Example 1
 let a;
 console.log(a);
-
+/*Answer
+The code in example 1 will output undefined beasue a value has not been assigned to variable a,
+So, when the program exacutes the code in line 14 will not get any output value.
+*/
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+  let message = "Hello";
 }
 
 let hello = sayHello();
 console.log(hello);
 
+/*
+The sayHello() function in example 2, is not return any value, therefore the program will print out undefined.
+*/
 
 // Example 3
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+  console.log(`Hello ${user}`);
 }
 
 sayHelloToUser();
 
+/* Answer for example 3
+The funciton is called with not value, to replace the 'user' parameter
+*/
 
 // Example 4
-let arr = [1,2,3];
+let arr = [1, 2, 3];
 console.log(arr[3]);
+/*
+Index 3 is not defined means there is no value in index 3. Therefore, the program will output undefined message.
+*/
