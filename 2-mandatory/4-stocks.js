@@ -42,7 +42,7 @@ function getAveragePrices(closingPricesForAllStocks) {
         total += i[j];  
         }
         let a = total/i.length;
-        let b = a.toFixed(2)
+        let b = Number(a.toFixed(2))
         arrayOfAverage.push(b) 
     }
     return arrayOfAverage
