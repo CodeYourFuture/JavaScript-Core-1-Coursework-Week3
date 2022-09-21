@@ -18,6 +18,7 @@ console.log(a);
 function sayHello() {
     let message = "sayHello";
 }
+// there is no console.log to run the code
 
 let hello = sayHello();
 console.log(hello);

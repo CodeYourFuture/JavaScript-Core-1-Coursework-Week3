@@ -18,6 +18,9 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
     [1101.30, 1093.94, 1067.00, 1008.87, 938.53] // TSLA
 ];
 
+
+
+// console.log([i]);
 /*
     We want to understand what the average price over the last 5 days for each stock is.
     Implement the below function, which
