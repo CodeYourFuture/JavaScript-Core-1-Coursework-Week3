@@ -27,13 +27,11 @@ const AGES = [
 ];
 
 // TODO - Write for loop code here
-
+for(let i=0; i < WRITERS.length; i++ ){
+    console.log( `${WRITERS[i]} is ${AGES[i]} years old`)
+}
 /*
 The output should look something like this:
 
-Virginia Woolf is 59 years old
-Zadie Smith is 40 years old
-Jane Austen is 41 years old
-Bell Hooks is 63 years old
 Yukiko Motoya is 49 years old
 */
