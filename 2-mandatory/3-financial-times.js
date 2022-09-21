@@ -8,9 +8,10 @@ function potentialHeadlines(allArticleTitles) {
     let fitTitles = [];
     for(let i in allArticleTitles){
         if(allArticleTitles[i].length<=65){
-            return fitTitles.push(allArticleTitles[i])
+            fitTitles.push(allArticleTitles[i])
         }
     }
+    return fitTitles
 }
 
 /*
@@ -23,6 +24,8 @@ function titleWithFewestWords(allArticleTitles) {
     for(let i in allArticleTitles){
         lengthOfTitles.push(allArticleTitles[i].split(" ").length)
     }
+    let minimumTitlesIndex = lengthOfTitles.indexOf(Math.min(...lengthOfTitles))
+    return allArticleTitles[minimumTitlesIndex]
         
     }
 
@@ -33,7 +36,13 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+    for(let i in allArticleTitles){
+        let output = []
+        if(allArticleTitles[i].match(/[0-9]/g) === true){
+            output.push(allArticleTitles[i])
+        }
+        return output
+    }
 }
 
 /*
