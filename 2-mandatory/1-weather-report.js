@@ -11,10 +11,15 @@
         - Hint: you can call the temperatureService function from your function
 */
 
-function getTemperatureReport(cities) {
+function getTemperatureMap(cities) {
     // TODO
+}   let a = [];
+for (var i = 0; i = < cities.length; i++) {
+    a.push(
+        `The temperature in ${cities[i]} is ${temperatureService(cities[i])} degrees`
+    );
 }
-
+return a;
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
