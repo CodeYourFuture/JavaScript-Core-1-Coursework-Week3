@@ -8,18 +8,21 @@
 
 function evenNumbersSum(n) {
 
-    let arr = [];
+    //let arr = [];
     let counter = 0;
     let sum = 0;
+    let evenNo = 0;
     do {
-       arr.push(sum);
-       sum += 2;
-       counter ++;
-    } while(counter < n);
+       
+        sum += evenNo;
+        evenNo += 2;
+        counter ++;
 
-    console.log(sum);
+    } while(counter < n);
+  return sum;
 }
 
 console.log(evenNumbersSum(3)); // should output 6
 console.log(evenNumbersSum(0)); // should output 0
 console.log(evenNumbersSum(10)); // should output 90
+console.log(evenNumbersSum(20));
