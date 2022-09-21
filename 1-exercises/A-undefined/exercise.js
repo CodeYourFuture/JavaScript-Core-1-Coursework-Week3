@@ -33,4 +33,4 @@ sayHelloToUser(); //there is no argument
 
 // Example 4
 let arr = [1,2,3];
-console.log(arr[3]); //index 3 is not assigned in array arr
+console.log(arr[3]); //index 3 doesn't exit
