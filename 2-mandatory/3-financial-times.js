@@ -36,21 +36,32 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
+    let output = []
     for(let i in allArticleTitles){
-        let output = []
-        if(allArticleTitles[i].match(/[0-9]/g) === true){
+        
+        if(allArticleTitles[i].match(/[0-9]/g) !== null){
             output.push(allArticleTitles[i])
         }
-        return output
+        
     }
-}
+    return output
+ }
 
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
+    let allIntegers = []
+    for(let i in allArticleTitles){
+        allIntegers.push(allArticleTitles[i].length)
+    }
+    let total = 0;
+    for(let i = 0; i < allIntegers.length; i++) {
+    total += allIntegers[i];
+    }
+    let avg = total / allIntegers.length;
+    return Math.round(avg)
 }
 
 
