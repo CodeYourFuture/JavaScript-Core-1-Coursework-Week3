@@ -11,7 +11,11 @@
 */
 
 function getHighestRatedInEachGenre(books) {
-    // TODO
+    for(let everyObjects of books){
+        for(let key of everyObjects){
+
+        }
+    }
 }
 
 
