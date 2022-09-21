@@ -37,3 +37,5 @@ sayHelloToUser();
 let arr = [1,2,3];
 console.log(arr[3]);
 // There is not any element at the index(3). Array index ends at 2. 
+
+//No questions
