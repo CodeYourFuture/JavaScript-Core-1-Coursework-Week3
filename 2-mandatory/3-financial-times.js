@@ -60,8 +60,8 @@ function averageNumberOfCharacters(allArticleTitles) {
     for(let i = 0; i < allIntegers.length; i++) {
     total += allIntegers[i];
     }
-    let avg = total / allIntegers.length;
-    return Math.round(avg)
+    let average = total / allIntegers.length;
+    return Math.round(average)
 }
 
 
