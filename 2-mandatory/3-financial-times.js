@@ -33,6 +33,13 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
+  let popularHeadline = [];
+  for (let i in allArticleTitles) {
+    if (allArticleTitles[i].match(/[0-9]/g) !== null) {
+      popularHeadline.push(allArticleTitles[i]);
+    }
+  }
+  return popularHeadline;
   // TODO
 }
 
@@ -41,6 +48,17 @@ function headlinesWithNumbers(allArticleTitles) {
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
+  let aveNumofCharacters = [];
+  for (let i in allArticleTitles) {
+    aveNumofCharacters.push(allArticleTitles[i].length);
+  }
+  let total = 0;
+  for (let j in aveNumofCharacters) {
+    total += aveNumofCharacters[j];
+  }
+  let average = total / aveNumofCharacters.length;
+
+  return Math.round(average);
   // TODO
 }
 
