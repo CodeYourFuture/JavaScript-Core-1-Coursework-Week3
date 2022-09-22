@@ -9,8 +9,17 @@ function generateRandomNumber() {
     return Math.round(Math.random() * 100);
 }
 
-function getRandomNumberGreaterThan50() {
+function getRandomNumberGreaterThan50(n) {
     // TODO - implement using a do-while loop
+    let i = 0;
+    do{
+        let randomNum = generateRandomNumber();
+        if(randomNum > 50){
+            return randomNum;
+        } 
+     i++;
+
+    }while(n < 51)
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
