@@ -8,12 +8,15 @@
     Using a loop, complete the function below so it returns the factorial of the number being passed in. 
 */
 
-function factorial(input) {
-    for(let i=3;i!==6;i++){
-        if(i!==3)
-        return false;
-    }
-    }
+function factorial(num) {
+        if ( num === 1)
+          return 1;
+        for (var i = num - 1; i >= 1; i--) {
+          num *= i;
+        }
+        return num;
+      }
+      factorial(5);
     // TODO
 
 
