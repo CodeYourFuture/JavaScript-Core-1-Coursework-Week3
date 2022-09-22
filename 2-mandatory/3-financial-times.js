@@ -5,7 +5,12 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    // TODO
+       if(allArticleTitles.lengh !== 0){
+        allArticleTitles = ARTICLE_TITLES.filter((el) => el.length <= 65);
+        return allArticleTitles;
+    
+}
+else return allArticleTitles=[];
 }
 
 /*
@@ -13,8 +18,12 @@ function potentialHeadlines(allArticleTitles) {
     Implement the function below, which returns the title with the fewest words.
     (you can assume words will always be seperated by a space)
 */
+
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+  let arr = allArticleTitles;
+  let newArr = arr.sort((a, b) => a.length - b.length);
+  return newArr[0];
+
 }
 
 /*
@@ -23,7 +32,22 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+  let arr = [];
+
+  for (let moreClick of allArticleTitles) {
+    let choosen = "";
+    for (let letter of moreClick) {
+      if (!isNaN(letter) && letter !== " ") {
+        choosen = moreClick;
+        break;
+      }
+    }
+    if (choosen.length !== 0) {
+      arr.push(choosen);
+    }
+  }
+  return arr;
+
 }
 
 /*
@@ -31,9 +55,15 @@ function headlinesWithNumbers(allArticleTitles) {
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
+  let total = 0;
+  let average = 0;
+  for (let articleTitle of allArticleTitles) {
+    total += articleTitle.length;
+  }
+  average = total / allArticleTitles.length;
+  return Math.round(average);
+  // TODO
 }
-
 
 
 /* ======= List of Articles - DO NOT MODIFY ===== */
