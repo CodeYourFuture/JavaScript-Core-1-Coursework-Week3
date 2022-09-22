@@ -7,9 +7,25 @@
 */
 
 function evenNumbersSum(n) {
-    // TODO
+    let i = 0;
+    let evenNum = 0;
+    let sum = 0;
+    do {
+        evenNum +=2;
+        sum +=evenNum;
+        i += 1 ;  // TODO
+}   while (i < n);
+return sum - evenNum;
+// let i = 0;
+//     let evenNum = 0;
+//     let sum = 0;
+// while (i < n-1){
+//     evenNum +=2;
+//     sum +=evenNum;
+//     i += 1 ;  
+// }
+// return sum; 
 }
-
 console.log(evenNumbersSum(3)); // should output 6
 console.log(evenNumbersSum(0)); // should output 0
 console.log(evenNumbersSum(10)); // should output 90

@@ -12,9 +12,17 @@
 */
 
 function getTemperatureReport(cities) {
-    // TODO
-}
+if (cities === []) {   // TODO
+return [];
+}else {
+for (let i = 0; i < cities.length; i++){
+//    citiesTemperatures[i] = temperatureService(cities[i]);
+    cities[i] = "The temperature in " + cities[i]+" is "+ temperatureService(cities[i])+" degrees";
 
+}
+}
+ return cities;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

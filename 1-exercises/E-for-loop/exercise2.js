@@ -1,3 +1,4 @@
+
 /*
     for loops can be useful when we already know exactly how many times we want to loop.
 
@@ -27,7 +28,9 @@ const AGES = [
 ];
 
 // TODO - Write for loop code here
-
+for (let i = 0; i < WRITERS.length; i++){
+    console.log(WRITERS[i]+" is "+ AGES[i]+" years old")
+}
 /*
 The output should look something like this:
 
