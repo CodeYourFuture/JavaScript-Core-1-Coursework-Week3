@@ -11,7 +11,7 @@
 
 // Example 1
 let a;
-console.log(a);
+console.log(a); // a is declared but it's not initialized with any value 
 
 
 // Example 2
@@ -19,13 +19,13 @@ function sayHello() {
     let message = "Hello";
 }
 
-let hello = sayHello();
-console.log(hello);
+let hello = sayHello();  // there's no return message so it's undefined
+console.log(hello);  
 
 
 // Example 3
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+    console.log(`Hello ${user}`);  // the function is not passing the parameter in to any argument
 }
 
 sayHelloToUser();
@@ -33,4 +33,4 @@ sayHelloToUser();
 
 // Example 4
 let arr = [1,2,3];
-console.log(arr[3]);
+console.log(arr[3]); // array starts from index 0 and the arrary have only 2 elements so index 3 doesn't exist 
