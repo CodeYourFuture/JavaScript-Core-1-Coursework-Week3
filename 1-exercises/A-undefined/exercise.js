@@ -11,8 +11,9 @@
 
 // Example 1
 let a;
-console.log(a);
 
+console.log(a);
+// we can print the value because (a)was not declared. let a = 2;
 
 // Example 2
 function sayHello() {
@@ -29,8 +30,10 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
+// the argument doesn't pass
 
 
 // Example 4
+// This array has 3 elemente 0,1,2.
 let arr = [1,2,3];
 console.log(arr[3]);
