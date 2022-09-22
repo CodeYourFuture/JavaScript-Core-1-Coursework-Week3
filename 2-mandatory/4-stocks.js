@@ -76,7 +76,7 @@ function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
         (item, a) =>
           `The highest price of ${stocks[
             a
-          ].toUpperCase()} in the last 5 days was ${Math.max(...item)}`
+          ].toUpperCase()} in the last 5 days was ${Math.max(...item).toFixed(2)}`
       );
     }
    // TODO
