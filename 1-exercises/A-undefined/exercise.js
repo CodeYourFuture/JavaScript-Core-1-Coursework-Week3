@@ -12,25 +12,26 @@
 // Example 1
 let a;
 console.log(a);
-
+//  Because the value of a is not defined.
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+  let message = "Hello";
 }
 
 let hello = sayHello();
 console.log(hello);
-
+// We have not define any return or outcome for our function.
 
 // Example 3
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+  console.log(`Hello ${user}`);
 }
 
 sayHelloToUser();
-
+// We have not define anything for our "user " argument.
 
 // Example 4
-let arr = [1,2,3];
+let arr = [1, 2, 3];
 console.log(arr[3]);
+// This index is not defined.

@@ -5,7 +5,14 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    // TODO
+  let sutibleAricleTiteles = [];
+  for (let i = 0; i < allArticleTitles.length; i++) {
+    if (allArticleTitles[i].length <= 65) {
+      sutibleAricleTiteles.push(allArticleTitles[i]);
+    }
+  }
+  return sutibleAricleTiteles;
+  // TODO
 }
 
 /*
@@ -14,7 +21,10 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+  // TODO
+  tilteWithFewest = allArticleTitles.filter((item) => item.length <= 65);
+
+  return tilteWithFewest[tilteWithFewest.length - 1];
 }
 
 /*
@@ -23,7 +33,14 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+  let popularHeadline = [];
+  for (let i in allArticleTitles) {
+    if (allArticleTitles[i].match(/[0-9]/g) !== null) {
+      popularHeadline.push(allArticleTitles[i]);
+    }
+  }
+  return popularHeadline;
+  // TODO
 }
 
 /*
@@ -31,51 +48,66 @@ function headlinesWithNumbers(allArticleTitles) {
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
+  let aveNumofCharacters = [];
+  for (let i in allArticleTitles) {
+    aveNumofCharacters.push(allArticleTitles[i].length);
+  }
+  let total = 0;
+  for (let j in aveNumofCharacters) {
+    total += aveNumofCharacters[j];
+  }
+  let average = total / aveNumofCharacters.length;
+
+  return Math.round(average);
+  // TODO
 }
-
-
 
 /* ======= List of Articles - DO NOT MODIFY ===== */
 const ARTICLE_TITLES = [
-    "Streaming wars drive media groups to spend more than $100bn on new content",
-    "Amazon Prime Video India country head: streaming is driving a TV revolution",
-    "Aerospace chiefs prepare for bumpy ride in recovery of long-haul flights",
-    "British companies look to muscle in on US retail investing boom",
-    "Libor to take firm step towards oblivion on New Year's Day",
-    "Audit profession unattractive to new recruits, says PwC boss",
-    "Chinese social media users blast Elon Musk over near miss in space",
-    "Companies raise over $12tn in 'blockbuster' year for global capital markets",
-    "The three questions that dominate investment",
-    "Brussels urges Chile's incoming president to endorse EU trade deal",
+  "Streaming wars drive media groups to spend more than $100bn on new content",
+  "Amazon Prime Video India country head: streaming is driving a TV revolution",
+  "Aerospace chiefs prepare for bumpy ride in recovery of long-haul flights",
+  "British companies look to muscle in on US retail investing boom",
+  "Libor to take firm step towards oblivion on New Year's Day",
+  "Audit profession unattractive to new recruits, says PwC boss",
+  "Chinese social media users blast Elon Musk over near miss in space",
+  "Companies raise over $12tn in 'blockbuster' year for global capital markets",
+  "The three questions that dominate investment",
+  "Brussels urges Chile's incoming president to endorse EU trade deal",
 ];
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("should only return potential headlines", () => {
-    expect(new Set(potentialHeadlines(ARTICLE_TITLES))).toEqual(new Set([
-        "British companies look to muscle in on US retail investing boom",
-        "Libor to take firm step towards oblivion on New Year's Day",
-        "Audit profession unattractive to new recruits, says PwC boss",
-        "The three questions that dominate investment"
-    ]));
+  expect(new Set(potentialHeadlines(ARTICLE_TITLES))).toEqual(
+    new Set([
+      "British companies look to muscle in on US retail investing boom",
+      "Libor to take firm step towards oblivion on New Year's Day",
+      "Audit profession unattractive to new recruits, says PwC boss",
+      "The three questions that dominate investment",
+    ])
+  );
 });
 
 test("should return an empty array for empty input", () => {
-    expect(potentialHeadlines([])).toEqual([]);
+  expect(potentialHeadlines([])).toEqual([]);
 });
 
 test("should return the title with the fewest words", () => {
-    expect(titleWithFewestWords(ARTICLE_TITLES)).toEqual("The three questions that dominate investment");
+  expect(titleWithFewestWords(ARTICLE_TITLES)).toEqual(
+    "The three questions that dominate investment"
+  );
 });
 
 test("should only return headlines containing numbers", () => {
-    expect(new Set(headlinesWithNumbers(ARTICLE_TITLES))).toEqual(new Set([
-        "Streaming wars drive media groups to spend more than $100bn on new content",
-        "Companies raise over $12tn in 'blockbuster' year for global capital markets"
-    ]));
+  expect(new Set(headlinesWithNumbers(ARTICLE_TITLES))).toEqual(
+    new Set([
+      "Streaming wars drive media groups to spend more than $100bn on new content",
+      "Companies raise over $12tn in 'blockbuster' year for global capital markets",
+    ])
+  );
 });
 
 test("should return the average number of characters in a headline", () => {
-    expect(averageNumberOfCharacters(ARTICLE_TITLES)).toEqual(65);
+  expect(averageNumberOfCharacters(ARTICLE_TITLES)).toEqual(65);
 });
