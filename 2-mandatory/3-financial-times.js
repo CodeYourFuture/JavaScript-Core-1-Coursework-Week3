@@ -5,7 +5,13 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    // TODO
+    let publishedTitle = [];
+   for (let titleCharacter of allArticleTitles ) {// TODO
+    if (titleCharacter.length <= 65){
+        publishedTitle.push(titleCharacter);
+    }
+   } 
+   return publishedTitle;
 }
 
 /*
@@ -14,16 +20,36 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
-}
+         let fewestWords = "";
+    for (nElememntInArray of allArticleTitles){
+        let titleLength = 0;
+        for (characterIntitle of nElememntInArray){
+        titleLength +=1;
+        }
+        if (nElememntInArray.length <= titleLength ) {
+         fewestWords = nElememntInArray;
+        } 
+    }
+    
+    return fewestWords;
 
+    }
+    
 /*
     The editor of the FT has realised that headlines which have numbers in them get more clicks!
     Implement the function below to return a new array containing all the headlines which contain a number.
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+    let headlineOnNumber = [];
+    for (let i = 0; i < allArticleTitles.length; i++){// TODO
+        for (let loopOnElement of allArticleTitles[i]){
+            if ( loopOnElement === "$"){
+                headlineOnNumber.push(allArticleTitles[i]);
+            }
+        }
+    }    
+    return headlineOnNumber;
 }
 
 /*
@@ -31,9 +57,15 @@ function headlinesWithNumbers(allArticleTitles) {
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
+    let i=0;
+    let numberOfCharacters = 0;
+    for (i=0; i<allArticleTitles.length; i++){// TODO
+        for (let characterCount of allArticleTitles[i]){
+            numberOfCharacters +=1;
+         }
+    }
+    return Math.round(numberOfCharacters/i)
 }
-
 
 
 /* ======= List of Articles - DO NOT MODIFY ===== */

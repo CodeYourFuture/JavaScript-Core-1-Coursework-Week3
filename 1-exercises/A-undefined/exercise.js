@@ -10,13 +10,14 @@
 */
 
 // Example 1
-let a;
+let a; // The variable a is declared but not assign to any value. Trying to print it will bring undefined 
 console.log(a);
 
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+    let message = "Hello";// The function sayHello() has no return so, console.log(hello) 
+    // will attempt to print empty variable.
 }
 
 let hello = sayHello();
@@ -28,9 +29,9 @@ function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
 
-sayHelloToUser();
-
+sayHelloToUser();//The function is called with no parameter, it will attempt to print unrefered variable which will be undefined
+// e.g: sayHelloToUser("Barry");
 
 // Example 4
-let arr = [1,2,3];
-console.log(arr[3]);
+let arr = [1,2,3];// The array has tree elements and 0 to 2 indexes. 
+console.log(arr[3]);// console.log(arr[3]) will attempt to print non existing element (4th element).
