@@ -7,6 +7,14 @@
 
 function evenNumbers(n) {
     // TODO
+        let result = "";
+    let i = 0
+    while(i < n){
+        result += `${2*i},`;
+           i++;
+    }
+    return result.slice(0, -1);
+     
 }
 
 evenNumbers(3); // should output 0,2,4
