@@ -15,6 +15,13 @@ function getTemperatureReport(cities) {
     // TODO
 }
 
+const temparatures = [];
+
+	for (let city of cities) {
+		temparatures.push(
+			`The temperature in ${city} is ${temperatureService(city)} degrees`
+		);
+	}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
