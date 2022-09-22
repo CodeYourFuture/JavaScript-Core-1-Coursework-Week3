@@ -10,7 +10,8 @@ function evenNumbers(n) {
     let result = [];
     if (n) {
         while (count < n) {
-            count === 0 ? result.push(count) : result.push(count * 2);
+            // count === 0 ? result.push(count) : result.push(count * 2);
+            result.push(count * 2);
             count++;
         }
     }
