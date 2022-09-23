@@ -40,7 +40,7 @@ function getAveragePrices(closingPricesForAllStocks) {
     for (let unitStockPriceBrand of stockPriceBrand) {
       sum += unitStockPriceBrand;
     }
-    let averageAllStock = sum / 5;
+    let averageAllStock = sum / stockPriceBrand.length;
     averageStock.push(parseFloat(averageAllStock.toFixed(2)));
     sum = 0;
   }
