@@ -8,10 +8,10 @@
 function evenNumbers(n) {
   let arr = [];
   let counter = 0;
-  let evenNo = 0;
+  let evenNum = 0;
      while (counter < n) {
-        arr.push(evenNo);
-        evenNo += 2;
+        arr.push(evenNum);
+        evenNum += 2;
         counter++;
     }
    console.log(arr.join());

@@ -7,18 +7,16 @@
 */
 
 function evenNumbersSum(n) {
-
-    //let arr = [];
     let counter = 0;
     let sum = 0;
-    let evenNo = 0;
+    let evenNum = 0;
     do {
-       
-        sum += evenNo;
-        evenNo += 2;
+        sum += evenNum;
+        evenNum += 2;
         counter ++;
 
     } while(counter < n);
+    
   return sum;
 }
 
