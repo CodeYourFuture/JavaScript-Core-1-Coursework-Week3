@@ -12,11 +12,13 @@
 // Example 1
 let a;
 console.log(a);
+function has no parimeter
 
 
 // Example 2
 function sayHello() {
     let message = "Hello";
+    needed to return message
 }
 
 let hello = sayHello();
@@ -29,6 +31,7 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
+needs a parimeter
 
 
 // Example 4
