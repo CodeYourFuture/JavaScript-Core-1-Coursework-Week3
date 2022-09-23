@@ -6,6 +6,7 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+  
 }
 
 /*
