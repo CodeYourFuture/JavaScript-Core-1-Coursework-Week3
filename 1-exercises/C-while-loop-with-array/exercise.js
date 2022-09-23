@@ -1,7 +1,9 @@
 /*
     Loops can be useful when working with arrays.
-    In the below example, imagine we've defined an array holding the birthdays of your closest friends.
-    Use a while loop to search through the array until you find the first birthday in July, then return that birthday from the function.
+    In the below example, imagine we've defined an array holding the 
+    birthdays of your closest friends.
+    Use a while loop to search through the array until you find the first birthday in July, 
+    then return that birthday from the function.
 */
 
 const BIRTHDAYS = [
@@ -17,7 +19,11 @@ const BIRTHDAYS = [
 ];
 
 function findFirstJulyBDay(birthdays) {
-    // TODO
+    let counter = 0;
+    while(birthdays[counter].includes("July") != true) {
+        counter++;
+    }
+    return birthdays[counter];
 }
 
 console.log(findFirstJulyBDay(BIRTHDAYS)); // should output "July 11th"
