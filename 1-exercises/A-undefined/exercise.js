@@ -12,7 +12,7 @@
 // Example 1
 let a;
 console.log(a);
-
+//beacuse variable don't have value 
 
 // Example 2
 function sayHello() {
@@ -21,6 +21,7 @@ function sayHello() {
 
 let hello = sayHello();
 console.log(hello);
+//beacuse doesn't have return value
 
 
 // Example 3
@@ -29,8 +30,9 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
-
+//don't have value
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+//doesn't have i=3 beacuse first start with 0, 1 , 2

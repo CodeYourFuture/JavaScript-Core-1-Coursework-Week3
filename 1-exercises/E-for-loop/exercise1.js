@@ -10,5 +10,8 @@ let i = 0;
 while(i < 26) {
     console.log(String.fromCharCode(97 + i));
     i++;
+    for (let i = 0; i < 26; i++){
+        console.log(String.fromCharCode(97 + i)); 
+    }
 }
 // The output shouldn't change.
