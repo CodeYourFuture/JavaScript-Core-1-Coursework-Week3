@@ -10,7 +10,7 @@
 */
 
 // Example 1
-let a=1;    //becase we dont have value for a
+let a=1;    // we dont have value for a
 console.log(a);
 
 
@@ -37,4 +37,4 @@ sayHelloToUser(user);
 // Example 4
 let arr = [1,2,3,4];
 console.log(arr[3]);
- //in this example we dont have arr[3],becouse we just have [0],[1].[2]and we dont have it.
+ //in this example we dont have arr[3],because we just have [0],[1].[2]and we dont have it.

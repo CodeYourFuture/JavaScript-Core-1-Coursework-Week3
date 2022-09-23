@@ -19,5 +19,5 @@ function evenNumbers(n) {
 
 let result=evenNumbers(5);
 console.log(result); // should output 0,2,4
-console.log(evenNumbers(0)); // should output nothing
+console.log(evenNumbers(0)); // should output nothing.
 console.log(evenNumbers(20)); // should output 0,2,4,6,8,10,12,14,16,18
