@@ -111,3 +111,10 @@ test("should only return headlines containing numbers", () => {
 test("should return the average number of characters in a headline", () => {
     expect(averageNumberOfCharacters(ARTICLE_TITLES)).toEqual(65);
 });
+
+//💫 💫 💫
+//This logic returns the last headline in ARTICLE_TITLES which has 65 characters
+//  or less - by co-incidence this is also the headline with the fewest words so your
+//   test passes. But if the order of ARTICLE_TITLES is changed, the test will fail.
+//   If you have time, try to re-implement this with the correct logic.
+//💫 💫 💫
