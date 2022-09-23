@@ -12,6 +12,7 @@
 // Example 1
 let a;
 console.log(a);
+//here by console.log we can print a's value. (a) has declared but has not initialized so it will return undefined.
 
 
 // Example 2
@@ -21,7 +22,7 @@ function sayHello() {
 
 let hello = sayHello();
 console.log(hello);
-
+//because this function doesn't return message
 
 // Example 3
 function sayHelloToUser(user) {
@@ -29,8 +30,9 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
-
+//function call has no argument
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+//there is no element at index 3

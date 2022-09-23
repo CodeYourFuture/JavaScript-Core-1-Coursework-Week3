@@ -5,7 +5,11 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    // TODO
+    if (allArticleTitles.length !== 0 ){
+        allArticleTitles = ARTICLE_TITLES.filter((el) => el.length <=65)
+        return allArticleTitles;
+    }
+      else return (allArticleTitles=[]);  
 }
 
 /*
@@ -14,7 +18,16 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+   for(let i = 0 ; i <allArticleTitles.length ;i++){
+    for (let j = i + 1 ; j < allArticleTitles.length;j++){
+        if (allArticleTitles [i].length> allArticleTitles[j].length){
+            let sahar = allArticleTitles [i];
+            allArticleTitles[i]=allArticleTitles[j];
+            allArticleTitles[j] = sahar ;
+        }
+    }
+   }
+   return allArticleTitles[0];
 }
 
 /*
@@ -24,6 +37,8 @@ function titleWithFewestWords(allArticleTitles) {
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+    return allArticleTitles.filter((element) => {
+        return /\d/.test(element);
 }
 
 /*
@@ -31,7 +46,12 @@ function headlinesWithNumbers(allArticleTitles) {
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
+    let sum = 0;
+
+    for (let i = 0; i < allArticleTitles.length; i++) {
+      sum = sum + allArticleTitles[i].length;
+    }
+    return Math.round(sum / allArticleTitles.length);
 }
 
 
