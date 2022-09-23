@@ -10,9 +10,13 @@
 
 function factorial(input) {
   let result = 1;
-  while (input > 1) {
-    result *= input;
-    input--;
+  if (input === 0) {
+    result = 1;
+  } else {
+    while (input >= 1) {
+      result *= input;
+      input--;
+    }
   }
   return result;
 }

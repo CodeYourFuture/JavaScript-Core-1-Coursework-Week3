@@ -14,14 +14,11 @@
 */
 
 function generateFibonacciSequence(n) {
-  fibonacciArr = [0, 1];
+  fibArr = [0, 1];
   for (let i = 2; i < n; i++) {
-    fibonacciArr.push(
-      fibonacciArr[fibonacciArr.length - 1] +
-        fibonacciArr[fibonacciArr.length - 2]
-    );
+    fibArr.push(fibArr[fibArr.length - 1] + fibArr[fibArr.length - 2]);
   }
-  return fibonacciArr;
+  return fibArr;
 }
 console.log(generateFibonacciSequence(10));
 

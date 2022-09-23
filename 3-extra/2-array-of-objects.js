@@ -11,31 +11,27 @@
 */
 
 function getHighestRatedInEachGenre(books) {
-  // let rates = [];
-  // let children = [];
-  // let nonFiction = [];
-  // let cooking = [];
-  // let maxRate = 0;
-  // for (let book of BOOKS) {
-  //   if (book.genre === "children") {
-  //     children.push(book);
-  //   } else if (book.genre === "non-fiction") {
-  //     nonFiction.push(book);
-  //   } else if (book.genre === "cooking") {
-  //     cooking.push(book);
-  //   }
-  // }
-  // return children;
-  let titles = [];
-  for (let i = 0; i < books.length; i++) {
-    if (books[i].rating > 4.8) {
-      titles.push(books[i].title);
+  let children = [];
+  let nonFiction = [];
+  let cooking = [];
+  for (let book of books) {
+    if (book.genre == "children") {
+      children.push(book);
+    } else if (book.genre == "non-fiction") {
+      nonFiction.push(book);
+    } else if (book.genre == "cooking") {
+      cooking.push(book);
     }
   }
-  return titles;
+  for (let i = 0; i < children.length; i++) {
+    chil;
+  }
+
+  let fewestSpace = children.indexOf(Math.max(...children));
+  return fewestSpace;
 }
-console.log(getHighestRatedInEachGenre(BOOKS));
 /* ======= Book data - DO NOT MODIFY ===== */
+
 const BOOKS = [
   {
     title: "The Lion, the Witch and the Wardrobe",
@@ -89,7 +85,7 @@ const BOOKS = [
     rating: 4.85,
   },
 ];
-
+console.log(getHighestRatedInEachGenre(BOOKS));
 /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the highest rated book in each genre", () => {
   expect(new Set(getHighestRatedInEachGenre(BOOKS))).toEqual(
