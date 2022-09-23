@@ -35,7 +35,19 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 */
 function getAveragePrices(closingPricesForAllStocks) {
     // TODO
+    let sum = 0;
+    let arr =[];
+     let average =[];
+    for ( let i=0;i<closingPricesForAllStocks.length;i++){
+       for (let j=0 ;j<closingPricesForAllStocks[i].lenght;j++){
+          sum+=closingPricesForAllStocks[i][j];
+       }
+     arr[i].push(sum);
+     average.push(arr[i] / closingPricesForAllStocks[i].length);
+    }
+    return average;
 }
+
 
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
@@ -49,6 +61,11 @@ function getAveragePrices(closingPricesForAllStocks) {
 */
 function getPriceChanges(closingPricesForAllStocks) {
     // TODO
+
+    (for let x of closingPricesForAllStocks){
+
+
+    }
 }
 
 /*
@@ -65,6 +82,7 @@ function getPriceChanges(closingPricesForAllStocks) {
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
     // TODO
+    (for )
 }
 
 
