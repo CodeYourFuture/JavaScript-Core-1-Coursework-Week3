@@ -1,3 +1,6 @@
+
+
+
 /*
     while loops can be useful when you want to execute some code as long as some condition is true.    
 
@@ -6,7 +9,10 @@
 */
 
 function evenNumbers(n) {
-    // TODO
+    let even = 0;
+    while(n%2 == 0) {
+        console.log(even * 2);
+    }
 }
 
 evenNumbers(3); // should output 0,2,4

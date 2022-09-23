@@ -6,6 +6,10 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+    return allArticleTitles.filter(x => x.length <= 65);
+   
+
+    
 }
 
 /*
@@ -15,6 +19,10 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
     // TODO
+
+   
+    let shortest = allArticleTitles.reduce((shortest, current) => current.length <= shortest.length ? current : shortest);
+    return shortest;
 }
 
 /*
@@ -24,7 +32,15 @@ function titleWithFewestWords(allArticleTitles) {
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
-}
+    let titleWitNum = allArticleTitles.filter((title) =>  {
+           typeof title == 'number'
+            
+        });
+        return titleWitNum 
+  
+    
+    }
+
 
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
@@ -32,6 +48,13 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+    let all = 0;
+
+	for (let title of allArticleTitles) {
+		all += title.length;
+	}
+
+	return Math.round(all / allArticleTitles.length);
 }
 
 

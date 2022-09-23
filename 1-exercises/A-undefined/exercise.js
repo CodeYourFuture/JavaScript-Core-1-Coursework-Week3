@@ -9,28 +9,29 @@
     For each example, can you explain why we are seeing undefined?
 */
 
-// Example 1
-let a;
+// Example 1   // => the variable is not assinged to any value.
+let a;  
 console.log(a);
 
 
-// Example 2
+// Example 2 // no returned from the function 
 function sayHello() {
     let message = "Hello";
+    // return message; 
 }
 
 let hello = sayHello();
 console.log(hello);
 
 
-// Example 3
+// Example 3 // no argument in function call
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+     console.log(`Hello ${user}`);
 }
 
-sayHelloToUser();
+sayHelloToUser(); // index 3 is has no value
 
 
 // Example 4
 let arr = [1,2,3];
-console.log(arr[3]);
+console.log(arr[3]); 
