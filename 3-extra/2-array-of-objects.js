@@ -9,10 +9,21 @@
     Implement a function which takes the array of books as a parameter, and returns an array of book titles.
     Each title in the resulting array should be the highest rated book in its genre.
 */
+let highest=[];
+let books = 0;
+function getHighestRatedInEachGenre(books,generate) {
+    let highest=[];
+    let books = 0;
+      for(let highest of books ){
+    if (highest<rate)
+    highest=rate;
+    };
+    return highest;// TODO
+    }
+    
+    getHighestRatedInEachGenre(books);
+      // TODO
 
-function getHighestRatedInEachGenre(books) {
-    // TODO
-}
 
 
 /* ======= Book data - DO NOT MODIFY ===== */
