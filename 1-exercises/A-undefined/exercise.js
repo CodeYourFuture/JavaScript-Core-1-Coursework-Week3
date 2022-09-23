@@ -12,25 +12,28 @@
 // Example 1
 let a;
 console.log(a);
-
+// this is undefined because it's null , ( contains no value )
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+  let message = "Hello";
 }
 
 let hello = sayHello();
 console.log(hello);
-
+// this function return undefined after run because there is no return statement in the function.
 
 // Example 3
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+  console.log(`Hello ${user}`);
 }
 
 sayHelloToUser();
 
+// this function also does not have a return statement in it , thats why it return undefined
 
 // Example 4
-let arr = [1,2,3];
+let arr = [1, 2, 3];
 console.log(arr[3]);
+
+// this array contains only elements for the indecies 0,1,2 , but the value of the index 3 is not yet defined, null. that's why it returns undefined.
