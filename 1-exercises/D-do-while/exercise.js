@@ -11,48 +11,24 @@
 // need to add up 0+2+4+6+8+10+12+14+16+18.
 //💫
 
-// function evenNumbersSum(n) {
-//     const even = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18];
-
-//     let string = "";
-//     let count = 0;
-
-//     do {
-//         string += `${even[count]},`;
-//         count++;
-//     } while (count < n);
-
-//     return string;
-// }
-/////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\
-// function evenNumbersSum(n) {
-//     let i = 0;
-//     let sum = 0;
-//     // for (let i = 0; i < n; i++) {
-//     //     sum += i;
-//     //     console.log(`this's number is: ${n}`);
-//     // }
-//     do {
-//         sum += i;
-//         i++;
-//         console.log(`this's number is: ${n}`);
-//     } while (i <= n);
-//     return sum;
-// }
-
 function evenNumbersSum(n) {
     let result = [0];
-    for (let i = 1; i < n; i++) {
+    // for (let i = 1; i < n; i++) {
+    //     result[i] = i * 2 + result[i - 1];
+    // }
+    // let total = result[result.length - 1];
+    // return total;
+
+    let total;
+    let i = 1;
+    do {
         result[i] = i * 2 + result[i - 1];
-    }
-    let total = result[result.length - 1];
+        total = result[result.length - 1];
+        i++;
+    } while (i < n);
     return total;
 }
 
 console.log(evenNumbersSum(3)); // should output 6
 console.log(evenNumbersSum(0)); // should output 0
-// console.log(evenNumbersSum());
 console.log(evenNumbersSum(10)); // should output 90
-
-// evenNumbersSum(3);
-// evenNumbersSum(10);
