@@ -6,6 +6,14 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+    let articleArr = [];
+    for (let i = 0; i < allArticleTitles.length; i++){
+        let title = allArticleTitles[i];
+        if(title.length <= 65){
+            articleArr.push(title);
+        }
+    }
+    return articleArr;
 }
 
 /*
@@ -15,6 +23,14 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
     // TODO
+    let titleLength = [];
+    for (let i = 0; i < allArticleTitles.length; i++){
+        let titleArray = allArticleTitles[i].split(" ");
+        titleLength.push(titleArray.length);
+    }
+    const minLength = Math.min(...titleLength);
+    const minIndex = titleLength.indexOf(minLength);
+    return allArticleTitles[minIndex];    
 }
 
 /*
@@ -22,8 +38,35 @@ function titleWithFewestWords(allArticleTitles) {
     Implement the function below to return a new array containing all the headlines which contain a number.
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
+
+function isNumber(char) {
+  if (typeof char !== 'string') {
+    return true;
+  }
+
+  if (char.trim() === '') {
+    return false;
+  }
+
+  return !isNaN(char);
+}
+
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+
+        const arr = [];
+   for (let i = 0; i < allArticleTitles.length; i++) {
+        let article = allArticleTitles[i];
+       for (let j = 0; j < article.length; j++) {
+            let articleChar = article[j];
+          if (isNumber(articleChar)) {
+            arr.push(article);
+            break;            
+          }
+       }
+   }
+   return arr;
+
 }
 
 /*
@@ -32,6 +75,11 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+        let numChar = 0;
+    for (let i = 0; i < allArticleTitles.length; i++){
+        numChar += allArticleTitles[i].length;
+    }
+    return Math.round(numChar/allArticleTitles.length);
 }
 
 
