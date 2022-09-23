@@ -1,6 +1,5 @@
 /*
-    THESE EXERCISES ARE QUITE HARD. JUST DO YOUR BEST, AND COME WITH QUESTIONS IF YOU GET STUCK :)
-
+     THESE EXERCISES ARE QUITE HARD. JUST DO YOUR BEST, AND COME WITH QUESTIONS IF YOU GET STUCK :)
     Imagine we a working for a finance company. Below we have:
         - an array of stock tickers
         - an array of arrays containing the closing price for each stock in each of the last 5 days.
@@ -26,7 +25,6 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
             For example, the first element of the resulting array should contain Apple’s (aapl) average stock price for the last 5 days.
             The second element should be Microsoft's (msft) average price, and so on.
     The average value should be rounded to 2 decimal places, and should be a number (not a string)
-
     Hint 1: To calculate the average of a set of values, you can add them together and divide by the number of values.
         So the average of 5, 10 and 20 is (5 + 10 + 20) / 3 = 11.67
     Hint 2: If the problem seems complex, try breaking it down into smaller problems.
@@ -34,7 +32,13 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Functions can help with this!
 */
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+      return closingPricesForAllStocks.map(
+        (element) =>
+          +(
+            element.reduce((total, len) => total + len) / element.length
+          ).toFixed(2)
+      );
+
 }
 
 /*
@@ -49,6 +53,8 @@ function getAveragePrices(closingPricesForAllStocks) {
 */
 function getPriceChanges(closingPricesForAllStocks) {
     // TODO
+    
+    return closingPricesForAllStocks.map((element)=>+(element[4]-element[0]).toFixed(2));
 }
 
 /*
@@ -64,7 +70,15 @@ function getPriceChanges(closingPricesForAllStocks) {
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+    
+    let highPrice=[];
+    
+    stocks.forEach((stock,item) => {
+        highPrice.push(
+          `The highest price of ${stock.toUpperCase()} in the last 5 days was ${Math.max(...closingPricesForAllStocks[item]).toFixed(2)}`
+        );
+    });
+    return highPrice;
 }
 
 
