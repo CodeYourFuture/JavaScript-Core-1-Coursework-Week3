@@ -8,11 +8,23 @@ function generateRandomNumber() {
     console.log("Generating number...");
     return Math.round(Math.random() * 100);
 }
+// let randomNum = generateRandomNumber;
 
 function getRandomNumberGreaterThan50() {
     // TODO - implement using a do-while loop
-}
+    let i = 100;
+    // let randomNumber = generateRandomNumber;
+    do {
+        let random = generateRandomNumber();
+        if (random > 50) {
+            return random;
+        }
 
+        i--;
+    } while (i > 50);
+}
+// console.log(getRandomNumberGreaterThan50());
+// getRandomNumberGreaterThan50();
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("Returned value should always be greater than 50", () => {

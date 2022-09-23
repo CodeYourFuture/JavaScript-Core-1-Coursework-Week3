@@ -13,11 +13,28 @@ const BIRTHDAYS = [
     "July 11th",
     "July 17th",
     "September 28th",
-    "November 15th"
+    "November 15th",
 ];
 
+// let July1 = BIRTHDAYS.filter((x) => x.split(" ")[0] === "July");
+// console.log(July1.sort()[0]);
+
+// Good use of split and index here.You could also use "break"
+// to exit the
+// while loop once you have found the first July date.
+
 function findFirstJulyBDay(birthdays) {
-    // TODO
+    let july = [];
+    let count = 0;
+
+    while (count < birthdays.length) {
+        if (birthdays[count].split(" ")[0] === "July") {
+            july.push(birthdays[count]);
+            break;
+        }
+        count++;
+    }
+    return july.sort()[0];
 }
 
 console.log(findFirstJulyBDay(BIRTHDAYS)); // should output "July 11th"
