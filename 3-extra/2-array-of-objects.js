@@ -11,9 +11,13 @@
 */
 
 function getHighestRatedInEachGenre(books) {
-  let children = [];
-  let nonFiction = [];
-  let cooking = [];
+  const children = [];
+  const nonFiction = [];
+  const cooking = [];
+  const ChildrenRatingArr = [];
+  const nonFictionRatingArr = [];
+  const cookingRatingArr = [];
+  let bookNames = [];
   for (let book of books) {
     if (book.genre == "children") {
       children.push(book);
@@ -23,12 +27,28 @@ function getHighestRatedInEachGenre(books) {
       cooking.push(book);
     }
   }
-  for (let i = 0; i < children.length; i++) {
-    chil;
+  for (let i = 0; i < nonFiction.length; i++) {
+    nonFictionRatingArr.push(nonFiction[i].rating);
   }
+  let maxRatingOfNonFiction = Math.max(...nonFictionRatingArr);
+  let placeOfMaxNonFiction = nonFictionRatingArr.indexOf(maxRatingOfNonFiction);
+  bookNames.push(nonFiction[placeOfMaxNonFiction].title);
 
-  let fewestSpace = children.indexOf(Math.max(...children));
-  return fewestSpace;
+  for (let i = 0; i < children.length; i++) {
+    ChildrenRatingArr.push(children[i].rating);
+  }
+  let maxRatingOfChildren = Math.max(...ChildrenRatingArr);
+  let placeOfMaxChildren = ChildrenRatingArr.indexOf(maxRatingOfChildren);
+  bookNames.push(children[placeOfMaxChildren].title);
+
+  for (let i = 0; i < cooking.length; i++) {
+    cookingRatingArr.push(cooking[i].rating);
+  }
+  let maxRatingOfCooking = Math.max(...cookingRatingArr);
+  let placeOfMaxCooking = cookingRatingArr.indexOf(maxRatingOfCooking);
+  bookNames.push(cooking[placeOfMaxCooking].title);
+
+  return bookNames;
 }
 /* ======= Book data - DO NOT MODIFY ===== */
 
@@ -85,7 +105,7 @@ const BOOKS = [
     rating: 4.85,
   },
 ];
-console.log(getHighestRatedInEachGenre(BOOKS));
+
 /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the highest rated book in each genre", () => {
   expect(new Set(getHighestRatedInEachGenre(BOOKS))).toEqual(
