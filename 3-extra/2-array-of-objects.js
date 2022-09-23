@@ -12,6 +12,14 @@
 
 function getHighestRatedInEachGenre(books) {
     // TODO
+   let arr=[];
+    for(let i=0;i<BOOKS.length;i++){
+       arr.push(Math.max(BOOKS[i].rating));
+    for(let j=0;j<arr.length;j++){
+        delete arr[j].rating
+        return 
+    }
+    return arr;
 }
 
 
