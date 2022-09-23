@@ -42,6 +42,8 @@ function getAveragePrices(closingPricesForAllStocks) {
             return (
                 el.reduce((acc, value, _, { length }) => {
                     // console.log(length);
+                    //the _ refers to the number of times the reducer has looped over the array.
+                    // I use _ because I don't neded so by use _ I say just ignore this option
                     return acc + value;
                 }) / el.length
             );
