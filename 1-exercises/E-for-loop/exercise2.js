@@ -1,5 +1,6 @@
 /*
-    for loops can be useful when we already know exactly how many times we want to loop.
+    for loops can be useful when we already know exactly how many times 
+    we want to loop.
 
     Below we have 2 arrays which have exactly the same number of values.
         - The first array is a list of writers
@@ -27,6 +28,10 @@ const AGES = [
 ];
 
 // TODO - Write for loop code here
+for (let index = 0; index < WRITERS.length; index++) {
+    console.log(`${WRITERS[index]} is ${AGES[index]} years old`);
+}
+
 
 /*
 The output should look something like this:
