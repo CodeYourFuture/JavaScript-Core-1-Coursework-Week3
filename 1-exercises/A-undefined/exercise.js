@@ -13,14 +13,19 @@
 let a;
 console.log(a);
 
+//a is not defined
+
 
 // Example 2
 function sayHello() {
     let message = "Hello";
 }
+// the message is not defined
 
 let hello = sayHello();
 console.log(hello);
+
+// hello is not defined
 
 
 // Example 3
@@ -30,7 +35,11 @@ function sayHelloToUser(user) {
 
 sayHelloToUser();
 
+//user is not defined
+
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+
+// array no 3 does not exist
