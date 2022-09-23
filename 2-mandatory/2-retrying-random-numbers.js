@@ -17,7 +17,7 @@ function getRandomNumberGreaterThan50() {
         let randomNum = generateRandomNumber();
         if (randomNum > 50){
            return randomNum;
-        }
+         }
        i++; 
     } while(i < 51)
 
