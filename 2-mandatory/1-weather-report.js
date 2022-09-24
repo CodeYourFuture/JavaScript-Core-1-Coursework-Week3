@@ -12,7 +12,12 @@
 */
 
 function getTemperatureReport(cities) {
-    // TODO
+    let citysList=[];
+    for (let city of cities) {
+    let cityTemp = temperatureService(city);
+    citysList.push(`The temperature in ${city} is ${cityTemp} degrees`);
+    }
+    return citysList;
 }
 
 
@@ -20,6 +25,7 @@ function getTemperatureReport(cities) {
 
 function temperatureService(city) {
     let temparatureMap  = new Map();
+
 
     temparatureMap.set('London', 10);
     temparatureMap.set('Paris', 12);
