@@ -12,7 +12,7 @@ function evenNumbers(n) {
      while (counter < n) {
         arr.push(evenNum);
         evenNum += 2;
-        counter++;
+        counter ++;
     }
    console.log(arr.join());
  }
