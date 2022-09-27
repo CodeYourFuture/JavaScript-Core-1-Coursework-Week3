@@ -7,6 +7,10 @@
 
 function evenNumbers(n) {
     // TODO
+
+    while(true){
+        console.log();
+    }
 }
 
 evenNumbers(3); // should output 0,2,4
