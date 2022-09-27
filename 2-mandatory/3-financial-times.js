@@ -9,9 +9,16 @@ function potentialHeadlines(allArticleTitles) {
     // TODO
 //  all elements of article titles array
   
-    allArticleTitles.filter((article) => {
-        return article.length<= 56
-    })
+     let sortedArticleTitles = []
+  for (let i = 0; i < allArticleTitles.length; i++ ){
+    if (allArticleTitles[i].length <= 65 ){
+      sortedArticleTitles.push(allArticleTitles[i])
+    } else if (allArticleTitles[i].length === 0 ){
+      sortedArticleTitles = []
+    }
+  }
+  return sortedArticleTitles
+
 }
 
 /*
