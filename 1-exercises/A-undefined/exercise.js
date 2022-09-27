@@ -12,7 +12,7 @@
 // Example 1
 let a;
 console.log(a);
-
+// a is not initialized
 
 // Example 2
 function sayHello() {
@@ -21,7 +21,7 @@ function sayHello() {
 
 let hello = sayHello();
 console.log(hello);
-
+// The function does not have a return value
 
 // Example 3
 function sayHelloToUser(user) {
@@ -29,8 +29,9 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
-
+// The user in the function is not defined
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+// There is no index 3 in arr variable
