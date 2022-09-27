@@ -9,28 +9,30 @@
     For each example, can you explain why we are seeing undefined?
 */
 
-// Example 1
+/// Example 1
 let a;
 console.log(a);
-
+// the value of the variable has not been declared.
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+  let message = "Hello";
 }
 
 let hello = sayHello();
 console.log(hello);
 
+//  here is no return thats why after call, the function doesnt know what to return
 
 // Example 3
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+  console.log(`Hello ${user}`);
 }
 
 sayHelloToUser();
-
+// here no argument has been passed while calling the function & also function needs to be called inside the console.log
 
 // Example 4
-let arr = [1,2,3];
+let arr = [1, 2, 3];
 console.log(arr[3]);
+// here is no element with index 3 . For this reason the output is undefined

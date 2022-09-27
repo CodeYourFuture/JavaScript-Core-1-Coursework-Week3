@@ -7,6 +7,15 @@
 
 function evenNumbers(n) {
     // TODO
+    const array = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18];
+    let i =0
+    let str =""
+    while ( i <n){
+     str +=  `${array[i]},`
+        i++
+    }
+console.log(str)
+
 }
 
 evenNumbers(3); // should output 0,2,4
