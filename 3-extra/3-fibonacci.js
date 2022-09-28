@@ -14,7 +14,12 @@
 */
 
 function generateFibonacciSequence(n) {
-    // TODO
+    let fib = [0,1];
+    
+    for(let index = 0; fib.length<n;index++){
+        fib.push(fib[index]+fib[index+1])
+    }
+    return fib
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
