@@ -12,8 +12,28 @@
 */
 
 function getTemperatureReport(cities) {
-    // TODO
+  // TODO
+  return cities.map(city => `The temperature in ${city} is ${temperatureService(city)} degrees`)
+
 }
+
+// console.log(getTemperatureReport(["London", "Paris", "São Paulo"]));
+  
+/*
+   for (let city of cities) {
+    return `The temperature in ${temperatureService(city)} degrees`
+  }
+cities.forEach((element, i) => {
+  console.log(element, i)
+});
+  */
+/*
+getTemperatureReport([
+"London",
+"Paris",
+"São Paulo"
+])
+ */
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
@@ -31,6 +51,7 @@ function temperatureService(city) {
     
     return temparatureMap.get(city);
 }
+// getTemperatureReport(cities);
 
 test("should return a temperature report for the user's cities", () => {
     let usersCities = [
