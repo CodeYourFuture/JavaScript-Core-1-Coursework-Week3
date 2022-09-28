@@ -56,28 +56,6 @@ function getAveragePrices(closingPricesForAllStocks) {
    
     return arr;
 
-    // for (let i = 0; i < closingPricesForAllStocks.length; i++){
-    //     console.log(closingPricesForAllStocks[i])
-    //     console.log(Math.a)
-    // }
-
-   
-//     for (let i = 0; i < closingPricesForAllStocks.length; i++){
-        
-//        console.log(closingPricesForAllStocks[i], "-------i");
-//         for (let j = 0; j < closingPricesForAllStocks[i].length; j++){
-//             console.log(closingPricesForAllStocks[i][j],'------j');
-
-//             total += closingPricesForAllStocks[i][j];
-
-//             console.log(total,'----total')
-//             let average = total / closingPricesForAllStocks[i].length;
-//            arr.push(average.toFixed(2));
-            
-//         }
-        
-//     }
-//    return arr
 }
 
 
