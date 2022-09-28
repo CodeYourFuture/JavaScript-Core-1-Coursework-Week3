@@ -45,21 +45,42 @@ console.log(total);
 */
 function getAveragePrices(closingPricesForAllStocks) {
     // TODO
+    let arr = [];
     let total = 0;
-
-    for (let i = 0; i < closingPricesForAllStocks.length; i++){
-        console.log(closingPricesForAllStocks[i]);
-        for (let j = 0; j < closingPricesForAllStocks[i].length; j++){
-             console.log(closingPricesForAllStocks[i][j]);
-            total += closingPricesForAllStocks[i][j]
+        closingPricesForAllStocks.forEach((element, i) => {
+            // console.log(element, element[i]);
+            total += element[i];
             
-        }
-        return total;
-    }
+            arr.push(total)
+        });
    
+    return arr;
+
+    // for (let i = 0; i < closingPricesForAllStocks.length; i++){
+    //     console.log(closingPricesForAllStocks[i])
+    //     console.log(Math.a)
+    // }
+
+   
+//     for (let i = 0; i < closingPricesForAllStocks.length; i++){
+        
+//        console.log(closingPricesForAllStocks[i], "-------i");
+//         for (let j = 0; j < closingPricesForAllStocks[i].length; j++){
+//             console.log(closingPricesForAllStocks[i][j],'------j');
+
+//             total += closingPricesForAllStocks[i][j];
+
+//             console.log(total,'----total')
+//             let average = total / closingPricesForAllStocks[i].length;
+//            arr.push(average.toFixed(2));
+            
+//         }
+        
+//     }
+//    return arr
 }
-    
-console.log(getAveragePrices(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS));
+
+
 
     /*
     1) create for loop to go throught the outer array
@@ -97,7 +118,7 @@ function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
 }
 
 
-/* ======= TESTS - DO NOT MODIFY ===== 
+/* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the average price for each stock", () => {
     expect(getAveragePrices(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS)).toEqual(
         [176.89, 335.66, 3405.66, 2929.22, 1041.93]
@@ -121,4 +142,3 @@ test("should return a description of the highest price for each stock", () => {
         ]
     );
 });
-*/
