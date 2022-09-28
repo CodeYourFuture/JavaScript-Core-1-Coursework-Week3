@@ -19,6 +19,16 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 ];
 
 /*
+let total = 0;
+    for (let i = 0; i < CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS.length; i++) {
+      total += CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[i];
+      return total;
+    }
+console.log(total);
+*/
+
+
+/*
     We want to understand what the average price over the last 5 days for each stock is.
     Implement the below function, which
         - Takes this CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS array as input (remember, it's an array of arrays)
@@ -35,7 +45,26 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 */
 function getAveragePrices(closingPricesForAllStocks) {
     // TODO
+    let total = 0;
+
+    for (let i = 0; i < closingPricesForAllStocks.length; i++){
+        console.log(closingPricesForAllStocks[i]);
+        for (let j = 0; j < closingPricesForAllStocks[i].length; j++){
+             console.log(closingPricesForAllStocks[i][j]);
+            total += closingPricesForAllStocks[i][j]
+            
+        }
+        return total;
+    }
+   
 }
+    
+console.log(getAveragePrices(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS));
+
+    /*
+    1) create for loop to go throught the outer array
+    2) create inter for loop to go throught each element in the outer array
+    */
 
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
@@ -68,7 +97,7 @@ function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
 }
 
 
-/* ======= TESTS - DO NOT MODIFY ===== */
+/* ======= TESTS - DO NOT MODIFY ===== 
 test("should return the average price for each stock", () => {
     expect(getAveragePrices(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS)).toEqual(
         [176.89, 335.66, 3405.66, 2929.22, 1041.93]
@@ -92,3 +121,4 @@ test("should return a description of the highest price for each stock", () => {
         ]
     );
 });
+*/
