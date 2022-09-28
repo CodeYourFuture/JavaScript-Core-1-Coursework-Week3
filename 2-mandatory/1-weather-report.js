@@ -14,9 +14,9 @@
 function getTemperatureReport(cities) {
   let cityArr = [];
   let citiesArr;
-  for (let i of cities) {
+  for (let city of cities) {
     cityArr.push(
-      "The temperature in " + i + " is " + temperatureService(i) + " degrees"
+      "The temperature in " + city + " is " + temperatureService(city) + " degrees"
     );
   }
   return cityArr;
