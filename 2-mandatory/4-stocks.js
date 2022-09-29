@@ -95,6 +95,18 @@ function getPriceChanges(closingPricesForAllStocks) {
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
   // TODO
+    
+    let highestValue = 0;
+    let highestValueArray = [];
+    for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+        for (let j = 0; j < closingPricesForAllStocks[i].length; j++) {
+            highestValue = Math.max.apply(Math, closingPricesForAllStocks[i]);
+        }
+                 highestValueArray.push("The highest price of " + stocks[i].toUpperCase() + " in the last 5 days was " + highestValue.toFixed(2));
+   
+     }
+    console.log(highestValueArray);
+    return highestValueArray;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
