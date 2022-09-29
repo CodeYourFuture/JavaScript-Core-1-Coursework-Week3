@@ -6,6 +6,15 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+    let headlines = [];
+
+    for(let title of allArticleTitles) {
+        if(title.length <= 65) {
+            headlines.push(title);
+        }
+    }
+
+    return headlines;
 }
 
 /*
@@ -15,6 +24,22 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
     // TODO
+    let fewestWordsSoFar;
+    let titleWithFewestWords;
+
+    for(let title of allArticleTitles) {
+
+        // working out the number of words in the title by splitting on the space character
+        // this will generate an array. Read more: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
+        let numWords = title.split(' ').length;
+
+        if(fewestWordsSoFar === undefined || numWords < fewestWordsSoFar) {
+            fewestWordsSoFar = numWords;
+            titleWithFewestWords = title;
+        }
+    }
+
+    return titleWithFewestWords;
 }
 
 /*
@@ -24,6 +49,27 @@ function titleWithFewestWords(allArticleTitles) {
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+    let articlesWithNumbers = [];
+
+    for(let title of allArticleTitles) {
+        // Making use of the new function created below
+        if(doesTitleContainANumber(title)) {
+            articlesWithNumbers.push(title);
+        }
+    }
+
+    return articlesWithNumbers;
+}
+
+// Creating another function to help break this problem down into smaller parts
+function doesTitleContainANumber(title) {
+    for(let character of title) {
+        if(character >= '0' && character <= '9') {
+            return true;
+        }
+    }
+
+    return false;
 }
 
 /*
@@ -32,6 +78,13 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+    let totalCharacters = 0;
+
+    for(let title of allArticleTitles) {
+        totalCharacters += title.length;
+    }
+
+    return Math.round(totalCharacters / allArticleTitles.length);
 }
 
 
