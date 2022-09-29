@@ -27,10 +27,18 @@ function potentialHeadlines(allArticleTitles) {
 function titleWithFewestWords(allArticleTitles) {
     // TODO
     let spaceCounter = [];
+    let spaceCounterSize = [];
     for (let i = 0; i < allArticleTitles.length; i++) {
-        
-     }
+        spaceCounter.push(allArticleTitles[i].split(" "));
+        // console.log(spaceCounter);
+        spaceCounterSize.push(spaceCounter[i].length);
+    }
+    // console.log(spaceCounter);
 
+    // console.log(spaceCounterSize);
+    // console.log(Math.min.apply(Math,spaceCounterSize));
+
+    return allArticleTitles[spaceCounterSize.indexOf(Math.min.apply(Math,spaceCounterSize))];
 }
 
 /*
