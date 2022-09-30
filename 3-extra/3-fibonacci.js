@@ -23,7 +23,7 @@ function generateFibonacciSequence(n) {
         
 
     }
-    console.log(fibonacciArray);
+    // console.log(fibonacciArray);
     fibonacciArray.pop();
     return fibonacciArray;
 }
