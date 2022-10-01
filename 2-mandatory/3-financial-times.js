@@ -5,6 +5,17 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
+
+    let newArray = [];
+    for (let i = 0; i < allArticleTitles.length;i++) { 
+
+        if (allArticleTitles[i].length <= 65) {
+            newArray.push(allArticleTitles[i]);
+         }
+        // console.log(newArray[i]);
+
+    }
+    return newArray;
     // TODO
 }
 
@@ -15,6 +26,19 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
     // TODO
+    let spaceCounter = [];
+    let spaceCounterSize = [];
+    for (let i = 0; i < allArticleTitles.length; i++) {
+        spaceCounter.push(allArticleTitles[i].split(" "));
+        // console.log(spaceCounter);
+        spaceCounterSize.push(spaceCounter[i].length);
+    }
+    // console.log(spaceCounter);
+
+    // console.log(spaceCounterSize);
+    // console.log(Math.min.apply(Math,spaceCounterSize));
+
+    return allArticleTitles[spaceCounterSize.indexOf(Math.min.apply(Math,spaceCounterSize))];
 }
 
 /*
@@ -24,14 +48,30 @@ function titleWithFewestWords(allArticleTitles) {
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+
+    let newArray = [];
+    for (let i = 0; i < allArticleTitles.length; i++) {
+      if (/\d/.test(allArticleTitles[i])) {
+        newArray.push(allArticleTitles[i]);
+      }
+    }
+    // console.log(newArray);
+    return newArray;
 }
 
+// return /\d/.test(str);
+// /\d/.test(allArticleTitles[i]))
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+    let average = 0;
+    for (let i = 0; i < allArticleTitles.length; i++) {
+        average += allArticleTitles[i].length;
+    }
+    return parseInt(average / allArticleTitles.length);
 }
 
 

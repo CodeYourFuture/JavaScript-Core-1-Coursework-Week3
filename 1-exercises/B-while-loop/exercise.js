@@ -5,9 +5,32 @@
     The list of numbers should start with 0. n is being passed in as a parameter.
 */
 
+// function evenNumbers(n) {
+//     // TODO
+
+//     while(n ){
+//         console.log();
+//     }
+// }
+
+//experiment
+
 function evenNumbers(n) {
-    // TODO
+  // TODO
+    let numArray = [0,1,2,3,4,5,6,7,8,9];
+    let counter = 0;
+    let stringVal = [];
+
+    while (counter<n) {
+        stringVal[counter] = numArray[counter] * 2;
+        counter++;
+        
+    }
+    
+    console.log(stringVal);
+
 }
+
 
 evenNumbers(3); // should output 0,2,4
 evenNumbers(0); // should output nothing

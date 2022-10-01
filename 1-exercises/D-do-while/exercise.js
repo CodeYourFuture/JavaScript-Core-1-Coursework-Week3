@@ -7,7 +7,23 @@
 */
 
 function evenNumbersSum(n) {
-    // TODO
+  // TODO
+    let numArray = [0,1,2,3,4,5,6,7,8,9,10];
+    let counter = 0;
+    let sum = 0;
+
+    do {
+        // if (numArray[counter] % 2 == 0) {
+            sum += counter * 2;
+            
+        // } else { 
+            
+        // }
+         counter++;
+
+     } while (counter < n);
+
+    return sum;
 }
 
 console.log(evenNumbersSum(3)); // should output 6

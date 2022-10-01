@@ -12,6 +12,34 @@
 
 function getHighestRatedInEachGenre(books) {
     // TODO
+
+    let highestValue = 0;
+    let highestValueArray = [];
+    
+    // books.forEach(element => element.);
+
+    for (let i = 0; i < books.length; i++) {
+        
+        if (books.find(item => item.genre === "children")) { 
+            highestValueArray.push(books.rating);
+        }
+
+        if (books.genre === "non-fiction") { 
+            highestValueArray.push(books.rating);
+
+        }
+
+        if (books.genre === "cooking") { 
+            highestValueArray.push(books.rating);
+
+        }
+
+
+     }
+
+    console.log(highestValueArray);
+    return highestValueArray;
+
 }
 
 
