@@ -12,6 +12,10 @@
 
 function getHighestRatedInEachGenre(books) {
     // TODO
+
+let genre = getAllGener(books);
+let highestRatedBooks = [];
+
 }
 
 
