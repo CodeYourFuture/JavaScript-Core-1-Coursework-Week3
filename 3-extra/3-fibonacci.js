@@ -15,6 +15,17 @@
 
 function generateFibonacciSequence(n) {
     // TODO
+   
+   
+   // we need to find a sequence of numbers which is the sum of 2 previous numbers which will generate n numbers
+   // n should be greater than 2
+   // the sequence starts with 0 and 1
+    // we need n paramater passed as an argument
+   // we need to return the fibonacci sequence numbers of length n numbers
+
+let n = [];
+
+
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

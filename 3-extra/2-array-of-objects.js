@@ -13,8 +13,15 @@
 function getHighestRatedInEachGenre(books) {
     // TODO
 
-let genre = getAllGener(books);
+// find the title of each genre (how many genre are)
+// 
+
+let genre = getAllGenre(books);
 let highestRatedBooks = [];
+
+
+
+
 
 }
 
