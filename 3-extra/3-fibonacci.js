@@ -14,24 +14,27 @@
 */
 
 function generateFibonacciSequence(n) {
-    // TODO
+  fibArr = [0, 1];
+  for (let i = 2; i < n; i++) {
+    fibArr.push(fibArr[fibArr.length - 1] + fibArr[fibArr.length - 2]);
+  }
+  return fibArr;
 }
+console.log(generateFibonacciSequence(10));
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the first 10 numbers in the Fibonacci Sequence", () => {
-    expect(generateFibonacciSequence(10)).toEqual(
-        [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
-    );
+  expect(generateFibonacciSequence(10)).toEqual([
+    0, 1, 1, 2, 3, 5, 8, 13, 21, 34,
+  ]);
 });
 
 test("should return the first 5 numbers in the Fibonacci Sequence", () => {
-    expect(generateFibonacciSequence(5)).toEqual(
-        [0, 1, 1, 2, 3]
-    );
+  expect(generateFibonacciSequence(5)).toEqual([0, 1, 1, 2, 3]);
 });
 
 test("should return the first 15 numbers in the Fibonacci Sequence", () => {
-    expect(generateFibonacciSequence(15)).toEqual(
-        [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377]
-    );
+  expect(generateFibonacciSequence(15)).toEqual([
+    0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377,
+  ]);
 });
