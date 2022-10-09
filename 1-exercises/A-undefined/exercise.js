@@ -12,7 +12,7 @@
 // Example 1
 let a;
 console.log(a);
-
+// a is never assigned a value, javascript variables are initialised as undefined unless given a value.
 
 // Example 2
 function sayHello() {
@@ -21,7 +21,7 @@ function sayHello() {
 
 let hello = sayHello();
 console.log(hello);
-
+// the sayHello function does not return anything
 
 // Example 3
 function sayHelloToUser(user) {
@@ -29,8 +29,10 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
+// the user parameter is not provided an argument upon function invocation.
 
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+// there is no 4th array element, arrays are indexed starting from 0. arr[3] is the 4th element which does not exist.
