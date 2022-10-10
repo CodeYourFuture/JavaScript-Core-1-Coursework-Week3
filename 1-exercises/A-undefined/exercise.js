@@ -12,7 +12,7 @@
 // Example 1
 let a;
 console.log(a);
-
+// a doesnt have a value
 
 // Example 2
 function sayHello() {
@@ -21,7 +21,7 @@ function sayHello() {
 
 let hello = sayHello();
 console.log(hello);
-
+//
 
 // Example 3
 function sayHelloToUser(user) {
@@ -29,8 +29,9 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
-
+//the user value is undefined in the string
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+// this array doesn't have a fourth value (the first value in the array is designated position 0)
