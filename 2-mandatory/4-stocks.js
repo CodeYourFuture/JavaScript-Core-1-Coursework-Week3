@@ -35,6 +35,21 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 */
 function getAveragePrices(closingPricesForAllStocks) {
     // TODO
+    let averageArray = [];
+    let averagePrice;
+
+    for (const array of closingPricesForAllStocks) {
+        let num = 0;
+        for (const number of array) {
+            num += number;
+        }
+
+        averagePrice = num / 5;
+        averageArray.push(parseFloat(averagePrice.toFixed(2)));
+    }
+    return averageArray;
+
+
 }
 
 /*
