@@ -12,13 +12,13 @@ function evenNumbersSum(n) {
     let i = 0
     j = 1
     sum = 0
-do {
-    i += 2
-    sum += i
-    j++
-}
-while (j < n)
-return sum
+    do {
+        i += 2
+        sum += i
+        j++
+    }
+    while (j < n)
+    return sum
 }
 
 console.log(evenNumbersSum(3)); // should output 6
