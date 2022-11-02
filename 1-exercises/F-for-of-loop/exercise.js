@@ -14,3 +14,13 @@ let tubeStations = [
 
 // TODO Use a for-of loop to capitalise and output each letter in the string seperately.
 let str = "codeyourfuture";
+
+for (let i = 0; i < tubeStations.length; i++) {
+    const index = tubeStations[i];
+    console.log(index);
+}
+let capture = ""
+for (let i = 0; i < str.length;  i++) {
+capture += str[i];
+}
+console.log(capture.toUpperCase()); 

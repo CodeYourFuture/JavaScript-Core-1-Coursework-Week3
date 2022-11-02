@@ -6,6 +6,8 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+    const article = allArticleTitles.filter((article) => article.length <= 65);
+    return article;
 }
 
 /*
@@ -15,7 +17,16 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
     // TODO
+    const outputOfArticle = allArticleTitles[0];
+  for (let i = 0; i < allArticleTitles.length; i++) {
+    if (
+      allArticleTitles[i].split(" ").length < outputOfArticle.split(" ").length
+    )
+      outputOfArticle = allArticleTitles[i];
+  }
+  return outputOfArticle;
 }
+
 
 /*
     The editor of the FT has realised that headlines which have numbers in them get more clicks!
@@ -24,6 +35,8 @@ function titleWithFewestWords(allArticleTitles) {
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+    const title = allArticleTitles.filter((article) => article.match(/(\d+)/));
+    return title
 }
 
 /*
@@ -32,6 +45,12 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+    const total = 0;
+    for (let title of allArticleTitles) {
+      total += title.length;
+    }
+    let average = total / allArticleTitles.length;
+    return Math.round(average);
 }
 
 

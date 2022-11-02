@@ -12,6 +12,7 @@
 // Example 1
 let a;
 console.log(a);
+// the reason why we are seeing undefined for a has no value assigned
 
 
 // Example 2
@@ -21,12 +22,15 @@ function sayHello() {
 
 let hello = sayHello();
 console.log(hello);
+// the function is undefined because it has not returned anything
+
 
 
 // Example 3
 function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
+// the user parameter does not pass anything
 
 sayHelloToUser();
 
@@ -34,3 +38,5 @@ sayHelloToUser();
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+// there is no index 3 in the array the index goes up to 2
+
