@@ -11,8 +11,14 @@
         - Hint: you can call the temperatureService function from your function
 */
 
+let temp;
 function getTemperatureReport(cities) {
-    // TODO
+    strings = [];
+    cities.forEach(item => {
+        temp = temperatureService(item);
+        strings.unshift(`The temperature in ${item} is ${temp} degrees`);
+    });
+    return strings;
 }
 
 
