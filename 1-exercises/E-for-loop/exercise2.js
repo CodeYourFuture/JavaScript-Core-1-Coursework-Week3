@@ -27,9 +27,14 @@ const AGES = [
 ];
 
 // TODO - Write for loop code here
-
+for (let i = 0; i < AGES.length; i++) {
+  console.log(`${WRITERS[i]} is ${AGES[i]} years old`);
+}
 /*
 The output should look something like this:
+
+WRITERS[0] is AGES[0] years old
+
 
 Virginia Woolf is 59 years old
 Zadie Smith is 40 years old
