@@ -11,7 +11,20 @@
 */
 
 function getHighestRatedInEachGenre(books) {
-    // TODO
+    let children = books.filter(book => book.genre === "children");
+    let nonFiction = books.filter((book) => book.genre === "non-fiction");
+    let cooking = books.filter(book => book.genre === "cooking");
+
+    children.sort((a,b) => b.rating - a.rating);
+    nonFiction.sort((a, b) => b.rating - a.rating);
+    cooking.sort((a,b) => b.rating - a.rating);
+
+    let result = [];
+     result.push(nonFiction[0].title);
+    result.push(children[0].title);
+    result.push(cooking[0].title);
+
+   return result;
 }
 
 
@@ -70,7 +83,7 @@ const BOOKS = [
 ]
 
 
-/* ======= TESTS - DO NOT MODIFY ===== */
+ /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the highest rated book in each genre", () => {
     expect(new Set(getHighestRatedInEachGenre(BOOKS))).toEqual(new Set(
         [
@@ -80,3 +93,4 @@ test("should return the highest rated book in each genre", () => {
         ]
     ));
 });
+
