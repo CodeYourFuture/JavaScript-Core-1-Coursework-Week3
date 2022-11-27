@@ -9,8 +9,22 @@
 */
 
 function factorial(input) {
-    // TODO
+    if (input == 0) {
+        return 1;
+    } else {
+        return input * factorial(input - 1);
+    }
+    // ^ this helped me https://www.youtube.com/watch?v=Mv9NEXX1VHc
+    // but i am scared of both recursion and maths... o_O
 }
+
+// console.log(factorial(3));
+// 6
+// console.log(factorial(5));
+// 120
+// console.log(factorial(10));
+// 3628800
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

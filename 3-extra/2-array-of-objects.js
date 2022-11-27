@@ -1,20 +1,3 @@
-/*
-    This exercise includes an array of objects. You can read more about objects here: https://javascript.info/object
-
-    Imagine you're working for an online store selling books (like Amazon).
-    Below, we have an array of book objects.
-    Each object contains the title of the book, the genre, and a rating based on user reviews.
-    
-    We want to find the title of the highest rated book in each genre to showcase on our home page.
-    Implement a function which takes the array of books as a parameter, and returns an array of book titles.
-    Each title in the resulting array should be the highest rated book in its genre.
-*/
-
-function getHighestRatedInEachGenre(books) {
-    // TODO
-}
-
-
 /* ======= Book data - DO NOT MODIFY ===== */
 const BOOKS = [
     {
@@ -68,6 +51,37 @@ const BOOKS = [
         rating: 4.85
     },
 ]
+
+/*
+    This exercise includes an array of objects. You can read more about objects here: https://javascript.info/object
+
+    Imagine you're working for an online store selling books (like Amazon).
+    Below, we have an array of book objects.
+    Each object contains the title of the book, the genre, and a rating based on user reviews.
+    
+    We want to find the title of the highest rated book in each genre to showcase on our home page.
+    Implement a function which takes the array of books as a parameter, and returns an array of book titles.
+    Each title in the resulting array should be the highest rated book in its genre.
+*/
+
+function getHighestRatedInEachGenre(books) {
+
+    const output = [];
+    
+    const genres = Array.from(new Set(books.map(element => element.genre)));
+
+    for (let genre in genres) {   
+        let result = books
+                        .filter(element => element.genre === genres[genre])
+                        .reduce((pV, cV) => pV.rating < cV.rating ? cV : pV);
+
+        output.push(result.title);
+    }
+    
+    return output;
+}
+
+// console.log(getHighestRatedInEachGenre(BOOKS));
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
