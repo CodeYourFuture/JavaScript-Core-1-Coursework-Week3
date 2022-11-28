@@ -11,7 +11,22 @@
 */
 
 function getHighestRatedInEachGenre(books) {
-    // TODO
+    // --because it has not written how much books I can get OR How rating can I get--
+    // --so there are 2 ways to get the 3 books--
+    // --first way--
+    // const getThan48 = books.filter(value => value.rating > 4.8)
+    // let arr = []
+    // for (let i = 0; i < getThan48.length; i++) {
+    //     arr.unshift(getThan48[i].title)
+    // }
+    // return arr
+    // --second way--
+    books.sort((a, b) => b.rating - a.rating)
+    let arr = []
+    for (let i = 0; i < 3; i++) {
+        arr.push(books[i].title)
+    }
+    return arr
 }
 
 
