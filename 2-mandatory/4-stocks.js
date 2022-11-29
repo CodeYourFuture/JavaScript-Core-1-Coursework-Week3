@@ -106,3 +106,5 @@ test("should return a description of the highest price for each stock", () => {
         ]
     );
 });
+
+// mandatory almost done
