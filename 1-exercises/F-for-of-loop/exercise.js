@@ -22,3 +22,5 @@ let str = "codeyourfuture";
 for (let element of str) {
     console.log(str.toLocaleUpperCase());
 }
+
+// Exercises done.

@@ -12,8 +12,14 @@
 */
 
 function getTemperatureReport(cities) {
-    // TODO
+    let weatherArray = [];
+  for (const city of cities) {
+    let temperature = temperatureService(city);
+    weatherArray.push(`The temperature in ${city} is ${temperature} degrees`);
+  }
+  return weatherArray;
 }
+
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
