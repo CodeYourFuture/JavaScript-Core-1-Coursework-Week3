@@ -10,8 +10,28 @@
 
 function factorial(input) {
     // TODO
+    let count = 0;
+    for (let i = 0; i >= input; i--){
+       count = i *= i;
+    }
+    return count;
+}
+function factorial(input) {
+    // TODO
+    let count = 1;
+    for (let i = input; i > 0; i--){
+        //reduce i by 1 till it is 1
+        //1 * a number is 1
+      console.log(i)
+        //tiems count by i and asign to count
+       count *= i;
+       console.log(count)
+    }
+    //exit loop when i is 1
+    return count;
 }
 
+console.log(factorial(5));
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("3! should be 6", () => {
