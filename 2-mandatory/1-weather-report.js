@@ -13,8 +13,13 @@
 
 function getTemperatureReport(cities) {
     // TODO
+    let arr = cities.map((e) => {
+    let temp = temperatureService(e);
+    return `The temperature in ${e} is ${temp} degrees`;
+    });
+    return arr;
 }
-
+console.log(getTemperatureReport(usersCities));
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
