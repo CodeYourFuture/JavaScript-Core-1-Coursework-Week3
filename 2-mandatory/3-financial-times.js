@@ -6,6 +6,8 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+    //could potentislly use arr.filter(word => word.length <= 65)
+    
 }
 
 /*
@@ -14,7 +16,19 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+    // TODO 
+    //arr.sort(compare) use coompare function with array.lenthe
+    //to get arr.length split sting at space (" "), 
+    
+   //function compare(a,b){
+  //  if(a.length > b.length){
+ //   return -1}
+//  if(a.length < b.length){}
+    
+//return 0
+//}
+    
+    //could potentislly use arr.filter(word => word.length > 6); // sort better fit
 }
 
 /*
@@ -24,6 +38,8 @@ function titleWithFewestWords(allArticleTitles) {
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+    //arr.filter((e) => {e.match(/{d}+/g !!== true }) // need to check syntax
+//}) use a regex function to macht for a number if return true should pass filter 
 }
 
 /*
@@ -32,6 +48,12 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+    //split the string into an array with .split()
+    // can .join() and split agin or use regex to replace white space with empty string
+    /// could potentialy use regex to match all the characteres /[a-z]+[0-9]+gi/ need to check syntax
+    /// if can match all infividual caharacters you can use the number to get the average 
+    //use the arr.reduce( fill with syntax) 
+    //divide return value from reduce by array.length (note would need to factor in white space in count unless included in characters)to get the average 
 }
 
 
