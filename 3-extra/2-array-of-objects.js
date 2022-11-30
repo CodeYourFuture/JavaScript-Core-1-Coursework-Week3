@@ -12,8 +12,40 @@
 
 function getHighestRatedInEachGenre(books) {
     // TODO
+    //sort the books array by the object keys
+   let newArr = [...books].sort((a, b) => a.rating - b.rating);
+    //sort highest to lowest  // access and return the 1st index of the array
+    //loop over the books object
+    //
+   return newArr.map((e) => e.title) 
+}
+function compare(a, b) {
+  if (a.rating > b.rating)  {
+    return -1;
+  }
+  if (a.rating < b.rating ) {
+    return 1;
+  }
+  // a must be equal to b
+  return 0;
 }
 
+function getHighestRatedInEachGenre(items) {
+  //console.log(items);
+  //let arr = [...items]; creates shallow copy
+  
+    // TODO
+    //sort the books array by the object keys
+   let qnewArr = [...items].sort(compare);
+    //without providing a compare funtion sort() sorts the items in the wrong order 
+  // let qnewArr = items.sort((a, b) => a.rating - b.rating);
+  //console.log(qnewArr);
+    //sort highest to lowest  // access and return the 1st index of the array
+    //loop over the books object to and return tiltes
+    //
+  let test = qnewArr.map((e) => e.title);
+   return test
+}
 
 /* ======= Book data - DO NOT MODIFY ===== */
 const BOOKS = [
