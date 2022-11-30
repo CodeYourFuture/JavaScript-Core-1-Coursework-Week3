@@ -12,25 +12,28 @@
 // Example 1
 let a;
 console.log(a);
-
+//ANSWER: a has not been assigned a value so there is nothing to print out.
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+  let message = "Hello";
 }
+//ANSWER: there is no return value for the function
 
 let hello = sayHello();
 console.log(hello);
-
+//ANSWER: there is no return value for the expression sayHello
 
 // Example 3
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+  console.log(`Hello ${user}`);
 }
 
 sayHelloToUser();
 
+//ANSWER: no return value for the function even though function has been called
 
 // Example 4
-let arr = [1,2,3];
+let arr = [1, 2, 3];
 console.log(arr[3]);
+//ANSWER: there is not element in the 3rd index of that array
