@@ -15,7 +15,14 @@
 
 function generateFibonacciSequence(n) {
     // TODO
+    let arr = [ 0, 1];
+  for (let i = 2; i < n; i++){
+      let test = arr[arr.length - 1] + arr[arr.length - 2];
+    arr.push(test);
+  }
+  return arr;
 }
+console.log(generateFibonacciSequence(7));
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the first 10 numbers in the Fibonacci Sequence", () => {
