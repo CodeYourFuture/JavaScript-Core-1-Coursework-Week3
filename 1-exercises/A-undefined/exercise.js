@@ -12,25 +12,27 @@
 // Example 1
 let a;
 console.log(a);
-
+// no value has been asigned to a
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+  let message = "Hello";
 }
 
 let hello = sayHello();
 console.log(hello);
-
+// the function is not being invoked
+//their is also no return val;ue
 
 // Example 3
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+  console.log(`Hello ${user}`);
 }
 
 sayHelloToUser();
-
+// no parameter is given but it is required
 
 // Example 4
-let arr = [1,2,3];
+let arr = [1, 2, 3];
 console.log(arr[3]);
+//arrays are zero indexed, index 3 does not exist,
