@@ -30,7 +30,7 @@ function headlinesWithNumbers(allArticleTitles) {
     let NumberArray = []
     const regex = /[0-9]/g;
     for (let i = 0; i < allArticleTitles.length; i++) {
-        if (allArticleTitles[i].search(regex) > 0) { NumberArray.push(allArticleTitles[i]) }
+        if (allArticleTitles[i].search(regex) >= 0) { NumberArray.push(allArticleTitles[i]) }
     }
     return NumberArray
 }
