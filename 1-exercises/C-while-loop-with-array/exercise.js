@@ -17,7 +17,9 @@ const BIRTHDAYS = [
 ];
 
 function findFirstJulyBDay(birthdays) {
-    // TODO
+    while (BIRTHDAYS.filter(item => item.match(/^July/g))) {
+        return BIRTHDAYS.find(item => item.includes('July'))
+    }
 }
 
 console.log(findFirstJulyBDay(BIRTHDAYS)); // should output "July 11th"

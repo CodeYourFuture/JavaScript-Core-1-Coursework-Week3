@@ -14,7 +14,12 @@
 */
 
 function generateFibonacciSequence(n) {
-    // TODO
+    let arr = []
+    const firstSecondNum = [0, 1]
+    for (let i = 0; i < n; i++) {
+        i === 0 || i === 1 ? arr.push(firstSecondNum[i]) : arr.push(arr[i - 2] + arr[i - 1])
+    }
+    return arr
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
