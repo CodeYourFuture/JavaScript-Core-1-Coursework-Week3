@@ -33,9 +33,26 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Solve the smaller problems, and then build those solutions back up to solve the larger problem.
         Functions can help with this!
 */
-function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+function calculateAverage(arr) {
+  let sum = 0;
+  for (let price of arr) {
+    sum += price;
+  }
+  const average = sum / arr.length;
+  return average;
 }
+
+
+function getAveragePrices(closingPricesForAllStocks) {
+  const myArr = [];
+  for (let stock of closingPricesForAllStocks) {
+    const average = calculateAverage(stock);
+    const formattedAverage = Number(average.toFixed(2));
+    myArr.push(formattedAverage);
+  }
+  return myArr;
+}
+
 
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
@@ -48,7 +65,15 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+ 
+    let myArra = [];
+    for (let price of closingPricesForAllStocks) {
+      let firstDay = price[0];
+      let lastDay = price[price.length - 1];
+      let difference = lastDay - firstDay;
+      myArra.push(Number(difference.toFixed(2)));
+    }
+    return myArra;
 }
 
 /*
@@ -65,6 +90,17 @@ function getPriceChanges(closingPricesForAllStocks) {
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
     // TODO
+    let arr = [];
+    for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+      arr.push(
+        `The highest price of ${stocks[
+          i
+        ].toUpperCase()} in the last 5 days was ${Math.max(
+          ...closingPricesForAllStocks[i]
+        ).toFixed(2)}`
+      );
+    }
+    return arr;
 }
 
 
