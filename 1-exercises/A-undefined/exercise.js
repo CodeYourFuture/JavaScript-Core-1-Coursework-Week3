@@ -12,13 +12,13 @@
 // Example 1
 let a;
 console.log(a);
-
+// The variable is not assigned to any value.
 
 // Example 2
 function sayHello() {
     let message = "Hello";
 }
-
+//function doesn't return a value 
 let hello = sayHello();
 console.log(hello);
 
@@ -29,8 +29,9 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
-
+// when function called to argument has given.
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+// there is only 0,1,2 index in this array only.

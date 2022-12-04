@@ -10,9 +10,14 @@
 
 function factorial(input) {
     // TODO
-}
+	let factorial = input;
 
-/* ======= TESTS - DO NOT MODIFY ===== */
+	for (let i = input-1; i > 1; i--) {
+		factorial *= i;
+	}
+	return factorial;
+}
+// /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("3! should be 6", () => {
     expect(factorial(3)).toEqual(6);
