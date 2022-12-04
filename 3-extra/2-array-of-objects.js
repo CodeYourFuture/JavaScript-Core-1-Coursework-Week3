@@ -11,7 +11,6 @@
 */
 
 function getHighestRatedInEachGenre(books) {
-    console.log(books)
     let maxChil = 0;
     let nameChil = ''
     let myarr = []
@@ -24,23 +23,23 @@ function getHighestRatedInEachGenre(books) {
             maxChil = books[i].rating
             nameChil = books[i].title
         }
-        myarr.push(nameChil)
+        
     }
     for (const i in books){
         if (books[i].rating > maxNon && books[i].genre=="non-fiction"){
             maxNon = books[i].rating
             nameNon = books[i].title
         }
-        myarr.push(nameNon)
+        
     }
     for (const i in books){
         if (books[i].rating > maxCook  && books[i].genre=="cooking"){
             maxCook  = books[i].rating
             nameCook = books[i].title
         }
-    myarr.push(nameCook)
+    
     }
-    return myarr
+    return [nameChil, nameNon, nameCook]
 }
 
 
