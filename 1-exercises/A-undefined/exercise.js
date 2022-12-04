@@ -9,18 +9,19 @@
     For each example, can you explain why we are seeing undefined?
 */
 
-// Example 1
+// Example 1  === Variable a has not assigned any value
 let a;
 console.log(a);
 
 
-// Example 2
+// Example 2  ===  
 function sayHello() {
     let message = "Hello";
-}
+} 
+ let hello = sayHello();
+  console.log(hello);
+  
 
-let hello = sayHello();
-console.log(hello);
 
 
 // Example 3
