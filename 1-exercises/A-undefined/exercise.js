@@ -12,6 +12,7 @@
 // Example 1
 let a;
 console.log(a);
+// a doesn't have a value
 
 
 // Example 2
@@ -21,6 +22,7 @@ function sayHello() {
 
 let hello = sayHello();
 console.log(hello);
+//The function doesn't return any value
 
 
 // Example 3
@@ -29,8 +31,9 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
-
+//The function doesn't have a parameter
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+//The array only have 3 element not 4
