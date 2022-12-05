@@ -34,9 +34,12 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Functions can help with this!
 */
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+    let averArr = []
+    for ( let i of closingPricesForAllStocks){
+        averArr.push(Number((i.reduce((accumulator, value) => {return accumulator + value})/i.length).toFixed(2)))
+    }
+    return averArr
 }
-
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
     Implement the below function, which
@@ -47,10 +50,20 @@ function getAveragePrices(closingPricesForAllStocks) {
                 (Apple's price on the 5th day) - (Apple's price on the 1st day) = 172.99 - 179.19 = -6.2
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
-function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
-}
-
+function calculateChange (prices){
+    return (prices[prices.length-1]-prices[0]).toFixed(2)
+ }
+ 
+ function getPriceChanges(closingPricesForAllStocks) {
+    //  let changArr = []
+    //  for ( let i of closingPricesForAllStocks){
+    //      let change = calculateChange(i)
+    //      changArr.push(Number(change))
+    //  }
+    //  return changArr 
+     return closingPricesForAllStocks.map(x=>Number(calculateChange(x)))
+ }
+ 
 /*
     As part of a financial report, we want to see what the highest price was for each stock in the last 5 days.
     Implement the below function, which
@@ -64,9 +77,12 @@ function getPriceChanges(closingPricesForAllStocks) {
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+    let myarr = []
+    for (let i in closingPricesForAllStocks){
+        myarr.push(`The highest price of ${stocks[i].toUpperCase()} in the last 5 days was ${Math.max(...closingPricesForAllStocks[i]).toFixed(2)}`)
+    }
+    return myarr
 }
-
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the average price for each stock", () => {
