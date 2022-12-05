@@ -12,6 +12,9 @@
 
 function getHighestRatedInEachGenre(books) {
     // TODO
+    for(let book of books){
+        
+    }
 }
 
 
