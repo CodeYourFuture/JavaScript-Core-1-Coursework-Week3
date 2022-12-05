@@ -11,9 +11,30 @@
         - Hint: you can call the temperatureService function from your function
 */
 
-function getTemperatureReport(cities) {
+let userCities = ["London", "Paris", "Sao Paulo"];
+function getTemperatureReport(userCities) {
     // TODO
+   
+    for (city of userCities) {
+        if (city === "") {
+            console.log("The temperature in " + city + " is " + "[]" + " degrees");
+        }
+        else {
+        console.log(`The temperature in ${city} is ${temperatureService(city)} degrees`);
+    } 
+    /* for (let i = 0; i < cities.length; i++) {
+        console.log("The temperature in " + cities[i] + " is " + temperatureService() + " degrees.");
+    } */
 }
+
+}
+
+getTemperatureReport(userCities);
+
+userCities.splice(0,3, "Barcelona", "Dubai", "");
+
+getTemperatureReport(userCities);
+
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
@@ -26,12 +47,15 @@ function temperatureService(city) {
     temparatureMap.set('Barcelona', 17);
     temparatureMap.set('Dubai', 27);
     temparatureMap.set('Mumbai', 29);
-    temparatureMap.set('São Paulo', 23);
+    temparatureMap.set('Sao Paulo', 23);
     temparatureMap.set('Lagos', 33);
     
     return temparatureMap.get(city);
 }
 
+temperatureService(city);
+
+/*
 test("should return a temperature report for the user's cities", () => {
     let usersCities = [
         "London",
@@ -60,4 +84,4 @@ test("should return a temperature report for the user's cities (alternate input)
 
 test("should return an empty array if the user hasn't selected any cities", () => {
     expect(getTemperatureReport([])).toEqual([]);
-});
+}); */

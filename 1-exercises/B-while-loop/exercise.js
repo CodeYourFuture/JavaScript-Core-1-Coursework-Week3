@@ -7,7 +7,14 @@
 
 function evenNumbers(n) {
     // TODO
+    let i = 0;
+    while (n <= 18) {
+       if (i % 2 === 0) {
+        return i;
+       }
+    }
 }
+console.log(evenNumbers(10));
 
 evenNumbers(3); // should output 0,2,4
 evenNumbers(0); // should output nothing
