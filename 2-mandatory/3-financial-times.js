@@ -14,10 +14,11 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    let myMin = 100;
+    let myMin;
     let myStr = ''
     for (i in allArticleTitles){
-        if (allArticleTitles[i].length<myMin){
+        myMin = myMin || allArticleTitles[i].length
+        if (allArticleTitles[i].length < myMin){
             myMin = allArticleTitles[i].length
             myStr = allArticleTitles[i]
         }
