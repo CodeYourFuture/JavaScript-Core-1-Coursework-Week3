@@ -10,27 +10,28 @@
 */
 
 // Example 1
+// Because inside the varible a we didn't put any value
 let a;
 console.log(a);
 
-
 // Example 2
+// we can't get anything because we need add return inside the body of function
 function sayHello() {
-    let message = "Hello";
+  let message = "Hello";
 }
 
 let hello = sayHello();
 console.log(hello);
 
-
 // Example 3
+// Because there is not anything inside function when we call it
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+  console.log(`Hello ${user}`);
 }
 
 sayHelloToUser();
 
-
 // Example 4
-let arr = [1,2,3];
+// Our array length has just 0,1,2 . it means we don't hav arr[3]
+let arr = [1, 2, 3];
 console.log(arr[3]);
