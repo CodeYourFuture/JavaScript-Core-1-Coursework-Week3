@@ -13,6 +13,7 @@
 let a;
 console.log(a);
 
+variable a is not assigned to a value
 
 // Example 2
 function sayHello() {
@@ -22,6 +23,7 @@ function sayHello() {
 let hello = sayHello();
 console.log(hello);
 
+sayHello is a function that has not been defined nor does it have a return value or a parameter
 
 // Example 3
 function sayHelloToUser(user) {
@@ -31,6 +33,10 @@ function sayHelloToUser(user) {
 sayHelloToUser();
 
 
+sayHelloToUser does not have a parameter therefore user has no value
+
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+
+console.log is calling index 3 however there are only 2 as the index starts at 0
