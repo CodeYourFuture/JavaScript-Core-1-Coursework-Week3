@@ -63,7 +63,7 @@ function getPriceChanges(closingPricesForAllStocks) {
    // TODO
    let arr=[];
    for (let closingPricesForStock of closingPricesForAllStocks){    
-    arr.push(Number((closingPricesForStock[closingPricesForStock.length-1]-closingPricesForStock[0])).toFixed(2));
+    arr.push(Number((closingPricesForStock[closingPricesForStock.length-1]-closingPricesForStock[0]).toFixed(2)));
     
    }
    return arr;
