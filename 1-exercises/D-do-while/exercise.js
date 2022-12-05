@@ -7,7 +7,19 @@
 */
 
 function evenNumbersSum(n) {
+    evenNumArray = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22];
+    let i = 0;
+    let sum = 0;
+    do {
+        sum += evenNumArray[i];
+        i++;
+
+    }
+    while (i < n) {
+        return sum;
+    }
     // TODO
+
 }
 
 console.log(evenNumbersSum(3)); // should output 6
