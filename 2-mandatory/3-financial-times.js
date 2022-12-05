@@ -40,8 +40,8 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
 
-    let sumOfChar = allArticleTitles.map(x=>x.length)
-    return Math.round(sumOfChar.reduce(function(a, b) { return a + b; }, 0)/allArticleTitles.length)
+    // let sumOfChar = allArticleTitles.map(x=>x.length)
+    return Math.round(allArticleTitles.reduce(function(a, b) { return a + b.length }, 0)/allArticleTitles.length)
 }
 
 

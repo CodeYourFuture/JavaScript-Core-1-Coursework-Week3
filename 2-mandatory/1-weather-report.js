@@ -12,11 +12,11 @@
 */
 
 function getTemperatureReport(cities) {
-    let report = []
-    for (i in cities){
-        report.push(`The temperature in ${cities[i]} is ${temperatureService(cities[i])} degrees`)
-    }
-    return report
+    // let report = []
+    // for (i in cities){
+    //     report.push(`The temperature in ${cities[i]} is ${temperatureService(cities[i])} degrees`)
+    // }
+    return cities.map(x=>`The temperature in ${x} is ${temperatureService(x)} degrees`)
 }
 
 

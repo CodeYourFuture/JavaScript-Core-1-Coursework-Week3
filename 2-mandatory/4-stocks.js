@@ -55,12 +55,13 @@ function calculateChange (prices){
  }
  
  function getPriceChanges(closingPricesForAllStocks) {
-     let changArr = []
-     for ( let i of closingPricesForAllStocks){
-         let change = calculateChange(i)
-         changArr.push(Number(change))
-     }
-     return changArr 
+    //  let changArr = []
+    //  for ( let i of closingPricesForAllStocks){
+    //      let change = calculateChange(i)
+    //      changArr.push(Number(change))
+    //  }
+    //  return changArr 
+     return closingPricesForAllStocks.map(x=>Number(calculateChange(x)))
  }
  
 /*
