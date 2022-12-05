@@ -6,6 +6,8 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+    return allArticleTitles.filter(items => items.length < 65);
+    
 }
 
 /*
@@ -15,6 +17,12 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
     // TODO
+    let arr = [];
+     for (let i = 0; i < allArticleTitles.length; i++) {
+       arr.push(allArticleTitles[i].split(" ").length);
+     }
+     return allArticleTitles[arr.indexOf(Math.min(...arr))];
+ 
 }
 
 /*
