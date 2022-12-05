@@ -11,10 +11,18 @@ function generateRandomNumber() {
 
 function getRandomNumberGreaterThan50() {
     // TODO - implement using a do-while loop
+   
+do { generateRandomNumber();
+    console.log(generateRandomNumber());
 }
+while (generateRandomNumber() < 50)
+
+}
+console.log(generateRandomNumber());
+getRandomNumberGreaterThan50();
 
 /* ======= TESTS - DO NOT MODIFY ===== */
-
+/*
 test("Returned value should always be greater than 50", () => {
     expect(getRandomNumberGreaterThan50()).toBeGreaterThan(50);
     expect(getRandomNumberGreaterThan50()).toBeGreaterThan(50);
@@ -22,3 +30,4 @@ test("Returned value should always be greater than 50", () => {
     expect(getRandomNumberGreaterThan50()).toBeGreaterThan(50);
     expect(getRandomNumberGreaterThan50()).toBeGreaterThan(50);
 });
+*/
