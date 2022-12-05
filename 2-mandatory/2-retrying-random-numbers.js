@@ -5,13 +5,18 @@
 
 // This function shouldn't be changed
 function generateRandomNumber() {
-    console.log("Generating number...");
+    console.log("Generating number...")
     return Math.round(Math.random() * 100);
-}
-
-function getRandomNumberGreaterThan50() {
-    // TODO - implement using a do-while loop
-}
+ }
+ 
+ function getRandomNumberGreaterThan50() {
+    let numbersInArray = []
+    do{
+        numbersInArray = generateRandomNumber()
+    }while(numbersInArray<51)
+    return numbersInArray
+ }
+ 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

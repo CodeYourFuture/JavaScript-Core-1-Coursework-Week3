@@ -5,7 +5,13 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    // TODO
+    let fitTitles = [];
+    for(let i in allArticleTitles){
+        if(allArticleTitles[i].length<=65){
+            fitTitles.push(allArticleTitles[i])
+        }
+    }
+    return fitTitles
 }
 
 /*
@@ -14,8 +20,15 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
-}
+    let lengthOfTitles = []
+    for(let i in allArticleTitles){
+        lengthOfTitles.push(allArticleTitles[i].split(" ").length)
+    }
+    let minimumTitlesIndex = lengthOfTitles.indexOf(Math.min(...lengthOfTitles))
+    return allArticleTitles[minimumTitlesIndex]
+        
+    }
+
 
 /*
     The editor of the FT has realised that headlines which have numbers in them get more clicks!
@@ -23,15 +36,32 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
-}
+    let output = []
+    for(let i in allArticleTitles){
+        
+        if(allArticleTitles[i].match(/[0-9]/g) !== null){
+            output.push(allArticleTitles[i])
+        }
+        
+    }
+    return output
+ }
 
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
+    let allIntegers = []
+    for(let i in allArticleTitles){
+        allIntegers.push(allArticleTitles[i].length)
+    }
+    let total = 0;
+    for(let i = 0; i < allIntegers.length; i++) {
+    total += allIntegers[i];
+    }
+    let average = total / allIntegers.length;
+    return Math.round(average)
 }
 
 
