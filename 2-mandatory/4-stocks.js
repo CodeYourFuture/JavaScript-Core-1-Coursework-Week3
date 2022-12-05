@@ -33,8 +33,27 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Solve the smaller problems, and then build those solutions back up to solve the larger problem.
         Functions can help with this!
 */
+function calculateAverage(arr) {
+  let sum = 0;
+  for (let price of arr) {
+    sum += price;
+  }
+  const average = sum / arr.length;
+  return average;
+}
+
+
 function getAveragePrices(closingPricesForAllStocks) {
     // TODO
+     const myArr = [];
+  for (let stock of closingPricesForAllStocks) {
+    const average = calculateAverage(stock);
+    const formattedAverage = Number(average.toFixed(2));
+    myArr.push(formattedAverage);
+  }
+  return myArr;
+
+
 }
 
 /*
@@ -49,6 +68,14 @@ function getAveragePrices(closingPricesForAllStocks) {
 */
 function getPriceChanges(closingPricesForAllStocks) {
     // TODO
+     let myArra = [];
+    for (let price of closingPricesForAllStocks) {
+      let firstDay = price[0];
+      let lastDay = price[price.length - 1];
+      let difference = lastDay - firstDay;
+      myArra.push(Number(difference.toFixed(2)));
+    }
+    return myArra;
 }
 
 /*
@@ -65,6 +92,17 @@ function getPriceChanges(closingPricesForAllStocks) {
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
     // TODO
+    let arr = [];
+    for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+      arr.push(
+        `The highest price of ${stocks[
+          i
+        ].toUpperCase()} in the last 5 days was ${Math.max(
+          ...closingPricesForAllStocks[i]
+        ).toFixed(2)}`
+      );
+    }
+    return arr;
 }
 
 

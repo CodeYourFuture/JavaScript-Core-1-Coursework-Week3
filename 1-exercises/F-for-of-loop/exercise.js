@@ -8,9 +8,15 @@ let tubeStations = [
     "Baker Street",
     "Picadilly Circus",
     "Oxford Street",
-    "Tottenham Court Road"
+    "Tottenham Court Road",
 ];
-
+for (let el of tubeStations) {
+  console.log(el);
+}
 
 // TODO Use a for-of loop to capitalise and output each letter in the string seperately.
 let str = "codeyourfuture";
+
+for (let char of str) {
+    console.log(char.toUpperCase())
+}

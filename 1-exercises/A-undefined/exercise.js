@@ -12,16 +12,17 @@
 // Example 1
 let a;
 console.log(a);
-
+//a has not defined.
 
 // Example 2
 function sayHello() {
     let message = "Hello";
 }
+//no parameter  
 
 let hello = sayHello();
 console.log(hello);
-
+//sayhello() function will not return anything.
 
 // Example 3
 function sayHelloToUser(user) {
@@ -29,8 +30,10 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
-
+//no argument in envoked function
 
 // Example 4
+
 let arr = [1,2,3];
 console.log(arr[3]);
+//no 4th element
