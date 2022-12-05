@@ -10,6 +10,13 @@
 
 function factorial(input) {
     // TODO
+    let i=1;
+    let multy=1;
+    while(i<= input){
+        multy*=i;
+        i++;
+    }
+    return multy;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
