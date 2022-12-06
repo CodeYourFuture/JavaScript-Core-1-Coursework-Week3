@@ -12,7 +12,32 @@
 
 function getHighestRatedInEachGenre(books) {
     // TODO
-}
+  let childrenGenre = [];
+  let nonFictionGenre = [];
+  let cookingGenre = [];
+  let booksArr = [];
+  for (let i = 0; i < books.length; i++) {
+    if (books[i].genre === "children") {
+      childrenGenre.push(books[i]);
+    } else if (books[i].genre === "non-fiction") {
+      nonFictionGenre.push(books[i]);
+    } else {
+     cookingGenre.push(books[i]);
+    }
+  }
+  let childrenSorted = childrenGenre.sort((a, b) => a.rating - b.rating);
+  let nonFictionSorted = nonFictionGenre.sort((a, b) => a.rating - b.rating);
+  let cookingSorted = cookingGenre.sort((a, b) => a.rating - b.rating);
+ 
+
+  booksArr.push(childrenSorted[childrenSorted.length - 1].title);
+  booksArr.push(cookingSorted[cookingSorted.length - 1].title);
+  booksArr.push(nonFictionSorted[nonFictionSorted.length - 1].title);
+
+  return booksArr;
+} 
+   
+
 
 
 /* ======= Book data - DO NOT MODIFY ===== */

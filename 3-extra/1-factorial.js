@@ -10,6 +10,17 @@
 
 function factorial(input) {
     // TODO
+  let result = 1;
+  let i = input;
+   if (input = 0) {
+      return 1;
+ } else { 
+      while (i > 0){
+      result *= i;
+      i--;
+    }
+  return result;
+  } 
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
