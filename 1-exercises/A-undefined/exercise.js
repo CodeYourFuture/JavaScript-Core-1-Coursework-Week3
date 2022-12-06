@@ -10,11 +10,11 @@
 */
 
 // Example 1
-let a;
+let a; // because we didn't declare any value to a
 console.log(a);
 
 
-// Example 2
+// Example 2// because function not returning any values
 function sayHello() {
     let message = "Hello";
 }
@@ -24,13 +24,13 @@ console.log(hello);
 
 
 // Example 3
-function sayHelloToUser(user) {
+function sayHelloToUser(user) { 
     console.log(`Hello ${user}`);
 }
 
-sayHelloToUser();
+sayHelloToUser();// we need to declare user inside that function /we called function but its parameter is not declared
 
 
 // Example 4
 let arr = [1,2,3];
-console.log(arr[3]);
+console.log(arr[3]);// there is not third index in this array
