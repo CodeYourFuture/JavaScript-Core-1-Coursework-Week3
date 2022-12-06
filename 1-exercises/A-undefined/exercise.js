@@ -16,7 +16,8 @@ console.log(a);
 // Example 2
 function sayHello() {
   let message = "Hello";
-  console.log(message);
+    console.log(message);
+  return message;
 }
 
 let hello = sayHello();
@@ -24,7 +25,7 @@ console.log(hello);
 
 // Example 3
 function sayHelloToUser(user) {
-  console.log(`Hello ${user}`);
+    console.log(`Hello ${user}`);
 }
 
 sayHelloToUser("Natalie");
