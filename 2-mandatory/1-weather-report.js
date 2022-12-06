@@ -13,9 +13,8 @@
 
 function getTemperatureReport(cities) {
     // TODO
+  return cities.map(el => "The temperature in " + el + " is " + temperatureService(el) + " degrees");
 }
-
-
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 function temperatureService(city) {
