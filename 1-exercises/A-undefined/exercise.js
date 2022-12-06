@@ -12,7 +12,7 @@
 // Example 1
 let a;
 console.log(a);
-
+//Because variable "a" didn't assign to a value;
 
 // Example 2
 function sayHello() {
@@ -21,7 +21,7 @@ function sayHello() {
 
 let hello = sayHello();
 console.log(hello);
-
+//Because we didn't use return in sayHello function.
 
 // Example 3
 function sayHelloToUser(user) {
@@ -29,8 +29,9 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
-
+//Because We didn't send any parameter to be as user. 
 
 // Example 4
-let arr = [1,2,3];
+let arr = [1, 2, 3];
 console.log(arr[3]);
+//Because we didn't have any value with index 3.
