@@ -13,15 +13,18 @@
 let a;
 console.log(a);
 
+// The variable "a" is declared but no value is assigned to it.
 
 // Example 2
 function sayHello() {
     let message = "Hello";
 }
 
+
 let hello = sayHello();
 console.log(hello);
 
+// The function doesn't return a value.
 
 // Example 3
 function sayHelloToUser(user) {
@@ -30,7 +33,10 @@ function sayHelloToUser(user) {
 
 sayHelloToUser();
 
+// No value is passed for the function parameter "user".
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+
+// There is no value for array fourth element.

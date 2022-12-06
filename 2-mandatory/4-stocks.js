@@ -35,6 +35,18 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 */
 function getAveragePrices(closingPricesForAllStocks) {
     // TODO
+    let averageArr = [];
+    for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+        let total = 0;
+        for (let j=0; j < closingPricesForAllStocks[i].length; j++){
+            total += closingPricesForAllStocks[i][j];
+        }
+        let average = total / closingPricesForAllStocks[i].length;
+        let roundedAverage = Number(average.toFixed(2));
+        averageArr.push(roundedAverage);
+        
+    }
+    return averageArr;
 }
 
 /*
@@ -49,6 +61,12 @@ function getAveragePrices(closingPricesForAllStocks) {
 */
 function getPriceChanges(closingPricesForAllStocks) {
     // TODO
+    let changeArr=[];
+    for (let i = 0; i < closingPricesForAllStocks.length; i++){
+        let change = closingPricesForAllStocks[i][closingPricesForAllStocks.length - 1] - closingPricesForAllStocks[i][0];
+        changeArr.push(Number(change.toFixed(2)));
+    }
+    return changeArr;
 }
 
 /*
@@ -64,7 +82,13 @@ function getPriceChanges(closingPricesForAllStocks) {
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+// TODO
+    let maxArray = [];
+    for (let i = 0; i < closingPricesForAllStocks.length; i++){
+    let maxStocks = Math.max(...closingPricesForAllStocks[i]).toFixed(2);
+    maxArray.push("The highest price of " + stocks[i].toUpperCase() + " in the last 5 days was " + maxStocks);
+    }
+    return maxArray;
 }
 
 

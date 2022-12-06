@@ -5,9 +5,15 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    // TODO
+  // TODO
+  let articleArr = [];
+  for (let i = 0; i < allArticleTitles.length; i++) {
+    if (allArticleTitles[i].length <= 65) {
+      articleArr.push(allArticleTitles[i]);
+    }
+  }
+  return articleArr;
 }
-
 /*
     The editor of the FT likes short headlines with only a few words!
     Implement the function below, which returns the title with the fewest words.
@@ -15,6 +21,13 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
     // TODO
+   let wordsCount= [];
+    for (let i = 0; i < allArticleTitles.length; i++){
+      wordArticle = allArticleTitles[i].split("");
+      wordsCount.push(wordArticle.length);
+    }
+    let index = wordsCount.indexOf(Math.min(...wordsCount))
+    return allArticleTitles[index];
 }
 
 /*
@@ -24,6 +37,14 @@ function titleWithFewestWords(allArticleTitles) {
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+    let numArticle = [];
+    let pattern =/[0-9]/g;
+    for (let i=0; i<allArticleTitles.length; i++){
+        if (allArticleTitles[i].search(pattern)!= -1 ){
+            numArticle.push(allArticleTitles[i]);
+        }
+    }
+    return numArticle;
 }
 
 /*
@@ -32,6 +53,13 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+    let total = 0;
+    for (i=0; i < allArticleTitles.length; i++){
+        total += allArticleTitles[i].length;
+        average = total / allArticleTitles.length;
+        roundedAverage = Math.round(average);
+    }
+    return roundedAverage;
 }
 
 
