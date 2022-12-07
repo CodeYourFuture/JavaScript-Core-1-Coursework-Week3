@@ -13,7 +13,21 @@
 
 function getTemperatureReport(cities) {
     // TODO
+    let tempArray = [];
+    for (let i = 0; i < cities.length; i++) { 
+      let temp = temperatureService(cities[i]);
+        console.log(temp);
+        tempArray[i] = "The temperature in " + cities[i] + " is " + temp + " degrees";
+    }
+    return tempArray
 }
+    
+
+    
+
+
+
+
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
