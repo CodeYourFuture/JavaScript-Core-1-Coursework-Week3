@@ -27,7 +27,10 @@ const AGES = [
 ];
 
 // TODO - Write for loop code here
-
+let i = 0;
+for (let i = 0; i < 5; i++) {
+  console.log(WRITERS[i], AGES[i], "years old");
+}
 /*
 The output should look something like this:
 
