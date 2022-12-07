@@ -6,7 +6,17 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+    let newArray = [];
+    for (let i = 0; i < allArticleTitles.length;i++) { 
+
+        if (allArticleTitles[i].length <= 65) {
+            newArray.push(allArticleTitles[i]);
+         }
+    }
+    return newArray;
+  
 }
+
 
 /*
     The editor of the FT likes short headlines with only a few words!
@@ -15,6 +25,9 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
     // TODO
+    let arr = allArticleTitles;
+    let newArr = [...allArticleTitles].sort((a, b) => a.length - b.length);
+    return newArr[0];
 }
 
 /*
@@ -24,7 +37,18 @@ function titleWithFewestWords(allArticleTitles) {
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+    let newArray = [];
+    for (let i = 0; i < allArticleTitles.length; i++) {
+      if (/\d/.test(allArticleTitles[i])) {
+        newArray.push(allArticleTitles[i]);
+      }
+    }
+
+    return newArray;
 }
+  
+ 
+
 
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
@@ -32,6 +56,13 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+   
+    let average = 0;
+    for (let i = 0; i < allArticleTitles.length; i++) {
+        average += allArticleTitles[i].length;
+    }
+    return parseInt(average / allArticleTitles.length);
+
 }
 
 

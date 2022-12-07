@@ -12,7 +12,32 @@
 
 function getHighestRatedInEachGenre(books) {
     // TODO
+    let resultBooks = {};
+    let genres = [];
+    let result = [];
+  
+    for (let i = 0; i < books.length; i++) {
+      let genre = books[i]["genre"];
+      if (genres.indexOf(genre) < 0) {
+        genres.push(genre);
+      }
+  
+      if (
+        !resultBooks[genre] ||
+        !resultBooks[genre]["rating"] ||
+        resultBooks[genre]["rating"] < books[i]["rating"]
+      ) {
+        resultBooks[genre] = books[i];
+      }
+    }
+    for (let i = 0; i < genres.length; i++) {
+      result.push(resultBooks[genres[i]]["title"]);
+    }
+  
+    return result;
+ 
 }
+
 
 
 /* ======= Book data - DO NOT MODIFY ===== */

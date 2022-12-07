@@ -35,8 +35,19 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 */
 function getAveragePrices(closingPricesForAllStocks) {
     // TODO
+    let averageStock = [];
+  let sum = 0;
+  for (let stockPriceBrand of closingPricesForAllStocks) {
+    for (let unitStockPriceBrand of stockPriceBrand) {
+      sum += unitStockPriceBrand;
+    }
+    let averageAllStock = sum / 5;
+    averageStock.push(parseFloat(averageAllStock.toFixed(2)));
+    sum = 0;
+  }
+  return averageStock;
 }
-
+    
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
     Implement the below function, which
@@ -49,7 +60,16 @@ function getAveragePrices(closingPricesForAllStocks) {
 */
 function getPriceChanges(closingPricesForAllStocks) {
     // TODO
+    let priceChangeStock = [];
+    for (let stockPriceBrand of closingPricesForAllStocks) {
+      let priceChangeBrand = stockPriceBrand[4] - stockPriceBrand[0];
+      let FormattedPriceChangeBrand = parseFloat(priceChangeBrand.toFixed(2));
+    priceChangeStock.push(FormattedPriceChangeBrand);
+    priceChangeBrand = 0;
+  }
+  return priceChangeStock;
 }
+
 
 /*
     As part of a financial report, we want to see what the highest price was for each stock in the last 5 days.
@@ -65,6 +85,15 @@ function getPriceChanges(closingPricesForAllStocks) {
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
     // TODO
+    let highPrice=[];
+
+    stocks.forEach((stock,item) => {
+        highPrice.push(
+          `The highest price of ${stock.toUpperCase()} in the last 5 days was ${Math.max(...closingPricesForAllStocks[item]).toFixed(2)}`
+        );
+    });
+    return highPrice;
+
 }
 
 
