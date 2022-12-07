@@ -21,6 +21,23 @@ console.log("factorial number 3 = ", factorial(3));
 console.log("factorial number 5 = ", factorial(5));
 console.log("factorial number 10 = ", factorial(10));
 
+
+/* sol 2
+function factorial(n) {
+  if (n === 1) {
+    return 1;
+  }
+  
+  return n * factorial(n - 1);
+}
+
+alert(factorial(1) === 1);
+alert(factorial(2) === 2);
+alert(factorial(3) === 6);
+alert(factorial(4) === 24);
+alert(factorial(5) === 120);
+*/
+
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("3! should be 6", () => {
