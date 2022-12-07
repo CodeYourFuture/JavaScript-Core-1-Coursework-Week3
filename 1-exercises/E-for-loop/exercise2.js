@@ -28,6 +28,21 @@ const AGES = [
 
 // TODO - Write for loop code here
 
+for(i = 0;i <= WRITERS.length;i++ ){
+    const result=`${WRITERS[i]} is ${AGES[i]} years old `
+    console.log(result)
+}
+
+
+//I did with forEach as well with same result
+
+// WRITERS.forEach((num1, index) => {
+//   const num2 = AGES[index];
+//   const result = `${num1} is ${num2} years old`
+//   console.log(result);
+// });
+
+
 /*
 The output should look something like this:
 

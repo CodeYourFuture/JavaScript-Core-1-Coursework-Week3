@@ -34,7 +34,17 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Functions can help with this!
 */
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+   
+    let averageArr=[];
+    for (let closingPricesForStock of closingPricesForAllStocks){
+        let sum =0;
+        for (let item of closingPricesForStock){
+            sum=sum+item;
+        }
+        averageArr.push(Number((sum/closingPricesForStock.length).toFixed(2)));
+
+    }
+    return averageArr;
 }
 
 /*
@@ -48,7 +58,12 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+    let arr=[];
+   for (let closingPricesForStock of closingPricesForAllStocks){    
+    arr.push(Number((closingPricesForStock[closingPricesForStock.length-1]-closingPricesForStock[0]).toFixed(2)));
+
+   }
+   return arr;
 }
 
 /*
@@ -64,7 +79,11 @@ function getPriceChanges(closingPricesForAllStocks) {
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+    let arr=[];
+    for (let i=0;i<closingPricesForAllStocks.length;i++){
+        arr.push (`The highest price of ${stocks[i].toUpperCase()} in the last 5 days was ${(Math.max(...closingPricesForAllStocks[i])).toFixed(2)}`)
+    }
+    return arr;
 }
 
 
