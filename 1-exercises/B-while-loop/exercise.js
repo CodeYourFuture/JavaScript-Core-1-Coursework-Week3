@@ -10,7 +10,7 @@ function evenNumbers(n) {
   let array = [];
   while (n > 0) {
     array.push(number);
-    number += 2;
+    number = number + 2;
     n = n - 1;
   }
   console.log(array.join());
