@@ -5,7 +5,13 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    // TODO
+ let arr =[];
+    for (let article of allArticleTitles){
+        if (article.length <= 65){
+            arr.push(article)
+        }
+    }
+    return arr;
 }
 
 /*
@@ -14,16 +20,31 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+    let arr = [];
+    for (let i = 0; i < allArticleTitles.length; i++) {
+        arr.push(allArticleTitles[i].split(" ").length);
+    }
+    return allArticleTitles[arr.indexOf(Math.min(...arr))];
 }
 
 /*
-    The editor of the FT has realised that headlines which have numbers in them get more clicks!
-    Implement the function below to return a new array containing all the headlines which contain a number.
+   on The editor of the FT has realised that headlines which have numbers in them get more clicks!
+    Implement the function below to return a new array containing all the headlines which ctain a number.
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+    let arr= [];
+    for (let article of allArticleTitles){
+        for (let char of article){
+            if (char>="0" && char<="9"){
+                arr.push (article);
+                break;
+            }
+
+        }
+    }
+    return arr
 }
 
 /*
@@ -32,6 +53,13 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+    let sum = 0; 
+    for (let article of allArticleTitles){
+        sum += article.length;
+
+        }
+    
+    return Math.round(sum / allArticleTitles.length)
 }
 
 

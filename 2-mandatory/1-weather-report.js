@@ -12,7 +12,12 @@
 */
 
 function getTemperatureReport(cities) {
-    // TODO
+    let arr=[];    
+    for (let city of cities)  {     
+         arr.push(`The temperature in ${city} is ${temperatureService(city)} degrees`);
+
+    }
+    return arr;
 }
 
 
@@ -39,7 +44,7 @@ test("should return a temperature report for the user's cities", () => {
         "São Paulo"
     ]
 
-    expect(getTemperatureReport(usersCities)).toEqual([
+    expect(getTemperatureReport(usersCities)). toEqual([
         "The temperature in London is 10 degrees",
         "The temperature in Paris is 12 degrees",
         "The temperature in São Paulo is 23 degrees"
