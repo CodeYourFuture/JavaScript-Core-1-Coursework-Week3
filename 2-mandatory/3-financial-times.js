@@ -6,6 +6,17 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+//     let newArr = [];
+//     for(let i of allArticleTitles) {
+//         if(allArticleTitles.length <= 65){
+//             newArr.push(allArticleTitles[i]);
+//         }
+//     }
+//     return newArr;
+// }
+
+
+     return allArticleTitles.filter(items => items.length < 65);
 }
 
 /*
@@ -15,6 +26,11 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
     // TODO
+     let arr = [];
+    for (let i = 0; i < allArticleTitles.length; i++) {
+      arr.push(allArticleTitles[i].split(" ").length);
+    }
+    return allArticleTitles[arr.indexOf(Math.min(...arr))];
 }
 
 /*
@@ -24,6 +40,32 @@ function titleWithFewestWords(allArticleTitles) {
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+    //  let newArr = []
+    // for (let i of ARTICLE_TITLES) {
+    //     for (let el of i){
+    //     if (el.includes(Number)) {
+    //         return newArr.push(el.includes(Number));
+    //     }
+    // }
+    //     return newArr;
+    // }
+
+// second solution
+
+     let NumberArray = []
+    const regex = /[0-9]/g;
+    for (let i = 0; i < allArticleTitles.length; i++) {
+        if (allArticleTitles[i].search(regex) >= 0) { NumberArray.push(allArticleTitles[i]) }
+    }
+    return NumberArray
+
+
+
+// third solution
+
+    //  return allArticleTitles.filter((element) =>
+    //    [...element].find((number) => number >= "0" && number <= "9")
+    //  );
 }
 
 /*
@@ -32,6 +74,11 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+    let total = 0;
+    for (let i = 0; i < allArticleTitles.length; i++) {
+      total += allArticleTitles[i].length;
+    }
+    return Math.round(total / allArticleTitles.length);
 }
 
 
