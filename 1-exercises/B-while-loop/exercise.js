@@ -6,13 +6,21 @@
 */
 
 function evenNumbers(n) {
-//   let i = 0;
+  if (n !== 0) {
+    let i = 0;
 
-//   while ((i % 2 === 0) <= n) {
-//     console.log(i);
-//     i++;
-//   }
-// }
+    let nextEvenNumber = 0;
+
+    let arrayOfEvenNumbers = [];
+
+    while (i < n) {
+      arrayOfEvenNumbers.push(nextEvenNumber);
+      i++;
+      nextEvenNumber += 2;
+    }
+    console.log(arrayOfEvenNumbers.toString());
+  }
+}
 
 evenNumbers(3); // should output 0,2,4
 evenNumbers(0); // should output nothing
