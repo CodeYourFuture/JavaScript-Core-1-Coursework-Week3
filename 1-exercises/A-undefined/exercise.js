@@ -12,16 +12,14 @@
 // Example 1
 let a;
 console.log(a);
-
+// Because that wasn't describe a variable */
 
 // Example 2
-function sayHello() {
-    let message = "Hello";
-}
 
-let hello = sayHello();
-console.log(hello);
+let sayHello = "Hello";
 
+console.log(sayHello);
+//we don't need function in that case and the let hello = sayHello was also extra
 
 // Example 3
 function sayHelloToUser(user) {
@@ -29,8 +27,9 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
-
+// we need to give a value to our function */
 
 // Example 4
-let arr = [1,2,3];
+let arr = [1, 2, 3];
 console.log(arr[3]);
+//we need for element because our console.log(arr[3]) want's print the 4th element and arrays starting from 0 so now we have just2 index*/
