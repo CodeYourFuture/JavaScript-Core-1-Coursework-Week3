@@ -89,11 +89,7 @@ function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
   // looping through array with prices
   for (let i = 0; i < stocks.length; i++) {
     let stockName = stocks[i].toUpperCase(); //capitalising the name of stock
-    //sorting prices
-    let sortedArray = closingPricesForAllStocks[i].sort(function (a, b) {
-      return a - b;
-    });
-    let biggestPrice = sortedArray[sortedArray.length - 1]; //the last element is the biggest price
+    let biggestPrice = Math.max(...closingPricesForAllStocks[i]); //getting the max value in array
     let convertedPrice = biggestPrice.toFixed(2); //making 2 decimals and leaving it as a String
     arrayWithStrings.push(
       `The highest price of ${stockName} in the last 5 days was ${convertedPrice}`
