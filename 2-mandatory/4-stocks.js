@@ -34,11 +34,11 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Functions can help with this!
 */
 function calculateAverage(arr) {
-  let sum = 0;
+  let total = 0;
   for (let price of arr) {
-    sum += price;
+    total += price;
   }
-  const average = sum / arr.length;
+  const average = total / arr.length;
   return average;
 }
 

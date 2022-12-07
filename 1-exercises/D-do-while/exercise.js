@@ -8,13 +8,13 @@
 
 function evenNumbersSum(n) {
     let number = 0;
-     let total = 0;
+     let sum = 0;
      do {
-       total += number;
+       sum += number;
        number += 2;
        n--;
      } while (n > 0);
-     return total;
+     return sum;
 }
 
 console.log(evenNumbersSum(3)); // should output 6
