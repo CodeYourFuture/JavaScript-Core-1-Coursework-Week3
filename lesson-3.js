@@ -147,27 +147,35 @@
 // fruits.splice(0, 0, "peach");
 // console.log(fruits);
 
-console.log("Exercise 10");
+// console.log("Exercise 10");
 
-// Create an array of the people sitting around you
-// ● console.log the names in alphabetical order
-// ● Create a function that takes a name and an array of
-// names as parameters.
-// ○ If the name is not in the array, it should return “<name> is not sitting
-// at the table with <people in the array>”
-// ○ If the name is in the array, it should return “<name> is sitting at the
-// table with <people in the array>”
-// ○ Output <people in the array> as a comma-separated string
+// // Create an array of the people sitting around you
+// // ● console.log the names in alphabetical order
+// // ● Create a function that takes a name and an array of
+// // names as parameters.
+// // ○ If the name is not in the array, it should return “<name> is not sitting
+// // at the table with <people in the array>”
+// // ○ If the name is in the array, it should return “<name> is sitting at the
+// // table with <people in the array>”
+// // ○ Output <people in the array> as a comma-separated string
 
-let namesList = ["Oleh", "Natalie", "Ebrahim", "Zahra"];
+// let namesList = ["Oleh", "Natalie", "Ebrahim", "Zahra"];
 
-function checkNames(name, namesList) {
-  if (namesList.includes(name) === false) {
-    return name + " is not sitting at the table with " + namesList.sort();
-  } else {
-    return name + " is sitting at the table with " + namesList.sort();
+// function checkNames(name, namesList) {
+//   if (namesList.includes(name) === false) {
+//     return name + " is not sitting at the table with " + namesList.sort();
+//   } else {
+//     return name + " is sitting at the table with " + namesList.sort();
+//   }
+// }
+
+// console.log(namesList.sort());
+// console.log(checkNames("Irina", namesList));
+
+var summation = function (num) {
+  for (let i = 0; i < 5; i++) {
+    return summation + i;
   }
-}
+};
 
-console.log(namesList.sort());
-console.log(checkNames("Irina", namesList));
+console.log(function(4));
