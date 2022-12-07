@@ -6,6 +6,7 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+     return allArticleTitles.filter((items) => items.length < 65);
 }
 
 /*

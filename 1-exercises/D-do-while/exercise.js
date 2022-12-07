@@ -7,9 +7,16 @@
 */
 
 function evenNumbersSum(n) {
-    // TODO
-}
+   let i = 0; 
+   let sum = 0;
+    do {
+     sum = sum + i*2;
+     i++;
+    }   
+    while(i < n );
+     return sum;
+    }   
+console.log("The sum of first three even numbers equal ", evenNumbersSum(3)); // should output 6
+console.log("The sum of first zero even numbers equal ", evenNumbersSum(0)); // should output 0
+console.log("The sum of first ten even numbers equal ", evenNumbersSum(10)); // should output 90
 
-console.log(evenNumbersSum(3)); // should output 6
-console.log(evenNumbersSum(0)); // should output 0
-console.log(evenNumbersSum(10)); // should output 90

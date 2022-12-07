@@ -1,18 +1,17 @@
+
 /*
     Imagine we're making a weather app!
     
     We have a list of cities that the user wants to track.
     We also already have a temperatureService function which will take a city as a parameter and return a temparature.
-
     Implement the function below:
         - take the array of cities as a parameter
         - return an array of strings, which is a statement about the temperature of each city.
             For example, "The temperature in London is 10 degrees"
         - Hint: you can call the temperatureService function from your function
 */
-
 function getTemperatureReport(cities) {
-    // TODO
+ // TO DO
 }
 
 
