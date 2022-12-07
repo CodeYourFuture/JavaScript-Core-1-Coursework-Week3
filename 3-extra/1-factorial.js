@@ -8,9 +8,18 @@
     Using a loop, complete the function below so it returns the factorial of the number being passed in. 
 */
 
-function factorial(input) {
+ function factorial(n) {
     // TODO
-}
+let result = 1;
+  while (n) {
+    result *= n--;
+  }
+  return result;
+}   
+console.log("Factorial number 2 = ", factorial(2));
+console.log("factorial number 3 = ", factorial(3));
+console.log("factorial number 5 = ", factorial(5));
+console.log("factorial number 10 = ", factorial(10));
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
