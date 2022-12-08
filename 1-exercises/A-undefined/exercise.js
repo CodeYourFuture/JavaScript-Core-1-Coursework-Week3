@@ -12,25 +12,25 @@
 // Example 1
 let a;
 console.log(a);
-
+// variable a has been declared but hasn't been initialized ( no value )
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+  let message = "Hello";
 }
 
 let hello = sayHello();
 console.log(hello);
-
-
+// "hello has been defined by giving a value as a function sayHello but this function 1- does not return/output anything 2- there is no value been assigned to it"
 // Example 3
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+  console.log(`Hello ${user}`);
 }
 
 sayHelloToUser();
-
+// there is no value being assigned to the function variable
 
 // Example 4
-let arr = [1,2,3];
+let arr = [1, 2, 3];
 console.log(arr[3]);
+// we are calling an idex which doesn't exist in this array
