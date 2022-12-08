@@ -12,13 +12,13 @@
 // Example 1
 let a;
 console.log(a);
-
+//In this example, we see undefined because our variable doesn't have any value.
 
 // Example 2
 function sayHello() {
     let message = "Hello";
+    // In this example, We don't have return, so I would write return in this line. =>  return message;
 }
-
 let hello = sayHello();
 console.log(hello);
 
@@ -28,9 +28,11 @@ function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
 
-sayHelloToUser();
+sayHelloToUser();//In this example,We do not have an argument because this is a function that has parameters, so outside the function it should have a value.
+//I mean => sayHelloToUser(" we should write some string because od user")for example : sayHelloToUser("dear volunteer");
 
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+//We have an array with the indexes o, 1, and 2 here, so there isn't index 3. we can Write arr[0] or arr[1] or arr [2]
