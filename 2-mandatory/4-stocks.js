@@ -62,6 +62,12 @@ function individualAverage(array) {
 */
 function getPriceChanges(closingPricesForAllStocks) {
     // TODO
+    let priceChanges = [];
+    for (let priceArray of closingPricesForAllStocks) {
+        let priceChanges = [priceArray.length-1] - priceArray[0];
+        priceChanges.push(Number(priceChanges.toFixed(2)));
+    }
+    return priceChanges;
 }
 
 /*
@@ -78,6 +84,14 @@ function getPriceChanges(closingPricesForAllStocks) {
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
     // TODO
+    let maxedStock = [];
+    for (i = 0; i < stocks.length; i++) {
+        let capitaliseStock = stocks[i].toUpperCase();
+        let highestPrice = Math.max(...closingPricesForAllStocks[i]);
+        let decimalPrice = highestPrice.toFixed(2);
+        maxedStock.push(`The highest price of ${capitaliseStock} in the last five days was ${decimalPrice}`);
+    }
+    return maxedStock;
 }
 
 
