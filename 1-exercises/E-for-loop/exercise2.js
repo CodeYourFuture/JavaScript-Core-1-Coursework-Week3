@@ -37,3 +37,7 @@ Jane Austen is 41 years old
 Bell Hooks is 63 years old
 Yukiko Motoya is 49 years old
 */
+
+for (let i = 0; i < 5; i++) {
+  console.log(`${WRITERS[i]} is ${AGES[i]} years old`)
+}
