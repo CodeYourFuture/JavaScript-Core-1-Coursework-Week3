@@ -7,7 +7,18 @@
 
 function evenNumbers(n) {
     // TODO
+if (n !== 0){
+    let i = 0; let p = 0; let numArray = [];
+    while (i < n) {
+        numArray.push(p);
+        i++;
+        p = (p + 2);
+    }
+    console.log(numArray.toString());
 }
+
+}
+    // return evenNumbers();
 
 evenNumbers(3); // should output 0,2,4
 evenNumbers(0); // should output nothing

@@ -10,8 +10,9 @@
 */
 
 // Example 1
-let a;
+let a = ("bread");
 console.log(a);
+// Variable 'a' has not been assigned a value.
 
 
 // Example 2
@@ -20,17 +21,21 @@ function sayHello() {
 }
 
 let hello = sayHello();
-console.log(hello);
+console.log('hello');
+// hello was not defined as a string
 
 
 // Example 3
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+ return sayHelloToUser(); 
 }
 
-sayHelloToUser();
+
+ console.log(`Hello ${'user'}`);
+ //We need to tell the function what to return and also put the 'user' in parenthesis.
 
 
 // Example 4
 let arr = [1,2,3];
-console.log(arr[3]);
+console.log(arr[2]);
+//The index 3 is non-existent in our array so it returns undefined.
