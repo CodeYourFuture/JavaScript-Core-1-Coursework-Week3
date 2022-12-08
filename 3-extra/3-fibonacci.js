@@ -15,6 +15,18 @@
 
 function generateFibonacciSequence(n) {
     // TODO
+    let newSequence = [];
+    let amount =0;
+    for (let i = 0; i<n; i++){
+        if (newSequence.length >=2) {
+            amount = newSequence[i -1] + newSequence[i -2];
+            newSequence.push(amount);
+        } else {
+            amount += i;
+            newSequence.push (amount);
+        }
+    }
+    return newSequence;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

@@ -6,6 +6,11 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+    let headline = []
+    for (article of allArticleTitles){
+    if (article.length < 65) headline.push(article) ;
+    }
+    return headline;
 }
 
 /*
@@ -15,6 +20,11 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
     // TODO
+    let lowestWords = [];
+    for (let i = 0; i< allArticleTitles.length; i++) {
+        lowestWords.push(allArticleTitles[i].split(' ').length)
+    }
+    return allArticleTitles[lowestWords.indexOf(Math.min(...lowestWords))]
 }
 
 /*
@@ -24,6 +34,13 @@ function titleWithFewestWords(allArticleTitles) {
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+    let numberArray = [];
+    for (let article of allArticleTitles) {
+        if (/[0-9]/.test(article) === true) {
+            numberArray.push(article);
+        }
+    }
+    return numberArray;
 }
 
 /*
@@ -32,6 +49,11 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+    let averageCharacter = [];
+    for (let i = 0; i < allArticleTitles.length; i++) {
+        averageCharacter += allArticleTitles[i].length
+    }
+    return Math.round(averageCharacter / allArticleTitles.length)
 }
 
 
