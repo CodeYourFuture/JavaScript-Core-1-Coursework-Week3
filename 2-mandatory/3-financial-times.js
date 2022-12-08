@@ -4,8 +4,24 @@
     The home page of the web site has a headline section, which only has space for article titles which are 65 characters or less.
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
+
 function potentialHeadlines(allArticleTitles) {
-    // TODO
+  // TODO
+  // using filter method
+
+  return allArticleTitles.filter((article) => article.length <= 65);
+
+  /*
+     let pritableArticles = [];
+    for (let i = 0; i < allArticleTitles.length; i++) {
+        if (allArticleTitles[i].length < 66) {
+        pritableArticles.push(allArticleTitles[i]);
+    }
+  }
+
+    return pritableArticles;
+    
+    */
 }
 
 /*
@@ -14,7 +30,30 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+  // TODO
+
+  const wordCount = allArticleTitles.map(
+    (article) => article.split(" ").length
+  );
+
+  const theSmallest = Math.min(...wordCount);
+
+  return allArticleTitles[wordCount.indexOf(theSmallest)];
+
+  /*
+for (let i = 0; i < allArticleTitles.length; i++) {
+        console.log(allArticleTitles[i].split(" ").length);
+    }
+
+*/
+  /*
+let myArr = [];
+ for (let i = 0; i < allArticleTitles.length; i++) {
+     myArr.push(allArticleTitles[i].split(" ").length); 
+    } 
+    let leastWords = Math.min(...myArr);
+   return leastWords; 
+*/
 }
 
 /*
@@ -23,7 +62,10 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+  // TODO
+    
+    return allArticleTitles.filter(article => /\d/.test(article));
+    
 }
 
 /*
@@ -31,24 +73,33 @@ function headlinesWithNumbers(allArticleTitles) {
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
+  // TODO
+    let totalCharacters = 0;
+    for (let i = 0; i < allArticleTitles.length; i++) {
+        totalCharacters += allArticleTitles[i].length;
+    }
+    
+    return Math.floor(Math.round(totalCharacters / allArticleTitles.length));
 }
-
-
 
 /* ======= List of Articles - DO NOT MODIFY ===== */
 const ARTICLE_TITLES = [
-    "Streaming wars drive media groups to spend more than $100bn on new content",
-    "Amazon Prime Video India country head: streaming is driving a TV revolution",
-    "Aerospace chiefs prepare for bumpy ride in recovery of long-haul flights",
-    "British companies look to muscle in on US retail investing boom",
-    "Libor to take firm step towards oblivion on New Year's Day",
-    "Audit profession unattractive to new recruits, says PwC boss",
-    "Chinese social media users blast Elon Musk over near miss in space",
-    "Companies raise over $12tn in 'blockbuster' year for global capital markets",
-    "The three questions that dominate investment",
-    "Brussels urges Chile's incoming president to endorse EU trade deal",
+  "Streaming wars drive media groups to spend more than $100bn on new content",
+  "Amazon Prime Video India country head: streaming is driving a TV revolution",
+  "Aerospace chiefs prepare for bumpy ride in recovery of long-haul flights",
+  "British companies look to muscle in on US retail investing boom",
+  "Libor to take firm step towards oblivion on New Year's Day",
+  "Audit profession unattractive to new recruits, says PwC boss",
+  "Chinese social media users blast Elon Musk over near miss in space",
+  "Companies raise over $12tn in 'blockbuster' year for global capital markets",
+  "The three questions that dominate investment",
+  "Brussels urges Chile's incoming president to endorse EU trade deal",
 ];
+// console.log(averageNumberOfCharacters(ARTICLE_TITLES));
+// console.log(headlinesWithNumbers(ARTICLE_TITLES),"-----------");
+// console.log(titleWithFewestWords(ARTICLE_TITLES));
+// // console.log(headlinesWithNumbers(ARTICLE_TITLES));
+// console.log(potentialHeadlines(ARTICLE_TITLES), "using filter method");
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
@@ -79,3 +130,4 @@ test("should only return headlines containing numbers", () => {
 test("should return the average number of characters in a headline", () => {
     expect(averageNumberOfCharacters(ARTICLE_TITLES)).toEqual(65);
 });
+

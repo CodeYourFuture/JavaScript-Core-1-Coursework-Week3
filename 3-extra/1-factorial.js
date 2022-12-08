@@ -9,8 +9,18 @@
 */
 
 function factorial(input) {
-    // TODO
+  // Create new array to collect numbers
+  let arrayOfFactorial = [];
+    for (let i = 1; i < input + 1; i++){
+    arrayOfFactorial.push(i)
+    }
+// Used reduce method to multiply elements each other
+  const product = arrayOfFactorial.reduce((prevousValue, currentValue) => prevousValue * currentValue)
+
+    return product;
 }
+
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

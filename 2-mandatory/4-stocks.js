@@ -19,6 +19,16 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 ];
 
 /*
+let total = 0;
+    for (let i = 0; i < CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS.length; i++) {
+      total += CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[i];
+      return total;
+    }
+console.log(total);
+*/
+
+
+/*
     We want to understand what the average price over the last 5 days for each stock is.
     Implement the below function, which
         - Takes this CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS array as input (remember, it's an array of arrays)
@@ -35,7 +45,25 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 */
 function getAveragePrices(closingPricesForAllStocks) {
     // TODO
+    let arr = [];
+    let total = 0;
+        closingPricesForAllStocks.forEach((element, i) => {
+            // console.log(element, element[i]);
+            total += element[i];
+            
+            arr.push(total)
+        });
+   
+    return arr;
+
 }
+
+
+
+    /*
+    1) create for loop to go throught the outer array
+    2) create inter for loop to go throught each element in the outer array
+    */
 
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
