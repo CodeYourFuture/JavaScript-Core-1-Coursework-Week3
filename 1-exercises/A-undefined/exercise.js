@@ -13,24 +13,28 @@
 let a;
 console.log(a);
 
+// variable a has no value.
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+  let message = "Hello";
 }
 
 let hello = sayHello();
 console.log(hello);
 
+// the function doesn't return anything and there is no value to be assigned to it
 
 // Example 3
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+  console.log(`Hello ${user}`);
 }
 
 sayHelloToUser();
 
+// there is no value for the parameter
 
 // Example 4
-let arr = [1,2,3];
+let arr = [1, 2, 3];
 console.log(arr[3]);
+// the index in console.log does not exist in an array
