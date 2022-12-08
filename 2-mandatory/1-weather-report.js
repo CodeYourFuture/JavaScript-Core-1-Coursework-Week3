@@ -25,7 +25,7 @@ function getTemperatureReport(cities) {
   return statement;
 }
 
-console.log(Array.from(temperatureService()));
+//console.log(getTemperatureReport(["London"]));
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
@@ -42,8 +42,6 @@ function temperatureService(city) {
 
   return temparatureMap.get(city);
 }
-
-//console.log(Array.from(temparatureMap));
 
 test("should return a temperature report for the user's cities", () => {
   let usersCities = ["London", "Paris", "São Paulo"];
