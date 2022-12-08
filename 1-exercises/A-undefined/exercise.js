@@ -32,5 +32,5 @@ sayHelloToUser();
 
 
 // Example 4
-let arr = [1,2,3];
+let arr = [1, 2, 3];
 console.log(arr[3]);
