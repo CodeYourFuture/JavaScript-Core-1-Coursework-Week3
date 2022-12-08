@@ -7,6 +7,13 @@
 
 function evenNumbers(n) {
     // TODO
+    const arr = [];
+    let i = 0;
+    while(i < n * 2) {
+        arr.push(i);
+        i +=2;
+    }
+    return arr;
 }
 
 evenNumbers(3); // should output 0,2,4

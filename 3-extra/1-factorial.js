@@ -10,6 +10,13 @@
 
 function factorial(input) {
     // TODO
+    let total = 1;
+    for (i = 1; i<=input; i++) {
+        if (input > 1) {
+            total *= i;
+        }
+    }
+    return total;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

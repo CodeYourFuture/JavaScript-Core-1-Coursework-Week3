@@ -12,9 +12,10 @@
 // Example 1
 let a;
 console.log(a);
+// value not assigned
 
 
-// Example 2
+// Example 2 message not assigned
 function sayHello() {
     let message = "Hello";
 }
@@ -23,7 +24,7 @@ let hello = sayHello();
 console.log(hello);
 
 
-// Example 3
+// Example 3 no parameter assigned
 function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
@@ -31,6 +32,6 @@ function sayHelloToUser(user) {
 sayHelloToUser();
 
 
-// Example 4
+// Example 4 array is only 3 objects and starts at 0. no ob at pos 3
 let arr = [1,2,3];
 console.log(arr[3]);
