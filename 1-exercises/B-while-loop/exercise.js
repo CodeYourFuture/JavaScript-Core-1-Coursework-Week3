@@ -5,9 +5,12 @@
     The list of numbers should start with 0. n is being passed in as a parameter.
 */
 
+
 function evenNumbers(n) {
-    // TODO
-}
+    for (let i = 0; i < n; i++)
+    console.log(i * 2);
+  }
+
 
 evenNumbers(3); // should output 0,2,4
 evenNumbers(0); // should output nothing
