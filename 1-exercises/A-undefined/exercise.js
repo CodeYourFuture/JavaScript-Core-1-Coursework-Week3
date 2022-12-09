@@ -12,6 +12,7 @@
 // Example 1
 let a;
 console.log(a);
+//in this example variable a does not have a value
 
 
 // Example 2
@@ -21,7 +22,7 @@ function sayHello() {
 
 let hello = sayHello();
 console.log(hello);
-
+// we are not returning variable message
 
 // Example 3
 function sayHelloToUser(user) {
@@ -29,8 +30,9 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
-
+// here we didnt put parameter in the function sayHelloToUser
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+//index number 3 is not exist we have array arr that includes index 0,1,2
