@@ -6,7 +6,20 @@
 */
 
 function evenNumbers(n) {
-    // TODO
+    let i = 0;
+    let length=0;
+    let newArr=[];
+    
+while (length <n ) {
+    if (i % 2 == 0 && length <= n){
+        length=newArr.push(i);
+    }
+i++;
+
+}
+let String = newArr.toString();
+console.log (String);
+
 }
 
 evenNumbers(3); // should output 0,2,4

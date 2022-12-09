@@ -1,6 +1,7 @@
 /*
     THESE EXERCISES ARE QUITE HARD. JUST DO YOUR BEST, AND COME WITH QUESTIONS IF YOU GET STUCK :)
 
+    
     Imagine we a working for a finance company. Below we have:
         - an array of stock tickers
         - an array of arrays containing the closing price for each stock in each of the last 5 days.
@@ -35,6 +36,17 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 */
 function getAveragePrices(closingPricesForAllStocks) {
     // TODO
+    let sum=0;
+    let averagePricesForAllStocks=[];
+    let length=closingPricesForAllStocks.length;
+    for (let i = 0; i < length; i++) {
+        let jlength=closingPricesForAllStocks[i].length;
+        for (let j=0;j<jlength;j++){
+        sum+=allArticleTitles[i][j];
+        }
+        averagePricesForAllStocks.push(Math.round((sum/jlength)* 100) / 100);
+}
+return(averagePricesForAllStocks);
 }
 
 /*
