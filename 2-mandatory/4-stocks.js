@@ -34,12 +34,21 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Functions can help with this!
 */
 function getAveragePrices(closingPricesForAllStocks) {
-    let sum = 0;
-   for (let price of closingPricesForAllStocks) {
+    let arrayWithAveragePrices = [];
+   //looping through array of arrays and calling findAveragePrice method on each array
+   for (let arrayWithPrices of closingPricesForAllStocks) {
+     arrayWithAveragePrices.push(findAveragePrice(arrayWithPrices));
+   }
+   return arrayWithAveragePrices;
+ }
+
+ //function to find average price in array
+ function findAveragePrice(array) {
+   let sum = 0;
+   for (let price of array) {
      sum += price;
    }
-   const average = sum / closingPricesForAllStocks.length;
-   return average;
+   return Number((sum / array.length).toFixed(2));
  }
 
 
@@ -55,13 +64,13 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-    const myArr = [];
-   for (let stock of closingPricesForAllStocks) {
-     const average = calculateAverage(stock);
-     const formattedAverage = Number(average.toFixed(2));
-     myArr.push(formattedAverage);
+     let changedPrices = [];
+   for (let arrayWithPrices of closingPricesForAllStocks) {
+     let changedPrice =
+       arrayWithPrices[arrayWithPrices.length - 1] - arrayWithPrices[0];
+     changedPrices.push(Number(changedPrice.toFixed(2)));
    }
-   return myArr;
+   return changedPrices;
  
 }
 
@@ -78,14 +87,18 @@ function getPriceChanges(closingPricesForAllStocks) {
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-     let myArra = [];
-     for (let price of closingPricesForAllStocks) {
-       let firstDay = price[0];
-       let lastDay = price[price.length - 1];
-       let difference = lastDay - firstDay;
-       myArra.push(Number(difference.toFixed(2)));
-     }
-     return myArra;
+     let arrayWithStrings = []; //creating new array
+
+   // looping through array with prices
+   for (let i = 0; i < stocks.length; i++) {
+     let stockName = stocks[i].toUpperCase(); //capitalising the name of stock
+     let biggestPrice = Math.max(...closingPricesForAllStocks[i]); //getting the max value in array
+     let convertedPrice = biggestPrice.toFixed(2); //making 2 decimals and leaving it as a String
+     arrayWithStrings.push(
+       `The highest price of ${stockName} in the last 5 days was ${convertedPrice}`
+     ); //adding a String to a new array
+   }
+   return arrayWithStrings;
 }
 
 

@@ -5,9 +5,12 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    // TODO
-    return allArticleTitles.filter(items => items.length < 65);
-    
+     let newArr = [];
+   for (let title of allArticleTitles) {
+     if (title.length < 65) newArr.push(title);
+   }
+   return newArr;
+ 
 }
 
 /*
@@ -17,11 +20,24 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
     // TODO
-    let arr = [];
-     for (let i = 0; i < allArticleTitles.length; i++) {
-       arr.push(allArticleTitles[i].split(" ").length);
+    for (var i = 0; i < allArticleTitles.length; i++) {
+     // Last i elements are already in place
+     for (var j = 0; j < allArticleTitles.length - i - 1; j++) {
+       // Checking if the item at present iteration
+       // is greater than the next iteration
+       if (
+         allArticleTitles[j].split(" ").length >
+         allArticleTitles[j + 1].split(" ").length
+       ) {
+         // If the condition is true then swap them
+         var temp = allArticleTitles[j];
+         allArticleTitles[j] = allArticleTitles[j + 1];
+         allArticleTitles[j + 1] = temp;
+       }
      }
-     return allArticleTitles[arr.indexOf(Math.min(...arr))];
+   }
+
+   return allArticleTitles[0];
  
 }
 
@@ -32,6 +48,15 @@ function titleWithFewestWords(allArticleTitles) {
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+    let newArr = [];
+   for (let title of allArticleTitles) {
+     if (/[0-9]/.test(title) === true) {
+       newArr.push(title);
+     }
+   }
+
+   return newArr;
+ 
 }
 
 /*
@@ -40,6 +65,13 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+    let sum = 0;
+
+   for (let title of allArticleTitles) {
+     sum += title.length;
+   }
+
+   return Math.round(sum / allArticleTitles.length);
 }
 
 
