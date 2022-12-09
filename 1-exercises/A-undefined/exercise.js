@@ -12,7 +12,7 @@
 // Example 1
 let a;
 console.log(a);
-
+// a doesn't assign to any value ;
 
 // Example 2
 function sayHello() {
@@ -21,7 +21,7 @@ function sayHello() {
 
 let hello = sayHello();
 console.log(hello);
-
+// we can't expect any output if the function doesn't return . its a void function. it means it doesn't return any thing .
 
 // Example 3
 function sayHelloToUser(user) {
@@ -29,8 +29,11 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
+// function has a parameters so when we call it we must give an argument to it .
 
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+// this arr[] only have 3 value which their indexs are 0,1,2 so arr[3] is undefined .
+
