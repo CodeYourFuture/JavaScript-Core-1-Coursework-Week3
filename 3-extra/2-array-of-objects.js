@@ -11,6 +11,22 @@
 */
 
 function getHighestRatedInEachGenre(books) {
+    const result = books.reduce((acc, cur) => {
+      const groupByGenre = cur.genre;
+      if (!acc[groupByGenre]) {
+        acc[groupByGenre] = [];
+      }
+      acc[groupByGenre].push(cur);
+      return acc;
+    }, {});
+    const genreName = Object.keys(result);
+    const arr = [];
+    for (let i = 0; i < genreName.length; i++) {
+      arr.push(
+        result[genreName[i]].sort((a, b) => b.rating - a.rating)[0].title
+      );
+    }
+    return arr;
     // TODO
 }
 

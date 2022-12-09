@@ -12,6 +12,7 @@
 // Example 1
 let a;
 console.log(a);
+we did not define a.
 
 
 // Example 2
@@ -21,6 +22,7 @@ function sayHello() {
 
 let hello = sayHello();
 console.log(hello);
+we need to call hello () not just hello 
 
 
 // Example 3
@@ -29,8 +31,10 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
+there is no variable and definition Here.
 
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+there is nothing for [3] it is empty

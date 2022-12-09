@@ -7,9 +7,20 @@
 */
 
 function evenNumbersSum(n) {
-    // TODO
-}
+    let counter = 1;
+    let sum = 0;
+    
+    do {
+      if (counter % 2 === 0) {
+        sum = sum + counter;
+      }
+      counter ++;
+    } while (counter <= n){
 
+    return sum;
+}}
+
+    // TODO
 console.log(evenNumbersSum(3)); // should output 6
 console.log(evenNumbersSum(0)); // should output 0
 console.log(evenNumbersSum(10)); // should output 90

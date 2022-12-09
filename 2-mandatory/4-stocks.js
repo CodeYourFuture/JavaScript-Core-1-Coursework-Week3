@@ -33,10 +33,28 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Solve the smaller problems, and then build those solutions back up to solve the larger problem.
         Functions can help with this!
 */
+function calculateAverage(newPrice) {
+  let sum = 0;
+  for (let price of newPrice) {
+    sum += price;
+  }
+  const average = sum / newPrice.length;
+  return average;
+}
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+  // TODO
+  const myPrice = [];
+  for (let stock of closingPricesForAllStocks) {
+    const average = calculateAverage(stock);
+    const formattedAverage = Number(average.toFixed(2));
+    myPrice.push(formattedAverage);
+  }
+  return myPrice;
 }
 
+// let stocks = ["aapl", "msft", "amzn", "googl", "tsla"];
+// showStocks(stocks);
+// changeInPrices(closingPricesLast5Days);
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
     Implement the below function, which
@@ -48,6 +66,14 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
+      let myPrice1 = [];
+      for (let price of closingPricesForAllStocks) {
+        let firstDay = price[0];
+        let lastDay = price[price.length - 1];
+        let difference = lastDay - firstDay;
+        myPrice1.push(Number(difference.toFixed(2)));
+      }
+      return myPrice1;
     // TODO
 }
 
@@ -64,6 +90,17 @@ function getPriceChanges(closingPricesForAllStocks) {
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
+     let newPrice = [];
+     for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+       newPrice.push(
+         `The highest price of ${stocks[
+           i
+         ].toUpperCase()} in the last 5 days was ${Math.max(
+           ...closingPricesForAllStocks[i]
+         ).toFixed(2)}`
+       );
+     }
+     return newPrice;
     // TODO
 }
 

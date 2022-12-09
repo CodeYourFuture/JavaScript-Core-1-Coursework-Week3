@@ -9,6 +9,11 @@
 */
 
 function factorial(input) {
+    let sum = 1;
+    for (i = 1; i <= input; i++) {
+      sum *= i;
+    }
+    return sum;
     // TODO
 }
 
