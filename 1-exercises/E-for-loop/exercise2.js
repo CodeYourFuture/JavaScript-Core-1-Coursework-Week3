@@ -16,6 +16,7 @@ const WRITERS = [
     "Jane Austen",
     "Bell Hooks",
     "Yukiko Motoya"
+    
 ]
 
 const AGES = [
@@ -27,6 +28,14 @@ const AGES = [
 ];
 
 // TODO - Write for loop code here
+
+for (let i = 0, p = 0; i < WRITERS.length, p < AGES.length; i++, p++){
+let writers = WRITERS[i];
+let ages = AGES[p];
+
+console.log(`${writers} is ${ages} years old`);
+}
+
 
 /*
 The output should look something like this:
