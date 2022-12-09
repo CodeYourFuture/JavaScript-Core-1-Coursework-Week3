@@ -12,17 +12,18 @@
 // Example 1
 let a = ("bread");
 console.log(a);
-// Variable 'a' has not been assigned a value.
+// Variable 'a' has not been assigned a value. I have assigned it 'bread'
 
 
 // Example 2
 function sayHello() {
     let message = "Hello";
+    return message;
 }
 
 let hello = sayHello();
 console.log('hello');
-// hello was not defined as a string
+//We needed a return message inside function.
 
 
 // Example 3
@@ -30,12 +31,11 @@ function sayHelloToUser(user) {
  return sayHelloToUser(); 
 }
 
-
- console.log(`Hello ${'user'}`);
+ console.log(`Hello ${'gayle'}`);
  //We need to tell the function what to return and also put the 'user' in parenthesis.
 
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[2]);
-//The index 3 is non-existent in our array so it returns undefined.
+//The index 3 is non-existent in our array so it returns undefined. I have changed it to index 2.
