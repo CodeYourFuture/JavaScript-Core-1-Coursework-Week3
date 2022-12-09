@@ -35,6 +35,21 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 */
 function getAveragePrices(closingPricesForAllStocks) {
     // TODO
+    let averageArray = [];
+    let averagePrice;
+
+    for (const array of closingPricesForAllStocks) {
+        let num = 0;
+        for (const number of array) {
+            num += number;
+        }
+
+        averagePrice = num / 5;
+        averageArray.push(parseFloat(averagePrice.toFixed(2)));
+    }
+    return averageArray;
+
+
 }
 
 /*
@@ -76,7 +91,7 @@ test("should return the average price for each stock", () => {
 });
 
 test("should return the price change for each stock", () => {
-    expect(getPriceChanges(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS)).toEqual(
+    expect(getPriceChanges(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS)).toEqual( 
         [-6.2, -13.4, 23.9, -82.43, -162.77]
     );
 });

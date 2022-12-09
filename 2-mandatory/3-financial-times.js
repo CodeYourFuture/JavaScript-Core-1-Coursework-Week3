@@ -6,6 +6,13 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+    let articleTitles = []
+    for (let i = 0; i < allArticleTitles.length; i++) {
+        if (allArticleTitles[i].length <= 65) {
+            articleTitles.push(allArticleTitles[i]);
+        }
+    }
+    return articleTitles;
 }
 
 /*
@@ -14,7 +21,14 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+    let shortestTitle = allArticleTitles[0];
+    for (let i = 0; i < allArticleTitles.length; i++) {
+        if (allArticleTitles[i].match(/\s+/g).length <
+        shortestTitle.match(/\s+/g).length) {
+            shortestTitle = allArticleTitles[i];
+        }        
+    }
+    return shortestTitle;
 }
 
 /*
@@ -23,7 +37,13 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+    let titlesWithNum = [];
+    for (let i = 0; i < allArticleTitles.length; i++) {
+        if (/[0-9]/.test(allArticleTitles[i])) { // this reg exp checks numbers from 0 - 9
+         titlesWithNum.push(allArticleTitles[i]);
+        }
+    }
+    return titlesWithNum;
 }
 
 /*
@@ -32,6 +52,14 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+    let average = 0;
+    let sum= 0;
+    for (let i = 0; i < allArticleTitles.length; i++) {
+        sum+= allArticleTitles[i].length;
+
+    }
+    average = Math.round(sum / allArticleTitles.length);
+    return average;
 }
 
 
