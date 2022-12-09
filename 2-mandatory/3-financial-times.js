@@ -6,10 +6,8 @@
 */
 function potentialHeadlines(allArticleTitles) {
   // TODO
-
   return ARTICLE_TITLES.filter((ARTICLE_TITLES) => ARTICLE_TITLES.length <= 65);
 }
-console.log(potentialHeadlines(ARTICLE_TITLES));
 
 /*
     The editor of the FT likes short headlines with only a few words!
@@ -50,6 +48,8 @@ const ARTICLE_TITLES = [
   "The three questions that dominate investment",
   "Brussels urges Chile's incoming president to endorse EU trade deal",
 ];
+
+console.log(potentialHeadlines(ARTICLE_TITLES));
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
