@@ -9,12 +9,12 @@ function generateRandomNumber() {
   return Math.round(Math.random() * 100);
 }
 
-function getRandomNumberGreaterThan50(x) {
+function getRandomNumberGreaterThan50() {
+  let n;
   do {
-    let n = generateRandomNumber(x);
-
-    return n;
-  } while (n > 50);
+    n = generateRandomNumber();
+  } while (n < 50);
+  return n;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
