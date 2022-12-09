@@ -6,6 +6,10 @@
 */
 
 function evenNumbers(n) {
+    let numbers = [0,2,4,6,8,10,12,14,16,18];
+    for(i=0; i<n ; i++){
+       console.log(numbers[i]);
+    }
     // TODO
 }
 

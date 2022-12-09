@@ -12,3 +12,6 @@ while(i < 26) {
     i++;
 }
 // The output shouldn't change.
+for(i = 0; i < 26; i++) {
+    String.fromCharCode(97 + i);
+}
