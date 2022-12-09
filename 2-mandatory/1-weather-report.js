@@ -11,6 +11,9 @@
         - Hint: you can call the temperatureService function from your function
 */
 
+
+// let citiesArr = ['London', 'São Paulo', 'Paris', 'Barecelona']
+
 function getTemperatureReport(cities) {
     let cityWeather = [];
   for (let i = 0; i < cities.length; i++) {
@@ -21,7 +24,9 @@ function getTemperatureReport(cities) {
   return cityWeather;
 }
 
-console.log(getTemperatureReport([temparatureMap]))
+// console.log(getTemperatureReport('London'))
+
+
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
