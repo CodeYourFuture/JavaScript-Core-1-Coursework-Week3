@@ -1,11 +1,11 @@
 /*
     Imagine you are working on the Financial Times web site! They have a list of article titles stored in an array.
-
     The home page of the web site has a headline section, which only has space for article titles which are 65 characters or less.
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+   return allArticleTitles.filter(items => items.length < 65);
 }
 
 /*
@@ -15,6 +15,11 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
     // TODO
+    let arr = [];
+    for (let i = 0; i < allArticleTitles.length; i++) {
+      arr.push(allArticleTitles[i].split(" ").length);
+    }
+    return allArticleTitles[arr.indexOf(Math.min(...arr))];
 }
 
 /*
@@ -24,6 +29,18 @@ function titleWithFewestWords(allArticleTitles) {
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+    // let arrayNum = []
+    // for (let el of ARTICLE_TITLES) {
+    //     for (let ele of el){
+    //     if (ele.includes(Number)) {
+    //         return arrayNum.push(ele.includes(Number));
+    //     }
+    // }
+    //     return arrayNum
+    // }
+     return allArticleTitles.filter((element) =>
+       [...element].find((number) => number >= "0" && number <= "9")
+     );
 }
 
 /*
@@ -32,6 +49,11 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+    let sum = 0;
+    for (let i = 0; i < allArticleTitles.length; i++) {
+      sum += allArticleTitles[i].length;
+    }
+    return Math.round(sum / allArticleTitles.length);
 }
 
 

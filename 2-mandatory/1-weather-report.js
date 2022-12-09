@@ -11,9 +11,22 @@
         - Hint: you can call the temperatureService function from your function
 */
 
+
+// let citiesArr = ['London', 'São Paulo', 'Paris', 'Barecelona']
+
 function getTemperatureReport(cities) {
-    // TODO
+    let cityWeather = [];
+  for (let i = 0; i < cities.length; i++) {
+    cityWeather.push(
+      `The temperature in ${cities[i]} is ${temperatureService(cities[i])} degrees`
+    );
+  }
+  return cityWeather;
 }
+
+// console.log(getTemperatureReport('London'))
+
+
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */

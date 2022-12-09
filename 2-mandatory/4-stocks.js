@@ -4,7 +4,8 @@
     Imagine we a working for a finance company. Below we have:
         - an array of stock tickers
         - an array of arrays containing the closing price for each stock in each of the last 5 days.
-            For example, CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[2] contains the prices for the last 5 days for STOCKS[2] (which is amzn)
+            For example, CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[2] contains the prices for the last 5 days for
+             STOCKS[2] (which is amzn)
 */
 
 /* ======= Stock data - DO NOT MODIFY ===== */
@@ -23,7 +24,8 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
     Implement the below function, which
         - Takes this CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS array as input (remember, it's an array of arrays)
         - Returns an array containing the average price over the last 5 days for each stock. 
-            For example, the first element of the resulting array should contain Apple’s (aapl) average stock price for the last 5 days.
+            For example, the first element of the resulting array should contain Apple’s (aapl) average stock 
+            price for the last 5 days.
             The second element should be Microsoft's (msft) average price, and so on.
     The average value should be rounded to 2 decimal places, and should be a number (not a string)
 
@@ -33,9 +35,28 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Solve the smaller problems, and then build those solutions back up to solve the larger problem.
         Functions can help with this!
 */
-function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+
+function calculateAverage(arr) {
+  let sum = 0;
+  for (let price of arr) {
+    sum += price;
+  }
+  const average = sum / arr.length;
+  return average;
 }
+
+
+function getAveragePrices(closingPricesForAllStocks) {
+  const myArr = [];
+  for (let stock of closingPricesForAllStocks) {
+    const average = calculateAverage(stock);
+    const formattedAverage = Number(average.toFixed(2));
+    myArr.push(formattedAverage);
+  }
+  return myArr;
+}
+    // TODO
+
 
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
@@ -49,6 +70,15 @@ function getAveragePrices(closingPricesForAllStocks) {
 */
 function getPriceChanges(closingPricesForAllStocks) {
     // TODO
+  let myArra = [];
+    for (let price of closingPricesForAllStocks) {
+      let firstDay = price[0];
+      let lastDay = price[price.length - 1];
+      let difference = lastDay - firstDay;
+      myArra.push(Number(difference.toFixed(2)));
+    }
+    return myArra;
+
 }
 
 /*
@@ -65,6 +95,17 @@ function getPriceChanges(closingPricesForAllStocks) {
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
     // TODO
+     let arr = [];
+    for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+      arr.push(
+        `The highest price of ${stocks[
+          i
+        ].toUpperCase()} in the last 5 days was ${Math.max(
+          ...closingPricesForAllStocks[i]
+        ).toFixed(2)}`
+      );
+    }
+    return arr;
 }
 
 
