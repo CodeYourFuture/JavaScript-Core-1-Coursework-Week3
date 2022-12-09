@@ -12,7 +12,13 @@
 */
 
 function getTemperatureReport(cities) {
-    // TODO
+    let cityWeather = [];
+  for (let i = 0; i < cities.length; i++) {
+    cityWeather.push(
+      `The temperature in ${cities[i]} is ${temperatureService(cities[i])} degrees`
+    );
+  }
+  return cityWeather;
 }
 
 
@@ -31,7 +37,7 @@ function temperatureService(city) {
     
     return temparatureMap.get(city);
 }
-
+temperatureService("London")
 test("should return a temperature report for the user's cities", () => {
     let usersCities = [
         "London",

@@ -6,8 +6,23 @@
 */
 
 function evenNumbers(n) {
-    // TODO
+    // TODO '*' 
+if(n!== 0){
+    let i = 0;
+    let j = 0;
+    let array = [];
+    
+    while(i < n){
+     array.push(j); 
+    i++;
+    j = (j+2);
+    }
+    
+    console.log(array.toString());
+    }
 }
+
+
 
 evenNumbers(3); // should output 0,2,4
 evenNumbers(0); // should output nothing

@@ -37,6 +37,7 @@ function getAveragePrices(closingPricesForAllStocks) {
     // TODO
 }
 
+
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
     Implement the below function, which

@@ -12,16 +12,18 @@
 // Example 1
 let a;
 console.log(a);
+// we have not assigned a value to 'a' e.g let a = "something"
 
 
 // Example 2
 function sayHello() {
     let message = "Hello";
+
 }
 
 let hello = sayHello();
 console.log(hello);
-
+// we needed a 'return message' inside the function
 
 // Example 3
 function sayHelloToUser(user) {
@@ -30,7 +32,10 @@ function sayHelloToUser(user) {
 
 sayHelloToUser();
 
+// you haven't given the function a parameter e.g "khadija"
+
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+// the index 3 does not exist in the given array but if we added an extra number e.g 4, it would no longer be undefined. 
