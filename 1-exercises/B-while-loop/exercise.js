@@ -6,7 +6,7 @@
 */
 
 function evenNumbers(n) {
-    let count = [];
+    const count = [];
     let i = 0;
     while (count.length != n) {
         if (i % 2 === 0) {

@@ -12,8 +12,8 @@
 
 function getHighestRatedInEachGenre(books) {
 
-    let highestRated = [];
-    let inputsGenre = ["children", "non-fiction", "cooking"];
+    const highestRated = [];
+    const inputsGenre = ["children", "non-fiction", "cooking"];
 
     for (let i = 0; i < inputsGenre.length; i++) {
         let tempRate = 0;

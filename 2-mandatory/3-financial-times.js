@@ -6,7 +6,7 @@
 */
 function potentialHeadlines(allArticleTitles) {
 
-    let fitTitles = [];
+    const fitTitles = [];
     for (let allTitles of allArticleTitles)
         if (allTitles.length < 65)
             fitTitles.push(allTitles);
@@ -21,7 +21,7 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
 
-    let lengthTitles = [];
+    const lengthTitles = [];
     let temp = 0;
     for (let allTitles of allArticleTitles) {
         temp = allTitles.split(" ").length;

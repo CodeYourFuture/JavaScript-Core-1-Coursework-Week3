@@ -60,7 +60,7 @@ function getAveragePrices(closingPricesForAllStocks) {
 function getPriceChanges(closingPricesForAllStocks) {
 
     let diff = 0;
-    let changePrices = [];
+    const changePrices = [];
     for (allPrices of closingPricesForAllStocks) {
         diff = allPrices[allPrices.length - 1] - allPrices[0];
         changePrices.push(parseFloat(diff.toFixed(2)));
@@ -83,7 +83,7 @@ function getPriceChanges(closingPricesForAllStocks) {
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
 
     let highestPrice = 0;
-    let describingHighest = [];
+    const describingHighest = [];
     for (let i = 0; i < closingPricesForAllStocks.length; i++) {
         closingPricesForAllStocks[i].sort(function (a, b) { return b - a });
         highestPrice = closingPricesForAllStocks[i][0].toFixed(2);
