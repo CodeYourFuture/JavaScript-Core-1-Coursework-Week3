@@ -14,7 +14,20 @@
 */
 
 function generateFibonacciSequence(n) {
-    // TODO
+
+    let firstNum = 0;
+    let secondNum = 1;
+    let total;
+    let fibonacci = [0, 1];
+    for (i = 2; i < n; i++) {
+        total = firstNum + secondNum
+        fibonacci.push(total);
+        firstNum = secondNum;
+        secondNum = total;
+    }
+    return fibonacci;
+
+
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

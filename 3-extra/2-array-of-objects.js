@@ -23,7 +23,7 @@ function getHighestRatedInEachGenre(books) {
                 tempRate = books[j].rating;
                 tempTitle = books[j].title;
             }
-        highestRated[i] = tempTitle;
+        highestRated.push(tempTitle);
     }
     return highestRated;
 }
