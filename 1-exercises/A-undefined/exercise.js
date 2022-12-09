@@ -12,16 +12,16 @@
 // Example 1
 let a;
 console.log(a);
-
+/* a is not defined */
 
 // Example 2
 function sayHello() {
     let message = "Hello";
 }
-
+/* there is no return */
 let hello = sayHello();
 console.log(hello);
-
+/* hello is a variable not a function */
 
 // Example 3
 function sayHelloToUser(user) {
@@ -29,8 +29,9 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
-
+/*needs a parameter*/
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+/* there is no index 3 */
