@@ -93,7 +93,6 @@ function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
     for (let stock of stocks) {
         report.push("The highest price of " + stock.toUpperCase() + " in the last 5 days was " + theHighestPrice[i])
         i++;
-        console.log(i);
     }
     return report;
 
