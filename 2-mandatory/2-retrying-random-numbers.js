@@ -11,7 +11,19 @@ function generateRandomNumber() {
 
 function getRandomNumberGreaterThan50() {
     // TODO - implement using a do-while loop
+    do {
+      x = generateRandomNumber();
+    }
+    while (x <= 50);
+// console.log(x);
+return x;
 }
+
+// getRandomNumberGreaterThan50();
+
+// Quite enlightening exercise to realise that looping is not only about having a variable periodically increasing/decreasing in order to achieve something
+// It's more about a condition and its 'truthiness' (or 'falsiness') in which case a body of code has to be executed
+// This applies specially to the while 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

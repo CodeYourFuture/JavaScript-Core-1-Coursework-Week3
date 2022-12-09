@@ -6,6 +6,13 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+    let articleTitlesUnder65 = []
+    for (let title of allArticleTitles) {
+        if (title.length <= 65) {
+            articleTitlesUnder65.push(title)
+        }
+    }
+    return articleTitlesUnder65
 }
 
 /*
@@ -15,6 +22,37 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
     // TODO
+    // let word = 0
+    // do {
+    //     countingWords(allArticleTitles[word]
+    //         )
+    // }
+
+    let articleTitle = 0;
+    let shortestTitle = 0
+    let shortestTitleWords = countingWords(allArticleTitles[articleTitle]);
+    for (let articleTitle = 1; articleTitle < allArticleTitles.length; articleTitle++){
+        if (countingWords(allArticleTitles[articleTitle]) < shortestTitleWords) {
+            shortestTitleWords = countingWords(allArticleTitles[articleTitle]);
+            shortestTitle = articleTitle;
+        } 
+    }
+
+    return allArticleTitles[shortestTitle];
+}
+
+function countingWords(string) {
+    let numberOfSpaces = 0
+    let b = string.length
+    let character = 0
+    while (character < b) {
+        if (string[character] === " ") {
+        numberOfSpaces++
+        }
+        character++;
+    }
+    let numberOfWords = numberOfSpaces + 1;
+    return numberOfWords;
 }
 
 /*
@@ -24,7 +62,20 @@ function titleWithFewestWords(allArticleTitles) {
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+    let arrayNumbers = [];
+    for (let article of allArticleTitles) {
+        if (containsNumbers(article) === true) {
+            arrayNumbers.push(article);
+        }
+    }
+    return arrayNumbers;
 }
+
+    function containsNumbers(str) {
+  return /\d/.test(str);
+}
+
+
 
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
@@ -32,6 +83,13 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+    let sample = allArticleTitles.length
+    let sum = 0
+    for (let article = 0; article < sample; article++) {
+        sum = sum + allArticleTitles[article].length;
+    }
+    return Math.round(sum / sample);
+
 }
 
 
