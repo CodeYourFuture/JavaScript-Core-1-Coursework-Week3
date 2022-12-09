@@ -5,7 +5,13 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    // TODO
+    let newArr = [];
+    for(let i=0;i<allArticleTitles.length;i++){
+        if (allArticleTitles[i].length<=65){
+            newArr.push(allArticleTitles[i]);
+        }
+        console.log(newArr);
+    }
 }
 
 /*
@@ -23,7 +29,17 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+    let numbers = ["0","1","2","3","4","5","6","7","8","9"];
+    let newArr = [];
+    for(let i=0;i<allArticleTitles.length;i++){
+        for(let j=0;j<allArticleTitles[i].length;j++){
+        if (allArticleTitles[i][j] == numbers){
+            newArr.push(allArticleTitles[i]);
+        }
+        
+    }
+        console.log(newArr);
+    }
 }
 
 /*
