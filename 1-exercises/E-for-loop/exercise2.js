@@ -28,6 +28,9 @@ const AGES = [
 
 // TODO - Write for loop code here
 
+i = 0;
+for (let )
+
 /*
 The output should look something like this:
 

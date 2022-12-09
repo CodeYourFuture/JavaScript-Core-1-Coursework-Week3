@@ -7,10 +7,17 @@
 
 function evenNumbers(n) {
     let i = 0;
-    while (i <= n) {
-        console.log(i);
+    let count = 1;
+    let zahraasBag = [];
+    
+    while (count <= n) {
+        // console.log(`Loop${count} i:${i} n:${n} count:${count}`);
+        count = count + 1;
+        zahraasBag.push(i);
         i = i + 2;
     }
+    
+    console.log(zahraasBag.join());
 }
 
 evenNumbers(3); // should output 0,2,4
