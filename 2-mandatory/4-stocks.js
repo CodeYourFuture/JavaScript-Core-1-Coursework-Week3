@@ -80,8 +80,18 @@ function getPriceChanges(closingPricesForAllStocks) {
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-  // TODO
-}
+    // TODO
+     let arr = [];
+    for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+      arr.push(
+        `The highest price of ${stocks[
+          i
+        ].toUpperCase()} in the last 5 days was ${Math.max(
+          ...closingPricesForAllStocks[i]
+        ).toFixed(2)}`
+      );
+    }
+    return arr;
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the average price for each stock", () => {
