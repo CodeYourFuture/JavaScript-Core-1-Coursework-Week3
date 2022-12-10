@@ -22,6 +22,17 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
   // TODO
+  let fewestWordsSoFar 
+  let titleWithFewestWords
+
+  for (let title of allArticleTitles) {
+    let numOfWords.split('')
+    if (numOfWords <= fewestWordsSoFar) {
+        let fewestWordsSoFar = title
+    }
+    
+  }
+  return title
 }
 
 /*
