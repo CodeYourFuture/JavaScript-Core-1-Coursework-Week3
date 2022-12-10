@@ -4,22 +4,62 @@
     The home page of the web site has a headline section, which only has space for article titles which are 65 characters or less.
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
+
+// 1st option how to solve
+
 function potentialHeadlines(allArticleTitles) {
-  let myArray = [];
+  let headlines = [];
   for (let i = 0; i < allArticleTitles.length; i++) {
     if (allArticleTitles[i].length <= 65) {
-      myArray.push(allArticleTitles[i]);
+      headlines.push(allArticleTitles[i]);
   }
+  return headlines;
 }
+
+// 2 option how to solve
+
+// function potentialHeadlines(allArticleTitles) {
+//   let headlines = [];
+
+//   for (let article of allArticleTitles) {
+//     if (article.length <= 65) {
+//       headlines.push(article);
+//   }
+//   return headlines;
+// }
+
 
 /*
     The editor of the FT likes short headlines with only a few words!
     Implement the function below, which returns the title with the fewest words.
     (you can assume words will always be seperated by a space)
 */
-function titleWithFewestWords(allArticleTitles) {
-  // TODO
+
+function numberOfWords(title) {
+  //return the number of words in the title
+ return title.split(' ').length;
 }
+
+
+function titleWithFewestWords(allArticleTitles) {
+  let lowestNumberOfWords;
+  let titleWithFewestWords;
+  
+  for(let title of allArticleTitles) {
+    let numWords = numberOfWords(title);
+    if(lowestNumberOfWords === undefined || numWords < lowestNumberOfWords) {
+      lowestNumberOfWords = numWords;
+      titleWithFewestWords = title;
+    }
+    return titleWithFewestWords;
+  }
+  //find out number of words
+
+  //if the number of words is < minNumberOfWords,
+  // then set minNumberOfWords = to the current world
+
+}
+
 
 /*
     The editor of the FT has realised that headlines which have numbers in them get more clicks!
