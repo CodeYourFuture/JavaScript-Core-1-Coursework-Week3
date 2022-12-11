@@ -4,18 +4,55 @@
     The home page of the web site has a headline section, which only has space for article titles which are 65 characters or less.
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
+
 function potentialHeadlines(allArticleTitles) {
     // TODO
+   
+    const filteredArr = [];
+    for  ( let article of allArticleTitles) {
+        if (article.length <= 65) {
+            filteredArr.push(article);
+            //arr = article.length;
+           //console.log(arr);
+        }
+    }
+    return filteredArr;
 }
+
+
+
 
 /*
     The editor of the FT likes short headlines with only a few words!
     Implement the function below, which returns the title with the fewest words.
     (you can assume words will always be seperated by a space)
 */
+
+
+
 function titleWithFewestWords(allArticleTitles) {
     // TODO
-}
+    
+        let fewestWordsSoFar;
+        let titleWithFewestWords;
+    
+        for(let title of allArticleTitles) {
+            
+            // working out the number of words in the title by splitting on the space character
+            // this will generate an array. Read more: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
+            let numWords = title.split(' ').length;
+    
+            if(fewestWordsSoFar === undefined || numWords < fewestWordsSoFar) {
+                fewestWordsSoFar = numWords;
+                titleWithFewestWords = title;
+            }
+        }
+    
+        return titleWithFewestWords;
+    }
+ 
+    
+
 
 /*
     The editor of the FT has realised that headlines which have numbers in them get more clicks!
@@ -32,6 +69,14 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+    
+    let totalCharacters = 0;
+
+    for(let title of allArticleTitles) {
+        totalCharacters += title.length;
+    }
+
+    return Math.round(totalCharacters / allArticleTitles.length);
 }
 
 
@@ -49,6 +94,11 @@ const ARTICLE_TITLES = [
     "The three questions that dominate investment",
     "Brussels urges Chile's incoming president to endorse EU trade deal",
 ];
+
+// potentialHeadlines();
+//titleWithFewestWords(potentialHeadlines());
+
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

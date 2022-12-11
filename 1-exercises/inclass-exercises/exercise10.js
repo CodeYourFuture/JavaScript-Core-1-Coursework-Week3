@@ -19,3 +19,4 @@ console.log(peopleAround("Karleen",nameArr));
 
 nameArr.push("Karleen");
 console.log(peopleAround("Karleen", nameArr));
+console.log(nameArr);

@@ -11,31 +11,15 @@
         - Hint: you can call the temperatureService function from your function
 */
 
-let userCities = ["London", "Paris", "Sao Paulo"];
-function getTemperatureReport(userCities) {
-    // TODO
-   
-    for (city of userCities) {
-        if (city === "") {
-            console.log("The temperature in " + city + " is " + "[]" + " degrees");
-        }
-        else {
-        console.log(`The temperature in ${city} is ${temperatureService(city)} degrees`);
-    } 
-    /* for (let i = 0; i < cities.length; i++) {
-        console.log("The temperature in " + cities[i] + " is " + temperatureService() + " degrees.");
-    } */
+function getTemperatureReport(cities) {
+    let report = [];
+    for(let city of cities) {
+        let temperature = temperatureService(city);
+        report.push(`The temperature in ${city} is ${temperature} degrees`);
+    }
+    return report;
 }
-
-}
-
-getTemperatureReport(userCities);
-
-userCities.splice(0,3, "Barcelona", "Dubai", "");
-
-getTemperatureReport(userCities);
-
-
+  
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
