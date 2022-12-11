@@ -12,7 +12,22 @@
 
 function getHighestRatedInEachGenre(books) {
     // TODO
+
+     let output = [];
+
+    let genres = Array.from(new Set(books.map(element => element.genre)));
+
+    for (let genre in genres) {   
+        let result = books
+                        .filter(element => element.genre === genres[genre])
+                        .reduce((pV, cV) => pV.rating < cV.rating ? cV : pV);
+
+        output.push(result.title);
+    }
+
+    return output;
 }
+   
 
 
 /* ======= Book data - DO NOT MODIFY ===== */
