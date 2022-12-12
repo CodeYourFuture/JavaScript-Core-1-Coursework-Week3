@@ -9,10 +9,10 @@
     For each example, can you explain why we are seeing undefined?
 */
 
-// Example 1
+// Example 1 
 let a;
 console.log(a);
-
+// Answer: Its because there is no value for a.
 
 // Example 2
 function sayHello() {
@@ -21,7 +21,7 @@ function sayHello() {
 
 let hello = sayHello();
 console.log(hello);
-
+// Answer: We didn't call the variable message so it won't output it.
 
 // Example 3
 function sayHelloToUser(user) {
@@ -29,8 +29,9 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
-
+// Answer:Because user is undefined 
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+// Answer: We only have 0,1,2 index and there is no value for index 3.
