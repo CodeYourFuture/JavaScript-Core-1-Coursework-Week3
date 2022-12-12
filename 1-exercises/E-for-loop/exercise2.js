@@ -1,13 +1,16 @@
 /*
-    for loops can be useful when we already know exactly how many times we want to loop.
+    for loops can be useful when we already know exactly how many times 
+    we want to loop.
 
     Below we have 2 arrays which have exactly the same number of values.
         - The first array is a list of writers
         - The second array is a list of ages
-    The writers in the first array correspond with the ages in the second array.
+    The writers in the first array correspond with the ages in the second 
+    array.
     For example, Virginia Woolf is 59 years old.
 
-    Using a for loop, output to the console a line about the age of each writer.
+    Using a for loop, output to the console a line about the age of each 
+    writer.
 */
 
 const WRITERS = [
@@ -28,6 +31,15 @@ const AGES = [
 
 // TODO - Write for loop code here
 
+for (let i=0, j=0; i< WRITERS.length, j< AGES.length;i++, j++){
+    console.log(`${WRITERS[i]} is ${AGES[j]} years old`);
+}
+
+//for (let j=0; j< b.length; j++){
+//    return AGES[j];
+//}
+
+//console.log(writersAges(WRITERS,AGES))
 /*
 The output should look something like this:
 

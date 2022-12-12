@@ -11,16 +11,16 @@
 
 // Example 1
 let a;
-console.log(a);
+console.log(a);  // There's no value assigned to variable  a
 
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+    let message = "Hello"; // There's no output from this function.
 }
 
 let hello = sayHello();
-console.log(hello);
+console.log(hello);   //log 'hello', but due to sayHello()function  is undefined, so it's logged undefined as well.
 
 
 // Example 3
@@ -28,9 +28,9 @@ function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
 
-sayHelloToUser();
+sayHelloToUser();  // There's no argument assigned when call sayHelloToUser()function.
 
 
 // Example 4
 let arr = [1,2,3];
-console.log(arr[3]);
+console.log(arr[3]);  // There's no 4th element in array, so it logs 'undefined'.
