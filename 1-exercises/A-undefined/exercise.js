@@ -10,7 +10,7 @@
 */
 
 // Example 1
-let a;
+let a; // This variable is empty , you should asinged  this variable to eny value 
 console.log(a);
 
 
@@ -18,6 +18,7 @@ console.log(a);
 function sayHello() {
     let message = "Hello";
 }
+// This Function did not return enything , that why it's undefined 
 
 let hello = sayHello();
 console.log(hello);
@@ -28,9 +29,9 @@ function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
 
-sayHelloToUser();
+sayHelloToUser(); // you should pass value to this function , now is empty 
 
 
 // Example 4
 let arr = [1,2,3];
-console.log(arr[3]);
+console.log(arr[3]); // we did not have 4 item in this arry , the arry limte for 3 itme which is start from arry[0] to arry[2]
