@@ -47,13 +47,17 @@ function titleWithFewestWords(allArticleTitles) {
 function headlinesWithNumbers(allArticleTitles) {
 
     let numberIncluded = [];
-    for (let allTitles of allArticleTitles)
-        if (allTitles.includes(0 || 1 || 2 || 3 || 4 || 5 || 6 || 7 || 8 || 9))
+    for (let allTitles of allArticleTitles) {
+        if (arrIncludesValidNum(allTitles)) {
             numberIncluded.push(allTitles);
+        }
+    }
     return numberIncluded;
-
 }
-
+function arrIncludesValidNum(arr) {
+    const validNumbers = [...Array(10).keys()];
+    return validNumbers.some(element => arr.includes(element))
+}
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
     Implement the function below to return this number - rounded to the nearest integer.

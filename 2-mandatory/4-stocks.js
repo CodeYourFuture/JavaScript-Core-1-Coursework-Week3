@@ -35,14 +35,15 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 */
 function getAveragePrices(closingPricesForAllStocks) {
 
-    let agv = 0;
     let avgPrices = [];
     for (let allPrices of closingPricesForAllStocks) {
         let sum = 0;
-        for (let closingPrices of allPrices)
-            sum += closingPrices;
-        avg = sum / allPrices.length;
-        avgPrices.push(parseFloat(avg.toFixed(2)));
+        if (allPrices.length > 0) {
+            for (let closingPrices of allPrices)
+                sum += closingPrices;
+            avg = sum / allPrices.length;
+            avgPrices.push(parseFloat(avg.toFixed(2)));
+        }
     }
     return avgPrices;
 }
@@ -61,10 +62,12 @@ function getPriceChanges(closingPricesForAllStocks) {
 
     let diff = 0;
     const changePrices = [];
-    for (allPrices of closingPricesForAllStocks) {
-        diff = allPrices[allPrices.length - 1] - allPrices[0];
-        changePrices.push(parseFloat(diff.toFixed(2)));
-    }
+    for (allPrices of closingPricesForAllStocks)
+        if (allPrices.length > 0) {
+            diff = allPrices[allPrices.length - 1] - allPrices[0];
+            changePrices.push(parseFloat(diff.toFixed(2)));
+        }
+
     return changePrices;
 }
 
@@ -84,11 +87,12 @@ function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
 
     let highestPrice = 0;
     const describingHighest = [];
-    for (let i = 0; i < closingPricesForAllStocks.length; i++) {
-        closingPricesForAllStocks[i].sort(function (a, b) { return b - a });
-        highestPrice = closingPricesForAllStocks[i][0].toFixed(2);
-        describingHighest.push(`The highest price of ${stocks[i].toUpperCase()} in the last 5 days was ${highestPrice}`);
-    }
+    for (let i = 0; i < closingPricesForAllStocks.length; i++)
+        if (closingPricesForAllStocks[i].length > 0) {
+            closingPricesForAllStocks[i].sort(function (a, b) { return b - a });
+            highestPrice = closingPricesForAllStocks[i][0].toFixed(2);
+            describingHighest.push(`The highest price of ${stocks[i].toUpperCase()} in the last 5 days was ${highestPrice}`);
+        }
     return describingHighest;
 }
 
