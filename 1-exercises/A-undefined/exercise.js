@@ -11,7 +11,7 @@
 
 // Example 1
 let a;
-console.log(a);
+console.log(a); //'a' hasn't been assigned a value
 
 
 // Example 2
@@ -20,7 +20,7 @@ function sayHello() {
 }
 
 let hello = sayHello();
-console.log(hello);
+console.log(hello);  //function doesn't return anything
 
 
 // Example 3
@@ -28,9 +28,8 @@ function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
 
-sayHelloToUser();
-
+sayHelloToUser();  //no argument given when calling the function.
 
 // Example 4
 let arr = [1,2,3];
-console.log(arr[3]);
+console.log(arr[3]);  //The arrays start at 0, there is no array item at the 3rd index.
