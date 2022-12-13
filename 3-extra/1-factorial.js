@@ -1,15 +1,22 @@
 /*
-    In maths, the factorial of an integer (written as n!) is the product of an integer, and all the integers below it (not including zero).
+    In maths, the factorial of an integer (written as n!) is the product of 
+    an integer, and all the integers below it (not including zero).
     See: https://en.wikipedia.org/wiki/Factorial
     For example,
         3! is 6 (because 3 * 2 * 1 = 6)
         5! is 120 (because 5 * 4 * 3 * 2 * 1 = 120)
     
-    Using a loop, complete the function below so it returns the factorial of the number being passed in. 
+    Using a loop, complete the function below so it returns the factorial of 
+    the number being passed in. 
 */
 
 function factorial(input) {
     // TODO
+    let facNum = 1;
+    for (; input > 0 ; input-- ){
+         facNum *= input;  
+    }
+    return facNum
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
