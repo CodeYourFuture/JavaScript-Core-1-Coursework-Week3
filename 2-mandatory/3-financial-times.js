@@ -6,8 +6,19 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
-    return  allArticleTitles.filter(letters => letters.length<=65);
+
+//1.filter()method
+return  allArticleTitles.filter(letters => letters.length<=65);
     
+//2.for ... of loop
+//      let headlines = [];
+//      for(let title of allArticleTitles){
+//         if (title.length <=65){
+//             headlines.push(title);
+//         }
+//         return headlines
+//      }
+
 }
 
 /*
@@ -20,36 +31,45 @@ function titleWithFewestWords(allArticleTitles) {
     // TODO: 
      //Barath's solution:
     // declare a function in advance to return the number of every element in the array:
-    /*
-     function numberOfWords(title){
-        return title.split(' ').length;
-     }
+    
 
-    function titleWithFewestWords(allArticleTitles) {
-      let lowestNumberOfWords;
-      let titleWithFewestWords;
+    //  function numberOfWords(title){
+    //     return title.split(' ').length;
+    //  }
 
-      for (let title of allArticleTitles) {
-        let numWords = numberOfWords(title);
-        if (
-          lowestNumberOfWords === undefined ||
-          numWords < lowestNumberOfWords
-        ) {
-          lowestNumberOfWords = numWords;
-          titleWithFewestWords = title;
-        }
-      }
+    // function titleWithFewestWords(allArticleTitles) {
+    //   let lowestNumberOfWords;
+    //   let titleWithFewestWords;
 
-      return titleWithFewestWords;
-    }
-}
-*/
+    //   for (let title of allArticleTitles) {
+    //     // working out the number of words in the title by splitting on the space 
+    //     // character
+    //     // this will generate an array. Read more: 
+    //     //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
+    //     let numWords = numberOfWords.title(" ").length;
+        
+    //     if (
+    //       lowestNumberOfWords === undefined ||
+    //       numWords < lowestNumberOfWords
+    //     ) {
+    //       lowestNumberOfWords = numWords;
+    //       titleWithFewestWords = title;
+    //     }
+    //   }
+
+    //   return titleWithFewestWords;
+    // }
+
+
    let wordNums =[];
    for (let i=0; i<allArticleTitles.length; i++){
+       //return a new array of every article's length:
        wordNums.push(allArticleTitles[i].split(' ').length)
    }
+   //return the array with lowest number using indexOf()method:
    return allArticleTitles[wordNums.indexOf(Math.min(...wordNums))]
 }
+
 /*
     The editor of the FT has realized that headlines which have numbers in them get more clicks!
     Implement the function below to return a new array containing all the headlines which contain a number.
@@ -57,6 +77,7 @@ function titleWithFewestWords(allArticleTitles) {
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+    //1. using 'regex':
     let  NumberArray = [];
     const regex = /[0-9]/g;
     for (let i=0; i<allArticleTitles.length; i++){
@@ -66,6 +87,27 @@ function headlinesWithNumbers(allArticleTitles) {
     }
         return NumberArray
 }
+
+//2. split two parts to solve problem:
+  //1) Creating another function to help break this problem down into smaller parts
+//       function doesTitleContainANumber(title) {
+//       for(let character of title) {
+//         if(character >= '0' && character <= '9') {
+//             return true;
+//         }
+//     }
+//     return false;
+//   }
+//   // 2)  make use of the function created above:
+//       let articlesWithNumbers = [];
+
+//     for(let title of allArticleTitles) {
+//         if(doesTitleContainANumber(title)) {
+//             articlesWithNumbers.push(title);
+//         }
+//     }
+//     return articlesWithNumbers;
+// }
 
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
@@ -81,6 +123,8 @@ function averageNumberOfCharacters(allArticleTitles) {
     }
     let averageChar =  Math.round(sum/ allArticleTitles.length);
     return  averageChar
+
+    
 }
 
 

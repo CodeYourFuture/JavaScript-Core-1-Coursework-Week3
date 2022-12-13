@@ -30,10 +30,17 @@ const AGES = [
 ];
 
 // TODO - Write for loop code here
+  //1.own solution:
+//for (let i=0, j=0; i< WRITERS.length, j< AGES.length;i++, j++){
+//    console.log(`${WRITERS[i]} is ${AGES[j]} years old`);
+//}
 
-for (let i=0, j=0; i< WRITERS.length, j< AGES.length;i++, j++){
-    console.log(`${WRITERS[i]} is ${AGES[j]} years old`);
-}
+   //2. solution from google classroom review:
+      for (let i=0; i<WRITERS.length;i++){
+        // Because we want to retrieve the element at the same index for 
+        // both arrays, we can re-use the same variable i
+        console.log(`${WRITERS[i]} is ${AGES[i]} years old`)
+      }
 
 //for (let j=0; j< b.length; j++){
 //    return AGES[j];

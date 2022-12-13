@@ -12,19 +12,30 @@
 
 function evenNumbersSum(n) {
   // TODO
-  //initialize first even number is 0, sum is 0, counter from 0;
-  let currEvenNumber = 0;
-  let sum = 0;
-  let i = 0;
-  do {
-  //sum of first n even number(0):
-    sum += currEvenNumber;
-  //next even number:
-    currEvenNumber += 2;
-  //next counter:
+
+  //1.own solution: initialize first even number is 0, sum is 0, counter from 0;
+  // let currEvenNumber = 0;
+  // let sum = 0;
+  // let i = 0;
+  // do {
+  // //sum of first n even number(0):
+  //   sum += currEvenNumber;
+  // //next even number:
+  //   currEvenNumber += 2;
+  // //next counter:
+  //   i++;
+  // } while (i < n);    //condition
+  // return sum;         //return final output when condition is false.
+
+//2.solution from google classroom  review:
+   let sum = 0;
+   let i=0;    
+   do {
+    sum += (i * 2);
     i++;
-  } while (i < n);    //condition
-  return sum;         //return final output when condition is false.
+   }while(i < n);
+   return sum;
+
 }
 /*  for loop:  solution 
      let currEvenNumber = 0,

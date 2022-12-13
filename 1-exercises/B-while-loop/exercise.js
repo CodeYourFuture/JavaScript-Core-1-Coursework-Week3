@@ -9,12 +9,17 @@
 */
 
 function evenNumbers(n) {
-    // TODO
-    let i = 0;
-    while(i<n){
-        console.log(i*2);
-        i++;
-    }
+  // TODO
+  // initializing an array to hold even numbers:
+  let result = [];
+  let i = 0;
+  while (i < n) {
+    result.push(i * 2);
+    i++;
+  }
+  // joining the elements of the array together as a string
+  // Read more here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join
+    console.log(result.join())
 }
 
 evenNumbers(3); // should output 0,2,4

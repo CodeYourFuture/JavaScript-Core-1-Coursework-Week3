@@ -15,11 +15,22 @@
 
  function getTemperatureReport(cities) {
     // TODO
-    let arr = [];
-        for (let i=0; i < cities.length; i++){
-        arr.push(`The temperature in ${cities[i]} is ${temperatureService(cities[i])} degrees`)
-    }
-    return arr;
+
+    //for loop:
+    // let arr = [];
+    //    for (let i=0; i < cities.length; i++){
+    //    arr.push(`The temperature in ${cities[i]} is ${temperatureService(cities[i])} degrees`)
+    // }
+    // return arr;
+
+    //for ... of: (from google classroom review)
+     let report = [];
+     for (let city of cities){
+        let temperature = temperatureService(city);
+        report.push(`The temperature in ${city} is ${temperature} degrees`);
+     }
+     return report;
+
  }
 
 

@@ -12,11 +12,24 @@
 
 function factorial(input) {
     // TODO
-    let facNum = 1;
-    for (; input > 0 ; input-- ){
-         facNum *= input;  
-    }
-    return facNum
+    //for loop:
+    // let facNum = 1;
+    // for (; input > 0 ; input-- ){
+    //      facNum *= input;  
+    // }
+    // return facNum
+
+    //do while:
+      let result = 1;
+
+      let i = input;
+      do {
+        result *= i;
+        i--;
+      } while (i > 0);
+
+      return result;
+
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

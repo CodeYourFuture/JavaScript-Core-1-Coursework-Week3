@@ -35,15 +35,33 @@ function generateFibonacciSequence(n) {
   // }
 
   //for loop:
-  const fabArr = [];
-  const first2Num = [0, 1];
-  for (let i = 0; i < n; i++) {
-    i === 0 || i === 1 ?
-       fabArr.push(first2Num[i])
-      : fabArr.push(fabArr[i-1] + fabArr[i-2]);
-  }
-  return fabArr;
+//   const fabArr = [];
+//   const first2Num = [0, 1];
+//   for (let i = 0; i < n; i++) {
+//     i === 0 || i === 1 ?
+//        fabArr.push(first2Num[i])
+//       : fabArr.push(fabArr[i-1] + fabArr[i-2]);
+//   }
+//   return fabArr;
+//  }
+ 
+ //solution from google classroom review:
+     let fibonacciSequence = [];
+
+    // just initialize the first 2 values in the sequence
+    fibonacciSequence[0] = 0;
+    fibonacciSequence[1] = 1;
+
+    // the remaining numbers can be calculated
+    for (i = 2; i < n; i++) {
+        // each number is equal to the sum of the previous 2 numbers
+        fibonacciSequence[i] = fibonacciSequence[i-2] + fibonacciSequence[i-1];
+    }
+    return fibonacciSequence;
 }
+
+
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the first 10 numbers in the Fibonacci Sequence", () => {
