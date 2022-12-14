@@ -40,12 +40,13 @@ function headlinesWithNumbers(allArticleTitles) {
   let headlineContainNumber = [];
   for (let article of allArticleTitles) {
     for (let i of article) {
-      if (parseInt(i)) {
+      if (parseInt(i) || i === '0') {
         headlineContainNumber.push(article);
         break;
       }
     }
   }
+  console.log(headlineContainNumber)
   return headlineContainNumber;
 }
 
