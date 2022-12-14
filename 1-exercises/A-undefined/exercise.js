@@ -28,7 +28,7 @@ function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
 
-sayHelloToUser(); // There is no value for the parameter
+sayHelloToUser(); // There is no value for the parameter, user is undefined.
 
 
 // Example 4
