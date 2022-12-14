@@ -10,13 +10,13 @@
 */
 
 // Example 1
-let a;
+let a;  // The a variable has declared and need to be assigned to a value. let a = 12; or let a = "Hello";
 console.log(a);
 
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+    let message = "Hello"; // The function doesn't have return, therefore it is undefined.
 }
 
 let hello = sayHello();
@@ -28,9 +28,9 @@ function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
 
-sayHelloToUser();
+sayHelloToUser(); // There is no value for the parameter
 
 
 // Example 4
 let arr = [1,2,3];
-console.log(arr[3]);
+console.log(arr[3]); //The arr[3] refers to an item that does not exist. 
