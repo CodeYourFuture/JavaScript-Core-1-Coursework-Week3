@@ -7,7 +7,7 @@
     
     Using a loop, complete the function below so it returns the factorial of the number being passed in. 
 */
-
+/*
 function factorial(input) {
     // TODO
     let count = 0;
@@ -16,32 +16,33 @@ function factorial(input) {
     }
     return count;
 }
+*/
 function factorial(input) {
-    // TODO
-    let count = 1;
-    for (let i = input; i > 0; i--){
-        //reduce i by 1 till it is 1
-        //1 * a number is 1
-      console.log(i)
-        //tiems count by i and asign to count
-       count *= i;
-       console.log(count)
-    }
-    //exit loop when i is 1
-    return count;
+  // TODO
+  let count = 1;
+  for (let i = input; i > 0; i--) {
+    //reduce i by 1 till it is 1
+    //1 * a number is 1
+    //console.log(i)
+    //tiems count by i and asign to count
+    count *= i;
+    //console.log(count)
+  }
+  //exit loop when i is 1
+  return count;
 }
 
-console.log(factorial(5));
+//console.log(factorial(5));
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("3! should be 6", () => {
-    expect(factorial(3)).toEqual(6);
+  expect(factorial(3)).toEqual(6);
 });
 
 test("5! should be 120", () => {
-    expect(factorial(5)).toEqual(120);
+  expect(factorial(5)).toEqual(120);
 });
 
 test("10! should be 3628800", () => {
-    expect(factorial(10)).toEqual(3628800);
+  expect(factorial(10)).toEqual(3628800);
 });

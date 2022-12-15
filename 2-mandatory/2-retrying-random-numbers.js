@@ -19,9 +19,10 @@ function getRandomNumberGreaterThan50() {
 
     //console.log(i);
     //test();
-  } while (test < 50);
+  } while (test <= 50);
   return test;
 }
+getRandomNumberGreaterThan50();
 console.log(getRandomNumberGreaterThan50());
 /* ======= TESTS - DO NOT MODIFY ===== */
 
