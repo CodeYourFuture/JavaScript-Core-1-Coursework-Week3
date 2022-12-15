@@ -33,18 +33,7 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Solve the smaller problems, and then build those solutions back up to solve the larger problem.
         Functions can help with this!
 */
-// function getAveragePrices(closingPricesForAllStocks) {
-//   // TODO
-//   closingPricesForAllStocks.map((el) => {
-//     let arrSum = el.reduce((total, current) => {
-//       return total + current, 0;
-//     });
-//     console.log(arrSum);
-//     let arrAverage = arrSum / el.length;
-//     console.log(arrAverage);
-//     return arrAverage;
-//   });
-// }
+
 function getAveragePrices(closingPricesForAllStocks) {
   // TODO
   let closeArr = closingPricesForAllStocks.map((el) => {
@@ -79,11 +68,8 @@ function getPriceChanges(closingPricesForAllStocks) {
   let closingPrice = closingPricesForAllStocks;
   let changes = [];
   for (let stock of closingPrice) {
-    //console.log(stock);
-
-    //calculate change in price for the array
     let change = calculateChange(stock);
-    //add that value to the changes array
+
     changes.push(+change);
   }
   return changes;
@@ -101,36 +87,20 @@ function getPriceChanges(closingPricesForAllStocks) {
     The stock ticker should be capitalised.
     The price should be shown with exactly 2 decimal places.
 */
-// function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-//   // TODO
 
-//   //for every item in stocks return name plus highes item in CS
-//   let testArr = stocks.map(el => {
-//     let highest = closingPricesForAllStocks.map(ell => {
-//         let high = Math.max.apply(null, ell);
-//         //let high = el.sort((a, b) => a - b)
-//         return high;
-//     })
-//     return `${el.toUpperCase()} and ${highest}`
-//   })
-// }
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
   // TODO
   let testArr2 = [];
   for (let i = 0; i < stocks.length; i++) {
-    //for every item in stocks return name plus highes item in CS
     let testArr = stocks[i];
     let fiveDayStock = closingPricesForAllStocks[i];
     let high = Math.max.apply(null, fiveDayStock);
-    //let high = el.sort((a, b) => a - b)
 
-    //return `${el.toUpperCase()} and ${highest[i]}`
     testArr2.push(
       `The highest price of ${testArr.toUpperCase()} in the last 5 days was ${high.toFixed(2)}`
     );
   }
 
-  //return testArr;
   return testArr2;
 }
 
