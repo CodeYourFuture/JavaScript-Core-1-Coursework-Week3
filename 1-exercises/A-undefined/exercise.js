@@ -12,7 +12,7 @@
 // Example 1
 let a;
 console.log(a);
-
+// Variable a has not been initialised/assigned
 
 // Example 2
 function sayHello() {
@@ -21,6 +21,7 @@ function sayHello() {
 
 let hello = sayHello();
 console.log(hello);
+// The function sayHello() doesn't return any value
 
 
 // Example 3
@@ -29,8 +30,10 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
+// When the function is called (last line), no argument is given (for its user parameter)
 
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+// Because of zero-indexing, arr[3] tries to find unsuccessfully the 4th element in the array arr (the array has only 3 elements)

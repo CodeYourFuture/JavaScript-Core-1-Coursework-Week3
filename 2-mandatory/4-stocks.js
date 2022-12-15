@@ -35,6 +35,19 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 */
 function getAveragePrices(closingPricesForAllStocks) {
     // TODO
+    let averageArray = []
+    for (let average of closingPricesForAllStocks) {
+        averageArray.push(getAverage(average));
+    }
+    return averageArray
+}
+
+function getAverage(pricesOfEachStock) {
+    let sum = 0;
+    for (let price of pricesOfEachStock) {
+        sum = sum + price
+    }
+    return Number((sum / 5).toFixed(2));
 }
 
 /*
@@ -49,7 +62,15 @@ function getAveragePrices(closingPricesForAllStocks) {
 */
 function getPriceChanges(closingPricesForAllStocks) {
     // TODO
+        let differenceArray = []
+    for (let difference of closingPricesForAllStocks) {
+        differenceArray.push(Number((difference[difference.length-1] - difference[0]).toFixed(2))); // Definitely this is supercomplicated
+    }
+    return differenceArray;
+
 }
+
+
 
 /*
     As part of a financial report, we want to see what the highest price was for each stock in the last 5 days.
@@ -65,6 +86,27 @@ function getPriceChanges(closingPricesForAllStocks) {
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
     // TODO
+    let theHighestPrice = highestPrice(closingPricesForAllStocks);
+    console.log(theHighestPrice)
+    let report = [];
+    let i = 0;
+    for (let stock of stocks) {
+        report.push("The highest price of " + stock.toUpperCase() + " in the last 5 days was " + theHighestPrice[i])
+        i++;
+    }
+    return report;
+
+}
+
+function highestPrice(closingPrices) {
+    highestPrices = [];
+    for (let price of closingPrices) {
+        highestPrices.push(/*Number*/((Math.max.apply(null, price)).toFixed(2))) // Found this solution here: https://stackoverflow.com/questions/1669190/find-the-min-max-element-of-an-array-in-javascript
+        // It works but I don't understand it - If I kept the Number method it would show the last higestPrice with one decimal after the point; not two...
+        // highestPrices.push(Math.max(price)) This didn't work
+    }
+    return highestPrices;
+    console.log(highestPrices)
 }
 
 
