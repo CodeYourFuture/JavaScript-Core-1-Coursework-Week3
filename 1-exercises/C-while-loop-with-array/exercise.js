@@ -20,7 +20,7 @@ function findFirstJulyBDay(birthdays) {
    
     let i = 0;
     while(i < BIRTHDAYS.length){
-        if(BIRTHDAYS[i].startsWith("July"){
+        if(BIRTHDAYS[i].startsWith("July")){
             return BIRTHDAYS[i];
         }
         i++;
