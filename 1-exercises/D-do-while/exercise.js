@@ -7,12 +7,12 @@
 */
 
 function evenNumbersSum(n) {
-  let result = "";
+  let result = 0;
   let i = 0;
   do {
+    result += i * 2;
     i += 1;
-    result += `${n * (n - 1)} `;
-  } while (i < 1);
+  } while (i < n);
   return result;
 }
 
