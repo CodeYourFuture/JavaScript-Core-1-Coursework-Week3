@@ -13,7 +13,7 @@ while (i<n){
  newArray.push(evenNumber)
     i++
 }
-  console.log(newArray.join(","));
+  console.log(newArray.join());
 }
 evenNumbers(3); // should output 0,2,4
 evenNumbers(0); // should output nothing

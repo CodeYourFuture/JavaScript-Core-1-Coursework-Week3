@@ -5,20 +5,18 @@
     
     Using a do-while loop, write a function which returns the sum of the first n even numbers (starting from 0)
 */
-
-function evenNumbersSum(n) {
-        let i=1
-        let sum=0
-      
-do {
-	    sum = sum +( 2 * (n - i));
+ 
+function evenNumbersSum(n){
+    let sum=0;
+    let i=0;
+    do {
+        sum +=(i*2);
         i++;
-         }while(i<n && i>0)
-	return sum;
-}
-    // TODO
+    } while (i<n)
 
-// must change second one to 0, output is -2
+     return sum
+}
+
 console.log(evenNumbersSum(3)); // should output 6
 console.log(evenNumbersSum(0)); // should output 0
 console.log(evenNumbersSum(10)); // should output 90

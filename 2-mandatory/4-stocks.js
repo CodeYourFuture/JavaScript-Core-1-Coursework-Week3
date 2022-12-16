@@ -33,8 +33,42 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Solve the smaller problems, and then build those solutions back up to solve the larger problem.
         Functions can help with this!
 */
+/*
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+ let average=[]
+  for (let pricesForStock of closingPricesForAllStocks){
+    sum=0
+    let avergeOfOneStock;
+    for (let price of pricesForStock){
+        sum +=price
+     
+    }
+ sum= Math.round(sum*100)/100
+    avergeOfOneStock= sum/pricesForStock.length
+    return average.push(avergeOfOneStock)
+}
+return average
+
+
+}
+
+*/ 
+function getAveragePrices(closingPricesForAllStocks) {
+ let averages=[]
+  for (let pricesForStock of closingPricesForAllStocks){
+
+   averages.push(getAveragePricesForStock(pricesForStock))
+  }
+  return averages
+}
+
+function getAveragePricesForStock(pricesForStock){
+    let total=0
+  for (let price of pricesForStock){
+    total +=price
+  }
+  let averge=total/pricesForStock.length
+  return  Math.round(averge*100)/100;
 }
 
 /*
@@ -48,9 +82,18 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+    let changes=[]
+    for (let pricesForStock of closingPricesForAllStocks){
+        changes.push(getPriceChangesForStock(pricesForStock))
+    }
+  
+  return changes
 }
-
+ 
+ function getPriceChangesForStock(pricesForStock){
+    let priceChange=pricesForStock[pricesForStock.length-1]-pricesForStock[0]
+    return Math.round(priceChange*100)/100
+ }
 /*
     As part of a financial report, we want to see what the highest price was for each stock in the last 5 days.
     Implement the below function, which
@@ -64,9 +107,22 @@ function getPriceChanges(closingPricesForAllStocks) {
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+    let description=[]
+    for(let i=0 ;i<closingPricesForAllStocks.length;i++){
+        let highestPrice=getHighPricesForStock(closingPricesForAllStocks[i])
+        description.push(`The highest price of ${stocks[i].toUpperCase()} in the last 5 days was ${highestPrice.toFixed(2)}`)
+    }
+    return description;
 }
-
+function getHighPricesForStock(stockPrice){
+    let heightestPricesSoFar=0;
+    for (price of stockPrice){
+    if (price > heightestPricesSoFar){
+        heightestPricesSoFar=price
+    }
+  }
+  return heightestPricesSoFar
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the average price for each stock", () => {

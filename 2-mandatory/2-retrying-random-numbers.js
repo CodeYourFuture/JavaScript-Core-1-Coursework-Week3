@@ -10,10 +10,10 @@ function generateRandomNumber() {
 }
 
 function getRandomNumberGreaterThan50() {
-    let randomNumber=0
+    let randomNumber;
     do{
        randomNumber= generateRandomNumber()
-    }while (randomNumber< 50)
+    }while (randomNumber<= 50)
     return randomNumber
 }
 
