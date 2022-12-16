@@ -5,8 +5,17 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    // TODO
+    let newArray=[];
+
+    for(list of allArticleTitles){
+        if (list.length<=65){
+            newArray.push(list)
+        } 
+    }
+    return newArray
 }
+
+
 
 /*
     The editor of the FT likes short headlines with only a few words!
@@ -14,7 +23,16 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+   let fewestWordsSoFAr;
+   let titleWithFewestWords;
+     for( let title of allArticleTitles){
+      let numWords=title.split(" ").length
+      if (fewestWordsSoFAr===undefined||numWords<fewestWordsSoFAr){
+        fewestWordsSoFAr=numWords;
+        titleWithFewestWords=title
+      }
+     }
+     return titleWithFewestWords;
 }
 
 /*
@@ -22,8 +40,24 @@ function titleWithFewestWords(allArticleTitles) {
     Implement the function below to return a new array containing all the headlines which contain a number.
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
+function doesTitleContainsNumber(title){
+    for (let character of title){
+        if(character>="0" && character<= "9"){
+            return true
+        } 
+    }
+    return false  
+}
+
+
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+    let articleWithNumbers=[]
+    for(let title of allArticleTitles){
+        if (doesTitleContainsNumber(title)){
+            articleWithNumbers.push(title)
+        }
+    }
+      return articleWithNumbers
 }
 
 /*
@@ -31,7 +65,12 @@ function headlinesWithNumbers(allArticleTitles) {
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
+   let totalCharacters=0
+   let totalLength=allArticleTitles.length
+   for(title of allArticleTitles){
+    totalCharacters +=title.length
+   }
+   return Math.round(totalCharacters/totalLength)
 }
 
 
