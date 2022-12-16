@@ -12,8 +12,42 @@
 
 function getHighestRatedInEachGenre(books) {
     // TODO
-}
 
+//     const result = books.reduce((acc, cur) => {
+//     const groupByGenre = cur.genre;
+//     if (!acc[groupByGenre]) {
+//       acc[groupByGenre] = [];
+//     }
+//     acc[groupByGenre].push(cur);
+//     return acc;
+//   }, {});
+//   const genreName = Object.keys(result);
+//   const arr = [];
+//   for (let i = 0; i < genreName.length; i++) {
+//     arr.push(result[genreName[i]].sort((a, b) => b.rating - a.rating)[0].title);
+//   }
+//   return arr;
+//   }
+
+  //solution from google classroom  review:
+  let highestRated = {};
+
+  for (let book of books) {
+    // if this is the first time we're seeing this genre OR the rating we've seen is not as high as the current book
+    if (
+      highestRated[book.genre] === undefined ||
+      highestRated[book.genre].rating < book.rating
+    ) {
+      // then this book is now the highest rated in the genre so far
+      highestRated[book.genre] = book;
+    }
+  }
+
+  // Here we just want to get the highest rated books (the values of the object)
+  // and then get the title for each one
+  return Object.values(highestRated).map((book) => book.title);
+}
+ 
 
 /* ======= Book data - DO NOT MODIFY ===== */
 const BOOKS = [
@@ -68,7 +102,6 @@ const BOOKS = [
         rating: 4.85
     },
 ]
-
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the highest rated book in each genre", () => {
