@@ -12,25 +12,26 @@
 // Example 1
 let a;
 console.log(a);
-
+// Not assigned to any value
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+  let message = "Hello";
 }
 
 let hello = sayHello();
 console.log(hello);
-
+// Not calling the function directly and passing the parameter directly
 
 // Example 3
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+  console.log(`Hello ${user}`);
 }
 
 sayHelloToUser();
-
+// no parameter when calling the function directly
 
 // Example 4
-let arr = [1,2,3];
+let arr = [1, 2, 3];
 console.log(arr[3]);
+// 3rd index is not in the array
