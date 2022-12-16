@@ -37,19 +37,19 @@ function evenNumbersSum(n) {
    return sum;
 
 }
-/*  for loop:  solution 
-     let currEvenNumber = 0,
-       sum = 0;
-     // sum of first n even numbers
-     for (let i = 0; i < n; i++) {
-       sum += currEvenNumber;
-       // next even number
-       currEvenNumber += 2;
-     }
-     // required sum
-     return sum;
-   }
-   */
+//   for loop:  solution 
+//      let currEvenNumber = 0,
+//        sum = 0;
+//      // sum of first n even numbers
+//      for (let i = 0; i < n; i++) {
+//        sum += currEvenNumber;
+//        // next even number
+//        currEvenNumber += 2;
+//      }
+//      // required sum
+//      return sum;
+//    }
+    
 console.log(evenNumbersSum(3)); // should output 6
 console.log(evenNumbersSum(0)); // should output 0
 console.log(evenNumbersSum(10)); //should output 90

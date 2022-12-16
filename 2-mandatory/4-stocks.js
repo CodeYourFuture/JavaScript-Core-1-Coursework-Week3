@@ -66,7 +66,7 @@ function getPriceChanges(closingPricesForAllStocks) {
     for (let i=0; i< closingPricesForAllStocks.length; i++){
         
    let gap5and1=(closingPricesForAllStocks[i][4]-closingPricesForAllStocks[i][0])
-      priceChangeArr.push(Number(gap5and1.toFixed(2)))
+      priceChangeArr.push(gap5and1.toFixed(2))
     }
       return priceChangeArr
 

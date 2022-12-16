@@ -22,13 +22,14 @@ function findFirstJulyBDay(birthdays) {
     // TODO
      let i=0;
      while(i<birthdays.length){
-    //     //using includes()methods
+
+    // using includes()methods
     // let newBday = birthdays.find(x => x.includes('July'));
     //     return newBday;
     //     i++;
     // 
-
-       //or using startsWith()method:
+    
+    //or using startsWith()method:
     if(BIRTHDAYS[i].startsWith('July')){
         return BIRTHDAYS[i];
     }
