@@ -21,6 +21,19 @@ function getTemperatureReport(cities) {
   return report;
 }
 
+/* one more solution
+function getTemperatureReport(cities) {
+    let result = [];
+    for (let i = 0; i < cities.length; i++){
+        let eachCity = cities[i];
+        let temperature = temperatureService(eachCity);
+        result.push(`The temperature in ${city} is ${temperature} degrees`);
+    }
+    return result;
+}
+
+
+
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 function temperatureService(city) {
