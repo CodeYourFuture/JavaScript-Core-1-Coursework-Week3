@@ -10,27 +10,25 @@
 */
 
 // Example 1
-let a;
+let a = 2; //value was not declare
 console.log(a);
-
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+  let message = "Hello";
+  return message; //we need return value to message
 }
 
 let hello = sayHello();
-console.log(hello);
-
+console.log(sayHello());
 
 // Example 3
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+  console.log(`Hello ${user}`);
 }
 
-sayHelloToUser();
-
+sayHelloToUser("MAX"); //input data was not provided -we should provide it
 
 // Example 4
-let arr = [1,2,3];
-console.log(arr[3]);
+let arr = [1, 2, 3];
+console.log(arr[2]); //mistake withbindex, last value from array is under 2 index

@@ -5,16 +5,39 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
+    let headlines = [];
+    for (i = 0; i < allArticleTitles.length; i++){
+        if (allArticleTitles[i].length <= 65) {
+            headlines.push(allArticleTitles[i]);
+        }
+    }
+        return headlines;
     // TODO
 }
 
+function numberOfWords(title) {
+    //return the number of words in the title
+    //look at each title
+    //find out number of words
+    return title.split(" ").length;
+}
 /*
     The editor of the FT likes short headlines with only a few words!
     Implement the function below, which returns the title with the fewest words.
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
+    let  fewestWordsSoFar;
+    let titleWithFewestWords;
     // TODO
+    for (let title of allArticleTitles) {
+        let numWords = title.split(' ').length;
+        if (fewestWordsSoFar === undefined || numWords < fewestWordsSoFar) {
+            fewestWordsSoFar = numWords;
+            titleWithFewestWords = title;
+        }
+    }
+    return titleWithFewestWords;
 }
 
 /*
@@ -24,6 +47,22 @@ function titleWithFewestWords(allArticleTitles) {
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+    let articlesWithNumbers = [];
+    for (let title of allArticleTitles) {
+        if (doesTitleContainANumber(title)) {
+            articlesWithNumbers.push(title);
+        }
+    }
+    return articlesWithNumbers;
+}
+
+function doesTitleContainANumber(title) {
+    for (let character of title) {
+        if (character >= '0' && character <= '9') {
+            return true;
+        }
+    }
+    return false;
 }
 
 /*
@@ -32,6 +71,11 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+    let totalCharacters = 0;
+    for (let title of allArticleTitles) {
+        totalCharacters += title.length;
+    }
+    return Math.round(totalCharacters / allArticleTitles.length);
 }
 
 
