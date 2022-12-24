@@ -15,6 +15,14 @@
 
 function generateFibonacciSequence(n) {
     // TODO
+    numberList = [0, 1];
+    let newValue;
+    while (n-2) {
+        newValue = numberList[numberList.length - 2] + numberList[numberList.length - 1];
+        numberList.push(newValue);
+        n--;
+    }
+    return numberList;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
