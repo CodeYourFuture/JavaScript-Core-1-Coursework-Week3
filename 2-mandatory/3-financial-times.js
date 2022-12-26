@@ -6,7 +6,28 @@
 */
 function potentialHeadlines(allArticleTitles) {
   // TODO
-  return ARTICLE_TITLES.filter((ARTICLE_TITLES) => ARTICLE_TITLES.length <= 65);
+  //return ARTICLE_TITLES.filter((ARTICLE_TITLES) => ARTICLE_TITLES.length <= 65);
+
+  let newArticleTitles = [];
+
+  // for (let i = 0; i < allArticleTitles.length; i++) {
+  //   if(allArticleTitles[i].length <= 65) {
+  //     newArticleTitles.push(allArticleTitles[i]);
+  //   }
+  // }
+
+  for (let article of allArticleTitles) {
+    if (article.length <= 65) {
+      newArticleTitles.push(article);
+    }
+  }
+
+  return newArticleTitles;
+}
+
+function numberOfWords(title) {
+  let wordsArray = title.split(" ");
+  return wordsArray.length;
 }
 
 /*
@@ -16,6 +37,20 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
   // TODO
+  let lowestNumberOfWords;
+  let titleWithFewestWords;
+
+  for (let title of allArticleTitles) {
+    let numberWords = numberOfWords(title);
+    if (
+      lowestNumberOfWords === undefined ||
+      numberWords < lowestNumberOfWords
+    ) {
+      lowestNumberOfWords = numberWords;
+      titleWithFewestWords = title;
+    }
+  }
+  return titleWithFewestWords;
 }
 
 /*
@@ -49,40 +84,38 @@ const ARTICLE_TITLES = [
   "Brussels urges Chile's incoming president to endorse EU trade deal",
 ];
 
-console.log(potentialHeadlines(ARTICLE_TITLES));
-
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-// test("should only return potential headlines", () => {
-//   expect(new Set(potentialHeadlines(ARTICLE_TITLES))).toEqual(
-//     new Set([
-//       "British companies look to muscle in on US retail investing boom",
-//       "Libor to take firm step towards oblivion on New Year's Day",
-//       "Audit profession unattractive to new recruits, says PwC boss",
-//       "The three questions that dominate investment",
-//     ])
-//   );
-// });
+test("should only return potential headlines", () => {
+  expect(new Set(potentialHeadlines(ARTICLE_TITLES))).toEqual(
+    new Set([
+      "British companies look to muscle in on US retail investing boom",
+      "Libor to take firm step towards oblivion on New Year's Day",
+      "Audit profession unattractive to new recruits, says PwC boss",
+      "The three questions that dominate investment",
+    ])
+  );
+});
 
-// test("should return an empty array for empty input", () => {
-//   expect(potentialHeadlines([])).toEqual([]);
-// });
+test("should return an empty array for empty input", () => {
+  expect(potentialHeadlines([])).toEqual([]);
+});
 
-// test("should return the title with the fewest words", () => {
-//   expect(titleWithFewestWords(ARTICLE_TITLES)).toEqual(
-//     "The three questions that dominate investment"
-//   );
-// });
+test("should return the title with the fewest words", () => {
+  expect(titleWithFewestWords(ARTICLE_TITLES)).toEqual(
+    "The three questions that dominate investment"
+  );
+});
 
-// test("should only return headlines containing numbers", () => {
-//   expect(new Set(headlinesWithNumbers(ARTICLE_TITLES))).toEqual(
-//     new Set([
-//       "Streaming wars drive media groups to spend more than $100bn on new content",
-//       "Companies raise over $12tn in 'blockbuster' year for global capital markets",
-//     ])
-//   );
-// });
+test("should only return headlines containing numbers", () => {
+  expect(new Set(headlinesWithNumbers(ARTICLE_TITLES))).toEqual(
+    new Set([
+      "Streaming wars drive media groups to spend more than $100bn on new content",
+      "Companies raise over $12tn in 'blockbuster' year for global capital markets",
+    ])
+  );
+});
 
-// test("should return the average number of characters in a headline", () => {
-//   expect(averageNumberOfCharacters(ARTICLE_TITLES)).toEqual(65);
-// });
+test("should return the average number of characters in a headline", () => {
+  expect(averageNumberOfCharacters(ARTICLE_TITLES)).toEqual(65);
+});
