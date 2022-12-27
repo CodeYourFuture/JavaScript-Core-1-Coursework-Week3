@@ -12,37 +12,35 @@
 // Example 1
 let a;
 console.log(a);
- // underfined - because variable not assigned
+ // undefined - because variable not assigned
 
 // Example 2
 function sayHello() {
     let message = "Hello";
 }
-// underfined - because function not called
+// undefined - because function not called
 
 
 let hello = sayHello();
 console.log(hello);
 
-// underfined - because function not declared
+// undefined - because function not declared
 
 // Example 3
 function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
 
+
 sayHelloToUser();
 
-// underfined - because variable not declared
+// undefined - because we put nothing like an argument 
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
 
-const ourArray = [];
-let i = 0;
+// undefind - becouse array isn't conclude element with index 3 
 
-while (i < 5) {
-  ourArray.push(i);
-  i++;
-}
+
+

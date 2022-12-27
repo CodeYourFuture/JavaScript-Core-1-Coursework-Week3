@@ -7,8 +7,14 @@
 
 
 function evenNumbers(n) {
-    for (let i = 0; i < n; i++)
-    console.log(i * 2);
+  let result = [];
+
+    let i = 0;
+    while (i < n) {
+      result.push(i * 2);
+      i++;
+    }
+    console.log(result.join());
   }
 
 
