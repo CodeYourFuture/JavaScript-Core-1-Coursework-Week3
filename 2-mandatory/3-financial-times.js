@@ -19,16 +19,13 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-   let shortTitle = 0;
-   let i = 0;
-   for(let allArticle of allArticleTitles){
-    let words = allArticle.split(" ").length;
-    if(shortTitle > words){
-        shortTitle = words;
-        titleWithFewestWords = all;
+   let shortestTitle = allArticleTitles[0];
+   for(let title of allArticleTitles){
+    if(title.split(" ").length < shortestTitle.split(" ").length){
+        shortestTitle = title;
     }
    }
-   return titleWithFewestWords;
+   return shortestTitle;
 }
 
 /*
