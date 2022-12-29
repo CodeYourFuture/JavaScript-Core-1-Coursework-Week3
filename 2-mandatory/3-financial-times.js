@@ -91,6 +91,7 @@ function averageNumberOfCharacters(allArticleTitles) {
     let lengthOfString = allArticleTitles[i].length;
     charactersInTitles = charactersInTitles + lengthOfString;
   }
+
   return Math.round(charactersInTitles / allArticleTitles.length);
 }
 
