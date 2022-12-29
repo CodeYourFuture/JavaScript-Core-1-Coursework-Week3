@@ -10,16 +10,21 @@
             For example, "The temperature in London is 10 degrees"
         - Hint: you can call the temperatureService function from your function
 */
+function temparatureString(cityName) {
+  return (
+    "The temperature in " +
+    cityName +
+    " is " +
+    temperatureService(cityName) +
+    " degrees"
+  );
+}
 
 function getTemperatureReport(cities) {
-  return cities.map(
-    (element) =>
-      "The temperature in " +
-      element +
-      " is " +
-      temperatureService(element) +
-      " degrees"
-  );
+  // cities array in cities as parameter
+  const newTempString = temparatureString;
+  const citiesTemp = cities.map(newTempString);
+  return citiesTemp;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
