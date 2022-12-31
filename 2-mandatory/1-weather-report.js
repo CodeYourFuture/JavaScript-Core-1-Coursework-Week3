@@ -3,7 +3,6 @@
     
     We have a list of cities that the user wants to track.
     We also already have a temperatureService function which will take a city as a parameter and return a temparature.
-
     Implement the function below:
         - take the array of cities as a parameter
         - return an array of strings, which is a statement about the temperature of each city.
@@ -19,7 +18,7 @@ function getTemperatureReport(cities) {
     }
     return report;
 }
-  
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
@@ -31,15 +30,12 @@ function temperatureService(city) {
     temparatureMap.set('Barcelona', 17);
     temparatureMap.set('Dubai', 27);
     temparatureMap.set('Mumbai', 29);
-    temparatureMap.set('Sao Paulo', 23);
+    temparatureMap.set('São Paulo', 23);
     temparatureMap.set('Lagos', 33);
     
     return temparatureMap.get(city);
 }
 
-temperatureService(city);
-
-/*
 test("should return a temperature report for the user's cities", () => {
     let usersCities = [
         "London",
@@ -68,4 +64,4 @@ test("should return a temperature report for the user's cities (alternate input)
 
 test("should return an empty array if the user hasn't selected any cities", () => {
     expect(getTemperatureReport([])).toEqual([]);
-}); */
+});
