@@ -35,6 +35,18 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 */
 function getAveragePrices(closingPricesForAllStocks) {
     // TODO
+    let arr = [];
+    for(let i = 0; i < closingPricesForAllStocks.length; i++) {
+        let sum = 0;
+        for(let j = 0; j < closingPricesForAllStocks[i].length; j++) {
+            sum = sum + closingPricesForAllStocks[i][j]
+        }
+        let avg = sum / closingPricesForAllStocks[i].length
+        avg = avg.toFixed(2)
+        arr.push(avg)
+
+    }
+    return arr;
 }
 
 /*
@@ -49,6 +61,18 @@ function getAveragePrices(closingPricesForAllStocks) {
 */
 function getPriceChanges(closingPricesForAllStocks) {
     // TODO
+  let arr = [];
+  for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+    let sum = 0;
+    for (let j = 0; j < closingPricesForAllStocks[i].length; j++) {
+      sum = sum + closingPricesForAllStocks[i][j];
+    }
+    let avg = sum / closingPricesForAllStocks[i].length;
+    avg = avg.toFixed(2);
+    arr.push(avg);
+  }
+  return arr;
+
 }
 
 /*

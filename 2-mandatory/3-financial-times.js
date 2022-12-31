@@ -6,6 +6,13 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+    let arr = [];
+    for(let i = 0; i < allArticleTitles.length; i++) {
+        if(allArticleTitles[i].length <= 65) {
+            arr.push(allArticleTitles[i]);
+        }
+    }
+    return arr;
 }
 
 /*
