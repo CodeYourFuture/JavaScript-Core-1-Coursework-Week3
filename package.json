@@ -5,7 +5,8 @@
   "license": "CC-BY-SA-4.0",
   "scripts": {
     "test": "jest --testRegex='mandatory[/\\\\].*\\.js$'",
-    "extra-tests": "jest --testRegex='extra[/\\\\].*\\.js$'"
+    "extra-tests": "jest --testRegex='extra[/\\\\].*\\.js$'",
+    "mytest": "jest npm--testRegex='3-f'"
   },
   "repository": {
     "type": "git",

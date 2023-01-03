@@ -3,7 +3,6 @@
     
     We have a list of cities that the user wants to track.
     We also already have a temperatureService function which will take a city as a parameter and return a temparature.
-
     Implement the function below:
         - take the array of cities as a parameter
         - return an array of strings, which is a statement about the temperature of each city.
@@ -12,7 +11,12 @@
 */
 
 function getTemperatureReport(cities) {
-    // TODO
+    let report = [];
+    for(let city of cities) {
+        let temperature = temperatureService(city);
+        report.push(`The temperature in ${city} is ${temperature} degrees`);
+    }
+    return report;
 }
 
 
