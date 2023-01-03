@@ -16,8 +16,19 @@ const BIRTHDAYS = [
     "November 15th"
 ];
 
-function findFirstJulyBDay(birthdays) {
-    // TODO
+function findFirstJulyBDay(birthday) {
+    let i = 0
+    while(i < birthday.length){
+        if(birthday[i].startsWith('July')){
+            return birthday[i];
+        }
+        i++
+    }    
 }
 
+//this function will find the first word that start with July and will return it.
 console.log(findFirstJulyBDay(BIRTHDAYS)); // should output "July 11th"
+
+// String.prototype.startsWith()
+// The startsWith() method determines whether a string begins with the characters of a specified string, returning true or false as appropriate.
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join
