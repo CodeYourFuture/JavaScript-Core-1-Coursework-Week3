@@ -12,25 +12,26 @@
 // Example 1
 let a;
 console.log(a);
-
+//the variable wasn't initialise
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+  let message = "Hello";
 }
 
 let hello = sayHello();
 console.log(hello);
-
+//function sayHello() returned nothing
 
 // Example 3
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+  console.log(`Hello ${user}`);
 }
 
 sayHelloToUser();
-
+//when we calling funciton sayHelloToUser() - we don't have any parameter inside brackets
 
 // Example 4
-let arr = [1,2,3];
+let arr = [1, 2, 3];
 console.log(arr[3]);
+//there is no element with index 3 in array.

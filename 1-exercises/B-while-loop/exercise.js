@@ -6,7 +6,17 @@
 */
 
 function evenNumbers(n) {
-    // TODO
+  let num = 0;
+  let count = 0;
+  let array = [];
+
+  while (count < n) {
+    array.push(num);
+    count++;
+    num += 2;
+  }
+
+  console.log(array.join(","));
 }
 
 evenNumbers(3); // should output 0,2,4
