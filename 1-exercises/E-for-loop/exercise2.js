@@ -28,7 +28,20 @@ const AGES = [
 
 // TODO - Write for loop code here
 
-/*
+for(let i = 0; i < WRITERS.length && AGES.length; i++){
+    console.log(WRITERS[i] + " is " + AGES[i] + " years old")
+}
+
+// ==================other option with interpolation===============
+
+// for(let i = 0; i < WRITERS.length; i++) {
+//     // Because we want to retrieve the element at the same index for both arrays, we can re-use the same variable i
+//     // We are also making use of string interpolation here - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+//     console.log(`${WRITERS[i]} is ${AGES[i]} years old`);
+// }
+/* 
+
+
 The output should look something like this:
 
 Virginia Woolf is 59 years old

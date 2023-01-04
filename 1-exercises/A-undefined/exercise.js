@@ -9,28 +9,35 @@
     For each example, can you explain why we are seeing undefined?
 */
 
-// Example 1
+
+//the variable did not contain any value. for this reason will be undefined
+//Example 1
 let a;
-console.log(a);
+console.log(a);  
 
 
+//this fuction did not have return, so when it's called will be undefined
 // Example 2
-function sayHello() {
-    let message = "Hello";
+function sayHello(a) {
+    let message = "Hello2";
 }
 
 let hello = sayHello();
 console.log(hello);
 
 
+// this will return hello and then undefined because we did not declare of the variable user.
 // Example 3
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+    console.log(`Hello ${user}`);  
 }
 
 sayHelloToUser();
 
 
+
+//this array contain 3 items but the index start from 0 and will display until index[2]=3
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+
