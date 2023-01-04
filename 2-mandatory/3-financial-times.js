@@ -6,8 +6,18 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
-   return allArticleTitles.filter(items => items.length < 65);
+   return allArticleTitles.filter(items => items.length <= 65);
+// let headlines = [];
+
+//     for(let title of allArticleTitles) {
+//         if(title.length <= 65) {
+//             headlines.push(title);
+//         }
+//     }
+
+//     return headlines;
 }
+
 
 /*
     The editor of the FT likes short headlines with only a few words!
@@ -15,12 +25,17 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+    //TODO
     let arr = [];
     for (let i = 0; i < allArticleTitles.length; i++) {
       arr.push(allArticleTitles[i].split(" ").length);
     }
-    return allArticleTitles[arr.indexOf(Math.min(...arr))];
+    // return allArticleTitles[arr.indexOf(Math.min(...arr))];
+    const fewestWords = Math.min(...arr);
+    const indexOfArticle = arr.indexOf(fewestWords);
+    const articleTitle = allArticleTitles[indexOfArticle];
+    return articleTitle;
+
 }
 
 /*

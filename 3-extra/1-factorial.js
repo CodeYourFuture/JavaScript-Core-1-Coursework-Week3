@@ -11,7 +11,7 @@
 function factorial(input) {
     // TODO
     let sum = 1
-    for (i = 1; i <= input; i++){
+    for (let i = 1; i <= input; i++){
          sum *= i 
     }
     return sum
