@@ -12,7 +12,7 @@
 // Example 1
 let a;
 console.log(a);
-
+/* we didn't assign any value for our variable */
 
 // Example 2
 function sayHello() {
@@ -21,6 +21,7 @@ function sayHello() {
 
 let hello = sayHello();
 console.log(hello);
+/* there is no parameter in our function */
 
 
 // Example 3
@@ -29,8 +30,10 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
-
+/* we didn't give any value to our parameter in function  */
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+
+/* there is no index number 3 in this array we have only 0,1,2 */ 

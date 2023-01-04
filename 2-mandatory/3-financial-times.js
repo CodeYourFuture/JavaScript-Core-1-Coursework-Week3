@@ -6,7 +6,18 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+   return allArticleTitles.filter(items => items.length <= 65);
+// let headlines = [];
+
+//     for(let title of allArticleTitles) {
+//         if(title.length <= 65) {
+//             headlines.push(title);
+//         }
+//     }
+
+//     return headlines;
 }
+
 
 /*
     The editor of the FT likes short headlines with only a few words!
@@ -14,7 +25,17 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+    //TODO
+    let arr = [];
+    for (let i = 0; i < allArticleTitles.length; i++) {
+      arr.push(allArticleTitles[i].split(" ").length);
+    }
+    // return allArticleTitles[arr.indexOf(Math.min(...arr))];
+    const fewestWords = Math.min(...arr);
+    const indexOfArticle = arr.indexOf(fewestWords);
+    const articleTitle = allArticleTitles[indexOfArticle];
+    return articleTitle;
+
 }
 
 /*
@@ -24,6 +45,18 @@ function titleWithFewestWords(allArticleTitles) {
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+    // let arrayNum = []
+    // for (let el of ARTICLE_TITLES) {
+    //     for (let ele of el){
+    //     if (ele.includes(Number)) {
+    //         return arrayNum.push(ele.includes(Number));
+    //     }
+    // }
+    //     return arrayNum
+    // }
+     return allArticleTitles.filter((element) =>
+       [...element].find((number) => number >= "0" && number <= "9")
+     );
 }
 
 /*
@@ -32,6 +65,11 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+    let sum = 0;
+    for (let i = 0; i < allArticleTitles.length; i++) {
+      sum += allArticleTitles[i].length;
+    }
+    return Math.round(sum / allArticleTitles.length);
 }
 
 
