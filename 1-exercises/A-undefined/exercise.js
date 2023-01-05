@@ -23,7 +23,7 @@ function sayHello() {
 
 let hello = sayHello();
 console.log(hello);
-// because the function sayhello is not defined so this is not defined either.
+// because the function sayhello does not return anything so this is not defined.
 
 // Example 3
 function sayHelloToUser(user) {
