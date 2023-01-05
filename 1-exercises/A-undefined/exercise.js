@@ -13,6 +13,8 @@
 let a;
 console.log(a);
 
+//ANSWER the variable A had no value, if we tested on the terminal show "undefind" (no value in it)
+
 
 // Example 2
 function sayHello() {
@@ -22,6 +24,9 @@ function sayHello() {
 let hello = sayHello();
 console.log(hello);
 
+// ANSWER here the funtion is with a variable (sayHello). When we call the funtion this this should call the variable instead the message OR 
+//we can also call the message but it should be iside "" STRINGS
+
 
 // Example 3
 function sayHelloToUser(user) {
@@ -30,7 +35,13 @@ function sayHelloToUser(user) {
 
 sayHelloToUser();
 
+// Again USER is not defined with a VALUE and will only print the message in STRINGS "" (HELLO)
+
+
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+
+// in JS it counts from 0. For this example if we want the last digit we call it number 2, 
+//then it will show number 3.
