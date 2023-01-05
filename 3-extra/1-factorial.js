@@ -10,6 +10,11 @@
 
 function factorial(input) {
     // TODO
+    while(input>1){
+    const result*=input;
+    input-=1
+    }
+    
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
