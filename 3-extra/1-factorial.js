@@ -9,24 +9,26 @@
 */
 
 function factorial(input) {
-    // TODO
-    while(input>1){
-    const result*=input;
-    input-=1
-    }
-    
+  // TODO
+  let result = 1;
+  let i = input;
+  do {
+    result *= i;
+    i -= 1;
+  } while (i > 0);
+  return result;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("3! should be 6", () => {
-    expect(factorial(3)).toEqual(6);
+  expect(factorial(3)).toEqual(6);
 });
 
 test("5! should be 120", () => {
-    expect(factorial(5)).toEqual(120);
+  expect(factorial(5)).toEqual(120);
 });
 
 test("10! should be 3628800", () => {
-    expect(factorial(10)).toEqual(3628800);
+  expect(factorial(10)).toEqual(3628800);
 });
