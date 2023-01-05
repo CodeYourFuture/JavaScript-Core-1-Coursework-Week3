@@ -16,7 +16,7 @@ const BIRTHDAYS = [
     "November 15th"
 ];
 
-function findFirstJulyBDay(birthdays) {
+
     // TODO
 
 
