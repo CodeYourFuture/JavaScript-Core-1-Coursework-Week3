@@ -11,17 +11,19 @@
 
 // Example 1
 let a;
-console.log(a);
+console.log(a); 
+// there's no values assigned to the variable.
 
 
 // Example 2
 function sayHello() {
     let message = "Hello";
 }
+// there's no output.
 
 let hello = sayHello();
 console.log(hello);
-
+// because the function sayhello does not return anything so this is not defined.
 
 // Example 3
 function sayHelloToUser(user) {
@@ -29,8 +31,9 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
-
+// no argument.
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+// there's no 4th(arr index 3) element in the arr. 

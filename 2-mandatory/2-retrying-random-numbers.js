@@ -10,7 +10,12 @@ function generateRandomNumber() {
 }
 
 function getRandomNumberGreaterThan50() {
-    // TODO - implement using a do-while loop
+    let generatedNumber;
+    do {
+        generatedNumber = generateRandomNumber();
+    
+    } while (generatedNumber <= 50);
+    return generatedNumber;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
