@@ -32,6 +32,7 @@ function titleWithFewestWords(allArticleTitles) {
   return allArticleTitles[arr.indexOf(Math.min(...arr))];
 }
 
+
 /*
     The editor of the FT has realised that headlines which have numbers in them get more clicks!
     Implement the function below to return a new array containing all the headlines which contain a number.
