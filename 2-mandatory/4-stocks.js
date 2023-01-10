@@ -34,20 +34,24 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Solve the smaller problems, and then build those solutions back up to solve the larger problem.
         Functions can help with this!
 */
-function getAveragePrices(closingPricesForAllStocks) {
-    
+
+function getAverage(closingPrices){
+    let sum = 0;
+    for(let i = 0; i < closingPrices.length; i++){
+        sum += closingPrices[i];
+    }
+    return sum / closingPrices.length;
+};
+
+function getAveragePrices(closingPricesForAllStocks){
     let averagePrices = [];
-    for( let closingPrices of closingPricesForAllStocks){
-        let sum = 0;
-        for(let price of closingPrices){
-            sum += price;
-        }
-        let averagePrice = sum / closingPrices.length;
-        averagePrice Math.round(averagePrice * 100)/100;
+    for(let closingPrices of closingPricesForAllStocks){
+        let averagePrice = getAverage(closingPrices);
+        averagePrice = Math.round(averagePrice * 100)/100;
         averagePrices.push(averagePrice);
     }
     return averagePrices;
-}
+};
 
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
