@@ -11,7 +11,14 @@
 */
 
 function getHighestRatedInEachGenre(books) {
-    // TODO
+    const highestRated = [];
+    for(let book of books){
+        const {title, genre, rating} = book;
+        if(!highestRated[genre] || rating > highestRated[genre].rating){
+            highestRated[genre] = {title, rating};
+        }
+    }
+    return Object.values(highestRated).map((book) => book.title);
 }
 
 
