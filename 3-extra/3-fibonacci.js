@@ -14,24 +14,33 @@
 */
 
 function generateFibonacciSequence(n) {
-    // TODO
+  // TODO
+  //solution from google classroom review:
+  let fibonacciSequence = [];
+  // just initialize the first 2 values in the sequence
+  fibonacciSequence[0] = 0;
+  fibonacciSequence[1] = 1;
+  // the remaining numbers can be calculated
+  for (i = 2; i < n; i++) {
+    // each number is equal to the sum of the previous 2 numbers
+    fibonacciSequence[i] = fibonacciSequence[i - 2] + fibonacciSequence[i - 1];
+  }
+  return fibonacciSequence;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the first 10 numbers in the Fibonacci Sequence", () => {
-    expect(generateFibonacciSequence(10)).toEqual(
-        [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
-    );
+  expect(generateFibonacciSequence(10)).toEqual([
+    0, 1, 1, 2, 3, 5, 8, 13, 21, 34,
+  ]);
 });
 
 test("should return the first 5 numbers in the Fibonacci Sequence", () => {
-    expect(generateFibonacciSequence(5)).toEqual(
-        [0, 1, 1, 2, 3]
-    );
+  expect(generateFibonacciSequence(5)).toEqual([0, 1, 1, 2, 3]);
 });
 
 test("should return the first 15 numbers in the Fibonacci Sequence", () => {
-    expect(generateFibonacciSequence(15)).toEqual(
-        [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377]
-    );
+  expect(generateFibonacciSequence(15)).toEqual([
+    0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377,
+  ]);
 });
