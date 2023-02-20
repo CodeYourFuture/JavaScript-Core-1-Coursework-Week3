@@ -20,7 +20,7 @@ function potentialHeadlines(allArticleTitles) {
 function titleWithFewestWords(allArticleTitles) {
     // TODO
     let shortestTitle = allArticleTitles[0];
-    console.log(allArticleTitles[0])
+   
     for (let i = 0; i < allArticleTitles.length; i++) {
         const currentTitle = allArticleTitles[i];
         if (currentTitle.length < shortestTitle.length) {
@@ -37,6 +37,16 @@ function titleWithFewestWords(allArticleTitles) {
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+    const titlesWithNumbers = [];
+    for (let i = 0; i < allArticleTitles.length; i++) {
+        const hasNumber = /\d/.test(allArticleTitles[i])
+
+        if (hasNumber) {
+            titlesWithNumbers.push(allArticleTitles[i]);
+             
+        }
+    }
+    return titlesWithNumbers;
 }
 
 /*
@@ -45,6 +55,15 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+    const numberOfTitles = allArticleTitles.length;
+    let numberOfCharacters = 0;
+    
+    for (let i = 0; i < numberOfTitles; i++) {
+        numberOfCharacters += allArticleTitles[i].length;
+    }
+
+    return Math.round(numberOfCharacters / numberOfTitles);
+    
 }
 
 
