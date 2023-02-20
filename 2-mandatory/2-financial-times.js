@@ -6,15 +6,28 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+    const headTitle = allArticleTitles.filter(title => title.length < 65);
+    
+    return headTitle;
+    
 }
 
 /*
     The editor of the FT likes short headlines with only a few words!
     Implement the function below, which returns the title with the fewest words.
-    (you can assume words will always be seperated by a space)
+    (you can assume words will always be separated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
     // TODO
+    let shortestTitle = allArticleTitles[0];
+    console.log(allArticleTitles[0])
+    for (let i = 0; i < allArticleTitles.length; i++) {
+        const currentTitle = allArticleTitles[i];
+        if (currentTitle.length < shortestTitle.length) {
+            shortestTitle = currentTitle  
+        }
+    }
+    return shortestTitle;
 }
 
 /*
