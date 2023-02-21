@@ -84,16 +84,16 @@ function getPriceChanges(closingPricesForAllStocks) {
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
     // TODO
-     let allHighestPrices = [];
+    let allHighestPrices = [];
     for (let i = 0; i < closingPricesForAllStocks.length; i++) {
         const stockName = stocks[i].toUpperCase();
         const stockPrices = closingPricesForAllStocks[i];
         const highestPrice = Math.max(...stockPrices).toFixed(2);
-        
+
         allHighestPrices.push(`The highest price of ${stockName} in the last 5 days was ${highestPrice}`)
-        
+
     }
-    
+
     return allHighestPrices;
 }
 
