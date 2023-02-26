@@ -13,6 +13,12 @@
 
 function getTemperatureReport(cities) {
   // TODO
+  var temp_array = [];
+  for (var i = 0; i < cities.length; i++) {
+    var temp = temperatureService(cities[i]);
+    temp_array.push(`The temperature in ${cities[i]} is ${temp} degrees`);
+  }
+  return temp_array;
 }
 
 //
