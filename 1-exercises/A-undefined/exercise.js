@@ -9,12 +9,12 @@
     For each example, can you explain why we are seeing undefined?
 */
 
-// Example 1
+// Example 1: a is not assigned a value on the RHS.
 let a;
 console.log(a);
 
 
-// Example 2
+// Example 2: hello calls the sayHello() function, the sayHello() function assigns a string to a variable called "message" but does not return any data when called upon therefore consolelog() will return undefined as no value is returned from sayHello() function 
 function sayHello() {
     let message = "Hello";
 }
@@ -23,7 +23,7 @@ let hello = sayHello();
 console.log(hello);
 
 
-// Example 3
+// Example 3: sayHelloToUser() function is expecting an input called "user". as no input is specified when the function is called, undefined is assigned instead.
 function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
@@ -31,6 +31,6 @@ function sayHelloToUser(user) {
 sayHelloToUser();
 
 
-// Example 4
+// Example 4: items in arrays start from 0 instead of 1, as item 4 does not exist in the array, an undefined is returned instead.
 let arr = [1,2,3];
 console.log(arr[3]);
