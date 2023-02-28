@@ -14,7 +14,7 @@ function potentialHeadlines(allArticleTitles) {
   }
   return headlines;
 }
-
+//
 /*
     The editor of the FT likes short headlines with only a few words!
     Implement the function below, which returns the title with the fewest words.
