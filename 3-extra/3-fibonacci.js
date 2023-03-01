@@ -15,9 +15,11 @@
 
 function generateFibonacciSequence(n) {
   // TODO
-  let fib = [];
-  for (var i = 0; i < n; i++) {
-    fib.push(i);
+  let fib = [0, 1];
+  var sum = 0;
+  for (var i = 1; i < n - 1; i++) {
+    sum = fib[i - 1] + fib[i];
+    fib.push(sum);
   }
   return fib;
 }
