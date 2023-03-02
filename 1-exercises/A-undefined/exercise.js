@@ -12,16 +12,17 @@
 // Example 1
 let a;
 console.log(a);
-
+// In the above function we did not assign (a) value.
 
 // Example 2
 function sayHello() {
     let message = "Hello";
 }
+// In the above function dosenot return specify a value.
 
 let hello = sayHello();
 console.log(hello);
-
+//The function sayHello() needs to be defined before it can be called.
 
 // Example 3
 function sayHelloToUser(user) {
@@ -29,8 +30,9 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
-
+// call the function on the last line with sayHelloToUser(), dose not passing in any argument.
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+// index [3] that is outside the range of the array

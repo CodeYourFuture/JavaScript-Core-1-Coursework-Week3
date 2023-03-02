@@ -27,7 +27,19 @@ const AGES = [
 ];
 
 // TODO - Write for loop code here
+// for(let i = 0; i < 4; i++){
+//     console.log(`${WRITERS} is ${AGES} years old`);
 
+// }
+obj = {}
+
+//for each loop
+WRITERS.forEach((ele, i)=>{
+    obj[ele] = AGES[i]
+})
+
+//print the obj
+console.log(obj)
 /*
 The output should look something like this:
 
