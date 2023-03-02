@@ -6,32 +6,61 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+    const fitArticleTitles=[];
+    for (let i=0; i<allArticleTitles.length; i++){
+        if(allArticleTitles[i].length<=65){
+            fitArticleTitles.push(allArticleTitles[i]);
+        }
+    }
+    return fitArticleTitles;
 }
 
 /*
     The editor of the FT likes short headlines with only a few words!
     Implement the function below, which returns the title with the fewest words.
-    (you can assume words will always be seperated by a space)
+    (you can assume words will always be separated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
-}
 
+let fewestWords=allArticleTitles[0];
+    for( let i =1; i<allArticleTitles.length; i++){
+        if(fewestWords.length>allArticleTitles[i].length){
+            fewestWords=allArticleTitles[i];
+        }
+    }
+        return fewestWords;
+}
+// function getWordsCount(allArticleTitles){
+//     return allArticleTitles.split(" ").length;
+// }
 /*
-    The editor of the FT has realised that headlines which have numbers in them get more clicks!
+    The editor of the FT has realized that headlines which have numbers in them get more clicks!
     Implement the function below to return a new array containing all the headlines which contain a number.
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+    const containNumbers=[];
+    for(let i =0; i<allArticleTitles.length; i++){
+        let isContainNum= /[0-9]/.test(allArticleTitles[i]);
+        if(isContainNum){
+            containNumbers.push(allArticleTitles[i]);
+        }
+    }
+    return containNumbers;
 }
+ 
 
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
+    let numOfChar=0;
+    for(let i =0; i<allArticleTitles.length; i++){
+        numOfChar += allArticleTitles[i].length;
+    }
+    let average= numOfChar / allArticleTitles.length;
+    return Math.round(average);
 }
 
 
