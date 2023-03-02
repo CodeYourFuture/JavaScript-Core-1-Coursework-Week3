@@ -34,9 +34,20 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Functions can help with this!
 */
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+    const result = [];
+    let averagePrice = 0;
+    for (let stock of closingPricesForAllStocks) {
+        let count = 0;
+        let sumPrice = 0;
+        for (let price of stock){
+            sumPrice += price;
+            count++;
+        }
+        averagePrice = Number((sumPrice / count).toFixed(2));
+        result.push(averagePrice);
+    }
+    return result;
 }
-
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
     Implement the below function, which
@@ -48,7 +59,13 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+    const result = [];
+    let priceChange = 0;
+    for (let stock of closingPricesForAllStocks) {
+        priceChange = Number((stock[stock.length - 1] - stock[0]).toFixed(2));
+        result.push(priceChange);
+    }
+    return result;
 }
 
 /*
@@ -64,7 +81,15 @@ function getPriceChanges(closingPricesForAllStocks) {
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+    const result = [];
+    let highestPrice = 0;
+    let stocksIndex = 0;
+    for (let stock of closingPricesForAllStocks) {
+        highestPrice = Math.max(...stock).toFixed(2);
+        result.push(`The highest price of ${stocks[stocksIndex].toUpperCase()} in the last 5 days was ${highestPrice}`);
+        stocksIndex++;
+    }
+    return result; 
 }
 
 
