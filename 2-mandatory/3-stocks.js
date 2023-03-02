@@ -123,7 +123,7 @@ function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
     const resultArray = [];
     for (let i = 0; i < STOCKS.length; i++) {
       const highestPrice = Math.max(...closingPricesForAllStocks[i]);
-      resultArray.push(highestPrice.toFixed(2));
+      resultArray.push(`The highest price of ${stocks[i].toUpperCase()} in the last 5 days was ${highestPrice.toFixed(2)}`);
     }
     return resultArray;
 }

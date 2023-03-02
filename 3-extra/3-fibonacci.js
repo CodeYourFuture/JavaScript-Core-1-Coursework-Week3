@@ -15,6 +15,12 @@
 
 function generateFibonacciSequence(n) {
     // TODO
+    let result = [0, 1];
+    for (let i = 2; i < n; i++){
+        let totalOfPrevious = result[i - 1] + result[i - 2]
+        result.push(totalOfPrevious)
+    }
+    return result
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
