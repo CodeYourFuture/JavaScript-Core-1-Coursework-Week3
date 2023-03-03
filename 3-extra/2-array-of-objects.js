@@ -9,74 +9,104 @@
     Implement a function which takes the array of books as a parameter, and returns an array of book titles.
     Each title in the resulting array should be the highest rated book in its genre.
 */
+let highestBooks = [];
+let highBook = {};
+let finalList = [];
 
-function getHighestRatedInEachGenre(books) {
-    // TODO
+function checkGenreListing(genreToCheck) {
+  for (let i = 0; i < highestBooks.length; i++) {
+    if (highestBooks[i].genre === genreToCheck) {
+      return i;
+    }
+  }
+  return -1;
 }
 
+function getHighestRatedInEachGenre(books) {
+  for (let i = 0; i < books.length; i++) {
+    let positioning = checkGenreListing(books[i].genre);
+    if (positioning >= 0) {
+      if (books[i].rating > highestBooks[positioning].rating) {
+        highestBooks[positioning].title = books[i].title;
+        highestBooks[positioning].rating = books[i].rating;
+      }
+    } else {
+      highBook.title = books[i].title;
+      highBook.genre = books[i].genre;
+      highBook.rating = books[i].rating;
+
+      highestBooks.push(highBook);
+      highBook = {};
+    }
+  }
+  for (let i = 0; i < highestBooks.length; i++) {
+    finalList.push(highestBooks[i].title);
+  }
+  return finalList;
+}
 
 /* ======= Book data - DO NOT MODIFY ===== */
 const BOOKS = [
-    {
-        title: "The Lion, the Witch and the Wardrobe",
-        genre: "children",
-        rating: 4.7
-    },
-    {
-        title: "Sapiens: A Brief History of Humankind",
-        genre: "non-fiction",
-        rating: 4.7
-    },
-    {
-        title: "Nadiya's Fast Flavours",
-        genre: "cooking",
-        rating: 4.7
-    },
-    {
-        title: "Harry Potter and the Philosopher's Stone",
-        genre: "children",
-        rating: 4.8
-    },
-    {
-        title: "A Life on Our Planet",
-        genre: "non-fiction",
-        rating: 4.8
-    },
-    {
-        title: "Dishoom: The first ever cookbook from the much-loved Indian restaurant",
-        genre: "cooking",
-        rating: 4.85
-    },
-    {
-        title: "Gangsta Granny Strikes Again!",
-        genre: "children",
-        rating: 4.9
-    },
-    {
-        title: "Diary of a Wimpy Kid",
-        genre: "children",
-        rating: 4.6
-    },
-    {
-        title: "BOSH!: Simple recipes. Unbelievable results. All plants.",
-        genre: "cooking",
-        rating: 4.6
-    },
-    {
-        title: "The Book Your Dog Wishes You Would Read",
-        genre: "non-fiction",
-        rating: 4.85
-    },
-]
-
+  {
+    title: "The Lion, the Witch and the Wardrobe",
+    genre: "children",
+    rating: 4.7,
+  },
+  {
+    title: "Sapiens: A Brief History of Humankind",
+    genre: "non-fiction",
+    rating: 4.7,
+  },
+  {
+    title: "Nadiya's Fast Flavours",
+    genre: "cooking",
+    rating: 4.7,
+  },
+  {
+    title: "Harry Potter and the Philosopher's Stone",
+    genre: "children",
+    rating: 4.8,
+  },
+  {
+    title: "A Life on Our Planet",
+    genre: "non-fiction",
+    rating: 4.8,
+  },
+  {
+    title:
+      "Dishoom: The first ever cookbook from the much-loved Indian restaurant",
+    genre: "cooking",
+    rating: 4.85,
+  },
+  {
+    title: "Gangsta Granny Strikes Again!",
+    genre: "children",
+    rating: 4.9,
+  },
+  {
+    title: "Diary of a Wimpy Kid",
+    genre: "children",
+    rating: 4.6,
+  },
+  {
+    title: "BOSH!: Simple recipes. Unbelievable results. All plants.",
+    genre: "cooking",
+    rating: 4.6,
+  },
+  {
+    title: "The Book Your Dog Wishes You Would Read",
+    genre: "non-fiction",
+    rating: 4.85,
+  },
+];
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the highest rated book in each genre", () => {
-    expect(new Set(getHighestRatedInEachGenre(BOOKS))).toEqual(new Set(
-        [
-            "The Book Your Dog Wishes You Would Read",
-            "Gangsta Granny Strikes Again!",
-            "Dishoom: The first ever cookbook from the much-loved Indian restaurant"
-        ]
-    ));
+  expect(new Set(getHighestRatedInEachGenre(BOOKS))).toEqual(
+    new Set([
+      "The Book Your Dog Wishes You Would Read",
+      "Gangsta Granny Strikes Again!",
+      "Dishoom: The first ever cookbook from the much-loved Indian restaurant",
+    ])
+  );
 });
