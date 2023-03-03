@@ -10,7 +10,7 @@
     Using a for loop, output to the console a line about the age of each writer.
 */
 
-const WRITERS = [
+const writers = [
     "Virginia Woolf",
     "Zadie Smith",
     "Jane Austen",
@@ -18,7 +18,7 @@ const WRITERS = [
     "Yukiko Motoya"
 ]
 
-const AGES = [
+const ages = [
     59,
     40,
     41,
@@ -26,7 +26,10 @@ const AGES = [
     49
 ];
 
-// TODO - Write for loop code here
+for (i=0; i<writers.length; i++){
+    console.log(`${writers[i]} is ${ages[i]} years old`)
+}
+
 
 /*
 The output should look something like this:
