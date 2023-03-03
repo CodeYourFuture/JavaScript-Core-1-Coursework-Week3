@@ -11,21 +11,31 @@
 */
 
 function getHighestRatedInEachGenre(books) {
-    const highestRatedBooks = [];
-    let i = 0;
-    let genres = [];
-    for (let book of books) {
-        if(!genres.includes(book.genre)){
-            genres.push(book.genre);
-            i++;
-            for (i; i <= books.length; i++) {
-            if (book.genre === books[i].genre) {
-                let biggestRate = books.rating > books[i].rating ? books.rating : books[i].rating;
-            }   
-        }
-        }
-        highestRatedBooks.push(biggestRate);
+    const finalResult = [];
+    const genres = [];
+    let titleHighestRate = "";
+    let rate = 0;
+    for ( let book of books) {
+      if (!genres.includes(book.genre)) {
+        genres.push(book.genre);
+      }
     }
+    for (let gen of genres) {
+        for (let book of books) {
+            if (book.genre !== gen) {
+                continue;
+            } 
+            else {
+                if (book.rating > rate) {
+                    rate = book.rating;
+                    titleHighestRate = book.title;
+                }
+            }
+        } 
+        finalResult.push(titleHighestRate);
+        rate = 0;
+    }
+    return finalResult;
 }
 
 
