@@ -35,6 +35,15 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 */
 function getAveragePrices(closingPricesForAllStocks) {
     // TODO
+    const averages = [];
+    for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+    const prices = closingPricesForAllStocks[i];
+    const total = prices.reduce((a, b) => a + b, 0);
+    const average =total/prices.length;
+    averages.push(average);
+
+    }
+  return averages;
 }
 
 /*
@@ -48,6 +57,17 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
+     const priceChanges = [];
+
+  for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+    const prices = closingPricesForAllStocks[i]; 
+    const firstPrice = prices[0];
+    const lastPrice = prices[prices.length -1];
+    const change =lastPrice -firstPrice;
+    priceChanges.push(change);
+  }
+  return priceChanges;
+
     // TODO
 }
 
@@ -64,8 +84,18 @@ function getPriceChanges(closingPricesForAllStocks) {
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
+    let describStock =[];
+    for(i =0; i<closingPricesForAllStocks; i++){
+        const prices = closingPricesForAllStocks[i];
+        const stock =stocks[i];
+        const highestPrice = Math.max(...prices);
+        describStock.push(highestPrice);
+    }
+    return describStock;
+    }
+
     // TODO
-}
+
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */

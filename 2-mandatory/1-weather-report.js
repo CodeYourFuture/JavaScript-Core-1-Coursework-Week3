@@ -12,6 +12,17 @@
 */
 
 function getTemperatureReport(cities) {
+    let result = [];
+    cities.forEach(city => {
+
+        let temparatureMap =temperatureService(city);
+        if(temparatureMap!== undefined){
+        result.push(`The temperature in ${city} is ${temparatureMap} degrees"`);
+        }
+        
+    });
+
+  return result;
     // TODO
 }
 
