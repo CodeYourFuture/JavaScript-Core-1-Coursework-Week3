@@ -13,6 +13,11 @@
 
 function getTemperatureReport(cities) {
     // TODO
+    
+    for (let i of cities) {
+        let text = "The rempreture in " + i + " is " + temperatureService(i) + " degrees";
+        console.log(text)
+    }
 }
 
 
