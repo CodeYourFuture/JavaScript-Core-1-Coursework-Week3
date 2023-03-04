@@ -12,7 +12,7 @@
 // Example 1
 let a;
 console.log(a);
-
+//We see undefined because the variable a does not have any assigned value
 
 // Example 2
 function sayHello() {
@@ -21,7 +21,7 @@ function sayHello() {
 
 let hello = sayHello();
 console.log(hello);
-
+// This function doesn't return any value, so when its called it will be undefined.
 
 // Example 3
 function sayHelloToUser(user) {
@@ -30,7 +30,11 @@ function sayHelloToUser(user) {
 
 sayHelloToUser();
 
+//No parameter was passed to the function when this one was called.
+
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+
+//Index 3 of the array doesn't exist yet.
