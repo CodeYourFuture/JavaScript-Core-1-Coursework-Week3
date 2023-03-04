@@ -11,7 +11,7 @@
         - Hint: you can call the temperatureService function from your function
 */
 
-function getTemperatureReport(cities) {
+function getTemperatureReport(cities) { jhjhjhjhjh
     // TODO
 }
 
