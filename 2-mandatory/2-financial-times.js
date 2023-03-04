@@ -22,7 +22,7 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+    
     let shortestTitle;
     // let shortestTitleWordCount = Infinity;
     let shortestTitleWordCount;
@@ -32,12 +32,11 @@ function titleWithFewestWords(allArticleTitles) {
     for (let title of allArticleTitles) {
         
         let wordCount = title.split(" ").length;
-        // console.log(wordCount)
         if (wordCount < (shortestTitleWordCount) || (shortestTitle === undefined)){
             shortestTitleWordCount = wordCount
             shortestTitle = title        
         }
-        // arrayWithFewerWords.push(title)
+        
         
     }
     return shortestTitle
