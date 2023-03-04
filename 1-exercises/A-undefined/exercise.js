@@ -10,27 +10,24 @@
 */
 
 // Example 1
-let a;
+let = a;
 console.log(a);
-
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+  let message = "Hello";
 }
 
 let hello = sayHello();
 console.log(hello);
 
-
 // Example 3
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+  console.log(`Hello ${user}`);
 }
 
 sayHelloToUser();
 
-
 // Example 4
-let arr = [1,2,3];
-console.log(arr[3]);
+let letters = [1, 2, 3];
+console.log(letter[2]);
