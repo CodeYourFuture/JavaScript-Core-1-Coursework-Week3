@@ -35,7 +35,29 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 */
 function getAveragePrices(closingPricesForAllStocks) {
     // TODO
+    let averagePrices = [];
+    for (prices of closingPricesForAllStocks) {
+        sum = 0;
+        for (item of prices) {
+            sum += parseFloat(item); 
+            /*we use parseFloat (but we can use Number too ) to  convert each item/string of the arrays to numbers and then calculate the sum ,in the 
+            beginning i used sum=(sum+item but this is a shorter way) */
+
+        }
+
+        sumAverage = parseFloat((sum / prices.length).toFixed(2)); 
+        /* we calculate the average price by dividing the number of elements of the arrays provided  with the calculated sum and use toFixed(2)
+        to display up to 2 decimal places */
+
+        averagePrices.push(sumAverage); //and push the average sum of each array to the averagePrice or else as named above STOCKS
+
+    }
+
+    return averagePrices; // and here we return the array with the averagePrices for each company
 }
+
+
+
 
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
@@ -60,7 +82,7 @@ function getPriceChanges(closingPricesForAllStocks) {
         - Returns an array of strings describing what the highest price was for each stock.
             For example, the first element of the array should be: "The highest price of AAPL in the last 5 days was 180.33"
             The test will check for this exact string.
-    The stock ticker should be capitalised.
+    The stock ticker should be capitalized.
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {

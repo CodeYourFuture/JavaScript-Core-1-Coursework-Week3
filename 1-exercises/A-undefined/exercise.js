@@ -35,7 +35,7 @@ sayHelloToUser();
 
 
 // Example 4 ->
-//Array counting starts from 0 on Javascript, and because there is no arrey with index 3 the console will display 'undefined'
+//Array counting starts from 0 on Javascript, and because there is no array with index 3 the console will display 'undefined'
 
 let arr = [1, 2, 3];
 console.log(arr[3]);

@@ -6,19 +6,46 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+    headlines = [];
+
+    for (article of allArticleTitles) {
+        if (article.length <= 65) {
+            headlines.push(article);
+        }
+
+    }
+    return headlines;
 }
 
 /*
     The editor of the FT likes short headlines with only a few words!
     Implement the function below, which returns the title with the fewest words.
-    (you can assume words will always be seperated by a space)
+    (you can assume words will always be separated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
     // TODO
+    fewestWordsTitle = ''; //we use an empty string since we haven't had yet any article to display 
+    titleLengthCount = Infinity; //we can use any limit we want too but we want to make sure that the limit for the comparison it's not very small
+
+    headlines = potentialHeadlines(allArticleTitles) //we get the function above by saying that headlines is inside this function as mentioned
+    //console.log(headlines)
+
+    for (headline of headlines) {
+        // console.log(headline)
+        titleLength = headline.split(' ').length; //we calculate te length by splitting each headline to words and  not counting spaces .
+        //console.log(titleLength)
+
+        if (titleLength < titleLengthCount) {
+            fewestWordsTitle = headline;
+            titleLengthCount = titleLength; /*since we didn't have a starting value we used infinity to compare the length but after we passed the length of 
+            at least one headline we compare it then to that and then let the function know that are the same  */
+        }
+    }
+    return fewestWordsTitle;
 }
 
 /*
-    The editor of the FT has realised that headlines which have numbers in them get more clicks!
+    The editor of the FT has realized that headlines which have numbers in them get more clicks!
     Implement the function below to return a new array containing all the headlines which contain a number.
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
