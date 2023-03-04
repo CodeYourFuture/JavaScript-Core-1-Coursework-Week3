@@ -1,6 +1,6 @@
 /*
     Imagine we're making a weather app!
-    
+
     We have a list of cities that the user wants to track.
     We also already have a temperatureService function which will take a city as a parameter and return a temparature.
 
@@ -12,14 +12,22 @@
 */
 
 function getTemperatureReport(cities) {
-    // TODO
+    const reports = [];
+    for (let i = 0; i < cities.length; i++) {
+        const city = cities[i];
+        const temperature = temperatureService(city);
+        const report = `The temperature in ${city} is ${temperature} degrees`;
+        reports.push(report);
+    }
+    return reports;
 }
+
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 function temperatureService(city) {
-    let temparatureMap  = new Map();
+    let temparatureMap = new Map();
 
     temparatureMap.set('London', 10);
     temparatureMap.set('Paris', 12);
@@ -28,7 +36,7 @@ function temperatureService(city) {
     temparatureMap.set('Mumbai', 29);
     temparatureMap.set('São Paulo', 23);
     temparatureMap.set('Lagos', 33);
-    
+
     return temparatureMap.get(city);
 }
 
