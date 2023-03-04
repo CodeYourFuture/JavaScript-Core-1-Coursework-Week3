@@ -46,6 +46,21 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+
+let arrayOfLengths = allArticleTitles.map(w => w.length);
+console.log(arrayOfLengths)
+let sumOfLengths = 0;
+ for (let i = 0; i < arrayOfLengths.length; i++) {
+         sumOfLengths += arrayOfLengths[i];
+         console.log(sumOfLengths)
+    }
+
+let sumOfArrayLengths = arrayOfLengths.length
+console.log(sumOfArrayLengths)
+
+let result = sumOfLengths/sumOfArrayLengths;
+console.log(result)
+
 }
 
 
