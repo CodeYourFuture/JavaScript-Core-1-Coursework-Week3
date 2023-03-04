@@ -28,6 +28,11 @@ const AGES = [
 
 // TODO - Write for loop code here
 
+for(const i in WRITERS) {
+    console.log(`${WRITERS[i]} is ${AGES[i]}`);  
+   
+}
+
 /*
 The output should look something like this:
 
