@@ -13,14 +13,19 @@
 let a;
 console.log(a);
 
+// a doesnt have a any value;
+
 
 // Example 2
 function sayHello() {
     let message = "Hello";
 }
 
+
 let hello = sayHello();
 console.log(hello);
+
+//in line 25 hello is calling the function instead of setting it to hello;
 
 
 // Example 3
