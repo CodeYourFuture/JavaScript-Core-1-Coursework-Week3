@@ -11,6 +11,58 @@
 */
 
 function getHighestRatedInEachGenre(books) {
+    let booksLength= books.length;
+    let children=[];
+    let fiction=[];
+    let cooking=[];
+    let resultArr=[];
+    for (let i=0;i<booksLength; i++){
+        if(books[i].genre=== "children"){
+            children.push(books[i]);
+        }
+        if(books[i].genre=== "non-fiction"){
+            fiction.push(books[i]);
+        }
+        if(books[i].genre=== "cooking"){
+            cooking.push(books[i]);
+        }
+    }
+    let childrenRate = 0 ;
+    let childrenTitle = "";
+    for (let j=0 ;j<children.length; j++){
+        if(children[j].rating > childrenRate){
+            childrenRate = children[j].rating;
+            childrenTitle = children[j].title;
+        }
+
+    }
+    
+    
+    let nonfictionRate = 0 ;
+    let nonfictionTitle = "";
+    for (let j=0 ;j<fiction.length; j++){
+        if(fiction[j].rating > nonfictionRate){
+            nonfictionRate = fiction[j].rating;
+            nonfictionTitle = fiction[j].title;
+        }
+
+    }
+   
+  
+    let cookingRate = 0 ;
+    let cookingTitle = "";
+    for (let j=0 ;j<cooking.length; j++){
+        if(cooking[j].rating > cookingRate){
+            cookingRate = cooking[j].rating;
+            cookingTitle = cooking[j].title;
+        }
+
+    }
+    resultArr.push(nonfictionTitle);
+    resultArr.push(childrenTitle);
+    resultArr.push(cookingTitle);
+    return resultArr;
+    
     // TODO
 }
 
@@ -68,6 +120,7 @@ const BOOKS = [
         rating: 4.85
     },
 ]
+// console.log(getHighestRatedInEachGenre(BOOKS));
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
