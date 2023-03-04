@@ -7,6 +7,7 @@
             For example, CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[2] contains the prices for the last 5 days for STOCKS[2] (which is amzn)
 */
 
+
 /* ======= Stock data - DO NOT MODIFY ===== */
 const STOCKS = ["aapl", "msft", "amzn", "googl", "tsla"];
 
@@ -34,7 +35,15 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Functions can help with this!
 */
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+  const averagePrices = [];
+  for (let i = 0; i < STOCKS.length; i++) {
+    const prices = closingPrices[i];
+    const sum = prices.reduce((acc, price) => acc + price, 0);
+    const avg = sum / prices.length;
+    const roundedAvg = Math.round(avg * 100) / 100;
+    averagePrices.push(roundedAvg);
+  }
+  return averagePrices;
 }
 
 /*

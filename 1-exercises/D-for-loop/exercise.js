@@ -10,21 +10,9 @@
     Using a for loop, output to the console a line about the age of each writer.
 */
 
-const WRITERS = [
-    "Virginia Woolf",
-    "Zadie Smith",
-    "Jane Austen",
-    "Bell Hooks",
-    "Yukiko Motoya"
-]
-
-const AGES = [
-    59,
-    40,
-    41,
-    63,
-    49
-];
+const WRITERS = ["Virginia Woolf", "Zadie Smith", "Jane Austen", "Bell Hooks", "Yukiko Motoya"]
+const AGES = [59, 40, 41, 63, 49];
+for (i = 0, i <  )
 
 // TODO - Write for loop code here
 

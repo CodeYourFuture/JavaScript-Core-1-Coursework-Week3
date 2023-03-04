@@ -12,6 +12,7 @@
 // Example 1
 let a;
 console.log(a);
+//a isn't given a value. 
 
 
 // Example 2
@@ -21,6 +22,7 @@ function sayHello() {
 
 let hello = sayHello();
 console.log(hello);
+//the function doesn't return anything.
 
 
 // Example 3
@@ -29,8 +31,10 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
+//Nothing has been written inside the parantheses when calling the function.
 
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+//the array holds values from 0-2, so 3 doesn't exist.

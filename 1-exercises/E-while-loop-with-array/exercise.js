@@ -17,7 +17,10 @@ const BIRTHDAYS = [
 ];
 
 function findFirstJulyBDay(birthdays) {
-    // TODO
+    while(i <= BIRTHDAYS.length) { 
+            if (array[i] === July) {
+                return i;
+            }
 }
 
 console.log(findFirstJulyBDay(BIRTHDAYS)); // should output "July 11th"
