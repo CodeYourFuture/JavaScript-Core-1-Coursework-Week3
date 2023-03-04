@@ -6,6 +6,14 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+    let articleTitlesLessThan65 = []
+    for (article of allArticleTitles) {
+        if (article.length <= 65) {
+            articleTitlesLessThan65.push(article)
+        }
+    }
+    return articleTitlesLessThan65
+
 }
 
 /*
@@ -15,6 +23,27 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
     // TODO
+    let shortestTitle;
+    // let shortestTitleWordCount = Infinity;
+    let shortestTitleWordCount;
+
+
+    let firstWord;
+    for (let title of allArticleTitles) {
+        
+        let wordCount = title.split(" ").length;
+        // console.log(wordCount)
+        if (wordCount < (shortestTitleWordCount) || (shortestTitle === undefined)){
+            shortestTitleWordCount = wordCount
+            shortestTitle = title        
+        }
+        // arrayWithFewerWords.push(title)
+        
+    }
+    return shortestTitle
+
+    
+    
 }
 
 /*
