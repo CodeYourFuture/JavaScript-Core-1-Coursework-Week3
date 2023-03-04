@@ -9,12 +9,12 @@
     For each example, can you explain why we are seeing undefined?
 */
 
-// Example 1
+// a does'nt have any value. 
 let a;
 console.log(a);
 
 
-// Example 2
+// The function sayHello doesn't return anything.
 function sayHello() {
     let message = "Hello";
 }
@@ -23,7 +23,7 @@ let hello = sayHello();
 console.log(hello);
 
 
-// Example 3
+// The function is recalled with no parameter.
 function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
@@ -31,6 +31,6 @@ function sayHelloToUser(user) {
 sayHelloToUser();
 
 
-// Example 4
+// The array has no 4th element (index is counted from 0). 
 let arr = [1,2,3];
 console.log(arr[3]);

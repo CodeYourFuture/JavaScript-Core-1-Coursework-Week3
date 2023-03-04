@@ -1,7 +1,7 @@
 /*
     THESE EXERCISES ARE QUITE HARD. JUST DO YOUR BEST, AND COME WITH QUESTIONS IF YOU GET STUCK :)
 
-    Imagine we a working for a finance company. Below we have:
+    Imagine we are working for a finance company. Below we have:
         - an array of stock tickers
         - an array of arrays containing the closing price for each stock in each of the last 5 days.
             For example, CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[2] contains the prices for the last 5 days for STOCKS[2] (which is amzn)
@@ -35,6 +35,19 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 */
 function getAveragePrices(closingPricesForAllStocks) {
     // TODO
+    const averagePrice=[];
+    let sum=0;
+    let average=0
+    for(let i =0; i<closingPricesForAllStocks.length; i++){
+      for( let j=0; j<closingPricesForAllStocks[i].length;j++){
+         sum +=closingPricesForAllStocks[i][j];
+      }
+      average=sum / 5;
+      averagePrice.push(Math.round(average*100)/100);
+      sum=0;
+     
+    }
+return averagePrice;
 }
 
 /*
@@ -48,8 +61,18 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
-}
+    const priceChanged=[];
+    let change=0;
+    let average=0
+    for(let i =0; i<closingPricesForAllStocks.length; i++){
+  let j=closingPricesForAllStocks[i][closingPricesForAllStocks[i].length-1];
+  let k= closingPricesForAllStocks[i][0];
+         change =j-k;
+         priceChanged.push(Math.round(change*100)/100);
+         change=0;
+      }
+  return priceChanged;
+    }
 
 /*
     As part of a financial report, we want to see what the highest price was for each stock in the last 5 days.
@@ -64,7 +87,20 @@ function getPriceChanges(closingPricesForAllStocks) {
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+    const hightestPrice=[];
+    let maxPrice=0;
+    for(let k=0; k<stocks.length;){
+    for(let i=0; i< closingPricesForAllStocks.length; i++){
+     
+       maxPrice=Math.max(...closingPricesForAllStocks[i]);
+       hightestPrice.push(`The highest price of ${stocks[k].toUpperCase()} in the last 5 days was ${maxPrice.toFixed(2)}`)
+       maxPrice=0;
+       k++;
+       
+    }
+
+    return hightestPrice;
+    }
 }
 
 
