@@ -58,15 +58,15 @@ function getAveragePrices(closingPricesForAllStocks) {
 */
 function getPriceChanges(closingPricesForAllStocks) {
     //from the array of clsing prices, take length-1 and 0 and find the difference to see the change, for each item.
-    const priceDayFive = CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS.length -1];
+    const closingPricesForAllStocks = CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS.length -1];
     const priceDayOne = (CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[0]);
 
-    let priceChange = priceDayFive - priceDayOne;
-    for (i = CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS.length-1; i = [0];); {
-        return 
+    let priceChange = closingPricesForAllStocks - priceDayOne;
+    const newArray = for (i=0; i<=CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS; i++) { 
+        return newArray;
     }
-
-}
+    console.log(newArray);
+    }
 
 /*
     As part of a financial report, we want to see what the highest price was for each stock in the last 5 days.
