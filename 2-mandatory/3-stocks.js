@@ -57,7 +57,15 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+    //from the array of clsing prices, take length-1 and 0 and find the difference to see the change, for each item.
+    const priceDayFive = CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS.length -1];
+    const priceDayOne = (CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[0]);
+
+    let priceChange = priceDayFive - priceDayOne;
+    for (i = CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS.length-1; i = [0];); {
+        return 
+    }
+
 }
 
 /*
