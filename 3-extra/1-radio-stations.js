@@ -31,28 +31,20 @@
  * Note: You are not expected to understand everything below this comment!
  */
 
-function getAvailableStations() {
-  // Using `stations` as a property as defining it as a global variable wouldn't
-  // always make it initialized before the function is called
-  if (!getAvailableStations.stations) {
-    const stationCount = 4;
-    getAvailableStations.stations = [];
-    while (getAvailableStations.stations.length < stationCount) {
-      let randomFrequency = Math.floor(Math.random() * (108 - 87 + 1) + 87);
-      if (!getAvailableStations.stations.includes(randomFrequency)) {
-        getAvailableStations.stations.push(randomFrequency);
-      }
-    }
-    getAvailableStations.stations.sort(function (frequencyA, frequencyB) {
-      return frequencyA - frequencyB;
-    });
+function getAllFrequencies() {
+  const frequencies = [];
+  for (let i = 87; i <= 108; i++) {
+    frequencies.push(i);
   }
-
-  return getAvailableStations.stations;
+  return frequencies;
 }
 
-function isRadioStation(frequency) {
-  return getAvailableStations().includes(frequency);
+function getStations() {
+  const allFrequencies = getAllFrequencies();
+  const radioStations = allFrequencies.filter((frequency) => {
+    return isRadioStation(frequency);
+  });
+  return radioStations;
 }
 
 test("getAllFrequencies() returns all frequencies between 87 and 108", () => {

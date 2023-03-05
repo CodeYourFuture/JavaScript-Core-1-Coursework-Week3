@@ -7,6 +7,7 @@
             For example, CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[2] contains the prices for the last 5 days for STOCKS[2] (which is amzn)
 */
 
+
 /* ======= Stock data - DO NOT MODIFY ===== */
 const STOCKS = ["aapl", "msft", "amzn", "googl", "tsla"];
 
@@ -34,9 +35,26 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Functions can help with this!
 */
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
-}
+  // Create an empty array to hold the average prices for each stock
+  const averagePrices = [];
 
+  // Loop through each array of closing prices for each stock
+  for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+    // Get the array of closing prices for the current stock
+    const stockPrices = closingPricesForAllStocks[i];
+    
+    // Calculate the sum of all closing prices for the current stock
+    const sum = stockPrices.reduce((acc, cur) => acc + cur);
+
+    // Calculate the average closing price for the current stock
+    const avg = sum / stockPrices.length;
+
+    // Round the average closing price to 2 decimal places and add it to the array
+    averagePrices.push(parseFloat(avg.toFixed(2)));
+  }
+
+  return averagePrices;
+}
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
     Implement the below function, which
@@ -48,7 +66,15 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+  const priceChanges = [];
+  
+  for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+    const prices = closingPricesForAllStocks[i];
+    const priceChange = (prices[prices.length-1] - prices[0]).toFixed(2);
+    priceChanges.push(parseFloat(priceChange));
+  }
+  
+  return priceChanges;
 }
 
 /*
@@ -64,7 +90,16 @@ function getPriceChanges(closingPricesForAllStocks) {
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+    const priceDescriptions = [];
+
+    for (let i = 0; i < stocks.length; i++) {
+        const ticker = stocks[i].toUpperCase();
+        const highestPrice = Math.max(...closingPricesForAllStocks[i]).toFixed(2);
+        priceDescriptions.push(`The highest price of ${ticker} in the last 5 days was ${highestPrice}`);
+
+    }
+
+    return priceDescriptions;
 }
 
 
