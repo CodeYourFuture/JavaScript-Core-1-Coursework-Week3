@@ -1,0 +1,25 @@
+{
+  "configurations": [
+    
+    {
+        "args": [
+            "--extensionDevelopmentPath=${workspaceFolder}"
+        ],
+        "name": "Launch Extension",
+        "outFiles": [
+            "${workspaceFolder}/out/**/*.js"
+        ],
+        "preLaunchTask": "npm",
+        "request": "launch",
+        "type": "extensionHost"
+    },
+    {
+      "type": "node",
+      "name": "Run Current File",
+      "request": "launch",
+      "program": "${workspaceFolder}/2-mandatory/3-stocks.js",
+      "stopOnEntry": true
+
+    }
+  ]
+}
