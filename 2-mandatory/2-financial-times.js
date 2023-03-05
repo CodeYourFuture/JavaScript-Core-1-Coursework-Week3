@@ -40,10 +40,14 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
- for (let i=0; i < allArticleTitles; i++);
-    if (allArticleTitles[i].includes(Number)) 
-    // const allArticleTitles = myArray.filter(item => item.includes(Number));
-return i; }
+  const result = [];
+  for (let i = 0; i < allArticleTitles.length; i++) {
+    if (allArticleTitles[i].includes(Number))
+    result.push[i];
+    }
+    return result; 
+  }
+  
 
 
 /*
