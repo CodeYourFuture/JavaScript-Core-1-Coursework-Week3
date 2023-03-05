@@ -42,8 +42,8 @@ function titleWithFewestWords(allArticleTitles) {
 function headlinesWithNumbers(allArticleTitles) {
   const result = [];
   for (let i = 0; i < allArticleTitles.length; i++) {
-    if (allArticleTitles[i].includes(Number))
-    result.push[i];
+    if (/[\d]/.test(allArticleTitles[i]))
+    result.push(allArticleTitles[i]);
     }
     return result; 
   }
