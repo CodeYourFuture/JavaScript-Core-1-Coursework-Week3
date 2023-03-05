@@ -33,8 +33,38 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Solve the smaller problems, and then build those solutions back up to solve the larger problem.
         Functions can help with this!
 */
+
+// function getAveragePrices(closingPricesForAllStocks) {
+//     // TODO
+//     let arrayAveragePrices = [];
+//     for (averagePrices = "closingPricesForAllStocks"); {
+
+//         function findAveragePrice(array) {
+//     let total = 0;
+//     for (let price of array) {
+//         total += price;
+//     }
+//     return Number ((total / array.length).toFixed(2));
+// }
+// }
+
 function getAveragePrices(closingPricesForAllStocks) {
     // TODO
+  let arrayWithAveragePrices = [];
+  //looping through array of arrays and calling findAveragePrice method on each array
+  for (let arrayWithPrices of closingPricesForAllStocks) {
+    arrayWithAveragePrices.push(findAveragePrice(arrayWithPrices));
+  }
+  return arrayWithAveragePrices;
+}
+
+//function to find average price in array
+function findAveragePrice(array) {
+  let sum = 0;
+  for (let price of array) {
+    sum += price;
+  }
+  return Number((sum / array.length).toFixed(2));
 }
 
 /*
@@ -47,9 +77,16 @@ function getAveragePrices(closingPricesForAllStocks) {
                 (Apple's price on the 5th day) - (Apple's price on the 1st day) = 172.99 - 179.19 = -6.2
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
+
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+      let changedPrices = [];
+  for (let arrayWithPrices of closingPricesForAllStocks) {
+    let changedPrice = arrayWithPrices[arrayWithPrices.length - 1] - arrayWithPrices[0];
+    changedPrices.push(Number(changedPrice.toFixed(2)));
+  }
+  return changedPrices;
 }
+
 
 /*
     As part of a financial report, we want to see what the highest price was for each stock in the last 5 days.
@@ -65,7 +102,21 @@ function getPriceChanges(closingPricesForAllStocks) {
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
     // TODO
-}
+    let arrayWithStrings = [];
+    for (let i = 0; i < stocks.length; i++) {
+        let stockOfName = stocks[i].toUpperCase();
+        let sortedArray = closingPricesForAllStocks[i].sort(function (a, b) {
+            return a-b});
+            let highestPrice = sortedArray[sortedArray.length -1];
+            let convertedPrice = highestPrice.toFixed(2);
+            arrayWithStrings.push(`The highest price of ${stockOfName} in the last 5 days was ${convertedPrice}`);
+
+        }
+        return arrayWithStrings;
+        // http://www.collectionsjs.com/sorted-array
+
+    }
+
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
