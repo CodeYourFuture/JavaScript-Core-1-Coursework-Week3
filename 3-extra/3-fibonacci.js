@@ -14,7 +14,12 @@
 */
 
 function generateFibonacciSequence(n) {
-    // TODO
+ let FibonacciSequence = 0;
+ 
+ for (let i=0; i < n; i++) {
+    Total = FibonacciSequence + n;
+    return Total;
+ }
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
