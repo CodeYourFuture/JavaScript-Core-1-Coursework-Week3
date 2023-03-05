@@ -22,7 +22,13 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+    let shortestTitle = allArticleTitles[1];
+    for (const newTitle of allArticleTitles){
+        if (newTitle.length <= shortestTitle.length){
+            shortestTitle = newTitle;
+        }
+    }
+    return shortestTitle;
 }
 
 /*
@@ -31,7 +37,18 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+    let clickables = [];
+
+    for (const title of allArticleTitles){
+        for (const character of title){
+            if ('0123456789'.includes(character)){ //if (character = Number) my previous -failed- solution.
+                clickables.push(title);
+               break;
+            }
+            
+        }
+    }
+    return clickables;
 }
 
 /*
@@ -39,7 +56,20 @@ function headlinesWithNumbers(allArticleTitles) {
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
+    let charactersCount= 0;
+    let titlesCount= 0;
+
+    for (const title of allArticleTitles){
+        for (const part of title){
+            for (const character of part){
+                charactersCount = charactersCount + 1;
+            }
+        }
+        titlesCount = titlesCount + 1;
+    }
+
+    let average = charactersCount / titlesCount;
+    return Math.round(average);
 }
 
 
