@@ -13,7 +13,13 @@
  * - Should return this array to use in other functions
  */
 
-// `getAllFrequencies` goes here
+function getAllFrequencies() {
+  let frequencies = [];
+  for (let i = 87; i < 108; i++) {
+    frequencies.push(i);
+  }
+  return frequencies;
+}
 
 /**
  * Next, let's write a function that gives us only the frequencies that are radio stations.
