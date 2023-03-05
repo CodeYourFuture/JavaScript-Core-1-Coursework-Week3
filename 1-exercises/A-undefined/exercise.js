@@ -11,26 +11,27 @@
 
 // Example 1
 let a;
-console.log(a);
-
+console.log(a); // a has no value assigned to it
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+  let message = "Hello";
 }
 
-let hello = sayHello();
+let hello = sayHello(); // sayHello() function won't return any value, so hello will have no value
 console.log(hello);
-
 
 // Example 3
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+  console.log(`Hello ${user}`);
 }
 
 sayHelloToUser();
-
+//this function is called but no parameter has been passed
+//so the variable user has no value
 
 // Example 4
-let arr = [1,2,3];
+let arr = [1, 2, 3];
 console.log(arr[3]);
+// there is only three elements declared within this array
+//arr[3] not declared
