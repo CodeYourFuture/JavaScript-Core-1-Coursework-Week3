@@ -90,7 +90,15 @@ function getPriceChanges(closingPricesForAllStocks) {
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+    const priceDescriptions = [];
+
+    for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+        const highestPrice = Math.max(...closingPricesForAllStocks[i]);
+
+        priceDescriptions.push(highestPrice.toFixed(2));
+    }
+
+    return priceDescriptions;
 }
 
 
