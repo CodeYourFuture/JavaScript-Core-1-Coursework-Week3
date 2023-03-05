@@ -22,13 +22,20 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-  let compareArticle = "start";
-  for (const article of allArticleTitles) {
-    if (article.length >= compareArticle.length) {
-      return article;
+  //return allArticleTitles.reduce(function (a, b) {
+  //   if (a.length <= b.length) {
+  //     return a;
+  //   } else {
+  //     return b;
+  //   }
+  // });
+  let first = allArticleTitles[0];
+  for (let i = 1; i < allArticleTitles.length; i++) {
+    if (allArticleTitles[i].split(" ").length < first.split(" ").length) {
+      first = allArticleTitles[i];
     }
-    compareArticle = article;
   }
+  return first;
 }
 
 /*
@@ -37,7 +44,13 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-  // TODO
+  newArticle = [];
+  for (const element of allArticleTitles) {
+    if (/\d/.test(element)) {
+      newArticle.push(element);
+    }
+  }
+  return newArticle;
 }
 
 /*
@@ -45,7 +58,12 @@ function headlinesWithNumbers(allArticleTitles) {
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-  // TODO
+  let sum = 0;
+  // let result=0;
+  for (const i of allArticleTitles) {
+    sum = sum + i.length;
+  }
+  return Math.round(sum / allArticleTitles.length);
 }
 
 /* ======= List of Articles - DO NOT MODIFY ===== */
