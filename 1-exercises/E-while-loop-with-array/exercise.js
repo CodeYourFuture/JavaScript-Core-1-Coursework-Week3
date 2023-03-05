@@ -23,4 +23,4 @@ function findFirstJulyBDay(birthdays) {
             }
 }
 
-console.log(findFirstJulyBDay(BIRTHDAYS)); // should output "July 11th"
+console.log(findFirstJulyBDay(BIRTHDAYS)); }
