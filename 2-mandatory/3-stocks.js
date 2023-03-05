@@ -1,7 +1,7 @@
 /*
     THESE EXERCISES ARE QUITE HARD. JUST DO YOUR BEST, AND COME WITH QUESTIONS IF YOU GET STUCK :)
 
-    Imagine we a working for a finance company. Below we have:
+    Imagine we are working for a finance company. Below we have:
         - an array of stock tickers
         - an array of arrays containing the closing price for each stock in each of the last 5 days.
             For example, CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[2] contains the prices for the last 5 days for STOCKS[2] (which is amzn)
@@ -34,8 +34,24 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Functions can help with this!
 */
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
-}
+        const averages = [];
+      
+        for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+          const prices = closingPricesForAllStocks[i];
+          let total = 0;
+      
+          for (let j = 0; j < prices.length; j++) {
+            total += prices[j];
+          }
+      
+          const average = total / prices.length;
+          const roundedAverage = parseFloat(average.toFixed(2));
+          averages.push(roundedAverage);
+        }
+      
+        return averages;
+      }
+      
 
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
@@ -48,9 +64,17 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
-}
-
+        const priceChanges = [];
+      
+        for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+          const stockPrices = closingPricesForAllStocks[i];
+          const priceChange = stockPrices[stockPrices.length - 1] - stockPrices[0];
+          priceChanges.push(Number(priceChange.toFixed(2)));
+        }
+      
+        return priceChanges;
+      }
+      
 /*
     As part of a financial report, we want to see what the highest price was for each stock in the last 5 days.
     Implement the below function, which
@@ -60,12 +84,23 @@ function getPriceChanges(closingPricesForAllStocks) {
         - Returns an array of strings describing what the highest price was for each stock.
             For example, the first element of the array should be: "The highest price of AAPL in the last 5 days was 180.33"
             The test will check for this exact string.
-    The stock ticker should be capitalised.
+    The stock ticker should be capitalized.
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
-}
+        const descriptions = [];
+      
+        for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+          const ticker = stocks[i].toUpperCase();
+          const prices = closingPricesForAllStocks[i];
+          const maxPrice = Math.max(...prices).toFixed(2);
+          const description = `The highest price of ${ticker} in the last 5 days was ${maxPrice}`;
+          descriptions.push(description);
+        }
+      
+        return descriptions;
+      }
+      
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */

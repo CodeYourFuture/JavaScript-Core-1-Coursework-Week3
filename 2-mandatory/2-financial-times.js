@@ -4,36 +4,90 @@
     The home page of the web site has a headline section, which only has space for article titles which are 65 characters or less.
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
-function potentialHeadlines(allArticleTitles) {
-    // TODO
-}
 
+    function potentialHeadlines(allArticleTitles) {
+        // Create an empty array to store the potential headlines
+        const potentialHeadlines = [];
+      
+        // Loop through each article title in the input array
+        for (let i = 0; i < allArticleTitles.length; i++) {
+          const articleTitle = allArticleTitles[i];
+      
+          // Check if the title is 65 characters or less
+          if (articleTitle.length <= 65) {
+            // If it is, add it to the potential headlines array
+            potentialHeadlines.push(articleTitle);
+          }
+        }
+      
+        // Return the array of potential headlines
+        return potentialHeadlines;
+      }
+      
 /*
     The editor of the FT likes short headlines with only a few words!
     Implement the function below, which returns the title with the fewest words.
-    (you can assume words will always be seperated by a space)
+    (you can assume words will always be separated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
-}
+   
+    let fewestWords = allArticleTitles[0];
+  
+    for (let i = 0; i < allArticleTitles.length; i++) {
+      if (fewestWords.length > allArticleTitles[i].length) {
+            fewestWords = allArticleTitles[i];
+      }
+    }
+  
+    return fewestWords;
+  }
+  
 
 /*
-    The editor of the FT has realised that headlines which have numbers in them get more clicks!
+    The editor of the FT has realized that headlines which have numbers in them get more clicks!
     Implement the function below to return a new array containing all the headlines which contain a number.
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
+
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
-}
+    const headlinesWithNumbers = [];
+  
+    for (let i = 0; i < allArticleTitles.length; i++) {
+      const articleTitle = allArticleTitles[i];
+      
+      for (let j = 0; j < articleTitle.length; j++) {
+        const character = articleTitle.charAt(j);
+        
+        if (!isNaN(parseInt(character))) {
+          headlinesWithNumbers.push(articleTitle);
+        }
+      }
+    }
+  
+    return headlinesWithNumbers;
+  }
+  
 
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
     Implement the function below to return this number - rounded to the nearest integer.
 */
+ 
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
-}
+    let totalChars = 0;
+  
+    for (let i = 0; i < allArticleTitles.length; i++) {
+      totalChars += allArticleTitles[i].length;
+    }
+  
+    const averageChars = Math.round(totalChars / allArticleTitles.length);
+  
+    return averageChars;
+  }
+ 
 
+
+  
 
 
 /* ======= List of Articles - DO NOT MODIFY ===== */
@@ -42,9 +96,9 @@ const ARTICLE_TITLES = [
     "Amazon Prime Video India country head: streaming is driving a TV revolution",
     "Aerospace chiefs prepare for bumpy ride in recovery of long-haul flights",
     "British companies look to muscle in on US retail investing boom",
-    "Libor to take firm step towards oblivion on New Year's Day",
+    "Labor to take firm step towards oblivion on New Year's Day",
     "Audit profession unattractive to new recruits, says PwC boss",
-    "Chinese social media users blast Elon Musk over near miss in space",
+    "Chinese social media users blast Elan Musk over near miss in space",
     "Companies raise over $12tn in 'blockbuster' year for global capital markets",
     "The three questions that dominate investment",
     "Brussels urges Chile's incoming president to endorse EU trade deal",
@@ -55,7 +109,7 @@ const ARTICLE_TITLES = [
 test("should only return potential headlines", () => {
     expect(new Set(potentialHeadlines(ARTICLE_TITLES))).toEqual(new Set([
         "British companies look to muscle in on US retail investing boom",
-        "Libor to take firm step towards oblivion on New Year's Day",
+        "Labor to take firm step towards oblivion on New Year's Day",
         "Audit profession unattractive to new recruits, says PwC boss",
         "The three questions that dominate investment"
     ]));
