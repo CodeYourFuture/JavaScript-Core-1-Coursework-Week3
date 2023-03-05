@@ -48,8 +48,12 @@ function headlinesWithNumbers(allArticleTitles) {
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
-}
+    for (let i=0; i < allArticleTitles; i++);
+    if (allArticleTitles[i].includes(Number)) 
+    // const allArticleTitles = myArray.filter(item => item.includes(Number));
+return i; }
+
+
 
 
 
