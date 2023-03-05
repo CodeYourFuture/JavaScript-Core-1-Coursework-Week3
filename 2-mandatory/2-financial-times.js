@@ -1,12 +1,19 @@
 /*
     Imagine you are working on the Financial Times web site! They have a list of article titles stored in an array.
 
-    The home page of the web site has a headline section, which only has space for article titles which are 65 characters or less.
+    The home page of the web site has a headline section, which only has space for article 
+    titles which are 65 characters or less.
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    // TODO
-}
+    shortTitles = [];
+    for (const i of allArticleTitles) {
+        if(i.length <= 65) {
+        shortTitles.push(i);
+        }
+    }
+     return shortTitles;
+}   
 
 /*
     The editor of the FT likes short headlines with only a few words!
@@ -14,16 +21,30 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+
+ let first = allArticleTitles[0];
+ for(i=1; i < allArticleTitles.length; i++) {
+     let next = allArticleTitles[i]
+    if(next.split(" ").length < first.split(" ").length) {
+        first = next;
+    }
+ }   
+return first;
 }
 
-/*
-    The editor of the FT has realised that headlines which have numbers in them get more clicks!
-    Implement the function below to return a new array containing all the headlines which contain a number.
-    (Hint: remember that you can also loop through the characters of a string if you need to)
-*/
+// // /*
+//     The editor of the FT has realised that headlines which have numbers in them get more clicks!
+//     Implement the function below to return a new array containing all the headlines which contain a number.
+//     (Hint: remember that you can also loop through the characters of a string if you need to)
+// */
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+    titleWithNumber = []
+    for(const element of allArticleTitles) {
+        if(/\d/.test(element)) {
+             titleWithNumber.push(element)
+        }  
+    }
+    return titleWithNumber;
 }
 
 /*
@@ -31,7 +52,15 @@ function headlinesWithNumbers(allArticleTitles) {
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
+    sum=0;
+    // for(const element of allArticleTitles) {
+    //     sum+=element.length
+    // }
+    for(let i=0; i < allArticleTitles.length; i++) {
+        sum+=allArticleTitles[i].length;
+    }
+    result = sum / allArticleTitles.length;
+    return Math.round(result);
 }
 
 

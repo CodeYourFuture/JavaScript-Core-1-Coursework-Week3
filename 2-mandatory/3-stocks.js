@@ -17,7 +17,20 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
     [2951.88, 2958.13, 2938.33, 2928.30, 2869.45], // GOOGL
     [1101.30, 1093.94, 1067.00, 1008.87, 938.53] // TSLA
 ];
-
+// function averagePrice(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS) {
+//     let sum=0;
+//     let average= 0;
+//     let newArray = [];
+//     for(const element of CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS) {
+//         for(let i=0; i < element.length; i++) {
+//             sum += element[i];
+//         }
+//      average = sum / element.length;   
+//      newArray.push(Math.round(average * 100) / 100);
+//     }
+    
+// return newArray;
+// }
 /*
     We want to understand what the average price over the last 5 days for each stock is.
     Implement the below function, which
@@ -34,7 +47,18 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Functions can help with this!
 */
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+    let newArray = [];
+    for(const element of closingPricesForAllStocks) {
+        let sum=0;
+        let average= 0;
+        for(let i=0; i < element.length; i++) {
+            sum += element[i];
+        }
+     average = sum / element.length;   
+     newArray.push(Math.round(average * 100) / 100);
+    }
+    
+return newArray;
 }
 
 /*
