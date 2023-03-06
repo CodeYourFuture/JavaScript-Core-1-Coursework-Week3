@@ -33,8 +33,28 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Solve the smaller problems, and then build those solutions back up to solve the larger problem.
         Functions can help with this!
 */
+// function getAveragePrices(closingPricesForAllStocks) {
+//         const averagePrices = closingPricesForAllStocks.map(stock => {
+//             const sumOfStocks = stock.reduce((accumulator, currentValue) => {
+
+//                 return accumulator + currentValue;
+//             })
+//             return Math.round((sumOfStocks / stock.length) * 100) / 100;
+//         })
+//         return averagePrices;
+//     }
+
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+    const averagePrices = [];
+    for (const closingPrices of closingPricesForAllStocks) {
+        let sum = 0;
+
+        for (const closingPrice of closingPrices) {
+            sum += closingPrice;   
+        } 
+        averagePrices.push(Math.round(sum / closingPrices.length * 100) / 100); 
+    }
+    return averagePrices;
 }
 
 /*
@@ -48,7 +68,12 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+    const priceChange = closingPricesForAllStocks.map(stock => {
+         const change = (stock[stock.length - 1] - stock[0]);
+         return Math.round(change * 100) / 100;
+
+    })
+    return priceChange;
 }
 
 /*
@@ -64,7 +89,13 @@ function getPriceChanges(closingPricesForAllStocks) {
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+    const descriptions = [];
+    for (let index = 0; index < closingPricesForAllStocks.length; index++) {         
+        const closingPrices = closingPricesForAllStocks[index];
+        const maxPrice = Math.max(...closingPrices).toFixed(2);
+        descriptions.push(`The highest price of ${stocks[index].toUpperCase()} in the last 5 days was ${maxPrice}`);
+    }
+    return descriptions;
 }
 
 
