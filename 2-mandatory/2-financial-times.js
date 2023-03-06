@@ -26,7 +26,7 @@ function titleWithFewestWords(allArticleTitles) {
     let result;
     for (let articleTitle of allArticleTitles) {
        let articleWords = articleTitle.split(' ').length;
-       if (articleWords < fewestword ) {
+       if (articleWords <= fewestword ) {
         fewestword = articleWords;
         result = articleTitle;
        }
