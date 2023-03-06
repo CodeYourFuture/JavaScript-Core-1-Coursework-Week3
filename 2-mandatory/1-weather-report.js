@@ -12,13 +12,12 @@
 */
 
 function getTemperatureReport(cities) {
-    let citiesArray = [];
+    const statements = [];
     cities.forEach(city => {
-        citiesArray.push('The temperature in '.concat(city, ' is ',
+        statements.push('The temperature in '.concat(city, ' is ',
             temperatureService(city), ' degrees'));
-
     });
-    return citiesArray;
+    return statements;
 }
 
 
