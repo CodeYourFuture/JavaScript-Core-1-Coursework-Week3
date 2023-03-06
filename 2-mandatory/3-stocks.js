@@ -84,10 +84,12 @@ function getPriceChanges(closingPricesForAllStocks) {
 
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
     const highestPriceReports = [];
-    let stockPrices = CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[0];
+    let pricesArray = 0;
+   
 
     for (const stock of stocks){
         let highestPrice = 0;
+        let stockPrices = CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[pricesArray];
         
         for (const price of stockPrices){
 
@@ -99,8 +101,9 @@ function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
         
         highestPrice = Number(highestPrice.toFixed(2));
         highestPriceReports.push(`The highest price of ${stock.toUpperCase()} in the last 5 days was ${highestPrice}`);
-        //stockPrices = CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[0++]; (not working)
-        //(trying to update the prices array that coresponds to the new stock)
+        pricesArray++;
+        //(trying to update the prices array that coresponds to the new stock) 
+        //(upon an advice from Greg, I added a variable that increments every time through and assigned this variable as the arrary element index)
     }
 
     return highestPriceReports;
