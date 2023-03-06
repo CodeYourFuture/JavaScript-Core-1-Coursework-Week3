@@ -12,14 +12,19 @@
 */
 
 function getTemperatureReport(cities) {
-    // TODO
+    const statements = [];
+    cities.forEach(city => {
+        statements.push('The temperature in '.concat(city, ' is ',
+            temperatureService(city), ' degrees'));
+    });
+    return statements;
 }
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 function temperatureService(city) {
-    let temparatureMap  = new Map();
+    let temparatureMap = new Map();
 
     temparatureMap.set('London', 10);
     temparatureMap.set('Paris', 12);
@@ -28,7 +33,7 @@ function temperatureService(city) {
     temparatureMap.set('Mumbai', 29);
     temparatureMap.set('São Paulo', 23);
     temparatureMap.set('Lagos', 33);
-    
+
     return temparatureMap.get(city);
 }
 
