@@ -81,24 +81,100 @@ function getPriceChanges(closingPricesForAllStocks) {
     The stock ticker should be capitalised.
     The price should be shown with exactly 2 decimal places.
 */
+
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
     const highestPriceReports = [];
+    let stockPrices = CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[0];
 
     for (const stock of stocks){
         let highestPrice = 0;
-
-        for (const price of stock){ 
+        
+        for (const price of stockPrices){
 
             if (price > highestPrice){
                 highestPrice = price;
             }
+  
         }
-        //highestPrice = Number(highestPrice.toFixed(2));
-        highestPriceReports.push(`The highest price of ${toUpperCase(stock)} in the last 5 days was ${highestPrice}`);
+        
+        highestPrice = Number(highestPrice.toFixed(2));
+        highestPriceReports.push(`The highest price of ${stock.toUpperCase()} in the last 5 days was ${highestPrice}`);
+        //stockPrices = CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[0++]; (not working)
+        //(trying to update the prices array that coresponds to the new stock)
     }
 
     return highestPriceReports;
 }
+
+/*dead end attempt
+function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
+    const highestPriceReports = [];
+    
+
+    for (const stockPrices of CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS){
+        let highestPrice = 0;
+        
+        for (const price of stockPrices){
+
+            if (price > highestPrice){
+                highestPrice = price;
+            }
+  
+        }
+        
+        highestPrice = Number(highestPrice.toFixed(2));
+        highestPriceReports.push(`The highest price of ${stock.toUpperCase()} in the last 5 days was ${highestPrice}`);
+    }
+
+    return highestPriceReports;
+}*/
+
+/*chtgpt suggested fix. works for all stocks except last one, prints with only one decimal place!
+function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
+  const highestPriceReports = [];
+  
+  for (const stockIndex in closingPricesForAllStocks) {
+    const stockPrices = closingPricesForAllStocks[stockIndex];
+    const stock = stocks[stockIndex].toUpperCase();
+    let highestPrice = 0;
+
+    for (const price of stockPrices) {
+      if (price > highestPrice) {
+        highestPrice = price;
+      }
+    }
+
+    highestPrice = Number(highestPrice.toFixed(2));
+    highestPriceReports.push(`The highest price of ${stock} in the last 5 days was ${highestPrice}`);
+  }
+
+  return highestPriceReports;
+}
+*/
+
+/*another chtgpt suggested fix. repeats 1st value twice for some reason!
+function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
+    const highestPriceReports = [];
+    let stockPrices = closingPricesForAllStocks[0];
+
+    for (const stock of stocks){
+        let highestPrice = 0;
+        
+        for (const price of stockPrices){
+
+            if (price > highestPrice){
+                highestPrice = price;
+            }
+  
+        }
+        
+        highestPrice = highestPrice.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        highestPriceReports.push(`The highest price of ${stock.toUpperCase()} in the last 5 days was ${highestPrice}`);
+        stockPrices = closingPricesForAllStocks.shift();
+    }
+
+    return highestPriceReports;
+}*/
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
