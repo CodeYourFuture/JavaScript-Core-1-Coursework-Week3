@@ -6,6 +6,15 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+    const newArray = [];
+    for (let articleTitle of allArticleTitles){
+        if (articleTitle.length <= 65){
+            newArray.push(articleTitle)
+        }
+    }
+    return newArray;
+
+
 }
 
 /*
@@ -15,6 +24,16 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
     // TODO
+    const title = [];
+    let titleWithFewestWord = allArticleTitles[0].length;
+  for (let fewWord of allArticleTitles){
+      if (fewWord.split(' ').length < titleWithFewestWord){
+          titleWithFewestWord = fewWord.split(' ').length
+          title.push(fewWord)
+      }else{
+          titleWithFewestWord = titleWithFewestWord;
+      }
+  }return title[title.length-1];
 }
 
 /*
@@ -24,6 +43,10 @@ function titleWithFewestWords(allArticleTitles) {
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+    const newArray =[];
+    for (let i = 0; i < allArticleTitles[i].length; i++ ){
+        if (allArticleTitles[i])
+    }
 }
 
 /*
