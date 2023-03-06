@@ -11,8 +11,32 @@
 */
 
 function getHighestRatedInEachGenre(books) {
-    // TODO
-}
+        // First, group the books by genre using an object
+        const booksByGenre = {};
+        for (const book of books) {
+          if (!(book.genre in booksByGenre)) {
+    //  we create an empty array for the book's genre which is not a property of `booksByGenre`  
+            booksByGenre[book.genre] = [];
+          }
+          booksByGenre[book.genre].push(book);
+        }
+      
+        // Then, find the highest-rated book in each genre and add its title to an array
+        const highestRatedTitles = [];
+        for (const genre in booksByGenre) {
+          let highestRatedBook = null;
+          for (const book of booksByGenre[genre]) {
+            if (highestRatedBook === null || book.rating > highestRatedBook.rating) {
+              highestRatedBook = book;
+            }
+          }
+          highestRatedTitles.push(highestRatedBook.title);
+        }
+      
+        return highestRatedTitles;
+      }
+      
+
 
 
 /* ======= Book data - DO NOT MODIFY ===== */
