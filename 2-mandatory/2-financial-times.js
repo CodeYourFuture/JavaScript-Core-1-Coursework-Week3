@@ -11,7 +11,7 @@ function potentialHeadlines(allArticleTitles) {
             titleCharacters.push(title);
         }
      }
-     return titleCharacters;
+return titleCharacters;
 }
 
 /*
@@ -29,7 +29,7 @@ function titleWithFewestWords(allArticleTitles) {
             shortestHeadline = title;
         }
     }
-    return shortestHeadline;
+return shortestHeadline;
 }
 
 
@@ -52,7 +52,7 @@ function headlinesWithNumbers(allArticleTitles) {
 
   }
     
-  return titlesWithNumbers;
+return titlesWithNumbers;
 }
 
 /*
