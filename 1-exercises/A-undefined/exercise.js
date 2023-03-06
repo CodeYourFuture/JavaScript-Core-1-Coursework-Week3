@@ -9,12 +9,14 @@
     For each example, can you explain why we are seeing undefined?
 */
 
-// Example 1
+// Example 1 
+// Because we declared a variable without value.
 let a;
 console.log(a);
 
 
 // Example 2
+// Because the function does not return anything, and hello is a variable without value.
 function sayHello() {
     let message = "Hello";
 }
@@ -24,6 +26,7 @@ console.log(hello);
 
 
 // Example 3
+// Because the function has a parameter and we need to send an argument when calling the function.
 function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
@@ -32,5 +35,6 @@ sayHelloToUser();
 
 
 // Example 4
+// Because arr has 3 indexs (0, 1, 2) and it does not have index 3.
 let arr = [1,2,3];
 console.log(arr[3]);

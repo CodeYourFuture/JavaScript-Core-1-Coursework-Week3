@@ -5,7 +5,13 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    // TODO
+    const shortArticleTitles = [];
+    for (let articleTitle of allArticleTitles) {
+        if (articleTitle.length <= 65) {
+            shortArticleTitles.push(articleTitle);
+        }
+    }
+    return shortArticleTitles;
 }
 
 /*
@@ -13,8 +19,19 @@ function potentialHeadlines(allArticleTitles) {
     Implement the function below, which returns the title with the fewest words.
     (you can assume words will always be seperated by a space)
 */
+
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+    
+    let fewestword = allArticleTitles[0].split(' ').length;
+    let result;
+    for (let articleTitle of allArticleTitles) {
+       let articleWords = articleTitle.split(' ').length;
+       if (articleWords <= fewestword ) {
+        fewestword = articleWords;
+        result = articleTitle;
+       }
+    }
+    return result;
 }
 
 /*
@@ -23,17 +40,34 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+    const regex = /[0-9]/;
+    let result = [];
+    for (let articleTitle of allArticleTitles) {
+        for (let i = 0; i < articleTitle.length; i++) {
+            if(articleTitle[i].match(regex)){
+                result.push(articleTitle);
+                break;
+            } 
+        }
+    }
+    return result;
 }
+    
+
 
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
+    let averageCharacter = 0;
+    let numberOfArticles = 0;
+    for (let articleTitle of allArticleTitles) {
+        averageCharacter += articleTitle.length;
+        numberOfArticles += 1;
+    }
+    return Math.round(averageCharacter / numberOfArticles);
 }
-
 
 
 /* ======= List of Articles - DO NOT MODIFY ===== */
