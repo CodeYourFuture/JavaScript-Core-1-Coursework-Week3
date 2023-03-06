@@ -13,11 +13,22 @@
 let a;
 console.log(a);
 
+//because "a" did not assign to any value
+// let a = 2;
+// console.log(a)
+
 
 // Example 2
 function sayHello() {
     let message = "Hello";
 }
+
+//I think because 'message' is declared but its value is never read.
+
+// function sayHello() {
+//     let message = "Hello";
+//     return message
+// }
 
 let hello = sayHello();
 console.log(hello);
@@ -28,9 +39,20 @@ function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
 
+
 sayHelloToUser();
+
+// any returned value
+// function sayHelloToUser(user) {
+//     let userName = user
+//     console.log(`Hello ${userName}`);
+//     return `Hello ${userName}`
+// }
+
 
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+
+//non-existing array element

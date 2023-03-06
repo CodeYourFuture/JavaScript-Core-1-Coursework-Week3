@@ -5,6 +5,13 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
+    let articlesWhichFit = []
+     for(item of allArticleTitles){
+        if (item.length < 65){
+            articlesWhichFit.push(item)
+        }
+     }
+     return articlesWhichFit
     // TODO
 }
 
@@ -14,7 +21,16 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+    let answer = allArticleTitles[0]
+    for(i=0; i < allArticleTitles.length; i++){
+        if (allArticleTitles[0].length > allArticleTitles[i].length){
+         allArticleTitles[0] = allArticleTitles[i]
+        }   
+    }
+    answer = allArticleTitles[0]
+  console.log(answer)
+ return answer
+ 
 }
 
 /*
@@ -23,7 +39,17 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+    let numberArray =[]
+    for (item of allArticleTitles){
+        for (element of item){
+            if (element.includes(Number)){
+                numberArray.push(item)
+            }
+        }      
+    } 
+    console.log("YO",numberArray)
+    return numberArray;
+    
 }
 
 /*
@@ -31,8 +57,19 @@ function headlinesWithNumbers(allArticleTitles) {
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
-}
+    sumOfStrings=[]
+    for (item of allArticleTitles){
+        let itemLenght = item.length
+       sumOfStrings.push(itemLenght)
+       } 
+    const initialValue = 0;
+   const sumWithInitial = sumOfStrings.reduce(
+   (accumulator, currentValue) => accumulator + currentValue,
+   initialValue
+);
+    return Math.floor(Math.round(sumWithInitial/allArticleTitles.length))
+    }
+
 
 
 
