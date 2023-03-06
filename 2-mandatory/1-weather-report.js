@@ -12,7 +12,11 @@
 */
 
 function getTemperatureReport(cities) {
-    // TODO
+    let cityWeather = [];
+    for (let city of cities){
+        cityWeather.push(`The temperature in ${city} is ${temperatureService(city)} degrees`);
+    }
+return cityWeather; 
 }
 
 

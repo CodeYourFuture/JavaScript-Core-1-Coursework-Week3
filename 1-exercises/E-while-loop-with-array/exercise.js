@@ -4,7 +4,7 @@
     Use a while loop to search through the array until you find the first birthday in July, then return that birthday from the function.
 */
 
-const BIRTHDAYS = [
+const birthdays = [
     "January 7th",
     "February 12th",
     "April 3rd",
@@ -17,7 +17,13 @@ const BIRTHDAYS = [
 ];
 
 function findFirstJulyBDay(birthdays) {
-    // TODO
+    let i = 0;
+    while(i < birthdays.length){
+        if (birthdays [i].startsWith("July")){
+            return birthdays[i];
+        }
+        i++
+    }
 }
 
-console.log(findFirstJulyBDay(BIRTHDAYS)); // should output "July 11th"
+console.log(findFirstJulyBDay(birthdays)); // should output "July 11th"

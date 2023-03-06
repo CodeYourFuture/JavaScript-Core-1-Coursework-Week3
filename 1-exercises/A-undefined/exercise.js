@@ -13,14 +13,19 @@
 let a;
 console.log(a);
 
+//// a has been declared without value
+
 
 // Example 2
 function sayHello() {
     let message = "Hello";
+
 }
 
 let hello = sayHello();
 console.log(hello);
+
+// function sayHello has been declared without return value
 
 
 // Example 3
@@ -29,8 +34,13 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
+// function sayHelloToUser is being called without an argument
+
+
 
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+
+// arr [3] doesn't have a value.
