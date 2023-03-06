@@ -43,10 +43,15 @@ function titleWithFewestWords(allArticleTitles) {
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
-    const newArray =[];
-    for (let i = 0; i < allArticleTitles[i].length; i++ ){
-        if (allArticleTitles[i])
-    }
+    const headlinesWithNumber =[];
+    for (let article of allArticleTitles){
+        for (let char of article){
+             if(char.match(/[0123456789]/g)){
+                headlinesWithNumber.push(article);break;
+             }
+        }
+    }return headlinesWithNumber;
+
 }
 
 /*
@@ -55,6 +60,11 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+    let averageNumberOfCharacter = 0;
+    for (let articleTitle of allArticleTitles){
+        averageNumberOfCharacter = averageNumberOfCharacter + articleTitle.length
+    }
+    return  Math.round((averageNumberOfCharacter/allArticleTitles.length).toFixed(0))
 }
 
 
