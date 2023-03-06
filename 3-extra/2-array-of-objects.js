@@ -22,7 +22,7 @@ function getHighestRatedInEachGenre(books) {
       }
       const highestRatedTitlesByGenre = Object.values(highestRatedBooks).map(book => book.title);
       
-    return highestRatedTitlesByGenre;
+    console.log(highestRatedTitlesByGenre) ;
       
 }
 
