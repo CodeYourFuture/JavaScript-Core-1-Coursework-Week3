@@ -9,7 +9,6 @@ function first(arr) {
 }
 
 function last(arr) {
-
   return arr.slice(-1); // complete this statement
 }
 
