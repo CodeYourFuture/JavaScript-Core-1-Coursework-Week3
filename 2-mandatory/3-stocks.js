@@ -34,7 +34,19 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Functions can help with this!
 */
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+    let averagePrices = [];
+
+    for (const stock of CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS){
+        let pricesTotal = 0;
+        for (const prices of stock){
+        pricesTotal += prices;
+        }
+         let averagePrice = Number((pricesTotal / stock.length).toFixed(2));
+         averagePrices.push(averagePrice);
+    }
+
+   
+    return averagePrices;
 }
 
 /*
