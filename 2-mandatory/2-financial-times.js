@@ -5,6 +5,13 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
+    let newArray = [];
+    for (let item of allArticleTitles) {
+        if (item.length <= 65) {
+            newArray.push(item);
+        }
+    } 
+    return newArray;
     // TODO
 }
 
@@ -14,7 +21,20 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
+    let shortestHeadline;
+    let fewestNumberOfWords;
+
+    for (let article of allArticleTitles) {
+
+    }
+
+
+
     // TODO
+    // loop through the headlines
+    //      find number words in the headline
+    // find number of words in title 
+   // compare the number with 
 }
 
 /*
