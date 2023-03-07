@@ -22,7 +22,7 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    let shortestTitle = allArticleTitles[1];
+    let shortestTitle = allArticleTitles[0];
     for (const newTitle of allArticleTitles){
         if (newTitle.length <= shortestTitle.length){
             shortestTitle = newTitle;
@@ -56,22 +56,22 @@ function headlinesWithNumbers(allArticleTitles) {
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    let charactersCount = 0;
-    let titlesCount= 0;
+    let charactersCount= 0;
+    let titlesCount = 0;
 
     for (const title of allArticleTitles){
-        for (const part of title){
-            for (const character of part){
-                charactersCount = charactersCount + 1;
-            }
+
+        if (title.length > 0){
+            charactersCount += title.length;
+
         }
-        titlesCount = titlesCount + 1;
+        
+        titlesCount++;
     }
 
     let average = charactersCount / titlesCount;
     return Math.round(average);
 }
-
 
 
 /* ======= List of Articles - DO NOT MODIFY ===== */

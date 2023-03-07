@@ -20,7 +20,7 @@ function getTemperatureReport(cities) {
 
         citiesReport.push(statement);
     }
-return citiesReport;
+    return citiesReport;
 }
 
 
