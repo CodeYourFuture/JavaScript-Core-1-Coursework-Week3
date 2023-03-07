@@ -11,18 +11,18 @@
         - Hint: you can call the temperatureService function from your function
 */
 
-function getTemperatureReport(cities) {
-    let result = [];
-    cities.forEach(city => {
+    function getTemperatureReport(cities) {
+         let result = [];
 
-        let temparatureMap =temperatureService(city);
-        if(temparatureMap!== undefined){
-        result.push(`The temperature in ${city} is ${temparatureMap} degrees"`);
+        for (let i = 0; i < cities.length; i++) {
+            let temparature =temperatureService(cities[i]);
+            if(temparature!== undefined){
+            result.push(`The temperature in ${cities[i]} is ${temparature} degrees`);
+            }
+            
         }
-        
-    });
 
-  return result;
+    return result;
     // TODO
 }
 

@@ -40,7 +40,8 @@ function getAveragePrices(closingPricesForAllStocks) {
     const prices = closingPricesForAllStocks[i];
     const total = prices.reduce((a, b) => a + b, 0);
     const average =total/prices.length;
-    averages.push(average);
+     const StockAve = Math.round(average * 100) / 100;
+    averages.push(StockAve);
 
     }
   return averages;
@@ -64,7 +65,8 @@ function getPriceChanges(closingPricesForAllStocks) {
     const firstPrice = prices[0];
     const lastPrice = prices[prices.length -1];
     const change =lastPrice -firstPrice;
-    priceChanges.push(change);
+    let rounded = Math.round(change *100)/100 ;
+    priceChanges.push(rounded);
   }
   return priceChanges;
 
@@ -84,21 +86,31 @@ function getPriceChanges(closingPricesForAllStocks) {
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    let describStock =[];
-    for(i =0; i<closingPricesForAllStocks; i++){
-        const prices = closingPricesForAllStocks[i];
-        const stock =stocks[i];
-        const highestPrice = Math.max(...prices);
-        describStock.push(highestPrice);
+    let describStock = [];
+  for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+    let stock = stocks[i];
+    let highestPrice = 0;
+    let closingPricesForStock = closingPricesForAllStocks[i];
+    for (let j = 0; j < closingPricesForStock.length; j++) {
+      let price = closingPricesForStock[j];
+      if (price > highestPrice) {
+        highestPrice = price;
+      }
     }
-    return describStock;
-    }
+    let priceFormat = highestPrice.toFixed(2);
+    let stockFormat = stock.toUpperCase();
+    let message = `The highest price of ${stockFormat} in the last 5 days was ${priceFormat}`;
+    describStock.push(message);
+  }
+  return describStock;
+}
+
 
     // TODO
 
 
 
-/* ======= TESTS - DO NOT MODIFY ===== */
+// /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the average price for each stock", () => {
     expect(getAveragePrices(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS)).toEqual(
         [176.89, 335.66, 3405.66, 2929.22, 1041.93]

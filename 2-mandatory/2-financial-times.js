@@ -5,16 +5,13 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    let shortTitele = null;
-    allArticleTitles.forEach(element => {
-        let title =element.split(' ');
-        if(shortTitele==null ||title.length <s .hortTitele.split('').length);{
-            shortTitele = element;
+    let result = [];
+  for (let i = 0; i < allArticleTitles.length; i++) {
+    if(allArticleTitles[i].length <= 65){
+        result.push(allArticleTitles[i]);
     }
-        
-    });
-    return shortTitele;
-    // TODO
+  }
+return result;
 }
 
 /*
@@ -23,11 +20,13 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    let NewArticle =[];
-   
-
-
-    // TODO
+    let FewestWords = allArticleTitles[0];
+    for(let i = 1;i < allArticleTitles.length; i++){
+        if(allArticleTitles[i].split(" ").length< FewestWords.split(" ").length){
+            FewestWords = allArticleTitles[i];
+        }
+  console.log(allArticleTitles);
+        } return FewestWords;
 }
 
 /*
@@ -36,11 +35,16 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    let NewArticle =[];
-   return NewArticle.push(allArticleTitles.filter(title => /\d+/.test(title)));
+    let output =[];
+for(let article of allArticleTitles){
+    for (let char of article)
+    {
+        if(parseInt(char)){
+            output.push(article);
+        }
+    } 
+} return output;
 
-
-    // TODO
 }
 
  
@@ -50,16 +54,26 @@ function headlinesWithNumbers(allArticleTitles) {
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    
+    let sum =0;
+    let count =0;
+    for(let i = 0; i< allArticleTitles.length; i++){
+        if(typeof allArticleTitles[i]==="string"){
+         sum += allArticleTitles[i].length;
+         count++;
+        }
+       
+    }
+    if(count==0){
+        return 0;
+    }
 
-    let sum = allArticleTitles.reduce((a, b) => {
- a + b);}
+        let average = sum/count;
+        let rounded = Math.round(average);
+        
+        return rounded;
 
-let   averagechars = sum/allArticleTitles.length;
-return Math.round(averagechars);
-    // TODO
-}
-}
+    }
+
 
 
 /* ======= List of Articles - DO NOT MODIFY ===== */
