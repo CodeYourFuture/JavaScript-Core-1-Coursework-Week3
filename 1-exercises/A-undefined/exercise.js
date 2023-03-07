@@ -12,6 +12,7 @@
 // Example 1
 let a;
 console.log(a);
+//No value has been assigned to this variable.a;
 
 
 // Example 2
@@ -21,7 +22,7 @@ function sayHello() {
 
 let hello = sayHello();
 console.log(hello);
-
+//function sayHello does not return anything;
 
 // Example 3
 function sayHelloToUser(user) {
@@ -29,8 +30,9 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
-
+//function sayHelloToUser does not return anything and there is no user as parameter ;
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+//there is no 3d element in the arr

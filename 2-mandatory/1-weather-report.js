@@ -12,7 +12,9 @@
 */
 
 function getTemperatureReport(cities) {
-    // TODO
+    let statements = [];
+    cities.forEach(city => statements.push(`The temperature in ${city} is ${temperatureService(city)} degrees`));
+    return statements;
 }
 
 
