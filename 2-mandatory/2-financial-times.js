@@ -1,11 +1,20 @@
 /*
-    Imagine you are working on the Financial Times web site! They have a list of article titles stored in an array.
+    Imagine you are working on the Financial Times web site! 
+    They have a list of article titles stored in an array.
 
-    The home page of the web site has a headline section, which only has space for article titles which are 65 characters or less.
-    Implement the function below, which will return a new array containing only article titles which will fit.
+    The home page of the web site has a headline section,
+     which only has space for article titles which are 65 characters or less.
+    Implement the function below, which will return a new array
+     containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    // TODO
+    const headlines = [];
+    for (let i = 0; i < allArticleTitles.length; i++) {
+        if (allArticleTitles[i].length <= 65) {
+            headlines.push(allArticleTitles[1]);
+        }
+    }
+    return headlines;
 }
 
 /*
