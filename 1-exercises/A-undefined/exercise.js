@@ -10,27 +10,29 @@
 */
 
 // Example 1
+// I would see here underfind because we not defind any value for variable "a"
 let a;
 console.log(a);
 
-
 // Example 2
+// The function doesn't return anything
 function sayHello() {
-    let message = "Hello";
+  let message = "Hello";
 }
 
 let hello = sayHello();
 console.log(hello);
 
-
 // Example 3
+//
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+  console.log(`Hello ${user}`);
 }
 
 sayHelloToUser();
-
+// we didn't pass parametrs to the function while we invoking it
 
 // Example 4
-let arr = [1,2,3];
+let arr = [1, 2, 3];
 console.log(arr[3]);
+// there is no element with index 3 in array
