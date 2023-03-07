@@ -5,8 +5,16 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    // TODO
-}
+    let shortArticleTitles = [];
+    for (i of allArticleTitles){
+        const greaterThan65 = allArticleTitles.filter(i => i.length <= 65);
+//        if (i.length <= 65){
+        return greaterThan65.push(i);
+            
+        }
+    console.log(newlist)
+    }
+
 
 /*
     The editor of the FT likes short headlines with only a few words!

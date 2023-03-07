@@ -13,7 +13,10 @@
 
 function getTemperatureReport(cities) {
     // TODO
-}
+    cities.forEach(val => {
+        temperatureService(val)
+});
+    }
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */

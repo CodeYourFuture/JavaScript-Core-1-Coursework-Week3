@@ -10,11 +10,13 @@
 */
 
 // Example 1
+// 'a' is not assigned to anything, so it treats as an undefined data.
 let a;
 console.log(a);
 
 
 // Example 2
+// 'message' is not defined before it is used.
 function sayHello() {
     let message = "Hello";
 }
@@ -24,6 +26,7 @@ console.log(hello);
 
 
 // Example 3
+// There is no data in sayHelloToUser to place as user.
 function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
@@ -32,5 +35,6 @@ sayHelloToUser();
 
 
 // Example 4
+// The array arr has 3 indexes which are [0], [1] and [2]. So there is no index 3.
 let arr = [1,2,3];
 console.log(arr[3]);
