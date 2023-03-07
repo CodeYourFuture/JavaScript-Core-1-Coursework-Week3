@@ -12,25 +12,27 @@
 // Example 1
 let a;
 console.log(a);
-
+//variable a need to be assigned a value
 
 // Example 2
 function sayHello() {
     let message = "Hello";
 }
+//sayHello doesnt return anything. variable message is just in the function's scope but, it is not consolled or returned
 
 let hello = sayHello();
 console.log(hello);
-
+// the function sayHello doesnt return any value
 
 // Example 3
 function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
-
 sayHelloToUser();
+// user variable is not assigned, doesnt have a value
 
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+// arr is an array and index numbers 0, 1, 2. the other numbers is not index of arr.
