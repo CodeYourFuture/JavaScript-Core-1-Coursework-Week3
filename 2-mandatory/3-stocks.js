@@ -35,7 +35,15 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 */
 function getAveragePrices(closingPricesForAllStocks) {
     // TODO
+    let averageOfWeek = [];
+  //looping through array of arrays and calling findAveragePrice method on each array
+  for (let averageOfWeek of closingPricesForAllStocks) {
+    averageOfWeek.push(findAveragePrice(averageOfWeek));
+  }
+  return averageOfWeek;
 }
+
+
 
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
@@ -49,6 +57,13 @@ function getAveragePrices(closingPricesForAllStocks) {
 */
 function getPriceChanges(closingPricesForAllStocks) {
     // TODO
+    let result =[];
+
+    for( let i = 0; i< closingPricesForAllStocks.length; i++) {
+        let diff =0;
+        diff = closingPricesForAllStocks[i][4] - closingPricesForAllStocks[i][0];
+        result.push(parseFloat(diff.toFixed(2)));
+    }
 }
 
 /*
@@ -65,6 +80,19 @@ function getPriceChanges(closingPricesForAllStocks) {
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
     // TODO
+
+    let arr = [];
+    for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+      arr.push(
+        `The highest price of ${stocks[
+          i
+        ].toUpperCase()} in the last 5 days was ${Math.max(
+          ...closingPricesForAllStocks[i]
+        ).toFixed(2)}`
+      );
+    }
+    return arr;
+
 }
 
 
