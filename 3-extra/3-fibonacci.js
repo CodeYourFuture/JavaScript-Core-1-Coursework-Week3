@@ -14,7 +14,6 @@
         npm test -- --testPathPattern extra-tests/3-fibonacci.js
 */
 
-let n = 10;
 function generateFibonacciSequence(n) {
   resultFibo = [];
   let num1 = 0;
