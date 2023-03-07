@@ -6,6 +6,9 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+    // to create a new array containing only article titles that have 65 characters or less.
+   return allArticleTitles.filter(title => title.length <= 65);
+ 
 }
 
 /*
@@ -15,6 +18,13 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
     // TODO
+     let fewestWordsTitle = allArticleTitles[0];
+       for (let i = 1; i < allArticleTitles.length; i++) {
+           if (allArticleTitles[i].split(" ").length < fewestWordsTitle.split(" ").length) {
+           fewestWordsTitle = allArticleTitles[i];
+           }
+         }
+        return fewestWordsTitle;
 }
 
 /*
@@ -24,6 +34,17 @@ function titleWithFewestWords(allArticleTitles) {
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+    let headlinesWithNums = [];
+    //Return an array containing all the headlines which contain a number
+  for (let i = 0; i < allArticleTitles.length; i++) {
+    for (let j = 0; j < allArticleTitles[i].length; j++) {
+      if (!isNaN(parseInt(allArticleTitles[i][j]))) {
+        headlinesWithNums.push(allArticleTitles[i]);
+        break;
+      }
+    }
+  }
+  return headlinesWithNums;
 }
 
 /*
@@ -32,6 +53,14 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+    // return the average number of characters in an article title
+
+    let totalChars = 0;
+  for (let i = 0; i < allArticleTitles.length; i++) {
+    totalChars += allArticleTitles[i].length;
+  }
+  let avgChars = Math.round(totalChars / allArticleTitles.length);
+  return avgChars;
 }
 
 

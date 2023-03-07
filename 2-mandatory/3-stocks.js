@@ -35,8 +35,25 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 */
 function getAveragePrices(closingPricesForAllStocks) {
     // TODO
-}
 
+   let output=[]
+
+    for (let i=0 ; i< closingPricesForAllStocks.lenght; i++){
+        const price = closingPricesForAllStocks[i];
+        const totalPrice= price.reduce(function (a,b){
+            return a+b;
+        }, 0)
+        const avarage = totalPrice / price.lenght;
+        const  avarageFixed=avarage.toFixed(2)
+
+        output.push(avarageFixed)
+}
+     
+
+return output;
+
+}
+console.log(getAveragePrices(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS))
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
     Implement the below function, which
@@ -48,10 +65,10 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+   
 }
 
-/*
+/*  
     As part of a financial report, we want to see what the highest price was for each stock in the last 5 days.
     Implement the below function, which
         - Takes 2 parameters:
@@ -65,6 +82,7 @@ function getPriceChanges(closingPricesForAllStocks) {
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
     // TODO
+
 }
 
 
@@ -91,4 +109,4 @@ test("should return a description of the highest price for each stock", () => {
             "The highest price of TSLA in the last 5 days was 1101.30"
         ]
     );
-});
+}); 
