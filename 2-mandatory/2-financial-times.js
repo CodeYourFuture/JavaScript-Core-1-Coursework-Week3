@@ -6,16 +6,44 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+
+  let articleTitles = [];
+  for (let i = 0; i < allArticleTitles.length; i++) {
+    if (allArticleTitles[i].length <= 65) {
+      articleTitles.push(allArticleTitles[i]);
+    }
+  }
+  return articleTitles;
 }
+
 
 /*
     The editor of the FT likes short headlines with only a few words!
     Implement the function below, which returns the title with the fewest words.
     (you can assume words will always be seperated by a space)
 */
+
+
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+
+        // TODO
+
+  let shortestTitle = 0;
+
+//   Infinity initializes shortest Title Length to ensure any subsequent title with
+//    fewer words replaces the previous shortest title.
+  let shortestTitleLength = Infinity;
+  
+  for (let i = 0; i < allArticleTitles.length; i++) {
+    let titleWords = allArticleTitles[i].split(" ");
+    if (titleWords.length < shortestTitleLength) {
+      shortestTitle = allArticleTitles[i];
+      shortestTitleLength = titleWords.length;
+    }
+  }
+  return shortestTitle;
 }
+
 
 /*
     The editor of the FT has realised that headlines which have numbers in them get more clicks!
@@ -24,7 +52,24 @@ function titleWithFewestWords(allArticleTitles) {
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+let headlinesNumbers = []
+for (let i = 0 ; i < allArticleTitles.length ; i++ ) {
+    
+// In JavaScript, /\d/.test checks if a string contains any digit character (0-9). 
+// It returns true if it does and false otherwise.
+
+    if (/\d/.test(allArticleTitles[i])) {    
+
+   headlinesNumbers.push (allArticleTitles[i])
+
+    } 
+
+} return headlinesNumbers
 }
+
+
+
+
 
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
@@ -32,7 +77,16 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+  let totalCharacters = 0;
+
+  for (let i = 0; i < allArticleTitles.length; i++) {
+    totalCharacters += allArticleTitles[i].length;
+  }
+  return Math.round(totalCharacters / allArticleTitles.length);
 }
+
+
+
 
 
 
