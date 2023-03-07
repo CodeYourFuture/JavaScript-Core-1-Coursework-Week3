@@ -90,12 +90,11 @@ function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
   let returnedArray = [];
   let counter = 0;
   for (let element of closingPricesForAllStocks) {
-    //let [...tempArray] = element;
-
+    let companyName = stocks[counter].toUpperCase();
+    let maxOfStock = Math.max(...element);
+    maxOfStock = (Math.round(maxOfStock * 100) / 100).toFixed(2);
     returnedArray.push(
-      `The highest price of ${stocks[
-        counter
-      ].toUpperCase()} in the last 5 days was ${Math.max(...element)}`
+      `The highest price of ${companyName} in the last 5 days was ${maxOfStock}`
     );
     counter++;
   }
