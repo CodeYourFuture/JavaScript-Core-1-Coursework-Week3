@@ -20,16 +20,21 @@ function potentialHeadlines(allArticleTitles) {
     Implement the function below, which returns the title with the fewest words.
     (you can assume words will always be seperated by a space)
 */
+//        ["The", "three", "questions", "that", "dominate", "investment"]
+//         fewestNumberOfWords = articleSplitter.length;
+
 function titleWithFewestWords(allArticleTitles) {
     let shortestHeadline;
-    let fewestNumberOfWords;
+    let fewestNumberOfWords = 1000;
 
-    for (let article of allArticleTitles) {
-
+    for (let headline of allArticleTitles) {
+        let splitArticleTitle = (headline.split(" "));
+        if (splitArticleTitle.length < fewestNumberOfWords) {
+            fewestNumberOfWords = splitArticleTitle.length;
+            shortestHeadline = headline;
+        }
     }
-
-
-
+    return shortestHeadline;
     // TODO
     // loop through the headlines
     //      find number words in the headline
@@ -37,21 +42,50 @@ function titleWithFewestWords(allArticleTitles) {
    // compare the number with 
 }
 
+
 /*
     The editor of the FT has realised that headlines which have numbers in them get more clicks!
     Implement the function below to return a new array containing all the headlines which contain a number.
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
+
+// 1. We are getting array of string. We need to find if the string includes numbers.
+// 2. Once we find a number, we will put the string to the new array.
+// 3. We are going to return the new array. New array is string with numbers.
+
 function headlinesWithNumbers(allArticleTitles) {
+    let newArrayWithNum = [];
+    for (const title of allArticleTitles) {
+        if (/\d/.test(title)) {
+            newArrayWithNum.push(title);
+        }
+    }
+
+    return newArrayWithNum;
     // TODO
 }
+
+        // for (character of title) {
+        //     if (character.includes(Number)) {
+        //         newArrayWithNum.push(title)
+        //    }
 
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
     Implement the function below to return this number - rounded to the nearest integer.
 */
+// 1. We find total characters
+// 2. We need to find the number of Article titles.
+// 3. We divide (total character) by (number of article titles).
+// 4. Round it up
+
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+    let totalCharacter = 0;
+    for (let item of allArticleTitles) {
+        totalCharacter = totalCharacter + item.length;
+    }
+    return Math.round(totalCharacter / allArticleTitles.length);
 }
 
 
@@ -69,6 +103,7 @@ const ARTICLE_TITLES = [
     "The three questions that dominate investment",
     "Brussels urges Chile's incoming president to endorse EU trade deal",
 ];
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
