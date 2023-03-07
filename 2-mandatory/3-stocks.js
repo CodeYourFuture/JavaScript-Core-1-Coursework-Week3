@@ -34,7 +34,24 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Functions can help with this!
 */
 function getAveragePrices(closingPricesForAllStocks) {
-  // TODO
+  //to find total and counter then avarage
+  let returnedArray = [];
+
+  for (let element of closingPricesForAllStocks) {
+    let total = 0;
+    let counter = 0;
+    let avarage = 0;
+
+    for (let elementOfelement of element) {
+      total = total + elementOfelement;
+      counter++;
+    }
+    avarage = total / counter;
+    // Math.round((avarage * 100) / 100);
+    returnedArray.push(Math.round(avarage * 100) / 100);
+  }
+
+  return returnedArray;
 }
 
 /*
@@ -48,7 +65,13 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-  // TODO
+  let returnedArray = [];
+  for (let element of closingPricesForAllStocks) {
+    let [...newArr] = element;
+    let changes = newArr[newArr.length - 1] - newArr[0];
+    returnedArray.push(Math.round(changes * 100) / 100);
+  }
+  return returnedArray;
 }
 
 /*
