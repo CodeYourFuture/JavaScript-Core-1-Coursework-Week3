@@ -28,8 +28,13 @@ const AGES = [
 
 // TODO - Write for loop code here
 
-/*
-The output should look something like this:
+for(let i ; i<WRITERS.length;i++){
+    console.log(`${WRITERS[i]} is ${AGES[i]} years old.`)
+    //This code uses a for loop to iterate over the WRITERS array. 
+    //The loop variable i is used as an index to access the corresponding element in the AGES array.
+    //The template literal syntax is used to create a string that combines the writer's name and age, which is then logged to the console.
+}
+/*The output should look something like this:
 
 Virginia Woolf is 59 years old
 Zadie Smith is 40 years old
