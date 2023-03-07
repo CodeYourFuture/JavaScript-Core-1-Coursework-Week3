@@ -87,7 +87,20 @@ function getPriceChanges(closingPricesForAllStocks) {
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-  // TODO
+  let returnedArray = [];
+  let counter = 0;
+  for (let element of closingPricesForAllStocks) {
+    //let [...tempArray] = element;
+
+    returnedArray.push(
+      `The highest price of ${stocks[
+        counter
+      ].toUpperCase()} in the last 5 days was ${Math.max(...element)}`
+    );
+    counter++;
+  }
+  //   console.log(returnedArray);
+  return returnedArray;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

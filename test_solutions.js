@@ -55,20 +55,32 @@ function getPriceChanges(closingPricesForAllStocks) {
   return returnedArray;
 }
 
-getPriceChanges(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS);
+function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
+  let returnedArray = [];
+  let counter = 0;
+  for (let element of closingPricesForAllStocks) {
+    //let [...tempArray] = element;
+    returnedArray.push(
+      `The highest price of ${stocks[
+        counter
+      ].toUpperCase()} in the last 5 days was ${Math.max(...element)}`
+    );
+    counter++;
+  }
+  console.log(returnedArray);
+  return returnedArray;
+}
 
-// test("should return the price change for each stock", () => {
-//   expect(getPriceChanges(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS)).toEqual([
-//     -6.2, -13.4, 23.9, -82.43, -162.77,
+highestPriceDescriptions(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS, STOCKS);
+
+// test("should return a description of the highest price for each stock", () => {
+//   expect(
+//     highestPriceDescriptions(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS, STOCKS)
+//   ).toEqual([
+//     "The highest price of AAPL in the last 5 days was 180.33",
+//     "The highest price of MSFT in the last 5 days was 342.45",
+//     "The highest price of AMZN in the last 5 days was 3421.37",
+//     "The highest price of GOOGL in the last 5 days was 2958.13",
+//     "The highest price of TSLA in the last 5 days was 1101.30",
 //   ]);
 // });
-
-// getAveragePrices(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS);
-
-/*
-test("should return the average price for each stock", () => {
-  expect(getAveragePrices(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS)).toEqual([
-    176.89, 335.66, 3405.66, 2929.22, 1041.93,
-  ]);
-});
-*/
