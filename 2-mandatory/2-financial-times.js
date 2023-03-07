@@ -5,7 +5,7 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    // TODO
+    return allArticleTitles.filter(item => item.length <65 )
 }
 
 /*
@@ -14,7 +14,7 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+
 }
 
 /*
@@ -23,7 +23,10 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+    const hasNumbers = allArticleTitles.filter(item => /\d/.test(item) );
+    return hasNumbers;
+
+    
 }
 
 /*
