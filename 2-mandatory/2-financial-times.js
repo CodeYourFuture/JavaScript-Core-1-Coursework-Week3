@@ -39,8 +39,24 @@ function titleWithFewestWords(allArticleTitles) {
     Implement the function below to return a new array containing all the headlines which contain a number.
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
+
 function headlinesWithNumbers(allArticleTitles) {
-  // TODO
+  let returnedArray1 = [];
+
+  for (let element of allArticleTitles) {
+    //to loop through the AllArticleTitles
+    let [...tester] = element; // to convert element into an array called tester, then test each char
+
+    for (let numChecker of tester) {
+      // to loop through each element
+      if (numChecker >= 0 && numChecker !== " ") {
+        //this condition is to check if it is a number
+        returnedArray1.push(element); // if passed the condition then store it in returnedArray1
+        break; // since it contains a number, no need to check more characters. break to jump to next element
+      }
+    }
+  }
+  return returnedArray1;
 }
 
 /*
@@ -48,7 +64,13 @@ function headlinesWithNumbers(allArticleTitles) {
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-  // TODO
+  let total = 0;
+  let counter = 0;
+  for (let element of allArticleTitles) {
+    total = total + element.length;
+    counter++;
+  }
+  return Math.round(total / counter);
 }
 
 /* ======= List of Articles - DO NOT MODIFY ===== */

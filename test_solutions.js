@@ -12,25 +12,19 @@
 ];
 */
 
-// let arrayofNumbers = ["1 Hi 1", "Hi 2", "Hi nothing", "Hi 3"];
-let arrayofNumbers = ["1 Hi 1", "Hi 2"];
+let arrayofNumbers = ["1 Hi 1", "Hi 2", "Hi nothing", "Hi 3"];
+// let arrayofNumbers = ["1 Hi 1", "Hi 2"];
 
 function headlinesWithNumbers(allArticleTitles) {
   let returnedArray1 = [];
   for (let element of allArticleTitles) {
-    // console.log("I am the whole array loop" + element);
     let [...tester] = element;
-    // console.log(tester);
 
-    for (let numChecker = 0; numChecker < tester.length; numChecker++) {
-      console.log("I am looping inside element" + numChecker);
-      if (tester[numChecker] >= 0 && tester[numChecker] !== " ") {
-        console.log(element + ": contains a number");
-        returnedArray1.push(allArticleTitles[element]);
-        //     break;
+    for (let numChecker of tester) {
+      if (numChecker >= 0 && numChecker !== " ") {
+        returnedArray1.push(element);
+        break;
       }
-      //   //console.log("not today");
-      // }
     }
   }
   return returnedArray1;
