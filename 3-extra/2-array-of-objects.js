@@ -91,7 +91,7 @@ function getHighestRatedInEachGenre(books) {
 console.log(getHighestRatedInEachGenre(BOOKS));
 
 /* ======= TESTS - DO NOT MODIFY ===== */
-/* test("should return the highest rated book in each genre", () => {
+ test("should return the highest rated book in each genre", () => {
     expect(new Set(getHighestRatedInEachGenre(BOOKS))).toEqual(new Set(
         [
             "The Book Your Dog Wishes You Would Read",
@@ -99,4 +99,4 @@ console.log(getHighestRatedInEachGenre(BOOKS));
             "Dishoom: The first ever cookbook from the much-loved Indian restaurant"
         ]
     ));
-}); */
+}); 
