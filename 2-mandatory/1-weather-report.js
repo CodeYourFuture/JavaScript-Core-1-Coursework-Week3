@@ -24,11 +24,6 @@ function getTemperatureReport(cities) {
     return statements;
 }
 
-
-// first return empty array
-// try putting something into empty array - start with cities
-// try putting temperatures 
-
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 function temperatureService(city) {

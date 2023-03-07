@@ -19,10 +19,10 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 ];
 
 /*
-    We want to understand what the average price over the last 5 days for each stock is.
+    We want to understand what the ---->  average price over the last 5 days for each stock is. <-----
     Implement the below function, which
         - Takes this CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS array as input (remember, it's an array of arrays)
-        - Returns an array containing the average price over the last 5 days for each stock. 
+        - Returns an array containing the average price over the last 5 days for each stock.
             For example, the first element of the resulting array should contain Apple’s (aapl) average stock price for the last 5 days.
             The second element should be Microsoft's (msft) average price, and so on.
     The average value should be rounded to 2 decimal places, and should be a number (not a string)
@@ -33,9 +33,38 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Solve the smaller problems, and then build those solutions back up to solve the larger problem.
         Functions can help with this!
 */
+
+// >> result = array with average of each array --> averageStockFor5Companies
+// get the average of each array --> averageStockPerCompany
+// put it the new array
+// return the new array of averages --> averageStockFor5Companies
+
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+    // const averageStockPerCompany = [];
+    // for (const dailyClosingPrice of closingPricesForAllStocks) {
+        
+    //    averageStockPerCompany.push(dailyClosingPrice)
+    // }
+
+
+    const averageStockPerCompany = (closingPricesForAllStocks) => { 
+        let sumOfStockPerCompany = 0;
+        for (let dailyClosingPrice of closingPricesForAllStocks) { 
+            sumOfStockPerCompany += dailyClosingPrice;
+        }
+        return sumOfStockPerCompany / closingPricesForAllStocks.length;
+    }
+    return averageStockPerCompany;
+
+
+
+
+
+
+    // averagePrice = closingPricesForAllStocks.join(',').length / closingPricesForAllStocks.length;
+    // return Math.round((averagePrice * 100) / 100);
 }
+
 
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
