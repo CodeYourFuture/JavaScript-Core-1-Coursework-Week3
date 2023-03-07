@@ -42,14 +42,14 @@ function headlinesWithNumbers(allArticleTitles) {
     let numberArray =[]
     for (item of allArticleTitles){
         for (element of item){
-            if (element.includes(Number)){
-                numberArray.push(item)
-            }
-        }      
-    } 
-    console.log("YO",numberArray)
-    return numberArray;
-    
+            element = parseInt(element)
+            if (item.includes(element)){
+            numberArray.push(item)
+            break
+            } 
+        }
+    }  
+ return numberArray;  
 }
 
 /*
@@ -59,8 +59,8 @@ function headlinesWithNumbers(allArticleTitles) {
 function averageNumberOfCharacters(allArticleTitles) {
     sumOfStrings=[]
     for (item of allArticleTitles){
-        let itemLenght = item.length
-       sumOfStrings.push(itemLenght)
+        let itemLength = item.length
+       sumOfStrings.push(itemLength)
        } 
     const initialValue = 0;
    const sumWithInitial = sumOfStrings.reduce(
