@@ -24,7 +24,7 @@ function sayHello() {
 let hello = sayHello();
 console.log(hello);
 
-// the function doesn't return anything, so the variable hello is equal to undefined.
+// the function won't return anything, so the variable hello will return undefined.
 
 // Example 3
 function sayHelloToUser(user) {
@@ -34,7 +34,7 @@ function sayHelloToUser(user) {
 sayHelloToUser();
 
 // the function needs an argument called user to be passed through it.
-// in line 34, nothing is being passed through the function so it will be undefined.
+// in line 34, there are no arguments being passed through the function so it will return undefined.
 
 // Example 4
 let arr = [1,2,3];
