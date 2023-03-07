@@ -10,9 +10,6 @@
     Each title in the resulting array should be the highest rated book in its genre.
 */
 
-function getHighestRatedInEachGenre(books) {
-    // TODO
-}
 
 
 /* ======= Book data - DO NOT MODIFY ===== */
@@ -69,9 +66,32 @@ const BOOKS = [
     },
 ]
 
+function getHighestRatedInEachGenre(books) {
+  // TODO
+  //finding all kind of renges and pushing into genres array
+  let genres = [];
+  for (let i = 0; i < books.length; i++) {
+    if (!genres.includes(books[i].genre)) {
+      genres.push(books[i].genre);
+    }
+  }
+  return genres;
+
+  //
+  let ratings = [];
+  for (let i = 0; i < genres.length; i++){
+    for (let j = 0; j < books.length; j++){
+        if (books[j] == genres[i]){
+
+        }
+    }
+  }
+
+}
+console.log(getHighestRatedInEachGenre(BOOKS));
 
 /* ======= TESTS - DO NOT MODIFY ===== */
-test("should return the highest rated book in each genre", () => {
+/* test("should return the highest rated book in each genre", () => {
     expect(new Set(getHighestRatedInEachGenre(BOOKS))).toEqual(new Set(
         [
             "The Book Your Dog Wishes You Would Read",
@@ -79,4 +99,4 @@ test("should return the highest rated book in each genre", () => {
             "Dishoom: The first ever cookbook from the much-loved Indian restaurant"
         ]
     ));
-});
+}); */

@@ -35,32 +35,16 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 */
 function getAveragePrices(closingPricesForAllStocks) {
   // TODO
-/*   const resultArray = [];
-  let totalOfSubArr = 0;
-
-  for (let i = 0; i < 5; i++) {
-    for (let j = 0; j < 5; j++) {
-      if (j === 4) {
-        totalOfSubArr += closingPricesForAllStocks[i][4];
-        totalOfSubArr /= 5;
-        resultArray.push(totalOfSubArr.toFixed(2));
-        totalOfSubArr = 0;
-      } else {
-        totalOfSubArr += closingPricesForAllStocks[i][j];
-      }
+  const resultArray = [];
+  for (let i = 0; i < STOCKS.length; i++) {
+    let total = 0;
+    for (let j = 0; j < closingPricesForAllStocks[i].length; j++) {
+      total += closingPricesForAllStocks[i][j];
     }
+    const average = total / closingPricesForAllStocks[i].length;
+    resultArray.push(parseFloat(average.toFixed(2)));
   }
-  return resultArray; */
-    const resultArray = [];
-    for (let i = 0; i < STOCKS.length; i++) {
-      let total = 0;
-      for (let j = 0; j < closingPricesForAllStocks[i].length; j++) {
-        total += closingPricesForAllStocks[i][j];
-      }
-      const average = total / closingPricesForAllStocks[i].length;
-      resultArray.push(parseFloat(average.toFixed(2)));
-    }
-    return resultArray;
+  return resultArray;
 }
 
 /*
@@ -75,23 +59,16 @@ function getAveragePrices(closingPricesForAllStocks) {
 */
 function getPriceChanges(closingPricesForAllStocks) {
   // TODO
-/*   const resultArray = [];
+  let result = [];
 
-  for (let i = 0; i < 5; i++) {
-      resultArray.push(
-        (closingPricesForAllStocks[i][4] - closingPricesForAllStocks[i][0]).toFixed(2).replace(/\.?0+$/, ""));
+  for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+    let difference = 0;
+    difference =
+      closingPricesForAllStocks[i][closingPricesForAllStocks[i].length - 1] -
+      closingPricesForAllStocks[i][0];
+    result.push(parseFloat(difference.toFixed(2)));
   }
-  return resultArray; */
-
-    const resultArray = [];
-    for (let i = 0; i < STOCKS.length; i++) {
-      const priceChange =
-        closingPricesForAllStocks[i][closingPricesForAllStocks[i].length - 1] -
-        closingPricesForAllStocks[i][0];
-      resultArray.push(parseFloat(priceChange.toFixed(2)));
-    }
-    return resultArray;
-
+  return result;
 }
 
 /*
@@ -108,24 +85,12 @@ function getPriceChanges(closingPricesForAllStocks) {
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
   // TODO
-/*   const resultArray = new Map();
-  for (let i = 0; i < 5; i++){
-    for (let j = 0; j < 5; j++){
-        if(closingPricesForAllStocks[i][j] < closingPricesForAllStocks[i][j+1]){
-            closingPricesForAllStocks[i][j] = closingPricesForAllStocks[i][j+1]
-        }
-    }
+  const resultArray = [];
+  for (let i = 0; i < STOCKS.length; i++) {
+    const highestPrice = Math.max(...closingPricesForAllStocks[i]);
+    resultArray.push(`The highest price of ${stocks[i].toUpperCase()} in the last 5 days was ${highestPrice.toFixed(2)}`);
   }
-  for (let i = 0; i < 5; i++){
-    resultArray.set(closingPricesForAllStocks[i][0], stocks[i]);
-  }
-  return resultArray */
-    const resultArray = [];
-    for (let i = 0; i < STOCKS.length; i++) {
-      const highestPrice = Math.max(...closingPricesForAllStocks[i]);
-      resultArray.push(`The highest price of ${stocks[i].toUpperCase()} in the last 5 days was ${highestPrice.toFixed(2)}`);
-    }
-    return resultArray;
+  return resultArray;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
