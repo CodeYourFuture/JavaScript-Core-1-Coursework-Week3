@@ -12,7 +12,12 @@
 */
 
 function getTemperatureReport(cities) {
-    // TODO
+    report=[];
+    cities.forEach(element => {
+        cityTemperature = (`The temperature in ${element} is ${temperatureService(element)} degrees`);
+        report.push(cityTemperature);
+    });
+    return report;
 }
 
 
