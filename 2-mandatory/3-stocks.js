@@ -86,9 +86,39 @@ function getPriceChanges(closingPricesForAllStocks) {
     The stock ticker should be capitalised.
     The price should be shown with exactly 2 decimal places.
 */
-function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+
+function highestPriceFunction (closingPricesForAllStocks) {
+let highestPriceArray = []
+let price = 0
+let highestPrice = 0
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < 5; j++) {
+            if (closingPricesForAllStocks[i][j] > price) {
+               highestPrice = closingPricesForAllStocks[i][j]
+               price = highestPrice
+            } 
+        }
+        highestPriceArray.push(highestPrice)
+        price = 0
+    }
+    return highestPriceArray
+
 }
+
+function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
+    let resultArray = []
+    highestPriceArray =  highestPriceFunction (closingPricesForAllStocks)
+    for (let i = 0; i < 5; i++) {
+        for(let j = 0; j < 5; j++) {
+            if (i === j) {
+                resultArray.push("The highest price of " + stocks[i].toUpperCase() + " in the last 5 days was " + highestPriceArray[j].toFixed(2))
+            }
+        }
+    }
+    return resultArray
+}
+
+
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
