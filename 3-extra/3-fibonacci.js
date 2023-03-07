@@ -15,6 +15,15 @@
 
 function generateFibonacciSequence(n) {
     // TODO
+    const numberArray = [0, 1];
+    let i = 2;
+    while (numberArray.length<n){
+        let newNumber = numberArray[i-1] + numberArray[i-2];
+        numberArray.push(newNumber);
+        i++;
+    }
+
+    return numberArray;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
