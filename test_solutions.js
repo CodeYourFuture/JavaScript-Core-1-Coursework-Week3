@@ -11,35 +11,3 @@
   "Brussels urges Chile's incoming president to endorse EU trade deal",
 ];
 */
-
-let arrayofNumbers = ["1 Hi 1", "Hi 2", "Hi nothing", "Hi 3"];
-// let arrayofNumbers = ["1 Hi 1", "Hi 2"];
-
-function headlinesWithNumbers(allArticleTitles) {
-  let returnedArray1 = [];
-  for (let element of allArticleTitles) {
-    let [...tester] = element;
-
-    for (let numChecker of tester) {
-      if (numChecker >= 0 && numChecker !== " ") {
-        returnedArray1.push(element);
-        break;
-      }
-    }
-  }
-  return returnedArray1;
-}
-/*
-  for (let element of allArticleTitles) {
-    for (let numChecker of element) {
-      if (typeof numChecker === "number") {
-        console.log(element + ": contains a number");
-      } else {
-        console.log("not today");
-      }
-    }
-  }
-}*/
-
-console.log(headlinesWithNumbers(arrayofNumbers));
-//headlinesWithNumbers(ARTICLE_TITLES);
