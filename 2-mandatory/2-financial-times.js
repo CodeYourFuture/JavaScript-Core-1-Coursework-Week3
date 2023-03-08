@@ -16,6 +16,23 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
+
+    let minWords = Infinity;
+    let minTitle = "";
+    
+    for (let i = 0; i < allArticleTitles.length; i++) {
+      const titleWords = allArticleTitles[i].split(" ");
+      const numWords = titleWords.length;
+      if (numWords < minWords) {
+        minWords = numWords;
+        minTitle = allArticleTitles[i];
+      }
+    }
+    
+    return minTitle;
+  
+
+
     // TODO
 }
 
@@ -25,11 +42,18 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    let result = [];
-
+    
+    const headlinesWithNums = [];
+  
     for (let title of allArticleTitles) {
-
+      if (/\d/.test(title)) {
+        headlinesWithNums.push(title);
+      }
     }
+    
+    return headlinesWithNums;
+  
+    
     // TODO
 }
 
@@ -38,6 +62,19 @@ function headlinesWithNumbers(allArticleTitles) {
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
+
+    let totalChars = 0;
+    let numTitles = 0;
+    
+    for (let title of allArticleTitles) {
+      totalChars += title.length;
+      numTitles++;
+    }
+    
+    const avgChars = Math.round(totalChars / numTitles);
+    return avgChars;
+  
+
     // TODO
 }
 
