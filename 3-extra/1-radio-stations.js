@@ -41,21 +41,17 @@
  */
 // `getStations` goes here
 
-//let allFrequencies = getAllFrequencies()
 
 function getStations(allFrequencies) {
   let arrayOfRadioStations = []
-  let arrayOfFrequencies = allFrequencies
-  
-  for (item of arrayOfFrequencies){
-    if (isRadioStation(item)){
-      arrayOfRadioStations.push(item)
+  allFrequencies = getAllFrequencies()
+  for (i=0; i < allFrequencies.length; i++){
+    if (isRadioStation(allFrequencies[i])){
+      arrayOfRadioStations.push(allFrequencies[i])
     }
   }
   return arrayOfRadioStations
 }
-
-getStations(getAllFrequencies())
 /*
  * ======= TESTS - DO NOT MODIFY =======
  * Note: You are not expected to understand everything below this comment!
