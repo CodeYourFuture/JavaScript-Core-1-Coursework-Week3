@@ -13,9 +13,9 @@
 
 function getTemperatureReport(cities) {
   // TODO
-  var temp_array = [];
-  for (var i = 0; i < cities.length; i++) {
-    var temp = temperatureService(cities[i]);
+  const temp_array = [];
+  for (let i = 0; i < cities.length; i++) {
+    let temp = temperatureService(cities[i]);
     temp_array.push(`The temperature in ${cities[i]} is ${temp} degrees`);
   }
   return temp_array;
@@ -51,10 +51,7 @@ test("should return a temperature report for the user's cities", () => {
 test("should return a temperature report for the user's cities (alternate input)", () => {
   let usersCities = ["Barcelona", "Dubai"];
 
-  expect(getTemperatureReport(usersCities)).toEqual([
-    "The temperature in Barcelona is 17 degrees",
-    "The temperature in Dubai is 27 degrees",
-  ]);
+  expect(getTemperatureReport(usersCities)).toEqual(["The temperature in Barcelona is 17 degrees", "The temperature in Dubai is 27 degrees"]);
 });
 
 test("should return an empty array if the user hasn't selected any cities", () => {
