@@ -33,8 +33,24 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Solve the smaller problems, and then build those solutions back up to solve the larger problem.
         Functions can help with this!
 */
+
+// 1. Find the total price of each company stocks in the last 5 days
+// 2. Divide the total price by the number of days i.e. 5
+
+
+
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+    let arrayOfAverageValues = [];
+    for (let closingPriceEachCompany of closingPricesForAllStocks) {
+        let sumOfClosingPriceEachCompany = 0;
+        for (i = 0; i < closingPriceEachCompany.length; i++) {
+            sumOfClosingPriceEachCompany = sumOfClosingPriceEachCompany + closingPriceEachCompany[i];
+            averagePriceEachCompany = (sumOfClosingPriceEachCompany / closingPriceEachCompany.length).toFixed(2);
+        }
+        averagePricesNumberType = parseFloat(averagePriceEachCompany);
+        arrayOfAverageValues.push(averagePricesNumberType);
+    }
+    return arrayOfAverageValues;
 }
 
 /*
@@ -48,7 +64,13 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+    let newPriceChangeArray = [];
+    for (let closingPricesEachcompany of closingPricesForAllStocks) {
+            let priceChange = (closingPricesEachcompany[4] - closingPricesEachcompany[0]).toFixed(2); 
+            let priceChangeValues = parseFloat(priceChange);
+            newPriceChangeArray.push(priceChangeValues);
+    }
+    return newPriceChangeArray;
 }
 
 /*
@@ -63,9 +85,35 @@ function getPriceChanges(closingPricesForAllStocks) {
     The stock ticker should be capitalised.
     The price should be shown with exactly 2 decimal places.
 */
-function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
-}
+
+    // for (i = 0; i < closingPricesForAllStocks.length; i++) {
+    //   let highestPrice = 0;
+    //   for (let companyPriceArray of closingPricesForAllStocks) {
+    //     if (companyPriceArray[i] > highestPrice) {
+    //       highestPrice = companyPriceArray[i];
+    //     }
+    //   }
+    //   arrayWithHighestValue.push(highestPrice);
+
+      function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
+        let highestCompanyStockPrices = [];
+        let namesOfCompanies = [];
+        let highestPrice = 0;
+        for (i = 0; i < closingPricesForAllStocks.length; i++) {
+            for (let closingPricePerDay of closingPricesForAllStocks[i]) {
+                if (closingPricePerDay > highestPrice) {
+                    highestPrice = closingPricePerDay;     
+                }
+            }
+            let upperStock = stocks[i].toUpperCase();
+            highestCompanyStockPrices.push(
+              `The highest price of ${upperStock} in the last 5 days was ${highestPrice.toFixed(2)}`);
+            highestPrice = 0;
+        }
+        return highestCompanyStockPrices;
+        // return `The highest price of ${stocks} in the last 5 days was ${arrayWithHighestValue[i]}`;
+      }
+      
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
@@ -81,7 +129,7 @@ test("should return the price change for each stock", () => {
     );
 });
 
-test("should return a description of the highest price for each stock", () => {
+test.only("should return a description of the highest price for each stock", () => {
     expect(highestPriceDescriptions(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS, STOCKS)).toEqual(
         [
             "The highest price of AAPL in the last 5 days was 180.33",
