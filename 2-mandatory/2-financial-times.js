@@ -21,15 +21,14 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    let answer = allArticleTitles[0]
+    let smallest = allArticleTitles[0]
     for(i=0; i < allArticleTitles.length; i++){
-        if (allArticleTitles[0].length > allArticleTitles[i].length){
-         allArticleTitles[0] = allArticleTitles[i]
+        if (smallest.length > allArticleTitles[i].length){
+         smallest = allArticleTitles[i]
         }   
     }
-    answer = allArticleTitles[0]
-  console.log(answer)
- return answer
+
+ return smallest
  
 }
 

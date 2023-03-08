@@ -13,11 +13,26 @@
  * - Should return this array to use in other functions
  */
 
+
 // `getAllFrequencies` goes here
+
+ function getAllFrequencies(){
+  let startFrequency = 87
+  let arrayOfFrequencies = []
+  while(startFrequency <= 108){
+    arrayOfFrequencies.push(startFrequency)
+    startFrequency = startFrequency + 1
+  }
+  return arrayOfFrequencies
+ }
+
+
 
 /**
  * Next, let's write a function that gives us only the frequencies that are radio stations.
  * Call this function `getStations`.
+ * 
+
  *
  * This function should:
  * - Get the available frequencies from `getAllFrequencies`
@@ -26,6 +41,21 @@
  */
 // `getStations` goes here
 
+//let allFrequencies = getAllFrequencies()
+
+function getStations(allFrequencies) {
+  let arrayOfRadioStations = []
+  let arrayOfFrequencies = allFrequencies
+  
+  for (item of arrayOfFrequencies){
+    if (isRadioStation(item)){
+      arrayOfRadioStations.push(item)
+    }
+  }
+  return arrayOfRadioStations
+}
+
+getStations(getAllFrequencies())
 /*
  * ======= TESTS - DO NOT MODIFY =======
  * Note: You are not expected to understand everything below this comment!
@@ -54,6 +84,9 @@ function getAvailableStations() {
 function isRadioStation(frequency) {
   return getAvailableStations().includes(frequency);
 }
+
+
+
 
 test("getAllFrequencies() returns all frequencies between 87 and 108", () => {
   expect(getAllFrequencies()).toEqual([
