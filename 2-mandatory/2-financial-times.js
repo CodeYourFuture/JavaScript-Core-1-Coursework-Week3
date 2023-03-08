@@ -1,11 +1,19 @@
 /*
-    Imagine you are working on the Financial Times web site! They have a list of article titles stored in an array.
+    Imagine you are working on the Financial Times website! They have a list of article titles stored in an array.
 
     The home page of the web site has a headline section, which only has space for article titles which are 65 characters or less.
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    // TODO
+    let titlesShortEnough = [ ];
+
+    for (const title of allArticleTitles) {
+        if(title.length <= 65) {
+            titlesShortEnough.push(title);
+        } 
+    }
+
+    return titlesShortEnough;
 }
 
 /*
@@ -14,16 +22,33 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
-}
 
+    let smallestTitle = allArticleTitles[0];
+
+    for (i = 1; i < allArticleTitles.length; i++) {
+
+        if (smallestTitle.split(" ").length > allArticleTitles[i].split(" ").length) {
+            smallestTitle = allArticleTitles[i];
+        }
+    }
+   return smallestTitle;
+}
 /*
     The editor of the FT has realised that headlines which have numbers in them get more clicks!
     Implement the function below to return a new array containing all the headlines which contain a number.
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
+
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+    let headlinesWithNumbers = [ ];
+    const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+    for (i = 0; i < allArticleTitles.length; i++) {
+        if(numbers.some(element => allArticleTitles[i].includes(element))) {
+            headlinesWithNumbers.push(allArticleTitles[i]);
+        }
+    }
+    return headlinesWithNumbers;
 }
 
 /*
