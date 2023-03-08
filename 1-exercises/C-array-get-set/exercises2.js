@@ -7,6 +7,8 @@
 */
 
 let numbers = [1, 2, 3]; // Don't change this array literal declaration
+numbers[2] = 4;
+numbers[1] = 1;
 
 /* 
   DO NOT EDIT BELOW THIS LINE
