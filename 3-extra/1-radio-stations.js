@@ -4,6 +4,7 @@
  * the radio waves for some good music.
  */
 
+
 /**
  * First, let's create a function that creates a list of all the frequencies.
  * Call this function `getAllFrequencies`.
@@ -13,7 +14,17 @@
  * - Should return this array to use in other functions
  */
 
+
 // `getAllFrequencies` goes here
+
+function getAllFrequencies() {
+let frequencies = [];
+for (let i = 87; i <= 108; i++) {
+frequencies.push(i);
+}
+return frequencies;
+}
+
 
 /**
  * Next, let's write a function that gives us only the frequencies that are radio stations.
@@ -24,9 +35,24 @@
  * - There is a helper function called isRadioStation that takes an integer as an argument and returns a boolean.
  * - Return only the frequencies that are radio stations.
  */
+
+
 // `getStations` goes here
 
+function getStations() {
+let stations = [];
+let frequencies = getAllFrequencies();
+for (let i = 0; i < frequencies.length; i++) {
+let frequency = frequencies[i];
+if (isRadioStation(frequency)) {
+stations.push(frequency);
+}
+}
+return stations;
+}
+
 /*
+
  * ======= TESTS - DO NOT MODIFY =======
  * Note: You are not expected to understand everything below this comment!
  */

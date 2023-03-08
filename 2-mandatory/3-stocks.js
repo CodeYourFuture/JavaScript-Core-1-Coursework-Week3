@@ -35,6 +35,23 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 */
 function getAveragePrices(closingPricesForAllStocks) {
     // TODO
+    const averages = [];
+
+  // Loop through the outer array (representing the stocks)
+  for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+    const prices = closingPricesForAllStocks[i];
+
+    // Sum up the prices and divide by the length to get the average
+    const sum = prices.reduce((acc, curr) => acc + curr, 0);
+    const average = sum / prices.length;
+
+    // Round the average to 2 decimal places and add it to the new array
+    const roundedAverage = Number(average.toFixed(2));
+    averages.push(roundedAverage);
+  }
+
+  // Return the new array with the rounded averages
+  return averages;
 }
 
 /*
@@ -49,6 +66,22 @@ function getAveragePrices(closingPricesForAllStocks) {
 */
 function getPriceChanges(closingPricesForAllStocks) {
     // TODO
+    const priceChanges = [];
+
+  // Loop through each sub-array in closingPricesForAllStocks
+  for (const stockPrices of closingPricesForAllStocks) {
+    // Get the first and last elements of the sub-array
+    const firstPrice = stockPrices[0];
+    const lastPrice = stockPrices[stockPrices.length - 1];
+
+    // Calculate the price change and round to 2 decimal places
+    const change = +(lastPrice - firstPrice).toFixed(2);
+
+    // Add the price change to the priceChanges array
+    priceChanges.push(change);
+  }
+
+  return priceChanges;
 }
 
 /*
@@ -65,6 +98,18 @@ function getPriceChanges(closingPricesForAllStocks) {
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
     // TODO
+    const descriptions = [];
+
+  for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+    const stockPrices = closingPricesForAllStocks[i];
+    const stockName = stocks[i].toUpperCase();
+
+    const highestPrice = Math.max(...stockPrices).toFixed(2);
+    const description = `The highest price of ${stockName} in the last 5 days was ${highestPrice}`;
+    descriptions.push(description);
+  }
+
+  return descriptions;
 }
 
 

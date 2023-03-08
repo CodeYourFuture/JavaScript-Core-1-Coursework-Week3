@@ -12,6 +12,23 @@
 
 function getHighestRatedInEachGenre(books) {
     // TODO
+    // Create an object to store the highest rated book for each genre
+  const highestRatedBooks = {};
+
+  // Loop through the array of books
+  books.forEach(book => {
+    const { title, genre, rating } = book;
+    // Check if there is no highest rated book for the genre yet or if the current book has a higher rating
+    if (!highestRatedBooks[genre] || rating > highestRatedBooks[genre].rating) {
+      highestRatedBooks[genre] = { title, rating };
+    }
+  });
+
+  // Map the highest rated book for each genre to an array of titles
+  const titles = Object.values(highestRatedBooks).map(book => book.title);
+
+  return titles;
+
 }
 
 
