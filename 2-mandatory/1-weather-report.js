@@ -12,8 +12,35 @@
 */
 
 function getTemperatureReport(cities) {
-    // TODO
+         const temperatureStatements = [];
+      
+        cities.forEach(city => {
+          let temperature = 0;
+          switch (city) {
+            case 'Ndola':
+              temperature = 20;
+              break;
+            case 'Kitwe':
+              temperature = 30;
+              break;
+            case 'London':
+              temperature = 40;
+              break;
+            default:
+              temperature = 0;
+              break;
+                 // Construct a statement about the temperature of the city
+    const temperatureStatement = `${city} is currently ${temperature} degrees Celsius.`;
+
+    // Add the statement to the array
+    temperatureStatements.push(temperatureStatement);
+  });
+
+  return temperatureStatements;
 }
+      getTemperatureReport(kitwe)
+    // TODO
+
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
