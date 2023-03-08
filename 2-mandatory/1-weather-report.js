@@ -1,4 +1,5 @@
 /*
+
     Imagine we're making a weather app!
     
     We have a list of cities that the user wants to track.
@@ -12,8 +13,19 @@
 */
 
 function getTemperatureReport(cities) {
-    // TODO
+    forecast = []
+    for(city of cities){
+        temperature = temperatureService(city);
+        information = `The temperature in ${city} is ${temperature} degrees`;
+        forecast.push(information);
+    }
+    return forecast;
+    
+
+
+
 }
+ 
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
