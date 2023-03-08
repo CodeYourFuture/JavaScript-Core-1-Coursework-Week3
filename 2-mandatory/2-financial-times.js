@@ -21,17 +21,22 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 
+// count the words
+// compare the number of words with each other to find the one with the fewest words
+// translate the number of words back to its title
+// return a title
+
 function titleWithFewestWords(allArticleTitles) {
-  let fewestWordsSoFar;
-  let shortestTitleSoFar;
-  for (const articleTitle of allArticleTitles) {
-    let numberOfWords = articleTitle.split(" ").length;
-    if (numberOfWords < fewestWordsSoFar || fewestWordsSoFar === undefined) {
-      fewestWordsSoFar = numberOfWords;
-      shortestTitleSoFar = articleTitle;
+  let fewestWordsSoFar = allArticleTitles[0]; // Assume the first title has the fewest words
+
+  for (let count = 1; count < allArticleTitles.length; count++) {
+    const currentTitle = allArticleTitles[count];
+    if (currentTitle.split(" ").length < fewestWordsSoFar.split(" ").length) {
+      // .length to drop out of loop when it reaches end of length
+      fewestWordsSoFar = currentTitle;
     }
   }
-  return shortestTitleSoFar;
+  return fewestWordsSoFar;
 }
 
 /*
@@ -40,23 +45,19 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 
-// array with string of article titles - allArticleTitles
-// search each character in string to find the ones with a number
-// place them into new empty array
-// return the new array
-
-//////////////////// HELP!!! ////////////////////////////////////////
-
-// function headlinesWithNumbers(allArticleTitles) {
-//     const numberTitle = [];
-//     for (const articleTitle of allArticleTitles) {
-//         if (articleTitle.includes(typeof 'number')) {
-//             numberTitle.push(articleTitle)
-//         }
-//     } return numberTitle;
-
-// }
-/////////////////////////////////////////////////////////////////////
+function headlinesWithNumbers(allArticleTitles) {
+  const numberTitle = [];
+  for (const articleTitle of allArticleTitles) {
+    for (let character = 0; character < articleTitle.length; character++) {
+      if (articleTitle[character] >= "0" && articleTitle[character] <= "9") {
+        // ?? more than 0 is the same is less than 9
+        numberTitle.push(articleTitle);
+        break;
+      }
+    }
+  }
+  return numberTitle;
+}
 
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
@@ -64,7 +65,7 @@ function titleWithFewestWords(allArticleTitles) {
 */
 
 function averageNumberOfCharacters(allArticleTitles) {
-  averageTitleChars =
+  let averageTitleChars =
     allArticleTitles.join("").length / allArticleTitles.length;
   return Math.round(averageTitleChars);
 }
