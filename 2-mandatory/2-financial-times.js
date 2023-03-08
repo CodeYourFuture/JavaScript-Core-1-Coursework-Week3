@@ -50,25 +50,13 @@ function titleWithFewestWords(allArticleTitles) {
 // function headlinesWithNumbers(allArticleTitles) {
 //     const numberTitle = [];
 //     for (const articleTitle of allArticleTitles) {
-//         allArticleTitles.toString();
 //         if (articleTitle.includes(typeof 'number')) {
 //             numberTitle.push(articleTitle)
 //         }
 //     } return numberTitle;
 
 // }
-//////////////////////////////////////////////////////
-
-// if (typeof numberTitle === "number"){}
-
-// isInteger method?
-
-// for (const articleTitle of allArticleTitles) {
-//     if (typeof articleTitle === "number") {
-//         numberTitle.push(articleTitle)
-//     }
-// }
-// return numberTitle;
+/////////////////////////////////////////////////////////////////////
 
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
