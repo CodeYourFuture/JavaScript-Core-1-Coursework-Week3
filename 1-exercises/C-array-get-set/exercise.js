@@ -16,7 +16,7 @@ function last(arr) {
   DO NOT EDIT BELOW THIS LINE
   --------------------------- */
 let numbers = [1, 2, 3];
-let names = ["Irina", "Ashleigh", "Mozafar", "Joe"];
+let names = ['Irina', 'Ashleigh', 'Mozafar', 'Joe'];
 
 console.log(first(numbers));
 console.log(last(numbers));
