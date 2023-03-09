@@ -102,8 +102,8 @@ function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
   
         }
         
-        highestPrice = Number(highestPrice.toFixed(2));
-        highestPriceReports.push(`The highest price of ${stock.toUpperCase()} in the last 5 days was ${highestPrice}`);
+       // highestPrice = Number(highestPrice.toFixed(2));
+        highestPriceReports.push(`The highest price of ${stock.toUpperCase()} in the last 5 days was ${highestPrice.toFixed(2)}`);
         pricesArray++;
         
     }
