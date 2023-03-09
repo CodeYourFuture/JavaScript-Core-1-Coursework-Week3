@@ -19,13 +19,35 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 ];
 
 /*
+    When deailng with stock prices usually we need to round the number to two decimal digits after calculations.
+    To help with this create a helper function that rounds any number to two digits and returns the rounded number as number (not string)
+    Example:
+        10.356 should return 10.36
+        10.3 should return 10.3
+*/
+function roundStockPriceToCents(number) {
+    // TODO
+}
+
+/*
+    When displaying stock prices usually we need to make sure we always display them using exactly two decimal digits.
+    To help with this create a helper function that converts any number to strings having exactly two decimal digits.
+    Example:
+        10.356 should return '10.36'
+        10.3 should return '10.30'
+*/
+function displayStockPrice(number) {
+    // TODO
+}
+
+/*
     We want to understand what the average price over the last 5 days for each stock is.
     Implement the below function, which
         - Takes this CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS array as input (remember, it's an array of arrays)
-        - Returns an array containing the average price over the last 5 days for each stock. 
+        - Returns an array containing the average price over the last 5 days for each stock.
             For example, the first element of the resulting array should contain Apple’s (aapl) average stock price for the last 5 days.
             The second element should be Microsoft's (msft) average price, and so on.
-    The average value should be rounded to 2 decimal places, and should be a number (not a string)
+    The average value should be rounded to 2 decimal places, and should be a number (not a string). You can use the helper functions defined above.
 
     Hint 1: To calculate the average of a set of values, you can add them together and divide by the number of values.
         So the average of 5, 10 and 20 is (5 + 10 + 20) / 3 = 11.67
@@ -45,7 +67,7 @@ function getAveragePrices(closingPricesForAllStocks) {
             For example, the first element of the resulting array should contain Apple’s (aapl) price change for the last 5 days.
             In this example it would be:
                 (Apple's price on the 5th day) - (Apple's price on the 1st day) = 172.99 - 179.19 = -6.2
-    The price change value should be rounded to 2 decimal places, and should be a number (not a string)
+    The price change value should be rounded to 2 decimal places, and should be returned as a number (not a string).  You can use the helper functions defined above.
 */
 function getPriceChanges(closingPricesForAllStocks) {
     // TODO
@@ -61,7 +83,7 @@ function getPriceChanges(closingPricesForAllStocks) {
             For example, the first element of the array should be: "The highest price of AAPL in the last 5 days was 180.33"
             The test will check for this exact string.
     The stock ticker should be capitalised.
-    The price should be shown with exactly 2 decimal places.
+    The price should be shown with exactly 2 decimal places, e.g. '180.30'. You can use the helper functions defined above.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
     // TODO
@@ -69,6 +91,22 @@ function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
+test("should round to two digits if more precise", () => {
+    expect(roundStockPriceToCents(10.356)).toEqual(10.36)
+});
+
+test("should keep the number unchanged if precision is less", () => {
+    expect(roundStockPriceToCents(10.3)).toEqual(10.3)
+});
+
+test("should round to two digits and convert to string if more precise", () => {
+    expect(displayStockPrice(10.356)).toEqual('10.36')
+});
+
+test("should add extra 0s if precision is less", () => {
+    expect(displayStockPrice(10.3)).toEqual('10.30')
+});
+
 test("should return the average price for each stock", () => {
     expect(getAveragePrices(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS)).toEqual(
         [176.89, 335.66, 3405.66, 2929.22, 1041.93]
