@@ -11,7 +11,19 @@
 */
 
 function getHighestRatedInEachGenre(books) {
-    // TODO
+   
+   let arrayOfBooks = [];
+   let highestRate;
+   for (let item of book){
+    if (highestRate==undefined || highestRate < book[i].genre){
+        highestRate = book[i].rating;
+        arrayOfBooks.push(book[i].title);
+    }
+    return arrayOfBooks;
+   }
+
+    //for each genre check highest rate and get title
+   // TODO
 }
 
 
