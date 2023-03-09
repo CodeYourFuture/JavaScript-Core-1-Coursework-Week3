@@ -5,7 +5,15 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    // TODO
+
+    let fittingArticles = [];
+
+    for (const title of allArticleTitles) {
+        if (title.length <= 65){
+            fittingArticles.push(title);
+        }
+    }
+    return fittingArticles;
 }
 
 /*
@@ -14,7 +22,13 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+    let shortestTitle = allArticleTitles[0];
+    for (const newTitle of allArticleTitles){
+        if (newTitle.length <= shortestTitle.length){
+            shortestTitle = newTitle;
+        }
+    }
+    return shortestTitle;
 }
 
 /*
@@ -23,7 +37,18 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+    let clickables = [];
+
+    for (const title of allArticleTitles){
+        for (const character of title){
+            if ('0123456789'.includes(character)){ //if (character = Number) my previous -failed- solution.
+                clickables.push(title);
+               break;
+            }
+            
+        }
+    }
+    return clickables;
 }
 
 /*
@@ -31,9 +56,22 @@ function headlinesWithNumbers(allArticleTitles) {
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
-}
+    let charactersCount= 0;
+    let titlesCount = 0;
 
+    for (const title of allArticleTitles){
+
+        if (title.length > 0){
+            charactersCount += title.length;
+
+        }
+        
+        titlesCount++;
+    }
+
+    let average = charactersCount / titlesCount;
+    return Math.round(average);
+}
 
 
 /* ======= List of Articles - DO NOT MODIFY ===== */

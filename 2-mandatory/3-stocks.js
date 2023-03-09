@@ -34,7 +34,22 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Functions can help with this!
 */
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+    let averagePrices = [];
+
+    for (const stock of CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS){
+        let pricesTotal = 0;
+        
+        for (const prices of stock){
+            
+            pricesTotal += prices;
+        }
+
+        let averagePrice = Number((pricesTotal / stock.length).toFixed(2));
+        averagePrices.push(averagePrice);
+    }
+
+   
+    return averagePrices;
 }
 
 /*
@@ -48,7 +63,13 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+    const priceChanges = [];
+
+    for (const stock of CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS){
+        let priceChange = Number((stock[4] - stock[0]).toFixed(2));
+        priceChanges.push(priceChange);
+    }
+    return priceChanges;
 }
 
 /*
@@ -63,8 +84,32 @@ function getPriceChanges(closingPricesForAllStocks) {
     The stock ticker should be capitalised.
     The price should be shown with exactly 2 decimal places.
 */
+
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+    const highestPriceReports = [];
+    let pricesArray = 0;
+   
+
+    for (const stock of stocks){
+        let highestPrice = 0;
+        let stockPrices = CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[pricesArray];
+        
+        for (const price of stockPrices){
+
+            if (price > highestPrice){
+                highestPrice = price;
+            }
+  
+        }
+        
+       // highestPrice = Number(highestPrice.toFixed(2));
+       //(Number object switchh the value from "string" to numbers, which don't see the onely zero at the decimal place as a number then).
+        highestPriceReports.push(`The highest price of ${stock.toUpperCase()} in the last 5 days was ${highestPrice.toFixed(2)}`);
+        pricesArray++;
+        
+    }
+
+    return highestPriceReports;
 }
 
 
