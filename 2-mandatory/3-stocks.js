@@ -37,16 +37,15 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 // 
 
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+   
   let arrayWithAveragePrices = [];
-  //looping through array of arrays and calling findAveragePrice method on each array
+ 
   for (let arrayWithPrices of closingPricesForAllStocks) {
     arrayWithAveragePrices.push(findAveragePrice(arrayWithPrices));
   }
   return arrayWithAveragePrices;
 }
 
-//function to find average price in array
 function findAveragePrice(array) {
   let sum = 0;
   for (let price of array) {

@@ -25,29 +25,19 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 
-// function titleWithFewestWords(allArticleTitles) {
-//     let shortestHeadlines = allArticleTitles[0];
-//     console.log(allArticleTitles[0])
-//     for (let i = 0; i < allArticleTitles.length; i++) {
-//         const currentTitle = allArticleTitles[i];
-//         if (currentTitle.length < shortestHeadlines.length) {
-//             shortestHeadlines = currentTitle  
-//         }
-//     }
-//     return shortestHeadlines;
-// }
+
 
 function titleWithFewestWords(allArticleTitles) {
     // TODO
-    let shortestTitle = allArticleTitles[0];
+    let shortestHeadlines = allArticleTitles[0];
     // console.log(allArticleTitles[0])
     for (let i = 1; i < allArticleTitles.length; i++) {
         let currentTitle = allArticleTitles[i];
-        if (currentTitle.length < shortestTitle.length) {
-            shortestTitle = currentTitle  
+        if (currentTitle.length < shortestHeadlines.length) {
+            shortestHeadlines = currentTitle  
         }
     }
-    return shortestTitle;
+    return shortestHeadlines;
 }
 
 /*
@@ -72,29 +62,8 @@ function headlinesWithNumbers(allArticleTitles) {
     The Financial Times wants to understand what the average number of characters in an article title is.
     Implement the function below to return this number - rounded to the nearest integer.
 */
-// function averageNumberOfCharacters(allArticleTitles) {
-//     // TODO
-//     let total = 0;
-// for(let title of allArticleTitles) {
-//    total += title.lenght;
-// }
-// return Math.round(total / allArticleTitles.length);
-// }
 
-// function averageNumberOfCharacters(allArticleTitles) {
-//     // TODO
 
-//   let sum = 0;
-
-//   for (let title of allArticleTitles) {
-//     sum += title.length;
-//   }
-
-//   return Math.round(sum / allArticleTitles.length);
-// }
-
-// }
-// Math.round() https://www.w3schools.com/jsref/jsref_round.asp
 
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
