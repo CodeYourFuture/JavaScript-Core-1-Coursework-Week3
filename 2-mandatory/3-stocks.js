@@ -78,7 +78,28 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+    let maxPrices = [ ];
+    let stockNames = stocks;
+    let maxStockDescriptions = [ ];
+
+    for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+        let currentMax = closingPricesForAllStocks[i][0];
+
+        for (let j = 0; j < closingPricesForAllStocks[i].length; j++) {
+            let currentElement = closingPricesForAllStocks[i][j];
+
+            if (currentElement >= currentMax) {
+                currentMax = currentElement;
+            }
+        }
+        
+        let capitaliseStockNames = stockNames[i].toUpperCase();
+
+        maxPrices.push(currentMax.toFixed(2));
+        maxStockDescriptions.push(`The highest price of ${capitaliseStockNames} in the last 5 days was ${maxPrices[i]}`)
+    }
+    
+    return maxStockDescriptions;
 }
 
 

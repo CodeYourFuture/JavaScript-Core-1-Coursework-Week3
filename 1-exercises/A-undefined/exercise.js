@@ -34,7 +34,7 @@ function sayHelloToUser(user) {
 sayHelloToUser();
 
 // the function needs an argument called user to be passed through it.
-// in line 34, there are no arguments being passed through the function so it will return undefined.
+// in line 34, there are no arguments being passed through the function so it will return Hello undefined.
 
 // Example 4
 let arr = [1,2,3];
