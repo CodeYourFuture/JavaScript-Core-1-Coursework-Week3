@@ -7,11 +7,15 @@
 function potentialHeadlines(allArticleTitles) {
   // TODO
 
-  articles_title = [];
-  for (article of headline) {
-    if (articleTittle <= 65) articles_title.push(headline);
+  let lessArticle = [];
+
+  for (headline of allArticleTitles) {
+    if (headline.length <= 65) {
+      lessArticle.push(headline);
+    }
   }
-  return headline;
+
+  return lessArticle;
 }
 
 /*
@@ -21,6 +25,22 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
   // TODO
+
+  headlines = potentialHeadlines(allArticleTitles);
+
+  let shortHeadline = [];
+  let fewestWords = 100;
+
+  for (article of allArticleTitles) {
+    articleSplitter = article.split(" ");
+
+    if (articleSplitter.length < fewestWords) {
+      fewestWords = articleSplitter.length;
+      shortHeadline = article;
+    }
+  }
+
+  return shortHeadline;
 }
 
 /*
@@ -28,8 +48,20 @@ function titleWithFewestWords(allArticleTitles) {
     Implement the function below to return a new array containing all the headlines which contain a number.
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
+
 function headlinesWithNumbers(allArticleTitles) {
   // TODO
+
+  let headlinesWithNumbers = [];
+
+  for (singleTitle of allArticleTitles) {
+    let numberChecker = /[0-9]/.test(singleTitle);
+
+    if (numberChecker === true) {
+      headlinesWithNumbers.push(singleTitle);
+    }
+  }
+  return headlinesWithNumbers;
 }
 
 /*
@@ -38,6 +70,14 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
   // TODO
+
+  totalcharacters = 0;
+
+  for (let items of allArticleTitles) {
+    totalcharacters = totalcharacters + items.length;
+  }
+
+  return Math.round(totalcharacters / allArticleTitles.length);
 }
 
 /* ======= List of Articles - DO NOT MODIFY ===== */

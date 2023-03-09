@@ -10,16 +10,16 @@
 */
 
 // Example 1
-let = a;
+let a;
 console.log(a);
 
 // Example 2
 function sayHello() {
-  let message = "Hello";
+  console.log("Hello");
 }
 
-let hello = sayHello();
-console.log(hello);
+let result = sayHello();
+console.log(result);
 
 // Example 3
 function sayHelloToUser(user) {
@@ -29,5 +29,5 @@ function sayHelloToUser(user) {
 sayHelloToUser();
 
 // Example 4
-let letters = [1, 2, 3];
-console.log(letter[2]);
+// let letters = [1, 2, 3];
+// console.log(letter[2]);

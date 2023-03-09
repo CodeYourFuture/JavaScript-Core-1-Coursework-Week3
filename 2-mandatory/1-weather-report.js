@@ -27,7 +27,7 @@ const cities = [
   "Barcelona",
   "Dubai",
   "Mumbai",
-  "Sao Paulo",
+  "São Paulo",
   "Lagos",
 ];
 
