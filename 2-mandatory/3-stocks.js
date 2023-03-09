@@ -103,6 +103,7 @@ function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
         }
         
        // highestPrice = Number(highestPrice.toFixed(2));
+       //(Number object switchh the value from "string" to numbers, which don't see the onely zero at the decimal place as a number then).
         highestPriceReports.push(`The highest price of ${stock.toUpperCase()} in the last 5 days was ${highestPrice.toFixed(2)}`);
         pricesArray++;
         
