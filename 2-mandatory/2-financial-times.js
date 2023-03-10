@@ -1,12 +1,23 @@
 /*
-    Imagine you are working on the Financial Times web site! They have a list of article titles stored in an array.
+    Imagine you are working on the Financial Times web site! 
+    They have a list of article titles stored in an array.
 
-    The home page of the web site has a headline section, which only has space for article titles which are 65 characters or less.
-    Implement the function below, which will return a new array containing only article titles which will fit.
+    The home page of the web site has a headline section,
+     which only has space for article titles which are 65 characters or less.
+    Implement the function below, which will return a new array
+     containing only article titles which will fit.
 */
+
 function potentialHeadlines(allArticleTitles) {
-    // TODO
-}
+    let headline = [];
+    for (let article of allArticleTitles) {
+        if (article.length <= 65) {
+            headline.push(article);
+        }
+    }
+    return headline
+  }
+
 
 /*
     The editor of the FT likes short headlines with only a few words!
@@ -14,7 +25,16 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+    let numberOfWords;
+    let smallerTitle;
+    for (let headlineTitle of allArticleTitles) {
+        let titleSplit = headlineTitle.split(" ").length;
+        if (titleSplit < numberOfWords || numberOfWords === undefined) {
+            numberOfWords = titleSplit;
+            smallerTitle = headlineTitle;
+        }
+    }
+    return smallerTitle;
 }
 
 /*
@@ -24,6 +44,13 @@ function titleWithFewestWords(allArticleTitles) {
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+    let arrayOfNumbers = [];
+    for (article of allArticleTitles) {
+        if (/\d/.test(article)) {
+            arrayOfNumbers.push(article);
+        }
+    }
+    return arrayOfNumbers;
 }
 
 /*
@@ -32,7 +59,14 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+    let totalCharacters = 0;
+    for (let article of allArticleTitles) {
+        totalCharacters += article.length;
+    }
+    return Math.round(totalCharacters / allArticleTitles.length);
 }
+
+
 
 
 
