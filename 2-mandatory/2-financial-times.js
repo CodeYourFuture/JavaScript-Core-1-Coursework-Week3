@@ -25,6 +25,16 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
+    let numberOfWords;
+    let smallerTitle;
+    for (let headlineTitle of allArticleTitles) {
+        let titleSplit = headlineTitle.split(" ").length;
+        if (titleSplit < numberOfWords || numberOfWords === undefined) {
+            numberOfWords = titleSplit;
+            smallerTitle = headlineTitle;
+        }
+    }
+    return smallerTitle;
 }
 
 /*
@@ -34,6 +44,13 @@ function titleWithFewestWords(allArticleTitles) {
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+    let arrayOfNumbers = [];
+    for (article of allArticleTitles) {
+        if (/\d/.test(article)) {
+            arrayOfNumbers.push(article);
+        }
+    }
+    return arrayOfNumbers;
 }
 
 /*
@@ -42,7 +59,14 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+    let totalCharacters = 0;
+    for (let article of allArticleTitles) {
+        totalCharacters += article.length;
+    }
+    return Math.round(totalCharacters / allArticleTitles.length);
 }
+
+
 
 
 
