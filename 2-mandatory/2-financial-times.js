@@ -7,15 +7,17 @@
     Implement the function below, which will return a new array
      containing only article titles which will fit.
 */
+
 function potentialHeadlines(allArticleTitles) {
-    const headlines = [];
-    for (let i = 0; i < allArticleTitles.length; i++) {
-        if (allArticleTitles[i].length <= 65) {
-            headlines.push(allArticleTitles[1]);
+    let headline = [];
+    for (let article of allArticleTitles) {
+        if (article.length <= 65) {
+            headline.push(article);
         }
     }
-    return headlines;
-}
+    return headline
+  }
+
 
 /*
     The editor of the FT likes short headlines with only a few words!
@@ -23,7 +25,6 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
 }
 
 /*
