@@ -12,8 +12,14 @@
 */
 
 function getTemperatureReport(cities) {
+    let cities = ["London", "Paris" ,"Barcelona" , "Dubai", "Mumbai", "Sao Paulo", "Lagos"];
+    let temparature = [ 10 , 12 , 17 , 27 , 29 , 23 , 33 ];
+    
+   
     // TODO
 }
+
+ return `The temperature in  ${cities} is  ${temparature}   degrees`;
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
