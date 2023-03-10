@@ -34,20 +34,6 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Functions can help with this!
 */
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
-}
-
-/*
-    We also want to see what the change in price is from the first day to the last day for each stock.
-    Implement the below function, which
-        - Takes this CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS array as input (remember, it's an array of arrays)
-        - Returns an array containing the price change over the last 5 days for each stock.
-            For example, the first element of the resulting array should contain Apple’s (aapl) price change for the last 5 days.
-            In this example it would be:
-                (Apple's price on the 5th day) - (Apple's price on the 1st day) = 172.99 - 179.19 = -6.2
-    The price change value should be rounded to 2 decimal places, and should be a number (not a string)
-*/
-function getAveragePrices(closingPricesForAllStocks) {
     // for storing averages of each company's stock over 5 days
     let averagePriceOverFiveDays = [ ];
 
@@ -64,6 +50,38 @@ function getAveragePrices(closingPricesForAllStocks) {
 
     return averagePriceOverFiveDays;
 }
+
+/*
+    We also want to see what the change in price is from the first day to the last day for each stock.
+    Implement the below function, which
+        - Takes this CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS array as input (remember, it's an array of arrays)
+        - Returns an array containing the price change over the last 5 days for each stock.
+            For example, the first element of the resulting array should contain Apple’s (aapl) price change for the last 5 days.
+            In this example it would be:
+                (Apple's price on the 5th day) - (Apple's price on the 1st day) = 172.99 - 179.19 = -6.2
+    The price change value should be rounded to 2 decimal places, and should be a number (not a string)
+*/
+
+
+function getPriceChanges(array) {
+
+    let changeInPrice = [ ];
+
+    for (i = 0; i < array.length; i++) {
+        let closingPricesArray = array;
+        let lengthOfInnerArray = closingPricesArray[i].length;
+        let fifthDayPrice = closingPricesArray[i][lengthOfInnerArray - 1];
+        let firstDayPrice = closingPricesArray[i][0];
+
+        let fifthDayMinusFirstDayRounded = Math.round((fifthDayPrice - firstDayPrice) * 100) / 100;
+
+        changeInPrice.push(fifthDayMinusFirstDayRounded);
+    }
+
+    return changeInPrice;
+}
+
+
 
 /*
     As part of a financial report, we want to see what the highest price was for each stock in the last 5 days.
