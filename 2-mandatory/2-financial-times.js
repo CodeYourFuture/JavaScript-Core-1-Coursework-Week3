@@ -6,15 +6,15 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
-    headlines = [];
+    headlines = []; // we declare an empty array so when we get the headlines with length<=65 we push them here
 
-    for (article of allArticleTitles) {
+    for (article of allArticleTitles) { // we loop through all articles  and check their length
         if (article.length <= 65) {
-            headlines.push(article);
+            headlines.push(article); //for every headline that  passes the condition we push it to the empty array
         }
 
     }
-    return headlines;
+    return headlines; //then we return the array with the headlines that have <=65 words
 }
 
 /*
@@ -25,23 +25,23 @@ function potentialHeadlines(allArticleTitles) {
 function titleWithFewestWords(allArticleTitles) {
     // TODO
     fewestWordsTitle = ''; //we use an empty string since we haven't had yet any article to display 
-    titleLengthCount = Infinity; //we can use any limit we want too but we want to make sure that the limit for the comparison it's not very small
+    titleLengthNr = Infinity; //we can use any limit we want too but we want to make sure that the limit for the comparison it's not very small so it can fit all headlines available
 
     headlines = potentialHeadlines(allArticleTitles) //we get the function above by saying that headlines is inside this function as mentioned
-    //console.log(headlines)
+    //console.log(headlines) i used console.log to see if my headlines was displaying or not
 
-    for (headline of headlines) {
+    for (headline of headlines) { //we loop through each headline from headlines array
         // console.log(headline)
         titleLength = headline.split(' ').length; //we calculate te length by splitting each headline to words and  not counting spaces .
         //console.log(titleLength)
 
-        if (titleLength < titleLengthCount) {
-            fewestWordsTitle = headline;
-            titleLengthCount = titleLength; /*since we didn't have a starting value we used infinity to compare the length but after we passed the length of 
+        if (titleLength < titleLengthNr) { //and compare it with the value we first gave the variable
+            fewestWordsTitle = headline; //the title with the smallest amount of words is going to be displayed in the variable fewestWords
+            titleLengthNr = titleLength; /*since we didn't have a starting value we used infinity to compare the length but after we passed the length of 
             at least one headline we compare it then to that and then let the function know that are the same  */
         }
     }
-    return fewestWordsTitle;
+    return fewestWordsTitle; //function is going to  return the headline with the fewest words 
 }
 
 /*
@@ -51,6 +51,15 @@ function titleWithFewestWords(allArticleTitles) {
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+    function withNumber(title) {
+        if (title.search('[0-9]') >= 0) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+    return allArticleTitles.filter(withNumber); // shorter way explained by our buddy so i thought to implement it 
 }
 
 /*
@@ -59,6 +68,9 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+  let totalChars = allArticleTitles.reduce((total, headline) => total + headline.length, 0); // we use reduce() method  to store total nr of characters in all headlines,starting value is set to 0
+  let averageChars = Math.round(totalChars / allArticleTitles.length);
+  return averageChars;
 }
 
 

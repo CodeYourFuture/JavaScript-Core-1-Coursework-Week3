@@ -38,10 +38,10 @@ function getAveragePrices(closingPricesForAllStocks) {
     let averagePrices = [];
     for (prices of closingPricesForAllStocks) {
         sum = 0;
-        for (item of prices) {
+        for (item of prices) { //we use for within for so we can access the arrays of the array
             sum += parseFloat(item); 
             /*we use parseFloat (but we can use Number too ) to  convert each item/string of the arrays to numbers and then calculate the sum ,in the 
-            beginning i used sum=(sum+item but this is a shorter way) */
+            beginning i used sum=(sum+item )but this is a shorter way */
 
         }
 
