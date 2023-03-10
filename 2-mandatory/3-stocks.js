@@ -34,18 +34,18 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Functions can help with this!
 */
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+
     let averagePrices = [];
     for (prices of closingPricesForAllStocks) {
         sum = 0;
         for (item of prices) { //we use for within for so we can access the arrays of the array
-            sum += parseFloat(item); 
+            sum += parseFloat(item);
             /*we use parseFloat (but we can use Number too ) to  convert each item/string of the arrays to numbers and then calculate the sum ,in the 
             beginning i used sum=(sum+item )but this is a shorter way */
 
         }
 
-        sumAverage = parseFloat((sum / prices.length).toFixed(2)); 
+        sumAverage = parseFloat((sum / prices.length).toFixed(2));
         /* we calculate the average price by dividing the number of elements of the arrays provided  with the calculated sum and use toFixed(2)
         to display up to 2 decimal places */
 
@@ -70,8 +70,14 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+    return closingPricesForAllStocks.map(prices => { // we use the map method to intenerate each element of closingPricesForAllStock
+        let firstPrice = parseFloat(prices[0]); //parseFloat to turn it to a floating point number
+        let lastPrice = parseFloat(prices[prices.length - 1]); //prices[prices.length - 1] returns the last element of the prices array
+        return parseFloat((lastPrice - firstPrice).toFixed(2));
+    });
+
 }
+
 
 /*
     As part of a financial report, we want to see what the highest price was for each stock in the last 5 days.
@@ -86,7 +92,10 @@ function getPriceChanges(closingPricesForAllStocks) {
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+    return stocks.map((ticker, index) => { //map method makes it shorter to intenerate through each element  of stocks by corresponding  the index with the ticker and generate a new array
+        const highestPrice = closingPricesForAllStocks[index].reduce((max, price) => Math.max(max, price), 0); //reduce method finds the highest price by taking two parameters max and price max is initialized to 0 and price is the prices currently being processed
+        return `The highest price of ${ticker.toUpperCase()} in the last 5 days was ${highestPrice.toFixed(2)}`; // toUpperCase  returns the stock in a capitalized format 
+    });
 }
 
 

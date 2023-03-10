@@ -5,7 +5,6 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    // TODO
     headlines = []; // we declare an empty array so when we get the headlines with length<=65 we push them here
 
     for (article of allArticleTitles) { // we loop through all articles  and check their length
@@ -23,7 +22,6 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be separated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
     fewestWordsTitle = ''; //we use an empty string since we haven't had yet any article to display 
     titleLengthNr = Infinity; //we can use any limit we want too but we want to make sure that the limit for the comparison it's not very small so it can fit all headlines available
 
@@ -50,7 +48,6 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
     function withNumber(title) {
         if (title.search('[0-9]') >= 0) {
             return true;
@@ -67,10 +64,9 @@ function headlinesWithNumbers(allArticleTitles) {
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
-  let totalChars = allArticleTitles.reduce((total, headline) => total + headline.length, 0); // we use reduce() method  to store total nr of characters in all headlines,starting value is set to 0
-  let averageChars = Math.round(totalChars / allArticleTitles.length);
-  return averageChars;
+    let totalChars = allArticleTitles.reduce((total, headline) => total + headline.length, 0); // we use reduce() method  to store total nr of characters in all headlines,starting value is set to 0
+    let averageChars = Math.round(totalChars / allArticleTitles.length);
+    return averageChars;
 }
 
 
