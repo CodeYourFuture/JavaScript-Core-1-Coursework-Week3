@@ -12,9 +12,18 @@
 */
 
 function getTemperatureReport(cities) {
-    // TODO
-}
+    let temperatureReportResults = [ ];
 
+    for (i = 0; i < cities.length; i++) {
+        let city = cities[i];
+        let temperature = temperatureService(city);
+        let reportPhrasing = `The temperature in ${city} is ${temperature} degrees`;
+
+        temperatureReportResults.push(reportPhrasing);
+    }
+    
+    return temperatureReportResults;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

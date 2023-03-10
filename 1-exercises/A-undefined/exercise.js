@@ -13,6 +13,8 @@
 let a;
 console.log(a);
 
+// the variable a hasn't been initialised i.e. it's not been assigned an initial value
+
 
 // Example 2
 function sayHello() {
@@ -22,6 +24,7 @@ function sayHello() {
 let hello = sayHello();
 console.log(hello);
 
+// the function won't return anything, so the variable hello will return undefined.
 
 // Example 3
 function sayHelloToUser(user) {
@@ -30,7 +33,12 @@ function sayHelloToUser(user) {
 
 sayHelloToUser();
 
+// the function needs an argument called user to be passed through it.
+// in line 34, there are no arguments being passed through the function so it will return Hello undefined.
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+
+// so the array begins at index 0 and ends at index 2.
+// there is no value assigned at index 3 so it'll return undefined.
