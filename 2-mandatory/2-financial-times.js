@@ -7,7 +7,7 @@
 function potentialHeadlines(allArticleTitles) {
     allTitles = [];
     for (headline of allArticleTitles){
-        if (headline.lenght <= 65) {
+        if (headline.length <= 65) {
             allTitles.push(headline)
         }
     }
@@ -44,21 +44,25 @@ function titleWithFewestWords(allArticleTitles) {
     Implement the function below to return a new array containing all the headlines which contain a number.
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
+
+function hasNumber(myString) {
+  return /\d/.test(myString);
+}
+
 function headlinesWithNumbers(allArticleTitles) {
-    let arrayWithNumbers =  [];
+    let arrayWithNumbers = [];
     for (headline of allArticleTitles) {
-        for (component of headline) {
-            let component = component(parseInt)
-            if (component.includes(component)) {
-                arrayWithNumbers.push(headline)
-            }
+        let includesNumber = hasNumber(headline)
+        if (includesNumber) {
+            arrayWithNumbers.push(headline)
         }
     }
+
     return arrayWithNumbers;
 
 }
 
-/*
+/*   
     The Financial Times wants to understand what the average number of characters in an article title is.
     Implement the function below to return this number - rounded to the nearest integer.
 */
