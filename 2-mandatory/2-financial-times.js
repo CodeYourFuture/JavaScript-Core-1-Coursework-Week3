@@ -5,7 +5,14 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    // TODO
+    const shortArticleTitles=[ ];
+    for ( const articleTitle of allArticleTitles) {
+        if (articleTitle.length <= 65) {
+            shortArticleTitles.push(articleTitle);
+        }
+    }
+    return shortArticleTitles;
+
 }
 
 /*
@@ -14,16 +21,37 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+   const separateTitleArray = [];
+    for (const articleTitle of allArticleTitles) {
+       allArticleTitles.toString().split(" ");
+        separateTitleArray.push(articleTitle)
+    }
+        let titleWithFewestWords = separateTitleArray.reduce((fewestWords, currentWords) => {
+            return currentWords.length < fewestWords.length ? currentWords : fewestWords;
+        }, separateTitleArray[0]);
+        return titleWithFewestWords;
 }
+
 
 /*
     The editor of the FT has realised that headlines which have numbers in them get more clicks!
     Implement the function below to return a new array containing all the headlines which contain a number.
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
-function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+ function headlinesWithNumbers(allArticleTitles) {
+    let section = [];
+
+    for (const title of allArticleTitles){
+        for (const character of title){
+            if ('0123456789'.includes(character)){
+                section.push(title);
+               break;
+            }
+
+        }
+    }
+    return section;
+
 }
 
 /*
@@ -31,8 +59,13 @@ function headlinesWithNumbers(allArticleTitles) {
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
-}
+  let totalCharacters = 0;
+    for (const headline of allArticleTitles){
+        totalCharacters = totalCharacters + headline.length;
+    }
+    return Math.round(totalCharacters / allArticleTitles.length);
+} 
+
 
 
 
