@@ -12,10 +12,10 @@
 */
 
 function getTemperatureReport(cities) {
-    // TODO
-    cities.forEach(val => {
-        temperatureService(val)
+    const temperatureReport = cities.map(city => {
+        return `The temperature in ${city} is ${temperatureService(city)} degrees`
 });
+    return temperatureReport
     }
 
 

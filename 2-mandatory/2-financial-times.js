@@ -5,16 +5,14 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    let shortArticleTitles = [];
-    for (i of allArticleTitles){
-        const greaterThan65 = allArticleTitles.filter(i => i.length <= 65);
-//        if (i.length <= 65){
-        return greaterThan65.push(i);
-            
+    let titles = [];
+    for (let articleTitle of allArticleTitles){
+        if (articleTitle.length <= 65 ) {
+            titles.push(articleTitle);
         }
-    console.log(newlist)
     }
-
+    return titles;
+}
 
 /*
     The editor of the FT likes short headlines with only a few words!
@@ -22,7 +20,9 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+
+    const fewestWord = (left, right) => left.length <= right.length ? left : right;
+    return allArticleTitles.reduce(fewestWord);
 }
 
 /*
@@ -31,7 +31,13 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+    newList = [];
+    for (headline of allArticleTitles){
+        if (/\d/.test(headline) == true){
+            newList.push(headline);
+        }
+    }
+    return newList;
 }
 
 /*
@@ -39,9 +45,21 @@ function headlinesWithNumbers(allArticleTitles) {
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
-}
+//     var total = 0;
+//     var count = 0;
 
+//     allArticleTitles.forEach(averageNumberOfCharacters(item, index) {
+//         total += item;
+//         count += 1;
+//     });
+
+//     return total / count;
+
+                   // works with numbers too
+avg = Math.round(allArticleTitles.join('').length / allArticleTitles.length)
+
+return avg;
+ }
 
 
 /* ======= List of Articles - DO NOT MODIFY ===== */
@@ -58,6 +76,7 @@ const ARTICLE_TITLES = [
     "Brussels urges Chile's incoming president to endorse EU trade deal",
 ];
 
+potentialHeadlines(ARTICLE_TITLES)
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("should only return potential headlines", () => {
@@ -87,3 +106,4 @@ test("should only return headlines containing numbers", () => {
 test("should return the average number of characters in a headline", () => {
     expect(averageNumberOfCharacters(ARTICLE_TITLES)).toEqual(65);
 });
+
