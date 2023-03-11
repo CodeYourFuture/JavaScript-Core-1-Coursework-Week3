@@ -37,28 +37,32 @@ function averageNumberOfCharacters(allArticleTitles) {
 
 
 /* ======= List of Articles - DO NOT MODIFY ===== */
-const ARTICLE_TITLES = [
-    "Streaming wars drive media groups to spend more than $100bn on new content",
-    "Amazon Prime Video India country head: streaming is driving a TV revolution",
-    "Aerospace chiefs prepare for bumpy ride in recovery of long-haul flights",
-    "British companies look to muscle in on US retail investing boom",
-    "Libor to take firm step towards oblivion on New Year's Day",
-    "Audit profession unattractive to new recruits, says PwC boss",
-    "Chinese social media users blast Elon Musk over near miss in space",
-    "Companies raise over $12tn in 'blockbuster' year for global capital markets",
-    "The three questions that dominate investment",
-    "Brussels urges Chile's incoming president to endorse EU trade deal",
-];
+function articleTitles() {
+    return [
+        "Streaming wars drive media groups to spend more than $100bn on new content",
+        "Amazon Prime Video India country head: streaming is driving a TV revolution",
+        "Aerospace chiefs prepare for bumpy ride in recovery of long-haul flights",
+        "British companies look to muscle in on US retail investing boom",
+        "Libor to take firm step towards oblivion on New Year's Day",
+        "Audit profession unattractive to new recruits, says PwC boss",
+        "Chinese social media users blast Elon Musk over near miss in space",
+        "Companies raise over $12tn in 'blockbuster' year for global capital markets",
+        "The three questions that dominate investment",
+        "Brussels urges Chile's incoming president to endorse EU trade deal",
+    ];
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("should only return potential headlines", () => {
-    expect(new Set(potentialHeadlines(ARTICLE_TITLES))).toEqual(new Set([
+    const titles = articleTitles();
+    expect(new Set(potentialHeadlines(titles))).toEqual(new Set([
         "British companies look to muscle in on US retail investing boom",
         "Libor to take firm step towards oblivion on New Year's Day",
         "Audit profession unattractive to new recruits, says PwC boss",
         "The three questions that dominate investment"
     ]));
+    expectArrayIsUnchanged(titles, articleTitles());
 });
 
 test("should return an empty array for empty input", () => {
@@ -66,16 +70,28 @@ test("should return an empty array for empty input", () => {
 });
 
 test("should return the title with the fewest words", () => {
-    expect(titleWithFewestWords(ARTICLE_TITLES)).toEqual("The three questions that dominate investment");
+    const titles = articleTitles();
+    expect(titleWithFewestWords(articleTitles())).toEqual("The three questions that dominate investment");
+    expectArrayIsUnchanged(titles, articleTitles());
 });
 
 test("should only return headlines containing numbers", () => {
-    expect(new Set(headlinesWithNumbers(ARTICLE_TITLES))).toEqual(new Set([
+    const titles = articleTitles();
+    expect(new Set(headlinesWithNumbers(titles))).toEqual(new Set([
         "Streaming wars drive media groups to spend more than $100bn on new content",
         "Companies raise over $12tn in 'blockbuster' year for global capital markets"
     ]));
+    expectArrayIsUnchanged(titles, articleTitles());
 });
 
 test("should return the average number of characters in a headline", () => {
-    expect(averageNumberOfCharacters(ARTICLE_TITLES)).toEqual(65);
+    const titles = articleTitles();
+    expect(averageNumberOfCharacters(titles)).toEqual(65);
+    expectArrayIsUnchanged(titles, articleTitles());
 });
+
+function expectArrayIsUnchanged(first, second) {
+    // arguments to functions should not be modified
+    // this expectation checks arrays have the same values, to make sure arguments have not been changed
+    expect(first).toEqual(second);
+}
