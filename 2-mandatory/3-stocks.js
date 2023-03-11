@@ -56,20 +56,32 @@ function calculateAverage(companyStocks){  //callback function
             In this example it would be:
                 (Apple's price on the 5th day) - (Apple's price on the 1st day) = 172.99 - 179.19 = -6.2
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
-*/
+// */
+// function getPriceChanges(closingPricesForAllStocks) {
+//     const priceChanges = [];
+
+//     for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+
+//         const prices = closingPricesForAllStocks[i];
+//         const priceChange = prices[prices.length - 1] - prices[0];
+//         priceChanges.push(Number(priceChange.toFixed(2)));
+//     }
+
+//     return priceChanges;
+// }
+
 function getPriceChanges(closingPricesForAllStocks) {
-    const priceChanges = [];
-
-    for (let i = 0; i < closingPricesForAllStocks.length; i++) {
-
-        const prices = closingPricesForAllStocks[i];
-        const priceChange = prices[prices.length - 1] - prices[0];
-        priceChanges.push(Number(priceChange.toFixed(2)));
-    }
-
+    const priceChanges = closingPricesForAllStocks.map(calculatePriceChange);
     return priceChanges;
 }
-
+function calculatePriceChange(companyStocks){   
+    for (let i = 0; i < companyStocks.length; i++) {
+        const priceChange = companyStocks[companyStocks.length - 1] - companyStocks[0];
+        return Number(priceChange.toFixed(2));
+    }
+}
+    
+   
 /*
     As part of a financial report, we want to see what the highest price was for each stock in the last 5 days.
     Implement the below function, which
