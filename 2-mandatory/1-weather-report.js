@@ -13,6 +13,14 @@
 
 function getTemperatureReport(cities) {
     // TODO
+    let forecast = [];
+    for(let i = 0; i < cities.length; i++){
+        const currentCity = cities[i]
+        const temperature = temperatureService(cities[i]);
+        const report = `The temperature in ${currentCity} is ${temperature} degrees`;
+        forecast.push(report);
+    }
+    return forecast;
 }
 
 

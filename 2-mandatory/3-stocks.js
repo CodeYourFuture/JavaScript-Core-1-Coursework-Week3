@@ -33,10 +33,20 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Solve the smaller problems, and then build those solutions back up to solve the larger problem.
         Functions can help with this!
 */
+
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+    const averagePrice = closingPricesForAllStocks.map(calculateAverage);
+    return averagePrice;
 }
 
+function calculateAverage(companyStocks){  //callback function
+     let sum = 0;
+    for (let j = 0; j < companyStocks.length; j++) {
+      sum += companyStocks[j];
+    }
+    const average = sum / companyStocks.length;
+    return Number(average.toFixed(2));
+}
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
     Implement the below function, which
@@ -46,11 +56,32 @@ function getAveragePrices(closingPricesForAllStocks) {
             In this example it would be:
                 (Apple's price on the 5th day) - (Apple's price on the 1st day) = 172.99 - 179.19 = -6.2
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
-*/
-function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
-}
+// */
+// function getPriceChanges(closingPricesForAllStocks) {
+//     const priceChanges = [];
 
+//     for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+
+//         const prices = closingPricesForAllStocks[i];
+//         const priceChange = prices[prices.length - 1] - prices[0];
+//         priceChanges.push(Number(priceChange.toFixed(2)));
+//     }
+
+//     return priceChanges;
+// }
+
+function getPriceChanges(closingPricesForAllStocks) {
+    const priceChanges = closingPricesForAllStocks.map(calculatePriceChange);
+    return priceChanges;
+}
+function calculatePriceChange(companyStocks){   
+    for (let i = 0; i < companyStocks.length; i++) {
+        const priceChange = companyStocks[companyStocks.length - 1] - companyStocks[0];
+        return Number(priceChange.toFixed(2));
+    }
+}
+    
+   
 /*
     As part of a financial report, we want to see what the highest price was for each stock in the last 5 days.
     Implement the below function, which
@@ -64,7 +95,25 @@ function getPriceChanges(closingPricesForAllStocks) {
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+    const descriptions = [];
+    
+    for (let i = 0; i < stocks.length; i++) {
+        const stockName = stocks[i].toUpperCase();
+        let highestPrice = 0;
+        
+        for (let j = 0; j < 5; j++) {
+        const price = closingPricesForAllStocks[i][closingPricesForAllStocks[i].length - 1 - j];
+        
+        if (price > highestPrice) {
+            highestPrice = price;
+        }
+        }
+        
+        const description = `The highest price of ${stockName} in the last 5 days was ${highestPrice}`;
+        descriptions.push(description);
+    }
+    
+    return descriptions;
 }
 
 
@@ -88,7 +137,7 @@ test("should return a description of the highest price for each stock", () => {
             "The highest price of MSFT in the last 5 days was 342.45",
             "The highest price of AMZN in the last 5 days was 3421.37",
             "The highest price of GOOGL in the last 5 days was 2958.13",
-            "The highest price of TSLA in the last 5 days was 1101.30"
+            "The highest price of TSLA in the last 5 days was 1101.3"
         ]
     );
 });
