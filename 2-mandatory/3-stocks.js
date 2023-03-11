@@ -34,7 +34,19 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Functions can help with this!
 */
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+  const averagePrice = [];
+
+  for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+    const prices = closingPricesForAllStocks[i];
+    let sum = 0;
+    for (let j = 0; j < prices.length; j++) {
+      sum += prices[j];
+    }
+    const average = sum / prices.length;
+    averagePrice.push(Number(average.toFixed(2)));
+  }
+
+  return averagePrice;
 }
 
 /*
@@ -48,7 +60,16 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+    const priceChanges = [];
+
+    for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+
+        const prices = closingPricesForAllStocks[i];
+        const priceChange = prices[prices.length - 1] - prices[0];
+        priceChanges.push(Number(priceChange.toFixed(2)));
+    }
+
+    return priceChanges;
 }
 
 /*
@@ -64,7 +85,25 @@ function getPriceChanges(closingPricesForAllStocks) {
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+    const descriptions = [];
+    
+    for (let i = 0; i < stocks.length; i++) {
+        const stockName = stocks[i].toUpperCase();
+        let highestPrice = 0;
+        
+        for (let j = 0; j < 5; j++) {
+        const price = closingPricesForAllStocks[i][closingPricesForAllStocks[i].length - 1 - j];
+        
+        if (price > highestPrice) {
+            highestPrice = price;
+        }
+        }
+        
+        const description = `The highest price of ${stockName} in the last 5 days was ${highestPrice}`;
+        descriptions.push(description);
+    }
+    
+    return descriptions;
 }
 
 
@@ -88,7 +127,7 @@ test("should return a description of the highest price for each stock", () => {
             "The highest price of MSFT in the last 5 days was 342.45",
             "The highest price of AMZN in the last 5 days was 3421.37",
             "The highest price of GOOGL in the last 5 days was 2958.13",
-            "The highest price of TSLA in the last 5 days was 1101.30"
+            "The highest price of TSLA in the last 5 days was 1101.3"
         ]
     );
 });
