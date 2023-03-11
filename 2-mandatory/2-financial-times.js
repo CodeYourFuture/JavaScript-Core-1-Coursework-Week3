@@ -55,12 +55,14 @@ function articleTitles() {
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("should only return potential headlines", () => {
-    expect(new Set(potentialHeadlines(articleTitles()))).toEqual(new Set([
+    const titles = articleTitles();
+    expect(new Set(potentialHeadlines(titles))).toEqual(new Set([
         "British companies look to muscle in on US retail investing boom",
         "Libor to take firm step towards oblivion on New Year's Day",
         "Audit profession unattractive to new recruits, says PwC boss",
         "The three questions that dominate investment"
     ]));
+    expectArrayIsUnchanged(titles, articleTitles());
 });
 
 test("should return an empty array for empty input", () => {
@@ -68,16 +70,28 @@ test("should return an empty array for empty input", () => {
 });
 
 test("should return the title with the fewest words", () => {
+    const titles = articleTitles();
     expect(titleWithFewestWords(articleTitles())).toEqual("The three questions that dominate investment");
+    expectArrayIsUnchanged(titles, articleTitles());
 });
 
 test("should only return headlines containing numbers", () => {
-    expect(new Set(headlinesWithNumbers(articleTitles()))).toEqual(new Set([
+    const titles = articleTitles();
+    expect(new Set(headlinesWithNumbers(titles))).toEqual(new Set([
         "Streaming wars drive media groups to spend more than $100bn on new content",
         "Companies raise over $12tn in 'blockbuster' year for global capital markets"
     ]));
+    expectArrayIsUnchanged(titles, articleTitles());
 });
 
 test("should return the average number of characters in a headline", () => {
-    expect(averageNumberOfCharacters(articleTitles())).toEqual(65);
+    const titles = articleTitles();
+    expect(averageNumberOfCharacters(titles)).toEqual(65);
+    expectArrayIsUnchanged(titles, articleTitles());
 });
+
+function expectArrayIsUnchanged(first, second) {
+    // arguments to functions should not be modified
+    // this expectation checks arrays have the same values, to make sure arguments have not been changed
+    expect(first).toEqual(second);
+}
