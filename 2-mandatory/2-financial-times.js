@@ -37,7 +37,17 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+    const regex = /[0-9]/;
+    let result = [];
+    for (let articleTitle of allArticleTitles) {
+        for (let i = 0; i < articleTitle.length; i++) {
+            if(articleTitle[i].match(regex)){
+                result.push(articleTitle);
+                break;
+            } 
+        }
+    }
+    return result;
 }
 
 /*
