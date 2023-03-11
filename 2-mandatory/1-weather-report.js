@@ -12,7 +12,14 @@
 */
 
 function getTemperatureReport(cities) {
-    // TODO
+    const statements = [];
+    for (let i = 0; i < cities.length; i++) {
+        const city = cities[i];
+        const temperature = temperatureService(city);
+        const statement = `The temperature in ${city} is ${temperature} degrees`;
+        statements.push(statement);
+    }
+    return statements;
 }
 
 

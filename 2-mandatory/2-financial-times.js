@@ -5,16 +5,37 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    // TODO
+    const ARTICLE_TITLES = [];
+    for (let i = 0; i < allArticleTitles.length; i++) {
+       if (allArticleTitles[i].length <= 65) {
+        ARTICLE_TITLES.push(allArticleTitles[i]);
+       };
+       
+
+    }
+
+    return ARTICLE_TITLES;
 }
+
 
 /*
     The editor of the FT likes short headlines with only a few words!
     Implement the function below, which returns the title with the fewest words.
-    (you can assume words will always be seperated by a space)
+    (you can assume words will always be separated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+    let shortestTitle = "";
+    let shortestWordCount = Infinity;
+
+    for (let i = 0; i < allArticleTitles.length; i++) {
+        const words = allArticleTitles[i].split("");
+        const wordCount = words.length;
+        if (wordCount < shortestWordCount) {
+            shortestTitle = allArticleTitles[i];
+            shortestWordCount = wordCount;
+        }
+    }
+    return shortestTitle;
 }
 
 /*
@@ -22,16 +43,31 @@ function titleWithFewestWords(allArticleTitles) {
     Implement the function below to return a new array containing all the headlines which contain a number.
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
-function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+function findingNumber(str) {
+  return /[0-9]/.test(str);
 }
 
-/*
+function headlinesWithNumbers(allArticleTitles) {
+  let titleWithNumbers = [];
+  for (let i = 0; i < allArticleTitles.length; i++) {
+    if (findingNumber(allArticleTitles[i])) {
+      titleWithNumbers.push(allArticleTitles[i]);
+    }
+  }
+  return titleWithNumbers;
+}
+/* 
     The Financial Times wants to understand what the average number of characters in an article title is.
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
+    let totalCharacter = 0;
+    let totalTitles = allArticleTitles.length;
+
+    for (let i = 0; i < totalTitles; i++) {
+        totalCharacter += allArticleTitles[i].length;
+    }
+    return Math.round(totalCharacter / totalTitles);
 }
 
 
@@ -49,7 +85,8 @@ const ARTICLE_TITLES = [
     "The three questions that dominate investment",
     "Brussels urges Chile's incoming president to endorse EU trade deal",
 ];
-
+// console.log(potentialHeadlines(ARTICLE_TITLES));
+potentialHeadlines(ARTICLE_TITLES)
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("should only return potential headlines", () => {
