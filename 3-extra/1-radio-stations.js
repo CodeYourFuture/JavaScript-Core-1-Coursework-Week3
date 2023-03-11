@@ -14,6 +14,10 @@
  */
 
 // `getAllFrequencies` goes here
+function getAllFrequencies(allFrequency) {
+  
+  for ()
+}
 
 /**
  * Next, let's write a function that gives us only the frequencies that are radio stations.
