@@ -11,9 +11,9 @@
 const STOCKS = ["aapl", "msft", "amzn", "googl", "tsla"];
 
 const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
-  [179.19, 180.33, 176.28, 175.64, 172.99], // AAPL
-  [340.69, 342.45, 334.69, 333.2, 327.29], // MSFT
-  [3384.44, 3393.39, 3421.37, 3420.74, 3408.34], // AMZN
+  [179.19, 180.33, 176.28, 175.64, 172.99], // AAPL -- Average for apl
+  [340.69, 342.45, 334.69, 333.2, 327.29], // MSFT -- Average for Microsoft
+  [3384.44, 3393.39, 3421.37, 3420.74, 3408.34], // AMZN --Average for Amazon
   [2951.88, 2958.13, 2938.33, 2928.3, 2869.45], // GOOGL
   [1101.3, 1093.94, 1067.0, 1008.87, 938.53], // TSLA
 ];
@@ -35,29 +35,32 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 */
 
 // >> result = array with average of each array --> averageStockFor5Companies
-// get the average of each array --> averageStockPerCompany
-// put it a new array containg averages
-// return the new array of averages --> averageStockFor5Companies
+// start by finding the average of 1 stockprices array - to test
+// then get the average of each array --> averageStockPerCompany
+// put it a new array containing averages --> averageStockFor5Companies
+// return the new array of averages
 
 function getAveragePrices(closingPricesForAllStocks) {
-  // const averageStockPerCompany = [];
-  // for (const dailyClosingPrice of closingPricesForAllStocks) {
-
-  //    averageStockPerCompany.push(dailyClosingPrice)
-  // }
-
-  const averageStockPerCompany = (closingPricesForAllStocks) => {
-    let sumOfStockPerCompany = 0;
-    for (let dailyClosingPrice of closingPricesForAllStocks) {
-      sumOfStockPerCompany += dailyClosingPrice;
+  let averageStockFor5CompaniesArray = [];
+  for (i = 0; i < closingPricesForAllStocks.length; i++) {
+    let sum = 0;
+    for (j = 0; j < closingPricesForAllStocks[i].length; j++) {
+      sum = sum + closingPricesForAllStocks[i][j];
     }
-    return sumOfStockPerCompany / closingPricesForAllStocks.length;
-  };
-  return averageStockPerCompany;
-
-  // averagePrice = closingPricesForAllStocks.join(',').length / closingPricesForAllStocks.length;
-  // return Math.round((averagePrice * 100) / 100);
+    average = sum / closingPricesForAllStocks[i].length;
+    averageStockFor5CompaniesArray.push(Number(average.toFixed(2)));
+  }
+  return averageStockFor5CompaniesArray;
 }
+
+// write a separate function called getAverage and then call the function from getAveragePrices
+
+// const averageStockPerCompany = [];
+// let sum = 0;
+// for (let closingPrice of closingPricesForAllStocks) {
+//   sum += closingPrice;
+// }
+// return sum / closingPricesForAllStocks.length;
 
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
@@ -89,19 +92,8 @@ function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
   // TODO
 }
 
-
-
-
-
-
-
-
-
-
-
-
 /* ======= TESTS - DO NOT MODIFY ===== */
-test("should return the average price for each stock", () => {
+test.only("should return the average price for each stock", () => {
   expect(getAveragePrices(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS)).toEqual([
     176.89, 335.66, 3405.66, 2929.22, 1041.93,
   ]);

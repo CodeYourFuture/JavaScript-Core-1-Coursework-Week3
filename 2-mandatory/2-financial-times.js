@@ -27,16 +27,18 @@ function potentialHeadlines(allArticleTitles) {
 // return a title
 
 function titleWithFewestWords(allArticleTitles) {
-  let fewestWordsSoFar = allArticleTitles[0]; // Assume the first title has the fewest words
+  let titleWithFewestWordSoFar = allArticleTitles[0]; // Assume the first title has the fewest word;
+  let smallestWordCount = titleWithFewestWordSoFar.split(" ").length; // converting string to a number so we can compare
 
-  for (let count = 1; count < allArticleTitles.length; count++) {
-    const currentTitle = allArticleTitles[count];
-    if (currentTitle.split(" ").length < fewestWordsSoFar.split(" ").length) {
-      // .length to drop out of loop when it reaches end of length
-      fewestWordsSoFar = currentTitle;
+  for (let i = 1; i < allArticleTitles.length; i++) {
+    // start from 1 not 0 because you're comparing to 0
+    const currentArticleWordCount = allArticleTitles[i].split(" ").length;
+    if (currentArticleWordCount < smallestWordCount) {
+      titleWithFewestWordSoFar = allArticleTitles[i];
+      smallestWordCount = currentArticleWordCount;
     }
   }
-  return fewestWordsSoFar;
+  return titleWithFewestWordSoFar;
 }
 
 /*
@@ -50,7 +52,7 @@ function headlinesWithNumbers(allArticleTitles) {
   for (const articleTitle of allArticleTitles) {
     for (let character = 0; character < articleTitle.length; character++) {
       if (articleTitle[character] >= "0" && articleTitle[character] <= "9") {
-        // ?? more than 0 is the same is less than 9
+        // the number there are actually handled like strings - a character so they are ascii
         numberTitle.push(articleTitle);
         break;
       }
