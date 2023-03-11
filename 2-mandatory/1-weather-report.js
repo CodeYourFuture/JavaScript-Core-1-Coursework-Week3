@@ -12,15 +12,17 @@
 */
 
 function getTemperatureReport(cities) {
-    let cities = ["London", "Paris" ,"Barcelona" , "Dubai", "Mumbai", "Sao Paulo", "Lagos"];
-    let temparature = [ 10 , 12 , 17 , 27 , 29 , 23 , 33 ];
+    let report = [];
+    for (let city of cities) {
+        let temparature = temperatureService(city);
+         report.push( `The temperature in ${city} is ${temparature} degrees`);
+        
     
-   
-    // TODO
+        
+    }
+    return report;
 }
-
- return `The temperature in  ${cities} is  ${temparature}   degrees`;
-
+ 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
