@@ -29,11 +29,11 @@ function titleWithFewestWords(allArticleTitles) {
       const myArray = [];
   for (let article of allArticleTitles) {
     myArray.push(article.split(" "));
-  } //newArray takes individual words are elements
-  let result = myArray.reduce(function (a, b) {
-    return a.length <= b.length ? a : b; //compares length of arrays in newArray -> how many words in each array & assigns shortest array to the variable result
+  } 
+  let result = myArray.reduce(function () {
+    return a.length <= b.length ? a : b; 
   });
-  return allArticleTitles[myArray.indexOf(result)]; //myArray.indexOf(result) -> returns index of result in newArray, which is the same index in allArticleTitles -> returns the title.
+  return allArticleTitles[myArray.indexOf(result)]; 
 }
 
 /*
