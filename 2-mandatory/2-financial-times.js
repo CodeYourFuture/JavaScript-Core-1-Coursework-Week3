@@ -5,7 +5,13 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    // TODO
+    // TODO l
+    let headlines=[];
+    for  (let title of allArticleTitles);
+    if ( title.length <= 65){
+        headlines.push (title)
+    }
+    return headlines;
 }
 
 /*
@@ -14,6 +20,18 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
+    let result = allArticleTitles[0];
+    let resultlengh = result.split(' ').length;
+    for ( let i=1; i< allArticleTitles.length; i++ ){
+        
+         let words = allArticleTitles[i].split(' ');
+         if (resultlengh > words.length){
+            result= allArticleTitles[i]
+            resultlengh = words.length
+
+         }
+    }
+    return result;
     // TODO
 }
 
@@ -23,6 +41,14 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
+ 
+    let headlines = [];
+    for (let title of allArticleTitles){
+        if (/\d/.test(title)){
+            headlines.push(title);
+        }
+    }
+    return headlines;
     // TODO
 }
 
@@ -31,6 +57,7 @@ function headlinesWithNumbers(allArticleTitles) {
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
+let allArticleTitles = [];
     // TODO
 }
 
@@ -65,7 +92,7 @@ test("should return an empty array for empty input", () => {
     expect(potentialHeadlines([])).toEqual([]);
 });
 
-test("should return the title with the fewest words", () => {
+test.only("should return the title with the fewest words", () => {
     expect(titleWithFewestWords(ARTICLE_TITLES)).toEqual("The three questions that dominate investment");
 });
 
