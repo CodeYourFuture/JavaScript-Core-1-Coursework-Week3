@@ -27,7 +27,17 @@ const AGES = [
 ];
 
 // TODO - Write for loop code here
-
+ function matchValues(WRITERS, AGES){
+    for (let i = 0; i < WRITERS.length; i++){
+        output = console.log(`${WRITERS[i]} is ${AGES[i]} years old`)
+        }
+    }
+ matchValues(WRITERS, AGES)
+// for (let names of WRITERS){
+//     for (let ages of AGES){
+//         console.log(`${names} is ${ages} years old`)
+//     }
+// }
 /*
 The output should look something like this:
 

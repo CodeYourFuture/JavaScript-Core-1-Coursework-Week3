@@ -12,8 +12,11 @@
 */
 
 function getTemperatureReport(cities) {
-    // TODO
-}
+    const temperatureReport = cities.map(city => {
+        return `The temperature in ${city} is ${temperatureService(city)} degrees`
+});
+    return temperatureReport
+    }
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
