@@ -47,38 +47,6 @@ function getAveragePrices(closingPricesForAllStocks) {
   return averagePrice;
 }
 
-// function getAveragePrices(closingPricesForAllStocks) {
-//   return closingPricesForAllStocks.map((prices) => {
-//     let average = 0;
-//     let sum = 0;
-//     for (let i = 0; i < prices.length; i++) {
-//       sum += prices[i];
-//       average = sum / prices[i].length;
-//     }
-//     return average;
-//   });
-// }
-
-// function getAveragePrice(prices) {
-//   let average = 0;
-//   let sum = 0;
-//   for (let i = 0; i < prices.length; i++) {
-//     sum += prices[i];
-//   }
-//   average = sum / prices[i].length;
-//   return average;
-// }
-
-// const getAveragePrice = (prices) => {
-//   let average = 0;
-//   let sum = 0;
-//   for (let i = 0; i < prices.length; i++) {
-//     sum += prices[i];
-//   }
-//   average = sum / prices[i].length;
-//   return average;
-// };
-
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
     Implement the below function, which
@@ -90,7 +58,16 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-  // TODO
+  const differencePrices = [];
+  for (const index of closingPricesForAllStocks) {
+    const firstPrice = index[0];
+    const lastPrice = index[index.length - 1];
+    const change = lastPrice - firstPrice;
+    const changeRounded = Math.round(change * 100) / 100;
+    differencePrices.push(changeRounded);
+  }
+
+  return differencePrices;
 }
 
 /*
@@ -106,11 +83,22 @@ function getPriceChanges(closingPricesForAllStocks) {
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-  // TODO
+  const highestPrice = [];
+  for (let index = 0; index < closingPricesForAllStocks.length; index++) {
+    let maxPrice = Math.max(...closingPricesForAllStocks[index]);
+    let priceRounded = maxPrice.toFixed(2);
+    highestPrice.push(
+      `The highest price of ${stocks[
+        index
+      ].toUpperCase()} in the last 5 days was ${priceRounded}`
+    );
+  }
+
+  return highestPrice;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
-test.only("should return the average price for each stock", () => {
+test("should return the average price for each stock", () => {
   expect(getAveragePrices(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS)).toEqual([
     176.89, 335.66, 3405.66, 2929.22, 1041.93,
   ]);
