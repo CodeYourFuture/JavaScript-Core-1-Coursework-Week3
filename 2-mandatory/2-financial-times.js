@@ -32,10 +32,10 @@ function titleWithFewestWords(allArticleTitles) {
 
   for (let i = 1; i < allArticleTitles.length; i++) {
     // start from 1 not 0 because you're comparing to 0
-    const currentArticleWordCount = allArticleTitles[i].split(" ").length;
+    const currentArticleWordCount = allArticleTitles[i].split(" ").length; // split & count the new article title to compare to OG
     if (currentArticleWordCount < smallestWordCount) {
-      titleWithFewestWordSoFar = allArticleTitles[i];
-      smallestWordCount = currentArticleWordCount;
+      titleWithFewestWordSoFar = allArticleTitles[i]; // this current title takes the place of previous titleWithFewest words
+      smallestWordCount = currentArticleWordCount; //converting the number back to the string
     }
   }
   return titleWithFewestWordSoFar;

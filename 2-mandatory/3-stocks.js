@@ -42,10 +42,10 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 
 function getAveragePrices(closingPricesForAllStocks) {
   let averageStockFor5CompaniesArray = [];
-  for (i = 0; i < closingPricesForAllStocks.length; i++) {
+  for (let index = 0; index < closingPricesForAllStocks.length; index++) {
     let sum = 0;
-    for (j = 0; j < closingPricesForAllStocks[i].length; j++) {
-      sum = sum + closingPricesForAllStocks[i][j];
+    for (let j = 0; j < closingPricesForAllStocks[index].length; j++) {
+      sum = sum + closingPricesForAllStocks[index][j];
     }
     average = sum / closingPricesForAllStocks[i].length;
     averageStockFor5CompaniesArray.push(Number(average.toFixed(2)));
@@ -53,14 +53,7 @@ function getAveragePrices(closingPricesForAllStocks) {
   return averageStockFor5CompaniesArray;
 }
 
-// write a separate function called getAverage and then call the function from getAveragePrices
-
-// const averageStockPerCompany = [];
-// let sum = 0;
-// for (let closingPrice of closingPricesForAllStocks) {
-//   sum += closingPrice;
-// }
-// return sum / closingPricesForAllStocks.length;
+// TODO - write a separate function called getAverage and then call the function from getAveragePrices
 
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
@@ -72,9 +65,21 @@ function getAveragePrices(closingPricesForAllStocks) {
                 (Apple's price on the 5th day) - (Apple's price on the 1st day) = 172.99 - 179.19 = -6.2
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
+
+////////////////////// HELP! Getting inverted values (-ve are +ve and +ve are -ve) ///////////////////////
 function getPriceChanges(closingPricesForAllStocks) {
-  // TODO
+  let priceChangesFor5CompaniesArray = [];
+  for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+    let difference;
+    for (let j = 0; j < closingPricesForAllStocks[i].length; j++) {
+      difference =
+        closingPricesForAllStocks[i][0] - closingPricesForAllStocks[i][4];
+    }
+    priceChangesFor5CompaniesArray.push(Number(difference.toFixed(2)));
+  }
+  return priceChangesFor5CompaniesArray;
 }
+//////////////////////////////////////////////////////////////////////////
 
 /*
     As part of a financial report, we want to see what the highest price was for each stock in the last 5 days.
@@ -85,15 +90,34 @@ function getPriceChanges(closingPricesForAllStocks) {
         - Returns an array of strings describing what the highest price was for each stock.
             For example, the first element of the array should be: "The highest price of AAPL in the last 5 days was 180.33"
             The test will check for this exact string.
-    The stock ticker should be capitalised.
+    The stock ticker should be capitalized.
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-  // TODO
+  let highestPriceForAllStocksArray = [];
+  let highestPriceForOneStock = closingPricesForAllStocks[0]; // Assume the first stock price is the highest
+
+  for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+    for (let j = 0; j < closingPricesForAllStocks[i].length; j++) {
+      // start from 1 not 0 because you're comparing to 0
+      let currentPriceForOneStock;
+
+      if (highestPriceForOneStock < currentPriceForOneStock) {
+        currentPriceForOneStock = highestPriceForOneStock[i]; // this current price takes the place of previous highestPriceForOneStock
+      }
+    }
+    highestPriceForAllStocksArray.push(
+      `The highest price of ${stocks[i]} in the last 5 days was ${Number(
+        highestPriceForOneStock[i]
+      )}`
+    );
+  }
+
+  return highestPriceForAllStocksArray;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
-test.only("should return the average price for each stock", () => {
+test("should return the average price for each stock", () => {
   expect(getAveragePrices(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS)).toEqual([
     176.89, 335.66, 3405.66, 2929.22, 1041.93,
   ]);
@@ -105,7 +129,7 @@ test("should return the price change for each stock", () => {
   ]);
 });
 
-test("should return a description of the highest price for each stock", () => {
+test.only("should return a description of the highest price for each stock", () => {
   expect(
     highestPriceDescriptions(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS, STOCKS)
   ).toEqual([
