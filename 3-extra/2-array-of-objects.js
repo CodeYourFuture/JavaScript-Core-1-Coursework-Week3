@@ -9,9 +9,37 @@
     Implement a function which takes the array of books as a parameter, and returns an array of book titles.
     Each title in the resulting array should be the highest rated book in its genre.
 */
+function findUniqueGenres(books){
+    let uniqueGenres = [];
+    for(let i = 0; i < books.length; i++){
+        let genre = books[i].genre;
+        if(!uniqueGenres.includes(genre)){
+            uniqueGenres.push(genre);
+        }
+    }
+    return uniqueGenres;
+}
 
+function findHighestRatingIndex(array){
+    let highestRating = array[0].rating;
+    let highestRatingIndx = 0;
+    array.map((item, i) => {
+        if(item.rating > highestRating){
+            highestRating = item.rating;
+            highestRatingIndx = i;
+        }
+    })
+    return highestRatingIndx;
+}
 function getHighestRatedInEachGenre(books) {
-    // TODO
+  let uniqueGenres = findUniqueGenres(books);
+  let resArray = [];
+  for(let i = 0; i < uniqueGenres.length; i++){
+      let allItemsOfGenre = books.filter(item => item.genre === uniqueGenres[i]);
+      let highestRatingIdx = findHighestRatingIndex(allItemsOfGenre);
+      resArray.push(allItemsOfGenre[highestRatingIdx].title);
+  }
+  return resArray;
 }
 
 

@@ -5,7 +5,7 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    // TODO
+    return allArticleTitles.filter(article => (article.length <= 65));
 }
 
 /*
@@ -14,7 +14,13 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+    let titleWithFewestWords = allArticleTitles[0];
+    allArticleTitles.map(article => {
+        if(article.length < titleWithFewestWords.length){
+            titleWithFewestWords = article;
+        }
+    })
+    return titleWithFewestWords;
 }
 
 /*
@@ -23,7 +29,8 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+    let regex = /\d+/g;
+    return allArticleTitles.filter(article => regex.test(article));
 }
 
 /*
@@ -31,7 +38,10 @@ function headlinesWithNumbers(allArticleTitles) {
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
+    let allArticlesLength  = allArticleTitles.reduce((acc, cur) => {
+        return acc + cur.length;
+    }, 0);
+    return parseInt(allArticlesLength / allArticleTitles.length);
 }
 
 
