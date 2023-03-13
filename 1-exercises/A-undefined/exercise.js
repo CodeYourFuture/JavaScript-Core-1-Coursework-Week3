@@ -13,13 +13,17 @@
 let a;
 console.log(a);
 
+//We are declaring a variable here, but never assigning it to a value - therefore the variable is undefined.
+
 // Example 2
 function sayHello() {
-  console.log("Hello");
+  let message = "Hello";
 }
 
-let result = sayHello();
-console.log(result);
+let hello = sayHello();
+console.log(hello);
+
+//Here,we are assigning the value returned from the function sayHello to the variable hello. But sayHello doesn't actually return anything, so hello is undefined.
 
 // Example 3
 function sayHelloToUser(user) {
@@ -28,6 +32,10 @@ function sayHelloToUser(user) {
 
 sayHelloToUser();
 
+//Here, we have a function which takes a parameter called user.But when we call the function, we're not passing in any arguments - there's nothing in the brackets!Because of this, the value of the user parameter inside the function is undefined.
+
 // Example 4
-// let letters = [1, 2, 3];
-// console.log(letter[2]);
+let arr = [1, 2, 3];
+console.log(arr[3]);
+
+//Here, we are trying to retrieve an element from the array at index 3.But in this case, the array doesn't have any value at index 3 - it only has values at indexes 0, 1 and 2.Therefore, retrieving an element from index 3 will give us undefined.
