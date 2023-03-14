@@ -14,8 +14,18 @@
 */
 
 function generateFibonacciSequence(n) {
-    // TODO
+    
+    const sequence = [0, 1];
+
+  for (let i = 2; i < n; i++) {
+    const nextNumber = sequence[i - 1] + sequence[i - 2];
+    sequence.push(nextNumber);
+  }
+
+  return sequence;
 }
+
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the first 10 numbers in the Fibonacci Sequence", () => {

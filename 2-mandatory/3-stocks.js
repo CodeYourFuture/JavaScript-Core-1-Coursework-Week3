@@ -35,6 +35,16 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 */
 function getAveragePrices(closingPricesForAllStocks) {
     // TODO
+    const averages = [];
+    for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+    const prices = closingPricesForAllStocks[i];
+    const total = prices.reduce((a, b) => a + b, 0);
+    const average =total/prices.length;
+     const StockAve = Math.round(average * 100) / 100;
+    averages.push(StockAve);
+
+    }
+  return averages;
 }
 
 /*
@@ -48,6 +58,18 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
+     const priceChanges = [];
+
+  for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+    const prices = closingPricesForAllStocks[i]; 
+    const firstPrice = prices[0];
+    const lastPrice = prices[prices.length -1];
+    const change =lastPrice -firstPrice;
+    let rounded = Math.round(change *100)/100 ;
+    priceChanges.push(rounded);
+  }
+  return priceChanges;
+
     // TODO
 }
 
@@ -64,11 +86,31 @@ function getPriceChanges(closingPricesForAllStocks) {
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+    let describStock = [];
+  for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+    let stock = stocks[i];
+    let highestPrice = 0;
+    let closingPricesForStock = closingPricesForAllStocks[i];
+    for (let j = 0; j < closingPricesForStock.length; j++) {
+      let price = closingPricesForStock[j];
+      if (price > highestPrice) {
+        highestPrice = price;
+      }
+    }
+    let priceFormat = highestPrice.toFixed(2);
+    let stockFormat = stock.toUpperCase();
+    let message = `The highest price of ${stockFormat} in the last 5 days was ${priceFormat}`;
+    describStock.push(message);
+  }
+  return describStock;
 }
 
 
-/* ======= TESTS - DO NOT MODIFY ===== */
+    // TODO
+
+
+
+// /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the average price for each stock", () => {
     expect(getAveragePrices(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS)).toEqual(
         [176.89, 335.66, 3405.66, 2929.22, 1041.93]
