@@ -76,8 +76,16 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
-    return priceChange
+    let priceChanges = [];
+      
+    for( let stockPrices of closingPricesForAllStocks){
+        let startPrice = stockPrices[0] * 100;
+        let closePrice = stockPrices[stockPrices.length - 1] * 100;
+        priceChanges.push(math.round(closePrice - startPrice) / 100);
+    }
+
+
+    return priceChanges;
 }
 
 /*
@@ -93,7 +101,27 @@ function getPriceChanges(closingPricesForAllStocks) {
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+    let highestPriceStrings = [];
+    
+
+    for(let i = 0; i< stocks.length; i++){
+        let stockName = stocks[i].toUpperCase();
+        let stockPrices = closingPricesForAllStocks[i];
+
+        let highestPrice;
+        for (let price of stockPrices){
+            if (highestPrice == undefined || price > highestPrice){
+                highestPrice = price;
+            }
+        }
+        highestPriceStrings.push(`The highest price of ${"stockName"} in the last 5 days was ${highestPrice.toFixed(2)}`);
+    }
+
+
+
+
+
+    return highestPriceStrings;
 }
 
 
