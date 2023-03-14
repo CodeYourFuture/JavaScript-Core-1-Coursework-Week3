@@ -7,10 +7,16 @@
 function potentialHeadlines(allArticleTitles) {
     // TODO l
     let headlines=[];
-    for  (let title of allArticleTitles);
-    if ( title.length <= 65){
-        headlines.push (title)
+   
+   
+
+    for(let title of allArticleTitles) {
+        if(title.length <= 65) {
+            headlines.push(title);
+        }
     }
+
+ 
     return headlines;
 }
 
@@ -57,9 +63,13 @@ function headlinesWithNumbers(allArticleTitles) {
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-let allArticleTitles = [];
-    // TODO
+   totalNumbers = 0;
+    for (let i = 0; i < allArticleTitles.length; i++){
+        totalNumbers +=  allArticleTitles[i].length;
+    }
+    return Math.round(totalNumbers/allArticleTitles.length);
 }
+ 
 
 
 
