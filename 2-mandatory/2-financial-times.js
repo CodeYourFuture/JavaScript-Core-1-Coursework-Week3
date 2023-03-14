@@ -92,7 +92,7 @@ test("should return an empty array for empty input", () => {
     expect(potentialHeadlines([])).toEqual([]);
 });
 
-test.only("should return the title with the fewest words", () => {
+test("should return the title with the fewest words", () => {
     expect(titleWithFewestWords(ARTICLE_TITLES)).toEqual("The three questions that dominate investment");
 });
 

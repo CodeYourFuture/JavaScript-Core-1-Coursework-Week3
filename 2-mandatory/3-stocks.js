@@ -34,8 +34,36 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Functions can help with this!
 */
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+
+     let averagePrices = [];
+      for (let stockPrices of closingPricesForAllStocks){
+        let sumOfPrices = 0;
+        for (let price of stockPrices) {
+            sumOfPrices = sumOfPrices + price;
+        }
+        let averagePrice = sumOfPrices / stockPrices.length;
+        let roundedAverage = Math.round(averagePrice * 100) / 100;
+        averagePrices.push(roundedAverage);
+      }
+
+
+
+     return averagePrices;
 }
+    // TODO
+ 
+  /* let averagePrice = [];
+   for (let i = 0; i < closingPricesForAllStocks.length; i++){
+      let sum = 0;
+      for (let j = 0; j < closingPricesForAllStocks[i].lenght; j++){
+         sum += closingPricesForAllStocks[i][j];
+      }
+      averagePrice.push(Number((sum / closingPricesForAllStocks[i].lenght).toFixed(2)));
+
+   }
+   return averagePrice; */
+   
+
 
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
@@ -49,6 +77,7 @@ function getAveragePrices(closingPricesForAllStocks) {
 */
 function getPriceChanges(closingPricesForAllStocks) {
     // TODO
+    return priceChange
 }
 
 /*
@@ -69,7 +98,7 @@ function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
-test("should return the average price for each stock", () => {
+test.only("should return the average price for each stock", () => {
     expect(getAveragePrices(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS)).toEqual(
         [176.89, 335.66, 3405.66, 2929.22, 1041.93]
     );
