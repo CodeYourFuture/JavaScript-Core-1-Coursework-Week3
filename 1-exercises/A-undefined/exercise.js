@@ -9,12 +9,14 @@
     For each example, can you explain why we are seeing undefined?
 */
 
-// Example 1
+// Example 1  -> 
+//We haven't asigned a value to variable ' a ' and because of that we don't have a value to log yet
+//   that's why 'a' will show undefined
 let a;
 console.log(a);
 
 
-// Example 2
+// Example 2  _-> This function doesn't return anything that's why the ' hello' will be undefined
 function sayHello() {
     let message = "Hello";
 }
@@ -23,7 +25,8 @@ let hello = sayHello();
 console.log(hello);
 
 
-// Example 3
+// Example 3 ->
+//The function does not provide an argument for the 'user' and when  we call this function it will display 'Hello Undefined'
 function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
@@ -31,6 +34,8 @@ function sayHelloToUser(user) {
 sayHelloToUser();
 
 
-// Example 4
-let arr = [1,2,3];
+// Example 4 ->
+//Array counting starts from 0 on Javascript, and because there is no array with index 3 the console will display 'undefined'
+
+let arr = [1, 2, 3];
 console.log(arr[3]);
