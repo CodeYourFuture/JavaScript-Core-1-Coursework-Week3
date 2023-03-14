@@ -2,7 +2,7 @@ name: Run extra tests
 on:
   pull_request:
     paths:
-      - extra/**
+      - 3-extra/**
 jobs:
   extra-tests:
     runs-on: ubuntu-latest
