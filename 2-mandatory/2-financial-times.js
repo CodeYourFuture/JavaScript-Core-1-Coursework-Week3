@@ -6,6 +6,17 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+    function potentialHeadlines(allArticleTitles) {
+    // TODO
+  let shortArticles = [];
+  for (let article of allArticleTitles) {
+    if (article.length <= 65) {
+      shortArticles.push(article);
+    }
+  }
+  return shortArticles;
+}
+    
 }
 
 /*
@@ -15,6 +26,14 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
     // TODO
+      const myArray = [];
+  for (let article of allArticleTitles) {
+    myArray.push(article.split(" "));
+  } 
+  let result = myArray.reduce(function (a,b) {
+    return a.length <= b.length ? a : b; 
+  });
+  return allArticleTitles[myArray.indexOf(result)]; 
 }
 
 /*
@@ -24,7 +43,19 @@ function titleWithFewestWords(allArticleTitles) {
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+    let countArray = [];
+  for (article of allArticleTitles) {
+    countArray.push(article.length);
+  }
+  let sum = 0;
+  for (let i = 0; i < countArray.length; i++) {
+    sum += countArray[i];
+  }
+  return Math.round(sum / countArray.length);
 }
+
+
+
 
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
@@ -32,7 +63,17 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+    let countArray = [];
+  for (article of allArticleTitles) {
+    countArray.push(article.length);
+  }
+  let sum = 0;
+  for (let i = 0; i < countArray.length; i++) {
+    sum += countArray[i];
+  }
+  return Math.round(sum / countArray.length);
 }
+
 
 
 

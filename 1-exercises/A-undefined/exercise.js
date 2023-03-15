@@ -11,12 +11,12 @@
 
 // Example 1
 let a;
-console.log(a);
+console.log(a);  //it will be undefined because it does not have any value
 
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+    let message = "Hello"; //hello is not a string in console.log, so the program reads it as variable, but "hello" doesn't exist.
 }
 
 let hello = sayHello();
@@ -28,9 +28,10 @@ function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
 
-sayHelloToUser();
+sayHelloToUser();  //when calling function we don't pass any value for parameter user
+
 
 
 // Example 4
 let arr = [1,2,3];
-console.log(arr[3]);
+console.log(arr[3]); //element in arr with index 3 doesn't exist. There only 0, 1, 2.

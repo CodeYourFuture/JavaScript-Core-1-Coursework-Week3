@@ -4,12 +4,12 @@
   Complete the functions below to get the first and last values from the array
 */
 
-function first(arr) {
-  return; // complete this statement
+function first( numbers) {
+  return [0] [2]; // complete this statement
 }
 
-function last(arr) {
-  return; // complete this statement
+function last(names) {
+  return[3]; // complete this statement
 }
 
 /* 
