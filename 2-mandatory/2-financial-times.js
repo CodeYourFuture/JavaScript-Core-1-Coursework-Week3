@@ -30,7 +30,7 @@ function titleWithFewestWords(allArticleTitles) {
   for (let article of allArticleTitles) {
     myArray.push(article.split(" "));
   } 
-  let result = myArray.reduce(function () {
+  let result = myArray.reduce(function (a,b) {
     return a.length <= b.length ? a : b; 
   });
   return allArticleTitles[myArray.indexOf(result)]; 
