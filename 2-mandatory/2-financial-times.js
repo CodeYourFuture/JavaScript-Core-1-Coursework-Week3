@@ -1,3 +1,5 @@
+// SOLUTIONS -> https://github.com/CodeYourFuture/JavaScript-Core-1-Coursework-Week3-Solution/blob/main/2-mandatory/2-financial-times.js
+
 /*
     Imagine you are working on the Financial Times web site! They have a list of article titles stored in an array.
 
@@ -52,7 +54,7 @@ function headlinesWithNumbers(allArticleTitles) {
   for (const articleTitle of allArticleTitles) {
     for (let character = 0; character < articleTitle.length; character++) {
       if (articleTitle[character] >= "0" && articleTitle[character] <= "9") {
-        // the number there are actually handled like strings - a character so they are ascii
+        // the numbers there are actually handled like strings - a character so they are referred to by their ascii reference
         numberTitle.push(articleTitle);
         break;
       }

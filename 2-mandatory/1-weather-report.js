@@ -1,3 +1,5 @@
+// SOLUTIONS -> https://github.com/CodeYourFuture/JavaScript-Core-1-Coursework-Week3-Solution/blob/main/2-mandatory/1-weather-report.js
+
 /*
     Imagine we're making a weather app!
     

@@ -1,3 +1,5 @@
+// SOLUTIONS -> https://github.com/CodeYourFuture/JavaScript-Core-1-Coursework-Week3-Solution/blob/main/2-mandatory/3-stocks.js
+
 /*
     THESE EXERCISES ARE QUITE HARD. JUST DO YOUR BEST, AND COME WITH QUESTIONS IF YOU GET STUCK :)
 
@@ -34,21 +36,18 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Functions can help with this!
 */
 
-// >> result = array with average of each array --> averageStockFor5Companies
-// start by finding the average of 1 stockprices array - to test
-// then get the average of each array --> averageStockPerCompany
-// put it a new array containing averages --> averageStockFor5Companies
-// return the new array of averages
+// as an array of arrays we need nested for loops (one for the outer array and one for the inner arrays)
 
 function getAveragePrices(closingPricesForAllStocks) {
   let averageStockFor5CompaniesArray = [];
-  for (let index = 0; index < closingPricesForAllStocks.length; index++) {
+  for (let i = 0; i < closingPricesForAllStocks.length; i++) {
     let sum = 0;
-    for (let j = 0; j < closingPricesForAllStocks[index].length; j++) {
-      sum = sum + closingPricesForAllStocks[index][j];
+    for (let j = 0; j < closingPricesForAllStocks[i].length; j++) {
+      // to find average of each inner array
+      sum = sum + closingPricesForAllStocks[i][j]; // using both index for the outer and inner arrays (think matrices, matrix, in maths using coordinates to get to the value)
     }
     average = sum / closingPricesForAllStocks[i].length;
-    averageStockFor5CompaniesArray.push(Number(average.toFixed(2)));
+    averageStockFor5CompaniesArray.push(Number(average.toFixed(2))); // converting string to number and 2 decimal places then pushing to new array of averages
   }
   return averageStockFor5CompaniesArray;
 }
@@ -73,13 +72,31 @@ function getPriceChanges(closingPricesForAllStocks) {
     let difference;
     for (let j = 0; j < closingPricesForAllStocks[i].length; j++) {
       difference =
-        closingPricesForAllStocks[i][0] - closingPricesForAllStocks[i][4];
+        closingPricesForAllStocks[i][0] - closingPricesForAllStocks[i][4]; // upon inverting values it works. WHY?
     }
     priceChangesFor5CompaniesArray.push(Number(difference.toFixed(2)));
   }
   return priceChangesFor5CompaniesArray;
 }
-//////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////// REVIEW -> teachers' solution ///////////////
+// created a function to calculate change in price for single array first, then passed the value through another function as a parameter
+
+// function getPriceChanges(closingPricesForAllStocks) {
+//   let changes = [];
+//   for (let pricesForStock of closingPricesForAllStocks) {
+//     changes.push(getPriceChangeForStock(pricesForStock));
+//   }
+//   return changes;
+// }
+
+// function getPriceChangeForStock(pricesForStock) { //function that calculates the change in price for a SINGLE stock
+//   let priceChange =
+//     pricesForStock[pricesForStock.length - 1] - pricesForStock[0];
+//   return roundTo2Decimals(priceChange);
+// }
+////////////////////////////////////////////////////
 
 /*
     As part of a financial report, we want to see what the highest price was for each stock in the last 5 days.
@@ -93,6 +110,11 @@ function getPriceChanges(closingPricesForAllStocks) {
     The stock ticker should be capitalized.
     The price should be shown with exactly 2 decimal places.
 */
+
+////////////////////// HELP! Did not manage to solve this //////////////////////////////
+
+////////// My attempt /////////
+
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
   let highestPriceForAllStocksArray = [];
   let highestPriceForOneStock = closingPricesForAllStocks[0]; // Assume the first stock price is the highest
@@ -101,20 +123,47 @@ function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
     for (let j = 0; j < closingPricesForAllStocks[i].length; j++) {
       // start from 1 not 0 because you're comparing to 0
       let currentPriceForOneStock;
-
       if (highestPriceForOneStock < currentPriceForOneStock) {
         currentPriceForOneStock = highestPriceForOneStock[i]; // this current price takes the place of previous highestPriceForOneStock
       }
     }
     highestPriceForAllStocksArray.push(
       `The highest price of ${stocks[i]} in the last 5 days was ${Number(
-        highestPriceForOneStock[i]
+        currentPriceForOneStock
       )}`
     );
   }
 
   return highestPriceForAllStocksArray;
 }
+
+//////////////////////
+
+////// Solution provided by teachers //////
+
+// function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
+//   let descriptions = [];
+//   for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+//     let highestPrice = getHighestPrice(closingPricesForAllStocks[i]); // passing function as a parameter in another function
+//     descriptions.push(
+//       `The highest price of ${stocks[i].toUpperCase()} in the last 5 days was ${highestPrice.toFixed(2)}`);
+//   }
+//   return descriptions;
+// }
+
+// function getHighestPrice(pricesForStock) {
+//   // initializing to 0, as we're expecting this value to be overridden by the first price in the array
+//   let highestPriceSoFar = 0;
+//   for (let price of pricesForStock) {
+//     // if this price is higher than the highest price we've seen so far, it becomes the new highest price
+//     if (price > highestPriceSoFar) {
+//       highestPriceSoFar = price;
+//     }
+//   }
+//   return highestPriceSoFar;
+// }
+
+//////////////////////
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the average price for each stock", () => {
@@ -129,7 +178,7 @@ test("should return the price change for each stock", () => {
   ]);
 });
 
-test.only("should return a description of the highest price for each stock", () => {
+test("should return a description of the highest price for each stock", () => {
   expect(
     highestPriceDescriptions(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS, STOCKS)
   ).toEqual([
