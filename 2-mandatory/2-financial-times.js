@@ -5,7 +5,13 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    // TODO
+    allTitles = [];
+    for (headline of allArticleTitles){
+        if (headline.length <= 65) {
+            allTitles.push(headline)
+        }
+    }
+    return allTitles;
 }
 
 /*
@@ -14,24 +20,58 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+    
+    let shortestLine;
+    let length_headline = 100000;
+
+    for (headline of allArticleTitles) {
+        let currentTitleWordCount = headline.split (" ").length;
+        
+     if (currentTitleWordCount < length_headline) {
+        shortestLine = headline;
+        length_headline = currentTitleWordCount;
+     }
+    }
+        
+    return shortestLine;
+    
 }
+    
+
 
 /*
     The editor of the FT has realised that headlines which have numbers in them get more clicks!
     Implement the function below to return a new array containing all the headlines which contain a number.
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
-function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+
+function hasNumber(myString) {
+  return /\d/.test(myString);
 }
 
-/*
+function headlinesWithNumbers(allArticleTitles) {
+    let arrayWithNumbers = [];
+    for (headline of allArticleTitles) {
+        let includesNumber = hasNumber(headline)
+        if (includesNumber) {
+            arrayWithNumbers.push(headline)
+        }
+    }
+
+    return arrayWithNumbers;
+
+}
+
+/*   
     The Financial Times wants to understand what the average number of characters in an article title is.
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
+    let totalCharacters = 0;
+    for (const headline of allArticleTitles){
+        totalCharacters = totalCharacters + headline.length;
+    }
+    return Math.round(totalCharacters / allArticleTitles.length);
 }
 
 

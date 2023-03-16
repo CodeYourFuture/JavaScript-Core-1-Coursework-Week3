@@ -12,7 +12,15 @@
 */
 
 function getTemperatureReport(cities) {
-    // TODO
+    output=[];
+    for (city of cities) {
+        temperature = temperatureService(city);
+        string = `The temperature in ${city} is ${temperature} degrees`;
+        output.push (string);
+
+    }
+    return output;
+
 }
 
 

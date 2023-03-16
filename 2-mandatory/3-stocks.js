@@ -34,7 +34,18 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Functions can help with this!
 */
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+    let arrayOfAveragePrices = [];
+    
+    for (const stockPricesLastFiveDays of closingPricesForAllStocks) { 
+       let sum = 0;
+        for (const stock of stockPricesLastFiveDays){
+            sum += stock;
+        }
+        const averagePrice = Math.round((sum / stockPricesLastFiveDays.length ) * 100 ) / 100
+        
+        arrayOfAveragePrices.push(averagePrice)
+    }
+    return arrayOfAveragePrices;
 }
 
 /*
@@ -48,8 +59,19 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+    let newArrayOfDifference = [];
+    for (let oneSetOfPrices of closingPricesForAllStocks){
+        lengthOfArray = oneSetOfPrices.length;
+        finalPositionInArray = lengthOfArray - 1;
+
+        let firstPrice = oneSetOfPrices[0];
+        let lastPrice = oneSetOfPrices[finalPositionInArray];
+        let differencePrice = Math.round((lastPrice - firstPrice) * 100) / 100;
+        newArrayOfDifference.push(differencePrice);
+    }
+    return newArrayOfDifference;
 }
+
 
 /*
     As part of a financial report, we want to see what the highest price was for each stock in the last 5 days.
@@ -64,8 +86,19 @@ function getPriceChanges(closingPricesForAllStocks) {
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+    let highestPriceForEachStock = [];
+    let highestPrice = 0;
+    let stock = 0;
+    for (element of closingPricesForAllStocks) {  
+                highestPrice = Math.max(...element).toFixed(2);   
+       highestPriceForEachStock.push( `The highest price of ${stocks[stock].toUpperCase()} in the last 5 days was ${highestPrice}`);
+       stock++;
+    }
+    return highestPriceForEachStock;
 }
+    
+
+
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
