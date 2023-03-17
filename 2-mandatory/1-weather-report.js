@@ -1,6 +1,6 @@
 /*
     Imagine we're making a weather app!
-    
+
     We have a list of cities that the user wants to track.
     We also already have a temperatureService function which will take a city as a parameter and return a temparature.
 
@@ -12,8 +12,11 @@
 */
 
 function getTemperatureReport(cities) {
-    // TODO
-}
+ return cities.map((city)=>`The temperature in ${city} is ${temperatureService(city)} degrees`);
+
+    }
+
+
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
@@ -28,10 +31,13 @@ function temperatureService(city) {
     temparatureMap.set('Mumbai', 29);
     temparatureMap.set('São Paulo', 23);
     temparatureMap.set('Lagos', 33);
-    
+
     return temparatureMap.get(city);
 }
-
+test('should return array of same length as argument',()=>{
+    let usersCities = ['London', 'Paris', 'Barcelona'];
+    expect(getTemperatureReport(usersCities).length).toEqual(3);
+})
 test("should return a temperature report for the user's cities", () => {
     let usersCities = [
         "London",
