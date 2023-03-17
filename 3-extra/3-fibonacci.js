@@ -14,24 +14,42 @@
 */
 
 function generateFibonacciSequence(n) {
-    // TODO
+  let startingArray = [0, 1];
+  for (let i = 2; i < n; i++) {
+    startingArray.push(
+      startingArray[startingArray.length - 2] +
+        startingArray[startingArray.length - 1]
+    );
+  }
+  return startingArray;
 }
+console.log(generateFibonacciSequence(10));
+// function generateFibonacciSequence(n) {
+//   const sequence = [0, 1];
+
+//   while (sequence.length < n) {
+//     sequence.push(
+//       sequence[sequence.length - 2] + sequence[sequence.length - 1]
+//     );
+//   }
+
+//   return sequence;
+// }
+// console.log(generateFibonacciSequence(10));
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 test("should return the first 10 numbers in the Fibonacci Sequence", () => {
-    expect(generateFibonacciSequence(10)).toEqual(
-        [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
-    );
+  expect(generateFibonacciSequence(10)).toEqual([
+    0, 1, 1, 2, 3, 5, 8, 13, 21, 34,
+  ]);
 });
 
 test("should return the first 5 numbers in the Fibonacci Sequence", () => {
-    expect(generateFibonacciSequence(5)).toEqual(
-        [0, 1, 1, 2, 3]
-    );
+  expect(generateFibonacciSequence(5)).toEqual([0, 1, 1, 2, 3]);
 });
 
 test("should return the first 15 numbers in the Fibonacci Sequence", () => {
-    expect(generateFibonacciSequence(15)).toEqual(
-        [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377]
-    );
+  expect(generateFibonacciSequence(15)).toEqual([
+    0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377,
+  ]);
 });
