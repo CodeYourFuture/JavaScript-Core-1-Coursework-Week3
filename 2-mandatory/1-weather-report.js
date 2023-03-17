@@ -52,6 +52,16 @@ test("should return a temperature report for the user's cities", () => {
     ]);
 });
 
+test("should return the same array length as input's length", () => {
+    let usersCities = [
+        "London",
+        "Paris",
+        "São Paulo"
+    ]
+
+    expect(getTemperatureReport(usersCities).length).toEqual(3);
+});
+
 test("should return a temperature report for the user's cities (alternate input)", () => {
     let usersCities = [
         "Barcelona",

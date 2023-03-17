@@ -36,13 +36,13 @@ function getAllFrequencies() {
 // `getStations` goes here
 function getStations () {
   let allFrequencies = getAllFrequencies();
-  const stations = [];
-  for (let item of allFrequencies){
-    if (isRadioStation(item)) {
-      stations.push(item);
-    }
-  }
-  return stations;
+  // const stations = [];
+  // for (let item of allFrequencies){
+  //   if (isRadioStation(item)) {
+  //     stations.push(item);
+  //   }
+  // }
+  return allFrequencies.filter(isRadioStation);
 }
 
 /*

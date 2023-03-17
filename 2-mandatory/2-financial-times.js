@@ -5,13 +5,13 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    let shortTitles = [];
-    for (let item of allArticleTitles){
-        if (item.length <= 65) {
-            shortTitles.push(item);
-        }
-    }
-    return shortTitles;
+    // let shortTitles = [];
+    // for (let item of allArticleTitles){
+    //     if (item.length <= 65) {
+    //         shortTitles.push(item);
+    //     }
+    // }
+    return allArticleTitles.filter(article => article.length <=65);
 }
 
 /*
