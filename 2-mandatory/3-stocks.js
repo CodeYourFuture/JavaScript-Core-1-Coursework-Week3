@@ -77,6 +77,21 @@ console.log(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS [0])
 */
 function getAveragePrices(closingPricesForAllStocks) {
     // TODO
+    let averageprice=[];
+   
+   for(const stocksline of closingPricesForAllStocks){
+    let sum = 0;
+    let average = 0;
+    for(const item of stocksline){
+      sum = sum + item;
+
+    }
+      average = sum / stocksline.length;
+      averageprice.push(Math.round(average * 100) / 100);
+    
+   }
+return averageprice;
+    
 }
 
 /*
@@ -91,6 +106,13 @@ function getAveragePrices(closingPricesForAllStocks) {
 */
 function getPriceChanges(closingPricesForAllStocks) {
     // TODO
+     const priceChange = [];
+    for(const stocksline of closingPricesForAllStocks){
+        let sub = 0;
+         sub = stocksline.slice(-1) - stocksline[0];
+        priceChange.push(Math.round(sub*100)/100);
+    }
+    return priceChange;
 }
 
 /*
@@ -107,6 +129,27 @@ function getPriceChanges(closingPricesForAllStocks) {
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
     // TODO
+    const result = [];
+let num = 0;
+let Name;
+for(const stocksline of closingPricesForAllStocks){
+        
+   
+         let FirstPrice = stocksline[0];
+        let i = 1;
+        while(i<stocksline.length){
+         let price = stocksline[i];
+        if(price>FirstPrice){
+          FirstPrice = price;
+        }
+        i=i+1;
+        }
+        
+        Name = stocks[num].toUpperCase();
+        result.push(`The highest price of ${Name} in the last 5 days was ${FirstPrice.toFixed(2)}`);
+        num = num + 1;
+}
+return result;
 }
 
 
