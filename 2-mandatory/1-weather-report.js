@@ -16,15 +16,18 @@ function getTemperatureReport(cities) {
   let temperatureReport = [];   // First, we initialize an empty array temperatureReport to hold the statements about the temperature of each city.
  
   // Next, we use a for loop to loop through each city in the cities array.
-  for (let i; i <cities.lenght; i++){
+  for (let i=0; i <cities.length; i++){
     let city = cities[i];
     //we get the temperature for the current city by calling the temperatureService() function with the city as the argument.
     let temparature = temperatureService(city);
     // we create a statement about the temperature of the current city by using string interpolation to combine the city name and temperature into a single string
-    let statement = `The temperature in  ${city} is ${temparature} degrees`;
-
+    let statement = `The temperature in ${city} is ${temparature} degrees`;
+    console.log(cities)
+    console.log(temparature)
+    console.log(statement)
     // we add the statement to the temperatureReport array using the push() method.
     temperatureReport.push(statement);
+
   }
 
   return temperatureReport
