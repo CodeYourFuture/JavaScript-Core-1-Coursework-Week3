@@ -13,6 +13,7 @@
 let a;
 console.log(a);
 
+// Because there is no value for the variable (a) 
 
 // Example 2
 function sayHello() {
@@ -22,6 +23,8 @@ function sayHello() {
 let hello = sayHello();
 console.log(hello);
 
+// Dou call the function and console 2 times
+
 
 // Example 3
 function sayHelloToUser(user) {
@@ -30,7 +33,10 @@ function sayHelloToUser(user) {
 
 sayHelloToUser();
 
+// We have to assign a value to user
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+
+// Dou there is no index 3 in this array

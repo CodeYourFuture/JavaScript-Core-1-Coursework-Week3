@@ -4,17 +4,38 @@
     The home page of the web site has a headline section, which only has space for article titles which are 65 characters or less.
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
-function potentialHeadlines(allArticleTitles) {
-    // TODO
+function potentialHeadlines(allArticleTitles){
+    let articlelCharacters = [];
+        for(let title of allArticleTitles){
+        if(title.length <= 65){
+        articlelCharacters.push(title);
+    }
+    }
+        return articlelCharacters;
 }
-
 /*
     The editor of the FT likes short headlines with only a few words!
     Implement the function below, which returns the title with the fewest words.
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+    let shortestHeadline;
+    let fewestNumberOfWords;
+
+    for(let title of allArticleTitles) {
+        // find number of words in title
+        let numberOfWords = title.split(' ').length;
+        
+        // compare the number with fewestNumberOfWords
+        if(fewestNumberOfWords === undefined || numberOfWords < fewestNumberOfWords) {
+            // if it's less, update fewestNumberOfWords and shortestHeadline
+            fewestNumberOfWords = numberOfWords;
+            shortestHeadline = title;
+        }
+        // if it's not less, do nothing
+    }
+
+    return shortestHeadline;
 }
 
 /*
@@ -22,8 +43,18 @@ function titleWithFewestWords(allArticleTitles) {
     Implement the function below to return a new array containing all the headlines which contain a number.
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
+function containNumbers(str){
+    return /[0-9]/.test(str);
+}
+
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+    let titlesWithNumbers = [];
+    for(let title of allArticleTitles){
+        if (containNumbers(title)== true){
+            titlesWithNumbers.push(title);
+        }
+    }
+    return titlesWithNumbers
 }
 
 /*
@@ -31,7 +62,13 @@ function headlinesWithNumbers(allArticleTitles) {
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
+    let numberAllWords = 0;
+    let noOfArtical = allArticleTitles.length;
+    for(let title of allArticleTitles){
+        numberAllWords = numberAllWords + title.length;
+    }
+    let averageWords = Math.round(numberAllWords/noOfArtical);
+    return averageWords;
 }
 
 
