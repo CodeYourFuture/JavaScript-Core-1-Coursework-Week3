@@ -40,7 +40,7 @@ function getAveragePrices(closingPricesForAllStocks) {
     for (let j = 0; j < closingPricesForAllStocks[i].length; j++) {
         total += closingPricesForAllStocks[i][j];
     }
-    result.push(parseFloat((total / 5).toFixed(2)));
+    result.push(parseFloat((total / closingPricesForAllStocks.length).toFixed(2)));
     }
     return result;
 }
