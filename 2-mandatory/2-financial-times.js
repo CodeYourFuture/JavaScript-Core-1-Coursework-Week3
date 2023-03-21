@@ -6,6 +6,13 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
+    const articleTitle65 = [];
+    
+    for(const title of allArticleTitles){
+        if(title.length <= 65){
+        articleTitle65.push(title);
+        }
+    } return articleTitle65;
 }
 
 /*
@@ -14,7 +21,14 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+  // TODO
+let shortestArticle = null
+
+  for (const item of allArticleTitles) {
+    if(shortestArticle === null || item.length < shortestArticle.length ){
+     shortestArticle = item;
+    }
+  } return shortestArticle;
 }
 
 /*
@@ -23,8 +37,18 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+   // TODO
+   let articlesWithNumbers = [];
+   for (const item of allArticleTitles) {
+     if (item.search("[0-9]") > -1){
+
+        articlesWithNumbers.push(item);
+        
+     } 
+   } 
+   return articlesWithNumbers;
 }
+ 
 
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
@@ -32,7 +56,14 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
-}
+    let sum = 0;
+
+    for (const article of allArticleTitles){
+      sum += article.length;
+        
+    }
+   return  Math.round(sum / allArticleTitles.length);
+} 
 
 
 
