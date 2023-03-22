@@ -13,6 +13,14 @@
 
 function getTemperatureReport(cities) {
     // TODO
+    const reports = [];
+
+
+    for (item of cities){
+        reports.push(`The temperature in ${item} is ${temperatureService(item)} degrees`)
+    }
+    
+    return reports
 }
 
 
@@ -31,6 +39,11 @@ function temperatureService(city) {
     
     return temparatureMap.get(city);
 }
+
+test("test should return array the same length as an argument", () => {
+    let usersCities = ["London", "Paris", "São Paulo"];
+    expect (getTemperatureReport(usersCities).length).toEqual(3);
+});
 
 test("should return a temperature report for the user's cities", () => {
     let usersCities = [

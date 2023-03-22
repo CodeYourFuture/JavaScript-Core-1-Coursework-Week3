@@ -14,10 +14,29 @@
 */
 
 function generateFibonacciSequence(n) {
-    // TODO
-}
+      var arrayOfNumbers = [0, 1]
 
-/* ======= TESTS - DO NOT MODIFY ===== */
+    while (arrayOfNumbers.length != n) {
+       let number = arrayOfNumbers[arrayOfNumbers.length-1] + arrayOfNumbers[arrayOfNumbers.length-2]
+       arrayOfNumbers.push(number)
+
+    }
+    console.log(arrayOfNumbers)
+    return arrayOfNumbers
+}
+    
+    
+  
+
+    
+
+
+generateFibonacciSequence(5)
+
+
+
+
+// * ======= TESTS - DO NOT MODIFY ===== */
 test("should return the first 10 numbers in the Fibonacci Sequence", () => {
     expect(generateFibonacciSequence(10)).toEqual(
         [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
