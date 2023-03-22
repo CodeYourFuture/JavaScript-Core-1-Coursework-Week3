@@ -63,12 +63,16 @@ function getAveragePrices(closingPricesForAllStocks) {
                 (Apple's price on the 5th day) - (Apple's price on the 1st day) = 172.99 - 179.19 = -6.2
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
+
+// 1. AAPL (apple) price difference last day - first day = -6.2
+// 
+
 function getPriceChanges(closingPricesForAllStocks) {
     let newPriceChangeArray = [];
-    for (let closingPricesEachcompany of closingPricesForAllStocks) {
-            let priceChange = (closingPricesEachcompany[4] - closingPricesEachcompany[0]).toFixed(2); 
-            let priceChangeValues = parseFloat(priceChange);
-            newPriceChangeArray.push(priceChangeValues);
+    for (let oneSetOfPrices of closingPricesForAllStocks) {
+        let priceChange = (oneSetOfPrices[(oneSetOfPrices.length - 1)] - oneSetOfPrices[0]).toFixed(2); //converted to 2 decimal places but it is also converted to string in the process
+        let priceChangeValues = parseFloat(priceChange); // removing the string values to numbers
+        newPriceChangeArray.push(priceChangeValues);
     }
     return newPriceChangeArray;
 }
@@ -87,7 +91,13 @@ function getPriceChanges(closingPricesForAllStocks) {
 */
 
     // for (i = 0; i < closingPricesForAllStocks.length; i++) {
-    //   let highestPrice = 0;
+    //   let highestPrice = 0;const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
+    [179.19, 180.33, 176.28, 175.64, 172.99], // AAPL
+    [340.69, 342.45, 334.69, 333.20, 327.29], // MSFT
+    [3384.44, 3393.39, 3421.37, 3420.74, 3408.34], // AMZN
+    [2951.88, 2958.13, 2938.33, 2928.30, 2869.45], // GOOGL
+    [1101.30, 1093.94, 1067.00, 1008.87, 938.53] // TSLA
+
     //   for (let companyPriceArray of closingPricesForAllStocks) {
     //     if (companyPriceArray[i] > highestPrice) {
     //       highestPrice = companyPriceArray[i];
@@ -123,13 +133,13 @@ test("should return the average price for each stock", () => {
     );
 });
 
-test("should return the price change for each stock", () => {
+test.only("should return the price change for each stock", () => {
     expect(getPriceChanges(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS)).toEqual(
         [-6.2, -13.4, 23.9, -82.43, -162.77]
     );
 });
 
-test.only("should return a description of the highest price for each stock", () => {
+test("should return a description of the highest price for each stock", () => {
     expect(highestPriceDescriptions(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS, STOCKS)).toEqual(
         [
             "The highest price of AAPL in the last 5 days was 180.33",

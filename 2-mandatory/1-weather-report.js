@@ -11,6 +11,12 @@
         - Hint: you can call the temperatureService function from your function
 */
 
+// 1. Create a new empty array
+// 2. Loop through the cities, and for each city:
+// a. Create a new string for the weather report of that city
+// b. Add that new string into the array
+// 3. Return the array
+
 function getTemperatureReport(cities) {
     let arr = [];
     for (let city of cities) {

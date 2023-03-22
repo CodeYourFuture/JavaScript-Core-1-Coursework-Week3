@@ -10,6 +10,15 @@
     Each title in the resulting array should be the highest rated book in its genre.
 */
 
+// note: Steps to create a function. think about argument. think about input and output and its types. array of object mean array of what type or what type of array.
+// blue word before the colon is key or value or property
+// we can use teh square bracket
+// const books = [{title: "The Lion King"}] // of an array
+// const book = {title; "The Lion King"}
+// 2 ways to access the value:
+// book.title // "The Lion King"
+// book["tile"] //"The Lion King"
+
 function getHighestRatedInEachGenre(books) {
     // TODO
 }

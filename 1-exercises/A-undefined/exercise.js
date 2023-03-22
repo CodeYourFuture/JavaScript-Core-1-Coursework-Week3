@@ -15,8 +15,8 @@ console.log(a);
 
 // The output of the example code console.log(a); will be undefined.
 // We see undefined because the variable a has been declared but not assigned any value. 
-//In JavaScript, when a variable is declared but not assigned a value, its default value is undefined. 
-//So, when we log the value of a to the console, you will see undefined printed.
+// In JavaScript, when a variable is declared but not assigned a value, its default value is undefined. 
+// So, when we log the value of a to the console, you will see undefined printed.
 
 
 // Example 2
