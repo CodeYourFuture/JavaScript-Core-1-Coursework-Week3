@@ -133,7 +133,7 @@ test("should return the average price for each stock", () => {
     );
 });
 
-test.only("should return the price change for each stock", () => {
+test("should return the price change for each stock", () => {
     expect(getPriceChanges(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS)).toEqual(
         [-6.2, -13.4, 23.9, -82.43, -162.77]
     );
