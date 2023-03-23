@@ -7,12 +7,7 @@
      npm test -- --testPathPattern mandatory/2-financial-times.js
 */
 function potentialHeadlines(allArticleTitles) {
-  newArticles = [];
-  for (const article of allArticleTitles) {
-    if (article.length <= 65) {
-      newArticles.push(article);
-    }
-  }
+  let newArticles = allArticleTitles.filter((article) => article.length <= 65);
   return newArticles;
 }
 
@@ -22,13 +17,15 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-  let first = allArticleTitles[0];
+  let firstArticle = allArticleTitles[0];
   for (let i = 1; i < allArticleTitles.length; i++) {
-    if (allArticleTitles[i].split(" ").length < first.split(" ").length) {
-      first = allArticleTitles[i];
+    if (
+      allArticleTitles[i].split(" ").length < firstArticle.split(" ").length
+    ) {
+      firstArticle = allArticleTitles[i];
     }
   }
-  return first;
+  return firstArticle;
 }
 
 /*
