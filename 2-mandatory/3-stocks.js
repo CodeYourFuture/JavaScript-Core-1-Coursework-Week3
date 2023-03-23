@@ -33,8 +33,24 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Solve the smaller problems, and then build those solutions back up to solve the larger problem.
         Functions can help with this!
 */
+
+// 1. Find the total price of each company stocks in the last 5 days
+// 2. Divide the total price by the number of days i.e. 5
+
+
+
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+    let arrayOfAverageValues = [];
+    for (let closingPriceEachCompany of closingPricesForAllStocks) {
+        let sumOfClosingPriceEachCompany = 0;
+        for (i = 0; i < closingPriceEachCompany.length; i++) {
+            sumOfClosingPriceEachCompany = sumOfClosingPriceEachCompany + closingPriceEachCompany[i];
+            averagePriceEachCompany = (sumOfClosingPriceEachCompany / closingPriceEachCompany.length).toFixed(2);
+        }
+        averagePricesNumberType = parseFloat(averagePriceEachCompany);
+        arrayOfAverageValues.push(averagePricesNumberType);
+    }
+    return arrayOfAverageValues;
 }
 
 /*
@@ -47,8 +63,18 @@ function getAveragePrices(closingPricesForAllStocks) {
                 (Apple's price on the 5th day) - (Apple's price on the 1st day) = 172.99 - 179.19 = -6.2
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
+
+// 1. AAPL (apple) price difference last day - first day = -6.2
+// 
+
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+    let newPriceChangeArray = [];
+    for (let oneSetOfPrices of closingPricesForAllStocks) {
+        let priceChange = (oneSetOfPrices[(oneSetOfPrices.length - 1)] - oneSetOfPrices[0]).toFixed(2); //converted to 2 decimal places but it is also converted to string in the process
+        let priceChangeValues = parseFloat(priceChange); // removing the string values to numbers
+        newPriceChangeArray.push(priceChangeValues);
+    }
+    return newPriceChangeArray;
 }
 
 /*
@@ -63,9 +89,41 @@ function getPriceChanges(closingPricesForAllStocks) {
     The stock ticker should be capitalised.
     The price should be shown with exactly 2 decimal places.
 */
-function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
-}
+
+    // for (i = 0; i < closingPricesForAllStocks.length; i++) {
+    //   let highestPrice = 0;const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
+    [179.19, 180.33, 176.28, 175.64, 172.99], // AAPL
+    [340.69, 342.45, 334.69, 333.20, 327.29], // MSFT
+    [3384.44, 3393.39, 3421.37, 3420.74, 3408.34], // AMZN
+    [2951.88, 2958.13, 2938.33, 2928.30, 2869.45], // GOOGL
+    [1101.30, 1093.94, 1067.00, 1008.87, 938.53] // TSLA
+
+    //   for (let companyPriceArray of closingPricesForAllStocks) {
+    //     if (companyPriceArray[i] > highestPrice) {
+    //       highestPrice = companyPriceArray[i];
+    //     }
+    //   }
+    //   arrayWithHighestValue.push(highestPrice);
+
+      function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
+        let highestCompanyStockPrices = [];
+        let namesOfCompanies = [];
+        let highestPrice = 0;
+        for (i = 0; i < closingPricesForAllStocks.length; i++) {
+            for (let closingPricePerDay of closingPricesForAllStocks[i]) {
+                if (closingPricePerDay > highestPrice) {
+                    highestPrice = closingPricePerDay;     
+                }
+            }
+            let upperStock = stocks[i].toUpperCase();
+            highestCompanyStockPrices.push(
+              `The highest price of ${upperStock} in the last 5 days was ${highestPrice.toFixed(2)}`);
+            highestPrice = 0;
+        }
+        return highestCompanyStockPrices;
+        // return `The highest price of ${stocks} in the last 5 days was ${arrayWithHighestValue[i]}`;
+      }
+      
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */

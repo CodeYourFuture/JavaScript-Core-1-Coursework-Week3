@@ -11,7 +11,19 @@
         - Hint: you can call the temperatureService function from your function
 */
 
+// 1. Create a new empty array
+// 2. Loop through the cities, and for each city:
+// a. Create a new string for the weather report of that city
+// b. Add that new string into the array
+// 3. Return the array
+
 function getTemperatureReport(cities) {
+    let arr = [];
+    for (let city of cities) {
+        let weatherReport = `The temperature in ${city} is ${temperatureService(city)} degrees`;
+        arr.push(weatherReport);
+    }
+    return arr;
     // TODO
 }
 
@@ -31,6 +43,11 @@ function temperatureService(city) {
     
     return temparatureMap.get(city);
 }
+
+test("should return array of same length as argument", () => {
+    let usersCities = ["London", "Paris", "São Paulo"];
+    expect(getTemperatureReport(usersCities).length).toEqual(3);
+});
 
 test("should return a temperature report for the user's cities", () => {
     let usersCities = [
