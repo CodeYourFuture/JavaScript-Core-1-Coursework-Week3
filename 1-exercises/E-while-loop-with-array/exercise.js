@@ -5,19 +5,24 @@
 */
 
 const BIRTHDAYS = [
-    "January 7th",
-    "February 12th",
-    "April 3rd",
-    "April 5th",
-    "May 3rd",
-    "July 11th",
-    "July 17th",
-    "September 28th",
-    "November 15th"
+  "January 7th",
+  "February 12th",
+  "April 3rd",
+  "April 5th",
+  "May 3rd",
+  "July 11th",
+  "July 17th",
+  "September 28th",
+  "November 15th",
 ];
-
+let index = 0;
 function findFirstJulyBDay(birthdays) {
-    // TODO
+  while (index < birthdays.length) {
+    if (birthdays[index].includes("July")) {
+      return birthdays[index];
+    }
+    index++;
+  }
 }
 
 console.log(findFirstJulyBDay(BIRTHDAYS)); // should output "July 11th"
