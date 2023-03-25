@@ -5,16 +5,30 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    // TODO
+    let returnedArray = [];
+    for (let i = 0; i < allArticleTitles.length; i++) {
+        if (allArticleTitles[i].length <= 65) {
+          returnedArray.push(allArticleTitles[i]);
+        }
+      }
+      return returnedArray;
 }
-
+// npm test -- --testPathPattern 2-financial-times
 /*
     The editor of the FT likes short headlines with only a few words!
     Implement the function below, which returns the title with the fewest words.
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+    let min = Infinity;
+    let tempIndex;
+    for (let i = 0; i < allArticleTitles.length; i++) {
+      if (allArticleTitles[i].length < min) {
+        min = allArticleTitles[i].length;
+        tempIndex = i;
+      }
+    }
+    return allArticleTitles[tempIndex];
 }
 
 /*
@@ -24,6 +38,18 @@ function titleWithFewestWords(allArticleTitles) {
 */
 function headlinesWithNumbers(allArticleTitles) {
     // TODO
+    let headlinesWithNumber = [];
+
+  for (let i = 0; i < allArticleTitles.length; i++) {
+    for (let j = 0; j < allArticleTitles[i].length; j++) {
+      if (!isNaN(parseInt(allArticleTitles[i][j]))) {
+        headlinesWithNumber.push(allArticleTitles[i]);
+        break;
+      }
+    }
+  }
+  return headlinesWithNumber;
+    
 }
 
 /*
@@ -32,6 +58,12 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+    let totalChars = 0;
+    for (let i = 0; i < allArticleTitles.length; i++) {
+      totalChars += allArticleTitles[i].length;
+    }
+    let avgChars = Math.round(totalChars / allArticleTitles.length);
+    return avgChars;
 }
 
 
