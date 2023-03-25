@@ -12,32 +12,34 @@
 */
 
 function getTemperatureReport(cities) {
-    // TODO
-}
+    let newArray = [];
+    for (let i = 0; i < cities.length; i++) {
+        let degrees = temperatureService(cities[i]);
+        const statement = `The temperature in ${cities[i]} is ${degrees} degrees`;
+        newArray.push(statement);
+      }
+      return newArray;
+    }
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 function temperatureService(city) {
-    let temparatureMap  = new Map();
+    let temparatureMap = new Map();
 
-    temparatureMap.set('London', 10);
-    temparatureMap.set('Paris', 12);
-    temparatureMap.set('Barcelona', 17);
-    temparatureMap.set('Dubai', 27);
-    temparatureMap.set('Mumbai', 29);
-    temparatureMap.set('São Paulo', 23);
-    temparatureMap.set('Lagos', 33);
-    
+    temparatureMap.set("London", 10);
+    temparatureMap.set("Paris", 12);
+    temparatureMap.set("Barcelona", 17);
+    temparatureMap.set("Dubai", 27);
+    temparatureMap.set("Mumbai", 29);
+    temparatureMap.set("São Paulo", 23);
+    temparatureMap.set("Lagos", 33);
+  
     return temparatureMap.get(city);
 }
-
 test("should return a temperature report for the user's cities", () => {
-    let usersCities = [
-        "London",
-        "Paris",
-        "São Paulo"
-    ]
+    let usersCities = ["London", "Paris", "São Paulo"];
+
 
     expect(getTemperatureReport(usersCities)).toEqual([
         "The temperature in London is 10 degrees",
@@ -47,10 +49,7 @@ test("should return a temperature report for the user's cities", () => {
 });
 
 test("should return a temperature report for the user's cities (alternate input)", () => {
-    let usersCities = [
-        "Barcelona",
-        "Dubai"
-    ]
+      let usersCities = ["Barcelona", "Dubai"];
 
     expect(getTemperatureReport(usersCities)).toEqual([
         "The temperature in Barcelona is 17 degrees",
