@@ -39,14 +39,12 @@ function getAveragePrices(closingPricesForAllStocks) {
 
   for (let element of closingPricesForAllStocks) {
     let total = 0;
-    let counter = 0;
     let avarage = 0;
 
     for (let elementOfelement of element) {
       total = total + elementOfelement;
-      counter++;
     }
-    avarage = total / counter;
+    avarage = total / element.length;
     // Math.round((avarage * 100) / 100);
     returnedArray.push(Math.round(avarage * 100) / 100);
   }

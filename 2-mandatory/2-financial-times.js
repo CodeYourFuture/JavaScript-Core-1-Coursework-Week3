@@ -23,8 +23,8 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-  let min = Infinity;
-  let tempIndex;
+  let min = allArticleTitles[0].length;
+  let tempIndex = 0;
   for (let i = 0; i < allArticleTitles.length; i++) {
     if (allArticleTitles[i].length < min) {
       min = allArticleTitles[i].length;
@@ -49,7 +49,8 @@ function headlinesWithNumbers(allArticleTitles) {
 
     for (let numChecker of tester) {
       // to loop through each element
-      if (numChecker >= 0 && numChecker !== " ") {
+      if (numChecker.match(/[0123456789]/g)) {
+        // will try char.match(/[0123456789]/g) instead of if (numChecker >= 0 && numChecker !== " ")
         //this condition is to check if it is a number
         returnedArray1.push(element); // if passed the condition then store it in returnedArray1
         break; // since it contains a number, no need to check more characters. break to jump to next element
