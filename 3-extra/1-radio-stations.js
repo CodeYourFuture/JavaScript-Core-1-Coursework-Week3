@@ -15,6 +15,16 @@
 
 // `getAllFrequencies` goes here
 
+function getAllFrequencies() {
+  let arrayofFreq = [];
+  let counter = 87;
+  while (counter >= 87 && counter <= 108) {
+    arrayofFreq.push(counter);
+    counter++;
+  }
+  return arrayofFreq;
+}
+
 /**
  * Next, let's write a function that gives us only the frequencies that are radio stations.
  * Call this function `getStations`.
@@ -25,6 +35,17 @@
  * - Return only the frequencies that are radio stations.
  */
 // `getStations` goes here
+function getStations() {
+  let newArr = getAllFrequencies();
+  let returnedArray = [];
+  for (let element of newArr) {
+    let isItStation = isRadioStation(element);
+    if (isItStation) {
+      returnedArray.push(element);
+    }
+  }
+  return returnedArray;
+}
 
 /*
  * ======= TESTS - DO NOT MODIFY =======
