@@ -14,15 +14,22 @@
         - Hint: you can call the temperatureService function from your function
 */
 
+// function getTemperatureReport(cities) {
+//   const statements = [];
+//   for (const city of cities) {
+//     let degrees = temperatureService(city);
+//     let statement =
+//       "The temperature in " + city + " is " + degrees + " degrees";
+//     statements.push(statement);
+//   }
+//   return statements;
+// }
+
 function getTemperatureReport(cities) {
-  const statements = [];
-  for (const city of cities) {
-    let degrees = temperatureService(city);
-    let statement =
-      "The temperature in " + city + " is " + degrees + " degrees";
-    statements.push(statement);
-  }
-  return statements;
+  return cities.map(
+    (city) =>
+      `The temperature in ${city} is ${temperatureService(city)} degrees`
+  );
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
@@ -62,4 +69,9 @@ test("should return a temperature report for the user's cities (alternate input)
 
 test("should return an empty array if the user hasn't selected any cities", () => {
   expect(getTemperatureReport([])).toEqual([]);
+});
+
+test("should return array of same length as argument", () => {
+  let usersCities = ["London", "Paris", "São Paulo"];
+  expect(getTemperatureReport(usersCities).length).toEqual(3);
 });
