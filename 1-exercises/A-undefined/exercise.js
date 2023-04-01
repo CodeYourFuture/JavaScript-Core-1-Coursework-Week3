@@ -10,17 +10,20 @@
 */
 
 // Example 1
-let a;
+let = a;
 console.log(a);
 
+// In this example an operator "=" was absent
 
 // Example 2
 function sayHello() {
     let message = "Hello";
+    return message;
 }
 
 let hello = sayHello();
 console.log(hello);
+// The mistake was inside function body, where return was absent that is why we've seen undefined
 
 
 // Example 3
@@ -30,7 +33,11 @@ function sayHelloToUser(user) {
 
 sayHelloToUser();
 
+// Inside function parameter braces should be parameter when the function is called 
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+
+// When we call array elements via arr[] method we need to consider that index starts from 0 in arr, that's 
+// we see undefined because we call 4th element
