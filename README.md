@@ -1,6 +1,6 @@
 Like learning a musical instrument, programming requires daily practise.
 
-The exercises are split into three folders: `exercises`, `mandatory` and `extra`. All homework in the `exercise` and `mandatory` section **must** be completed for homework by the following lesson. 
+The exercises are split into three folders: `exercises`, `mandatory` and `extra`. All homework in the `exercise` and `mandatory` section **must** be completed for homework by the following lesson.
 
 The `extra` folder contains exercises that you can complete to challenge yourself, but are not required for the following lesson.
 
@@ -13,11 +13,26 @@ https://github.com/CodeYourFuture/JavaScript-Core-1-Coursework-Week3-Solution
 
 This is a **private** repository. Please request access from your Teachers, Buddy or City Coordinator after the start of your next lesson.
 
-## Testing your work
+## Running the code/tests
 
-- Each of the *.js files in the `1-exercises` folder can be run from the terminal using the `node` command with the path to the file. For example, `node 1-exercises/A-undefined/exercise.js` can be run from the root of the project.
-- To run the tests in the `2-mandatory` folder, run `npm run test` from the root of the project (after having run `npm install` once before).
-- To run the tests in the `3-extra` folder, run `npm run extra-tests` from the root of the project (after having run `npm install` once before).
+The files for the mandatory/extra exercises are intended to be run as jest tests.
+
+- Once you have cloned the repository, run `npm install` once in the terminal to install jest (and any necessary dependencies).
+- To run the tests for all mandatory/extra exercises, run `npm test`
+- To run only the tests for the mandatory exercises, run `npm test -- --selectProjects mandatory`
+- To run only the tests for the extra exercises, run `npm test -- --selectProjects extra`
+- To run a single exercise/test (for example `2-mandatory/1-weather-report.js`), run `npm test -- --testPathPattern 2-mandatory/1-weather-report.js` (Remember, you can use tab-completion to get files relative to the current directory, so m`Tab ↹`/1-`Tab ↹` will autocomplete get you the test file starting with 1-)
+
+For more information about tests, look here:
+
+https://syllabus.codeyourfuture.io/guides/intro-to-tests
+
+Try out variant way of running tests:
+
+- `npm test` -> run all mandatory and extra tests
+- `npm test -- --selectProjects mandatory` -> run only mandatory tests
+- `npm test -- --testPathPattern 2-mandatory/1-weather-report.js` -> run single test
+
 
 ## Instructions for submission
 
