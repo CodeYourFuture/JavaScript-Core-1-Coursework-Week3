@@ -12,7 +12,7 @@
 // Example 1
 let a;
 console.log(a);
-
+// ٰThe variable a is not assigned by any value.
 
 // Example 2
 function sayHello() {
@@ -21,7 +21,7 @@ function sayHello() {
 
 let hello = sayHello();
 console.log(hello);
-
+//function sayHello doesn't have any paramets and there is not argument when it calls !
 
 // Example 3
 function sayHelloToUser(user) {
