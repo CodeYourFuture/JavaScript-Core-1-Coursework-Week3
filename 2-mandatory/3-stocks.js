@@ -34,15 +34,23 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Functions can help with this!
 */
 function getAveragePrices(closingPricesForAllStocks) {
-
-    let [aapl, msft, amzn, googl, tsla] = stocks;
-
-    CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS.forEach(a,b => {
-        return a + b / 5;
-    });
-
-
-}
+    const result = [];
+    
+    for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+      const stockPrices = closingPricesForAllStocks[i];
+      let sum = 0;
+      
+      for (let j = 0; j < stockPrices.length; j++) {
+        sum += stockPrices[j];
+      }
+      
+      const average = sum / stockPrices.length;
+      result.push(parseFloat(average.toFixed(2)));
+    }
+    
+    return result;
+  }
+  
 
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
@@ -55,8 +63,19 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
-}
+    const priceChanges = [];
+  
+    for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+      const stockPrices = closingPricesForAllStocks[i];
+      const firstDayPrice = stockPrices[0];
+      const lastDayPrice = stockPrices[stockPrices.length - 1];
+      const priceChange = lastDayPrice - firstDayPrice;
+      priceChanges.push(parseFloat(priceChange.toFixed(2)));
+    }
+  
+    return priceChanges;
+  }
+  
 
 /*
     As part of a financial report, we want to see what the highest price was for each stock in the last 5 days.
@@ -71,8 +90,19 @@ function getPriceChanges(closingPricesForAllStocks) {
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
-}
+    const descriptions = [];
+  
+    for (let i = 0; i < stocks.length; i++) {
+      const stock = stocks[i];
+      const closingPrices = closingPricesForAllStocks[i];
+      const highestPrice = Math.max(...closingPrices).toFixed(2);
+  
+      descriptions.push(`The highest price of ${stock.toUpperCase()} in the last 5 days was ${highestPrice}`);
+    }
+  
+    return descriptions;
+  }
+  
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
