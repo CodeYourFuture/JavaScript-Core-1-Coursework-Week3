@@ -14,7 +14,7 @@
 function getTemperatureReport(cities) {
     let report = [];
     for(element of cities){
-        reportString = `The temperature in ${element} is ${temperatureService(element)} degrees`;
+        let reportString = `The temperature in ${element} is ${temperatureService(element)} degrees`;
         report.push(reportString);
         };
 return report;

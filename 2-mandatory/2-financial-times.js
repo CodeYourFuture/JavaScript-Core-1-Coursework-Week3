@@ -10,7 +10,6 @@ function potentialHeadlines(allArticleTitles) {
     if(element.length <= 65){
         potentialHeadlines.push(element);
     }
-    else continue;
     }
  return potentialHeadlines;
 
@@ -43,12 +42,10 @@ function titleWithFewestWords(allArticleTitles) {
 function headlinesWithNumbers(allArticleTitles) {
     let headLineWN = [];
     let numberArray = ['0','1','2','3','4','5','6','7','8','9'];
-    let numberArray2 = ['0123456789'];
     for(let element of allArticleTitles){
         for(char of element){
-            if(char.includes(numberArray)){
+            if(numberArray.includes(char)){
                 headLineWN.push(element);
-                break;
             }
         }
     }
