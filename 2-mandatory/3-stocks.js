@@ -35,7 +35,7 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 */
 function getAveragePrices(closingPricesForAllStocks) {
     let averageArray = [];
-    for(let elementS of CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS){
+    for(let elementS of closingPricesForAllStocks){
         let totalPrice = 0;
         let avg = 0;
         for(let price of elementS){
@@ -88,9 +88,9 @@ function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
         for(i = 0; i <= elementS.length; i++){
             if (highestP < elementS[i]){
                 highestP = elementS[i];
-            }else highestP = highestP;
+            }
         }
-        highestPF = Number(highestP.toFixed(2));
+        highestPF = Number(Math.round(highestP*100)/100).toFixed(2);
         highestArray.push(`The highest price of ${highestN} in the last 5 days was ${highestPF}`);
         g++;
         
