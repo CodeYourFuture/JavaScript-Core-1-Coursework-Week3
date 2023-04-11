@@ -23,6 +23,8 @@ function getTemperatureReport(cities) {
 }
 
 
+
+
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 function temperatureService(city) {
@@ -38,6 +40,9 @@ function temperatureService(city) {
     
     return temparatureMap.get(city);
 }
+// test("Should return an array of the same argument", () => {
+//     expect(getTemperatureReport(usersCities).length).toEqual(3)
+// });
 
 test("should return a temperature report for the user's cities", () => {
     let usersCities = [
