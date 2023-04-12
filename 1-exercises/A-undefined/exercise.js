@@ -11,15 +11,15 @@
 
 // Example 1
 let a;
-console.log(a);
+console.log(a); //we didn't assign a value to the variable a 
 
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+    let message = "Hello"; // the function sayHello() doesn't return anything
 }
 
-let hello = sayHello();
+let hello = sayHello(); 
 console.log(hello);
 
 
@@ -28,9 +28,10 @@ function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
 
-sayHelloToUser();
+sayHelloToUser();  // we didn't insert any input in the function sayHelloToUser()
 
 
 // Example 4
 let arr = [1,2,3];
-console.log(arr[3]);
+console.log(arr[3]);  // the array arr is containing 3 elements with idexes 0,1,2. The index 3 is not avaiable in the array arr
+
