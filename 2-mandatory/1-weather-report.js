@@ -45,7 +45,7 @@ function temperatureService(city) {
     temperatureMap.set('Mumbai', 29);
     temperatureMap.set('São Paulo', 23);
     temperatureMap.set('Lagos', 33);
-
+    
     return temperatureMap.get(city);
 }
 
