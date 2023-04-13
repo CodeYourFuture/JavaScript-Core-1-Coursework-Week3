@@ -29,34 +29,59 @@ function potentialHeadlines(allArticleTitles) {
 */
 function titleWithFewestWords(allArticleTitles) {
    // let headlines = "";
-    let shortestHeadLine = headlines -1;
-    for (let shortestHeadLine of allArticleTitles){
-    if (shortestHeadLine === "" || shortestHeadLine.length < shortestHeadLine.length){
-        shortestHeadLine =
+    //let shortestHeadLine = headlines -1;
+    for (let headlines of allArticleTitles){
+    if (shortestHeadLine === "" || headlines.length < shortestHeadLine.length){
+        shortestHeadLine = headlines; }
 
     }
+    return shortestHeadLine;
 }
+//console.log(shortestHeadLine);
 
-}
+
 
 /*
-    The editor of the FT has realised that headlines which have numbers in them get more clicks!
-    Implement the function below to return a new array containing all the headlines which contain a number.
-    (Hint: remember that you can also loop through the characters of a string if you need to)
+    The editor of the FT has realised that headlines which
+     have numbers in them get more clicks!
+    Implement the function below to return a new array
+     containing all the headlines which contain a number.
+    (Hint: remember that you can also loop through the 
+        characters of a string if you need to)
 */
+//break
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+    let articlesContainingNumber = [];
+    for (const headline of allArticleTitles){
+            if (number.has(headline)){
+                articlesContainingNumber.push(headline);
+                break;
+            }
+        }
+
+    return articlesContainingNumber;
     
-}
+    }
+    
 
 /*
-    The Financial Times wants to understand what the average number of characters in an article title is.
-    Implement the function below to return this number - rounded to the nearest integer.
+    The Financial Times wants to understand what the average
+     number of characters in an article title is.
+    Implement the function below .
+// expect(averageNumberOfCharacters(ARTICLE_TITLES)).toEqual(65);
+//to use Math.round(x)
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
-}
+    //let averageCharacterNumber = averageNumberOfCharacters / allArticleTitles.length;
+    let averageCharacterNumber = 0; 
+    for (let Titles of allArticleTitles){
+        averageCharacterNumber = averageCharacterNumber + Titles.length;
+    }
+    let ((averageCharacterNumber + allArticleTitles.length) /Titles);
 
+}
+//averageNumber;
+//not finished yet******
 
 
 /* ======= List of Articles - DO NOT MODIFY ===== */
