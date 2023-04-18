@@ -12,7 +12,12 @@
 */
 
 function getTemperatureReport(cities) {
-    // TODO
+   var temparatureInCities = [];
+
+ for  (let i = 0; i < cities.length;  i++) {
+    temparatureInCities.push("The temperature in " + cities[i] + "is " + temparature[i] + "degrees")
+ } 
+ return temparatureInCities;
 }
 
 
