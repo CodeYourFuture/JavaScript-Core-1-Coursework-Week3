@@ -12,16 +12,18 @@
 // Example 1
 let a;
 console.log(a);
-
+// element a has no value
 
 // Example 2
 function sayHello() {
     let message = "Hello";
 }
 
+
 let hello = sayHello();
 console.log(hello);
 
+// the function is missing from the callback
 
 // Example 3
 function sayHelloToUser(user) {
@@ -30,7 +32,9 @@ function sayHelloToUser(user) {
 
 sayHelloToUser();
 
-
+// the function is missing the callback variable 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+
+// index 3 does not exist in the array

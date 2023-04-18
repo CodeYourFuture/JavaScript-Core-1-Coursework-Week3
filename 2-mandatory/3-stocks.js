@@ -34,7 +34,26 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Functions can help with this!
 */
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+    function getAveragePrices(closingPricesForAllStocks) {
+        let averages = [];
+      
+        for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+          let prices = closingPricesForAllStocks[i];
+          let total = 0;
+      
+          for (let j = 0; j < prices.length; j++) {
+            total += prices[j];
+          }
+      
+          let average = total / prices.length;
+          let roundedAverage = Number(average.toFixed(2));
+      
+          averages.push(roundedAverage);
+        }
+      
+        return averages;
+      }
+      
 }
 
 /*
@@ -48,7 +67,22 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+    function getPriceChanges(closingPricesForAllStocks) {
+        let changes = [];
+      
+        for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+          let prices = closingPricesForAllStocks[i];
+          let firstPrice = prices[0];
+          let lastPrice = prices[prices.length - 1];
+          let change = lastPrice - firstPrice;
+          let roundedChange = Number(change.toFixed(2));
+      
+          changes.push(roundedChange);
+        }
+      
+        return changes;
+      }
+      
 }
 
 /*
@@ -64,8 +98,19 @@ function getPriceChanges(closingPricesForAllStocks) {
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
-}
+    let descriptions = [];
+  
+    for (let i = 0; i < closingPricesForAllStocks.length; i++) {
+      let prices = closingPricesForAllStocks[i];
+      let highestPrice = Math.max(...prices);
+      let stock = stocks[i].toUpperCase();
+      let description = `The highest price of ${stock} in the last 5 days was ${highestPrice.toFixed(2)}`;
+      descriptions.push(description);
+    }
+  
+    return descriptions;
+  }
+  
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
