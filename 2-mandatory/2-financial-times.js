@@ -8,9 +8,9 @@ function potentialHeadlines(allArticleTitles) {
     var articleTitles = [];
 
     for (let i = 0; i < allArticleTitles.length; i++) {
-       let lengthLimit = 65;
-       if (allArticleTitles.length[i] <= lengthLimit);
-       articleTitles.push(allArticleTitles[i] <= lengthLimit );
+     const eachTitle = allArticleTitles[i];
+       if (eachTitles.lenght <= 65);
+       
 
   }
 }
