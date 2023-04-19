@@ -10,12 +10,13 @@ function potentialHeadlines(allArticleTitles) {
     for (let i = 0; i < allArticleTitles.length; i++) {
        let lengthLimit = 65;
        if (allArticleTitles.length[i] <= lengthLimit);
-       articleTitles.push(allArticleTitles[i]),
+       articleTitles.push(allArticleTitles[i] <= lengthLimit );
+
+  }
+}
 
        
 
-    }
-}
 
 /*
     The editor of the FT likes short headlines with only a few words!
