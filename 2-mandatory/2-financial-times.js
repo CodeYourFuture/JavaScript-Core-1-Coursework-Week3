@@ -7,11 +7,10 @@
 function potentialHeadlines(allArticleTitles) {
     var articleTitles = [];
 
-    for (let i = 0; i < allArticleTitles.length; i++,){
-       const collection = collect(allArticleTitles);
-      let length = 65;
-       console.log(collection.pull(i >= length ))
-       collection.push(articleTitles[i])
+    for (let i = 0; i < allArticleTitles.length; i++) {
+       let length = 65;
+       
+       
 
     }
 }
