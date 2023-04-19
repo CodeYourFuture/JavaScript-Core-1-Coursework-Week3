@@ -16,7 +16,7 @@ function getTemperatureReport(cities) {
 
  for  (let i = 0; i < cities.length; i++) {
     let temparature = temperatureService(cities[i])
-     temparatureInCities.push(`The temperature in ${cities[i]} is ${temperature} degrees`)
+     temparatureInCities.push(`The temperature in ${cities[i]} is ${temparature} degrees`)
  } 
  return temparatureInCities;
 }
