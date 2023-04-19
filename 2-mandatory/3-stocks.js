@@ -33,8 +33,41 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Solve the smaller problems, and then build those solutions back up to solve the larger problem.
         Functions can help with this!
 */
+
+/*
+    SOLUTION EXPLANATION: This is quite a complex problem and there are several ways to solve it.
+          I decided to divide the big problem into several smaller ones.
+              1. In the exercise we are asked to find the average price of EACH stock.
+                  So maybe we can just work out how to get the average price for a single stock.
+                  To do this, I created a separate function called getAveragePricesForStock.
+              2. We also need to work out how to round a number to 2 decimal places.
+                  There is also a separate function for this called roundTo2Decimals.
+              3. We can put these smaller solutions together to solve a bigger problem.
+                  The top-level price function getAveragePrices can loop through an array,
+                  and pass each subarray to the getAveragePricesForStock function.
+*/                 
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+   let averages = [];
+
+   for (let pricesForStock of clothingPricesForAllStocks) {
+        averages.push(getAveragePricesForStock(pricesForStock));
+   }
+
+   return averages;
+}
+
+function getAveragePricesForStock(pricesForStock) {
+    let total = 0;
+
+    for(let price of pricesForStock) {
+        total += price;
+    }
+
+    return roundTo2Decimals(total / pricesForStock.length);
+}
+
+function roundTo2Decimals(num) {
+    return Math.round(num * 100) / 100;
 }
 
 /*
@@ -47,8 +80,27 @@ function getAveragePrices(closingPricesForAllStocks) {
                 (Apple's price on the 5th day) - (Apple's price on the 1st day) = 172.99 - 179.19 = -6.2
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
+
+/*
+    SOLUTION EXPLANATION: Again, as in the previous solution, we can divide a large problem into several smaller ones.
+              1. I created a new function that simply calculates the price change of ONE stock - getPriceChangeForStock.
+              2. This new function can also use the roundTo2Decimals function we used before.
+                  One of the biggest benefits of using this feature is the ability to reuse code!
+*/  
+
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+    let changes = [];
+    
+    for(let pricesForStock of closingPricesForAllStocks) {
+        chages.push(getPriceChengeForStock(pricesForStock))
+    }
+
+    return changes;
+}
+
+function getPriceChangeForStock(pricesForStock) {
+    let priceChange = pricesForStock[pricesForStock.length - 1] - pricesForStock[0]
+    return roundTo2Decimals(priceChange);
 }
 
 /*
@@ -63,9 +115,54 @@ function getPriceChanges(closingPricesForAllStocks) {
     The stock ticker should be capitalised.
     The price should be shown with exactly 2 decimal places.
 */
+
+/*
+    EXPLANATION : We can also break this problem down into smaller problems.
+                1. I created a new function that simply calculates the highest price for a single stock - getHighestPrice.
+                2. This new function can also use the roundTo2Decimals function
+               Here I have included an alternative solution that uses JavaScript's Math.max() function
+                The Math.max() function accepts zero or more numbers as input parameters.
+                We can convert our array into individual numbers, which can then be passed to this function using the propagation syntax: ...
+*/ 
+
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+   let descriptions = [];
+
+   for(let i = 0; i < closingPricesForAllStocks.length; i++) {
+       let highestPrice = getHighestPrice(closingPricesForAllStocks[i]);
+       descriptions.push(`The highest price of ${stocks[i].toUpperCase()} in the last 5 days was ${highestPrice.toFixed(2)}`);
+   }
+
+   return descriptions;
+
+   }
+
+function getHighestPrice(pricesForStock) {
+    //initialising to 0, as we are expecting this value to be overriden by the first price in the array
+    let highestPriceSoFar = 0;
+
+    for(let price of pricesForStock) {
+        //if this price is higher than the highestprice we are seen so far, it becomes the new highest price
+        if(price > highestPriceSoFar) {
+            highestPriceSoFar = price;
+        }
+    }
+
+    return highestPriceSoFar;
 }
+
+function highestPriceDescriptionsAllternate(closingPricesForAllStocks, stocks) {
+    let descriptions = [];
+
+    for(let i = 0; i < closingPricesForAllStocks.length; i++) {
+        let highestPrice = Math.max(...closingPricesForAllStocks[i]);
+        descriptions.push(`The highest price of ${stocks[i].toUpperCase()} in the last 5 days was ${highestPrice.toFixed(2)}`);
+    }
+
+    return descriptions;
+
+}
+
 
 
 /* ======= TESTS - DO NOT MODIFY ===== */
