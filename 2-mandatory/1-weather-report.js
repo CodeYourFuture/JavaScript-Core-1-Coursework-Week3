@@ -14,8 +14,9 @@
 function getTemperatureReport(cities) {
    var temparatureInCities = [];
 
- for  (let i = 0; i < cities.length;  i++) {
-    temparatureInCities.push("The temperature in " + cities[i] + "is " + temparature[i] + "degrees")
+ for  (let i = 0; i < cities.length; i++) {
+    let temparature = temperatureService(cities[i])
+     temparatureInCities.push(`The temperature in ${cities[i]} is ${temperature} degrees`)
  } 
  return temparatureInCities;
 }
