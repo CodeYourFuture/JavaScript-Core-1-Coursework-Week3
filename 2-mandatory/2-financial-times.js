@@ -23,8 +23,20 @@ function potentialHeadlines(allArticleTitles) {
     Implement the function below, which returns the title with the fewest words.
     (you can assume words will always be seperated by a space)
 */
-function titleWithFewestWords(allArticleTitles) {
-    // TODO
+function titleWithFewestWords(allArticleTitles){
+    var lowest = Infinity;
+    var titleWithFewestWords;
+
+
+ for (var i = 0; i < allArticleTitles.length; i++) {
+    var words = allArticleTitles[i].split(" ");
+    if (words.length < lowest) {
+        lowest = words.length;
+        titleWithFewestWords = allArticleTitles[i];
+      }
+    }
+
+    return titleWithFewestWords;
 }
 
 /*
