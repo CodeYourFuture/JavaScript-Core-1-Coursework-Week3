@@ -4,39 +4,7 @@
     The home page of the web site has a headline section, which only has space for article titles which are 65 characters or less.
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
-function potentialHeadlines(allArticleTitles) {
-    // TODO
-}
 
-/*
-    The editor of the FT likes short headlines with only a few words!
-    Implement the function below, which returns the title with the fewest words.
-    (you can assume words will always be seperated by a space)
-*/
-function titleWithFewestWords(allArticleTitles) {
-    // TODO
-}
-
-/*
-    The editor of the FT has realised that headlines which have numbers in them get more clicks!
-    Implement the function below to return a new array containing all the headlines which contain a number.
-    (Hint: remember that you can also loop through the characters of a string if you need to)
-*/
-function headlinesWithNumbers(allArticleTitles) {
-    // TODO
-}
-
-/*
-    The Financial Times wants to understand what the average number of characters in an article title is.
-    Implement the function below to return this number - rounded to the nearest integer.
-*/
-function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
-}
-
-
-
-/* ======= List of Articles - DO NOT MODIFY ===== */
 const ARTICLE_TITLES = [
     "Streaming wars drive media groups to spend more than $100bn on new content",
     "Amazon Prime Video India country head: streaming is driving a TV revolution",
@@ -49,6 +17,100 @@ const ARTICLE_TITLES = [
     "The three questions that dominate investment",
     "Brussels urges Chile's incoming president to endorse EU trade deal",
 ];
+
+
+
+
+
+
+
+
+function potentialHeadlines(ARTICLE_TITLES) {
+let newArray= [];
+
+ for (let i=0;i < ARTICLE_TITLES.length; i++){
+    if ( ARTICLE_TITLES[i].length<= 65){
+        newArray.push(ARTICLE_TITLES[i])
+    }
+    
+ }
+   
+ return newArray
+}
+
+/*
+    The editor of the FT likes short headlines with only a few words!
+    Implement the function below, which returns the title with the fewest words.
+    (you can assume words will always be seperated by a space)
+*/
+function titleWithFewestWords(ARTICLE_TITLES) {
+    let smallestTitle= ARTICLE_TITLES[0]; 
+
+    for (let i = 1; i < ARTICLE_TITLES.length; i++) { 
+        if (ARTICLE_TITLES[i].split(' ').length < smallestTitle.split(' ').length) {
+            smallestTitle = ARTICLE_TITLES[i];
+        }
+    }
+   
+    return smallestTitle;
+}
+
+
+/*
+    The editor of the FT has realised that headlines which have numbers in them get more clicks!
+    Implement the function below to return a new array containing all the headlines which contain a number.
+    (Hint: remember that you can also loop through the characters of a string if you need to)
+*/
+function headlinesWithNumbers(allArticleTitles) {
+    function headlinesWithNumbers(allArticleTitles) {
+        let headlines = [];
+      
+        for (let i = 0; i < allArticleTitles.length; i++) {
+          let title = allArticleTitles[i];
+          let hasNumber = false;
+      
+          for (let j = 0; j < title.length; j++) {
+            let char = title[j];
+      
+            if (char >= '0' && char <= '9') {
+              hasNumber = true;
+              break;
+            }
+          }
+      
+          if (hasNumber) {
+            headlines.push(title);
+          }
+        }
+      
+        return headlines;
+      }
+      
+}
+
+/*
+    The Financial Times wants to understand what the average number of characters in an article title is.
+    Implement the function below to return this number - rounded to the nearest integer.
+*/
+function averageNumberOfCharacters(allArticleTitles) {
+    let totalCharacters = 0;
+  
+    for (let i = 0; i < allArticleTitles.length; i++) {
+      let title = allArticleTitles[i];
+      totalCharacters += title.length;
+    }
+  
+    let averageCharacters = totalCharacters / allArticleTitles.length;
+    let roundedAverageCharacters = Math.round(averageCharacters);
+  
+    return roundedAverageCharacters;
+  }
+  
+
+
+
+/* ======= List of Articles - DO NOT MODIFY ===== */
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
