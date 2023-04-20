@@ -24,20 +24,22 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles){
+    var articleTitles = [];
+    var lowest = 0;
+
     var lowest = Infinity;
     var titleWithFewestWords;
-
-
- for (var i = 0; i < allArticleTitles.length; i++) {
-    var words = allArticleTitles[i].split(" ");
-    if (words.length < lowest) {
+  
+    for (var i = 0; i < allArticleTitles.length; i++) {
+      var words = allArticleTitles[i].split(" ");
+      if (words.length < lowest) {
         lowest = words.length;
         titleWithFewestWords = allArticleTitles[i];
       }
     }
-
+  
     return titleWithFewestWords;
-}
+  }
 
 /*
     The editor of the FT has realised that headlines which have numbers in them get more clicks!
