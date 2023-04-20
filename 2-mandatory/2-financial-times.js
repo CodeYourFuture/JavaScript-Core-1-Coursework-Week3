@@ -10,7 +10,7 @@ function potentialHeadlines(allArticleTitles) {
     for (let i = 0; i < allArticleTitles.length; i++) {
      const eachTitle = allArticleTitles[i];
        if (eachTitle.length <= 65);
-       articleTitles.push(eachTitle
+       articleTitles.push(eachTitle)
   }
   return articleTitles;
 }
