@@ -8,12 +8,14 @@ function potentialHeadlines(allArticleTitles) {
     var articleTitles = [];
 
     for (let i = 0; i < allArticleTitles.length; i++) {
-     const eachTitle = allArticleTitles[i];
-       if (eachTitle.length <= 65);
-       articleTitles.push(eachTitle)
+      const eachTitle = allArticleTitles[i];
+      if (eachTitle.length <= 65) {
+        articleTitles.push(eachTitle);
+      }
+    }
+    
+    return articleTitles;
   }
-  return articleTitles;
-}
 
        
 
@@ -46,17 +48,9 @@ function titleWithFewestWords(allArticleTitles){
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    const titlesWithNumbers = allArticleTitles.filter(title => {
-        for (let i = 0; i < title.length; i++) {
-          if (!isNaN(title[i])) {
-            return true;
-          }
-        }
-        return false;
-      });
-      return titlesWithNumbers;
-    }
-  
+  const regex = /\d+/; 
+  return allArticleTitles.filter(title => regex.test(title));
+}
 
   
 /*
