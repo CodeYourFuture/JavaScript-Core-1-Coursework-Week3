@@ -1,20 +1,25 @@
-/*
-    Imagine we're making a weather app!
-    
-    We have a list of cities that the user wants to track.
-    We also already have a temperatureService function which will take a city as a parameter and return a temparature.
+    /*
+        Imagine we're making a weather app!
+        
+        We have a list of cities that the user wants to track.
+        We also already have a temperatureService function which will take a city as a parameter and return a temparature.
 
-    Implement the function below:
-        - take the array of cities as a parameter
-        - return an array of strings, which is a statement about the temperature of each city.
-            For example, "The temperature in London is 10 degrees"
-        - Hint: you can call the temperatureService function from your function
-*/
+        Implement the function below:
+            - take the array of cities as a parameter
+            - return an array of strings, which is a statement about the temperature of each city.
+                For example, "The temperature in London is 10 degrees"
+            - Hint: you can call the temperatureService function from your function
+    */
 
 function getTemperatureReport(cities) {
-    // TODO
+    const report = [];
+        for (const city of cities) {
+            const temperature = temperatureService(city);
+            const message = `The temperature in ${city} is ${temperature} degrees`;
+            report.push(message);
+        }
+    return report;
 }
-
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
