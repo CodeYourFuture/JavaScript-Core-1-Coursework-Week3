@@ -49,7 +49,7 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 function getAveragePrices(closingPricesForAllStocks) {
    let averages = [];
 
-   for (let pricesForStock of clothingPricesForAllStocks) {
+   for (let pricesForStock of closingPricesForAllStocks) {
         averages.push(getAveragePricesForStock(pricesForStock));
    }
 
@@ -92,7 +92,7 @@ function getPriceChanges(closingPricesForAllStocks) {
     let changes = [];
     
     for(let pricesForStock of closingPricesForAllStocks) {
-        chages.push(getPriceChengeForStock(pricesForStock))
+        changes.push(getPriceChangeForStock(pricesForStock))
     }
 
     return changes;

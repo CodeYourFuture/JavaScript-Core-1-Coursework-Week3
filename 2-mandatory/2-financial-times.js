@@ -8,7 +8,7 @@ function potentialHeadlines(allArticleTitles) {
    let headlines = [];
 
    for(let title of allArticleTitles) {
-       if(title.length <== 65) {
+       if(title.length <= 65) {
         headlines.push(title);
        }
     }
@@ -49,7 +49,7 @@ function headlinesWithNumbers(allArticleTitles) {
 
     for(let title of allArticleTitles) {
         //Making use of the new function created below
-        if (doesTitleContainANumber(titele)) {
+        if (doesTitleContainANumber(title)) {
             articlesWithNumbers.push(title);
         }
     }
