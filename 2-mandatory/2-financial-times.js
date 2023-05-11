@@ -16,7 +16,10 @@ function potentialHeadlines(allArticleTitles) {
     return headlines;
 }
 
-
+//I start with the function potentailHeadlines with an array argument. Inside the brakcets I have a local variable headlines
+// that equals and empty array. It is used to the for ... if loop. It checks one article of all articles you see declared in
+// the function. Then i have brackets with if and check the articles titles length is 65 or less. Next the .push method 
+// push the headlines. Then I use return the headlines.
 
 
 /*
