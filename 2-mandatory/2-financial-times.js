@@ -42,7 +42,11 @@ function titleWithFewestWords(allArticleTitles) {
     }
     return shortestHeadlines;
 }
-
+// I start with a function that want to find a title with fewest words. I have an array as a parameter. Inside the brackets
+// I use a let variable shortestHeadlines that equals allArticleTitles with counting from zero. I use a for... if loop with a
+// let variable i equals 1, if i is less than the length of allArticleTitles, i count 1. Then I have a let variable currentTitle
+// that equals allArticleTitles and the if statement that check if length of the currentTitle to shortestHeadlines then 
+// shortestHeadlines equals currentTitles. Then I return the variable for the function.  
 /*
     The editor of the FT has realised that headlines which have numbers in them get more clicks!
     Implement the function below to return a new array containing all the headlines which contain a number.
