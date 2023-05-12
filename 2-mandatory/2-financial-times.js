@@ -86,7 +86,10 @@ function averageNumberOfCharacters(allArticleTitles) {
     }
     return Math.round(averageCharacter / numberOfArticles);
 }
-
+// I start with a function that look for average number of characters with the array allArticleTitles as arguments. I use two let 
+// variables and both equals 0. I use a for loop with a variable that check article title of all article titles. Inside the innerbracket
+// I check if average character is article title with the length method. Then number of articles += 1. I return with .round method
+// and divide the two let variables averageCharacters and numberOfArticles.
 
 /* ======= List of Articles - DO NOT MODIFY ===== */
 const ARTICLE_TITLES = [
