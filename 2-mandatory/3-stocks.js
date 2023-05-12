@@ -73,7 +73,11 @@ function getPriceChanges(closingPricesForAllStocks) {
   }
   return changedPrices;
 }
-
+// I start with a function getPriceChanges and have an array as my parameter. Inside the brickets I have a let variable that equals
+// an empty array. I use for loop and start with a let variable arrayWithPrices of ... . Then i do a bracket inside the first bracket
+// which means the let variable only execute 'til its closing bracket. It checks changedPrice equals arrayWithPrices that has its own 
+// array were I use the length method minus 1 minus arrayWithPrices start from 0. The changedPrice is pushed and price has two decimals
+// which is achieved by using the .toFixed method.
 
 /*
     As part of a financial report, we want to see what the highest price was for each stock in the last 5 days.
