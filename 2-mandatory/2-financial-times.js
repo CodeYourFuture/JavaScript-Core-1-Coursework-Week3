@@ -64,7 +64,11 @@ function headlinesWithNumbers(allArticleTitles) {
 
   return newArr;
 }
-
+// I start with a function headlineWithNumbers with an array checking all article titles. Inside the brackets I have a let variable
+// with a new array to store article titles that contain at least a number. Then I use a for ... if loop that have let variable to
+// I use .test method to check for digits from 0 - 9. If there are at least a digit it return true and a title is added to newArr and
+// push to containing all articles with at least a number. 
+// 
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
     Implement the function below to return this number - rounded to the nearest integer.
