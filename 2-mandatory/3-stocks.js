@@ -53,7 +53,14 @@ function findAveragePrice(array) {
   }
   return Number((sum / array.length).toFixed(2));
 }
+ // I start with a function getAveragePrice and use an array as a parameter. Inside the brackets, I have a let variable arrayWithAveragePrices
+//  that equals to an empty array that we fill later in the code. I use a for loop and in the lopp I have a let variable with two
+// parameters arrayWithPrices / closingPricesForStocks. Inside the second bracket, I have arrayWithAveragePrices with a push method
+// I findAveragePrices from arrayWithPrices. Then I return the function and it match let variable arrayWithAveragePrices. 
 
+// I start with a function findAveragePrice and have array as parameter. Inside the brackets I use a let variable sum equals to 0.
+// I use a for loop that has a let variable with two parameters price / array. The second bracket, I have sum += price. Then I return
+// Number that will be the sum divided by the array and use the .toFixed method that specifies I have two decimals.
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
     Implement the below function, which
