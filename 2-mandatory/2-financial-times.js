@@ -5,16 +5,30 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
+    let headlines=[];
+    for (let title of allArticleTitles )
+    if(title.length <= 65){
+        headlines.push(title);
+    }
+    return headlines;
     // TODO
-}
+}function titleWithFewestWords(allArticleTitles) {
+    let fewestWordsSoFar;
+    let titleWithFewestWords;
 
-/*
-    The editor of the FT likes short headlines with only a few words!
-    Implement the function below, which returns the title with the fewest words.
-    (you can assume words will always be seperated by a space)
-*/
-function titleWithFewestWords(allArticleTitles) {
-    // TODO
+    for(let title of allArticleTitles) {
+        
+        // working out the number of words in the title by splitting on the space character
+        // this will generate an array. Read more: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
+        let numWords = title.split(' ').length;
+
+        if(fewestWordsSoFar === undefined || numWords < fewestWordsSoFar) {
+            fewestWordsSoFar = numWords;
+            titleWithFewestWords = title;
+        }
+    }
+
+    return titleWithFewestWords;
 }
 
 /*
@@ -23,7 +37,27 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+    let articlesWithNumbers = [];
+
+    for(let title of allArticleTitles) {
+        // Making use of the new function created below
+        if(doesTitleContainANumber(title)) {
+            articlesWithNumbers.push(title);
+        }
+    }
+
+    return articlesWithNumbers;
+}
+
+// Creating another function to help break this problem down into smaller parts
+function doesTitleContainANumber(title) {
+    for(let character of title) {
+        if(character >= '0' && character <= '9') {
+            return true;
+        }
+    }
+
+    return false;
 }
 
 /*
@@ -31,11 +65,14 @@ function headlinesWithNumbers(allArticleTitles) {
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
+    let totalCharacters = 0;
+
+    for(let title of allArticleTitles) {
+        totalCharacters += title.length;
+    }
+
+    return Math.round(totalCharacters / allArticleTitles.length);
 }
-
-
-
 /* ======= List of Articles - DO NOT MODIFY ===== */
 const ARTICLE_TITLES = [
     "Streaming wars drive media groups to spend more than $100bn on new content",

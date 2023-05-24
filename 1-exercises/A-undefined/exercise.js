@@ -12,12 +12,13 @@
 // Example 1
 let a;
 console.log(a);
-
+//a dosen't have value
 
 // Example 2
 function sayHello() {
     let message = "Hello";
 }
+// This varibale is defined only inside of function and cannot be accessed outside the function
 
 let hello = sayHello();
 console.log(hello);
@@ -29,8 +30,9 @@ function sayHelloToUser(user) {
 }
 
 sayHelloToUser();
-
+// since the "sayHello()" function does not return any value, the variable "hello" is set to undefined
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+// arr dosent have index 3

@@ -1,5 +1,5 @@
 /*
-    THESE EXERCISES ARE QUITE HARD. JUST DO YOUR BEST, AND COME WITH QUESTIONS IF YOU GET STUCK :)
+    THESE EXERCISES ARE QUITE HARD. DON'T WORRY IF YOU CAN'T COMPLETE THEM ALL - JUST DO YOUR BEST, AND COME WITH QUESTIONS :)
 
     Imagine we a working for a finance company. Below we have:
         - an array of stock tickers
@@ -33,8 +33,41 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Solve the smaller problems, and then build those solutions back up to solve the larger problem.
         Functions can help with this!
 */
+
+/*
+    SOLUTION EXPLANATION: This is a complex problem and there are many ways to solve it!
+        I've decided to break the large problem down into a few smaller problems.
+            1. The exercise is asking us to find the average price of EACH stock.
+                So first, maybe we can just work out how to get the average price for a SINGLE stock.
+                For this, I've created a separate function called getAveragePricesForStock.
+            2. We also need to work out how to round a number to 2 decimal places.
+                There's also a separate function for this called roundTo2Decimals.
+            3. We can put these smaller solutions back together to solve the larger problem.
+                The top-level getAveragePrices prices function can loop through the array,
+                and pass each sub-array to the getAveragePricesForStock function.
+*/
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+    let averages = [];
+
+    for(let pricesForStock of closingPricesForAllStocks) {
+        averages.push(getAveragePricesForStock(pricesForStock));
+    }
+
+    return averages;
+}
+
+function getAveragePricesForStock(pricesForStock) {
+    let total = 0;
+
+    for(let price of pricesForStock) {
+        total += price;
+    }
+
+    return roundTo2Decimals(total / pricesForStock.length);
+}
+
+function roundTo2Decimals(num) {
+    return Math.round(num * 100) / 100;
 }
 
 /*
@@ -47,8 +80,26 @@ function getAveragePrices(closingPricesForAllStocks) {
                 (Apple's price on the 5th day) - (Apple's price on the 1st day) = 172.99 - 179.19 = -6.2
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
+
+/*
+    SOLUTION EXPLANATION: Again, we can break the large problem down into a few smaller problems.
+            1. I've created a new function which just calculates the change in price for a SINGLE stock - getPriceChangeForStock.
+            2. This new function can also use the roundTo2Decimals function we implemented earlier.
+                One of the many advatages of using functions is being able to re-use code!
+*/
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+    let changes = [];
+
+    for(let pricesForStock of closingPricesForAllStocks) {
+        changes.push(getPriceChangeForStock(pricesForStock))
+    }
+
+    return changes;
+}
+
+function getPriceChangeForStock(pricesForStock) {
+    let priceChange = pricesForStock[pricesForStock.length - 1] - pricesForStock[0]
+    return roundTo2Decimals(priceChange);
 }
 
 /*
@@ -61,10 +112,54 @@ function getPriceChanges(closingPricesForAllStocks) {
             For example, the first element of the array should be: "The highest price of AAPL in the last 5 days was 180.33"
             The test will check for this exact string.
     The stock ticker should be capitalised.
-    The price should be shown with exactly 2 decimal places.
+    The price should be shown with EXACTLY 2 decimal places.
+*/
+
+/*
+    SOLUTION EXPLANATION: We can also break this problem down into a smaller problems.
+            1. I've created a new function which just calculates the highest price for a SINGLE stock - getHighestPrice.
+            2. This new function can also use the roundTo2Decimals function we implemented earlier.
+    ALTERNATE SOLUTION: See highestPriceDescriptionsAlternate
+            I've included an alternate solution here which makes use of JavaScript's Math.max() function
+            https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max
+            The Math.max() function takes zero or more numbers as input parameters.
+            We can convert our array into individual numbers that can then be passed into this function using the spread syntax: ...
+            Read more here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+    let descriptions = [];
+
+    for(let i = 0; i < closingPricesForAllStocks.length; i++) {
+        let highestPrice = getHighestPrice(closingPricesForAllStocks[i]);
+        descriptions.push(`The highest price of ${stocks[i].toUpperCase()} in the last 5 days was ${highestPrice.toFixed(2)}`);
+    }
+
+    return descriptions;
+}
+
+function getHighestPrice(pricesForStock) {
+    // initialising to 0, as we're expecting this value to be overriden by the first price in the array
+    let highestPriceSoFar = 0;
+
+    for(let price of pricesForStock) {
+        // if this price is higher than the highest price we've seen so far, it becomes the new highest price
+        if(price > highestPriceSoFar) {
+            highestPriceSoFar = price;
+        }
+    }
+
+    return highestPriceSoFar;
+}
+
+function highestPriceDescriptionsAlternate(closingPricesForAllStocks, stocks) {
+    let descriptions = [];
+
+    for(let i = 0; i < closingPricesForAllStocks.length; i++) {
+        let highestPrice = Math.max(...closingPricesForAllStocks[i]);
+        descriptions.push(`The highest price of ${stocks[i].toUpperCase()} in the last 5 days was ${highestPrice.toFixed(2)}`);
+    }
+
+    return descriptions;
 }
 
 
