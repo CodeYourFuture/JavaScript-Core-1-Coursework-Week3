@@ -5,17 +5,42 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    // TODO
-}
+    var articleTitles = [];
+
+    for (let i = 0; i < allArticleTitles.length; i++) {
+      const eachTitle = allArticleTitles[i];
+      if (eachTitle.length <= 65) {
+        articleTitles.push(eachTitle);
+      }
+    }
+    
+    return articleTitles;
+  }
+
+       
+
 
 /*
     The editor of the FT likes short headlines with only a few words!
     Implement the function below, which returns the title with the fewest words.
     (you can assume words will always be seperated by a space)
 */
-function titleWithFewestWords(allArticleTitles) {
-    // TODO
-}
+function titleWithFewestWords(allArticleTitles){
+    var articleTitles = []
+
+    var lowest = Infinity;
+    var articleTitleWords;
+  
+    for (var i = 0; i < allArticleTitles.length; i++) {
+      var words = allArticleTitles[i].split(" ");
+      if (words.length < lowest) {
+        lowest = words.length;
+        articleTitleWords = allArticleTitles[i];
+      }
+    }
+  
+    return articleTitleWords;
+  }
 
 /*
     The editor of the FT has realised that headlines which have numbers in them get more clicks!
@@ -23,16 +48,21 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+  const regex = /\d+/; 
+  return allArticleTitles.filter(title => regex.test(title));
 }
 
+  
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
+  const articleLength = allArticleTitles.reduce((acc, articleTitle) => acc + articleTitle.length, 0);
+  const averageLength = articleLength / allArticleTitles.length;
+  return Math.round(averageLength);
 }
+
 
 
 
