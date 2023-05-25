@@ -7,6 +7,8 @@
 */
 
 let numbers = [1, 2, 3]; // Don't change this array literal declaration
+numbers.push("4");
+// https://www.w3schools.com/jsref/jsref_push.asp
 
 /* 
   DO NOT EDIT BELOW THIS LINE

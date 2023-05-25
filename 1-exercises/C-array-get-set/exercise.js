@@ -5,11 +5,11 @@
 */
 
 function first(arr) {
-  return; // complete this statement
+  return arr[0]; //if you assume it is a number array counting start at 0
 }
 
 function last(arr) {
-  return; // complete this statement
+  return arr[arr.lenght-1]; //you have an array and want the value of its array length 
 }
 
 /* 

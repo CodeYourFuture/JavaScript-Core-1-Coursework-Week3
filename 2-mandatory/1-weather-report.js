@@ -13,8 +13,23 @@
 
 function getTemperatureReport(cities) {
     // TODO
-}
 
+const temperatureReport = [];
+
+    for(let i = 0; i < cities.length; i++) {
+        const temperature = temperatureService(cities[i]);
+
+        temperatureReport.push(`The temperature in ${cities[i]} is ${temperature} degrees`);
+    }
+
+    return temperatureReport;
+}
+// I start with a function getTemperatureReport.
+// It has an array cities as parameter. Then a const variable equals to an empty array. A for loop is used to iterate 
+// over each city in the cities array. During each iteration, the temperatureService function is called with the current
+//  city as its argument to get the current temperature of that city. This temperature is then stored in a temperature 
+// variable. Finally, a string is constructed using template literals and the current city and temperature, and this string
+//  is added to the temperatureReport array using the push() method. After all cities have been processed, the temperatureReport array is returned by the function.
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
