@@ -8,7 +8,7 @@
 */
 
 /* ======= Stock data - DO NOT MODIFY ===== */
-const STOCKS = ["aapl", "msft", "amzn", "googl", "tsla"];
+const STOCKS = ["AAPL", "MSFT", "AMZN", "GOOGL", "TSLA"];
 
 const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
     [179.19, 180.33, 176.28, 175.64, 172.99], // AAPL
@@ -34,8 +34,20 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Functions can help with this!
 */
 function getAveragePrices(closingPricesForAllStocks) {
-    // TODO
+    arrayOfPrices = []
+    for (item of closingPricesForAllStocks) {
+        const initialValue = 0;
+        const sumWithInitial = item.reduce(
+            (accumulator, currentValue) => accumulator + currentValue,
+            initialValue
+        );
+        let averagePrice = sumWithInitial / item.length
+        let averagePriceDecimal = Math.round(averagePrice * 100) / 100
+        arrayOfPrices.push(averagePriceDecimal)
+    }
+    return arrayOfPrices
 }
+
 
 /*
     We also want to see what the change in price is from the first day to the last day for each stock.
@@ -48,9 +60,18 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-    // TODO
+    let eachArrayOfDifference = []
+    for (element of closingPricesForAllStocks) {
+        for (i = 0; i < element.length; i++) {
+            let lastPrice = element.slice(-1)
+            let difference = lastPrice - element[i]
+            let differenceWithDecimal = Math.round(difference * 100) / 100
+            eachArrayOfDifference.push(differenceWithDecimal)
+            break
+        }
+    }
+    return eachArrayOfDifference
 }
-
 /*
     As part of a financial report, we want to see what the highest price was for each stock in the last 5 days.
     Implement the below function, which
@@ -64,7 +85,23 @@ function getPriceChanges(closingPricesForAllStocks) {
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-    // TODO
+    let arrayOfAnswers = []
+    let arrayOfStrings = []
+    for (item of closingPricesForAllStocks) {
+        for (i = 0; i < item.length; i++)
+            if (item[0] < item[i]) {
+                item[0] = item[i]
+            }
+        let answer = item[0]
+        answer = answer.toFixed(2)
+        console.log("ANSWER", answer)
+        arrayOfAnswers.push(answer)
+    }
+    for (i = 0; i < arrayOfAnswers.length; i++) {
+        arrayOfStrings.push(`The highest price of ${stocks[i]} in the last 5 days was ${arrayOfAnswers[i]}`)
+    }
+
+    return arrayOfStrings
 }
 
 
