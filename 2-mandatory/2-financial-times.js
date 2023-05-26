@@ -5,6 +5,13 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
+    let articlesWhichFit = []
+    for (item of allArticleTitles) {
+        if (item.length < 65) {
+            articlesWhichFit.push(item)
+        }
+    }
+    return articlesWhichFit
     // TODO
 }
 
@@ -14,7 +21,15 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+    let smallest = allArticleTitles[0]
+    for (i = 0; i < allArticleTitles.length; i++) {
+        if (smallest.length > allArticleTitles[i].length) {
+            smallest = allArticleTitles[i]
+        }
+    }
+
+    return smallest
+
 }
 
 /*
@@ -23,7 +38,17 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+    let numberArray = []
+    for (item of allArticleTitles) {
+        for (element of item) {
+            element = parseInt(element)
+            if (item.includes(element)) {
+                numberArray.push(item)
+                break
+            }
+        }
+    }
+    return numberArray;
 }
 
 /*
@@ -31,8 +56,19 @@ function headlinesWithNumbers(allArticleTitles) {
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
+    sumOfStrings = []
+    for (item of allArticleTitles) {
+        let itemLength = item.length
+        sumOfStrings.push(itemLength)
+    }
+    const initialValue = 0;
+    const sumWithInitial = sumOfStrings.reduce(
+        (accumulator, currentValue) => accumulator + currentValue,
+        initialValue
+    );
+    return Math.floor(Math.round(sumWithInitial / allArticleTitles.length))
 }
+
 
 
 
