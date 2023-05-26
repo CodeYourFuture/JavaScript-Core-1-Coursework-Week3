@@ -11,8 +11,54 @@
 */
 
 function getHighestRatedInEachGenre(books) {
-    // TODO
+    let arrOfCookingBooks = []
+    let arrOfChildrenBooks = []
+    let arrayOfNonFictionBooks = []
+    let result = []
+
+    let cookingBook = books.map(cookingBook => {
+        if (cookingBook.genre === "cooking") {
+            arrOfCookingBooks.push(cookingBook)
+        }
+    });
+    let bestCookingBook = arrOfCookingBooks.reduce(
+        (b1, b2) => {
+            return b1.rating > b2.rating ? b1 : b2
+        }
+    );
+
+    result.push(bestCookingBook.title)
+
+    let childrenBook = books.map(childrenBook => {
+        if (childrenBook.genre === "children") {
+            arrOfChildrenBooks.push(childrenBook)
+        }
+    });
+    let bestCildrenBook = arrOfChildrenBooks.reduce(
+        (b1, b2) => {
+            return b1.rating > b2.rating ? b1 : b2
+        }
+    );
+
+    result.push(bestCildrenBook.title)
+
+    let nonFictionBook = books.map(nonFictionBook => {
+        if (nonFictionBook.genre === "non-fiction") {
+            arrayOfNonFictionBooks.push(nonFictionBook)
+        }
+    });
+    let bestNonFictionBook = arrayOfNonFictionBooks.reduce(
+        (b1, b2) => {
+            return b1.rating > b2.rating ? b1 : b2
+        }
+    );
+
+    result.push(bestNonFictionBook.title)
+
+    return result
+
 }
+
 
 
 /* ======= Book data - DO NOT MODIFY ===== */
