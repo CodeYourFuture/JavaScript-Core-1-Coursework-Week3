@@ -8,6 +8,46 @@
 */
 
 /* ======= Stock data - DO NOT MODIFY ===== */
+
+/* Thinking throught the steps
+
+let keys = STOCKS
+
+let arrayA = CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[0]
+let arrayM = CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[1]
+let arrayAZ = CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[2]
+let arrayG = CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[3]
+let arrayT = CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS[4]
+
+
+let totalA = arrayA.reduce(function(a,b){ return +a + +b; });
+console.log(totalA)
+
+let totalM = arrayM.reduce(function(a,b){ return +a + +b; });
+console.log(totalM)
+
+let totalAZ = arrayAZ.reduce(function(a,b){ return +a + +b; });
+console.log(totalAZ)
+
+let totalG = arrayG.reduce(function(a,b){ return +a + +b; });
+console.log(totalG)
+
+let totalT = arrayT.reduce(function(a,b){ return +a + +b; });
+console.log(totalT)
+
+
+totalA = Math.round(totalA).toFixed(2)
+totalM = Math.round(totalM).toFixed(2)
+totalAZ = Math.round(totalT).toFixed(2)
+totalG = Math.round(totalG).toFixed(2)
+totalT = Math.round(totalT).toFixed(2)
+
+
+
+let finalArray = [totalA/5, totalM/5, totalAZ/5, totalG/5, totalT/5]
+
+console.log(finalArray)*/
+
 const STOCKS = ["aapl", "msft", "amzn", "googl", "tsla"];
 
 const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
@@ -17,6 +57,8 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
     [2951.88, 2958.13, 2938.33, 2928.30, 2869.45], // GOOGL
     [1101.30, 1093.94, 1067.00, 1008.87, 938.53] // TSLA
 ];
+
+console.log(CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS [0])
 
 /*
     We want to understand what the average price over the last 5 days for each stock is.
@@ -35,6 +77,21 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
 */
 function getAveragePrices(closingPricesForAllStocks) {
     // TODO
+    let averageprice=[];
+   
+   for(const stocksline of closingPricesForAllStocks){
+    let sum = 0;
+    let average = 0;
+    for(const item of stocksline){
+      sum = sum + item;
+
+    }
+      average = sum / stocksline.length;
+      averageprice.push(Math.round(average * 100) / 100);
+    
+   }
+return averageprice;
+    
 }
 
 /*
@@ -49,6 +106,13 @@ function getAveragePrices(closingPricesForAllStocks) {
 */
 function getPriceChanges(closingPricesForAllStocks) {
     // TODO
+     const priceChange = [];
+    for(const stocksline of closingPricesForAllStocks){
+        let sub = 0;
+         sub = stocksline.slice(-1) - stocksline[0];
+        priceChange.push(Math.round(sub*100)/100);
+    }
+    return priceChange;
 }
 
 /*
@@ -65,6 +129,27 @@ function getPriceChanges(closingPricesForAllStocks) {
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
     // TODO
+    const result = [];
+let num = 0;
+let Name;
+for(const stocksline of closingPricesForAllStocks){
+        
+   
+         let FirstPrice = stocksline[0];
+        let i = 1;
+        while(i<stocksline.length){
+         let price = stocksline[i];
+        if(price>FirstPrice){
+          FirstPrice = price;
+        }
+        i=i+1;
+        }
+        
+        Name = stocks[num].toUpperCase();
+        result.push(`The highest price of ${Name} in the last 5 days was ${FirstPrice.toFixed(2)}`);
+        num = num + 1;
+}
+return result;
 }
 
 

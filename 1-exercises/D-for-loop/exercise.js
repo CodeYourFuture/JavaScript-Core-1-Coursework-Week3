@@ -26,6 +26,14 @@ const AGES = [
     49
 ];
 
+AGES.forEach(k => {
+    WRITERS.forEach(i => {
+        console.log(i +  " is " + k + " years old")
+    })
+})
+
+
+
 // TODO - Write for loop code here
 
 /*

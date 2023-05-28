@@ -12,7 +12,7 @@
 // Example 1
 let a;
 console.log(a);
-
+// a is not assigned a value
 
 // Example 2
 function sayHello() {
@@ -21,7 +21,7 @@ function sayHello() {
 
 let hello = sayHello();
 console.log(hello);
-
+//There is no value passed to the function sayHello
 
 // Example 3
 function sayHelloToUser(user) {
@@ -30,7 +30,11 @@ function sayHelloToUser(user) {
 
 sayHelloToUser();
 
+//no value passed to the function
+
 
 // Example 4
 let arr = [1,2,3];
 console.log(arr[3]);
+
+//There is no value at index 3

@@ -5,7 +5,12 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    // TODO
+  const shortArticleTitles = [];
+    for (let articleTitle of allArticleTitles) {
+        if (articleTitle.length <= 65) {
+            shortArticleTitles.push(articleTitle);
+        }
+    }
 }
 
 /*
@@ -14,7 +19,16 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+    let fewestword = allArticleTitles[0].split(' ').length;
+    let result;
+    for (let articleTitle of allArticleTitles) {
+       let articleWords = articleTitle.split(' ').length;
+       if (articleWords < fewestword ) {
+        fewestword = articleWords;
+        result = articleTitle;
+       }
+    }
+    return result;
 }
 
 /*
@@ -23,7 +37,17 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
+    const regex = /[0-9]/;
+    let result = [];
+    for (let articleTitle of allArticleTitles) {
+        for (let i = 0; i < articleTitle.length; i++) {
+            if(articleTitle[i].match(regex)){
+                result.push(articleTitle);
+                break;
+            } 
+        }
+    }
+    return result;
 }
 
 /*
@@ -32,6 +56,21 @@ function headlinesWithNumbers(allArticleTitles) {
 */
 function averageNumberOfCharacters(allArticleTitles) {
     // TODO
+
+let arrayOfLengths = allArticleTitles.map(w => w.length);
+console.log(arrayOfLengths)
+let sumOfLengths = 0;
+ for (let i = 0; i < arrayOfLengths.length; i++) {
+         sumOfLengths += arrayOfLengths[i];
+         console.log(sumOfLengths)
+    }
+
+let sumOfArrayLengths = arrayOfLengths.length
+console.log(sumOfArrayLengths)
+
+let result = sumOfLengths/sumOfArrayLengths;
+console.log(result)
+
 }
 
 
