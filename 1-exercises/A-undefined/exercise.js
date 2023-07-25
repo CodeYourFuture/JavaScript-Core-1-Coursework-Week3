@@ -16,22 +16,22 @@ console.log(a);
 
 // Example 2
 function sayHello() {
-    let message = "Hello";
+  let message = "Hello";
 }
 
 let hello = sayHello();
 console.log(hello);
-// function sayhello hasn't got any parameter
+// function sayhello doesn't return anything
 
 // Example 3
 function sayHelloToUser(user) {
-    console.log(`Hello ${user}`);
+  console.log(`Hello ${user}`);
 }
 
 sayHelloToUser();
-//there is no value assigned to user
+//we're calling function without parameter
 
 // Example 4
-let arr = [1,2,3];
+let arr = [1, 2, 3];
 console.log(arr[3]);
 //[3] does not exists as arr only has [0,1,2]

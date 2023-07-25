@@ -9,37 +9,15 @@
         - return an array of strings, which is a statement about the temperature of each city.
             For example, "The temperature in London is 10 degrees"
         - Hint: you can call the temperatureService function from your function
-        npm test -- --testPathPattern mandatory/1-weather-report.js
 */
-// ["London", "Mumbai"]   =>  ["The temperature in London is 10 degrees", "The temperature in Mumbai is 29 degrees"]
-function getTemperatureReport(cities) {
-  //     result = [];
-  //     for (const i of cities) {
-  //        result.push(`The temperature in ${i} is ${temperatureService(i)} degrees`)
-  // }
-  //    return result;
-  // let oneCity;
-  // result = [];
-  // for(let i=0; i < cities.length; i++) {
-  //     oneCity = cities[i];
-  // result.push(`The temperature in ${cities[i]} is ${temperatureService(oneCity)} degrees`)
 
-  // }
-  // return result;
-  result = [];
-  let i = 0;
-  let oneCity;
-  while (i < cities.length) {
-    oneCity = cities[i];
-    result.push(
-      `The temperature in ${cities[i]} is ${temperatureService(
-        oneCity
-      )} degrees`
-    );
-    i++;
-  }
+function getTemperatureReport(cities) {
+  let result = cities.map((city) => {
+    return `The temperature in ${city} is ${temperatureService(city)} degrees`;
+  });
   return result;
 }
+
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 function temperatureService(city) {
