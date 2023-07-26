@@ -34,18 +34,17 @@ const CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS = [
         Functions can help with this!
 */
 function getAveragePrices(closingPricesForAllStocks) {
-  let newArray = [];
-  for (const element of closingPricesForAllStocks) {
-    let sum = 0;
+  let averagePrice = [];
+  for (let closingPricesForOneStock of closingPricesForAllStocks) {
+    let total = 0;
     let average = 0;
-    for (let i = 0; i < element.length; i++) {
-      sum += element[i];
+    for (i = 0; i < closingPricesForOneStock.length; i++) {
+      total += closingPricesForOneStock[i];
     }
-    average = sum / element.length;
-    newArray.push(Math.round(average * 100) / 100);
+    average = total / closingPricesForOneStock.length;
+    averagePrice.push(Math.round(average * 100) / 100);
   }
-
-  return newArray;
+  return averagePrice;
 }
 
 /*
@@ -59,13 +58,15 @@ function getAveragePrices(closingPricesForAllStocks) {
     The price change value should be rounded to 2 decimal places, and should be a number (not a string)
 */
 function getPriceChanges(closingPricesForAllStocks) {
-  let newArray = [];
-  for (const element of closingPricesForAllStocks) {
+  let priceChange = [];
+
+  for (let closingPricesForOneStock of closingPricesForAllStocks) {
     let difference = 0;
-    difference = element[element.length - 1] - element[0];
-    newArray.push(Math.round(difference * 100) / 100);
+    difference =
+      closingPricesForOneStock.slice(-1) - closingPricesForOneStock[0];
+    priceChange.push(Math.round(difference * 100) / 100);
   }
-  return newArray;
+  return priceChange;
 }
 
 /*
@@ -75,31 +76,30 @@ function getPriceChanges(closingPricesForAllStocks) {
             - the CLOSING_PRICES_LAST_5_DAYS_FOR_ALL_STOCKS array as input (remember, it's an array of arrays)
             - the STOCKS array
         - Returns an array of strings describing what the highest price was for each stock.
-            For example, the first element of the array should be: "The highest price of AAPL in the last 5 days 
-            was 180.33"
+            For example, the first element of the array should be: "The highest price of AAPL in the last 5 days was 180.33"
             The test will check for this exact string.
     The stock ticker should be capitalised.
     The price should be shown with exactly 2 decimal places.
 */
 function highestPriceDescriptions(closingPricesForAllStocks, stocks) {
-  let newArray = [];
+  let highestPriceDescription = [];
   let item = 0;
-  for (const element of closingPricesForAllStocks) {
-    let value = element[0];
-    for (let i = 1; i < element.length; i++) {
-      if (element[i] > value) {
-        value = element[i];
+  for (let closingPricesForOneStock of closingPricesForAllStocks) {
+    highestPrice = closingPricesForOneStock[0];
+    for (i = 0; i < closingPricesForOneStock.length; i++) {
+      if (closingPricesForOneStock[i] > highestPrice) {
+        highestPrice = closingPricesForOneStock[i];
       }
     }
     let stocksUpperCase = stocks[item].toUpperCase();
-    newArray.push(
-      `The highest price of ${stocksUpperCase} in the last 5 days was ${value.toFixed(
+    highestPriceDescription.push(
+      `The highest price of ${stocksUpperCase} in the last 5 days was ${highestPrice.toFixed(
         2
       )}`
     );
     item++;
   }
-  return newArray;
+  return highestPriceDescription;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

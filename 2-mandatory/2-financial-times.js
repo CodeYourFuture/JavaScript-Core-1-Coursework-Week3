@@ -1,18 +1,17 @@
 /*
     Imagine you are working on the Financial Times web site! They have a list of article titles stored in an array.
 
-    The home page of the web site has a headline section, which only has space for article 
-    titles which are 65 characters or less.
+    The home page of the web site has a headline section, which only has space for article titles which are 65 characters or less.
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-  shortTitles = [];
-  for (const i of allArticleTitles) {
-    if (i.length <= 65) {
-      shortTitles.push(i);
+  let shortArticles = [];
+  for (article of allArticleTitles) {
+    if (article.length <= 65) {
+      shortArticles.push(article);
     }
   }
-  return shortTitles;
+  return shortArticles;
 }
 
 /*
@@ -21,45 +20,44 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-  let first = allArticleTitles[0];
-  for (i = 1; i < allArticleTitles.length; i++) {
-    let next = allArticleTitles[i];
-    if (next.split(" ").length < first.split(" ").length) {
-      first = next;
+  let shortestArticle = allArticleTitles[0];
+  for (let i = 0; i < allArticleTitles.length; i++) {
+    if (shortestArticle.length > allArticleTitles[i].length) {
+      shortestArticle = allArticleTitles[i];
     }
   }
-  return first;
+  return shortestArticle;
 }
 
-// // /*
-//     The editor of the FT has realised that headlines which have numbers in them get more clicks!
-//     Implement the function below to return a new array containing all the headlines which contain a number.
-//     (Hint: remember that you can also loop through the characters of a string if you need to)
-// */
+/*
+    The editor of the FT has realised that headlines which have numbers in them get more clicks!
+    Implement the function below to return a new array containing all the headlines which contain a number.
+    (Hint: remember that you can also loop through the characters of a string if you need to)
+    1.define new empty array; 2. loop through allArticleTitles to check whether any title contains a number (possibly use split method)
+    3.push the titles containing number to the new array
+*/
 function headlinesWithNumbers(allArticleTitles) {
-  titleWithNumber = [];
-  for (const element of allArticleTitles) {
-    if (/\d/.test(element)) {
-      titleWithNumber.push(element);
+  let titlesWithNumbers = [];
+  for (article of allArticleTitles) {
+    if (/\d/.test(article)) {
+      titlesWithNumbers.push(article);
     }
   }
-  return titleWithNumber;
+  return titlesWithNumbers;
 }
 
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
     Implement the function below to return this number - rounded to the nearest integer.
+    1.calculate the sum of the characters of all titles and divide it by titles quantity
+
 */
 function averageNumberOfCharacters(allArticleTitles) {
-  sum = 0;
-  // for(const element of allArticleTitles) {
-  //     sum+=element.length
-  // }
+  let allArticlesLength = 0;
   for (let i = 0; i < allArticleTitles.length; i++) {
-    sum += allArticleTitles[i].length;
+    allArticlesLength += allArticleTitles[i].length;
   }
-  result = sum / allArticleTitles.length;
-  return Math.round(result);
+  return Math.round(allArticlesLength / allArticleTitles.length);
 }
 
 /* ======= List of Articles - DO NOT MODIFY ===== */
