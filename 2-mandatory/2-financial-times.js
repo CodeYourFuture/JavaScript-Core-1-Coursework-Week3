@@ -6,13 +6,9 @@
 */
 function potentialHeadlines(allArticleTitles) {
     // TODO
-    const articleTitle65 = [];
-    
-    for(const title of allArticleTitles){
-        if(title.length <= 65){
-        articleTitle65.push(title);
-        }
-    } return articleTitle65;
+let characterLimit = 65
+let filteredArticles = allArticleTitles.filter(article => article.length <= characterLimit)
+return filteredArticles
 }
 
 /*

@@ -12,16 +12,13 @@
 */
 
 function getTemperatureReport(cities) {
-  // TODO
-  const reports = [];
+  let report = [];
+  cities.forEach(city => {
+        let temperature = temperatureService(city);
 
-  for (item of cities) {
-    reports.push(
-      `The temperature in ${item} is ${temperatureService(item)} degrees`
-    );
-  }
-
-  return reports;
+    report.push(`The temperature in ${city} is ${temperature} degrees`);
+    
+  });return report;
 }
 
 

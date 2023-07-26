@@ -9,21 +9,21 @@
     For each example, can you explain why we are seeing undefined?
 */
 
-// Example 1
+// Example 1 => a is not defined 
 let a;
 console.log(a);
 
 
-// Example 2
+// Example 2 => we do not have a parameter
 function sayHello() {
     let message = "Hello";
 }
 
-let hello = sayHello();
+let hello = sayHello(); //sayHello function is not defined before calling it
 console.log(hello);
 
 
-// Example 3
+// Example 3 => we have called the function without passing an argument 
 function sayHelloToUser(user) {
     console.log(`Hello ${user}`);
 }
@@ -31,6 +31,6 @@ function sayHelloToUser(user) {
 sayHelloToUser();
 
 
-// Example 4
+// Example 4 => we do not have an index 3
 let arr = [1,2,3];
 console.log(arr[3]);
